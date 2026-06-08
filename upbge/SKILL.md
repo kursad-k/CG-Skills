@@ -5,7 +5,7 @@ description: Complete UPBGE Game Engine knowledge base. Merges Official Manual w
 
 # Upbge Skill
 
-Complete upbge game engine knowledge base. merges official manual with comprehensive source code (c++, python, glsl, cmake, xml)., generated from official documentation.
+This skill helps with UPBGE game engine work, including the official manual, source code references, logic bricks, logic nodes, Python scripting, Python components, physics, data blocks, deployment, tools, C++, Python, GLSL, CMake, and XML.
 
 ## When to Use This Skill
 

@@ -1,6 +1,6 @@
 # CG Skills
 
-This repo is a small collection of agentic workflow skills for 3D, computer graphics, VFX and game development work.
+This repo is a collection of agentic workflow skills for 3D, computer graphics, VFX and game development work.
 
 It is meant to give agents useful local context for common 3d, game engine, and tool workflow questions. Each skill folder includes a `SKILL.md` file and a set of reference notes pulled from the related documentation. The notes are organized by topic so the agent can load only the parts that matter for the current task.
 

@@ -5,7 +5,7 @@ description: Complete Godot Engine knowledge base combining official documentati
 
 # Godot Skill
 
-Complete godot engine knowledge base combining official documentation and source code analysis, generated from official documentation.
+This skill helps with Godot Engine work, including scripting, scenes, rendering, physics, input, navigation, networking, UI, animation, audio, plugins, addons, export, XR, editor workflows, official documentation, and source code analysis.
 
 ## When to Use This Skill
 

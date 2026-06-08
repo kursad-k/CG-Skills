@@ -5,7 +5,7 @@ description: Blender 3D creation suite for modeling, animation, rendering, compo
 
 # Blender Skill
 
-Blender 3d creation suite for modeling, animation, rendering, compositing, video editing, and game development. use for 3d modeling, sculpting, animation, shading, rendering, simulation, video editing, and python scripting., generated from official documentation.
+This skill helps with Blender 3D creation work, including modeling, sculpting, animation, shading, rendering, simulation, compositing, video editing, game development, and Python scripting.
 
 ## When to Use This Skill
 

@@ -5,7 +5,7 @@ description: Unreal Engine 5.7 documentation covering C++ & Blueprint programmin
 
 # Unreal-Engine Skill
 
-Unreal engine 5.7 documentation covering c++ & blueprint programming, editor tools, rendering, animation, and platform deployment., generated from official documentation.
+This skill helps with Unreal Engine work, including Unreal Engine 5.7 documentation, C++, Blueprint programming, editor tools, gameplay systems, rendering, animation, physics, audio, UI, optimization, world building, and platform deployment.
 
 ## When to Use This Skill
 
