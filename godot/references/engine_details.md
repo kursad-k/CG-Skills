@@ -1419,7 +1419,7 @@ List<> is another Godot sequence type, using a doubly-linked list as its storage
 
 Godot provides its own set of containers, which means STL containers like std::string and std::vector are generally not used in the codebase. See Why does Godot not use STL (Standard Template Library)? for more information.
 
-A 📜 icon denotes the type is part of Variant. This means it can be used as a parameter or return value of a method exposed to the scripting API.
+A  icon denotes the type is part of Variant. This means it can be used as a parameter or return value of a method exposed to the scripting API.
 
 Closest C++ STL datatype
 

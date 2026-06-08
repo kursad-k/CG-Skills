@@ -93,21 +93,21 @@ remove_animation_library(name: StringName)
 
 rename_animation_library(name: StringName, newname: StringName)
 
-animation_finished(anim_name: StringName) 🔗
+animation_finished(anim_name: StringName) 
 
 Notifies when an animation finished playing.
 
 Note: This signal is not emitted if an animation is looping.
 
-animation_libraries_updated() 🔗
+animation_libraries_updated() 
 
 Notifies when the animation libraries have changed.
 
-animation_list_changed() 🔗
+animation_list_changed() 
 
 Notifies when an animation list is changed.
 
-animation_started(anim_name: StringName) 🔗
+animation_started(anim_name: StringName) 
 
 Notifies when an animation starts playing.
 
@@ -119,7 +119,7 @@ Notifies when the blending result related have been applied to the target object
 
 Notifies when the property related process have been updated.
 
-enum AnimationCallbackModeProcess: 🔗
+enum AnimationCallbackModeProcess: 
 
 AnimationCallbackModeProcess ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS = 0
 
@@ -133,7 +133,7 @@ AnimationCallbackModeProcess ANIMATION_CALLBACK_MODE_PROCESS_MANUAL = 2
 
 Do not process animation. Use advance() to process the animation manually.
 
-enum AnimationCallbackModeMethod: 🔗
+enum AnimationCallbackModeMethod: 
 
 AnimationCallbackModeMethod ANIMATION_CALLBACK_MODE_METHOD_DEFERRED = 0
 
@@ -143,7 +143,7 @@ AnimationCallbackModeMethod ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE = 1
 
 Make method calls immediately when reached in the animation.
 
-enum AnimationCallbackModeDiscrete: 🔗
+enum AnimationCallbackModeDiscrete: 
 
 AnimationCallbackModeDiscrete ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT = 0
 
@@ -187,7 +187,7 @@ void set_active(value: bool)
 
 If true, the AnimationMixer will be processing.
 
-int audio_max_polyphony = 32 🔗
+int audio_max_polyphony = 32 
 
 void set_audio_max_polyphony(value: int)
 
@@ -197,7 +197,7 @@ The number of possible simultaneous sounds for each of the assigned AudioStreamP
 
 For example, if this value is 32 and the animation has two audio tracks, the two AudioStreamPlayers assigned can play simultaneously up to 32 voices each.
 
-AnimationCallbackModeDiscrete callback_mode_discrete = 1 🔗
+AnimationCallbackModeDiscrete callback_mode_discrete = 1 
 
 void set_callback_mode_discrete(value: AnimationCallbackModeDiscrete)
 
@@ -209,7 +209,7 @@ However, when blending with Animation.UPDATE_CONTINUOUS several results are cons
 
 To make the blended results look good, it is recommended to set this to ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS to update every frame during blending. Other values exist for compatibility and they are fine if there is no blending, but not so, may produce artifacts.
 
-AnimationCallbackModeMethod callback_mode_method = 0 🔗
+AnimationCallbackModeMethod callback_mode_method = 0 
 
 void set_callback_mode_method(value: AnimationCallbackModeMethod)
 
@@ -217,7 +217,7 @@ AnimationCallbackModeMethod get_callback_mode_method()
 
 The call mode used for "Call Method" tracks.
 
-AnimationCallbackModeProcess callback_mode_process = 1 🔗
+AnimationCallbackModeProcess callback_mode_process = 1 
 
 void set_callback_mode_process(value: AnimationCallbackModeProcess)
 
@@ -225,7 +225,7 @@ AnimationCallbackModeProcess get_callback_mode_process()
 
 The process notification in which to update animations.
 
-bool deterministic = false 🔗
+bool deterministic = false 
 
 void set_deterministic(value: bool)
 
@@ -243,7 +243,7 @@ Note: In AnimationTree, the blending with AnimationNodeAdd2, AnimationNodeAdd3, 
 
 For example, if AnimationNodeAdd2 blends two nodes with the amount 1.0, then total weight is 2.0 but it will be normalized to make the total amount 1.0 and the result will be equal to AnimationNodeBlend2 with the amount 0.5.
 
-bool reset_on_save = true 🔗
+bool reset_on_save = true 
 
 void set_reset_on_save_enabled(value: bool)
 
@@ -253,7 +253,7 @@ This is used by the editor. If set to true, the scene will be saved with the eff
 
 This makes it more convenient to preview and edit animations in the editor, as changes to the scene will not be saved as long as they are set in the reset animation.
 
-bool root_motion_local = false 🔗
+bool root_motion_local = false 
 
 void set_root_motion_local(value: bool)
 
@@ -261,7 +261,7 @@ bool is_root_motion_local()
 
 If true, get_root_motion_position() value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
 
-NodePath root_motion_track = NodePath("") 🔗
+NodePath root_motion_track = NodePath("") 
 
 void set_root_motion_track(value: NodePath)
 
@@ -271,7 +271,7 @@ The path to the Animation track used for root motion. Paths must be valid scene-
 
 If the track has type Animation.TYPE_POSITION_3D, Animation.TYPE_ROTATION_3D, or Animation.TYPE_SCALE_3D the transformation will be canceled visually, and the animation will appear to stay in place. See also get_root_motion_position(), get_root_motion_rotation(), get_root_motion_scale(), and RootMotionView.
 
-NodePath root_node = NodePath("..") 🔗
+NodePath root_node = NodePath("..") 
 
 void set_root_node(value: NodePath)
 
@@ -279,21 +279,21 @@ NodePath get_root_node()
 
 The node which node path references will travel from.
 
-Variant _post_process_key_value(animation: Animation, track: int, value: Variant, object_id: int, object_sub_idx: int) virtual const 🔗
+Variant _post_process_key_value(animation: Animation, track: int, value: Variant, object_id: int, object_sub_idx: int) virtual const 
 
 A virtual function for processing after getting a key during playback.
 
-Error add_animation_library(name: StringName, library: AnimationLibrary) 🔗
+Error add_animation_library(name: StringName, library: AnimationLibrary) 
 
 Adds library to the animation player, under the key name.
 
 AnimationMixer has a global library by default with an empty string as key. For adding an animation to the global library:
 
-void advance(delta: float) 🔗
+void advance(delta: float) 
 
 Manually advance the animations by the specified time (in seconds).
 
-void capture(name: StringName, duration: float, trans_type: TransitionType = 0, ease_type: EaseType = 0) 🔗
+void capture(name: StringName, duration: float, trans_type: TransitionType = 0, ease_type: EaseType = 0) 
 
 If the animation track specified by name has an option Animation.UPDATE_CAPTURE, stores current values of the objects indicated by the track path as a cache. If there is already a captured cache, the old cache is discarded.
 
@@ -301,37 +301,37 @@ After this it will interpolate with current animation blending result during the
 
 You can specify trans_type as the curve for the interpolation. For better results, it may be appropriate to specify Tween.TRANS_LINEAR for cases where the first key of the track begins with a non-zero value or where the key value does not change, and Tween.TRANS_QUAD for cases where the key value changes linearly.
 
-void clear_caches() 🔗
+void clear_caches() 
 
 AnimationMixer caches animated nodes. It may not notice if a node disappears; clear_caches() forces it to update the cache again.
 
-StringName find_animation(animation: Animation) const 🔗
+StringName find_animation(animation: Animation) const 
 
 Returns the key of animation or an empty StringName if not found.
 
-StringName find_animation_library(animation: Animation) const 🔗
+StringName find_animation_library(animation: Animation) const 
 
 Returns the key for the AnimationLibrary that contains animation or an empty StringName if not found.
 
-Animation get_animation(name: StringName) const 🔗
+Animation get_animation(name: StringName) const 
 
 Returns the Animation with the key name. If the animation does not exist, null is returned and an error is logged.
 
-AnimationLibrary get_animation_library(name: StringName) const 🔗
+AnimationLibrary get_animation_library(name: StringName) const 
 
 Returns the first AnimationLibrary with key name or null if not found.
 
 To get the AnimationMixer's global animation library, use get_animation_library("").
 
-Array[StringName] get_animation_library_list() const 🔗
+Array[StringName] get_animation_library_list() const 
 
 Returns the list of stored library keys.
 
-PackedStringArray get_animation_list() const 🔗
+PackedStringArray get_animation_list() const 
 
 Returns the list of stored animation keys.
 
-Vector3 get_root_motion_position() const 🔗
+Vector3 get_root_motion_position() const 
 
 Retrieve the motion delta of position with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -347,7 +347,7 @@ If root_motion_local is true, returns the pre-multiplied translation value with 
 
 In this case, the code can be written as follows:
 
-Vector3 get_root_motion_position_accumulator() const 🔗
+Vector3 get_root_motion_position_accumulator() const 
 
 Retrieve the blended value of the position tracks with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -357,7 +357,7 @@ For example, if an animation with only one key Vector3(0, 0, 0) is played in the
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-Quaternion get_root_motion_rotation() const 🔗
+Quaternion get_root_motion_rotation() const 
 
 Retrieve the motion delta of rotation with the root_motion_track as a Quaternion that can be used elsewhere.
 
@@ -367,7 +367,7 @@ See also root_motion_track and RootMotionView.
 
 The most basic example is applying rotation to CharacterBody3D:
 
-Quaternion get_root_motion_rotation_accumulator() const 🔗
+Quaternion get_root_motion_rotation_accumulator() const 
 
 Retrieve the blended value of the rotation tracks with the root_motion_track as a Quaternion that can be used elsewhere.
 
@@ -379,7 +379,7 @@ For example, if an animation with only one key Quaternion(0, 0, 0, 1) is played 
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-Vector3 get_root_motion_scale() const 🔗
+Vector3 get_root_motion_scale() const 
 
 Retrieve the motion delta of scale with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -389,7 +389,7 @@ See also root_motion_track and RootMotionView.
 
 The most basic example is applying scale to CharacterBody3D:
 
-Vector3 get_root_motion_scale_accumulator() const 🔗
+Vector3 get_root_motion_scale_accumulator() const 
 
 Retrieve the blended value of the scale tracks with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -397,19 +397,19 @@ For example, if an animation with only one key Vector3(1, 1, 1) is played in the
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-bool has_animation(name: StringName) const 🔗
+bool has_animation(name: StringName) const 
 
 Returns true if the AnimationMixer stores an Animation with key name.
 
-bool has_animation_library(name: StringName) const 🔗
+bool has_animation_library(name: StringName) const 
 
 Returns true if the AnimationMixer stores an AnimationLibrary with key name.
 
-void remove_animation_library(name: StringName) 🔗
+void remove_animation_library(name: StringName) 
 
 Removes the AnimationLibrary associated with the key name.
 
-void rename_animation_library(name: StringName, newname: StringName) 🔗
+void rename_animation_library(name: StringName, newname: StringName) 
 
 Moves the AnimationLibrary associated with the key name to the key newname.
 
@@ -545,7 +545,7 @@ PlayMode PLAY_MODE_BACKWARD = 1
 
 Plays animation in backward direction.
 
-bool advance_on_start = false 🔗
+bool advance_on_start = false 
 
 void set_advance_on_start(value: bool)
 
@@ -555,7 +555,7 @@ If true, on receiving a request to play an animation from the start, the first f
 
 See also the notes of AnimationPlayer.play().
 
-StringName animation = &"" 🔗
+StringName animation = &"" 
 
 void set_animation(value: StringName)
 
@@ -571,7 +571,7 @@ If use_custom_timeline is true, override the loop settings of the original Anima
 
 Note: If the Animation.loop_mode isn't set to looping, the Animation.track_set_interpolation_loop_wrap() option will not be respected. If you cannot get the expected behavior, consider duplicating the Animation resource and changing the loop settings.
 
-PlayMode play_mode = 0 🔗
+PlayMode play_mode = 0 
 
 void set_play_mode(value: PlayMode)
 
@@ -587,7 +587,7 @@ If use_custom_timeline is true, offset the start position of the animation.
 
 This is useful for adjusting which foot steps first in 3D walking animations.
 
-bool stretch_time_scale 🔗
+bool stretch_time_scale 
 
 void set_stretch_time_scale(value: bool)
 
@@ -599,7 +599,7 @@ This is useful for matching the periods of walking and running animations.
 
 If false, the original animation length is respected. If you set the loop to loop_mode, the animation will loop in timeline_length.
 
-float timeline_length 🔗
+float timeline_length 
 
 void set_timeline_length(value: float)
 
@@ -607,7 +607,7 @@ float get_timeline_length()
 
 If use_custom_timeline is true, offset the start position of the animation.
 
-bool use_custom_timeline = false 🔗
+bool use_custom_timeline = false 
 
 void set_use_custom_timeline(value: bool)
 
@@ -724,7 +724,7 @@ BlendMode BLEND_MODE_DISCRETE_CARRY = 2
 
 Similar to BLEND_MODE_DISCRETE, but starts the new animation at the last animation's playback position.
 
-BlendMode blend_mode = 0 🔗
+BlendMode blend_mode = 0 
 
 void set_blend_mode(value: BlendMode)
 
@@ -732,7 +732,7 @@ BlendMode get_blend_mode()
 
 Controls the interpolation between animations.
 
-float max_space = 1.0 🔗
+float max_space = 1.0 
 
 void set_max_space(value: float)
 
@@ -740,7 +740,7 @@ float get_max_space()
 
 The blend space's axis's upper limit for the points' position. See add_blend_point().
 
-float min_space = -1.0 🔗
+float min_space = -1.0 
 
 void set_min_space(value: float)
 
@@ -758,7 +758,7 @@ If false, the blended animations' frame are stopped when the blend value is 0.
 
 If true, forcing the blended animations to advance frame.
 
-String value_label = "value" 🔗
+String value_label = "value" 
 
 void set_value_label(value: String)
 
@@ -766,31 +766,31 @@ String get_value_label()
 
 Label of the virtual axis of the blend space.
 
-void add_blend_point(node: AnimationRootNode, pos: float, at_index: int = -1) 🔗
+void add_blend_point(node: AnimationRootNode, pos: float, at_index: int = -1) 
 
 Adds a new point that represents a node on the virtual axis at a given position set by pos. You can insert it at a specific index using the at_index argument. If you use the default value for at_index, the point is inserted at the end of the blend points array.
 
-int get_blend_point_count() const 🔗
+int get_blend_point_count() const 
 
 Returns the number of points on the blend axis.
 
-AnimationRootNode get_blend_point_node(point: int) const 🔗
+AnimationRootNode get_blend_point_node(point: int) const 
 
 Returns the AnimationNode referenced by the point at index point.
 
-float get_blend_point_position(point: int) const 🔗
+float get_blend_point_position(point: int) const 
 
 Returns the position of the point at index point.
 
-void remove_blend_point(point: int) 🔗
+void remove_blend_point(point: int) 
 
 Removes the point at index point from the blend axis.
 
-void set_blend_point_node(point: int, node: AnimationRootNode) 🔗
+void set_blend_point_node(point: int, node: AnimationRootNode) 
 
 Changes the AnimationNode referenced by the point at index point.
 
-void set_blend_point_position(point: int, pos: float) 🔗
+void set_blend_point_position(point: int, pos: float) 
 
 Updates the position of the point at index point on the blend axis.
 
@@ -842,33 +842,33 @@ rename_node(name: StringName, new_name: StringName)
 
 set_node_position(name: StringName, position: Vector2)
 
-node_changed(node_name: StringName) 🔗
+node_changed(node_name: StringName) 
 
 Emitted when the input port information is changed.
 
 The connection was successful.
 
-CONNECTION_ERROR_NO_INPUT = 1 🔗
+CONNECTION_ERROR_NO_INPUT = 1 
 
 The input node is null.
 
-CONNECTION_ERROR_NO_INPUT_INDEX = 2 🔗
+CONNECTION_ERROR_NO_INPUT_INDEX = 2 
 
 The specified input port is out of range.
 
-CONNECTION_ERROR_NO_OUTPUT = 3 🔗
+CONNECTION_ERROR_NO_OUTPUT = 3 
 
 The output node is null.
 
-CONNECTION_ERROR_SAME_NODE = 4 🔗
+CONNECTION_ERROR_SAME_NODE = 4 
 
 Input and output nodes are the same.
 
-CONNECTION_ERROR_CONNECTION_EXISTS = 5 🔗
+CONNECTION_ERROR_CONNECTION_EXISTS = 5 
 
 The specified connection already exists.
 
-Vector2 graph_offset = Vector2(0, 0) 🔗
+Vector2 graph_offset = Vector2(0, 0) 
 
 void set_graph_offset(value: Vector2)
 
@@ -876,43 +876,43 @@ Vector2 get_graph_offset()
 
 The global offset of all sub animation nodes.
 
-void add_node(name: StringName, node: AnimationNode, position: Vector2 = Vector2(0, 0)) 🔗
+void add_node(name: StringName, node: AnimationNode, position: Vector2 = Vector2(0, 0)) 
 
 Adds an AnimationNode at the given position. The name is used to identify the created sub animation node later.
 
-void connect_node(input_node: StringName, input_index: int, output_node: StringName) 🔗
+void connect_node(input_node: StringName, input_index: int, output_node: StringName) 
 
 Connects the output of an AnimationNode as input for another AnimationNode, at the input port specified by input_index.
 
-void disconnect_node(input_node: StringName, input_index: int) 🔗
+void disconnect_node(input_node: StringName, input_index: int) 
 
 Disconnects the animation node connected to the specified input.
 
-AnimationNode get_node(name: StringName) const 🔗
+AnimationNode get_node(name: StringName) const 
 
 Returns the sub animation node with the specified name.
 
-Array[StringName] get_node_list() const 🔗
+Array[StringName] get_node_list() const 
 
 Returns a list containing the names of all sub animation nodes in this blend tree.
 
-Vector2 get_node_position(name: StringName) const 🔗
+Vector2 get_node_position(name: StringName) const 
 
 Returns the position of the sub animation node with the specified name.
 
-bool has_node(name: StringName) const 🔗
+bool has_node(name: StringName) const 
 
 Returns true if a sub animation node with specified name exists.
 
-void remove_node(name: StringName) 🔗
+void remove_node(name: StringName) 
 
 Removes a sub animation node.
 
-void rename_node(name: StringName, new_name: StringName) 🔗
+void rename_node(name: StringName, new_name: StringName) 
 
 Changes the name of a sub animation node.
 
-void set_node_position(name: StringName, position: Vector2) 🔗
+void set_node_position(name: StringName, position: Vector2) 
 
 Modifies the position of a sub animation node.
 
@@ -945,7 +945,7 @@ get_remaining_time(node_info: PackedFloat32Array, break_loop: bool) static
 
 is_looping(node_info: PackedFloat32Array) static
 
-PackedFloat32Array _process_animation_node(playback_info: PackedFloat64Array, test_only: bool) virtual required 🔗
+PackedFloat32Array _process_animation_node(playback_info: PackedFloat64Array, test_only: bool) virtual required 
 
 A version of the AnimationNode._process() method that is meant to be overridden by custom nodes. It returns a PackedFloat32Array with the processed animation data.
 
@@ -953,11 +953,11 @@ The PackedFloat64Array parameter contains the playback information, containing t
 
 The function must return a PackedFloat32Array of the node's time info, containing the following values (in order): animation length, time position, delta, LoopMode (encoded as a float), whether the animation is about to end (encoded as a float greater than 0) and whether the animation is infinite (encoded as a float greater than 0). All values must be included in the returned array.
 
-float get_remaining_time(node_info: PackedFloat32Array, break_loop: bool) static 🔗
+float get_remaining_time(node_info: PackedFloat32Array, break_loop: bool) static 
 
 Returns the animation's remaining time for the given node info. For looping animations, it will only return the remaining time if break_loop is true, a large integer value will be returned otherwise.
 
-bool is_looping(node_info: PackedFloat32Array) static 🔗
+bool is_looping(node_info: PackedFloat32Array) static 
 
 Returns true if the animation for the given node_info is looping.
 
@@ -990,7 +990,7 @@ Third Person Shooter (TPS) Demo
 
 autorestart_random_delay
 
-enum OneShotRequest: 🔗
+enum OneShotRequest: 
 
 OneShotRequest ONE_SHOT_REQUEST_NONE = 0
 
@@ -1016,7 +1016,7 @@ MixMode MIX_MODE_ADD = 1
 
 Blends two animations additively. See also AnimationNodeAdd2.
 
-bool autorestart = false 🔗
+bool autorestart = false 
 
 void set_autorestart(value: bool)
 
@@ -1026,7 +1026,7 @@ If true, the sub-animation will restart automatically after finishing.
 
 In other words, to start auto restarting, the animation must be played once with the ONE_SHOT_REQUEST_FIRE request. The ONE_SHOT_REQUEST_ABORT request stops the auto restarting, but it does not disable the autorestart itself. So, the ONE_SHOT_REQUEST_FIRE request will start auto restarting again.
 
-float autorestart_delay = 1.0 🔗
+float autorestart_delay = 1.0 
 
 void set_autorestart_delay(value: float)
 
@@ -1034,7 +1034,7 @@ float get_autorestart_delay()
 
 The delay after which the automatic restart is triggered, in seconds.
 
-float autorestart_random_delay = 0.0 🔗
+float autorestart_random_delay = 0.0 
 
 void set_autorestart_random_delay(value: float)
 
@@ -1042,7 +1042,7 @@ float get_autorestart_random_delay()
 
 If autorestart is true, a random additional delay (in seconds) between 0 and this value will be added to autorestart_delay.
 
-bool break_loop_at_end = false 🔗
+bool break_loop_at_end = false 
 
 void set_break_loop_at_end(value: bool)
 
@@ -1056,7 +1056,7 @@ Curve get_fadein_curve()
 
 Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit Curve.
 
-float fadein_time = 0.0 🔗
+float fadein_time = 0.0 
 
 void set_fadein_time(value: float)
 
@@ -1066,7 +1066,7 @@ The fade-in duration. For example, setting this to 1.0 for a 5 second length ani
 
 Note: AnimationNodeOneShot transitions the current state after the fading has finished.
 
-Curve fadeout_curve 🔗
+Curve fadeout_curve 
 
 void set_fadeout_curve(value: Curve)
 
@@ -1074,7 +1074,7 @@ Curve get_fadeout_curve()
 
 Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit Curve.
 
-float fadeout_time = 0.0 🔗
+float fadeout_time = 0.0 
 
 void set_fadeout_time(value: float)
 
@@ -1084,7 +1084,7 @@ The fade-out duration. For example, setting this to 1.0 for a 5 second length an
 
 Note: AnimationNodeOneShot transitions the current state after the fading has finished.
 
-MixMode mix_mode = 0 🔗
+MixMode mix_mode = 0 
 
 void set_mix_mode(value: MixMode)
 
@@ -1204,7 +1204,7 @@ This animation node can be used to cause a seek command to happen to any sub-chi
 
 After setting the time and changing the animation playback, the time seek node automatically goes into sleep mode on the next process frame by setting its seek_request value to -1.0.
 
-bool explicit_elapse = true 🔗
+bool explicit_elapse = true 
 
 void set_explicit_elapse(value: bool)
 
@@ -1280,7 +1280,7 @@ set_input_break_loop_at_end(input: int, enable: bool)
 
 set_input_reset(input: int, enable: bool)
 
-bool allow_transition_to_self = false 🔗
+bool allow_transition_to_self = false 
 
 void set_allow_transition_to_self(value: bool)
 
@@ -1288,7 +1288,7 @@ bool is_allow_transition_to_self()
 
 If true, allows transition to the self state. When the reset option is enabled in input, the animation is restarted. If false, nothing happens on the transition to the self state.
 
-int input_count = 0 🔗
+int input_count = 0 
 
 void set_input_count(value: int)
 
@@ -1302,7 +1302,7 @@ Curve get_xfade_curve()
 
 Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit Curve.
 
-float xfade_time = 0.0 🔗
+float xfade_time = 0.0 
 
 void set_xfade_time(value: float)
 
@@ -1312,27 +1312,27 @@ Cross-fading time (in seconds) between each animation connected to the inputs.
 
 Note: AnimationNodeTransition transitions the current state immediately after the start of the fading. The precise remaining time can only be inferred from the main animation. When AnimationNodeOutput is considered as the most upstream, so the xfade_time is not scaled depending on the downstream delta. See also AnimationNodeOneShot.fadeout_time.
 
-bool is_input_loop_broken_at_end(input: int) const 🔗
+bool is_input_loop_broken_at_end(input: int) const 
 
 Returns whether the animation breaks the loop at the end of the loop cycle for transition.
 
-bool is_input_reset(input: int) const 🔗
+bool is_input_reset(input: int) const 
 
 Returns whether the animation restarts when the animation transitions from the other animation.
 
-bool is_input_set_as_auto_advance(input: int) const 🔗
+bool is_input_set_as_auto_advance(input: int) const 
 
 Returns true if auto-advance is enabled for the given input index.
 
-void set_input_as_auto_advance(input: int, enable: bool) 🔗
+void set_input_as_auto_advance(input: int, enable: bool) 
 
 Enables or disables auto-advance for the given input index. If enabled, state changes to the next input after playing the animation once. If enabled for the last input state, it loops to the first.
 
-void set_input_break_loop_at_end(input: int, enable: bool) 🔗
+void set_input_break_loop_at_end(input: int, enable: bool) 
 
 If true, breaks the loop at the end of the loop cycle for transition, even if the animation is looping.
 
-void set_input_reset(input: int, enable: bool) 🔗
+void set_input_reset(input: int, enable: bool) 
 
 If true, the destination animation is restarted when the animation transitions.
 
@@ -1448,11 +1448,11 @@ set_input_name(input: int, name: String)
 
 set_parameter(name: StringName, value: Variant)
 
-animation_node_removed(object_id: int, name: String) 🔗
+animation_node_removed(object_id: int, name: String) 
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation nodes removes. The animation nodes that emit this signal are AnimationNodeBlendSpace1D, AnimationNodeBlendSpace2D, AnimationNodeStateMachine, and AnimationNodeBlendTree.
 
-animation_node_renamed(object_id: int, old_name: String, new_name: String) 🔗
+animation_node_renamed(object_id: int, old_name: String, new_name: String) 
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation node names changes. The animation nodes that emit this signal are AnimationNodeBlendSpace1D, AnimationNodeBlendSpace2D, AnimationNodeStateMachine, and AnimationNodeBlendTree.
 
@@ -1474,7 +1474,7 @@ FilterAction FILTER_BLEND = 3
 
 Paths matching the filter will be blended (by the blend value).
 
-bool filter_enabled 🔗
+bool filter_enabled 
 
 void set_filter_enabled(value: bool)
 
@@ -1482,35 +1482,35 @@ bool is_filter_enabled()
 
 If true, filtering is enabled.
 
-String _get_caption() virtual const 🔗
+String _get_caption() virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to override the text caption for this animation node.
 
-AnimationNode _get_child_by_name(name: StringName) virtual const 🔗
+AnimationNode _get_child_by_name(name: StringName) virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return a child animation node by its name.
 
-Dictionary _get_child_nodes() virtual const 🔗
+Dictionary _get_child_nodes() virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return all child animation nodes in order as a name: node dictionary.
 
-Variant _get_parameter_default_value(parameter: StringName) virtual const 🔗
+Variant _get_parameter_default_value(parameter: StringName) virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return the default value of a parameter. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
-Array _get_parameter_list() virtual const 🔗
+Array _get_parameter_list() virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return a list of the properties on this animation node. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees. Format is similar to Object.get_property_list().
 
-bool _has_filter() virtual const 🔗
+bool _has_filter() virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return whether the blend tree editor should display filter editing on this animation node.
 
-bool _is_parameter_read_only(parameter: StringName) virtual const 🔗
+bool _is_parameter_read_only(parameter: StringName) virtual const 
 
 When inheriting from AnimationRootNode, implement this virtual method to return whether the parameter is read-only. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
-float _process(time: float, seek: bool, is_external_seeking: bool, test_only: bool) virtual 🔗
+float _process(time: float, seek: bool, is_external_seeking: bool, test_only: bool) virtual 
 
 Deprecated: Currently this is mostly useless as there is a lack of many APIs to extend AnimationNode by GDScript. It is planned that a more flexible API using structures will be provided in the future.
 
@@ -1520,67 +1520,67 @@ Here, call the blend_input(), blend_node() or blend_animation() functions. You c
 
 This function should return the delta.
 
-bool add_input(name: String) 🔗
+bool add_input(name: String) 
 
 Adds an input to the animation node. This is only useful for animation nodes created for use in an AnimationNodeBlendTree. If the addition fails, returns false.
 
-void blend_animation(animation: StringName, time: float, delta: float, seeked: bool, is_external_seeking: bool, blend: float, looped_flag: LoopedFlag = 0) 🔗
+void blend_animation(animation: StringName, time: float, delta: float, seeked: bool, is_external_seeking: bool, blend: float, looped_flag: LoopedFlag = 0) 
 
 Blends an animation by blend amount (name must be valid in the linked AnimationPlayer). A time and delta may be passed, as well as whether seeked happened.
 
 A looped_flag is used by internal processing immediately after the loop.
 
-float blend_input(input_index: int, time: float, seek: bool, is_external_seeking: bool, blend: float, filter: FilterAction = 0, sync: bool = true, test_only: bool = false) 🔗
+float blend_input(input_index: int, time: float, seek: bool, is_external_seeking: bool, blend: float, filter: FilterAction = 0, sync: bool = true, test_only: bool = false) 
 
 Blends an input. This is only useful for animation nodes created for an AnimationNodeBlendTree. The time parameter is a relative delta, unless seek is true, in which case it is absolute. A filter mode may be optionally passed.
 
-float blend_node(name: StringName, node: AnimationNode, time: float, seek: bool, is_external_seeking: bool, blend: float, filter: FilterAction = 0, sync: bool = true, test_only: bool = false) 🔗
+float blend_node(name: StringName, node: AnimationNode, time: float, seek: bool, is_external_seeking: bool, blend: float, filter: FilterAction = 0, sync: bool = true, test_only: bool = false) 
 
 Blend another animation node (in case this animation node contains child animation nodes). This function is only useful if you inherit from AnimationRootNode instead, otherwise editors will not display your animation node for addition.
 
-int find_input(name: String) const 🔗
+int find_input(name: String) const 
 
 Returns the input index which corresponds to name. If not found, returns -1.
 
-int get_input_count() const 🔗
+int get_input_count() const 
 
 Amount of inputs in this animation node, only useful for animation nodes that go into AnimationNodeBlendTree.
 
-String get_input_name(input: int) const 🔗
+String get_input_name(input: int) const 
 
 Gets the name of an input by index.
 
-Variant get_parameter(name: StringName) const 🔗
+Variant get_parameter(name: StringName) const 
 
 Gets the value of a parameter. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
-int get_processing_animation_tree_instance_id() const 🔗
+int get_processing_animation_tree_instance_id() const 
 
 Returns the object id of the AnimationTree that owns this node.
 
 Note: This method should only be called from within the AnimationNodeExtension._process_animation_node() method, and will return an invalid id otherwise.
 
-bool is_path_filtered(path: NodePath) const 🔗
+bool is_path_filtered(path: NodePath) const 
 
 Returns true if the given path is filtered.
 
-bool is_process_testing() const 🔗
+bool is_process_testing() const 
 
 Returns true if this animation node is being processed in test-only mode.
 
-void remove_input(index: int) 🔗
+void remove_input(index: int) 
 
 Removes an input, call this only when inactive.
 
-void set_filter_path(path: NodePath, enable: bool) 🔗
+void set_filter_path(path: NodePath, enable: bool) 
 
 Adds or removes a path for the filter.
 
-bool set_input_name(input: int, name: String) 🔗
+bool set_input_name(input: int, name: String) 
 
 Sets the name of the input at the given input index. If the setting fails, returns false.
 
-void set_parameter(name: StringName, value: Variant) 🔗
+void set_parameter(name: StringName, value: Variant) 
 
 Sets a custom parameter. These are used as local memory, because resources can be reused across the tree or scenes.
 
@@ -1695,17 +1695,17 @@ set_section_with_markers(start_marker: StringName = &"", end_marker: StringName 
 
 stop(keep_state: bool = false)
 
-animation_changed(old_name: StringName, new_name: StringName) 🔗
+animation_changed(old_name: StringName, new_name: StringName) 
 
 Emitted when a queued animation plays after the previous animation finished. See also queue().
 
 Note: The signal is not emitted when the animation is changed via play() or by an AnimationTree.
 
-current_animation_changed(name: String) 🔗
+current_animation_changed(name: String) 
 
 Emitted when current_animation changes.
 
-enum AnimationProcessCallback: 🔗
+enum AnimationProcessCallback: 
 
 AnimationProcessCallback ANIMATION_PROCESS_PHYSICS = 0
 
@@ -1719,7 +1719,7 @@ AnimationProcessCallback ANIMATION_PROCESS_MANUAL = 2
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL.
 
-enum AnimationMethodCallMode: 🔗
+enum AnimationMethodCallMode: 
 
 AnimationMethodCallMode ANIMATION_METHOD_CALL_DEFERRED = 0
 
@@ -1729,7 +1729,7 @@ AnimationMethodCallMode ANIMATION_METHOD_CALL_IMMEDIATE = 1
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE.
 
-String assigned_animation 🔗
+String assigned_animation 
 
 void set_assigned_animation(value: String)
 
@@ -1737,7 +1737,7 @@ String get_assigned_animation()
 
 If playing, the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also current_animation.
 
-String autoplay = "" 🔗
+String autoplay = "" 
 
 void set_autoplay(value: String)
 
@@ -1745,7 +1745,7 @@ String get_autoplay()
 
 The key of the animation to play when the scene loads.
 
-String current_animation = "" 🔗
+String current_animation = "" 
 
 void set_current_animation(value: String)
 
@@ -1755,19 +1755,19 @@ The key of the currently playing animation. If no animation is playing, the prop
 
 Note: While this property appears in the Inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see Animation.
 
-float current_animation_length 🔗
+float current_animation_length 
 
 float get_current_animation_length()
 
 The length (in seconds) of the currently playing animation.
 
-float current_animation_position 🔗
+float current_animation_position 
 
 float get_current_animation_position()
 
 The position (in seconds) of the currently playing animation.
 
-bool movie_quit_on_finish = false 🔗
+bool movie_quit_on_finish = false 
 
 void set_movie_quit_on_finish_enabled(value: bool)
 
@@ -1777,7 +1777,7 @@ If true and the engine is running in Movie Maker mode (see MovieWriter), exits t
 
 Note: This obeys the same logic as the AnimationMixer.animation_finished signal, so it will not quit the engine if the animation is set to be looping.
 
-bool playback_auto_capture = true 🔗
+bool playback_auto_capture = true 
 
 void set_auto_capture(value: bool)
 
@@ -1787,7 +1787,7 @@ If true, performs AnimationMixer.capture() before playback automatically. This m
 
 Note: Capture interpolation is only performed if the animation contains a capture track. See also Animation.UPDATE_CAPTURE.
 
-float playback_auto_capture_duration = -1.0 🔗
+float playback_auto_capture_duration = -1.0 
 
 void set_auto_capture_duration(value: float)
 
@@ -1797,7 +1797,7 @@ See also play_with_capture() and AnimationMixer.capture().
 
 If playback_auto_capture_duration is negative value, the duration is set to the interval between the current position and the first key.
 
-EaseType playback_auto_capture_ease_type = 0 🔗
+EaseType playback_auto_capture_ease_type = 0 
 
 void set_auto_capture_ease_type(value: EaseType)
 
@@ -1805,7 +1805,7 @@ EaseType get_auto_capture_ease_type()
 
 The ease type of the capture interpolation. See also EaseType.
 
-TransitionType playback_auto_capture_transition_type = 0 🔗
+TransitionType playback_auto_capture_transition_type = 0 
 
 void set_auto_capture_transition_type(value: TransitionType)
 
@@ -1813,7 +1813,7 @@ TransitionType get_auto_capture_transition_type()
 
 The transition type of the capture interpolation. See also TransitionType.
 
-float playback_default_blend_time = 0.0 🔗
+float playback_default_blend_time = 0.0 
 
 void set_default_blend_time(value: float)
 
@@ -1821,7 +1821,7 @@ float get_default_blend_time()
 
 The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 precision.
 
-float speed_scale = 1.0 🔗
+float speed_scale = 1.0 
 
 void set_speed_scale(value: float)
 
@@ -1831,67 +1831,67 @@ The speed scaling ratio. For example, if this value is 1, then the animation pla
 
 If set to a negative value, the animation is played in reverse. If set to 0, the animation will not advance.
 
-StringName animation_get_next(animation_from: StringName) const 🔗
+StringName animation_get_next(animation_from: StringName) const 
 
 Returns the key of the animation which is queued to play after the animation_from animation.
 
-void animation_set_next(animation_from: StringName, animation_to: StringName) 🔗
+void animation_set_next(animation_from: StringName, animation_to: StringName) 
 
 Triggers the animation_to animation when the animation_from animation completes.
 
 Clears all queued, unplayed animations.
 
-float get_blend_time(animation_from: StringName, animation_to: StringName) const 🔗
+float get_blend_time(animation_from: StringName, animation_to: StringName) const 
 
 Returns the blend time (in seconds) between two animations, referenced by their keys.
 
-AnimationMethodCallMode get_method_call_mode() const 🔗
+AnimationMethodCallMode get_method_call_mode() const 
 
 Deprecated: Use AnimationMixer.callback_mode_method instead.
 
 Returns the call mode used for "Call Method" tracks.
 
-float get_playing_speed() const 🔗
+float get_playing_speed() const 
 
 Returns the actual playing speed of current animation or 0 if not playing. This speed is the speed_scale property multiplied by custom_speed argument specified when calling the play() method.
 
 Returns a negative value if the current animation is playing backwards.
 
-AnimationProcessCallback get_process_callback() const 🔗
+AnimationProcessCallback get_process_callback() const 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Returns the process notification in which to update animations.
 
-PackedStringArray get_queue() 🔗
+PackedStringArray get_queue() 
 
 Returns a list of the animation keys that are currently queued to play.
 
-NodePath get_root() const 🔗
+NodePath get_root() const 
 
 Deprecated: Use AnimationMixer.root_node instead.
 
 Returns the node which node path references will travel from.
 
-float get_section_end_time() const 🔗
+float get_section_end_time() const 
 
 Returns the end time of the section currently being played.
 
-float get_section_start_time() const 🔗
+float get_section_start_time() const 
 
 Returns the start time of the section currently being played.
 
-bool has_section() const 🔗
+bool has_section() const 
 
 Returns true if an animation is currently playing with a section.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if an animation is currently playing (even if speed_scale and/or custom_speed are 0).
 
 Pauses the currently playing animation. The current_animation_position will be kept and calling play() or play_backwards() without arguments or with the same animation name as assigned_animation will resume the animation.
 
-void play(name: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play(name: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name. Custom blend times and speed can be set.
 
@@ -1901,37 +1901,37 @@ The AnimationPlayer keeps track of its current or last played animation with ass
 
 Note: The animation will be updated the next time the AnimationPlayer is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call advance(0).
 
-void play_backwards(name: StringName = &"", custom_blend: float = -1) 🔗
+void play_backwards(name: StringName = &"", custom_blend: float = -1) 
 
 Plays the animation with key name in reverse.
 
 This method is a shorthand for play() with custom_speed = -1.0 and from_end = true, so see its description for more information.
 
-void play_section(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play_section(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name and the section starting from start_time and ending on end_time. See also play().
 
 Setting start_time to a value outside the range of the animation means the start of the animation will be used instead, and setting end_time to a value outside the range of the animation means the end of the animation will be used instead. start_time cannot be equal to end_time.
 
-void play_section_backwards(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1) 🔗
+void play_section_backwards(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1) 
 
 Plays the animation with key name and the section starting from start_time and ending on end_time in reverse.
 
 This method is a shorthand for play_section() with custom_speed = -1.0 and from_end = true, see its description for more information.
 
-void play_section_with_markers(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play_section_with_markers(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name and the section starting from start_marker and ending on end_marker.
 
 If the start marker is empty, the section starts from the beginning of the animation. If the end marker is empty, the section ends on the end of the animation. See also play().
 
-void play_section_with_markers_backwards(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1) 🔗
+void play_section_with_markers_backwards(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1) 
 
 Plays the animation with key name and the section starting from start_marker and ending on end_marker in reverse.
 
 This method is a shorthand for play_section_with_markers() with custom_speed = -1.0 and from_end = true, see its description for more information.
 
-void play_with_capture(name: StringName = &"", duration: float = -1.0, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false, trans_type: TransitionType = 0, ease_type: EaseType = 0) 🔗
+void play_with_capture(name: StringName = &"", duration: float = -1.0, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false, trans_type: TransitionType = 0, ease_type: EaseType = 0) 
 
 See also AnimationMixer.capture().
 
@@ -1943,17 +1943,17 @@ If duration is a negative value, the duration is set to the interval between the
 
 Note: The duration takes speed_scale into account, but custom_speed does not, because the capture cache is interpolated with the blend result and the result may contain multiple animations.
 
-void queue(name: StringName) 🔗
+void queue(name: StringName) 
 
 Queues an animation for playback once the current animation and all previously queued animations are done.
 
 Note: If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 
-void reset_section() 🔗
+void reset_section() 
 
 Resets the current section. Does nothing if a section has not been set.
 
-void seek(seconds: float, update: bool = false, update_only: bool = false) 🔗
+void seek(seconds: float, update: bool = false, update_only: bool = false) 
 
 Seeks the animation to the seconds point in time (in seconds). If update is true, the animation updates too, otherwise it updates at process time. Events between the current frame and seconds are skipped.
 
@@ -1961,39 +1961,39 @@ If update_only is true, the method / audio / animation playback tracks will not 
 
 Note: Seeking to the end of the animation doesn't emit AnimationMixer.animation_finished. If you want to skip animation and emit the signal, use AnimationMixer.advance().
 
-void set_blend_time(animation_from: StringName, animation_to: StringName, sec: float) 🔗
+void set_blend_time(animation_from: StringName, animation_to: StringName, sec: float) 
 
 Specifies a blend time (in seconds) between two animations, referenced by their keys.
 
-void set_method_call_mode(mode: AnimationMethodCallMode) 🔗
+void set_method_call_mode(mode: AnimationMethodCallMode) 
 
 Deprecated: Use AnimationMixer.callback_mode_method instead.
 
 Sets the call mode used for "Call Method" tracks.
 
-void set_process_callback(mode: AnimationProcessCallback) 🔗
+void set_process_callback(mode: AnimationProcessCallback) 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Sets the process notification in which to update animations.
 
-void set_root(path: NodePath) 🔗
+void set_root(path: NodePath) 
 
 Deprecated: Use AnimationMixer.root_node instead.
 
 Sets the node which node path references will travel from.
 
-void set_section(start_time: float = -1, end_time: float = -1) 🔗
+void set_section(start_time: float = -1, end_time: float = -1) 
 
 Changes the start and end times of the section being played. The current playback position will be clamped within the new section. See also play_section().
 
-void set_section_with_markers(start_marker: StringName = &"", end_marker: StringName = &"") 🔗
+void set_section_with_markers(start_marker: StringName = &"", end_marker: StringName = &"") 
 
 Changes the start and end markers of the section being played. The current playback position will be clamped within the new section. See also play_section_with_markers().
 
 If the argument is empty, the section uses the beginning or end of the animation. If both are empty, it means that the section is not set.
 
-void stop(keep_state: bool = false) 🔗
+void stop(keep_state: bool = false) 
 
 Stops the currently playing animation. The animation position is reset to 0 and the custom_speed is reset to 1.0. See also pause().
 
@@ -2079,11 +2079,11 @@ get_process_callback() const
 
 set_process_callback(mode: AnimationProcessCallback)
 
-animation_player_changed() 🔗
+animation_player_changed() 
 
 Emitted when the anim_player is changed.
 
-enum AnimationProcessCallback: 🔗
+enum AnimationProcessCallback: 
 
 AnimationProcessCallback ANIMATION_PROCESS_PHYSICS = 0
 
@@ -2097,7 +2097,7 @@ AnimationProcessCallback ANIMATION_PROCESS_MANUAL = 2
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL.
 
-NodePath advance_expression_base_node = NodePath(".") 🔗
+NodePath advance_expression_base_node = NodePath(".") 
 
 void set_advance_expression_base_node(value: NodePath)
 
@@ -2105,7 +2105,7 @@ NodePath get_advance_expression_base_node()
 
 The path to the Node used to evaluate the AnimationNode Expression if one is not explicitly specified internally.
 
-NodePath anim_player = NodePath("") 🔗
+NodePath anim_player = NodePath("") 
 
 void set_animation_player(value: NodePath)
 
@@ -2113,7 +2113,7 @@ NodePath get_animation_player()
 
 The path to the AnimationPlayer used for animating.
 
-AnimationRootNode tree_root 🔗
+AnimationRootNode tree_root 
 
 void set_tree_root(value: AnimationRootNode)
 
@@ -2121,13 +2121,13 @@ AnimationRootNode get_tree_root()
 
 The root animation node of this AnimationTree. See AnimationRootNode.
 
-AnimationProcessCallback get_process_callback() const 🔗
+AnimationProcessCallback get_process_callback() const 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Returns the process notification in which to update animations.
 
-void set_process_callback(mode: AnimationProcessCallback) 🔗
+void set_process_callback(mode: AnimationProcessCallback) 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
@@ -2352,7 +2352,7 @@ TrackType TYPE_ANIMATION = 8
 
 Animation tracks play animations in other AnimationPlayer nodes.
 
-enum InterpolationType: 🔗
+enum InterpolationType: 
 
 InterpolationType INTERPOLATION_NEAREST = 0
 
@@ -2426,7 +2426,7 @@ FindMode FIND_MODE_EXACT = 2
 
 Finds only the key with matching the time.
 
-bool capture_included = false 🔗
+bool capture_included = false 
 
 bool is_capture_included()
 
@@ -2438,7 +2438,7 @@ The total length of the animation (in seconds).
 
 Note: Length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
 
-LoopMode loop_mode = 0 🔗
+LoopMode loop_mode = 0 
 
 void set_loop_mode(value: LoopMode)
 
@@ -2446,213 +2446,213 @@ LoopMode get_loop_mode()
 
 Determines the behavior of both ends of the animation timeline during animation playback. This indicates whether and how the animation should be restarted, and is also used to correctly interpolate animation cycles.
 
-float step = 0.033333335 🔗
+float step = 0.033333335 
 
 void set_step(value: float)
 
 The animation step value.
 
-void add_marker(name: StringName, time: float) 🔗
+void add_marker(name: StringName, time: float) 
 
 Adds a marker to this Animation.
 
-int add_track(type: TrackType, at_position: int = -1) 🔗
+int add_track(type: TrackType, at_position: int = -1) 
 
 Adds a track to the Animation.
 
-StringName animation_track_get_key_animation(track_idx: int, key_idx: int) const 🔗
+StringName animation_track_get_key_animation(track_idx: int, key_idx: int) const 
 
 Returns the animation name at the key identified by key_idx. The track_idx must be the index of an Animation Track.
 
-int animation_track_insert_key(track_idx: int, time: float, animation: StringName) 🔗
+int animation_track_insert_key(track_idx: int, time: float, animation: StringName) 
 
 Inserts a key with value animation at the given time (in seconds). The track_idx must be the index of an Animation Track.
 
-void animation_track_set_key_animation(track_idx: int, key_idx: int, animation: StringName) 🔗
+void animation_track_set_key_animation(track_idx: int, key_idx: int, animation: StringName) 
 
 Sets the key identified by key_idx to value animation. The track_idx must be the index of an Animation Track.
 
-float audio_track_get_key_end_offset(track_idx: int, key_idx: int) const 🔗
+float audio_track_get_key_end_offset(track_idx: int, key_idx: int) const 
 
 Returns the end offset of the key identified by key_idx. The track_idx must be the index of an Audio Track.
 
 End offset is the number of seconds cut off at the ending of the audio stream.
 
-float audio_track_get_key_start_offset(track_idx: int, key_idx: int) const 🔗
+float audio_track_get_key_start_offset(track_idx: int, key_idx: int) const 
 
 Returns the start offset of the key identified by key_idx. The track_idx must be the index of an Audio Track.
 
 Start offset is the number of seconds cut off at the beginning of the audio stream.
 
-Resource audio_track_get_key_stream(track_idx: int, key_idx: int) const 🔗
+Resource audio_track_get_key_stream(track_idx: int, key_idx: int) const 
 
 Returns the audio stream of the key identified by key_idx. The track_idx must be the index of an Audio Track.
 
-int audio_track_insert_key(track_idx: int, time: float, stream: Resource, start_offset: float = 0, end_offset: float = 0) 🔗
+int audio_track_insert_key(track_idx: int, time: float, stream: Resource, start_offset: float = 0, end_offset: float = 0) 
 
 Inserts an Audio Track key at the given time in seconds. The track_idx must be the index of an Audio Track.
 
 stream is the AudioStream resource to play. start_offset is the number of seconds cut off at the beginning of the audio stream, while end_offset is at the ending.
 
-bool audio_track_is_use_blend(track_idx: int) const 🔗
+bool audio_track_is_use_blend(track_idx: int) const 
 
 Returns true if the track at track_idx will be blended with other animations.
 
-void audio_track_set_key_end_offset(track_idx: int, key_idx: int, offset: float) 🔗
+void audio_track_set_key_end_offset(track_idx: int, key_idx: int, offset: float) 
 
 Sets the end offset of the key identified by key_idx to value offset. The track_idx must be the index of an Audio Track.
 
-void audio_track_set_key_start_offset(track_idx: int, key_idx: int, offset: float) 🔗
+void audio_track_set_key_start_offset(track_idx: int, key_idx: int, offset: float) 
 
 Sets the start offset of the key identified by key_idx to value offset. The track_idx must be the index of an Audio Track.
 
-void audio_track_set_key_stream(track_idx: int, key_idx: int, stream: Resource) 🔗
+void audio_track_set_key_stream(track_idx: int, key_idx: int, stream: Resource) 
 
 Sets the stream of the key identified by key_idx to value stream. The track_idx must be the index of an Audio Track.
 
-void audio_track_set_use_blend(track_idx: int, enable: bool) 🔗
+void audio_track_set_use_blend(track_idx: int, enable: bool) 
 
 Sets whether the track will be blended with other animations. If true, the audio playback volume changes depending on the blend value.
 
-Vector2 bezier_track_get_key_in_handle(track_idx: int, key_idx: int) const 🔗
+Vector2 bezier_track_get_key_in_handle(track_idx: int, key_idx: int) const 
 
 Returns the in handle of the key identified by key_idx. The track_idx must be the index of a Bezier Track.
 
-Vector2 bezier_track_get_key_out_handle(track_idx: int, key_idx: int) const 🔗
+Vector2 bezier_track_get_key_out_handle(track_idx: int, key_idx: int) const 
 
 Returns the out handle of the key identified by key_idx. The track_idx must be the index of a Bezier Track.
 
-float bezier_track_get_key_value(track_idx: int, key_idx: int) const 🔗
+float bezier_track_get_key_value(track_idx: int, key_idx: int) const 
 
 Returns the value of the key identified by key_idx. The track_idx must be the index of a Bezier Track.
 
-int bezier_track_insert_key(track_idx: int, time: float, value: float, in_handle: Vector2 = Vector2(0, 0), out_handle: Vector2 = Vector2(0, 0)) 🔗
+int bezier_track_insert_key(track_idx: int, time: float, value: float, in_handle: Vector2 = Vector2(0, 0), out_handle: Vector2 = Vector2(0, 0)) 
 
 Inserts a Bezier Track key at the given time in seconds. The track_idx must be the index of a Bezier Track.
 
 in_handle is the left-side weight of the added Bezier curve point, out_handle is the right-side one, while value is the actual value at this point.
 
-float bezier_track_interpolate(track_idx: int, time: float) const 🔗
+float bezier_track_interpolate(track_idx: int, time: float) const 
 
 Returns the interpolated value at the given time (in seconds). The track_idx must be the index of a Bezier Track.
 
-void bezier_track_set_key_in_handle(track_idx: int, key_idx: int, in_handle: Vector2, balanced_value_time_ratio: float = 1.0) 🔗
+void bezier_track_set_key_in_handle(track_idx: int, key_idx: int, in_handle: Vector2, balanced_value_time_ratio: float = 1.0) 
 
 Sets the in handle of the key identified by key_idx to value in_handle. The track_idx must be the index of a Bezier Track.
 
-void bezier_track_set_key_out_handle(track_idx: int, key_idx: int, out_handle: Vector2, balanced_value_time_ratio: float = 1.0) 🔗
+void bezier_track_set_key_out_handle(track_idx: int, key_idx: int, out_handle: Vector2, balanced_value_time_ratio: float = 1.0) 
 
 Sets the out handle of the key identified by key_idx to value out_handle. The track_idx must be the index of a Bezier Track.
 
-void bezier_track_set_key_value(track_idx: int, key_idx: int, value: float) 🔗
+void bezier_track_set_key_value(track_idx: int, key_idx: int, value: float) 
 
 Sets the value of the key identified by key_idx to the given value. The track_idx must be the index of a Bezier Track.
 
-int blend_shape_track_insert_key(track_idx: int, time: float, amount: float) 🔗
+int blend_shape_track_insert_key(track_idx: int, time: float, amount: float) 
 
 Inserts a key in a given blend shape track. Returns the key index.
 
-float blend_shape_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 🔗
+float blend_shape_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 
 
 Returns the interpolated blend shape value at the given time (in seconds). The track_idx must be the index of a blend shape track.
 
 Clear the animation (clear all tracks and reset all).
 
-void compress(page_size: int = 8192, fps: int = 120, split_tolerance: float = 4.0) 🔗
+void compress(page_size: int = 8192, fps: int = 120, split_tolerance: float = 4.0) 
 
 Compress the animation and all its tracks in-place. This will make track_is_compressed() return true once called on this Animation. Compressed tracks require less memory to be played, and are designed to be used for complex 3D animations (such as cutscenes) imported from external 3D software. Compression is lossy, but the difference is usually not noticeable in real world conditions.
 
 Note: Compressed tracks have various limitations (such as not being editable from the editor), so only use compressed animations if you actually need them.
 
-void copy_track(track_idx: int, to_animation: Animation) 🔗
+void copy_track(track_idx: int, to_animation: Animation) 
 
 Adds a new track to to_animation that is a copy of the given track from this animation.
 
-int find_track(path: NodePath, type: TrackType) const 🔗
+int find_track(path: NodePath, type: TrackType) const 
 
 Returns the index of the specified track. If the track is not found, return -1.
 
-StringName get_marker_at_time(time: float) const 🔗
+StringName get_marker_at_time(time: float) const 
 
 Returns the name of the marker located at the given time.
 
-Color get_marker_color(name: StringName) const 🔗
+Color get_marker_color(name: StringName) const 
 
 Returns the given marker's color.
 
-PackedStringArray get_marker_names() const 🔗
+PackedStringArray get_marker_names() const 
 
 Returns every marker in this Animation, sorted ascending by time.
 
-float get_marker_time(name: StringName) const 🔗
+float get_marker_time(name: StringName) const 
 
 Returns the given marker's time.
 
-StringName get_next_marker(time: float) const 🔗
+StringName get_next_marker(time: float) const 
 
 Returns the closest marker that comes after the given time. If no such marker exists, an empty string is returned.
 
-StringName get_prev_marker(time: float) const 🔗
+StringName get_prev_marker(time: float) const 
 
 Returns the closest marker that comes before the given time. If no such marker exists, an empty string is returned.
 
-int get_track_count() const 🔗
+int get_track_count() const 
 
 Returns the amount of tracks in the animation.
 
-bool has_marker(name: StringName) const 🔗
+bool has_marker(name: StringName) const 
 
 Returns true if this Animation contains a marker with the given name.
 
-StringName method_track_get_name(track_idx: int, key_idx: int) const 🔗
+StringName method_track_get_name(track_idx: int, key_idx: int) const 
 
 Returns the method name of a method track.
 
-Array method_track_get_params(track_idx: int, key_idx: int) const 🔗
+Array method_track_get_params(track_idx: int, key_idx: int) const 
 
 Returns the arguments values to be called on a method track for a given key in a given track.
 
-void optimize(allowed_velocity_err: float = 0.01, allowed_angular_err: float = 0.01, precision: int = 3) 🔗
+void optimize(allowed_velocity_err: float = 0.01, allowed_angular_err: float = 0.01, precision: int = 3) 
 
 Optimize the animation and all its tracks in-place. This will preserve only as many keys as are necessary to keep the animation within the specified bounds.
 
-int position_track_insert_key(track_idx: int, time: float, position: Vector3) 🔗
+int position_track_insert_key(track_idx: int, time: float, position: Vector3) 
 
 Inserts a key in a given 3D position track. Returns the key index.
 
-Vector3 position_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 🔗
+Vector3 position_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 
 
 Returns the interpolated position value at the given time (in seconds). The track_idx must be the index of a 3D position track.
 
-void remove_marker(name: StringName) 🔗
+void remove_marker(name: StringName) 
 
 Removes the marker with the given name from this Animation.
 
-void remove_track(track_idx: int) 🔗
+void remove_track(track_idx: int) 
 
 Removes a track by specifying the track index.
 
-int rotation_track_insert_key(track_idx: int, time: float, rotation: Quaternion) 🔗
+int rotation_track_insert_key(track_idx: int, time: float, rotation: Quaternion) 
 
 Inserts a key in a given 3D rotation track. Returns the key index.
 
-Quaternion rotation_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 🔗
+Quaternion rotation_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 
 
 Returns the interpolated rotation value at the given time (in seconds). The track_idx must be the index of a 3D rotation track.
 
-int scale_track_insert_key(track_idx: int, time: float, scale: Vector3) 🔗
+int scale_track_insert_key(track_idx: int, time: float, scale: Vector3) 
 
 Inserts a key in a given 3D scale track. Returns the key index.
 
-Vector3 scale_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 🔗
+Vector3 scale_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 
 
 Returns the interpolated scale value at the given time (in seconds). The track_idx must be the index of a 3D scale track.
 
-void set_marker_color(name: StringName, color: Color) 🔗
+void set_marker_color(name: StringName, color: Color) 
 
 Sets the given marker's color.
 
-int track_find_key(track_idx: int, time: float, find_mode: FindMode = 0, limit: bool = false, backward: bool = false) const 🔗
+int track_find_key(track_idx: int, time: float, find_mode: FindMode = 0, limit: bool = false, backward: bool = false) const 
 
 Finds the key index by time in a given track. Optionally, only find it if the approx/exact time is given.
 
@@ -2662,119 +2662,119 @@ If backward is true, the direction is reversed in methods that rely on one direc
 
 For example, in case find_mode is FIND_MODE_NEAREST, if there is no key in the current position just after seeked, the first key found is retrieved by searching before the position, but if backward is true, the first key found is retrieved after the position.
 
-bool track_get_interpolation_loop_wrap(track_idx: int) const 🔗
+bool track_get_interpolation_loop_wrap(track_idx: int) const 
 
 Returns true if the track at track_idx wraps the interpolation loop. New tracks wrap the interpolation loop by default.
 
-InterpolationType track_get_interpolation_type(track_idx: int) const 🔗
+InterpolationType track_get_interpolation_type(track_idx: int) const 
 
 Returns the interpolation type of a given track.
 
-int track_get_key_count(track_idx: int) const 🔗
+int track_get_key_count(track_idx: int) const 
 
 Returns the number of keys in a given track.
 
-float track_get_key_time(track_idx: int, key_idx: int) const 🔗
+float track_get_key_time(track_idx: int, key_idx: int) const 
 
 Returns the time at which the key is located.
 
-float track_get_key_transition(track_idx: int, key_idx: int) const 🔗
+float track_get_key_transition(track_idx: int, key_idx: int) const 
 
 Returns the transition curve (easing) for a specific key (see the built-in math function @GlobalScope.ease()).
 
-Variant track_get_key_value(track_idx: int, key_idx: int) const 🔗
+Variant track_get_key_value(track_idx: int, key_idx: int) const 
 
 Returns the value of a given key in a given track.
 
-NodePath track_get_path(track_idx: int) const 🔗
+NodePath track_get_path(track_idx: int) const 
 
 Gets the path of a track. For more information on the path format, see track_set_path().
 
-TrackType track_get_type(track_idx: int) const 🔗
+TrackType track_get_type(track_idx: int) const 
 
 Gets the type of a track.
 
-int track_insert_key(track_idx: int, time: float, key: Variant, transition: float = 1) 🔗
+int track_insert_key(track_idx: int, time: float, key: Variant, transition: float = 1) 
 
 Inserts a generic key in a given track. Returns the key index.
 
-bool track_is_compressed(track_idx: int) const 🔗
+bool track_is_compressed(track_idx: int) const 
 
 Returns true if the track is compressed, false otherwise. See also compress().
 
-bool track_is_enabled(track_idx: int) const 🔗
+bool track_is_enabled(track_idx: int) const 
 
 Returns true if the track at index track_idx is enabled.
 
-bool track_is_imported(track_idx: int) const 🔗
+bool track_is_imported(track_idx: int) const 
 
 Returns true if the given track is imported. Else, return false.
 
-void track_move_down(track_idx: int) 🔗
+void track_move_down(track_idx: int) 
 
-void track_move_to(track_idx: int, to_idx: int) 🔗
+void track_move_to(track_idx: int, to_idx: int) 
 
 Changes the index position of track track_idx to the one defined in to_idx.
 
-void track_move_up(track_idx: int) 🔗
+void track_move_up(track_idx: int) 
 
-void track_remove_key(track_idx: int, key_idx: int) 🔗
+void track_remove_key(track_idx: int, key_idx: int) 
 
 Removes a key by index in a given track.
 
-void track_remove_key_at_time(track_idx: int, time: float) 🔗
+void track_remove_key_at_time(track_idx: int, time: float) 
 
 Removes a key at time in a given track.
 
-void track_set_enabled(track_idx: int, enabled: bool) 🔗
+void track_set_enabled(track_idx: int, enabled: bool) 
 
 Enables/disables the given track. Tracks are enabled by default.
 
-void track_set_imported(track_idx: int, imported: bool) 🔗
+void track_set_imported(track_idx: int, imported: bool) 
 
 Sets the given track as imported or not.
 
-void track_set_interpolation_loop_wrap(track_idx: int, interpolation: bool) 🔗
+void track_set_interpolation_loop_wrap(track_idx: int, interpolation: bool) 
 
 If true, the track at track_idx wraps the interpolation loop.
 
-void track_set_interpolation_type(track_idx: int, interpolation: InterpolationType) 🔗
+void track_set_interpolation_type(track_idx: int, interpolation: InterpolationType) 
 
 Sets the interpolation type of a given track.
 
-void track_set_key_time(track_idx: int, key_idx: int, time: float) 🔗
+void track_set_key_time(track_idx: int, key_idx: int, time: float) 
 
 Sets the time of an existing key.
 
-void track_set_key_transition(track_idx: int, key_idx: int, transition: float) 🔗
+void track_set_key_transition(track_idx: int, key_idx: int, transition: float) 
 
 Sets the transition curve (easing) for a specific key (see the built-in math function @GlobalScope.ease()).
 
-void track_set_key_value(track_idx: int, key: int, value: Variant) 🔗
+void track_set_key_value(track_idx: int, key: int, value: Variant) 
 
 Sets the value of an existing key.
 
-void track_set_path(track_idx: int, path: NodePath) 🔗
+void track_set_path(track_idx: int, path: NodePath) 
 
 Sets the path of a track. Paths must be valid scene-tree paths to a node and must be specified starting from the AnimationMixer.root_node that will reproduce the animation. Tracks that control properties or bones must append their name after the path, separated by ":".
 
 For example, "character/skeleton:ankle" or "character/mesh:transform/local".
 
-void track_swap(track_idx: int, with_idx: int) 🔗
+void track_swap(track_idx: int, with_idx: int) 
 
 Swaps the track track_idx's index position with the track with_idx.
 
-UpdateMode value_track_get_update_mode(track_idx: int) const 🔗
+UpdateMode value_track_get_update_mode(track_idx: int) const 
 
 Returns the update mode of a value track.
 
-Variant value_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 🔗
+Variant value_track_interpolate(track_idx: int, time_sec: float, backward: bool = false) const 
 
 Returns the interpolated value at the given time (in seconds). The track_idx must be the index of a value track.
 
 A backward mainly affects the direction of key retrieval of the track with UPDATE_DISCRETE converted by AnimationMixer.ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS to match the result with track_find_key().
 
-void value_track_set_update_mode(track_idx: int, mode: UpdateMode) 🔗
+void value_track_set_update_mode(track_idx: int, mode: UpdateMode) 
 
 Sets the update mode of a value track.
 
@@ -2843,7 +2843,7 @@ This signal is emitted when change the key value in the BoneMap. This is used to
 
 This signal is emitted when change the value in profile or change the reference of profile. This is used to update key names in the BoneMap and to redraw the BoneMap editor.
 
-SkeletonProfile profile 🔗
+SkeletonProfile profile 
 
 void set_profile(value: SkeletonProfile)
 
@@ -2851,19 +2851,19 @@ SkeletonProfile get_profile()
 
 A SkeletonProfile of the mapping target. Key names in the BoneMap are synchronized with it.
 
-StringName find_profile_bone_name(skeleton_bone_name: StringName) const 🔗
+StringName find_profile_bone_name(skeleton_bone_name: StringName) const 
 
 Returns a profile bone name having skeleton_bone_name. If not found, an empty StringName will be returned.
 
 In the retargeting process, the returned bone name is the bone name of the target skeleton.
 
-StringName get_skeleton_bone_name(profile_bone_name: StringName) const 🔗
+StringName get_skeleton_bone_name(profile_bone_name: StringName) const 
 
 Returns a skeleton bone name is mapped to profile_bone_name.
 
 In the retargeting process, the returned bone name is the bone name of the source skeleton.
 
-void set_skeleton_bone_name(profile_bone_name: StringName, skeleton_bone_name: StringName) 🔗
+void set_skeleton_bone_name(profile_bone_name: StringName, skeleton_bone_name: StringName) 
 
 Maps a skeleton bone name to profile_bone_name.
 
@@ -2896,7 +2896,7 @@ Note: Tween.tween_callback() is the only correct way to create CallbackTweener. 
 
 set_delay(delay: float)
 
-CallbackTweener set_delay(delay: float) 🔗
+CallbackTweener set_delay(delay: float) 
 
 Makes the callback call delayed by given time in seconds.
 
@@ -3363,15 +3363,15 @@ set_ease(ease: EaseType)
 
 set_trans(trans: TransitionType)
 
-MethodTweener set_delay(delay: float) 🔗
+MethodTweener set_delay(delay: float) 
 
 Sets the time in seconds after which the MethodTweener will start interpolating. By default there's no delay.
 
-MethodTweener set_ease(ease: EaseType) 🔗
+MethodTweener set_ease(ease: EaseType) 
 
 Sets the type of used easing from EaseType. If not set, the default easing is used from the Tween that contains this Tweener.
 
-MethodTweener set_trans(trans: TransitionType) 🔗
+MethodTweener set_trans(trans: TransitionType) 
 
 Sets the type of used transition from TransitionType. If not set, the default transition is used from the Tween that contains this Tweener.
 
@@ -3447,7 +3447,7 @@ BoneUpdate BONE_UPDATE_MAX = 2
 
 Maximum supported bone update mode.
 
-BoneUpdate bone_update = 0 🔗
+BoneUpdate bone_update = 0 
 
 void set_bone_update(value: BoneUpdate)
 
@@ -3459,7 +3459,7 @@ void set_hand(value: Hands)
 
 Specifies whether this node tracks the left or right hand of the player.
 
-NodePath hand_skeleton = NodePath("") 🔗
+NodePath hand_skeleton = NodePath("") 
 
 void set_hand_skeleton(value: NodePath)
 
@@ -3467,7 +3467,7 @@ NodePath get_hand_skeleton()
 
 Set a Skeleton3D node for which the pose positions will be updated.
 
-MotionRange motion_range = 0 🔗
+MotionRange motion_range = 0 
 
 void set_motion_range(value: MotionRange)
 
@@ -3475,7 +3475,7 @@ MotionRange get_motion_range()
 
 Set the motion range (if supported) limiting the hand motion.
 
-SkeletonRig skeleton_rig = 0 🔗
+SkeletonRig skeleton_rig = 0 
 
 void set_skeleton_rig(value: SkeletonRig)
 
@@ -3723,35 +3723,35 @@ set_ease(ease: EaseType)
 
 set_trans(trans: TransitionType)
 
-PropertyTweener as_relative() 🔗
+PropertyTweener as_relative() 
 
 When called, the final value will be used as a relative value instead.
 
 Example: Move the node by 100 pixels to the right.
 
-PropertyTweener from(value: Variant) 🔗
+PropertyTweener from(value: Variant) 
 
 Sets a custom initial value to the PropertyTweener.
 
 Example: Move the node from position (100, 100) to (200, 100).
 
-PropertyTweener from_current() 🔗
+PropertyTweener from_current() 
 
 Makes the PropertyTweener use the current property value (i.e. at the time of creating this PropertyTweener) as a starting point. This is equivalent of using from() with the current value. These two calls will do the same:
 
-PropertyTweener set_custom_interpolator(interpolator_method: Callable) 🔗
+PropertyTweener set_custom_interpolator(interpolator_method: Callable) 
 
 Allows interpolating the value with a custom easing function. The provided interpolator_method will be called with a value ranging from 0.0 to 1.0 and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
 
-PropertyTweener set_delay(delay: float) 🔗
+PropertyTweener set_delay(delay: float) 
 
 Sets the time in seconds after which the PropertyTweener will start interpolating. By default there's no delay.
 
-PropertyTweener set_ease(ease: EaseType) 🔗
+PropertyTweener set_ease(ease: EaseType) 
 
 Sets the type of used easing from EaseType. If not set, the default easing is used from the Tween that contains this Tweener.
 
-PropertyTweener set_trans(trans: TransitionType) 🔗
+PropertyTweener set_trans(trans: TransitionType) 
 
 Sets the type of used transition from TransitionType. If not set, the default transition is used from the Tween that contains this Tweener.
 
@@ -3954,7 +3954,7 @@ This signal is emitted when change the value in profile. This is used to update 
 
 Note: This signal is not connected directly to editor to simplify the reference, instead it is passed on to editor through the BoneMap.
 
-enum TailDirection: 🔗
+enum TailDirection: 
 
 TailDirection TAIL_DIRECTION_AVERAGE_CHILDREN = 0
 
@@ -3980,7 +3980,7 @@ The amount of groups of bones in retargeting section's BoneMap editor. For examp
 
 This property exists to separate the bone list into several sections in the editor.
 
-StringName root_bone = &"" 🔗
+StringName root_bone = &"" 
 
 void set_root_bone(value: StringName)
 
@@ -3988,7 +3988,7 @@ StringName get_root_bone()
 
 A bone name that will be used as the root bone in AnimationTree. This should be the bone of the parent of hips that exists at the world origin.
 
-StringName scale_base_bone = &"" 🔗
+StringName scale_base_bone = &"" 
 
 void set_scale_base_bone(value: StringName)
 
@@ -3996,99 +3996,99 @@ StringName get_scale_base_bone()
 
 A bone name which will use model's height as the coefficient for normalization. For example, SkeletonProfileHumanoid defines it as Hips.
 
-int find_bone(bone_name: StringName) const 🔗
+int find_bone(bone_name: StringName) const 
 
 Returns the bone index that matches bone_name as its name.
 
-StringName get_bone_name(bone_idx: int) const 🔗
+StringName get_bone_name(bone_idx: int) const 
 
 Returns the name of the bone at bone_idx that will be the key name in the BoneMap.
 
 In the retargeting process, the returned bone name is the bone name of the target skeleton.
 
-StringName get_bone_parent(bone_idx: int) const 🔗
+StringName get_bone_parent(bone_idx: int) const 
 
 Returns the name of the bone which is the parent to the bone at bone_idx. The result is empty if the bone has no parent.
 
-StringName get_bone_tail(bone_idx: int) const 🔗
+StringName get_bone_tail(bone_idx: int) const 
 
 Returns the name of the bone which is the tail of the bone at bone_idx.
 
-StringName get_group(bone_idx: int) const 🔗
+StringName get_group(bone_idx: int) const 
 
 Returns the group of the bone at bone_idx.
 
-StringName get_group_name(group_idx: int) const 🔗
+StringName get_group_name(group_idx: int) const 
 
 Returns the name of the group at group_idx that will be the drawing group in the BoneMap editor.
 
-Vector2 get_handle_offset(bone_idx: int) const 🔗
+Vector2 get_handle_offset(bone_idx: int) const 
 
 Returns the offset of the bone at bone_idx that will be the button position in the BoneMap editor.
 
 This is the offset with origin at the top left corner of the square.
 
-Transform3D get_reference_pose(bone_idx: int) const 🔗
+Transform3D get_reference_pose(bone_idx: int) const 
 
 Returns the reference pose transform for bone bone_idx.
 
-TailDirection get_tail_direction(bone_idx: int) const 🔗
+TailDirection get_tail_direction(bone_idx: int) const 
 
 Returns the tail direction of the bone at bone_idx.
 
-Texture2D get_texture(group_idx: int) const 🔗
+Texture2D get_texture(group_idx: int) const 
 
 Returns the texture of the group at group_idx that will be the drawing group background image in the BoneMap editor.
 
-bool is_required(bone_idx: int) const 🔗
+bool is_required(bone_idx: int) const 
 
 Returns whether the bone at bone_idx is required for retargeting.
 
 This value is used by the bone map editor. If this method returns true, and no bone is assigned, the handle color will be red on the bone map editor.
 
-void set_bone_name(bone_idx: int, bone_name: StringName) 🔗
+void set_bone_name(bone_idx: int, bone_name: StringName) 
 
 Sets the name of the bone at bone_idx that will be the key name in the BoneMap.
 
 In the retargeting process, the setting bone name is the bone name of the target skeleton.
 
-void set_bone_parent(bone_idx: int, bone_parent: StringName) 🔗
+void set_bone_parent(bone_idx: int, bone_parent: StringName) 
 
 Sets the bone with name bone_parent as the parent of the bone at bone_idx. If an empty string is passed, then the bone has no parent.
 
-void set_bone_tail(bone_idx: int, bone_tail: StringName) 🔗
+void set_bone_tail(bone_idx: int, bone_tail: StringName) 
 
 Sets the bone with name bone_tail as the tail of the bone at bone_idx.
 
-void set_group(bone_idx: int, group: StringName) 🔗
+void set_group(bone_idx: int, group: StringName) 
 
 Sets the group of the bone at bone_idx.
 
-void set_group_name(group_idx: int, group_name: StringName) 🔗
+void set_group_name(group_idx: int, group_name: StringName) 
 
 Sets the name of the group at group_idx that will be the drawing group in the BoneMap editor.
 
-void set_handle_offset(bone_idx: int, handle_offset: Vector2) 🔗
+void set_handle_offset(bone_idx: int, handle_offset: Vector2) 
 
 Sets the offset of the bone at bone_idx that will be the button position in the BoneMap editor.
 
 This is the offset with origin at the top left corner of the square.
 
-void set_reference_pose(bone_idx: int, bone_name: Transform3D) 🔗
+void set_reference_pose(bone_idx: int, bone_name: Transform3D) 
 
 Sets the reference pose transform for bone bone_idx.
 
-void set_required(bone_idx: int, required: bool) 🔗
+void set_required(bone_idx: int, required: bool) 
 
 Sets the required status for bone bone_idx to required.
 
-void set_tail_direction(bone_idx: int, tail_direction: TailDirection) 🔗
+void set_tail_direction(bone_idx: int, tail_direction: TailDirection) 
 
 Sets the tail direction of the bone at bone_idx.
 
 Note: This only specifies the method of calculation. The actual coordinates required should be stored in an external skeleton, so the calculation itself needs to be done externally.
 
-void set_texture(group_idx: int, texture: Texture2D) 🔗
+void set_texture(group_idx: int, texture: Texture2D) 
 
 Sets the texture of the group at group_idx that will be the drawing group background image in the BoneMap editor.
 
@@ -4117,7 +4117,7 @@ Note: Tween.tween_subtween() is the only correct way to create SubtweenTweener. 
 
 set_delay(delay: float)
 
-SubtweenTweener set_delay(delay: float) 🔗
+SubtweenTweener set_delay(delay: float) 
 
 Sets the time in seconds after which the SubtweenTweener will start running the subtween. By default there's no delay.
 
@@ -4232,15 +4232,15 @@ tween_subtween(subtween: Tween)
 
 Emitted when the Tween has finished all tweening. Never emitted when the Tween is set to infinite looping (see set_loops()).
 
-loop_finished(loop_count: int) 🔗
+loop_finished(loop_count: int) 
 
 Emitted when a full loop is complete (see set_loops()), providing the loop index. This signal is not emitted after the final loop, use finished instead for this case.
 
-step_finished(idx: int) 🔗
+step_finished(idx: int) 
 
 Emitted when one step of the Tween is complete, providing the step index. One step is either a single Tweener or a group of Tweeners running in parallel.
 
-enum TweenProcessMode: 🔗
+enum TweenProcessMode: 
 
 TweenProcessMode TWEEN_PROCESS_PHYSICS = 0
 
@@ -4250,7 +4250,7 @@ TweenProcessMode TWEEN_PROCESS_IDLE = 1
 
 The Tween updates after each process frame (see Node._process()).
 
-enum TweenPauseMode: 🔗
+enum TweenPauseMode: 
 
 TweenPauseMode TWEEN_PAUSE_BOUND = 0
 
@@ -4264,7 +4264,7 @@ TweenPauseMode TWEEN_PAUSE_PROCESS = 2
 
 The Tween will process regardless of whether SceneTree is paused.
 
-enum TransitionType: 🔗
+enum TransitionType: 
 
 TransitionType TRANS_LINEAR = 0
 
@@ -4328,7 +4328,7 @@ EaseType EASE_OUT_IN = 3
 
 A combination of EASE_IN and EASE_OUT. The interpolation is fastest at both ends.
 
-Tween bind_node(node: Node) 🔗
+Tween bind_node(node: Node) 
 
 Binds this Tween with the given node. Tweens are processed directly by the SceneTree, so they run independently of the animated nodes. When you bind a Node with the Tween, the Tween will halt the animation when the object is not inside tree and the Tween will be automatically killed when the bound object is freed. Also TWEEN_PAUSE_BOUND will make the pausing behavior dependent on the bound node.
 
@@ -4336,23 +4336,23 @@ For a shorter way to create and bind a Tween, you can use Node.create_tween().
 
 Used to chain two Tweeners after set_parallel() is called with true.
 
-bool custom_step(delta: float) 🔗
+bool custom_step(delta: float) 
 
 Processes the Tween by the given delta value, in seconds. This is mostly useful for manual control when the Tween is paused. It can also be used to end the Tween animation immediately, by setting delta longer than the whole duration of the Tween animation.
 
 Returns true if the Tween still has Tweeners that haven't finished.
 
-int get_loops_left() const 🔗
+int get_loops_left() const 
 
 Returns the number of remaining loops for this Tween (see set_loops()). A return value of -1 indicates an infinitely looping Tween, and a return value of 0 indicates that the Tween has already finished.
 
-float get_total_elapsed_time() const 🔗
+float get_total_elapsed_time() const 
 
 Returns the total time in seconds the Tween has been animating (i.e. the time since it started, not counting pauses etc.). The time is affected by set_speed_scale(), and stop() will reset it to 0.
 
 Note: As it results from accumulating frame deltas, the time returned after the Tween has finished animating will be slightly greater than the actual Tween duration.
 
-Variant interpolate_value(initial_value: Variant, delta_value: Variant, elapsed_time: float, duration: float, trans_type: TransitionType, ease_type: EaseType) static 🔗
+Variant interpolate_value(initial_value: Variant, delta_value: Variant, elapsed_time: float, duration: float, trans_type: TransitionType, ease_type: EaseType) static 
 
 This method can be used for manual interpolation of a value, when you don't want Tween to do animating for you. It's similar to @GlobalScope.lerp(), but with support for custom transition and easing.
 
@@ -4384,17 +4384,17 @@ Note: If a Tween is paused and not bound to any node, it will exist indefinitely
 
 Resumes a paused or stopped Tween.
 
-Tween set_ease(ease: EaseType) 🔗
+Tween set_ease(ease: EaseType) 
 
 Sets the default ease type for PropertyTweeners and MethodTweeners appended after this method.
 
 Before this method is called, the default ease type is EASE_IN_OUT.
 
-Tween set_ignore_time_scale(ignore: bool = true) 🔗
+Tween set_ignore_time_scale(ignore: bool = true) 
 
 If ignore is true, the tween will ignore Engine.time_scale and update with the real, elapsed time. This affects all Tweeners and their delays. Default value is false.
 
-Tween set_loops(loops: int = 0) 🔗
+Tween set_loops(loops: int = 0) 
 
 Sets the number of times the tweening sequence will be repeated, i.e. set_loops(2) will run the animation twice.
 
@@ -4402,29 +4402,29 @@ Calling this method without arguments will make the Tween run infinitely, until 
 
 Warning: Make sure to always add some duration/delay when using infinite loops. To prevent the game freezing, 0-duration looped animations (e.g. a single CallbackTweener with no delay) are stopped after a small number of loops, which may produce unexpected results. If a Tween's lifetime depends on some node, always use bind_node().
 
-Tween set_parallel(parallel: bool = true) 🔗
+Tween set_parallel(parallel: bool = true) 
 
 If parallel is true, the Tweeners appended after this method will by default run simultaneously, as opposed to sequentially.
 
 Note: Just like with parallel(), the tweener added right before this method will also be part of the parallel step.
 
-Tween set_pause_mode(mode: TweenPauseMode) 🔗
+Tween set_pause_mode(mode: TweenPauseMode) 
 
 Determines the behavior of the Tween when the SceneTree is paused.
 
 Default value is TWEEN_PAUSE_BOUND.
 
-Tween set_process_mode(mode: TweenProcessMode) 🔗
+Tween set_process_mode(mode: TweenProcessMode) 
 
 Determines whether the Tween should run after process frames (see Node._process()) or physics frames (see Node._physics_process()).
 
 Default value is TWEEN_PROCESS_IDLE.
 
-Tween set_speed_scale(speed: float) 🔗
+Tween set_speed_scale(speed: float) 
 
 Scales the speed of tweening. This affects all Tweeners and their delays.
 
-Tween set_trans(trans: TransitionType) 🔗
+Tween set_trans(trans: TransitionType) 
 
 Sets the default transition type for PropertyTweeners and MethodTweeners appended after this method.
 
@@ -4436,7 +4436,7 @@ Note: This does not reset targets of PropertyTweeners to their values when the T
 
 Note: If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using SceneTree.get_processed_tweens().
 
-CallbackTweener tween_callback(callback: Callable) 🔗
+CallbackTweener tween_callback(callback: Callable) 
 
 Creates and appends a CallbackTweener. This method can be used to call an arbitrary method in any object. Use Callable.bind() to bind additional arguments for the call.
 
@@ -4444,7 +4444,7 @@ Example: Object that keeps shooting every 1 second:
 
 Example: Turning a sprite red and then blue, with 2 second delay:
 
-IntervalTweener tween_interval(time: float) 🔗
+IntervalTweener tween_interval(time: float) 
 
 Creates and appends an IntervalTweener. This method can be used to create delays in the tween animation, as an alternative to using the delay in other Tweeners, or when there's no animation (in which case the Tween acts as a timer). time is the length of the interval, in seconds.
 
@@ -4452,7 +4452,7 @@ Example: Creating an interval in code execution:
 
 Example: Creating an object that moves back and forth and jumps every few seconds:
 
-MethodTweener tween_method(method: Callable, from: Variant, to: Variant, duration: float) 🔗
+MethodTweener tween_method(method: Callable, from: Variant, to: Variant, duration: float) 
 
 Creates and appends a MethodTweener. This method is similar to a combination of tween_callback() and tween_property(). It calls a method over time with a tweened value provided as an argument. The value is tweened between from and to over the time specified by duration, in seconds. Use Callable.bind() to bind additional arguments for the call. You can use MethodTweener.set_ease() and MethodTweener.set_trans() to tweak the easing and transition of the value or MethodTweener.set_delay() to delay the tweening.
 
@@ -4460,7 +4460,7 @@ Example: Making a 3D object look from one point to another point:
 
 Example: Setting the text of a Label, using an intermediate method and after a delay:
 
-PropertyTweener tween_property(object: Object, property: NodePath, final_val: Variant, duration: float) 🔗
+PropertyTweener tween_property(object: Object, property: NodePath, final_val: Variant, duration: float) 
 
 Creates and appends a PropertyTweener. This method tweens a property of an object between an initial value and final_val in a span of time equal to duration, in seconds. The initial value by default is the property's value at the time the tweening of the PropertyTweener starts.
 
@@ -4470,7 +4470,7 @@ Note: You can find the correct property name by hovering over the property in th
 
 Example: Moving an object twice from the same position, with different transition types:
 
-SubtweenTweener tween_subtween(subtween: Tween) 🔗
+SubtweenTweener tween_subtween(subtween: Tween) 
 
 Creates and appends a SubtweenTweener. This method can be used to nest subtween within this Tween, allowing for the creation of more complex and composable sequences.
 

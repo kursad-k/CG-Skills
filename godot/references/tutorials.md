@@ -4275,7 +4275,7 @@ Arc hyperbolic cosine.
 
 Arc hyperbolic tangent.
 
-vec_type radians(vec_type degrees) 🔗
+vec_type radians(vec_type degrees) 
 
 Component-wise Function.
 
@@ -4287,7 +4287,7 @@ The input degrees converted to radians.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/radians.xhtml
 
-vec_type degrees(vec_type radians) 🔗
+vec_type degrees(vec_type radians) 
 
 Component-wise Function.
 
@@ -4299,7 +4299,7 @@ The input radians converted to degrees.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/degrees.xhtml
 
-vec_type sin(vec_type angle) 🔗
+vec_type sin(vec_type angle) 
 
 Component-wise Function.
 
@@ -4309,7 +4309,7 @@ The quantity, in radians, of which to return the sine.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sin.xhtml
 
-vec_type cos(vec_type angle) 🔗
+vec_type cos(vec_type angle) 
 
 Component-wise Function.
 
@@ -4319,7 +4319,7 @@ The quantity, in radians, of which to return the cosine.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cos.xhtml
 
-vec_type tan(vec_type angle) 🔗
+vec_type tan(vec_type angle) 
 
 Component-wise Function.
 
@@ -4331,7 +4331,7 @@ The tangent of angle.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tan.xhtml
 
-vec_type asin(vec_type x) 🔗
+vec_type asin(vec_type x) 
 
 Component-wise Function.
 
@@ -4343,7 +4343,7 @@ The angle whose trigonometric sine is x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asin.xhtml
 
-vec_type acos(vec_type x) 🔗
+vec_type acos(vec_type x) 
 
 Component-wise Function.
 
@@ -4357,7 +4357,7 @@ The angle whose trigonometric cosine is x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
-vec_type atan(vec_type y_over_x) 🔗
+vec_type atan(vec_type y_over_x) 
 
 Component-wise Function.
 
@@ -4371,7 +4371,7 @@ The trigonometric arc-tangent of y_over_x and is in the range [-PI/2, PI/2].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
-vec_type atan(vec_type y, vec_type x) 🔗
+vec_type atan(vec_type y, vec_type x) 
 
 Component-wise Function.
 
@@ -4387,7 +4387,7 @@ The trigonometric arc tangent of y/x and is in the range [-PI, PI].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
-vec_type sinh(vec_type x) 🔗
+vec_type sinh(vec_type x) 
 
 Component-wise Function.
 
@@ -4399,7 +4399,7 @@ The hyperbolic sine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sinh.xhtml
 
-vec_type cosh(vec_type x) 🔗
+vec_type cosh(vec_type x) 
 
 Component-wise Function.
 
@@ -4411,7 +4411,7 @@ The hyperbolic cosine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cosh.xhtml
 
-vec_type tanh(vec_type x) 🔗
+vec_type tanh(vec_type x) 
 
 Component-wise Function.
 
@@ -4423,7 +4423,7 @@ The hyperbolic tangent of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tanh.xhtml
 
-vec_type asinh(vec_type x) 🔗
+vec_type asinh(vec_type x) 
 
 Component-wise Function.
 
@@ -4435,7 +4435,7 @@ The arc hyperbolic sine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asinh.xhtml
 
-vec_type acosh(vec_type x) 🔗
+vec_type acosh(vec_type x) 
 
 Component-wise Function.
 
@@ -4447,7 +4447,7 @@ The arc hyperbolic cosine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acosh.xhtml
 
-vec_type atanh(vec_type x) 🔗
+vec_type atanh(vec_type x) 
 
 Component-wise Function.
 
@@ -4527,7 +4527,7 @@ uintBitsToFloat(vec_uint_type x)
 
 uint to float bit copying, no conversion.
 
-vec_type pow(vec_type x, vec_type y) 🔗
+vec_type pow(vec_type x, vec_type y) 
 
 Component-wise Function.
 
@@ -4543,7 +4543,7 @@ The value of x raised to the y power.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
 
-vec_type exp(vec_type x) 🔗
+vec_type exp(vec_type x) 
 
 Component-wise Function.
 
@@ -4557,7 +4557,7 @@ The natural exponentiation of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
 
-vec_type exp2(vec_type x) 🔗
+vec_type exp2(vec_type x) 
 
 Component-wise Function.
 
@@ -4571,7 +4571,7 @@ The value of the power to which 2 will be raised.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
-vec_type log(vec_type x) 🔗
+vec_type log(vec_type x) 
 
 Component-wise Function.
 
@@ -4583,7 +4583,7 @@ The natural logarithm of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log.xhtml
 
-vec_type log2(vec_type x) 🔗
+vec_type log2(vec_type x) 
 
 Component-wise Function.
 
@@ -4595,7 +4595,7 @@ The base-2 logarithm of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
 
-vec_type sqrt(vec_type x) 🔗
+vec_type sqrt(vec_type x) 
 
 Component-wise Function.
 
@@ -4607,7 +4607,7 @@ The square root of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sqrt.xhtml
 
-vec_type inversesqrt(vec_type x) 🔗
+vec_type inversesqrt(vec_type x) 
 
 Component-wise Function.
 
@@ -4619,9 +4619,9 @@ The inverse of the square root of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inversesqrt.xhtml
 
-vec_type abs(vec_type x) 🔗
+vec_type abs(vec_type x) 
 
-vec_int_type abs(vec_int_type x) 🔗
+vec_int_type abs(vec_int_type x) 
 
 Component-wise Function.
 
@@ -4633,9 +4633,9 @@ The absolute value of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
 
-vec_type sign(vec_type x) 🔗
+vec_type sign(vec_type x) 
 
-vec_int_type sign(vec_int_type x) 🔗
+vec_int_type sign(vec_int_type x) 
 
 Component-wise Function.
 
@@ -4645,7 +4645,7 @@ The value from which to extract the sign.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
-vec_type floor(vec_type x) 🔗
+vec_type floor(vec_type x) 
 
 Component-wise Function.
 
@@ -4655,7 +4655,7 @@ The nearest integer that is less than or equal to x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml
 
-vec_type round(vec_type x) 🔗
+vec_type round(vec_type x) 
 
 Component-wise Function.
 
@@ -4665,7 +4665,7 @@ Rounding of values with a fractional part of 0.5 is implementation-dependent. Th
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/round.xhtml
 
-vec_type roundEven(vec_type x) 🔗
+vec_type roundEven(vec_type x) 
 
 Component-wise Function.
 
@@ -4673,7 +4673,7 @@ Rounds x to the nearest integer. A value with a fractional part of 0.5 will alwa
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/roundEven.xhtml
 
-vec_type trunc(vec_type x) 🔗
+vec_type trunc(vec_type x) 
 
 Component-wise Function.
 
@@ -4683,7 +4683,7 @@ The value to evaluate.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/trunc.xhtml
 
-vec_type ceil(vec_type x) 🔗
+vec_type ceil(vec_type x) 
 
 Component-wise Function.
 
@@ -4695,7 +4695,7 @@ The ceiling-ed value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ceil.xhtml
 
-vec_type fract(vec_type x) 🔗
+vec_type fract(vec_type x) 
 
 Component-wise Function.
 
@@ -4709,9 +4709,9 @@ The fractional part of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fract.xhtml
 
-vec_type mod(vec_type x, vec_type y) 🔗
+vec_type mod(vec_type x, vec_type y) 
 
-vec_type mod(vec_type x, float y) 🔗
+vec_type mod(vec_type x, float y) 
 
 Component-wise Function.
 
@@ -4725,7 +4725,7 @@ The value of x modulo y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
 
-vec_type modf(vec_type x, out vec_type i) 🔗
+vec_type modf(vec_type x, out vec_type i) 
 
 Component-wise Function.
 
@@ -4741,17 +4741,17 @@ The fractional part of the number.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/modf.xhtml
 
-vec_type min(vec_type a, vec_type b) 🔗
+vec_type min(vec_type a, vec_type b) 
 
-vec_type min(vec_type a, float b) 🔗
+vec_type min(vec_type a, float b) 
 
-vec_int_type min(vec_int_type a, vec_int_type b) 🔗
+vec_int_type min(vec_int_type a, vec_int_type b) 
 
-vec_int_type min(vec_int_type a, int b) 🔗
+vec_int_type min(vec_int_type a, int b) 
 
-vec_uint_type min(vec_uint_type a, vec_uint_type b) 🔗
+vec_uint_type min(vec_uint_type a, vec_uint_type b) 
 
-vec_uint_type min(vec_uint_type a, uint b) 🔗
+vec_uint_type min(vec_uint_type a, uint b) 
 
 Component-wise Function.
 
@@ -4765,17 +4765,17 @@ The second value to compare.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
-vec_type max(vec_type a, vec_type b) 🔗
+vec_type max(vec_type a, vec_type b) 
 
-vec_type max(vec_type a, float b) 🔗
+vec_type max(vec_type a, float b) 
 
-vec_uint_type max(vec_uint_type a, vec_uint_type b) 🔗
+vec_uint_type max(vec_uint_type a, vec_uint_type b) 
 
-vec_uint_type max(vec_uint_type a, uint b) 🔗
+vec_uint_type max(vec_uint_type a, uint b) 
 
-vec_int_type max(vec_int_type a, vec_int_type b) 🔗
+vec_int_type max(vec_int_type a, vec_int_type b) 
 
-vec_int_type max(vec_int_type a, int b) 🔗
+vec_int_type max(vec_int_type a, int b) 
 
 Component-wise Function.
 
@@ -4789,17 +4789,17 @@ The second value to compare.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
-vec_type clamp(vec_type x, vec_type minVal, vec_type maxVal) 🔗
+vec_type clamp(vec_type x, vec_type minVal, vec_type maxVal) 
 
-vec_type clamp(vec_type x, float minVal, float maxVal) 🔗
+vec_type clamp(vec_type x, float minVal, float maxVal) 
 
-vec_int_type clamp(vec_int_type x, vec_int_type minVal, vec_int_type maxVal) 🔗
+vec_int_type clamp(vec_int_type x, vec_int_type minVal, vec_int_type maxVal) 
 
-vec_int_type clamp(vec_int_type x, int minVal, int maxVal) 🔗
+vec_int_type clamp(vec_int_type x, int minVal, int maxVal) 
 
-vec_uint_type clamp(vec_uint_type x, vec_uint_type minVal, vec_uint_type maxVal) 🔗
+vec_uint_type clamp(vec_uint_type x, vec_uint_type minVal, vec_uint_type maxVal) 
 
-vec_uint_type clamp(vec_uint_type x, uint minVal, uint maxVal) 🔗
+vec_uint_type clamp(vec_uint_type x, uint minVal, uint maxVal) 
 
 Component-wise Function.
 
@@ -4815,9 +4815,9 @@ The upper end of the range into which to constrain x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
-vec_type mix(vec_type a, vec_type b, vec_type c) 🔗
+vec_type mix(vec_type a, vec_type b, vec_type c) 
 
-vec_type mix(vec_type a, vec_type b, float c) 🔗
+vec_type mix(vec_type a, vec_type b, float c) 
 
 Component-wise Function.
 
@@ -4837,7 +4837,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
-vec_type mix(vec_type a, vec_type b, vec_bool_type c) 🔗
+vec_type mix(vec_type a, vec_type b, vec_bool_type c) 
 
 Selects either value a or value b based on the value of c. For a component of c that is false, the corresponding component of a is returned. For a component of c that is true, the corresponding component of b is returned. Components of a and b that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
@@ -4853,7 +4853,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
-vec_type fma(vec_type a, vec_type b, vec_type c) 🔗
+vec_type fma(vec_type a, vec_type b, vec_type c) 
 
 Component-wise Function.
 
@@ -4877,9 +4877,9 @@ The value of a * b + c.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fma.xhtml
 
-vec_type step(vec_type a, vec_type b) 🔗
+vec_type step(vec_type a, vec_type b) 
 
-vec_type step(float a, vec_type b) 🔗
+vec_type step(float a, vec_type b) 
 
 Component-wise Function.
 
@@ -4893,9 +4893,9 @@ The value to be used to generate the step function.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
 
-vec_type smoothstep(vec_type a, vec_type b, vec_type c) 🔗
+vec_type smoothstep(vec_type a, vec_type b, vec_type c) 
 
-vec_type smoothstep(float a, float b, vec_type c) 🔗
+vec_type smoothstep(float a, float b, vec_type c) 
 
 Component-wise Function.
 
@@ -4915,7 +4915,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
 
-vec_bool_type isnan(vec_type x) 🔗
+vec_bool_type isnan(vec_type x) 
 
 Component-wise Function.
 
@@ -4925,7 +4925,7 @@ The value to test for NaN.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isnan.xhtml
 
-vec_bool_type isinf(vec_type x) 🔗
+vec_bool_type isinf(vec_type x) 
 
 Component-wise Function.
 
@@ -4935,7 +4935,7 @@ The value to test for infinity.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isinf.xhtml
 
-vec_int_type floatBitsToInt(vec_type x) 🔗
+vec_int_type floatBitsToInt(vec_type x) 
 
 Component-wise Function.
 
@@ -4949,7 +4949,7 @@ The floating-point encoding of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
-vec_uint_type floatBitsToUint(vec_type x) 🔗
+vec_uint_type floatBitsToUint(vec_type x) 
 
 Component-wise Function.
 
@@ -4963,7 +4963,7 @@ The floating-point encoding of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
-vec_type intBitsToFloat(vec_int_type x) 🔗
+vec_type intBitsToFloat(vec_int_type x) 
 
 Component-wise Function.
 
@@ -4979,7 +4979,7 @@ A floating-point value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
-vec_type uintBitsToFloat(vec_uint_type x) 🔗
+vec_type uintBitsToFloat(vec_uint_type x) 
 
 Component-wise Function.
 
@@ -5027,7 +5027,7 @@ transpose(mat_type m)
 
 determinant(mat_type m)
 
-float length(vec_type x) 🔗
+float length(vec_type x) 
 
 Returns the length of the vector. ie. sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])
 
@@ -5035,7 +5035,7 @@ The length of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/length.xhtml
 
-float distance(vec_type a, vec_type b) 🔗
+float distance(vec_type a, vec_type b) 
 
 Returns the distance between the two points a and b.
 
@@ -5043,13 +5043,13 @@ The scalar distance between the points
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/distance.xhtml
 
-float dot(vec_type a, vec_type b) 🔗
+float dot(vec_type a, vec_type b) 
 
 Returns the dot product of two vectors, a and b. i.e., a.x * b.x + a.y * b.y + ...
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dot.xhtml
 
-vec3 cross(vec3 a, vec3 b) 🔗
+vec3 cross(vec3 a, vec3 b) 
 
 Returns the cross product of two vectors. i.e.:
 
@@ -5057,7 +5057,7 @@ The cross product of a and b.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cross.xhtml
 
-vec_type normalize(vec_type x) 🔗
+vec_type normalize(vec_type x) 
 
 Returns a vector with the same direction as x but with length 1.0.
 
@@ -5067,7 +5067,7 @@ The normalized vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/normalize.xhtml
 
-vec3 reflect(vec3 I, vec3 N) 🔗
+vec3 reflect(vec3 I, vec3 N) 
 
 Calculate the reflection direction for an incident vector.
 
@@ -5079,7 +5079,7 @@ The reflection vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml
 
-vec3 refract(vec3 I, vec3 N, float eta) 🔗
+vec3 refract(vec3 I, vec3 N, float eta) 
 
 Calculate the refraction direction for an incident vector.
 
@@ -5093,7 +5093,7 @@ The refraction vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/refract.xhtml
 
-vec_type faceforward(vec_type N, vec_type I, vec_type Nref) 🔗
+vec_type faceforward(vec_type N, vec_type I, vec_type Nref) 
 
 Returns a vector pointing in the same direction as another.
 
@@ -5105,7 +5105,7 @@ The reference vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/faceforward.xhtml
 
-mat_type matrixCompMult(mat_type x, mat_type y) 🔗
+mat_type matrixCompMult(mat_type x, mat_type y) 
 
 Perform a component-wise multiplication of two matrices.
 
@@ -5119,7 +5119,7 @@ The resultant matrix.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/matrixCompMult.xhtml
 
-mat_type outerProduct(vec_type column, vec_type row) 🔗
+mat_type outerProduct(vec_type column, vec_type row) 
 
 Calculate the outer product of a pair of vectors.
 
@@ -5133,7 +5133,7 @@ The outer product matrix.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/outerProduct.xhtml
 
-mat_type transpose(mat_type m) 🔗
+mat_type transpose(mat_type m) 
 
 Calculate the transpose of a matrix.
 
@@ -5143,7 +5143,7 @@ A new matrix that is the transpose of the input matrix m.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/transpose.xhtml
 
-float determinant(mat_type m) 🔗
+float determinant(mat_type m) 
 
 Calculate the determinant of a matrix.
 
@@ -5151,7 +5151,7 @@ The determinant of the input matrix m.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/determinant.xhtml
 
-mat_type inverse(mat_type m) 🔗
+mat_type inverse(mat_type m) 
 
 Calculate the inverse of a matrix.
 
@@ -5193,7 +5193,7 @@ true if all components are true, false otherwise.
 
 Invert boolean vector.
 
-vec_bool_type lessThan(vec_type x, vec_type y) 🔗
+vec_bool_type lessThan(vec_type x, vec_type y) 
 
 Performs a component-wise less-than comparison of two vectors.
 
@@ -5205,7 +5205,7 @@ A boolean vector in which each element i is computed as x[i] < y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
 
-vec_bool_type greaterThan(vec_type x, vec_type y) 🔗
+vec_bool_type greaterThan(vec_type x, vec_type y) 
 
 Performs a component-wise greater-than comparison of two vectors.
 
@@ -5217,7 +5217,7 @@ A boolean vector in which each element i is computed as x[i] > y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
 
-vec_bool_type lessThanEqual(vec_type x, vec_type y) 🔗
+vec_bool_type lessThanEqual(vec_type x, vec_type y) 
 
 Performs a component-wise less-than-or-equal comparison of two vectors.
 
@@ -5229,7 +5229,7 @@ A boolean vector in which each element i is computed as x[i] <= y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
 
-vec_bool_type greaterThanEqual(vec_type x, vec_type y) 🔗
+vec_bool_type greaterThanEqual(vec_type x, vec_type y) 
 
 Performs a component-wise greater-than-or-equal comparison of two vectors.
 
@@ -5241,7 +5241,7 @@ A boolean vector in which each element i is computed as x[i] >= y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
 
-vec_bool_type equal(vec_type x, vec_type y) 🔗
+vec_bool_type equal(vec_type x, vec_type y) 
 
 Performs a component-wise equal-to comparison of two vectors.
 
@@ -5253,7 +5253,7 @@ A boolean vector in which each element i is computed as x[i] == y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
 
-vec_bool_type notEqual(vec_type x, vec_type y) 🔗
+vec_bool_type notEqual(vec_type x, vec_type y) 
 
 Performs a component-wise not-equal-to comparison of two vectors.
 
@@ -5265,7 +5265,7 @@ A boolean vector in which each element i is computed as x[i] != y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
 
-bool any(vec_bool_type x) 🔗
+bool any(vec_bool_type x) 
 
 Returns true if any element of a boolean vector is true, false otherwise.
 
@@ -5277,7 +5277,7 @@ True if any element of x is true and false otherwise.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
 
-bool all(vec_bool_type x) 🔗
+bool all(vec_bool_type x) 
 
 Returns true if all elements of a boolean vector are true, false otherwise.
 
@@ -5289,7 +5289,7 @@ true if all elements of x are true and false otherwise.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
 
-vec_bool_type not(vec_bool_type x) 🔗
+vec_bool_type not(vec_bool_type x) 
 
 Logically invert a boolean vector.
 
@@ -5359,15 +5359,15 @@ Sum of absolute derivative in x and y.
 
 Not available when using the Compatibility renderer.
 
-ivec2 textureSize(gsampler2D s, int lod) 🔗
+ivec2 textureSize(gsampler2D s, int lod) 
 
-ivec2 textureSize(samplerCube s, int lod) 🔗
+ivec2 textureSize(samplerCube s, int lod) 
 
-ivec2 textureSize(samplerCubeArray s, int lod) 🔗
+ivec2 textureSize(samplerCubeArray s, int lod) 
 
-ivec3 textureSize(gsampler2DArray s, int lod) 🔗
+ivec3 textureSize(gsampler2DArray s, int lod) 
 
-ivec3 textureSize(gsampler3D s, int lod) 🔗
+ivec3 textureSize(gsampler3D s, int lod) 
 
 Retrieves the dimensions of a level of a texture.
 
@@ -5383,13 +5383,13 @@ The dimensions of level lod (if present) of the texture bound to sampler.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
-vec2 textureQueryLod(gsampler2D s, vec2 p) 🔗
+vec2 textureQueryLod(gsampler2D s, vec2 p) 
 
-vec2 textureQueryLod(gsampler2DArray s, vec2 p) 🔗
+vec2 textureQueryLod(gsampler2DArray s, vec2 p) 
 
-vec2 textureQueryLod(gsampler3D s, vec3 p) 🔗
+vec2 textureQueryLod(gsampler3D s, vec3 p) 
 
-vec2 textureQueryLod(samplerCube s, vec3 p) 🔗
+vec2 textureQueryLod(samplerCube s, vec3 p) 
 
 Available only in the fragment shader.
 
@@ -5405,13 +5405,13 @@ The texture coordinates at which the level-of-detail will be queried.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
-int textureQueryLevels(gsampler2D s) 🔗
+int textureQueryLevels(gsampler2D s) 
 
-int textureQueryLevels(gsampler2DArray s) 🔗
+int textureQueryLevels(gsampler2DArray s) 
 
-int textureQueryLevels(gsampler3D s) 🔗
+int textureQueryLevels(gsampler3D s) 
 
-int textureQueryLevels(samplerCube s) 🔗
+int textureQueryLevels(samplerCube s) 
 
 Compute the number of accessible mipmap levels of a texture.
 
@@ -5423,17 +5423,17 @@ The number of accessible mipmap levels in the texture, or 0.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
-gvec4_type texture(gsampler2D s, vec2 p [, float bias] ) 🔗
+gvec4_type texture(gsampler2D s, vec2 p [, float bias] ) 
 
-gvec4_type texture(gsampler2DArray s, vec3 p [, float bias] ) 🔗
+gvec4_type texture(gsampler2DArray s, vec3 p [, float bias] ) 
 
-gvec4_type texture(gsampler3D s, vec3 p [, float bias] ) 🔗
+gvec4_type texture(gsampler3D s, vec3 p [, float bias] ) 
 
-vec4 texture(samplerCube s, vec3 p [, float bias] ) 🔗
+vec4 texture(samplerCube s, vec3 p [, float bias] ) 
 
-vec4 texture(samplerCubeArray s, vec4 p [, float bias] ) 🔗
+vec4 texture(samplerCubeArray s, vec4 p [, float bias] ) 
 
-vec4 texture(samplerExternalOES s, vec2 p [, float bias] ) 🔗
+vec4 texture(samplerExternalOES s, vec2 p [, float bias] ) 
 
 Retrieves texels from a texture.
 
@@ -5451,11 +5451,11 @@ An optional bias to be applied during level-of-detail computation.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
-gvec4_type textureProj(gsampler2D s, vec3 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler2D s, vec3 p [, float bias] ) 
 
-gvec4_type textureProj(gsampler2D s, vec4 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler2D s, vec4 p [, float bias] ) 
 
-gvec4_type textureProj(gsampler3D s, vec4 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler3D s, vec4 p [, float bias] ) 
 
 Perform a texture lookup with projection.
 
@@ -5469,15 +5469,15 @@ Optional bias to be applied during level-of-detail computation.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
-gvec4_type textureLod(gsampler2D s, vec2 p, float lod) 🔗
+gvec4_type textureLod(gsampler2D s, vec2 p, float lod) 
 
-gvec4_type textureLod(gsampler2DArray s, vec3 p, float lod) 🔗
+gvec4_type textureLod(gsampler2DArray s, vec3 p, float lod) 
 
-gvec4_type textureLod(gsampler3D s, vec3 p, float lod) 🔗
+gvec4_type textureLod(gsampler3D s, vec3 p, float lod) 
 
-vec4 textureLod(samplerCube s, vec3 p, float lod) 🔗
+vec4 textureLod(samplerCube s, vec3 p, float lod) 
 
-vec4 textureLod(samplerCubeArray s, vec4 p, float lod) 🔗
+vec4 textureLod(samplerCubeArray s, vec4 p, float lod) 
 
 Performs a texture lookup at coordinate p from the texture bound to sampler with an explicit level-of-detail as specified in lod. lod specifies λbase and sets the partial derivatives as follows:
 
@@ -5489,11 +5489,11 @@ The explicit level-of-detail.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
-gvec4_type textureProjLod(gsampler2D s, vec3 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler2D s, vec3 p, float lod) 
 
-gvec4_type textureProjLod(gsampler2D s, vec4 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler2D s, vec4 p, float lod) 
 
-gvec4_type textureProjLod(gsampler3D s, vec4 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler3D s, vec4 p, float lod) 
 
 Performs a texture lookup with projection from an explicitly specified level-of-detail.
 
@@ -5507,15 +5507,15 @@ The explicit level-of-detail from which to fetch texels.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
 
-gvec4_type textureGrad(gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureGrad(gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureGrad(gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-vec4 textureGrad(samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) 🔗
+vec4 textureGrad(samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) 
 
-vec4 textureGrad(samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) 🔗
+vec4 textureGrad(samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) 
 
 δs/δx=δp/δx for a 1D texture, δp.s/δx otherwise
 
@@ -5541,11 +5541,11 @@ The partial derivative of P with respect to window y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
-gvec4_type textureProjGrad(gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureProjGrad(gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureProjGrad(gsampler3D s, vec4 p, vec3 dPdx, vec3 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler3D s, vec4 p, vec3 dPdx, vec3 dPdy) 
 
 Perform a texture lookup with projection and explicit gradients.
 
@@ -5561,11 +5561,11 @@ The partial derivative of p with respect to window y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
-gvec4_type texelFetch(gsampler2D s, ivec2 p, int lod) 🔗
+gvec4_type texelFetch(gsampler2D s, ivec2 p, int lod) 
 
-gvec4_type texelFetch(gsampler2DArray s, ivec3 p, int lod) 🔗
+gvec4_type texelFetch(gsampler2DArray s, ivec3 p, int lod) 
 
-gvec4_type texelFetch(gsampler3D s, ivec3 p, int lod) 🔗
+gvec4_type texelFetch(gsampler3D s, ivec3 p, int lod) 
 
 Performs a lookup of a single texel from texture coordinate p in the texture bound to sampler.
 
@@ -5577,11 +5577,11 @@ Specifies the level-of-detail within the texture from which the texel will be fe
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
-gvec4_type textureGather(gsampler2D s, vec2 p [, int comps] ) 🔗
+gvec4_type textureGather(gsampler2D s, vec2 p [, int comps] ) 
 
-gvec4_type textureGather(gsampler2DArray s, vec3 p [, int comps] ) 🔗
+gvec4_type textureGather(gsampler2DArray s, vec3 p [, int comps] ) 
 
-vec4 textureGather(samplerCube s, vec3 p [, int comps] ) 🔗
+vec4 textureGather(samplerCube s, vec3 p [, int comps] ) 
 
 Gathers four texels from a texture.
 
@@ -5593,7 +5593,7 @@ optional the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) th
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
-vec_type dFdx(vec_type p) 🔗
+vec_type dFdx(vec_type p) 
 
 Available only in the fragment shader.
 
@@ -5611,7 +5611,7 @@ The partial derivative of p.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdxCoarse(vec_type p) 🔗
+vec_type dFdxCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5629,7 +5629,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdxFine(vec_type p) 🔗
+vec_type dFdxFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5647,7 +5647,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdy(vec_type p) 🔗
+vec_type dFdy(vec_type p) 
 
 Available only in the fragment shader.
 
@@ -5665,7 +5665,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdyCoarse(vec_type p) 🔗
+vec_type dFdyCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5683,7 +5683,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdyFine(vec_type p) 🔗
+vec_type dFdyFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5701,7 +5701,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type fwidth(vec_type p) 🔗
+vec_type fwidth(vec_type p) 
 
 Returns the sum of the absolute value of derivatives in x and y.
 
@@ -5715,7 +5715,7 @@ The partial derivative.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
-vec_type fwidthCoarse(vec_type p) 🔗
+vec_type fwidthCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5731,7 +5731,7 @@ The partial derivative.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
-vec_type fwidthFine(vec_type p) 🔗
+vec_type fwidthFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -5759,7 +5759,7 @@ Convert four normalized (range 0..1) 32-bit floats into 8-bit unsigned ints and 
 
 Convert four signed normalized (range -1..1) 32-bit floats into 8-bit signed ints and pack them.
 
-uint packHalf2x16(vec2 v) 🔗
+uint packHalf2x16(vec2 v) 
 
 Converts two 32-bit floating-point quantities to 16-bit floating-point quantities and packs them into a single 32-bit integer.
 
@@ -5769,7 +5769,7 @@ A vector of two 32-bit floating-point values that are to be converted to 16-bit 
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packHalf2x16.xhtml
 
-vec2 unpackHalf2x16(uint v) 🔗
+vec2 unpackHalf2x16(uint v) 
 
 Inverse of packHalf2x16.
 
@@ -5781,7 +5781,7 @@ Two unpacked floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
 
-uint packUnorm2x16(vec2 v) 🔗
+uint packUnorm2x16(vec2 v) 
 
 Pack floating-point values into an unsigned integer.
 
@@ -5797,7 +5797,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec2 unpackUnorm2x16(uint v) 🔗
+vec2 unpackUnorm2x16(uint v) 
 
 Unpack floating-point values from an unsigned integer.
 
@@ -5811,7 +5811,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packSnorm2x16(vec2 v) 🔗
+uint packSnorm2x16(vec2 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -5827,7 +5827,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec2 unpackSnorm2x16(uint v) 🔗
+vec2 unpackSnorm2x16(uint v) 
 
 Unpacks floating-point values from an unsigned integer.
 
@@ -5843,7 +5843,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packUnorm4x8(vec4 v) 🔗
+uint packUnorm4x8(vec4 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -5859,7 +5859,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec4 unpackUnorm4x8(uint v) 🔗
+vec4 unpackUnorm4x8(uint v) 
 
 Unpacks floating-point values from an unsigned integer.
 
@@ -5873,7 +5873,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packSnorm4x8(vec4 v) 🔗
+uint packSnorm4x8(vec4 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -5889,7 +5889,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec4 unpackSnorm4x8(uint v) 🔗
+vec4 unpackSnorm4x8(uint v) 
 
 Unpack floating-point values from an unsigned integer.
 
@@ -5935,7 +5935,7 @@ frexp(vec_type x, out vec_int_type exp)
 
 Splits a floating-point number (x) into significand integral components
 
-vec_int_type bitfieldExtract(vec_int_type value, int offset, int bits) 🔗
+vec_int_type bitfieldExtract(vec_int_type value, int offset, int bits) 
 
 Extracts a subset of the bits of value and returns it in the least significant bits of the result. The range of bits extracted is [offset, offset + bits - 1].
 
@@ -5959,7 +5959,7 @@ Integer with the requested bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
-vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 🔗
+vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 
 
 Component-wise Function.
 
@@ -5985,9 +5985,9 @@ Integer with the requested bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
-vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 🔗
+vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 
 
-vec_uint_type bitfieldInsert(vec_uint_type base, vec_uint_type insert, int offset, int bits) 🔗
+vec_uint_type bitfieldInsert(vec_uint_type base, vec_uint_type insert, int offset, int bits) 
 
 Component-wise Function.
 
@@ -6015,9 +6015,9 @@ base with inserted bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
 
-vec_int_type bitfieldReverse(vec_int_type value) 🔗
+vec_int_type bitfieldReverse(vec_int_type value) 
 
-vec_uint_type bitfieldReverse(vec_uint_type value) 🔗
+vec_uint_type bitfieldReverse(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -6031,9 +6031,9 @@ value but with its bits reversed.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
 
-vec_int_type bitCount(vec_int_type value) 🔗
+vec_int_type bitCount(vec_int_type value) 
 
-vec_uint_type bitCount(vec_uint_type value) 🔗
+vec_uint_type bitCount(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -6045,9 +6045,9 @@ The number of bits that are set to 1 in the binary representation of value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
 
-vec_int_type findLSB(vec_int_type value) 🔗
+vec_int_type findLSB(vec_int_type value) 
 
-vec_uint_type findLSB(vec_uint_type value) 🔗
+vec_uint_type findLSB(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -6061,9 +6061,9 @@ The bit number of the least significant bit that is set to 1 in the binary repre
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
 
-vec_int_type findMSB(vec_int_type value) 🔗
+vec_int_type findMSB(vec_int_type value) 
 
-vec_uint_type findMSB(vec_uint_type value) 🔗
+vec_uint_type findMSB(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -6081,7 +6081,7 @@ The bit number of the most significant bit that is set to 1 in the binary repres
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
 
-void imulExtended(vec_int_type x, vec_int_type y, out vec_int_type msb, out vec_int_type lsb) 🔗
+void imulExtended(vec_int_type x, vec_int_type y, out vec_int_type msb, out vec_int_type lsb) 
 
 Component-wise Function.
 
@@ -6099,7 +6099,7 @@ The variable to receive the least significant word of the product.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
-void umulExtended(vec_uint_type x, vec_uint_type y, out vec_uint_type msb, out vec_uint_type lsb) 🔗
+void umulExtended(vec_uint_type x, vec_uint_type y, out vec_uint_type msb, out vec_uint_type lsb) 
 
 Component-wise Function.
 
@@ -6117,7 +6117,7 @@ The variable to receive the least significant word of the product.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
-vec_uint_type uaddCarry(vec_uint_type x, vec_uint_type y, out vec_uint_type carry) 🔗
+vec_uint_type uaddCarry(vec_uint_type x, vec_uint_type y, out vec_uint_type carry) 
 
 Component-wise Function.
 
@@ -6129,7 +6129,7 @@ adds two 32-bit unsigned integer variables (scalars or vectors) and generates a 
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uaddCarry.xhtml
 
-vec_uint_type usubBorrow(vec_uint_type x, vec_uint_type y, out vec_uint_type borrow) 🔗
+vec_uint_type usubBorrow(vec_uint_type x, vec_uint_type y, out vec_uint_type borrow) 
 
 Component-wise Function.
 
@@ -6141,7 +6141,7 @@ The difference of x and y if non-negative, or 232 plus that difference otherwise
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/usubBorrow.xhtml
 
-vec_type ldexp(vec_type x, out vec_int_type exp) 🔗
+vec_type ldexp(vec_type x, out vec_int_type exp) 
 
 Component-wise Function.
 
@@ -6155,7 +6155,7 @@ The value to be used as a source of exponent.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ldexp.xhtml
 
-vec_type frexp(vec_type x, out vec_int_type exp) 🔗
+vec_type frexp(vec_type x, out vec_int_type exp) 
 
 Component-wise Function.
 
@@ -23506,25 +23506,25 @@ Newer or high-end. Requires Vulkan, Direct3D 12, or Metal support.
 
 Runs on old and low-end hardware
 
-✔️ Yes, but slower than Compatibility.
+️ Yes, but slower than Compatibility.
 
-✔️ Yes, but slowest of all renderers.
+️ Yes, but slowest of all renderers.
 
 Runs on hardware without RenderingDevice support
 
 Mobile, low-end desktop, web.
 
-⚠️ Supported, but poorly optimized. Use Mobile or Compatibility instead.
+️ Supported, but poorly optimized. Use Mobile or Compatibility instead.
 
-✔️ Yes. Recommended for standalone headsets.
+️ Yes. Recommended for standalone headsets.
 
-✔️ Yes. Recommended for desktop headsets.
+️ Yes. Recommended for desktop headsets.
 
-⚠️ Supported, but poorly optimized. Use Mobile or Compatibility instead.
+️ Supported, but poorly optimized. Use Mobile or Compatibility instead.
 
-✔️ Yes, but Compatibility is usually good enough for 2D.
+️ Yes, but Compatibility is usually good enough for 2D.
 
-✔️ Yes, but Compatibility is usually good enough for 2D.
+️ Yes, but Compatibility is usually good enough for 2D.
 
 2D and core 3D features.
 
@@ -23538,15 +23538,15 @@ Core 3D rendering features
 
 Advanced rendering features
 
-⚠️ Yes, limited by mobile hardware.
+️ Yes, limited by mobile hardware.
 
-✔️ Yes. All rendering features are supported.
+️ Yes. All rendering features are supported.
 
-⚠️ Some new rendering features are added to Compatibility. Features are added after Mobile and Forward+.
+️ Some new rendering features are added to Compatibility. Features are added after Mobile and Forward+.
 
-✔️ Most new rendering features are added to Mobile. Mobile usually gets new features as Forward+ does.
+️ Most new rendering features are added to Mobile. Mobile usually gets new features as Forward+ does.
 
-✔️ All new features are added to Forward+. As the focus of new development, Forward+ gets features first.
+️ All new features are added to Forward+. As the focus of new development, Forward+ gets features first.
 
 Low base cost, but high scaling cost.
 
@@ -23582,13 +23582,13 @@ Light projector textures
 
 See Introduction to global illumination for more information.
 
-✔️ Supported, 2 per mesh.
+️ Supported, 2 per mesh.
 
-✔️ Supported, 8 per mesh.
+️ Supported, 8 per mesh.
 
-✔️ Supported, unlimited.
+️ Supported, unlimited.
 
-⚠️ Rendering of baked lightmaps is supported. Baking requires hardware with RenderingDevice support.
+️ Rendering of baked lightmaps is supported. Baking requires hardware with RenderingDevice support.
 
 Screen-Space Indirect Lighting (SSIL)
 
@@ -23622,7 +23622,7 @@ See Shading reference for more information.
 
 Normal/Roughness texture
 
-⚠️ Supported, but comes with a performance penalty on older devices.
+️ Supported, but comes with a performance penalty on older devices.
 
 Variable rate shading
 

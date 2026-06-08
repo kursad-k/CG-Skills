@@ -203,15 +203,15 @@ add_feed(feed: CameraFeed)
 
 remove_feed(feed: CameraFeed)
 
-camera_feed_added(id: int) 🔗
+camera_feed_added(id: int) 
 
 Emitted when a CameraFeed is added (e.g. a webcam is plugged in).
 
-camera_feed_removed(id: int) 🔗
+camera_feed_removed(id: int) 
 
 Emitted when a CameraFeed is removed (e.g. a webcam is unplugged).
 
-camera_feeds_updated() 🔗
+camera_feeds_updated() 
 
 Emitted when camera feeds are updated.
 
@@ -231,7 +231,7 @@ FeedImage FEED_CBCR_IMAGE = 1
 
 The CbCr component camera image.
 
-bool monitoring_feeds = false 🔗
+bool monitoring_feeds = false 
 
 void set_monitoring_feeds(value: bool)
 
@@ -243,23 +243,23 @@ This has a performance cost, so only set it to true when you're actively accessi
 
 Note: After setting it to true, you can receive updated camera feeds through the camera_feeds_updated signal.
 
-void add_feed(feed: CameraFeed) 🔗
+void add_feed(feed: CameraFeed) 
 
 Adds the camera feed to the camera server.
 
-Array[CameraFeed] feeds() 🔗
+Array[CameraFeed] feeds() 
 
 Returns an array of CameraFeeds.
 
-CameraFeed get_feed(index: int) 🔗
+CameraFeed get_feed(index: int) 
 
 Returns the CameraFeed corresponding to the camera with the given index.
 
-int get_feed_count() 🔗
+int get_feed_count() 
 
 Returns the number of CameraFeeds registered.
 
-void remove_feed(feed: CameraFeed) 🔗
+void remove_feed(feed: CameraFeed) 
 
 Removes the specified camera feed.
 
@@ -1818,19 +1818,19 @@ get_external_texture_id() const
 
 set_external_buffer_id(external_buffer_id: int)
 
-Vector2 size = Vector2(256, 256) 🔗
+Vector2 size = Vector2(256, 256) 
 
 void set_size(value: Vector2)
 
 External texture size.
 
-int get_external_texture_id() const 🔗
+int get_external_texture_id() const 
 
 Returns the external texture ID.
 
 Depending on your use case, you may need to pass this to platform APIs, for example, when creating an android.graphics.SurfaceTexture on Android.
 
-void set_external_buffer_id(external_buffer_id: int) 🔗
+void set_external_buffer_id(external_buffer_id: int) 
 
 Sets the external buffer ID.
 
@@ -2071,7 +2071,7 @@ set_https_proxy(host: String, port: int)
 
 set_tls_options(client_options: TLSOptions)
 
-request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) 🔗
+request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) 
 
 Emitted when a request is completed.
 
@@ -2129,7 +2129,7 @@ Result RESULT_TIMEOUT = 13
 
 Request failed due to a timeout. If you expect requests to take a long time, try increasing the value of timeout or setting it to 0.0 to remove the timeout completely.
 
-bool accept_gzip = true 🔗
+bool accept_gzip = true 
 
 void set_accept_gzip(value: bool)
 
@@ -2143,7 +2143,7 @@ If the user has specified their own Accept-Encoding header, then no header will 
 
 If false no header will be added, and no decompression will be performed on response bodies. The raw bytes of the response body will be returned via request_completed.
 
-int body_size_limit = -1 🔗
+int body_size_limit = -1 
 
 void set_body_size_limit(value: int)
 
@@ -2151,7 +2151,7 @@ int get_body_size_limit()
 
 Maximum allowed size for response bodies. If the response body is compressed, this will be used as the maximum allowed size for the decompressed body.
 
-int download_chunk_size = 65536 🔗
+int download_chunk_size = 65536 
 
 void set_download_chunk_size(value: int)
 
@@ -2161,7 +2161,7 @@ The size of the buffer used and maximum bytes to read per iteration. See HTTPCli
 
 Set this to a lower value (e.g. 4096 for 4 KiB) when downloading small files to decrease memory usage at the cost of download speeds.
 
-String download_file = "" 🔗
+String download_file = "" 
 
 void set_download_file(value: String)
 
@@ -2169,7 +2169,7 @@ String get_download_file()
 
 The file to download into. Will output any received file into it.
 
-int max_redirects = 8 🔗
+int max_redirects = 8 
 
 void set_max_redirects(value: int)
 
@@ -2177,13 +2177,13 @@ int get_max_redirects()
 
 Maximum number of allowed redirects.
 
-float timeout = 0.0 🔗
+float timeout = 0.0 
 
 void set_timeout(value: float)
 
 The duration to wait in seconds before a request times out. If timeout is set to 0.0 then the request will never time out. For simple requests, such as communication with a REST API, it is recommended that timeout is set to a value suitable for the server response time (e.g. between 1.0 and 10.0). This will help prevent unwanted timeouts caused by variation in server response times while still allowing the application to detect when a request has timed out. For larger requests such as file downloads it is suggested the timeout be set to 0.0, disabling the timeout functionality. This will help to prevent large transfers from failing due to exceeding the timeout value.
 
-bool use_threads = false 🔗
+bool use_threads = false 
 
 void set_use_threads(value: bool)
 
@@ -2191,25 +2191,25 @@ bool is_using_threads()
 
 If true, multithreading is used to improve performance.
 
-void cancel_request() 🔗
+void cancel_request() 
 
 Cancels the current request.
 
-int get_body_size() const 🔗
+int get_body_size() const 
 
 Returns the response body length.
 
 Note: Some Web servers may not send a body length. In this case, the value returned will be -1. If using chunked transfer encoding, the body length will also be -1.
 
-int get_downloaded_bytes() const 🔗
+int get_downloaded_bytes() const 
 
 Returns the number of bytes this HTTPRequest downloaded.
 
-Status get_http_client_status() const 🔗
+Status get_http_client_status() const 
 
 Returns the current status of the underlying HTTPClient.
 
-Error request(url: String, custom_headers: PackedStringArray = PackedStringArray(), method: Method = 0, request_data: String = "") 🔗
+Error request(url: String, custom_headers: PackedStringArray = PackedStringArray(), method: Method = 0, request_data: String = "") 
 
 Creates request on the underlying HTTPClient. If there is no configuration errors, it tries to connect using HTTPClient.connect_to_host() and passes parameters onto HTTPClient.request().
 
@@ -2219,25 +2219,25 @@ Note: When method is HTTPClient.METHOD_GET, the payload sent via request_data mi
 
 Note: It's recommended to use transport encryption (TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
-Error request_raw(url: String, custom_headers: PackedStringArray = PackedStringArray(), method: Method = 0, request_data_raw: PackedByteArray = PackedByteArray()) 🔗
+Error request_raw(url: String, custom_headers: PackedStringArray = PackedStringArray(), method: Method = 0, request_data_raw: PackedByteArray = PackedByteArray()) 
 
 Creates request on the underlying HTTPClient using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using HTTPClient.connect_to_host() and passes parameters onto HTTPClient.request().
 
 Returns @GlobalScope.OK if request is successfully created. (Does not imply that the server has responded), @GlobalScope.ERR_UNCONFIGURED if not in the tree, @GlobalScope.ERR_BUSY if still processing previous request, @GlobalScope.ERR_INVALID_PARAMETER if given string is not a valid URL format, or @GlobalScope.ERR_CANT_CONNECT if not using thread and the HTTPClient cannot connect to host.
 
-void set_http_proxy(host: String, port: int) 🔗
+void set_http_proxy(host: String, port: int) 
 
 Sets the proxy server for HTTP requests.
 
 The proxy server is unset if host is empty or port is -1.
 
-void set_https_proxy(host: String, port: int) 🔗
+void set_https_proxy(host: String, port: int) 
 
 Sets the proxy server for HTTPS requests.
 
 The proxy server is unset if host is empty or port is -1.
 
-void set_tls_options(client_options: TLSOptions) 🔗
+void set_tls_options(client_options: TLSOptions) 
 
 Sets the TLSOptions to be used when connecting to an HTTPS server. See TLSOptions.client().
 
@@ -2418,15 +2418,15 @@ get_java_method_list() const
 
 get_java_parent_class() const
 
-String get_java_class_name() const 🔗
+String get_java_class_name() const 
 
 Returns the Java class name.
 
-Array[Dictionary] get_java_method_list() const 🔗
+Array[Dictionary] get_java_method_list() const 
 
 Returns the object's Java methods and their signatures as an Array of dictionaries, in the same format as Object.get_method_list().
 
-JavaClass get_java_parent_class() const 🔗
+JavaClass get_java_parent_class() const 
 
 Returns a JavaClass representing the Java parent class of this class.
 
@@ -2457,7 +2457,7 @@ Note: This class is not to be confused with JavaScriptObject.
 
 get_java_class() const
 
-JavaClass get_java_class() const 🔗
+JavaClass get_java_class() const 
 
 Returns the JavaClass that this object is an instance of.
 
@@ -2502,21 +2502,21 @@ js_buffer_to_packed_byte_array(javascript_buffer: JavaScriptObject)
 
 pwa_needs_update() const
 
-pwa_update_available() 🔗
+pwa_update_available() 
 
 Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See pwa_update() to force the update to take place immediately.
 
-JavaScriptObject create_callback(callable: Callable) 🔗
+JavaScriptObject create_callback(callable: Callable) 
 
 Creates a reference to a Callable that can be used as a callback by JavaScript. The reference must be kept until the callback happens, or it won't be called at all. See JavaScriptObject for usage.
 
 Note: The callback function must take exactly one Array argument, which is going to be the JavaScript arguments object converted to an array.
 
-Variant create_object(object: String, ...) vararg 🔗
+Variant create_object(object: String, ...) vararg 
 
 Creates a new JavaScript object using the new constructor. The object must a valid property of the JavaScript window. See JavaScriptObject for usage.
 
-void download_buffer(buffer: PackedByteArray, name: String, mime: String = "application/octet-stream") 🔗
+void download_buffer(buffer: PackedByteArray, name: String, mime: String = "application/octet-stream") 
 
 Prompts the user to download a file containing the specified buffer. The file will have the given name and mime type.
 
@@ -2526,31 +2526,31 @@ Note: Browsers might block the download if download_buffer() is not being called
 
 Note: Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
 
-Variant eval(code: String, use_global_execution_context: bool = false) 🔗
+Variant eval(code: String, use_global_execution_context: bool = false) 
 
 Execute the string code as JavaScript code within the browser window. This is a call to the actual global JavaScript function eval().
 
 If use_global_execution_context is true, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.
 
-void force_fs_sync() 🔗
+void force_fs_sync() 
 
 Force synchronization of the persistent file system (when enabled).
 
 Note: This is only useful for modules or extensions that can't use FileAccess to write files.
 
-JavaScriptObject get_interface(interface: String) 🔗
+JavaScriptObject get_interface(interface: String) 
 
 Returns an interface to a JavaScript object that can be used by scripts. The interface must be a valid property of the JavaScript window. The callback must accept a single Array argument, which will contain the JavaScript arguments. See JavaScriptObject for usage.
 
-bool is_js_buffer(javascript_object: JavaScriptObject) 🔗
+bool is_js_buffer(javascript_object: JavaScriptObject) 
 
 Returns true if the given javascript_object is of type [code]ArrayBuffer[/code], [code]DataView[/code], or one of the many typed array objects.
 
-PackedByteArray js_buffer_to_packed_byte_array(javascript_buffer: JavaScriptObject) 🔗
+PackedByteArray js_buffer_to_packed_byte_array(javascript_buffer: JavaScriptObject) 
 
 Returns a copy of javascript_buffer's contents as a PackedByteArray. See also is_js_buffer().
 
-bool pwa_needs_update() const 🔗
+bool pwa_needs_update() const 
 
 Returns true if a new version of the progressive web app is waiting to be activated.
 
@@ -2832,15 +2832,15 @@ Status STATUS_ERROR_HOSTNAME_MISMATCH = 4
 
 An error status that shows a mismatch in the DTLS certificate domain presented by the host and the domain requested for validation.
 
-Error connect_to_peer(packet_peer: PacketPeerUDP, hostname: String, client_options: TLSOptions = null) 🔗
+Error connect_to_peer(packet_peer: PacketPeerUDP, hostname: String, client_options: TLSOptions = null) 
 
 Connects a packet_peer beginning the DTLS handshake using the underlying PacketPeerUDP which must be connected (see PacketPeerUDP.connect_to_host()). You can optionally specify the client_options to be used while verifying the TLS connections. See TLSOptions.client() and TLSOptions.client_unsafe().
 
-void disconnect_from_peer() 🔗
+void disconnect_from_peer() 
 
 Disconnects this peer, terminating the DTLS session.
 
-Status get_status() const 🔗
+Status get_status() const 
 
 Returns the status of the connection.
 
@@ -2873,7 +2873,7 @@ input_buffer_max_size
 
 output_buffer_max_size
 
-int input_buffer_max_size = 65532 🔗
+int input_buffer_max_size = 65532 
 
 void set_input_buffer_max_size(value: int)
 
@@ -2881,7 +2881,7 @@ int get_input_buffer_max_size()
 
 There is currently no description for this property. Please help us by contributing one!
 
-int output_buffer_max_size = 65532 🔗
+int output_buffer_max_size = 65532 
 
 void set_output_buffer_max_size(value: int)
 
@@ -2889,7 +2889,7 @@ int get_output_buffer_max_size()
 
 There is currently no description for this property. Please help us by contributing one!
 
-StreamPeer stream_peer 🔗
+StreamPeer stream_peer 
 
 void set_stream_peer(value: StreamPeer)
 
@@ -2942,7 +2942,7 @@ set_broadcast_enabled(enabled: bool)
 
 set_dest_address(host: String, port: int)
 
-Error bind(port: int, bind_address: String = "*", recv_buf_size: int = 65536) 🔗
+Error bind(port: int, bind_address: String = "*", recv_buf_size: int = 65536) 
 
 Binds this PacketPeerUDP to the specified port and bind_address with a buffer size recv_buf_size, allowing it to receive incoming packets.
 
@@ -2954,33 +2954,33 @@ If bind_address is set to any valid address (e.g. "192.168.1.101", "::1", etc.),
 
 Closes the PacketPeerUDP's underlying UDP socket.
 
-Error connect_to_host(host: String, port: int) 🔗
+Error connect_to_host(host: String, port: int) 
 
 Calling this method connects this UDP peer to the given host/port pair. UDP is in reality connectionless, so this option only means that incoming packets from different addresses are automatically discarded, and that outgoing packets are always sent to the connected address (future calls to set_dest_address() are not allowed). This method does not send any data to the remote peer, to do that, use PacketPeer.put_var() or PacketPeer.put_packet() as usual. See also UDPServer.
 
 Note: Connecting to the remote peer does not help to protect from malicious attacks like IP spoofing, etc. Think about using an encryption technique like TLS or DTLS if you feel like your application is transferring sensitive information.
 
-int get_local_port() const 🔗
+int get_local_port() const 
 
 Returns the local port to which this peer is bound.
 
-String get_packet_ip() const 🔗
+String get_packet_ip() const 
 
 Returns the IP of the remote peer that sent the last packet(that was received with PacketPeer.get_packet() or PacketPeer.get_var()).
 
-int get_packet_port() const 🔗
+int get_packet_port() const 
 
 Returns the port of the remote peer that sent the last packet(that was received with PacketPeer.get_packet() or PacketPeer.get_var()).
 
-bool is_bound() const 🔗
+bool is_bound() const 
 
 Returns whether this PacketPeerUDP is bound to an address and can receive packets.
 
-bool is_socket_connected() const 🔗
+bool is_socket_connected() const 
 
 Returns true if the UDP socket is open and has been connected to a remote address. See connect_to_host().
 
-Error join_multicast_group(multicast_address: String, interface_name: String) 🔗
+Error join_multicast_group(multicast_address: String, interface_name: String) 
 
 Joins the multicast group specified by multicast_address using the interface identified by interface_name.
 
@@ -2988,17 +2988,17 @@ You can join the same multicast group with multiple interfaces. Use IP.get_local
 
 Note: Some Android devices might require the CHANGE_WIFI_MULTICAST_STATE permission for multicast to work.
 
-Error leave_multicast_group(multicast_address: String, interface_name: String) 🔗
+Error leave_multicast_group(multicast_address: String, interface_name: String) 
 
 Removes the interface identified by interface_name from the multicast group specified by multicast_address.
 
-void set_broadcast_enabled(enabled: bool) 🔗
+void set_broadcast_enabled(enabled: bool) 
 
 Enable or disable sending of broadcast packets (e.g. set_dest_address("255.255.255.255", 4343). This option is disabled by default.
 
 Note: Some Android devices might require the CHANGE_WIFI_MULTICAST_STATE permission and this option to be enabled to receive broadcast packets too.
 
-Error set_dest_address(host: String, port: int) 🔗
+Error set_dest_address(host: String, port: int) 
 
 Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
 
@@ -3304,39 +3304,39 @@ Status STATUS_ERROR = 3
 
 A status representing a StreamPeerTCP in error state.
 
-Error bind(port: int, host: String = "*") 🔗
+Error bind(port: int, host: String = "*") 
 
 Opens the TCP socket, and binds it to the specified local address.
 
 This method is generally not needed, and only used to force the subsequent call to connect_to_host() to use the specified host and port as source address. This can be desired in some NAT punchthrough techniques, or when forcing the source network interface.
 
-Error connect_to_host(host: String, port: int) 🔗
+Error connect_to_host(host: String, port: int) 
 
 Connects to the specified host:port pair. A hostname will be resolved if valid. Returns @GlobalScope.OK on success.
 
-void disconnect_from_host() 🔗
+void disconnect_from_host() 
 
 Disconnects from host.
 
-String get_connected_host() const 🔗
+String get_connected_host() const 
 
 Returns the IP of this peer.
 
-int get_connected_port() const 🔗
+int get_connected_port() const 
 
 Returns the port of this peer.
 
-int get_local_port() const 🔗
+int get_local_port() const 
 
 Returns the local port to which this peer is bound.
 
-Status get_status() const 🔗
+Status get_status() const 
 
 Returns the status of the connection.
 
 Poll the socket, updating its state. See get_status().
 
-void set_no_delay(enabled: bool) 🔗
+void set_no_delay(enabled: bool) 
 
 If enabled is true, packets will be sent immediately. If enabled is false (the default), packet transfers will be delayed and combined using Nagle's algorithm.
 
@@ -3393,23 +3393,23 @@ Status STATUS_ERROR_HOSTNAME_MISMATCH = 4
 
 An error status that shows a mismatch in the TLS certificate domain presented by the host and the domain requested for validation.
 
-Error accept_stream(stream: StreamPeer, server_options: TLSOptions) 🔗
+Error accept_stream(stream: StreamPeer, server_options: TLSOptions) 
 
 Accepts a peer connection as a server using the given server_options. See TLSOptions.server().
 
-Error connect_to_stream(stream: StreamPeer, common_name: String, client_options: TLSOptions = null) 🔗
+Error connect_to_stream(stream: StreamPeer, common_name: String, client_options: TLSOptions = null) 
 
 Connects to a peer using an underlying StreamPeer stream and verifying the remote certificate is correctly signed for the given common_name. You can pass the optional client_options parameter to customize the trusted certification authorities, or disable the common name verification. See TLSOptions.client() and TLSOptions.client_unsafe().
 
-void disconnect_from_stream() 🔗
+void disconnect_from_stream() 
 
 Disconnects from host.
 
-Status get_status() const 🔗
+Status get_status() const 
 
 Returns the status of the connection.
 
-StreamPeer get_stream() const 🔗
+StreamPeer get_stream() const 
 
 Returns the underlying StreamPeer connection, used in accept_stream() or connect_to_stream().
 
@@ -3468,7 +3468,7 @@ put_utf8_string(value: String)
 
 put_var(value: Variant, full_objects: bool = false)
 
-bool big_endian = false 🔗
+bool big_endian = false 
 
 void set_big_endian(value: bool)
 
@@ -3484,11 +3484,11 @@ Gets a signed 32-bit value from the stream.
 
 Gets a signed 64-bit value from the stream.
 
-int get_available_bytes() const 🔗
+int get_available_bytes() const 
 
 Returns the number of bytes this StreamPeer has available.
 
-Array get_data(bytes: int) 🔗
+Array get_data(bytes: int) 
 
 Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the bytes argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an Error code and a data array.
 
@@ -3498,11 +3498,11 @@ Gets a single-precision float from the stream.
 
 Gets a half-precision float from the stream.
 
-Array get_partial_data(bytes: int) 🔗
+Array get_partial_data(bytes: int) 
 
 Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the bytes argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values: an Error code and a data array.
 
-String get_string(bytes: int = -1) 🔗
+String get_string(bytes: int = -1) 
 
 Gets an ASCII string with byte-length bytes from the stream. If bytes is negative (default) the length will be read from the stream using the reverse process of put_string().
 
@@ -3514,11 +3514,11 @@ Gets an unsigned 32-bit value from the stream.
 
 Gets an unsigned 64-bit value from the stream.
 
-String get_utf8_string(bytes: int = -1) 🔗
+String get_utf8_string(bytes: int = -1) 
 
 Gets a UTF-8 string with byte-length bytes from the stream (this decodes the string sent as UTF-8). If bytes is negative (default) the length will be read from the stream using the reverse process of put_utf8_string().
 
-Variant get_var(allow_objects: bool = false) 🔗
+Variant get_var(allow_objects: bool = false) 
 
 Gets a Variant from the stream. If allow_objects is true, decoding objects is allowed.
 
@@ -3526,71 +3526,71 @@ Internally, this uses the same decoding mechanism as the @GlobalScope.bytes_to_v
 
 Warning: Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
-void put_8(value: int) 🔗
+void put_8(value: int) 
 
 Puts a signed byte into the stream.
 
-void put_16(value: int) 🔗
+void put_16(value: int) 
 
 Puts a signed 16-bit value into the stream.
 
-void put_32(value: int) 🔗
+void put_32(value: int) 
 
 Puts a signed 32-bit value into the stream.
 
-void put_64(value: int) 🔗
+void put_64(value: int) 
 
 Puts a signed 64-bit value into the stream.
 
-Error put_data(data: PackedByteArray) 🔗
+Error put_data(data: PackedByteArray) 
 
 Sends a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an Error code.
 
-void put_double(value: float) 🔗
+void put_double(value: float) 
 
 Puts a double-precision float into the stream.
 
-void put_float(value: float) 🔗
+void put_float(value: float) 
 
 Puts a single-precision float into the stream.
 
-void put_half(value: float) 🔗
+void put_half(value: float) 
 
 Puts a half-precision float into the stream.
 
-Array put_partial_data(data: PackedByteArray) 🔗
+Array put_partial_data(data: PackedByteArray) 
 
 Sends a chunk of data through the connection. If all the data could not be sent at once, only part of it will. This function returns two values, an Error code and an integer, describing how much data was actually sent.
 
-void put_string(value: String) 🔗
+void put_string(value: String) 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
 Note: To put an ASCII string without prepending its size, you can use put_data():
 
-void put_u8(value: int) 🔗
+void put_u8(value: int) 
 
 Puts an unsigned byte into the stream.
 
-void put_u16(value: int) 🔗
+void put_u16(value: int) 
 
 Puts an unsigned 16-bit value into the stream.
 
-void put_u32(value: int) 🔗
+void put_u32(value: int) 
 
 Puts an unsigned 32-bit value into the stream.
 
-void put_u64(value: int) 🔗
+void put_u64(value: int) 
 
 Puts an unsigned 64-bit value into the stream.
 
-void put_utf8_string(value: String) 🔗
+void put_utf8_string(value: String) 
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
 Note: To put a UTF-8 string without prepending its size, you can use put_data():
 
-void put_var(value: Variant, full_objects: bool = false) 🔗
+void put_var(value: Variant, full_objects: bool = false) 
 
 Puts a Variant into the stream. If full_objects is true encoding objects is allowed (and can potentially include code).
 
@@ -3645,19 +3645,19 @@ is_connection_available() const
 
 listen(port: int, bind_address: String = "*")
 
-int get_local_port() const 🔗
+int get_local_port() const 
 
 Returns the local port this server is listening to.
 
-bool is_connection_available() const 🔗
+bool is_connection_available() const 
 
 Returns true if a connection is available for taking.
 
-bool is_listening() const 🔗
+bool is_listening() const 
 
 Returns true if the server is currently listening for connections.
 
-Error listen(port: int, bind_address: String = "*") 🔗
+Error listen(port: int, bind_address: String = "*") 
 
 Listen on the port binding to bind_address.
 
@@ -3667,7 +3667,7 @@ If bind_address is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the server wi
 
 If bind_address is set to any valid address (e.g. "192.168.1.101", "::1", etc.), the server will only listen on the interface with that address (or fail if no interface with the given address exists).
 
-StreamPeerTCP take_connection() 🔗
+StreamPeerTCP take_connection() 
 
 If a connection is available, returns a StreamPeerTCP with the connection.
 
@@ -4209,7 +4209,7 @@ ChannelState STATE_CLOSED = 3
 
 The channel was closed, or connection failed.
 
-WriteMode write_mode = 1 🔗
+WriteMode write_mode = 1 
 
 void set_write_mode(value: WriteMode)
 
@@ -4219,7 +4219,7 @@ The transfer mode to use when sending outgoing packet. Either text or binary.
 
 Closes this data channel, notifying the other peer.
 
-int get_buffered_amount() const 🔗
+int get_buffered_amount() const 
 
 Returns the number of bytes currently queued to be sent over this channel.
 
@@ -4227,41 +4227,41 @@ Returns the ID assigned to this channel during creation (or auto-assigned during
 
 If the channel is not negotiated out-of-band the ID will only be available after the connection is established (will return 65535 until then).
 
-String get_label() const 🔗
+String get_label() const 
 
 Returns the label assigned to this channel during creation.
 
-int get_max_packet_life_time() const 🔗
+int get_max_packet_life_time() const 
 
 Returns the maxPacketLifeTime value assigned to this channel during creation.
 
 Will be 65535 if not specified.
 
-int get_max_retransmits() const 🔗
+int get_max_retransmits() const 
 
 Returns the maxRetransmits value assigned to this channel during creation.
 
 Will be 65535 if not specified.
 
-String get_protocol() const 🔗
+String get_protocol() const 
 
 Returns the sub-protocol assigned to this channel during creation. An empty string if not specified.
 
-ChannelState get_ready_state() const 🔗
+ChannelState get_ready_state() const 
 
 Returns the current state of this channel.
 
-bool is_negotiated() const 🔗
+bool is_negotiated() const 
 
 Returns true if this channel was created with out-of-band configuration.
 
-bool is_ordered() const 🔗
+bool is_ordered() const 
 
 Returns true if this channel was created with ordering enabled (default).
 
 Reserved, but not used for now.
 
-bool was_string_packet() const 🔗
+bool was_string_packet() const 
 
 Returns true if the last received packet was transferred as text. See write_mode.
 
@@ -4318,21 +4318,21 @@ set_local_description(type: String, sdp: String)
 
 set_remote_description(type: String, sdp: String)
 
-data_channel_received(channel: WebRTCDataChannel) 🔗
+data_channel_received(channel: WebRTCDataChannel) 
 
 Emitted when a new in-band channel is received, i.e. when the channel was created with negotiated: false (default).
 
 The object will be an instance of WebRTCDataChannel. You must keep a reference of it or it will be closed automatically. See create_data_channel().
 
-ice_candidate_created(media: String, index: int, name: String) 🔗
+ice_candidate_created(media: String, index: int, name: String) 
 
 Emitted when a new ICE candidate has been created. The three parameters are meant to be passed to the remote peer over the signaling server.
 
-session_description_created(type: String, sdp: String) 🔗
+session_description_created(type: String, sdp: String) 
 
 Emitted after a successful call to create_offer() or set_remote_description() (when it generates an answer). The parameters are meant to be passed to set_local_description() on this object, and sent to the remote peer over the signaling server.
 
-enum ConnectionState: 🔗
+enum ConnectionState: 
 
 ConnectionState STATE_NEW = 0
 
@@ -4358,7 +4358,7 @@ ConnectionState STATE_CLOSED = 5
 
 The peer connection is closed (after calling close() for example).
 
-enum GatheringState: 🔗
+enum GatheringState: 
 
 GatheringState GATHERING_STATE_NEW = 0
 
@@ -4372,7 +4372,7 @@ GatheringState GATHERING_STATE_COMPLETE = 2
 
 The ICE agent has finished gathering candidates. If something happens that requires collecting new candidates, such as a new interface being added or the addition of a new ICE server, the state will revert to gathering to gather those candidates.
 
-enum SignalingState: 🔗
+enum SignalingState: 
 
 SignalingState SIGNALING_STATE_STABLE = 0
 
@@ -4398,7 +4398,7 @@ SignalingState SIGNALING_STATE_CLOSED = 5
 
 The WebRTCPeerConnection has been closed.
 
-Error add_ice_candidate(media: String, index: int, name: String) 🔗
+Error add_ice_candidate(media: String, index: int, name: String) 
 
 Add an ice candidate generated by a remote peer (and received over the signaling server). See ice_candidate_created.
 
@@ -4406,7 +4406,7 @@ Close the peer connection and all data channels associated with it.
 
 Note: You cannot reuse this object for a new connection unless you call initialize().
 
-WebRTCDataChannel create_data_channel(label: String, options: Dictionary = {}) 🔗
+WebRTCDataChannel create_data_channel(label: String, options: Dictionary = {}) 
 
 Returns a new WebRTCDataChannel (or null on failure) with given label and optionally configured via the options dictionary. This method can only be called when the connection is in state STATE_NEW.
 
@@ -4414,25 +4414,25 @@ There are two ways to create a working data channel: either call create_data_cha
 
 Note: You must keep a reference to channels created this way, or it will be closed.
 
-Error create_offer() 🔗
+Error create_offer() 
 
 Creates a new SDP offer to start a WebRTC connection with a remote peer. At least one WebRTCDataChannel must have been created before calling this method.
 
 If this functions returns @GlobalScope.OK, session_description_created will be called when the session is ready to be sent.
 
-ConnectionState get_connection_state() const 🔗
+ConnectionState get_connection_state() const 
 
 Returns the connection state.
 
-GatheringState get_gathering_state() const 🔗
+GatheringState get_gathering_state() const 
 
 Returns the ICE GatheringState of the connection. This lets you detect, for example, when collection of ICE candidates has finished.
 
-SignalingState get_signaling_state() const 🔗
+SignalingState get_signaling_state() const 
 
 Returns the signaling state on the local end of the connection while connecting or reconnecting to another peer.
 
-Error initialize(configuration: Dictionary = {}) 🔗
+Error initialize(configuration: Dictionary = {}) 
 
 Re-initialize this peer connection, closing any previously active connection, and going back to state STATE_NEW. A dictionary of configuration options can be passed to configure the peer connection.
 
@@ -4440,17 +4440,17 @@ Valid configuration options are:
 
 Call this method frequently (e.g. in Node._process() or Node._physics_process()) to properly receive signals.
 
-void set_default_extension(extension_class: StringName) static 🔗
+void set_default_extension(extension_class: StringName) static 
 
 Sets the extension_class as the default WebRTCPeerConnectionExtension returned when creating a new WebRTCPeerConnection.
 
-Error set_local_description(type: String, sdp: String) 🔗
+Error set_local_description(type: String, sdp: String) 
 
 Sets the SDP description of the local peer. This should be called in response to session_description_created.
 
 After calling this function the peer will start emitting ice_candidate_created (unless an Error different from @GlobalScope.OK is returned).
 
-Error set_remote_description(type: String, sdp: String) 🔗
+Error set_remote_description(type: String, sdp: String) 
 
 Sets the SDP description of the remote peer. This should be called with the values generated by a remote peer and received over the signaling server.
 

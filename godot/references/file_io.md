@@ -332,81 +332,81 @@ set_value(section: String, key: String, value: Variant)
 
 Removes the entire contents of the config.
 
-String encode_to_text() const 🔗
+String encode_to_text() const 
 
 Obtain the text version of this config file (the same text that would be written to a file).
 
-void erase_section(section: String) 🔗
+void erase_section(section: String) 
 
 Deletes the specified section along with all the key-value pairs inside. Raises an error if the section does not exist.
 
-void erase_section_key(section: String, key: String) 🔗
+void erase_section_key(section: String, key: String) 
 
 Deletes the specified key in a section. Raises an error if either the section or the key do not exist.
 
-PackedStringArray get_section_keys(section: String) const 🔗
+PackedStringArray get_section_keys(section: String) const 
 
 Returns an array of all defined key identifiers in the specified section. Raises an error and returns an empty array if the section does not exist.
 
-PackedStringArray get_sections() const 🔗
+PackedStringArray get_sections() const 
 
 Returns an array of all defined section identifiers.
 
-Variant get_value(section: String, key: String, default: Variant = null) const 🔗
+Variant get_value(section: String, key: String, default: Variant = null) const 
 
 Returns the current value for the specified section and key. If either the section or the key do not exist, the method returns the fallback default value. If default is not specified or set to null, an error is also raised.
 
-bool has_section(section: String) const 🔗
+bool has_section(section: String) const 
 
 Returns true if the specified section exists.
 
-bool has_section_key(section: String, key: String) const 🔗
+bool has_section_key(section: String, key: String) const 
 
 Returns true if the specified section-key pair exists.
 
-Error load(path: String) 🔗
+Error load(path: String) 
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error load_encrypted(path: String, key: PackedByteArray) 🔗
+Error load_encrypted(path: String, key: PackedByteArray) 
 
 Loads the encrypted config file specified as a parameter, using the provided key to decrypt it. The file's contents are parsed and loaded in the ConfigFile object which the method was called on.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error load_encrypted_pass(path: String, password: String) 🔗
+Error load_encrypted_pass(path: String, password: String) 
 
 Loads the encrypted config file specified as a parameter, using the provided password to decrypt it. The file's contents are parsed and loaded in the ConfigFile object which the method was called on.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error parse(data: String) 🔗
+Error parse(data: String) 
 
 Parses the passed string as the contents of a config file. The string is parsed and loaded in the ConfigFile object which the method was called on.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error save(path: String) 🔗
+Error save(path: String) 
 
 Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error save_encrypted(path: String, key: PackedByteArray) 🔗
+Error save_encrypted(path: String, key: PackedByteArray) 
 
 Saves the contents of the ConfigFile object to the AES-256 encrypted file specified as a parameter, using the provided key to encrypt it. The output file uses an INI-style structure.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-Error save_encrypted_pass(path: String, password: String) 🔗
+Error save_encrypted_pass(path: String, password: String) 
 
 Saves the contents of the ConfigFile object to the AES-256 encrypted file specified as a parameter, using the provided password to encrypt it. The output file uses an INI-style structure.
 
 Returns @GlobalScope.OK on success, or one of the other Error values if the operation failed.
 
-void set_value(section: String, key: String, value: Variant) 🔗
+void set_value(section: String, key: String, value: Variant) 
 
 Assigns a value to the specified key of the specified section. If either the section or the key do not exist, they are created. Passing a null value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.
 
@@ -510,7 +510,7 @@ void set_curve(value: Curve)
 
 The Curve that is rendered onto the texture. Should be a unit Curve.
 
-TextureMode texture_mode = 0 🔗
+TextureMode texture_mode = 0 
 
 void set_texture_mode(value: TextureMode)
 
@@ -694,7 +694,7 @@ Opens the file for read and write operations. The file is created if it does not
 
 Note: When creating a file it must be in an already existing directory. To recursively create directories for a file path, see DirAccess.make_dir_recursive().
 
-enum CompressionMode: 🔗
+enum CompressionMode: 
 
 CompressionMode COMPRESSION_FASTLZ = 0
 
@@ -716,7 +716,7 @@ CompressionMode COMPRESSION_BROTLI = 4
 
 Uses the brotli compression method (only decompression is supported).
 
-flags UnixPermissionFlags: 🔗
+flags UnixPermissionFlags: 
 
 UnixPermissionFlags UNIX_READ_OWNER = 256
 
@@ -764,7 +764,7 @@ Closes the currently opened file and prevents subsequent read/write operations. 
 
 Note: FileAccess will automatically close when it's freed, which happens when it goes out of scope or when it gets assigned with null. In C# the reference must be disposed after we are done using it, this can be done with the using statement or calling the Dispose method directly.
 
-FileAccess create_temp(mode_flags: int, prefix: String = "", extension: String = "", keep: bool = false) static 🔗
+FileAccess create_temp(mode_flags: int, prefix: String = "", extension: String = "", keep: bool = false) static 
 
 Creates a temporary file. This file will be freed when the returned FileAccess is freed.
 
@@ -776,13 +776,13 @@ If keep is true, the file is not deleted when the returned FileAccess is freed.
 
 Returns null if opening the file failed. You can use get_open_error() to check the error that occurred.
 
-bool eof_reached() const 🔗
+bool eof_reached() const 
 
 Returns true if the file cursor has already read past the end of the file.
 
 Note: eof_reached() == false cannot be used to check whether there is more data available. To loop while there is more data available, use:
 
-bool file_exists(path: String) static 🔗
+bool file_exists(path: String) static 
 
 Returns true if the file exists in the given path.
 
@@ -802,21 +802,21 @@ Returns the next 32 bits from the file as an integer. This advances the file cur
 
 Returns the next 64 bits from the file as an integer. This advances the file cursor by 8 bytes. See store_64() for details on what values can be stored and retrieved this way.
 
-int get_access_time(file: String) static 🔗
+int get_access_time(file: String) static 
 
 Returns the last time the file was accessed in Unix timestamp format, or 0 on error. This Unix timestamp can be converted to another format using the Time singleton.
 
-String get_as_text(skip_cr: bool = false) const 🔗
+String get_as_text(skip_cr: bool = false) const 
 
 Returns the whole file as a String. Text is interpreted as being UTF-8 encoded. This ignores the file cursor and does not affect it.
 
 If skip_cr is true, carriage return characters (\r, CR) will be ignored when parsing the UTF-8, so that only line feed characters (\n, LF) represent a new line (Unix convention).
 
-PackedByteArray get_buffer(length: int) const 🔗
+PackedByteArray get_buffer(length: int) const 
 
 Returns next length bytes of the file as a PackedByteArray. This advances the file cursor by length bytes.
 
-PackedStringArray get_csv_line(delim: String = ",") const 🔗
+PackedStringArray get_csv_line(delim: String = ",") const 
 
 Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter delim to use other than the default "," (comma). This delimiter must be one-character long, and cannot be a double quotation mark.
 
@@ -826,107 +826,107 @@ For example, the following CSV lines are valid and will be properly parsed as tw
 
 Note how the second line can omit the enclosing quotes as it does not include the delimiter. However it could very well use quotes, it was only written without for demonstration purposes. The third line must use "" for each quotation mark that needs to be interpreted as such instead of the end of a text value.
 
-float get_double() const 🔗
+float get_double() const 
 
 Returns the next 64 bits from the file as a floating-point number. This advances the file cursor by 8 bytes.
 
-Error get_error() const 🔗
+Error get_error() const 
 
 Returns the last error that happened when trying to perform operations. Compare with the ERR_FILE_* constants from Error.
 
-PackedByteArray get_file_as_bytes(path: String) static 🔗
+PackedByteArray get_file_as_bytes(path: String) static 
 
 Returns the whole path file contents as a PackedByteArray without any decoding.
 
 Returns an empty PackedByteArray if an error occurred while opening the file. You can use get_open_error() to check the error that occurred.
 
-String get_file_as_string(path: String) static 🔗
+String get_file_as_string(path: String) static 
 
 Returns the whole path file contents as a String. Text is interpreted as being UTF-8 encoded.
 
 Returns an empty String if an error occurred while opening the file. You can use get_open_error() to check the error that occurred.
 
-float get_float() const 🔗
+float get_float() const 
 
 Returns the next 32 bits from the file as a floating-point number. This advances the file cursor by 4 bytes.
 
-float get_half() const 🔗
+float get_half() const 
 
 Returns the next 16 bits from the file as a half-precision floating-point number. This advances the file cursor by 2 bytes.
 
-bool get_hidden_attribute(file: String) static 🔗
+bool get_hidden_attribute(file: String) static 
 
 Returns true, if file hidden attribute is set.
 
 Note: This method is implemented on iOS, BSD, macOS, and Windows.
 
-int get_length() const 🔗
+int get_length() const 
 
 Returns the size of the file in bytes. For a pipe, returns the number of bytes available for reading from the pipe.
 
-String get_line() const 🔗
+String get_line() const 
 
 Returns the next line of the file as a String. The returned string doesn't include newline (\n) or carriage return (\r) characters, but does include any other leading or trailing whitespace. This advances the file cursor to after the newline character at the end of the line.
 
 Text is interpreted as being UTF-8 encoded.
 
-String get_md5(path: String) static 🔗
+String get_md5(path: String) static 
 
 Returns an MD5 String representing the file at the given path or an empty String on failure.
 
-int get_modified_time(file: String) static 🔗
+int get_modified_time(file: String) static 
 
 Returns the last time the file was modified in Unix timestamp format, or 0 on error. This Unix timestamp can be converted to another format using the Time singleton.
 
-Error get_open_error() static 🔗
+Error get_open_error() static 
 
 Returns the result of the last open() call in the current thread.
 
-String get_pascal_string() 🔗
+String get_pascal_string() 
 
 Returns a String saved in Pascal format from the file, meaning that the length of the string is explicitly stored at the start. See store_pascal_string(). This may include newline characters. The file cursor is advanced after the bytes read.
 
 Text is interpreted as being UTF-8 encoded.
 
-String get_path() const 🔗
+String get_path() const 
 
 Returns the path as a String for the current open file.
 
-String get_path_absolute() const 🔗
+String get_path_absolute() const 
 
 Returns the absolute path as a String for the current open file.
 
-int get_position() const 🔗
+int get_position() const 
 
 Returns the file cursor's position in bytes from the beginning of the file. This is the file reading/writing cursor set by seek() or seek_end() and advanced by read/write operations.
 
-bool get_read_only_attribute(file: String) static 🔗
+bool get_read_only_attribute(file: String) static 
 
 Returns true, if file read only attribute is set.
 
 Note: This method is implemented on iOS, BSD, macOS, and Windows.
 
-float get_real() const 🔗
+float get_real() const 
 
 Returns the next bits from the file as a floating-point number. This advances the file cursor by either 4 or 8 bytes, depending on the precision used by the Godot build that saved the file.
 
 If the file was saved by a Godot build compiled with the precision=single option (the default), the number of read bits for that file is 32. Otherwise, if compiled with the precision=double option, the number of read bits is 64.
 
-String get_sha256(path: String) static 🔗
+String get_sha256(path: String) static 
 
 Returns an SHA-256 String representing the file at the given path or an empty String on failure.
 
-int get_size(file: String) static 🔗
+int get_size(file: String) static 
 
 Returns file size in bytes, or -1 on error.
 
-BitField[UnixPermissionFlags] get_unix_permissions(file: String) static 🔗
+BitField[UnixPermissionFlags] get_unix_permissions(file: String) static 
 
 Returns file UNIX permissions.
 
 Note: This method is implemented on iOS, Linux/BSD, and macOS.
 
-Variant get_var(allow_objects: bool = false) const 🔗
+Variant get_var(allow_objects: bool = false) const 
 
 Returns the next Variant value from the file. If allow_objects is true, decoding objects is allowed. This advances the file cursor by the number of bytes read.
 
@@ -934,17 +934,17 @@ Internally, this uses the same decoding mechanism as the @GlobalScope.bytes_to_v
 
 Warning: Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
-bool is_open() const 🔗
+bool is_open() const 
 
 Returns true if the file is currently opened.
 
-FileAccess open(path: String, flags: ModeFlags) static 🔗
+FileAccess open(path: String, flags: ModeFlags) static 
 
 Creates a new FileAccess object and opens the file for writing or reading, depending on the flags.
 
 Returns null if opening the file failed. You can use get_open_error() to check the error that occurred.
 
-FileAccess open_compressed(path: String, mode_flags: ModeFlags, compression_mode: CompressionMode = 0) static 🔗
+FileAccess open_compressed(path: String, mode_flags: ModeFlags, compression_mode: CompressionMode = 0) static 
 
 Creates a new FileAccess object and opens a compressed file for reading or writing.
 
@@ -952,7 +952,7 @@ Note: open_compressed() can only read files that were saved by Godot, not third-
 
 Returns null if opening the file failed. You can use get_open_error() to check the error that occurred.
 
-FileAccess open_encrypted(path: String, mode_flags: ModeFlags, key: PackedByteArray, iv: PackedByteArray = PackedByteArray()) static 🔗
+FileAccess open_encrypted(path: String, mode_flags: ModeFlags, key: PackedByteArray, iv: PackedByteArray = PackedByteArray()) static 
 
 Creates a new FileAccess object and opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
@@ -960,45 +960,45 @@ Note: The provided key must be 32 bytes long.
 
 Returns null if opening the file failed. You can use get_open_error() to check the error that occurred.
 
-FileAccess open_encrypted_with_pass(path: String, mode_flags: ModeFlags, pass: String) static 🔗
+FileAccess open_encrypted_with_pass(path: String, mode_flags: ModeFlags, pass: String) static 
 
 Creates a new FileAccess object and opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 
 Returns null if opening the file failed. You can use get_open_error() to check the error that occurred.
 
-Error resize(length: int) 🔗
+Error resize(length: int) 
 
 Resizes the file to a specified length. The file must be open in a mode that permits writing. If the file is extended, NUL characters are appended. If the file is truncated, all data from the end file to the original length of the file is lost.
 
-void seek(position: int) 🔗
+void seek(position: int) 
 
 Changes the file reading/writing cursor to the specified position (in bytes from the beginning of the file). This changes the value returned by get_position().
 
-void seek_end(position: int = 0) 🔗
+void seek_end(position: int = 0) 
 
 Changes the file reading/writing cursor to the specified position (in bytes from the end of the file). This changes the value returned by get_position().
 
 Note: This is an offset, so you should use negative numbers or the file cursor will be at the end of the file.
 
-Error set_hidden_attribute(file: String, hidden: bool) static 🔗
+Error set_hidden_attribute(file: String, hidden: bool) static 
 
 Sets file hidden attribute.
 
 Note: This method is implemented on iOS, BSD, macOS, and Windows.
 
-Error set_read_only_attribute(file: String, ro: bool) static 🔗
+Error set_read_only_attribute(file: String, ro: bool) static 
 
 Sets file read only attribute.
 
 Note: This method is implemented on iOS, BSD, macOS, and Windows.
 
-Error set_unix_permissions(file: String, permissions: BitField[UnixPermissionFlags]) static 🔗
+Error set_unix_permissions(file: String, permissions: BitField[UnixPermissionFlags]) static 
 
 Sets file UNIX permissions.
 
 Note: This method is implemented on iOS, Linux/BSD, and macOS.
 
-bool store_8(value: int) 🔗
+bool store_8(value: int) 
 
 Stores an integer as 8 bits in the file. This advances the file cursor by 1 byte. Returns true if the operation is successful.
 
@@ -1008,7 +1008,7 @@ Note: If an error occurs, the resulting value of the file position indicator is 
 
 To store a signed integer, use store_64(), or convert it manually (see store_16() for an example).
 
-bool store_16(value: int) 🔗
+bool store_16(value: int) 
 
 Stores an integer as 16 bits in the file. This advances the file cursor by 2 bytes. Returns true if the operation is successful.
 
@@ -1018,7 +1018,7 @@ Note: If an error occurs, the resulting value of the file position indicator is 
 
 To store a signed integer, use store_64() or store a signed integer from the interval [-2^15, 2^15 - 1] (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:
 
-bool store_32(value: int) 🔗
+bool store_32(value: int) 
 
 Stores an integer as 32 bits in the file. This advances the file cursor by 4 bytes. Returns true if the operation is successful.
 
@@ -1028,7 +1028,7 @@ Note: If an error occurs, the resulting value of the file position indicator is 
 
 To store a signed integer, use store_64(), or convert it manually (see store_16() for an example).
 
-bool store_64(value: int) 🔗
+bool store_64(value: int) 
 
 Stores an integer as 64 bits in the file. This advances the file cursor by 8 bytes. Returns true if the operation is successful.
 
@@ -1036,13 +1036,13 @@ Note: The value must lie in the interval [-2^63, 2^63 - 1] (i.e. be a valid int 
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_buffer(buffer: PackedByteArray) 🔗
+bool store_buffer(buffer: PackedByteArray) 
 
 Stores the given array of bytes in the file. This advances the file cursor by the number of bytes written. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_csv_line(values: PackedStringArray, delim: String = ",") 🔗
+bool store_csv_line(values: PackedStringArray, delim: String = ",") 
 
 Store the given PackedStringArray in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter delim to use other than the default "," (comma). This delimiter must be one-character long.
 
@@ -1050,37 +1050,37 @@ Text will be encoded as UTF-8. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_double(value: float) 🔗
+bool store_double(value: float) 
 
 Stores a floating-point number as 64 bits in the file. This advances the file cursor by 8 bytes. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_float(value: float) 🔗
+bool store_float(value: float) 
 
 Stores a floating-point number as 32 bits in the file. This advances the file cursor by 4 bytes. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_half(value: float) 🔗
+bool store_half(value: float) 
 
 Stores a half-precision floating-point number as 16 bits in the file. This advances the file cursor by 2 bytes. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_line(line: String) 🔗
+bool store_line(line: String) 
 
 Stores line in the file followed by a newline character (\n), encoding the text as UTF-8. This advances the file cursor by the length of the line, after the newline character. The amount of bytes written depends on the UTF-8 encoded bytes, which may be different from String.length() which counts the number of UTF-32 codepoints. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_pascal_string(string: String) 🔗
+bool store_pascal_string(string: String) 
 
 Stores the given String as a line in the file in Pascal format (i.e. also store the length of the string). Text will be encoded as UTF-8. This advances the file cursor by the number of bytes written depending on the UTF-8 encoded bytes, which may be different from String.length() which counts the number of UTF-32 codepoints. Returns true if the operation is successful.
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_real(value: float) 🔗
+bool store_real(value: float) 
 
 Stores a floating-point number in the file. This advances the file cursor by either 4 or 8 bytes, depending on the precision used by the current Godot build.
 
@@ -1088,7 +1088,7 @@ If using a Godot build compiled with the precision=single option (the default), 
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_string(string: String) 🔗
+bool store_string(string: String) 
 
 Stores string in the file without a newline character (\n), encoding the text as UTF-8. This advances the file cursor by the length of the string in UTF-8 encoded bytes, which may be different from String.length() which counts the number of UTF-32 codepoints. Returns true if the operation is successful.
 
@@ -1096,7 +1096,7 @@ Note: This method is intended to be used to write text files. The string is stor
 
 Note: If an error occurs, the resulting value of the file position indicator is indeterminate.
 
-bool store_var(value: Variant, full_objects: bool = false) 🔗
+bool store_var(value: Variant, full_objects: bool = false) 
 
 Stores any Variant value in the file. If full_objects is true, encoding objects is allowed (and can potentially include code). This advances the file cursor by the number of bytes written. Returns true if the operation is successful.
 
@@ -1218,19 +1218,19 @@ set_option_values(option: int, values: PackedStringArray)
 
 toggle_filename_filter
 
-dir_selected(dir: String) 🔗
+dir_selected(dir: String) 
 
 Emitted when the user selects a directory.
 
-file_selected(path: String) 🔗
+file_selected(path: String) 
 
 Emitted when the user selects a file by double-clicking it or pressing the OK button.
 
-filename_filter_changed(filter: String) 🔗
+filename_filter_changed(filter: String) 
 
 Emitted when the filter for file names changes.
 
-files_selected(paths: PackedStringArray) 🔗
+files_selected(paths: PackedStringArray) 
 
 Emitted when the user selects multiple files.
 
@@ -1274,7 +1274,7 @@ DisplayMode DISPLAY_LIST = 1
 
 The dialog displays files as a list of filenames.
 
-enum Customization: 🔗
+enum Customization: 
 
 Customization CUSTOMIZATION_HIDDEN_FILES = 0
 
@@ -1332,7 +1332,7 @@ The current working directory of the file dialog.
 
 Note: For native file dialogs, this property is only treated as a hint and may not be respected by specific OS implementations.
 
-String current_file 🔗
+String current_file 
 
 void set_current_file(value: String)
 
@@ -1340,7 +1340,7 @@ String get_current_file()
 
 The currently selected file of the file dialog.
 
-String current_path 🔗
+String current_path 
 
 void set_current_path(value: String)
 
@@ -1348,7 +1348,7 @@ String get_current_path()
 
 The currently selected file path of the file dialog.
 
-DisplayMode display_mode = 0 🔗
+DisplayMode display_mode = 0 
 
 void set_display_mode(value: DisplayMode)
 
@@ -1356,7 +1356,7 @@ DisplayMode get_display_mode()
 
 Display mode of the dialog's file list.
 
-bool favorites_enabled = true 🔗
+bool favorites_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1364,7 +1364,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the toggle favorite button and favorite list on the left side of the dialog.
 
-bool file_filter_toggle_enabled = true 🔗
+bool file_filter_toggle_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1372,7 +1372,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the toggle file filter button.
 
-FileMode file_mode = 4 🔗
+FileMode file_mode = 4 
 
 void set_file_mode(value: FileMode)
 
@@ -1380,7 +1380,7 @@ FileMode get_file_mode()
 
 The dialog's open or save mode, which affects the selection behavior.
 
-bool file_sort_options_enabled = true 🔗
+bool file_sort_options_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1388,7 +1388,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the file sorting options button.
 
-String filename_filter = "" 🔗
+String filename_filter = "" 
 
 void set_filename_filter(value: String)
 
@@ -1398,7 +1398,7 @@ The filter for file names (case-insensitive). When set to a non-empty string, on
 
 See also filters, which should be used to restrict the file types that can be selected instead of filename_filter which is meant to be set by the user.
 
-PackedStringArray filters = PackedStringArray() 🔗
+PackedStringArray filters = PackedStringArray() 
 
 void set_filters(value: PackedStringArray)
 
@@ -1410,7 +1410,7 @@ Note: Embedded file dialog and Windows file dialog support only file extensions,
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool folder_creation_enabled = true 🔗
+bool folder_creation_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1418,7 +1418,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the button for creating new directories (when using FILE_MODE_OPEN_DIR, FILE_MODE_OPEN_ANY, or FILE_MODE_SAVE_FILE).
 
-bool hidden_files_toggle_enabled = true 🔗
+bool hidden_files_toggle_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1426,7 +1426,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the toggle hidden files button.
 
-bool layout_toggle_enabled = true 🔗
+bool layout_toggle_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1434,7 +1434,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the layout switch buttons (list/thumbnails).
 
-bool mode_overrides_title = true 🔗
+bool mode_overrides_title = true 
 
 void set_mode_overrides_title(value: bool)
 
@@ -1442,7 +1442,7 @@ bool is_mode_overriding_title()
 
 If true, changing the file_mode property will set the window title accordingly (e.g. setting file_mode to FILE_MODE_OPEN_FILE will change the window title to "Open a File").
 
-int option_count = 0 🔗
+int option_count = 0 
 
 void set_option_count(value: int)
 
@@ -1450,7 +1450,7 @@ int get_option_count()
 
 The number of additional OptionButtons and CheckBoxes in the dialog.
 
-bool recent_list_enabled = true 🔗
+bool recent_list_enabled = true 
 
 void set_customization_flag_enabled(flag: Customization, enabled: bool)
 
@@ -1458,7 +1458,7 @@ bool is_customization_flag_enabled(flag: Customization) const
 
 If true, shows the recent directories list on the left side of the dialog.
 
-String root_subfolder = "" 🔗
+String root_subfolder = "" 
 
 void set_root_subfolder(value: String)
 
@@ -1468,7 +1468,7 @@ If non-empty, the given sub-folder will be "root" of this FileDialog, i.e. user 
 
 Note: This property is ignored by native file dialogs.
 
-bool show_hidden_files = false 🔗
+bool show_hidden_files = false 
 
 void set_show_hidden_files(value: bool)
 
@@ -1478,7 +1478,7 @@ If true, the dialog will show hidden files.
 
 Note: This property is ignored by native file dialogs on Android and Linux.
 
-bool use_native_dialog = false 🔗
+bool use_native_dialog = false 
 
 void set_use_native_dialog(value: bool)
 
@@ -1494,7 +1494,7 @@ Note: On macOS, sandboxed apps will save security-scoped bookmarks to retain acc
 
 Note: Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.
 
-void add_filter(filter: String, description: String = "") 🔗
+void add_filter(filter: String, description: String = "") 
 
 Adds a comma-separated file name filter option to the FileDialog with an optional description, which restricts what files can be picked.
 
@@ -1502,47 +1502,47 @@ A filter should be of the form "filename.extension", where filename and extensio
 
 For example, a filter of "*.png, *.jpg" and a description of "Images" results in filter text "Images (*.png, *.jpg)".
 
-void add_option(name: String, values: PackedStringArray, default_value_index: int) 🔗
+void add_option(name: String, values: PackedStringArray, default_value_index: int) 
 
 Adds an additional OptionButton to the file dialog. If values is empty, a CheckBox is added instead.
 
 default_value_index should be an index of the value in the values. If values is empty it should be either 1 (checked), or 0 (unchecked).
 
-void clear_filename_filter() 🔗
+void clear_filename_filter() 
 
 Clear the filter for file names.
 
-void clear_filters() 🔗
+void clear_filters() 
 
 Clear all the added filters in the dialog.
 
-void deselect_all() 🔗
+void deselect_all() 
 
 Clear all currently selected items in the dialog.
 
-LineEdit get_line_edit() 🔗
+LineEdit get_line_edit() 
 
 Returns the LineEdit for the selected file.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-int get_option_default(option: int) const 🔗
+int get_option_default(option: int) const 
 
 Returns the default value index of the OptionButton or CheckBox with index option.
 
-String get_option_name(option: int) const 🔗
+String get_option_name(option: int) const 
 
 Returns the name of the OptionButton or CheckBox with index option.
 
-PackedStringArray get_option_values(option: int) const 🔗
+PackedStringArray get_option_values(option: int) const 
 
 Returns an array of values of the OptionButton with index option.
 
-Dictionary get_selected_options() const 🔗
+Dictionary get_selected_options() const 
 
 Returns a Dictionary with the selected values of the additional OptionButtons and/or CheckBoxes. Dictionary keys are names and values are selected value indices.
 
-VBoxContainer get_vbox() 🔗
+VBoxContainer get_vbox() 
 
 Returns the vertical box container of the dialog, custom controls can be added to it.
 
@@ -1554,81 +1554,81 @@ Invalidate and update the current dialog content list.
 
 Note: This method does nothing on native file dialogs.
 
-bool is_customization_flag_enabled(flag: Customization) const 🔗
+bool is_customization_flag_enabled(flag: Customization) const 
 
 Returns true if the provided flag is enabled.
 
-void set_customization_flag_enabled(flag: Customization, enabled: bool) 🔗
+void set_customization_flag_enabled(flag: Customization, enabled: bool) 
 
 Toggles the specified customization flag, allowing to customize features available in this FileDialog. See Customization for options.
 
-void set_option_default(option: int, default_value_index: int) 🔗
+void set_option_default(option: int, default_value_index: int) 
 
 Sets the default value index of the OptionButton or CheckBox with index option.
 
-void set_option_name(option: int, name: String) 🔗
+void set_option_name(option: int, name: String) 
 
 Sets the name of the OptionButton or CheckBox with index option.
 
-void set_option_values(option: int, values: PackedStringArray) 🔗
+void set_option_values(option: int, values: PackedStringArray) 
 
 Sets the option values of the OptionButton with index option.
 
-Color file_disabled_color = Color(1, 1, 1, 0.25) 🔗
+Color file_disabled_color = Color(1, 1, 1, 0.25) 
 
 The color tint for disabled files (when the FileDialog is used in open folder mode).
 
-Color file_icon_color = Color(1, 1, 1, 1) 🔗
+Color file_icon_color = Color(1, 1, 1, 1) 
 
 The color modulation applied to the file icon.
 
-Color folder_icon_color = Color(1, 1, 1, 1) 🔗
+Color folder_icon_color = Color(1, 1, 1, 1) 
 
 The color modulation applied to the folder icon.
 
-int thumbnail_size = 64 🔗
+int thumbnail_size = 64 
 
 The size of thumbnail icons when DISPLAY_THUMBNAILS is enabled.
 
-Texture2D back_folder 🔗
+Texture2D back_folder 
 
 Custom icon for the back arrow.
 
-Texture2D create_folder 🔗
+Texture2D create_folder 
 
 Custom icon for the create folder button.
 
 Custom icon for favorite folder button.
 
-Texture2D favorite_down 🔗
+Texture2D favorite_down 
 
 Custom icon for button to move down a favorite entry.
 
-Texture2D favorite_up 🔗
+Texture2D favorite_up 
 
 Custom icon for button to move up a favorite entry.
 
 Custom icon for files.
 
-Texture2D file_thumbnail 🔗
+Texture2D file_thumbnail 
 
 Icon for files when in thumbnail mode.
 
 Custom icon for folders.
 
-Texture2D folder_thumbnail 🔗
+Texture2D folder_thumbnail 
 
 Icon for folders when in thumbnail mode.
 
-Texture2D forward_folder 🔗
+Texture2D forward_folder 
 
 Custom icon for the forward arrow.
 
-Texture2D list_mode 🔗
+Texture2D list_mode 
 
 Icon for the button that enables list mode.
 
-Texture2D parent_folder 🔗
+Texture2D parent_folder 
 
 Custom icon for the parent folder arrow.
 
@@ -1636,15 +1636,15 @@ Custom icon for the reload button.
 
 Custom icon for the sorting options menu.
 
-Texture2D thumbnail_mode 🔗
+Texture2D thumbnail_mode 
 
 Icon for the button that enables thumbnail mode.
 
-Texture2D toggle_filename_filter 🔗
+Texture2D toggle_filename_filter 
 
 Custom icon for the toggle button for the filter for file names.
 
-Texture2D toggle_hidden 🔗
+Texture2D toggle_hidden 
 
 Custom icon for the toggle hidden button.
 
@@ -1937,7 +1937,7 @@ set_transform(cache_index: int, transform: Transform2D)
 
 set_variation_coordinates(cache_index: int, variation_coordinates: Dictionary)
 
-bool allow_system_fallback = true 🔗
+bool allow_system_fallback = true 
 
 void set_allow_system_fallback(value: bool)
 
@@ -1945,7 +1945,7 @@ bool is_allow_system_fallback()
 
 If set to true, system fonts can be automatically used as fallbacks.
 
-FontAntialiasing antialiasing = 1 🔗
+FontAntialiasing antialiasing = 1 
 
 void set_antialiasing(value: FontAntialiasing)
 
@@ -1953,7 +1953,7 @@ FontAntialiasing get_antialiasing()
 
 Font anti-aliasing mode.
 
-PackedByteArray data = PackedByteArray() 🔗
+PackedByteArray data = PackedByteArray() 
 
 void set_data(value: PackedByteArray)
 
@@ -1963,7 +1963,7 @@ Contents of the dynamic font source file.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-bool disable_embedded_bitmaps = true 🔗
+bool disable_embedded_bitmaps = true 
 
 void set_disable_embedded_bitmaps(value: bool)
 
@@ -1975,7 +1975,7 @@ void set_fixed_size(value: int)
 
 Font size, used only for the bitmap fonts.
 
-FixedSizeScaleMode fixed_size_scale_mode = 0 🔗
+FixedSizeScaleMode fixed_size_scale_mode = 0 
 
 void set_fixed_size_scale_mode(value: FixedSizeScaleMode)
 
@@ -1983,13 +1983,13 @@ FixedSizeScaleMode get_fixed_size_scale_mode()
 
 Scaling mode, used only for the bitmap fonts with fixed_size greater than zero.
 
-String font_name = "" 🔗
+String font_name = "" 
 
 void set_font_name(value: String)
 
 String get_font_name()
 
-int font_stretch = 100 🔗
+int font_stretch = 100 
 
 void set_font_stretch(value: int)
 
@@ -1997,13 +1997,13 @@ int get_font_stretch()
 
 Font stretch amount, compared to a normal width. A percentage value between 50% and 200%.
 
-BitField[FontStyle] font_style = 0 🔗
+BitField[FontStyle] font_style = 0 
 
 void set_font_style(value: BitField[FontStyle])
 
 BitField[FontStyle] get_font_style()
 
-int font_weight = 400 🔗
+int font_weight = 400 
 
 void set_font_weight(value: int)
 
@@ -2011,7 +2011,7 @@ int get_font_weight()
 
 Weight (boldness) of the font. A value in the 100...999 range, normal font weight is 400, bold font weight is 700.
 
-bool force_autohinter = false 🔗
+bool force_autohinter = false 
 
 void set_force_autohinter(value: bool)
 
@@ -2019,7 +2019,7 @@ bool is_force_autohinter()
 
 If set to true, auto-hinting is supported and preferred over font built-in hinting. Used by dynamic fonts only (MSDF fonts don't support hinting).
 
-bool generate_mipmaps = false 🔗
+bool generate_mipmaps = false 
 
 void set_generate_mipmaps(value: bool)
 
@@ -2027,7 +2027,7 @@ bool get_generate_mipmaps()
 
 If set to true, generate mipmaps for the font textures.
 
-Hinting hinting = 1 🔗
+Hinting hinting = 1 
 
 void set_hinting(value: Hinting)
 
@@ -2035,7 +2035,7 @@ Hinting get_hinting()
 
 Font hinting mode. Used by dynamic fonts only.
 
-bool keep_rounding_remainders = true 🔗
+bool keep_rounding_remainders = true 
 
 void set_keep_rounding_remainders(value: bool)
 
@@ -2043,7 +2043,7 @@ bool get_keep_rounding_remainders()
 
 If set to true, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
 
-bool modulate_color_glyphs = false 🔗
+bool modulate_color_glyphs = false 
 
 void set_modulate_color_glyphs(value: bool)
 
@@ -2051,7 +2051,7 @@ bool is_modulate_color_glyphs()
 
 If set to true, color modulation is applied when drawing colored glyphs, otherwise it's applied to the monochrome glyphs only.
 
-int msdf_pixel_range = 16 🔗
+int msdf_pixel_range = 16 
 
 void set_msdf_pixel_range(value: int)
 
@@ -2063,7 +2063,7 @@ void set_msdf_size(value: int)
 
 Source font size used to generate MSDF textures. Higher values allow for more precision, but are slower to render and require more memory. Only increase this value if you notice a visible lack of precision in glyph rendering.
 
-bool multichannel_signed_distance_field = false 🔗
+bool multichannel_signed_distance_field = false 
 
 void set_multichannel_signed_distance_field(value: bool)
 
@@ -2075,7 +2075,7 @@ Note: If using font outlines, msdf_pixel_range must be set to at least twice the
 
 Note: MSDF font rendering does not render glyphs with overlapping shapes correctly. Overlapping shapes are not valid per the OpenType standard, but are still commonly found in many font files, especially those converted by Google Fonts. To avoid issues with overlapping glyphs, consider downloading the font file directly from the type foundry instead of relying on Google Fonts.
 
-Dictionary opentype_feature_overrides = {} 🔗
+Dictionary opentype_feature_overrides = {} 
 
 void set_opentype_feature_overrides(value: Dictionary)
 
@@ -2083,7 +2083,7 @@ Dictionary get_opentype_feature_overrides()
 
 Font OpenType feature set override.
 
-float oversampling = 0.0 🔗
+float oversampling = 0.0 
 
 void set_oversampling(value: float)
 
@@ -2091,13 +2091,13 @@ float get_oversampling()
 
 If set to a positive value, overrides the oversampling factor of the viewport this font is used in. See Viewport.oversampling. This value doesn't override the oversampling parameter of draw_* methods.
 
-String style_name = "" 🔗
+String style_name = "" 
 
 void set_font_style_name(value: String)
 
 String get_font_style_name()
 
-SubpixelPositioning subpixel_positioning = 1 🔗
+SubpixelPositioning subpixel_positioning = 1 
 
 void set_subpixel_positioning(value: SubpixelPositioning)
 
@@ -2107,279 +2107,279 @@ Font glyph subpixel positioning mode. Subpixel positioning provides shaper text 
 
 Removes all font cache entries.
 
-void clear_glyphs(cache_index: int, size: Vector2i) 🔗
+void clear_glyphs(cache_index: int, size: Vector2i) 
 
 Removes all rendered glyph information from the cache entry.
 
 Note: This function will not remove textures associated with the glyphs, use remove_texture() to remove them manually.
 
-void clear_kerning_map(cache_index: int, size: int) 🔗
+void clear_kerning_map(cache_index: int, size: int) 
 
 Removes all kerning overrides.
 
-void clear_size_cache(cache_index: int) 🔗
+void clear_size_cache(cache_index: int) 
 
 Removes all font sizes from the cache entry.
 
-void clear_textures(cache_index: int, size: Vector2i) 🔗
+void clear_textures(cache_index: int, size: Vector2i) 
 
 Removes all textures from font cache entry.
 
 Note: This function will not remove glyphs associated with the texture, use remove_glyph() to remove them manually.
 
-float get_cache_ascent(cache_index: int, size: int) const 🔗
+float get_cache_ascent(cache_index: int, size: int) const 
 
 Returns the font ascent (number of pixels above the baseline).
 
-int get_cache_count() const 🔗
+int get_cache_count() const 
 
 Returns number of the font cache entries.
 
-float get_cache_descent(cache_index: int, size: int) const 🔗
+float get_cache_descent(cache_index: int, size: int) const 
 
 Returns the font descent (number of pixels below the baseline).
 
-float get_cache_scale(cache_index: int, size: int) const 🔗
+float get_cache_scale(cache_index: int, size: int) const 
 
 Returns scaling factor of the color bitmap font.
 
-float get_cache_underline_position(cache_index: int, size: int) const 🔗
+float get_cache_underline_position(cache_index: int, size: int) const 
 
 Returns pixel offset of the underline below the baseline.
 
-float get_cache_underline_thickness(cache_index: int, size: int) const 🔗
+float get_cache_underline_thickness(cache_index: int, size: int) const 
 
 Returns thickness of the underline in pixels.
 
-int get_char_from_glyph_index(size: int, glyph_index: int) const 🔗
+int get_char_from_glyph_index(size: int, glyph_index: int) const 
 
 Returns character code associated with glyph_index, or 0 if glyph_index is invalid. See get_glyph_index().
 
-float get_embolden(cache_index: int) const 🔗
+float get_embolden(cache_index: int) const 
 
 Returns embolden strength, if is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
-float get_extra_baseline_offset(cache_index: int) const 🔗
+float get_extra_baseline_offset(cache_index: int) const 
 
 Returns extra baseline offset (as a fraction of font height).
 
-int get_extra_spacing(cache_index: int, spacing: SpacingType) const 🔗
+int get_extra_spacing(cache_index: int, spacing: SpacingType) const 
 
 Returns spacing for spacing in pixels (not relative to the font size).
 
-int get_face_index(cache_index: int) const 🔗
+int get_face_index(cache_index: int) const 
 
 Returns an active face index in the TrueType / OpenType collection.
 
-Vector2 get_glyph_advance(cache_index: int, size: int, glyph: int) const 🔗
+Vector2 get_glyph_advance(cache_index: int, size: int, glyph: int) const 
 
 Returns glyph advance (offset of the next glyph).
 
 Note: Advance for glyphs outlines is the same as the base glyph advance and is not saved.
 
-int get_glyph_index(size: int, char: int, variation_selector: int) const 🔗
+int get_glyph_index(size: int, char: int, variation_selector: int) const 
 
 Returns the glyph index of a char, optionally modified by the variation_selector.
 
-PackedInt32Array get_glyph_list(cache_index: int, size: Vector2i) const 🔗
+PackedInt32Array get_glyph_list(cache_index: int, size: Vector2i) const 
 
 Returns list of rendered glyphs in the cache entry.
 
-Vector2 get_glyph_offset(cache_index: int, size: Vector2i, glyph: int) const 🔗
+Vector2 get_glyph_offset(cache_index: int, size: Vector2i, glyph: int) const 
 
 Returns glyph offset from the baseline.
 
-Vector2 get_glyph_size(cache_index: int, size: Vector2i, glyph: int) const 🔗
+Vector2 get_glyph_size(cache_index: int, size: Vector2i, glyph: int) const 
 
-int get_glyph_texture_idx(cache_index: int, size: Vector2i, glyph: int) const 🔗
+int get_glyph_texture_idx(cache_index: int, size: Vector2i, glyph: int) const 
 
 Returns index of the cache texture containing the glyph.
 
-Rect2 get_glyph_uv_rect(cache_index: int, size: Vector2i, glyph: int) const 🔗
+Rect2 get_glyph_uv_rect(cache_index: int, size: Vector2i, glyph: int) const 
 
 Returns rectangle in the cache texture containing the glyph.
 
-Vector2 get_kerning(cache_index: int, size: int, glyph_pair: Vector2i) const 🔗
+Vector2 get_kerning(cache_index: int, size: int, glyph_pair: Vector2i) const 
 
 Returns kerning for the pair of glyphs.
 
-Array[Vector2i] get_kerning_list(cache_index: int, size: int) const 🔗
+Array[Vector2i] get_kerning_list(cache_index: int, size: int) const 
 
 Returns list of the kerning overrides.
 
-bool get_language_support_override(language: String) const 🔗
+bool get_language_support_override(language: String) const 
 
 Returns true if support override is enabled for the language.
 
-PackedStringArray get_language_support_overrides() const 🔗
+PackedStringArray get_language_support_overrides() const 
 
 Returns list of language support overrides.
 
-bool get_script_support_override(script: String) const 🔗
+bool get_script_support_override(script: String) const 
 
 Returns true if support override is enabled for the script.
 
-PackedStringArray get_script_support_overrides() const 🔗
+PackedStringArray get_script_support_overrides() const 
 
 Returns list of script support overrides.
 
-Array[Vector2i] get_size_cache_list(cache_index: int) const 🔗
+Array[Vector2i] get_size_cache_list(cache_index: int) const 
 
 Returns list of the font sizes in the cache. Each size is Vector2i with font size and outline size.
 
-int get_texture_count(cache_index: int, size: Vector2i) const 🔗
+int get_texture_count(cache_index: int, size: Vector2i) const 
 
 Returns number of textures used by font cache entry.
 
-Image get_texture_image(cache_index: int, size: Vector2i, texture_index: int) const 🔗
+Image get_texture_image(cache_index: int, size: Vector2i, texture_index: int) const 
 
 Returns a copy of the font cache texture image.
 
-PackedInt32Array get_texture_offsets(cache_index: int, size: Vector2i, texture_index: int) const 🔗
+PackedInt32Array get_texture_offsets(cache_index: int, size: Vector2i, texture_index: int) const 
 
 Returns a copy of the array containing glyph packing data.
 
-Transform2D get_transform(cache_index: int) const 🔗
+Transform2D get_transform(cache_index: int) const 
 
 Returns 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
 
-Dictionary get_variation_coordinates(cache_index: int) const 🔗
+Dictionary get_variation_coordinates(cache_index: int) const 
 
 Returns variation coordinates for the specified font cache entry. See Font.get_supported_variation_list() for more info.
 
-Error load_bitmap_font(path: String) 🔗
+Error load_bitmap_font(path: String) 
 
 Loads an AngelCode BMFont (.fnt, .font) bitmap font from file path.
 
 Warning: This method should only be used in the editor or in cases when you need to load external fonts at run-time, such as fonts located at the user:// directory.
 
-Error load_dynamic_font(path: String) 🔗
+Error load_dynamic_font(path: String) 
 
 Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2) or Type 1 (.pfb, .pfm) dynamic font from file path.
 
 Warning: This method should only be used in the editor or in cases when you need to load external fonts at run-time, such as fonts located at the user:// directory.
 
-void remove_cache(cache_index: int) 🔗
+void remove_cache(cache_index: int) 
 
 Removes specified font cache entry.
 
-void remove_glyph(cache_index: int, size: Vector2i, glyph: int) 🔗
+void remove_glyph(cache_index: int, size: Vector2i, glyph: int) 
 
 Removes specified rendered glyph information from the cache entry.
 
 Note: This function will not remove textures associated with the glyphs, use remove_texture() to remove them manually.
 
-void remove_kerning(cache_index: int, size: int, glyph_pair: Vector2i) 🔗
+void remove_kerning(cache_index: int, size: int, glyph_pair: Vector2i) 
 
 Removes kerning override for the pair of glyphs.
 
-void remove_language_support_override(language: String) 🔗
+void remove_language_support_override(language: String) 
 
 Remove language support override.
 
-void remove_script_support_override(script: String) 🔗
+void remove_script_support_override(script: String) 
 
 Removes script support override.
 
-void remove_size_cache(cache_index: int, size: Vector2i) 🔗
+void remove_size_cache(cache_index: int, size: Vector2i) 
 
 Removes specified font size from the cache entry.
 
-void remove_texture(cache_index: int, size: Vector2i, texture_index: int) 🔗
+void remove_texture(cache_index: int, size: Vector2i, texture_index: int) 
 
 Removes specified texture from the cache entry.
 
 Note: This function will not remove glyphs associated with the texture. Remove them manually using remove_glyph().
 
-void render_glyph(cache_index: int, size: Vector2i, index: int) 🔗
+void render_glyph(cache_index: int, size: Vector2i, index: int) 
 
 Renders specified glyph to the font cache texture.
 
-void render_range(cache_index: int, size: Vector2i, start: int, end: int) 🔗
+void render_range(cache_index: int, size: Vector2i, start: int, end: int) 
 
 Renders the range of characters to the font cache texture.
 
-void set_cache_ascent(cache_index: int, size: int, ascent: float) 🔗
+void set_cache_ascent(cache_index: int, size: int, ascent: float) 
 
 Sets the font ascent (number of pixels above the baseline).
 
-void set_cache_descent(cache_index: int, size: int, descent: float) 🔗
+void set_cache_descent(cache_index: int, size: int, descent: float) 
 
 Sets the font descent (number of pixels below the baseline).
 
-void set_cache_scale(cache_index: int, size: int, scale: float) 🔗
+void set_cache_scale(cache_index: int, size: int, scale: float) 
 
 Sets scaling factor of the color bitmap font.
 
-void set_cache_underline_position(cache_index: int, size: int, underline_position: float) 🔗
+void set_cache_underline_position(cache_index: int, size: int, underline_position: float) 
 
 Sets pixel offset of the underline below the baseline.
 
-void set_cache_underline_thickness(cache_index: int, size: int, underline_thickness: float) 🔗
+void set_cache_underline_thickness(cache_index: int, size: int, underline_thickness: float) 
 
 Sets thickness of the underline in pixels.
 
-void set_embolden(cache_index: int, strength: float) 🔗
+void set_embolden(cache_index: int, strength: float) 
 
 Sets embolden strength, if is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
-void set_extra_baseline_offset(cache_index: int, baseline_offset: float) 🔗
+void set_extra_baseline_offset(cache_index: int, baseline_offset: float) 
 
 Sets extra baseline offset (as a fraction of font height).
 
-void set_extra_spacing(cache_index: int, spacing: SpacingType, value: int) 🔗
+void set_extra_spacing(cache_index: int, spacing: SpacingType, value: int) 
 
 Sets the spacing for spacing to value in pixels (not relative to the font size).
 
-void set_face_index(cache_index: int, face_index: int) 🔗
+void set_face_index(cache_index: int, face_index: int) 
 
 Sets an active face index in the TrueType / OpenType collection.
 
-void set_glyph_advance(cache_index: int, size: int, glyph: int, advance: Vector2) 🔗
+void set_glyph_advance(cache_index: int, size: int, glyph: int, advance: Vector2) 
 
 Sets glyph advance (offset of the next glyph).
 
 Note: Advance for glyphs outlines is the same as the base glyph advance and is not saved.
 
-void set_glyph_offset(cache_index: int, size: Vector2i, glyph: int, offset: Vector2) 🔗
+void set_glyph_offset(cache_index: int, size: Vector2i, glyph: int, offset: Vector2) 
 
 Sets glyph offset from the baseline.
 
-void set_glyph_size(cache_index: int, size: Vector2i, glyph: int, gl_size: Vector2) 🔗
+void set_glyph_size(cache_index: int, size: Vector2i, glyph: int, gl_size: Vector2) 
 
-void set_glyph_texture_idx(cache_index: int, size: Vector2i, glyph: int, texture_idx: int) 🔗
+void set_glyph_texture_idx(cache_index: int, size: Vector2i, glyph: int, texture_idx: int) 
 
 Sets index of the cache texture containing the glyph.
 
-void set_glyph_uv_rect(cache_index: int, size: Vector2i, glyph: int, uv_rect: Rect2) 🔗
+void set_glyph_uv_rect(cache_index: int, size: Vector2i, glyph: int, uv_rect: Rect2) 
 
 Sets rectangle in the cache texture containing the glyph.
 
-void set_kerning(cache_index: int, size: int, glyph_pair: Vector2i, kerning: Vector2) 🔗
+void set_kerning(cache_index: int, size: int, glyph_pair: Vector2i, kerning: Vector2) 
 
 Sets kerning for the pair of glyphs.
 
-void set_language_support_override(language: String, supported: bool) 🔗
+void set_language_support_override(language: String, supported: bool) 
 
 Adds override for Font.is_language_supported().
 
-void set_script_support_override(script: String, supported: bool) 🔗
+void set_script_support_override(script: String, supported: bool) 
 
 Adds override for Font.is_script_supported().
 
-void set_texture_image(cache_index: int, size: Vector2i, texture_index: int, image: Image) 🔗
+void set_texture_image(cache_index: int, size: Vector2i, texture_index: int, image: Image) 
 
 Sets font cache texture image.
 
-void set_texture_offsets(cache_index: int, size: Vector2i, texture_index: int, offset: PackedInt32Array) 🔗
+void set_texture_offsets(cache_index: int, size: Vector2i, texture_index: int, offset: PackedInt32Array) 
 
 Sets array containing glyph packing data.
 
-void set_transform(cache_index: int, transform: Transform2D) 🔗
+void set_transform(cache_index: int, transform: Transform2D) 
 
 Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.
 
-void set_variation_coordinates(cache_index: int, variation_coordinates: Dictionary) 🔗
+void set_variation_coordinates(cache_index: int, variation_coordinates: Dictionary) 
 
 Sets variation coordinates for the specified font cache entry. See Font.get_supported_variation_list() for more info.
 
@@ -2454,13 +2454,13 @@ stringify(data: Variant, indent: String = "", sort_keys: bool = true, full_preci
 
 to_native(json: Variant, allow_objects: bool = false) static
 
-Variant data = null 🔗
+Variant data = null 
 
 void set_data(value: Variant)
 
 Contains the parsed JSON data in Variant form.
 
-Variant from_native(variant: Variant, full_objects: bool = false) static 🔗
+Variant from_native(variant: Variant, full_objects: bool = false) static 
 
 Converts a native engine type to a JSON-compliant value.
 
@@ -2468,19 +2468,19 @@ By default, objects are ignored for security reasons, unless full_objects is tru
 
 You can convert a native value to a JSON string like this:
 
-int get_error_line() const 🔗
+int get_error_line() const 
 
 Returns 0 if the last call to parse() was successful, or the line number where the parse failed.
 
-String get_error_message() const 🔗
+String get_error_message() const 
 
 Returns an empty string if the last call to parse() was successful, or the error message if it failed.
 
-String get_parsed_text() const 🔗
+String get_parsed_text() const 
 
 Return the text parsed by parse() (requires passing keep_text to parse()).
 
-Error parse(json_text: String, keep_text: bool = false) 🔗
+Error parse(json_text: String, keep_text: bool = false) 
 
 Attempts to parse the json_text provided.
 
@@ -2490,11 +2490,11 @@ Non-static variant of parse_string(), if you want custom error handling.
 
 The optional keep_text argument instructs the parser to keep a copy of the original text. This text can be obtained later by using the get_parsed_text() function and is used when saving the resource (instead of generating new text from data).
 
-Variant parse_string(json_string: String) static 🔗
+Variant parse_string(json_string: String) static 
 
 Attempts to parse the json_string provided and returns the parsed data. Returns null if parse failed.
 
-String stringify(data: Variant, indent: String = "", sort_keys: bool = true, full_precision: bool = false) static 🔗
+String stringify(data: Variant, indent: String = "", sort_keys: bool = true, full_precision: bool = false) static 
 
 Converts a Variant var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
@@ -2504,7 +2504,7 @@ Note: If full_precision is true, when stringifying floats, the unreliable digits
 
 The indent parameter controls if and how something is indented; its contents will be used where there should be an indent in the output. Even spaces like " " will work. \t and \n can also be used for a tab indent, or to make a newline for each indent respectively.
 
-Variant to_native(json: Variant, allow_objects: bool = false) static 🔗
+Variant to_native(json: Variant, allow_objects: bool = false) static 
 
 Converts a JSON-compliant value that was created with from_native() back to native engine types.
 
@@ -2609,21 +2609,21 @@ register_profile_rename(old_name: String, new_name: String)
 
 register_top_level_path(display_name: String, openxr_path: String, openxr_extension_name: String)
 
-void register_interaction_profile(display_name: String, openxr_path: String, openxr_extension_name: String) 🔗
+void register_interaction_profile(display_name: String, openxr_path: String, openxr_extension_name: String) 
 
 Registers an interaction profile using its OpenXR designation (e.g. /interaction_profiles/khr/simple_controller is the profile for OpenXR's simple controller profile).
 
 display_name is the description shown to the user. openxr_path is the interaction profile path being registered. openxr_extension_name optionally restricts this profile to the given extension being enabled/available. If the extension is not available, the profile and all related entries used in an action map are filtered out.
 
-void register_io_path(interaction_profile: String, display_name: String, toplevel_path: String, openxr_path: String, openxr_extension_name: String, action_type: ActionType) 🔗
+void register_io_path(interaction_profile: String, display_name: String, toplevel_path: String, openxr_path: String, openxr_extension_name: String, action_type: ActionType) 
 
 Registers an input/output path for the given interaction_profile. The profile should previously have been registered using register_interaction_profile(). display_name is the description shown to the user. toplevel_path specifies the bind path this input/output can be bound to (e.g. /user/hand/left or /user/hand/right). openxr_path is the action input/output being registered (e.g. /user/hand/left/input/aim/pose). openxr_extension_name restricts this input/output to an enabled/available extension, this doesn't need to repeat the extension on the profile but relates to overlapping extension (e.g. XR_EXT_palm_pose that introduces …/input/palm_ext/pose input paths). action_type defines the type of input or output provided by OpenXR.
 
-void register_profile_rename(old_name: String, new_name: String) 🔗
+void register_profile_rename(old_name: String, new_name: String) 
 
 Allows for renaming old interaction profile paths to new paths to maintain backwards compatibility with older action maps.
 
-void register_top_level_path(display_name: String, openxr_path: String, openxr_extension_name: String) 🔗
+void register_top_level_path(display_name: String, openxr_path: String, openxr_extension_name: String) 
 
 Registers a top level path to which profiles can be bound. For instance /user/hand/left refers to the bind point for the player's left hand. Extensions can register additional top level paths, for instance a haptic vest extension might register /user/body/vest.
 
@@ -2668,7 +2668,7 @@ get_binding_modifier(index: int) const
 
 get_binding_modifier_count() const
 
-Array binding_modifiers = [] 🔗
+Array binding_modifiers = [] 
 
 void set_binding_modifiers(value: Array)
 
@@ -2676,13 +2676,13 @@ Array get_binding_modifiers()
 
 Binding modifiers for this interaction profile.
 
-Array bindings = [] 🔗
+Array bindings = [] 
 
 void set_bindings(value: Array)
 
 Action bindings for this interaction profile.
 
-String interaction_profile_path = "" 🔗
+String interaction_profile_path = "" 
 
 void set_interaction_profile_path(value: String)
 
@@ -2690,19 +2690,19 @@ String get_interaction_profile_path()
 
 The interaction profile path identifying the XR device.
 
-OpenXRIPBinding get_binding(index: int) const 🔗
+OpenXRIPBinding get_binding(index: int) const 
 
 Retrieve the binding at this index.
 
-int get_binding_count() const 🔗
+int get_binding_count() const 
 
 Get the number of bindings in this interaction profile.
 
-OpenXRIPBindingModifier get_binding_modifier(index: int) const 🔗
+OpenXRIPBindingModifier get_binding_modifier(index: int) const 
 
 Get the OpenXRBindingModifier at this index.
 
-int get_binding_modifier_count() const 🔗
+int get_binding_modifier_count() const 
 
 Get the number of binding modifiers in this interaction profile.
 
@@ -2765,19 +2765,19 @@ It's similar to GEN_EDIT_STATE_MAIN, but for the case where the scene is being i
 
 Note: Only available in editor builds.
 
-bool can_instantiate() const 🔗
+bool can_instantiate() const 
 
 Returns true if the scene file has nodes.
 
-SceneState get_state() const 🔗
+SceneState get_state() const 
 
 Returns the SceneState representing the scene file contents.
 
-Node instantiate(edit_state: GenEditState = 0) const 🔗
+Node instantiate(edit_state: GenEditState = 0) const 
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a Node.NOTIFICATION_SCENE_INSTANTIATED notification on the root node.
 
-Error pack(path: Node) 🔗
+Error pack(path: Node) 
 
 Packs the path node, and all owned sub-nodes, into this PackedScene. Any existing data will be cleared. See Node.owner.
 
@@ -2906,7 +2906,7 @@ remove_resource_format_loader(format_loader: ResourceFormatLoader)
 
 set_abort_on_missing_resources(abort: bool)
 
-enum ThreadLoadStatus: 🔗
+enum ThreadLoadStatus: 
 
 ThreadLoadStatus THREAD_LOAD_INVALID_RESOURCE = 0
 
@@ -2944,13 +2944,13 @@ CacheMode CACHE_MODE_REPLACE_DEEP = 4
 
 Like CACHE_MODE_REPLACE, but propagated recursively down the tree of dependencies (external resources).
 
-void add_resource_format_loader(format_loader: ResourceFormatLoader, at_front: bool = false) 🔗
+void add_resource_format_loader(format_loader: ResourceFormatLoader, at_front: bool = false) 
 
 Registers a new ResourceFormatLoader. The ResourceLoader will use the ResourceFormatLoader as described in load().
 
 This method is performed implicitly for ResourceFormatLoaders written in GDScript (see ResourceFormatLoader for more information).
 
-bool exists(path: String, type_hint: String = "") 🔗
+bool exists(path: String, type_hint: String = "") 
 
 Returns whether a recognized resource exists for the given path.
 
@@ -2958,33 +2958,33 @@ An optional type_hint can be used to further specify the Resource type that shou
 
 Note: If you use Resource.take_over_path(), this method will return true for the taken path even if the resource wasn't saved (i.e. exists only in resource cache).
 
-Resource get_cached_ref(path: String) 🔗
+Resource get_cached_ref(path: String) 
 
 Returns the cached resource reference for the given path.
 
 Note: If the resource is not cached, the returned Resource will be invalid.
 
-PackedStringArray get_dependencies(path: String) 🔗
+PackedStringArray get_dependencies(path: String) 
 
 Returns the dependencies for the resource at the given path.
 
 Each dependency is a string that can be divided into sections by ::. There can be either one section or three sections, with the second section always being empty. When there is one section, it contains the file path. When there are three sections, the first section contains the UID and the third section contains the fallback path.
 
-PackedStringArray get_recognized_extensions_for_type(type: String) 🔗
+PackedStringArray get_recognized_extensions_for_type(type: String) 
 
 Returns the list of recognized extensions for a resource type.
 
-int get_resource_uid(path: String) 🔗
+int get_resource_uid(path: String) 
 
 Returns the ID associated with a given resource path, or -1 when no such ID exists.
 
-bool has_cached(path: String) 🔗
+bool has_cached(path: String) 
 
 Returns whether a cached resource is available for the given path.
 
 Once a resource has been loaded by the engine, it is cached in memory for faster access, and future calls to the load() method will use the cached version. The cached resource can be overridden by using Resource.take_over_path() on a new resource for that same path.
 
-PackedStringArray list_directory(directory_path: String) 🔗
+PackedStringArray list_directory(directory_path: String) 
 
 Lists a directory, returning all resources and subdirectories contained within. The resource files have the original file names as visible in the editor before exporting. The directories have "/" appended.
 
@@ -2992,7 +2992,7 @@ Note: The order of files and directories returned by this method is not determin
 
 Note: To normally traverse the filesystem, see DirAccess.
 
-Resource load(path: String, type_hint: String = "", cache_mode: CacheMode = 1) 🔗
+Resource load(path: String, type_hint: String = "", cache_mode: CacheMode = 1) 
 
 Loads a resource at the given path, caching the result for further access.
 
@@ -3010,13 +3010,13 @@ Note: If ProjectSettings.editor/export/convert_text_resources_to_binary is true,
 
 Note: Relative paths will be prefixed with "res://" before loading, to avoid unexpected results make sure your paths are absolute.
 
-Resource load_threaded_get(path: String) 🔗
+Resource load_threaded_get(path: String) 
 
 Returns the resource loaded by load_threaded_request().
 
 If this is called before the loading thread is done (i.e. load_threaded_get_status() is not THREAD_LOAD_LOADED), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use load_threaded_get_status() to known when the load has actually completed.
 
-ThreadLoadStatus load_threaded_get_status(path: String, progress: Array = []) 🔗
+ThreadLoadStatus load_threaded_get_status(path: String, progress: Array = []) 
 
 Returns the status of a threaded loading operation started with load_threaded_request() for the resource at path.
 
@@ -3024,17 +3024,17 @@ An array variable can optionally be passed via progress, and will return a one-e
 
 Note: The recommended way of using this method is to call it during different frames (e.g., in Node._process(), instead of a loop).
 
-Error load_threaded_request(path: String, type_hint: String = "", use_sub_threads: bool = false, cache_mode: CacheMode = 1) 🔗
+Error load_threaded_request(path: String, type_hint: String = "", use_sub_threads: bool = false, cache_mode: CacheMode = 1) 
 
 Loads the resource using threads. If use_sub_threads is true, multiple threads will be used to load the resource, which makes loading faster, but may affect the main thread (and thus cause game slowdowns).
 
 The cache_mode parameter defines whether and how the cache should be used or updated when loading the resource.
 
-void remove_resource_format_loader(format_loader: ResourceFormatLoader) 🔗
+void remove_resource_format_loader(format_loader: ResourceFormatLoader) 
 
 Unregisters the given ResourceFormatLoader.
 
-void set_abort_on_missing_resources(abort: bool) 🔗
+void set_abort_on_missing_resources(abort: bool) 
 
 Changes the behavior on missing sub-resources. The default behavior is to abort loading.
 
@@ -3406,7 +3406,7 @@ The video file path or URI that this VideoStream resource handles.
 
 For VideoStreamTheora, this filename should be an Ogg Theora video file with the .ogv extension.
 
-VideoStreamPlayback _instantiate_playback() virtual 🔗
+VideoStreamPlayback _instantiate_playback() virtual 
 
 Called when the video starts playing, to initialize and return a subclass of VideoStreamPlayback.
 

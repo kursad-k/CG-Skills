@@ -57,7 +57,7 @@ service(timeout: int = 0)
 
 socket_send(destination_address: String, destination_port: int, packet: PackedByteArray)
 
-enum CompressionMode: 🔗
+enum CompressionMode: 
 
 CompressionMode COMPRESS_NONE = 0
 
@@ -99,7 +99,7 @@ EventType EVENT_RECEIVE = 3
 
 A packet has been received from a peer. The array will contain the peer which sent the packet and the channel number upon which the packet was received. The received packet will be queued to the associated ENetPacketPeer.
 
-enum HostStatistic: 🔗
+enum HostStatistic: 
 
 HostStatistic HOST_TOTAL_SENT_DATA = 0
 
@@ -113,19 +113,19 @@ HostStatistic HOST_TOTAL_RECEIVED_PACKETS = 3
 
 Total UDP packets received.
 
-void bandwidth_limit(in_bandwidth: int = 0, out_bandwidth: int = 0) 🔗
+void bandwidth_limit(in_bandwidth: int = 0, out_bandwidth: int = 0) 
 
 Adjusts the bandwidth limits of a host.
 
-void broadcast(channel: int, packet: PackedByteArray, flags: int) 🔗
+void broadcast(channel: int, packet: PackedByteArray, flags: int) 
 
 Queues a packet to be sent to all peers associated with the host over the specified channel. See ENetPacketPeer FLAG_* constants for available packet flags.
 
-void channel_limit(limit: int) 🔗
+void channel_limit(limit: int) 
 
 Limits the maximum allowed channels of future incoming connections.
 
-void compress(mode: CompressionMode) 🔗
+void compress(mode: CompressionMode) 
 
 Sets the compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
@@ -133,13 +133,13 @@ Note: Most games' network design involve sending many small packets frequently (
 
 Note: The compression mode must be set to the same value on both the server and all its clients. Clients will fail to connect if the compression mode set on the client differs from the one set on the server.
 
-ENetPacketPeer connect_to_host(address: String, port: int, channels: int = 0, data: int = 0) 🔗
+ENetPacketPeer connect_to_host(address: String, port: int, channels: int = 0, data: int = 0) 
 
 Initiates a connection to a foreign address using the specified port and allocating the requested channels. Optional data can be passed during connection in the form of a 32 bit integer.
 
 Note: You must call either create_host() or create_host_bound() on both ends before calling this method.
 
-Error create_host(max_peers: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 🔗
+Error create_host(max_peers: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 
 
 Creates an ENetHost that allows up to max_peers connected peers, each allocating up to max_channels channels, optionally limiting bandwidth to in_bandwidth and out_bandwidth (if greater than zero).
 
@@ -147,7 +147,7 @@ This method binds a random available dynamic UDP port on the host machine at the
 
 Note: It is necessary to create a host in both client and server in order to establish a connection.
 
-Error create_host_bound(bind_address: String, bind_port: int, max_peers: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 🔗
+Error create_host_bound(bind_address: String, bind_port: int, max_peers: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 
 
 Creates an ENetHost bound to the given bind_address and bind_port that allows up to max_peers connected peers, each allocating up to max_channels channels, optionally limiting bandwidth to in_bandwidth and out_bandwidth (if greater than zero).
 
@@ -155,41 +155,41 @@ Note: It is necessary to create a host in both client and server in order to est
 
 Destroys the host and all resources associated with it.
 
-Error dtls_client_setup(hostname: String, client_options: TLSOptions = null) 🔗
+Error dtls_client_setup(hostname: String, client_options: TLSOptions = null) 
 
 Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before connect_to_host() to have ENet connect using DTLS validating the server certificate against hostname. You can pass the optional client_options parameter to customize the trusted certification authorities, or disable the common name verification. See TLSOptions.client() and TLSOptions.client_unsafe().
 
-Error dtls_server_setup(server_options: TLSOptions) 🔗
+Error dtls_server_setup(server_options: TLSOptions) 
 
 Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after create_host_bound() to have ENet expect peers to connect using DTLS. See TLSOptions.server().
 
 Sends any queued packets on the host specified to its designated peers.
 
-int get_local_port() const 🔗
+int get_local_port() const 
 
 Returns the local port to which this peer is bound.
 
-int get_max_channels() const 🔗
+int get_max_channels() const 
 
 Returns the maximum number of channels allowed for connected peers.
 
-Array[ENetPacketPeer] get_peers() 🔗
+Array[ENetPacketPeer] get_peers() 
 
 Returns the list of peers associated with this host.
 
 Note: This list might include some peers that are not fully connected or are still being disconnected.
 
-float pop_statistic(statistic: HostStatistic) 🔗
+float pop_statistic(statistic: HostStatistic) 
 
 Returns and resets host statistics.
 
-void refuse_new_connections(refuse: bool) 🔗
+void refuse_new_connections(refuse: bool) 
 
 Configures the DTLS server to automatically drop new connections.
 
 Note: This method is only relevant after calling dtls_server_setup().
 
-Array service(timeout: int = 0) 🔗
+Array service(timeout: int = 0) 
 
 Waits for events on this connection and shuttles packets between the host and its peers, with the given timeout (in milliseconds). The returned Array will have 4 elements. An EventType, the ENetPacketPeer which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is EVENT_RECEIVE, the received packet will be queued to the associated ENetPacketPeer.
 
@@ -197,7 +197,7 @@ Call this function regularly to handle connections, disconnections, and to recei
 
 Note: This method must be called on both ends involved in the event (sending and receiving hosts).
 
-void socket_send(destination_address: String, destination_port: int, packet: PackedByteArray) 🔗
+void socket_send(destination_address: String, destination_port: int, packet: PackedByteArray) 
 
 Sends a packet toward a destination from the address and port currently bound by this ENetConnection instance.
 
@@ -247,35 +247,35 @@ get_peer(id: int) const
 
 set_bind_ip(ip: String)
 
-ENetConnection host 🔗
+ENetConnection host 
 
 ENetConnection get_host()
 
 The underlying ENetConnection created after create_client() and create_server().
 
-Error add_mesh_peer(peer_id: int, host: ENetConnection) 🔗
+Error add_mesh_peer(peer_id: int, host: ENetConnection) 
 
 Add a new remote peer with the given peer_id connected to the given host.
 
 Note: The host must have exactly one peer in the ENetPacketPeer.STATE_CONNECTED state.
 
-Error create_client(address: String, port: int, channel_count: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0, local_port: int = 0) 🔗
+Error create_client(address: String, port: int, channel_count: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0, local_port: int = 0) 
 
 Create client that connects to a server at address using specified port. The given address needs to be either a fully qualified domain name (e.g. "www.example.com") or an IP address in IPv4 or IPv6 format (e.g. "192.168.1.1"). The port is the port the server is listening on. The channel_count parameter can be used to specify the number of ENet channels allocated for the connection. The in_bandwidth and out_bandwidth parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns @GlobalScope.OK if a client was created, @GlobalScope.ERR_ALREADY_IN_USE if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call MultiplayerPeer.close() first) or @GlobalScope.ERR_CANT_CREATE if the client could not be created. If local_port is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
 
-Error create_mesh(unique_id: int) 🔗
+Error create_mesh(unique_id: int) 
 
 Initialize this MultiplayerPeer in mesh mode. The provided unique_id will be used as the local peer network unique ID once assigned as the MultiplayerAPI.multiplayer_peer. In the mesh configuration you will need to set up each new peer manually using ENetConnection before calling add_mesh_peer(). While this technique is more advanced, it allows for better control over the connection process (e.g. when dealing with NAT punch-through) and for better distribution of the network load (which would otherwise be more taxing on the server).
 
-Error create_server(port: int, max_clients: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 🔗
+Error create_server(port: int, max_clients: int = 32, max_channels: int = 0, in_bandwidth: int = 0, out_bandwidth: int = 0) 
 
 Create server that listens to connections via port. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use set_bind_ip(). The default IP is the wildcard "*", which listens on all available interfaces. max_clients is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see create_client(). Returns @GlobalScope.OK if a server was created, @GlobalScope.ERR_ALREADY_IN_USE if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call MultiplayerPeer.close() first) or @GlobalScope.ERR_CANT_CREATE if the server could not be created.
 
-ENetPacketPeer get_peer(id: int) const 🔗
+ENetPacketPeer get_peer(id: int) const 
 
 Returns the ENetPacketPeer associated to the given id.
 
-void set_bind_ip(ip: String) 🔗
+void set_bind_ip(ip: String) 
 
 The IP used when creating a server. This is set to the wildcard "*" by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: "192.168.1.1".
 
@@ -371,7 +371,7 @@ PeerState STATE_ZOMBIE = 9
 
 The peer has lost connection, but is not considered truly disconnected (as the peer didn't acknowledge the disconnection request).
 
-enum PeerStatistic: 🔗
+enum PeerStatistic: 
 
 PeerStatistic PEER_PACKET_LOSS = 0
 
@@ -429,83 +429,83 @@ PeerStatistic PEER_PACKET_THROTTLE_INTERVAL = 13
 
 The interval over which the lowest mean round trip time should be measured for use by the throttle mechanism (in milliseconds). The default value is 5000.
 
-PACKET_LOSS_SCALE = 65536 🔗
+PACKET_LOSS_SCALE = 65536 
 
 The reference scale for packet loss. See get_statistic() and PEER_PACKET_LOSS.
 
-PACKET_THROTTLE_SCALE = 32 🔗
+PACKET_THROTTLE_SCALE = 32 
 
 The reference value for throttle configuration. The default value is 32. See throttle_configure().
 
 Mark the packet to be sent as reliable.
 
-FLAG_UNSEQUENCED = 2 🔗
+FLAG_UNSEQUENCED = 2 
 
 Mark the packet to be sent unsequenced (unreliable).
 
-FLAG_UNRELIABLE_FRAGMENT = 8 🔗
+FLAG_UNRELIABLE_FRAGMENT = 8 
 
 Mark the packet to be sent unreliable even if the packet is too big and needs fragmentation (increasing the chance of it being dropped).
 
-int get_channels() const 🔗
+int get_channels() const 
 
 Returns the number of channels allocated for communication with peer.
 
-int get_packet_flags() const 🔗
+int get_packet_flags() const 
 
 Returns the ENet flags of the next packet in the received queue. See FLAG_* constants for available packet flags. Note that not all flags are replicated from the sending peer to the receiving peer.
 
-String get_remote_address() const 🔗
+String get_remote_address() const 
 
 Returns the IP address of this peer.
 
-int get_remote_port() const 🔗
+int get_remote_port() const 
 
 Returns the remote port of this peer.
 
-PeerState get_state() const 🔗
+PeerState get_state() const 
 
 Returns the current peer state.
 
-float get_statistic(statistic: PeerStatistic) 🔗
+float get_statistic(statistic: PeerStatistic) 
 
 Returns the requested statistic for this peer.
 
-bool is_active() const 🔗
+bool is_active() const 
 
 Returns true if the peer is currently active (i.e. the associated ENetConnection is still valid).
 
-void peer_disconnect(data: int = 0) 🔗
+void peer_disconnect(data: int = 0) 
 
 Request a disconnection from a peer. An ENetConnection.EVENT_DISCONNECT will be generated during ENetConnection.service() once the disconnection is complete.
 
-void peer_disconnect_later(data: int = 0) 🔗
+void peer_disconnect_later(data: int = 0) 
 
 Request a disconnection from a peer, but only after all queued outgoing packets are sent. An ENetConnection.EVENT_DISCONNECT will be generated during ENetConnection.service() once the disconnection is complete.
 
-void peer_disconnect_now(data: int = 0) 🔗
+void peer_disconnect_now(data: int = 0) 
 
 Force an immediate disconnection from a peer. No ENetConnection.EVENT_DISCONNECT will be generated. The foreign peer is not guaranteed to receive the disconnect notification, and is reset immediately upon return from this function.
 
 Sends a ping request to a peer. ENet automatically pings all connected peers at regular intervals, however, this function may be called to ensure more frequent ping requests.
 
-void ping_interval(ping_interval: int) 🔗
+void ping_interval(ping_interval: int) 
 
 Sets the ping_interval in milliseconds at which pings will be sent to a peer. Pings are used both to monitor the liveness of the connection and also to dynamically adjust the throttle during periods of low traffic so that the throttle has reasonable responsiveness during traffic spikes. The default ping interval is 500 milliseconds.
 
 Forcefully disconnects a peer. The foreign host represented by the peer is not notified of the disconnection and will timeout on its connection to the local host.
 
-Error send(channel: int, packet: PackedByteArray, flags: int) 🔗
+Error send(channel: int, packet: PackedByteArray, flags: int) 
 
 Queues a packet to be sent over the specified channel. See FLAG_* constants for available packet flags.
 
-void set_timeout(timeout: int, timeout_min: int, timeout_max: int) 🔗
+void set_timeout(timeout: int, timeout_min: int, timeout_max: int) 
 
 Sets the timeout parameters for a peer. The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.
 
 The timeout is a factor that, multiplied by a value based on the average round trip time, will determine the timeout limit for a reliable packet. When that limit is reached, the timeout will be doubled, and the peer will be disconnected if that limit has reached timeout_min. The timeout_max parameter, on the other hand, defines a fixed timeout for which any packet must be acknowledged or the peer will be dropped.
 
-void throttle_configure(interval: int, acceleration: int, deceleration: int) 🔗
+void throttle_configure(interval: int, acceleration: int, deceleration: int) 
 
 Configures throttle parameter for a peer.
 
@@ -985,7 +985,7 @@ ErrorCode INTERNAL_ERROR = -32603
 
 An internal error occurred while processing the request. Not used by the built-in JSONRPC.
 
-Dictionary make_notification(method: String, params: Variant) 🔗
+Dictionary make_notification(method: String, params: Variant) 
 
 Returns a dictionary in the form of a JSON-RPC notification. Notifications are one-shot messages which do not expect a response.
 
@@ -993,7 +993,7 @@ method: Name of the method being called.
 
 params: An array or dictionary of parameters being passed to the method.
 
-Dictionary make_request(method: String, params: Variant, id: Variant) 🔗
+Dictionary make_request(method: String, params: Variant, id: Variant) 
 
 Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a server with the expectation of a response. The ID field is used for the server to specify which exact request it is responding to.
 
@@ -1003,7 +1003,7 @@ params: An array or dictionary of parameters being passed to the method.
 
 id: Uniquely identifies this request. The server is expected to send a response with the same ID.
 
-Dictionary make_response(result: Variant, id: Variant) 🔗
+Dictionary make_response(result: Variant, id: Variant) 
 
 When a server has received and processed a request, it is expected to send a response. If you did not want a response then you need to have sent a Notification instead.
 
@@ -1011,7 +1011,7 @@ result: The return value of the function which was called.
 
 id: The ID of the request this response is targeted to.
 
-Dictionary make_response_error(code: int, message: String, id: Variant = null) const 🔗
+Dictionary make_response_error(code: int, message: String, id: Variant = null) const 
 
 Creates a response which indicates a previous reply has failed in some way.
 
@@ -1021,7 +1021,7 @@ message: A custom message about this error.
 
 id: The request this error is a response to.
 
-Variant process_action(action: Variant, recurse: bool = false) 🔗
+Variant process_action(action: Variant, recurse: bool = false) 
 
 Given a Dictionary which takes the form of a JSON-RPC request: unpack the request and run it. Methods are resolved by looking at the field called "method" and looking for an equivalently named function in the JSONRPC object. If one is found that method is called.
 
@@ -1029,11 +1029,11 @@ To add new supported methods extend the JSONRPC class and call process_action() 
 
 action: The action to be run, as a Dictionary in the form of a JSON-RPC request or notification.
 
-String process_string(action: String) 🔗
+String process_string(action: String) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_method(name: String, callback: Callable) 🔗
+void set_method(name: String, callback: Callable) 
 
 Registers a callback for the given method name.
 
@@ -1184,39 +1184,39 @@ _rpc(peer: int, object: Object, method: StringName, args: Array) virtual
 
 _set_multiplayer_peer(multiplayer_peer: MultiplayerPeer) virtual
 
-MultiplayerPeer _get_multiplayer_peer() virtual 🔗
+MultiplayerPeer _get_multiplayer_peer() virtual 
 
 Called when the MultiplayerAPI.multiplayer_peer is retrieved.
 
-PackedInt32Array _get_peer_ids() virtual const 🔗
+PackedInt32Array _get_peer_ids() virtual const 
 
 Callback for MultiplayerAPI.get_peers().
 
-int _get_remote_sender_id() virtual const 🔗
+int _get_remote_sender_id() virtual const 
 
 Callback for MultiplayerAPI.get_remote_sender_id().
 
-int _get_unique_id() virtual const 🔗
+int _get_unique_id() virtual const 
 
 Callback for MultiplayerAPI.get_unique_id().
 
-Error _object_configuration_add(object: Object, configuration: Variant) virtual 🔗
+Error _object_configuration_add(object: Object, configuration: Variant) virtual 
 
 Callback for MultiplayerAPI.object_configuration_add().
 
-Error _object_configuration_remove(object: Object, configuration: Variant) virtual 🔗
+Error _object_configuration_remove(object: Object, configuration: Variant) virtual 
 
 Callback for MultiplayerAPI.object_configuration_remove().
 
-Error _poll() virtual 🔗
+Error _poll() virtual 
 
 Callback for MultiplayerAPI.poll().
 
-Error _rpc(peer: int, object: Object, method: StringName, args: Array) virtual 🔗
+Error _rpc(peer: int, object: Object, method: StringName, args: Array) virtual 
 
 Callback for MultiplayerAPI.rpc().
 
-void _set_multiplayer_peer(multiplayer_peer: MultiplayerPeer) virtual 🔗
+void _set_multiplayer_peer(multiplayer_peer: MultiplayerPeer) virtual 
 
 Called when the MultiplayerAPI.multiplayer_peer is set.
 
@@ -1341,23 +1341,23 @@ rpc(peer: int, object: Object, method: StringName, arguments: Array = [])
 
 set_default_interface(interface_name: StringName) static
 
-connected_to_server() 🔗
+connected_to_server() 
 
 Emitted when this MultiplayerAPI's multiplayer_peer successfully connected to a server. Only emitted on clients.
 
-connection_failed() 🔗
+connection_failed() 
 
 Emitted when this MultiplayerAPI's multiplayer_peer fails to establish a connection to a server. Only emitted on clients.
 
-peer_connected(id: int) 🔗
+peer_connected(id: int) 
 
 Emitted when this MultiplayerAPI's multiplayer_peer connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
 
-peer_disconnected(id: int) 🔗
+peer_disconnected(id: int) 
 
 Emitted when this MultiplayerAPI's multiplayer_peer disconnects from a peer. Clients get notified when other clients disconnect from the same server.
 
-server_disconnected() 🔗
+server_disconnected() 
 
 Emitted when this MultiplayerAPI's multiplayer_peer disconnects from server. Only emitted on clients.
 
@@ -1373,7 +1373,7 @@ RPCMode RPC_MODE_AUTHORITY = 2
 
 Used with Node.rpc_config() to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the @rpc("authority") annotation. See Node.set_multiplayer_authority().
 
-MultiplayerPeer multiplayer_peer 🔗
+MultiplayerPeer multiplayer_peer 
 
 void set_multiplayer_peer(value: MultiplayerPeer)
 
@@ -1381,41 +1381,41 @@ MultiplayerPeer get_multiplayer_peer()
 
 The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with is_server()) and will set root node's network mode to authority, or it will become a regular client peer. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
-MultiplayerAPI create_default_interface() static 🔗
+MultiplayerAPI create_default_interface() static 
 
 Returns a new instance of the default MultiplayerAPI.
 
-StringName get_default_interface() static 🔗
+StringName get_default_interface() static 
 
 Returns the default MultiplayerAPI implementation class name. This is usually "SceneMultiplayer" when SceneMultiplayer is available. See set_default_interface().
 
-PackedInt32Array get_peers() 🔗
+PackedInt32Array get_peers() 
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's multiplayer_peer.
 
-int get_remote_sender_id() 🔗
+int get_remote_sender_id() 
 
 Returns the sender's peer ID for the RPC currently being executed.
 
 Note: This method returns 0 when called outside of an RPC. As such, the original peer ID may be lost when code execution is delayed (such as with GDScript's await keyword).
 
-int get_unique_id() 🔗
+int get_unique_id() 
 
 Returns the unique peer ID of this MultiplayerAPI's multiplayer_peer.
 
-bool has_multiplayer_peer() 🔗
+bool has_multiplayer_peer() 
 
 Returns true if there is a multiplayer_peer set.
 
 Returns true if this MultiplayerAPI's multiplayer_peer is valid and in server mode (listening for connections).
 
-Error object_configuration_add(object: Object, configuration: Variant) 🔗
+Error object_configuration_add(object: Object, configuration: Variant) 
 
 Notifies the MultiplayerAPI of a new configuration for the given object. This method is used internally by SceneTree to configure the root path for this MultiplayerAPI (passing null and a valid NodePath as configuration). This method can be further used by MultiplayerAPI implementations to provide additional features, refer to specific implementation (e.g. SceneMultiplayer) for details on how they use it.
 
 Note: This method is mostly relevant when extending or overriding the MultiplayerAPI behavior via MultiplayerAPIExtension.
 
-Error object_configuration_remove(object: Object, configuration: Variant) 🔗
+Error object_configuration_remove(object: Object, configuration: Variant) 
 
 Notifies the MultiplayerAPI to remove a configuration for the given object. This method is used internally by SceneTree to configure the root path for this MultiplayerAPI (passing null and an empty NodePath as configuration). This method can be further used by MultiplayerAPI implementations to provide additional features, refer to specific implementation (e.g. SceneMultiplayer) for details on how they use it.
 
@@ -1425,13 +1425,13 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 
 Note: This method results in RPCs being called, so they will be executed in the same context of this function (e.g. _process, physics, Thread).
 
-Error rpc(peer: int, object: Object, method: StringName, arguments: Array = []) 🔗
+Error rpc(peer: int, object: Object, method: StringName, arguments: Array = []) 
 
 Sends an RPC to the target peer. The given method will be called on the remote object with the provided arguments. The RPC may also be called locally depending on the implementation and RPC configuration. See Node.rpc() and Node.rpc_config().
 
 Note: Prefer using Node.rpc(), Node.rpc_id(), or my_method.rpc(peer, arg1, arg2, ...) (in GDScript), since they are faster. This method is mostly useful in conjunction with MultiplayerAPIExtension when extending or replacing the multiplayer capabilities.
 
-void set_default_interface(interface_name: StringName) static 🔗
+void set_default_interface(interface_name: StringName) static 
 
 Sets the default MultiplayerAPI implementation class. This method can be used by modules and extensions to configure which implementation will be used by SceneTree when the engine starts.
 
@@ -1502,95 +1502,95 @@ _set_transfer_channel(p_channel: int) virtual required
 
 _set_transfer_mode(p_mode: TransferMode) virtual required
 
-void _close() virtual required 🔗
+void _close() virtual required 
 
 Called when the multiplayer peer should be immediately closed (see MultiplayerPeer.close()).
 
-void _disconnect_peer(p_peer: int, p_force: bool) virtual required 🔗
+void _disconnect_peer(p_peer: int, p_force: bool) virtual required 
 
 Called when the connected p_peer should be forcibly disconnected (see MultiplayerPeer.disconnect_peer()).
 
-int _get_available_packet_count() virtual required const 🔗
+int _get_available_packet_count() virtual required const 
 
 Called when the available packet count is internally requested by the MultiplayerAPI.
 
-ConnectionStatus _get_connection_status() virtual required const 🔗
+ConnectionStatus _get_connection_status() virtual required const 
 
 Called when the connection status is requested on the MultiplayerPeer (see MultiplayerPeer.get_connection_status()).
 
-int _get_max_packet_size() virtual required const 🔗
+int _get_max_packet_size() virtual required const 
 
 Called when the maximum allowed packet size (in bytes) is requested by the MultiplayerAPI.
 
-Error _get_packet(r_buffer: const uint8_t **, r_buffer_size: int32_t*) virtual 🔗
+Error _get_packet(r_buffer: const uint8_t **, r_buffer_size: int32_t*) virtual 
 
 Called when a packet needs to be received by the MultiplayerAPI, with r_buffer_size being the size of the binary r_buffer in bytes.
 
-int _get_packet_channel() virtual required const 🔗
+int _get_packet_channel() virtual required const 
 
 Called to get the channel over which the next available packet was received. See MultiplayerPeer.get_packet_channel().
 
-TransferMode _get_packet_mode() virtual required const 🔗
+TransferMode _get_packet_mode() virtual required const 
 
 Called to get the transfer mode the remote peer used to send the next available packet. See MultiplayerPeer.get_packet_mode().
 
-int _get_packet_peer() virtual required const 🔗
+int _get_packet_peer() virtual required const 
 
 Called when the ID of the MultiplayerPeer who sent the most recent packet is requested (see MultiplayerPeer.get_packet_peer()).
 
-PackedByteArray _get_packet_script() virtual 🔗
+PackedByteArray _get_packet_script() virtual 
 
 Called when a packet needs to be received by the MultiplayerAPI, if _get_packet() isn't implemented. Use this when extending this class via GDScript.
 
-int _get_transfer_channel() virtual required const 🔗
+int _get_transfer_channel() virtual required const 
 
 Called when the transfer channel to use is read on this MultiplayerPeer (see MultiplayerPeer.transfer_channel).
 
-TransferMode _get_transfer_mode() virtual required const 🔗
+TransferMode _get_transfer_mode() virtual required const 
 
 Called when the transfer mode to use is read on this MultiplayerPeer (see MultiplayerPeer.transfer_mode).
 
-int _get_unique_id() virtual required const 🔗
+int _get_unique_id() virtual required const 
 
 Called when the unique ID of this MultiplayerPeer is requested (see MultiplayerPeer.get_unique_id()). The value must be between 1 and 2147483647.
 
-bool _is_refusing_new_connections() virtual const 🔗
+bool _is_refusing_new_connections() virtual const 
 
 Called when the "refuse new connections" status is requested on this MultiplayerPeer (see MultiplayerPeer.refuse_new_connections).
 
-bool _is_server() virtual required const 🔗
+bool _is_server() virtual required const 
 
 Called when the "is server" status is requested on the MultiplayerAPI. See MultiplayerAPI.is_server().
 
-bool _is_server_relay_supported() virtual const 🔗
+bool _is_server_relay_supported() virtual const 
 
 Called to check if the server can act as a relay in the current configuration. See MultiplayerPeer.is_server_relay_supported().
 
-void _poll() virtual required 🔗
+void _poll() virtual required 
 
 Called when the MultiplayerAPI is polled. See MultiplayerAPI.poll().
 
-Error _put_packet(p_buffer: const uint8_t*, p_buffer_size: int) virtual 🔗
+Error _put_packet(p_buffer: const uint8_t*, p_buffer_size: int) virtual 
 
 Called when a packet needs to be sent by the MultiplayerAPI, with p_buffer_size being the size of the binary p_buffer in bytes.
 
-Error _put_packet_script(p_buffer: PackedByteArray) virtual 🔗
+Error _put_packet_script(p_buffer: PackedByteArray) virtual 
 
 Called when a packet needs to be sent by the MultiplayerAPI, if _put_packet() isn't implemented. Use this when extending this class via GDScript.
 
-void _set_refuse_new_connections(p_enable: bool) virtual 🔗
+void _set_refuse_new_connections(p_enable: bool) virtual 
 
 Called when the "refuse new connections" status is set on this MultiplayerPeer (see MultiplayerPeer.refuse_new_connections).
 
-void _set_target_peer(p_peer: int) virtual required 🔗
+void _set_target_peer(p_peer: int) virtual required 
 
 Called when the target peer to use is set for this MultiplayerPeer (see MultiplayerPeer.set_target_peer()).
 
-void _set_transfer_channel(p_channel: int) virtual required 🔗
+void _set_transfer_channel(p_channel: int) virtual required 
 
 Called when the channel to use is set for this MultiplayerPeer (see MultiplayerPeer.transfer_channel).
 
-void _set_transfer_mode(p_mode: TransferMode) virtual required 🔗
+void _set_transfer_mode(p_mode: TransferMode) virtual required 
 
 Called when the transfer mode is set on this MultiplayerPeer (see MultiplayerPeer.transfer_mode).
 
@@ -1648,15 +1648,15 @@ is_server_relay_supported() const
 
 set_target_peer(id: int)
 
-peer_connected(id: int) 🔗
+peer_connected(id: int) 
 
 Emitted when a remote peer connects.
 
-peer_disconnected(id: int) 🔗
+peer_disconnected(id: int) 
 
 Emitted when a remote peer has disconnected.
 
-enum ConnectionStatus: 🔗
+enum ConnectionStatus: 
 
 ConnectionStatus CONNECTION_DISCONNECTED = 0
 
@@ -1682,15 +1682,15 @@ TransferMode TRANSFER_MODE_RELIABLE = 2
 
 Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
 
-TARGET_PEER_BROADCAST = 0 🔗
+TARGET_PEER_BROADCAST = 0 
 
 Packets are sent to all connected peers.
 
-TARGET_PEER_SERVER = 1 🔗
+TARGET_PEER_SERVER = 1 
 
 Packets are sent to the remote peer acting as server.
 
-bool refuse_new_connections = false 🔗
+bool refuse_new_connections = false 
 
 void set_refuse_new_connections(value: bool)
 
@@ -1698,7 +1698,7 @@ bool is_refusing_new_connections()
 
 If true, this MultiplayerPeer refuses new connections.
 
-int transfer_channel = 0 🔗
+int transfer_channel = 0 
 
 void set_transfer_channel(value: int)
 
@@ -1708,7 +1708,7 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 
 Note: The default channel (0) actually works as 3 separate channels (one for each TransferMode) so that TRANSFER_MODE_RELIABLE and TRANSFER_MODE_UNRELIABLE_ORDERED does not interact with each other by default. Refer to the specific network API documentation (e.g. ENet or WebRTC) to learn how to set up channels correctly.
 
-TransferMode transfer_mode = 2 🔗
+TransferMode transfer_mode = 2 
 
 void set_transfer_mode(value: TransferMode)
 
@@ -1718,41 +1718,41 @@ The manner in which to send packets to the target peer. See the set_target_peer(
 
 Immediately close the multiplayer peer returning to the state CONNECTION_DISCONNECTED. Connected peers will be dropped without emitting peer_disconnected.
 
-void disconnect_peer(peer: int, force: bool = false) 🔗
+void disconnect_peer(peer: int, force: bool = false) 
 
 Disconnects the given peer from this host. If force is true the peer_disconnected signal will not be emitted for this peer.
 
-int generate_unique_id() const 🔗
+int generate_unique_id() const 
 
 Returns a randomly generated integer that can be used as a network unique ID.
 
-ConnectionStatus get_connection_status() const 🔗
+ConnectionStatus get_connection_status() const 
 
 Returns the current state of the connection.
 
-int get_packet_channel() const 🔗
+int get_packet_channel() const 
 
 Returns the channel over which the next available packet was received. See PacketPeer.get_available_packet_count().
 
-TransferMode get_packet_mode() const 🔗
+TransferMode get_packet_mode() const 
 
 Returns the transfer mode the remote peer used to send the next available packet. See PacketPeer.get_available_packet_count().
 
-int get_packet_peer() const 🔗
+int get_packet_peer() const 
 
 Returns the ID of the MultiplayerPeer who sent the next available packet. See PacketPeer.get_available_packet_count().
 
-int get_unique_id() const 🔗
+int get_unique_id() const 
 
 Returns the ID of this MultiplayerPeer.
 
-bool is_server_relay_supported() const 🔗
+bool is_server_relay_supported() const 
 
 Returns true if the server can act as a relay in the current configuration. That is, if the higher level MultiplayerAPI should notify connected clients of other peers, and implement a relay protocol to allow communication between them.
 
 Waits up to 1 second to receive a new network event.
 
-void set_target_peer(id: int) 🔗
+void set_target_peer(id: int) 
 
 Sets the peer to which packets will be sent.
 
@@ -1805,17 +1805,17 @@ set_visibility_for(peer: int, visible: bool)
 
 update_visibility(for_peer: int = 0)
 
-delta_synchronized() 🔗
+delta_synchronized() 
 
 Emitted when a new delta synchronization state is received by this synchronizer after the properties have been updated.
 
 Emitted when a new synchronization state is received by this synchronizer after the properties have been updated.
 
-visibility_changed(for_peer: int) 🔗
+visibility_changed(for_peer: int) 
 
 Emitted when visibility of for_peer is updated. See update_visibility().
 
-enum VisibilityUpdateMode: 🔗
+enum VisibilityUpdateMode: 
 
 VisibilityUpdateMode VISIBILITY_PROCESS_IDLE = 0
 
@@ -1829,7 +1829,7 @@ VisibilityUpdateMode VISIBILITY_PROCESS_NONE = 2
 
 Visibility filters are not updated automatically, and must be updated manually by calling update_visibility().
 
-float delta_interval = 0.0 🔗
+float delta_interval = 0.0 
 
 void set_delta_interval(value: float)
 
@@ -1837,7 +1837,7 @@ float get_delta_interval()
 
 Time interval between delta synchronizations. Used when the replication is set to SceneReplicationConfig.REPLICATION_MODE_ON_CHANGE. If set to 0.0 (the default), delta synchronizations happen every network process frame.
 
-bool public_visibility = true 🔗
+bool public_visibility = true 
 
 void set_visibility_public(value: bool)
 
@@ -1845,7 +1845,7 @@ bool is_visibility_public()
 
 Whether synchronization should be visible to all peers by default. See set_visibility_for() and add_visibility_filter() for ways of configuring fine-grained visibility options.
 
-SceneReplicationConfig replication_config 🔗
+SceneReplicationConfig replication_config 
 
 void set_replication_config(value: SceneReplicationConfig)
 
@@ -1853,7 +1853,7 @@ SceneReplicationConfig get_replication_config()
 
 Resource containing which properties to synchronize.
 
-float replication_interval = 0.0 🔗
+float replication_interval = 0.0 
 
 void set_replication_interval(value: float)
 
@@ -1861,7 +1861,7 @@ float get_replication_interval()
 
 Time interval between synchronizations. Used when the replication is set to SceneReplicationConfig.REPLICATION_MODE_ALWAYS. If set to 0.0 (the default), synchronizations happen every network process frame.
 
-NodePath root_path = NodePath("..") 🔗
+NodePath root_path = NodePath("..") 
 
 void set_root_path(value: NodePath)
 
@@ -1871,7 +1871,7 @@ Node path that replicated properties are relative to.
 
 If root_path was spawned by a MultiplayerSpawner, the node will be also be spawned and despawned based on this synchronizer visibility options.
 
-VisibilityUpdateMode visibility_update_mode = 0 🔗
+VisibilityUpdateMode visibility_update_mode = 0 
 
 void set_visibility_update_mode(value: VisibilityUpdateMode)
 
@@ -1879,25 +1879,25 @@ VisibilityUpdateMode get_visibility_update_mode()
 
 Specifies when visibility filters are updated.
 
-void add_visibility_filter(filter: Callable) 🔗
+void add_visibility_filter(filter: Callable) 
 
 Adds a peer visibility filter for this synchronizer.
 
 filter should take a peer ID int and return a bool.
 
-bool get_visibility_for(peer: int) const 🔗
+bool get_visibility_for(peer: int) const 
 
 Queries the current visibility for peer peer.
 
-void remove_visibility_filter(filter: Callable) 🔗
+void remove_visibility_filter(filter: Callable) 
 
 Removes a peer visibility filter from this synchronizer.
 
-void set_visibility_for(peer: int, visible: bool) 🔗
+void set_visibility_for(peer: int, visible: bool) 
 
 Sets the visibility of peer to visible. If peer is 0, the value of public_visibility will be updated instead.
 
-void update_visibility(for_peer: int = 0) 🔗
+void update_visibility(for_peer: int = 0) 
 
 Updates the visibility of for_peer according to visibility filters. If for_peer is 0 (the default), all peers' visibilties are updated.
 
@@ -1972,7 +1972,7 @@ put_packet(buffer: PackedByteArray)
 
 put_var(var: Variant, full_objects: bool = false)
 
-int encode_buffer_max_size = 8388608 🔗
+int encode_buffer_max_size = 8388608 
 
 void set_encode_buffer_max_size(value: int)
 
@@ -1982,17 +1982,17 @@ Maximum buffer size allowed when encoding Variants. Raise this value to support 
 
 The put_var() method allocates memory on the stack, and the buffer used will grow automatically to the closest power of two to match the size of the Variant. If the Variant is bigger than encode_buffer_max_size, the method will error out with @GlobalScope.ERR_OUT_OF_MEMORY.
 
-int get_available_packet_count() const 🔗
+int get_available_packet_count() const 
 
 Returns the number of packets currently available in the ring-buffer.
 
-PackedByteArray get_packet() 🔗
+PackedByteArray get_packet() 
 
-Error get_packet_error() const 🔗
+Error get_packet_error() const 
 
 Returns the error state of the last packet received (via get_packet() and get_var()).
 
-Variant get_var(allow_objects: bool = false) 🔗
+Variant get_var(allow_objects: bool = false) 
 
 Gets a Variant. If allow_objects is true, decoding objects is allowed.
 
@@ -2000,9 +2000,9 @@ Internally, this uses the same decoding mechanism as the @GlobalScope.bytes_to_v
 
 Warning: Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
-Error put_packet(buffer: PackedByteArray) 🔗
+Error put_packet(buffer: PackedByteArray) 
 
-Error put_var(var: Variant, full_objects: bool = false) 🔗
+Error put_var(var: Variant, full_objects: bool = false) 
 
 Sends a Variant as a packet. If full_objects is true, encoding objects is allowed (and can potentially include code).
 
@@ -2056,19 +2056,19 @@ send_auth(id: int, data: PackedByteArray)
 
 send_bytes(bytes: PackedByteArray, id: int = 0, mode: TransferMode = 2, channel: int = 0)
 
-peer_authenticating(id: int) 🔗
+peer_authenticating(id: int) 
 
 Emitted when this MultiplayerAPI's MultiplayerAPI.multiplayer_peer connects to a new peer and a valid auth_callback is set. In this case, the MultiplayerAPI.peer_connected will not be emitted until complete_auth() is called with given peer id. While in this state, the peer will not be included in the list returned by MultiplayerAPI.get_peers() (but in the one returned by get_authenticating_peers()), and only authentication data will be sent or received. See send_auth() for sending authentication data.
 
-peer_authentication_failed(id: int) 🔗
+peer_authentication_failed(id: int) 
 
 Emitted when this MultiplayerAPI's MultiplayerAPI.multiplayer_peer disconnects from a peer for which authentication had not yet completed. See peer_authenticating.
 
-peer_packet(id: int, packet: PackedByteArray) 🔗
+peer_packet(id: int, packet: PackedByteArray) 
 
 Emitted when this MultiplayerAPI's MultiplayerAPI.multiplayer_peer receives a packet with custom data (see send_bytes()). ID is the peer ID of the peer that sent the packet.
 
-bool allow_object_decoding = false 🔗
+bool allow_object_decoding = false 
 
 void set_allow_object_decoding(value: bool)
 
@@ -2078,7 +2078,7 @@ If true, the MultiplayerAPI will allow encoding and decoding of object during RP
 
 Warning: Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threat such as remote code execution.
 
-Callable auth_callback = Callable() 🔗
+Callable auth_callback = Callable() 
 
 void set_auth_callback(value: Callable)
 
@@ -2086,7 +2086,7 @@ Callable get_auth_callback()
 
 The callback to execute when receiving authentication data sent via send_auth(). If the Callable is empty (default), peers will be automatically accepted as soon as they connect.
 
-float auth_timeout = 3.0 🔗
+float auth_timeout = 3.0 
 
 void set_auth_timeout(value: float)
 
@@ -2094,7 +2094,7 @@ float get_auth_timeout()
 
 If set to a value greater than 0.0, the maximum duration in seconds peers can stay in the authenticating state, after which the authentication will automatically fail. See the peer_authenticating and peer_authentication_failed signals.
 
-int max_delta_packet_size = 65535 🔗
+int max_delta_packet_size = 65535 
 
 void set_max_delta_packet_size(value: int)
 
@@ -2102,7 +2102,7 @@ int get_max_delta_packet_size()
 
 Maximum size of each delta packet. Higher values increase the chance of receiving full updates in a single frame, but also the chance of causing networking congestion (higher latency, disconnections). See MultiplayerSynchronizer.
 
-int max_sync_packet_size = 1350 🔗
+int max_sync_packet_size = 1350 
 
 void set_max_sync_packet_size(value: int)
 
@@ -2110,7 +2110,7 @@ int get_max_sync_packet_size()
 
 Maximum size of each synchronization packet. Higher values increase the chance of receiving full updates in a single frame, but also the chance of packet loss. See MultiplayerSynchronizer.
 
-bool refuse_new_connections = false 🔗
+bool refuse_new_connections = false 
 
 void set_refuse_new_connections(value: bool)
 
@@ -2118,7 +2118,7 @@ bool is_refusing_new_connections()
 
 If true, the MultiplayerAPI's MultiplayerAPI.multiplayer_peer refuses new incoming connections.
 
-NodePath root_path = NodePath("") 🔗
+NodePath root_path = NodePath("") 
 
 void set_root_path(value: NodePath)
 
@@ -2128,7 +2128,7 @@ The root path to use for RPCs and replication. Instead of an absolute path, a re
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
-bool server_relay = true 🔗
+bool server_relay = true 
 
 void set_server_relay_enabled(value: bool)
 
@@ -2142,25 +2142,25 @@ Note: Support for this feature may depend on the current MultiplayerPeer configu
 
 Clears the current SceneMultiplayer network state (you shouldn't call this unless you know what you are doing).
 
-Error complete_auth(id: int) 🔗
+Error complete_auth(id: int) 
 
 Mark the authentication step as completed for the remote peer identified by id. The MultiplayerAPI.peer_connected signal will be emitted for this peer once the remote side also completes the authentication. No further authentication messages are expected to be received from this peer.
 
 If a peer disconnects before completing authentication, either due to a network issue, the auth_timeout expiring, or manually calling disconnect_peer(), the peer_authentication_failed signal will be emitted instead of MultiplayerAPI.peer_disconnected.
 
-void disconnect_peer(id: int) 🔗
+void disconnect_peer(id: int) 
 
 Disconnects the peer identified by id, removing it from the list of connected peers, and closing the underlying connection with it.
 
-PackedInt32Array get_authenticating_peers() 🔗
+PackedInt32Array get_authenticating_peers() 
 
 Returns the IDs of the peers currently trying to authenticate with this MultiplayerAPI.
 
-Error send_auth(id: int, data: PackedByteArray) 🔗
+Error send_auth(id: int, data: PackedByteArray) 
 
 Sends the specified data to the remote peer identified by id as part of an authentication message. This can be used to authenticate peers, and control when MultiplayerAPI.peer_connected is emitted (and the remote peer accepted as one of the connected peers).
 
-Error send_bytes(bytes: PackedByteArray, id: int = 0, mode: TransferMode = 2, channel: int = 0) 🔗
+Error send_bytes(bytes: PackedByteArray, id: int = 0, mode: TransferMode = 2, channel: int = 0) 
 
 Sends the given raw bytes to a specific peer identified by id (see MultiplayerPeer.set_target_peer()). Default ID is 0, i.e. broadcast to all peers.
 
@@ -2482,41 +2482,41 @@ has_peer(peer_id: int)
 
 remove_peer(peer_id: int)
 
-Error add_peer(peer: WebRTCPeerConnection, peer_id: int, unreliable_lifetime: int = 1) 🔗
+Error add_peer(peer: WebRTCPeerConnection, peer_id: int, unreliable_lifetime: int = 1) 
 
 Add a new peer to the mesh with the given peer_id. The WebRTCPeerConnection must be in state WebRTCPeerConnection.STATE_NEW.
 
 Three channels will be created for reliable, unreliable, and ordered transport. The value of unreliable_lifetime will be passed to the "maxPacketLifetime" option when creating unreliable and ordered channels (see WebRTCPeerConnection.create_data_channel()).
 
-Error create_client(peer_id: int, channels_config: Array = []) 🔗
+Error create_client(peer_id: int, channels_config: Array = []) 
 
 Initialize the multiplayer peer as a client with the given peer_id (must be between 2 and 2147483647). In this mode, you should only call add_peer() once and with peer_id of 1. This mode enables MultiplayerPeer.is_server_relay_supported(), allowing the upper MultiplayerAPI layer to perform peer exchange and packet relaying.
 
 You can optionally specify a channels_config array of TransferMode which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
 
-Error create_mesh(peer_id: int, channels_config: Array = []) 🔗
+Error create_mesh(peer_id: int, channels_config: Array = []) 
 
 Initialize the multiplayer peer as a mesh (i.e. all peers connect to each other) with the given peer_id (must be between 1 and 2147483647).
 
-Error create_server(channels_config: Array = []) 🔗
+Error create_server(channels_config: Array = []) 
 
 Initialize the multiplayer peer as a server (with unique ID of 1). This mode enables MultiplayerPeer.is_server_relay_supported(), allowing the upper MultiplayerAPI layer to perform peer exchange and packet relaying.
 
 You can optionally specify a channels_config array of TransferMode which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
 
-Dictionary get_peer(peer_id: int) 🔗
+Dictionary get_peer(peer_id: int) 
 
 Returns a dictionary representation of the peer with given peer_id with three keys. "connection" containing the WebRTCPeerConnection to this peer, "channels" an array of three WebRTCDataChannel, and "connected" a boolean representing if the peer connection is currently connected (all three channels are open).
 
-Dictionary get_peers() 🔗
+Dictionary get_peers() 
 
 Returns a dictionary which keys are the peer ids and values the peer representation as in get_peer().
 
-bool has_peer(peer_id: int) 🔗
+bool has_peer(peer_id: int) 
 
 Returns true if the given peer_id is in the peers map (it might not be connected though).
 
-void remove_peer(peer_id: int) 🔗
+void remove_peer(peer_id: int) 
 
 Remove the peer with given peer_id from the mesh. If the peer was connected, and MultiplayerPeer.peer_connected was emitted for it, then MultiplayerPeer.peer_disconnected will be emitted.
 
@@ -2744,7 +2744,7 @@ get_peer_address(id: int) const
 
 get_peer_port(id: int) const
 
-PackedStringArray handshake_headers = PackedStringArray() 🔗
+PackedStringArray handshake_headers = PackedStringArray() 
 
 void set_handshake_headers(value: PackedStringArray)
 
@@ -2754,7 +2754,7 @@ The extra headers to use during handshake. See WebSocketPeer.handshake_headers f
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-float handshake_timeout = 3.0 🔗
+float handshake_timeout = 3.0 
 
 void set_handshake_timeout(value: float)
 
@@ -2762,7 +2762,7 @@ float get_handshake_timeout()
 
 The maximum time each peer can stay in a connecting state before being dropped.
 
-int inbound_buffer_size = 65535 🔗
+int inbound_buffer_size = 65535 
 
 void set_inbound_buffer_size(value: int)
 
@@ -2770,7 +2770,7 @@ int get_inbound_buffer_size()
 
 The inbound buffer size for connected peers. See WebSocketPeer.inbound_buffer_size for more details.
 
-int max_queued_packets = 4096 🔗
+int max_queued_packets = 4096 
 
 void set_max_queued_packets(value: int)
 
@@ -2778,7 +2778,7 @@ int get_max_queued_packets()
 
 The maximum number of queued packets for connected peers. See WebSocketPeer.max_queued_packets for more details.
 
-int outbound_buffer_size = 65535 🔗
+int outbound_buffer_size = 65535 
 
 void set_outbound_buffer_size(value: int)
 
@@ -2786,7 +2786,7 @@ int get_outbound_buffer_size()
 
 The outbound buffer size for connected peers. See WebSocketPeer.outbound_buffer_size for more details.
 
-PackedStringArray supported_protocols = PackedStringArray() 🔗
+PackedStringArray supported_protocols = PackedStringArray() 
 
 void set_supported_protocols(value: PackedStringArray)
 
@@ -2796,25 +2796,25 @@ The supported WebSocket sub-protocols. See WebSocketPeer.supported_protocols for
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-Error create_client(url: String, tls_client_options: TLSOptions = null) 🔗
+Error create_client(url: String, tls_client_options: TLSOptions = null) 
 
 Starts a new multiplayer client connecting to the given url. TLS certificates will be verified against the hostname when connecting using the wss:// protocol. You can pass the optional tls_client_options parameter to customize the trusted certification authorities, or disable the common name verification. See TLSOptions.client() and TLSOptions.client_unsafe().
 
 Note: It is recommended to specify the scheme part of the URL, i.e. the url should start with either ws:// or wss://.
 
-Error create_server(port: int, bind_address: String = "*", tls_server_options: TLSOptions = null) 🔗
+Error create_server(port: int, bind_address: String = "*", tls_server_options: TLSOptions = null) 
 
 Starts a new multiplayer server listening on the given port. You can optionally specify a bind_address, and provide valid tls_server_options to use TLS. See TLSOptions.server().
 
-WebSocketPeer get_peer(peer_id: int) const 🔗
+WebSocketPeer get_peer(peer_id: int) const 
 
 Returns the WebSocketPeer associated to the given peer_id.
 
-String get_peer_address(id: int) const 🔗
+String get_peer_address(id: int) const 
 
 Returns the IP address of the given peer.
 
-int get_peer_port(id: int) const 🔗
+int get_peer_port(id: int) const 
 
 Returns the remote port of the given peer.
 
@@ -2900,7 +2900,7 @@ State STATE_CLOSED = 3
 
 The connection is closed or couldn't be opened.
 
-PackedStringArray handshake_headers = PackedStringArray() 🔗
+PackedStringArray handshake_headers = PackedStringArray() 
 
 void set_handshake_headers(value: PackedStringArray)
 
@@ -2912,7 +2912,7 @@ Note: Not supported in Web exports due to browsers' restrictions.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-float heartbeat_interval = 0.0 🔗
+float heartbeat_interval = 0.0 
 
 void set_heartbeat_interval(value: float)
 
@@ -2922,7 +2922,7 @@ The interval (in seconds) at which the peer will automatically send WebSocket "p
 
 Note: Has no effect in Web exports due to browser restrictions.
 
-int inbound_buffer_size = 65535 🔗
+int inbound_buffer_size = 65535 
 
 void set_inbound_buffer_size(value: int)
 
@@ -2930,7 +2930,7 @@ int get_inbound_buffer_size()
 
 The size of the input buffer in bytes (roughly the maximum amount of memory that will be allocated for the inbound packets).
 
-int max_queued_packets = 4096 🔗
+int max_queued_packets = 4096 
 
 void set_max_queued_packets(value: int)
 
@@ -2938,7 +2938,7 @@ int get_max_queued_packets()
 
 The maximum amount of packets that will be allowed in the queues (both inbound and outbound).
 
-int outbound_buffer_size = 65535 🔗
+int outbound_buffer_size = 65535 
 
 void set_outbound_buffer_size(value: int)
 
@@ -2946,7 +2946,7 @@ int get_outbound_buffer_size()
 
 The size of the input buffer in bytes (roughly the maximum amount of memory that will be allocated for the outbound packets).
 
-PackedStringArray supported_protocols = PackedStringArray() 🔗
+PackedStringArray supported_protocols = PackedStringArray() 
 
 void set_supported_protocols(value: PackedStringArray)
 
@@ -2956,13 +2956,13 @@ The WebSocket sub-protocols allowed during the WebSocket handshake.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-Error accept_stream(stream: StreamPeer) 🔗
+Error accept_stream(stream: StreamPeer) 
 
 Accepts a peer connection performing the HTTP handshake as a WebSocket server. The stream must be a valid TCP stream retrieved via TCPServer.take_connection(), or a TLS stream accepted via StreamPeerTLS.accept_stream().
 
 Note: Not supported in Web exports due to browsers' restrictions.
 
-void close(code: int = 1000, reason: String = "") 🔗
+void close(code: int = 1000, reason: String = "") 
 
 Closes this WebSocket connection. code is the status code for the closure (see RFC 6455 section 7.4 for a list of valid status codes). reason is the human readable reason for closing the connection (can be any UTF-8 string that's smaller than 123 bytes). If code is negative, the connection will be closed immediately without notifying the remote peer.
 
@@ -2970,7 +2970,7 @@ Note: To achieve a clean close, you will need to keep polling until STATE_CLOSED
 
 Note: The Web export might not support all status codes. Please refer to browser-specific documentation for more details.
 
-Error connect_to_url(url: String, tls_client_options: TLSOptions = null) 🔗
+Error connect_to_url(url: String, tls_client_options: TLSOptions = null) 
 
 Connects to the given URL. TLS certificates will be verified against the hostname when connecting using the wss:// protocol. You can pass the optional tls_client_options parameter to customize the trusted certification authorities, or disable the common name verification. See TLSOptions.client() and TLSOptions.client_unsafe().
 
@@ -2978,59 +2978,59 @@ Note: This method is non-blocking, and will return @GlobalScope.OK before the co
 
 Note: To avoid mixed content warnings or errors in Web, you may have to use a url that starts with wss:// (secure) instead of ws://. When doing so, make sure to use the fully qualified domain name that matches the one defined in the server's TLS certificate. Do not connect directly via the IP address for wss:// connections, as it won't match with the TLS certificate.
 
-int get_close_code() const 🔗
+int get_close_code() const 
 
 Returns the received WebSocket close frame status code, or -1 when the connection was not cleanly closed. Only call this method when get_ready_state() returns STATE_CLOSED.
 
-String get_close_reason() const 🔗
+String get_close_reason() const 
 
 Returns the received WebSocket close frame status reason string. Only call this method when get_ready_state() returns STATE_CLOSED.
 
-String get_connected_host() const 🔗
+String get_connected_host() const 
 
 Returns the IP address of the connected peer.
 
 Note: Not available in the Web export.
 
-int get_connected_port() const 🔗
+int get_connected_port() const 
 
 Returns the remote port of the connected peer.
 
 Note: Not available in the Web export.
 
-int get_current_outbound_buffered_amount() const 🔗
+int get_current_outbound_buffered_amount() const 
 
 Returns the current amount of data in the outbound websocket buffer. Note: Web exports use WebSocket.bufferedAmount, while other platforms use an internal buffer.
 
-State get_ready_state() const 🔗
+State get_ready_state() const 
 
 Returns the ready state of the connection.
 
-String get_requested_url() const 🔗
+String get_requested_url() const 
 
 Returns the URL requested by this peer. The URL is derived from the url passed to connect_to_url() or from the HTTP headers when acting as server (i.e. when using accept_stream()).
 
-String get_selected_protocol() const 🔗
+String get_selected_protocol() const 
 
 Returns the selected WebSocket sub-protocol for this connection or an empty string if the sub-protocol has not been selected yet.
 
 Updates the connection state and receive incoming packets. Call this function regularly to keep it in a clean state.
 
-Error send(message: PackedByteArray, write_mode: WriteMode = 1) 🔗
+Error send(message: PackedByteArray, write_mode: WriteMode = 1) 
 
 Sends the given message using the desired write_mode. When sending a String, prefer using send_text().
 
-Error send_text(message: String) 🔗
+Error send_text(message: String) 
 
 Sends the given message using WebSocket text mode. Prefer this method over PacketPeer.put_packet() when interacting with third-party text-based API (e.g. when using JSON formatted messages).
 
-void set_no_delay(enabled: bool) 🔗
+void set_no_delay(enabled: bool) 
 
 Disable Nagle's algorithm on the underlying TCP socket (default). See StreamPeerTCP.set_no_delay() for more information.
 
 Note: Not available in the Web export.
 
-bool was_string_packet() const 🔗
+bool was_string_packet() const 
 
 Returns true if the last received packet was sent as a text payload. See WriteMode.
 

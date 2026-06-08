@@ -4281,7 +4281,7 @@ The Blender Preferences contains settings to control how Blender behaves. At the
 
 Blender Preferences window.¶
 
-Default preferences are managed from the ☰ menu in the preferences window.
+Default preferences are managed from the  menu in the preferences window.
 
 The following items are available in this menu:
 

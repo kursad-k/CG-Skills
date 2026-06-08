@@ -987,7 +987,7 @@ Commenting provides visual and textual information about what's happening in eac
 
 Module outputs can supply extra data to the user without having to fill in particle data. Since emitter stack entries are executed from top to bottom, module output data is available only to stack entries below it. Knowing the outputs and other parameters written to them can be helpful when figuring out how to work with the data in your particle system.
 
-Select any module in the Minimal emitter. In the Details panel, select the gear (⚙️) icon, and enable Show Parameter Writes. The Parameter Writes section is collapsed by default. Click the arrow (🔽) to expand the list and see all the outputs the stack entry writes to.
+Select any module in the Minimal emitter. In the Details panel, select the gear (️) icon, and enable Show Parameter Writes. The Parameter Writes section is collapsed by default. Click the arrow () to expand the list and see all the outputs the stack entry writes to.
 
 In the Apply Offset scratch pad module stack entry below, the Parameter Writes section only includes PARTICLES.Position.
 
@@ -1057,7 +1057,7 @@ Click Apply, then open the System Overview graph. Select the Apply Offset scratc
 
 Notes (and other issues or warnings) at the top of the Details panel can be hidden by clicking Dismiss.
 
-Notes can be made visible again by clicking the gear (⚙️) icon at the top of the module, and clicking Undismiss All Stack Issues.
+Notes can be made visible again by clicking the gear (️) icon at the top of the module, and clicking Undismiss All Stack Issues.
 
 When dismissed on one stack entry, the Notes section will appear on newly added stack entries of the same module type.
 

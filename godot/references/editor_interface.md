@@ -1333,7 +1333,7 @@ add_command(command_name: String, key_name: String, binded_callable: Callable, s
 
 remove_command(key_name: String)
 
-void add_command(command_name: String, key_name: String, binded_callable: Callable, shortcut_text: String = "None") 🔗
+void add_command(command_name: String, key_name: String, binded_callable: Callable, shortcut_text: String = "None") 
 
 Adds a custom command to EditorCommandPalette.
 
@@ -1345,7 +1345,7 @@ binded_callable: Callable (Callable of the Command. This will be executed when t
 
 shortcut_text: String (Shortcut text of the Command if available.)
 
-void remove_command(key_name: String) 🔗
+void remove_command(key_name: String) 
 
 Removes the custom command from EditorCommandPalette.
 
@@ -1403,7 +1403,7 @@ add_context_submenu_item(name: String, menu: PopupMenu, icon: Texture2D = null)
 
 add_menu_shortcut(shortcut: Shortcut, callback: Callable)
 
-enum ContextMenuSlot: 🔗
+enum ContextMenuSlot: 
 
 ContextMenuSlot CONTEXT_SLOT_SCENE_TREE = 0
 
@@ -1437,25 +1437,25 @@ Context menu of 2D editor's basic right-click menu. _popup_menu() will be called
 
 The paths array is empty if there weren't any nodes under cursor. The option callback will receive a typed array of CanvasItem nodes.
 
-void _popup_menu(paths: PackedStringArray) virtual 🔗
+void _popup_menu(paths: PackedStringArray) virtual 
 
 Called when creating a context menu, custom options can be added by using the add_context_menu_item() or add_context_menu_item_from_shortcut() functions. paths contains currently selected paths (depending on menu), which can be used to conditionally add options.
 
-void add_context_menu_item(name: String, callback: Callable, icon: Texture2D = null) 🔗
+void add_context_menu_item(name: String, callback: Callable, icon: Texture2D = null) 
 
 Add custom option to the context menu of the plugin's specified slot. When the option is activated, callback will be called. Callback should take single Array argument; array contents depend on context menu slot.
 
 If you want to assign shortcut to the menu item, use add_context_menu_item_from_shortcut() instead.
 
-void add_context_menu_item_from_shortcut(name: String, shortcut: Shortcut, icon: Texture2D = null) 🔗
+void add_context_menu_item_from_shortcut(name: String, shortcut: Shortcut, icon: Texture2D = null) 
 
 Add custom option to the context menu of the plugin's specified slot. The option will have the shortcut assigned and reuse its callback. The shortcut has to be registered beforehand with add_menu_shortcut().
 
-void add_context_submenu_item(name: String, menu: PopupMenu, icon: Texture2D = null) 🔗
+void add_context_submenu_item(name: String, menu: PopupMenu, icon: Texture2D = null) 
 
 Add a submenu to the context menu of the plugin's specified slot. The submenu is not automatically handled, you need to connect to its signals yourself. Also the submenu is freed on every popup, so provide a new PopupMenu every time.
 
-void add_menu_shortcut(shortcut: Shortcut, callback: Callable) 🔗
+void add_menu_shortcut(shortcut: Shortcut, callback: Callable) 
 
 Registers a shortcut associated with the plugin's context menu. This method should be called once (e.g. in plugin's Object._init()). callback will be called when user presses the specified shortcut while the menu's context is in effect (e.g. FileSystem dock is focused). Callback should take single Array argument; array contents depend on context menu slot.
 
@@ -1533,35 +1533,35 @@ _setup_session(session_id: int) virtual
 
 EditorDebuggerSession
 
-void _breakpoint_set_in_tree(script: Script, line: int, enabled: bool) virtual 🔗
+void _breakpoint_set_in_tree(script: Script, line: int, enabled: bool) virtual 
 
 Override this method to be notified when a breakpoint is set in the editor.
 
-void _breakpoints_cleared_in_tree() virtual 🔗
+void _breakpoints_cleared_in_tree() virtual 
 
 Override this method to be notified when all breakpoints are cleared in the editor.
 
-bool _capture(message: String, data: Array, session_id: int) virtual 🔗
+bool _capture(message: String, data: Array, session_id: int) virtual 
 
 Override this method to process incoming messages. The session_id is the ID of the EditorDebuggerSession that received the message. Use get_session() to retrieve the session. This method should return true if the message is recognized.
 
-void _goto_script_line(script: Script, line: int) virtual 🔗
+void _goto_script_line(script: Script, line: int) virtual 
 
 Override this method to be notified when a breakpoint line has been clicked in the debugger breakpoint panel.
 
-bool _has_capture(capture: String) virtual const 🔗
+bool _has_capture(capture: String) virtual const 
 
 Override this method to enable receiving messages from the debugger. If capture is "my_message" then messages starting with "my_message:" will be passed to the _capture() method.
 
-void _setup_session(session_id: int) virtual 🔗
+void _setup_session(session_id: int) virtual 
 
 Override this method to be notified whenever a new EditorDebuggerSession is created. Note that the session may be inactive during this stage.
 
-EditorDebuggerSession get_session(id: int) 🔗
+EditorDebuggerSession get_session(id: int) 
 
 Returns the EditorDebuggerSession with the given id.
 
-Array get_sessions() 🔗
+Array get_sessions() 
 
 Returns an array of EditorDebuggerSession currently available to this debugger plugin.
 
@@ -1656,7 +1656,7 @@ set_breakpoint(path: String, line: int, enabled: bool)
 
 toggle_profiler(profiler: String, enable: bool, data: Array = [])
 
-breaked(can_debug: bool) 🔗
+breaked(can_debug: bool) 
 
 Emitted when the attached remote instance enters a break state. If can_debug is true, the remote instance will enter the debug loop.
 
@@ -1666,7 +1666,7 @@ Emitted when a remote instance is attached to this session (i.e. the session bec
 
 Emitted when a remote instance is detached from this session (i.e. the session becomes inactive).
 
-void add_session_tab(control: Control) 🔗
+void add_session_tab(control: Control) 
 
 Adds the given control to the debug session UI in the debugger bottom panel. The control's node name will be used as the tab title.
 
@@ -1674,23 +1674,23 @@ Returns true if the debug session is currently attached to a remote instance.
 
 Returns true if the attached remote instance is currently in the debug loop.
 
-bool is_debuggable() 🔗
+bool is_debuggable() 
 
 Returns true if the attached remote instance can be debugged.
 
-void remove_session_tab(control: Control) 🔗
+void remove_session_tab(control: Control) 
 
 Removes the given control from the debug session UI in the debugger bottom panel.
 
-void send_message(message: String, data: Array = []) 🔗
+void send_message(message: String, data: Array = []) 
 
 Sends the given message to the attached remote instance, optionally passing additionally data. See EngineDebugger for how to retrieve those messages.
 
-void set_breakpoint(path: String, line: int, enabled: bool) 🔗
+void set_breakpoint(path: String, line: int, enabled: bool) 
 
 Enables or disables a specific breakpoint based on enabled, updating the Editor Breakpoint Panel accordingly.
 
-void toggle_profiler(profiler: String, enable: bool, data: Array = []) 🔗
+void toggle_profiler(profiler: String, enable: bool, data: Array = []) 
 
 Toggle the given profiler on the attached remote instance, optionally passing additionally data. See EngineProfiler for more details.
 
@@ -2067,53 +2067,53 @@ screen/support_xlarge
 
 user_data_backup/allow
 
-String apk_expansion/SALT 🔗
+String apk_expansion/SALT 
 
 Array of random bytes that the licensing Policy uses to create an Obfuscator.
 
-bool apk_expansion/enable 🔗
+bool apk_expansion/enable 
 
 If true, project resources are stored in the separate APK expansion file, instead of the APK.
 
 Note: APK expansion should be enabled to use PCK encryption. See APK Expansion Files
 
-String apk_expansion/public_key 🔗
+String apk_expansion/public_key 
 
 Base64 encoded RSA public key for your publisher account, available from the profile page on the "Google Play Console".
 
-bool architectures/arm64-v8a 🔗
+bool architectures/arm64-v8a 
 
 If true, arm64 binaries are included into exported project.
 
-bool architectures/armeabi-v7a 🔗
+bool architectures/armeabi-v7a 
 
 If true, arm32 binaries are included into exported project.
 
-bool architectures/x86 🔗
+bool architectures/x86 
 
 If true, x86_32 binaries are included into exported project.
 
-bool architectures/x86_64 🔗
+bool architectures/x86_64 
 
 If true, x86_64 binaries are included into exported project.
 
-String command_line/extra_args 🔗
+String command_line/extra_args 
 
 A list of additional command line arguments, separated by space, which the exported project will receive when started.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to an APK file to use as a custom export template for debug exports. If left empty, default template is used.
 
 Note: This is only used if gradle_build/use_gradle_build is disabled.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to an APK file to use as a custom export template for release exports. If left empty, default template is used.
 
 Note: This is only used if gradle_build/use_gradle_build is disabled.
 
-bool gesture/swipe_to_dismiss 🔗
+bool gesture/swipe_to_dismiss 
 
 If true, Swipe to dismiss will be enabled.
 
@@ -2121,11 +2121,11 @@ This functionality is intended for smartwatches and is generally ignored on stan
 
 Note: This is false by default. To enable this behavior, gradle_build/use_gradle_build is required.
 
-String gradle_build/android_source_template 🔗
+String gradle_build/android_source_template 
 
 Path to a ZIP file holding the source for the export template used in a Gradle build. If left empty, the default template is used.
 
-bool gradle_build/compress_native_libraries 🔗
+bool gradle_build/compress_native_libraries 
 
 If true, native libraries are compressed when performing a Gradle build.
 
@@ -2133,7 +2133,7 @@ Note: While enabling compression can reduce the size of the binary, it may resul
 
 If you're distributing your app via the Play Store, it's generally recommended to keep this option false, see official documentation.
 
-Dictionary gradle_build/custom_theme_attributes 🔗
+Dictionary gradle_build/custom_theme_attributes 
 
 A dictionary of custom theme attributes to include in the exported Android project. Each entry defines a theme attribute name and its value, and will be added to the GodotAppMainTheme.
 
@@ -2143,31 +2143,31 @@ Note: To add a custom attribute to the GodotAppSplashTheme, prefix the attribute
 
 Note: Reserved attributes configured via other export options or project settings cannot be overridden by custom_theme_attributes and are skipped during export.
 
-int gradle_build/export_format 🔗
+int gradle_build/export_format 
 
 Application export format (*.apk or *.aab).
 
-String gradle_build/gradle_build_directory 🔗
+String gradle_build/gradle_build_directory 
 
 Path to the Gradle build directory. If left empty, then res://android will be used.
 
-String gradle_build/min_sdk 🔗
+String gradle_build/min_sdk 
 
 Minimum Android API level required for the application to run (used during Gradle build). See android:minSdkVersion.
 
-String gradle_build/target_sdk 🔗
+String gradle_build/target_sdk 
 
 The Android API level on which the application is designed to run (used during Gradle build). See android:targetSdkVersion.
 
-bool gradle_build/use_gradle_build 🔗
+bool gradle_build/use_gradle_build 
 
 If true, Gradle build is used instead of pre-built APK.
 
-bool graphics/opengl_debug 🔗
+bool graphics/opengl_debug 
 
 If true, OpenGL ES debug context will be created (additional runtime checking, validation, and logging).
 
-String keystore/debug 🔗
+String keystore/debug 
 
 Path of the debug keystore file.
 
@@ -2175,7 +2175,7 @@ Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_DEBUG_PAT
 
 Fallbacks to EditorSettings.export/android/debug_keystore if empty.
 
-String keystore/debug_password 🔗
+String keystore/debug_password 
 
 Password for the debug keystore file.
 
@@ -2183,7 +2183,7 @@ Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_DEBUG_PAS
 
 Fallbacks to EditorSettings.export/android/debug_keystore_pass if both it and keystore/debug are empty.
 
-String keystore/debug_user 🔗
+String keystore/debug_user 
 
 User name for the debug keystore file.
 
@@ -2191,75 +2191,75 @@ Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_DEBUG_USE
 
 Fallbacks to EditorSettings.export/android/debug_keystore_user if both it and keystore/debug are empty.
 
-String keystore/release 🔗
+String keystore/release 
 
 Path of the release keystore file.
 
 Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_RELEASE_PATH.
 
-String keystore/release_password 🔗
+String keystore/release_password 
 
 Password for the release keystore file.
 
 Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD.
 
-String keystore/release_user 🔗
+String keystore/release_user 
 
 User name for the release keystore file.
 
 Can be overridden with the environment variable GODOT_ANDROID_KEYSTORE_RELEASE_USER.
 
-String launcher_icons/adaptive_background_432x432 🔗
+String launcher_icons/adaptive_background_432x432 
 
 Background layer of the application adaptive icon file. See Design adaptive icons.
 
-String launcher_icons/adaptive_foreground_432x432 🔗
+String launcher_icons/adaptive_foreground_432x432 
 
 Foreground layer of the application adaptive icon file. See Design adaptive icons.
 
-String launcher_icons/adaptive_monochrome_432x432 🔗
+String launcher_icons/adaptive_monochrome_432x432 
 
 Monochrome layer of the application adaptive icon file. See Design adaptive icons.
 
-String launcher_icons/main_192x192 🔗
+String launcher_icons/main_192x192 
 
 Application icon file. If left empty, it will fallback to ProjectSettings.application/config/icon.
 
-int package/app_category 🔗
+int package/app_category 
 
 Application category for the Google Play Store. Only define this if your application fits one of the categories well. See android:appCategory.
 
-bool package/exclude_from_recents 🔗
+bool package/exclude_from_recents 
 
 If true, task initiated by main activity will be excluded from the list of recently used applications. See android:excludeFromRecents.
 
-String package/name 🔗
+String package/name 
 
 Name of the application.
 
-bool package/retain_data_on_uninstall 🔗
+bool package/retain_data_on_uninstall 
 
 If true, when the user uninstalls an app, a prompt to keep the app's data will be shown. See android:hasFragileUserData.
 
-bool package/show_as_launcher_app 🔗
+bool package/show_as_launcher_app 
 
 If true, the user will be able to set this app as the system launcher in Android preferences.
 
-bool package/show_in_android_tv 🔗
+bool package/show_in_android_tv 
 
 If true, this app will show in Android TV launcher UI.
 
-bool package/show_in_app_library 🔗
+bool package/show_in_app_library 
 
 If true, this app will show in the device's app library.
 
 Note: This is true by default.
 
-bool package/signed 🔗
+bool package/signed 
 
 If true, package signing is enabled.
 
-String package/unique_name 🔗
+String package/unique_name 
 
 Unique application identifier in a reverse-DNS format. The reverse DNS format should preferably match a domain name you control, but this is not strictly required. For instance, if you own example.com, your package unique name should preferably be of the form com.example.mygame. This identifier can only contain lowercase alphanumeric characters (a-z, and 0-9), underscores (_), and periods (.). Each component of the reverse DNS format must start with a letter: for instance, com.example.8game is not valid.
 
@@ -2269,669 +2269,669 @@ Note: Changing the package name will cause the package to be considered as a new
 
 Note: When publishing to Google Play, the package name must be globally unique. This means no other apps published on Google Play must be using the same package name as yours. Otherwise, you'll be prevented from publishing your app on Google Play.
 
-bool permissions/access_checkin_properties 🔗
+bool permissions/access_checkin_properties 
 
 Allows read/write access to the "properties" table in the checkin database. See ACCESS_CHECKIN_PROPERTIES.
 
-bool permissions/access_coarse_location 🔗
+bool permissions/access_coarse_location 
 
 Allows access to the approximate location information. See ACCESS_COARSE_LOCATION.
 
-bool permissions/access_fine_location 🔗
+bool permissions/access_fine_location 
 
 Allows access to the precise location information. See ACCESS_FINE_LOCATION.
 
-bool permissions/access_location_extra_commands 🔗
+bool permissions/access_location_extra_commands 
 
 Allows access to the extra location provider commands. See ACCESS_LOCATION_EXTRA_COMMANDS.
 
-bool permissions/access_media_location 🔗
+bool permissions/access_media_location 
 
 Allows an application to access any geographic locations persisted in the user's shared collection. See ACCESS_MEDIA_LOCATION.
 
-bool permissions/access_mock_location 🔗
+bool permissions/access_mock_location 
 
 Allows an application to create mock location providers for testing.
 
-bool permissions/access_network_state 🔗
+bool permissions/access_network_state 
 
 Allows access to the information about networks. See ACCESS_NETWORK_STATE.
 
-bool permissions/access_surface_flinger 🔗
+bool permissions/access_surface_flinger 
 
 Allows an application to use SurfaceFlinger's low level features.
 
-bool permissions/access_wifi_state 🔗
+bool permissions/access_wifi_state 
 
 Allows access to the information about Wi-Fi networks. See ACCESS_WIFI_STATE.
 
-bool permissions/account_manager 🔗
+bool permissions/account_manager 
 
 Allows applications to call into AccountAuthenticators. See ACCOUNT_MANAGER.
 
-bool permissions/add_voicemail 🔗
+bool permissions/add_voicemail 
 
 Allows an application to add voicemails into the system. See ADD_VOICEMAIL.
 
-bool permissions/authenticate_accounts 🔗
+bool permissions/authenticate_accounts 
 
 Allows an application to act as an AccountAuthenticator for the AccountManager.
 
-bool permissions/battery_stats 🔗
+bool permissions/battery_stats 
 
 Allows an application to collect battery statistics. See BATTERY_STATS.
 
-bool permissions/bind_accessibility_service 🔗
+bool permissions/bind_accessibility_service 
 
 Must be required by an AccessibilityService, to ensure that only the system can bind to it. See BIND_ACCESSIBILITY_SERVICE.
 
-bool permissions/bind_appwidget 🔗
+bool permissions/bind_appwidget 
 
 Allows an application to tell the AppWidget service which application can access AppWidget's data. See BIND_APPWIDGET.
 
-bool permissions/bind_device_admin 🔗
+bool permissions/bind_device_admin 
 
 Must be required by device administration receiver, to ensure that only the system can interact with it. See BIND_DEVICE_ADMIN.
 
-bool permissions/bind_input_method 🔗
+bool permissions/bind_input_method 
 
 Must be required by an InputMethodService, to ensure that only the system can bind to it. See BIND_INPUT_METHOD.
 
-bool permissions/bind_nfc_service 🔗
+bool permissions/bind_nfc_service 
 
 Must be required by a HostApduService or OffHostApduService to ensure that only the system can bind to it. See BIND_NFC_SERVICE.
 
-bool permissions/bind_notification_listener_service 🔗
+bool permissions/bind_notification_listener_service 
 
 Must be required by a NotificationListenerService, to ensure that only the system can bind to it. See BIND_NOTIFICATION_LISTENER_SERVICE.
 
-bool permissions/bind_print_service 🔗
+bool permissions/bind_print_service 
 
 Must be required by a PrintService, to ensure that only the system can bind to it. See BIND_PRINT_SERVICE.
 
-bool permissions/bind_remoteviews 🔗
+bool permissions/bind_remoteviews 
 
 Must be required by a RemoteViewsService, to ensure that only the system can bind to it. See BIND_REMOTEVIEWS.
 
-bool permissions/bind_text_service 🔗
+bool permissions/bind_text_service 
 
 Must be required by a TextService (e.g. SpellCheckerService) to ensure that only the system can bind to it. See BIND_TEXT_SERVICE.
 
-bool permissions/bind_vpn_service 🔗
+bool permissions/bind_vpn_service 
 
 Must be required by a VpnService, to ensure that only the system can bind to it. See BIND_VPN_SERVICE.
 
-bool permissions/bind_wallpaper 🔗
+bool permissions/bind_wallpaper 
 
 Must be required by a WallpaperService, to ensure that only the system can bind to it. See BIND_WALLPAPER.
 
-bool permissions/bluetooth 🔗
+bool permissions/bluetooth 
 
 Allows applications to connect to paired bluetooth devices. See BLUETOOTH.
 
-bool permissions/bluetooth_admin 🔗
+bool permissions/bluetooth_admin 
 
 Allows applications to discover and pair bluetooth devices. See BLUETOOTH_ADMIN.
 
-bool permissions/bluetooth_privileged 🔗
+bool permissions/bluetooth_privileged 
 
 Allows applications to pair bluetooth devices without user interaction, and to allow or disallow phonebook access or message access. See BLUETOOTH_PRIVILEGED.
 
-bool permissions/brick 🔗
+bool permissions/brick 
 
 Required to be able to disable the device (very dangerous!).
 
-bool permissions/broadcast_package_removed 🔗
+bool permissions/broadcast_package_removed 
 
 Allows an application to broadcast a notification that an application package has been removed. See BROADCAST_PACKAGE_REMOVED.
 
-bool permissions/broadcast_sms 🔗
+bool permissions/broadcast_sms 
 
 Allows an application to broadcast an SMS receipt notification. See BROADCAST_SMS.
 
-bool permissions/broadcast_sticky 🔗
+bool permissions/broadcast_sticky 
 
 Allows an application to broadcast sticky intents. See BROADCAST_STICKY.
 
-bool permissions/broadcast_wap_push 🔗
+bool permissions/broadcast_wap_push 
 
 Allows an application to broadcast a WAP PUSH receipt notification. See BROADCAST_WAP_PUSH.
 
-bool permissions/call_phone 🔗
+bool permissions/call_phone 
 
 Allows an application to initiate a phone call without going through the Dialer user interface. See CALL_PHONE.
 
-bool permissions/call_privileged 🔗
+bool permissions/call_privileged 
 
 Allows an application to call any phone number, including emergency numbers, without going through the Dialer user interface. See CALL_PRIVILEGED.
 
-bool permissions/camera 🔗
+bool permissions/camera 
 
 Required to be able to access the camera device. See CAMERA.
 
-bool permissions/capture_audio_output 🔗
+bool permissions/capture_audio_output 
 
 Allows an application to capture audio output. See CAPTURE_AUDIO_OUTPUT.
 
-bool permissions/capture_secure_video_output 🔗
+bool permissions/capture_secure_video_output 
 
 Allows an application to capture secure video output.
 
-bool permissions/capture_video_output 🔗
+bool permissions/capture_video_output 
 
 Allows an application to capture video output.
 
-bool permissions/change_component_enabled_state 🔗
+bool permissions/change_component_enabled_state 
 
 Allows an application to change whether an application component (other than its own) is enabled or not. See CHANGE_COMPONENT_ENABLED_STATE.
 
-bool permissions/change_configuration 🔗
+bool permissions/change_configuration 
 
 Allows an application to modify the current configuration, such as locale. See CHANGE_CONFIGURATION.
 
-bool permissions/change_network_state 🔗
+bool permissions/change_network_state 
 
 Allows applications to change network connectivity state. See CHANGE_NETWORK_STATE.
 
-bool permissions/change_wifi_multicast_state 🔗
+bool permissions/change_wifi_multicast_state 
 
 Allows applications to enter Wi-Fi Multicast mode. See CHANGE_WIFI_MULTICAST_STATE.
 
-bool permissions/change_wifi_state 🔗
+bool permissions/change_wifi_state 
 
 Allows applications to change Wi-Fi connectivity state. See CHANGE_WIFI_STATE.
 
-bool permissions/clear_app_cache 🔗
+bool permissions/clear_app_cache 
 
 Allows an application to clear the caches of all installed applications on the device. See CLEAR_APP_CACHE.
 
-bool permissions/clear_app_user_data 🔗
+bool permissions/clear_app_user_data 
 
 Allows an application to clear user data.
 
-bool permissions/control_location_updates 🔗
+bool permissions/control_location_updates 
 
 Allows enabling/disabling location update notifications from the radio. See CONTROL_LOCATION_UPDATES.
 
-PackedStringArray permissions/custom_permissions 🔗
+PackedStringArray permissions/custom_permissions 
 
 Array of custom permission strings.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool permissions/delete_cache_files 🔗
+bool permissions/delete_cache_files 
 
 Deprecated: This property may be changed or removed in future versions.
 
-bool permissions/delete_packages 🔗
+bool permissions/delete_packages 
 
 Allows an application to delete packages. See DELETE_PACKAGES.
 
-bool permissions/device_power 🔗
+bool permissions/device_power 
 
 Allows low-level access to power management.
 
-bool permissions/diagnostic 🔗
+bool permissions/diagnostic 
 
 Allows applications to RW to diagnostic resources. See DIAGNOSTIC.
 
-bool permissions/disable_keyguard 🔗
+bool permissions/disable_keyguard 
 
 Allows applications to disable the keyguard if it is not secure. See DISABLE_KEYGUARD.
 
-bool permissions/dump 🔗
+bool permissions/dump 
 
 Allows an application to retrieve state dump information from system services. See DUMP.
 
-bool permissions/expand_status_bar 🔗
+bool permissions/expand_status_bar 
 
 Allows an application to expand or collapse the status bar. See EXPAND_STATUS_BAR.
 
-bool permissions/factory_test 🔗
+bool permissions/factory_test 
 
 Run as a manufacturer test application, running as the root user. See FACTORY_TEST.
 
-bool permissions/flashlight 🔗
+bool permissions/flashlight 
 
 Allows access to the flashlight.
 
-bool permissions/force_back 🔗
+bool permissions/force_back 
 
 Allows an application to force a BACK operation on whatever is the top activity.
 
-bool permissions/get_accounts 🔗
+bool permissions/get_accounts 
 
 Allows access to the list of accounts in the Accounts Service. See GET_ACCOUNTS.
 
-bool permissions/get_package_size 🔗
+bool permissions/get_package_size 
 
 Allows an application to find out the space used by any package. See GET_PACKAGE_SIZE.
 
-bool permissions/get_tasks 🔗
+bool permissions/get_tasks 
 
 Deprecated: Deprecated in API level 21.
 
-bool permissions/get_top_activity_info 🔗
+bool permissions/get_top_activity_info 
 
 Allows an application to retrieve private information about the current top activity.
 
-bool permissions/global_search 🔗
+bool permissions/global_search 
 
 Used on content providers to allow the global search system to access their data. See GLOBAL_SEARCH.
 
-bool permissions/hardware_test 🔗
+bool permissions/hardware_test 
 
 Allows access to hardware peripherals.
 
-bool permissions/inject_events 🔗
+bool permissions/inject_events 
 
 Allows an application to inject user events (keys, touch, trackball) into the event stream and deliver them to ANY window.
 
-bool permissions/install_location_provider 🔗
+bool permissions/install_location_provider 
 
 Allows an application to install a location provider into the Location Manager. See INSTALL_LOCATION_PROVIDER.
 
-bool permissions/install_packages 🔗
+bool permissions/install_packages 
 
 Allows an application to install packages. See INSTALL_PACKAGES.
 
-bool permissions/install_shortcut 🔗
+bool permissions/install_shortcut 
 
 Allows an application to install a shortcut in Launcher. See INSTALL_SHORTCUT.
 
-bool permissions/internal_system_window 🔗
+bool permissions/internal_system_window 
 
 Allows an application to open windows that are for use by parts of the system user interface.
 
-bool permissions/internet 🔗
+bool permissions/internet 
 
 Allows applications to open network sockets. See INTERNET.
 
-bool permissions/kill_background_processes 🔗
+bool permissions/kill_background_processes 
 
 Allows an application to call ActivityManager.killBackgroundProcesses(String). See KILL_BACKGROUND_PROCESSES.
 
-bool permissions/location_hardware 🔗
+bool permissions/location_hardware 
 
 Allows an application to use location features in hardware, such as the geofencing api. See LOCATION_HARDWARE.
 
-bool permissions/manage_accounts 🔗
+bool permissions/manage_accounts 
 
 Allows an application to manage the list of accounts in the AccountManager.
 
-bool permissions/manage_app_tokens 🔗
+bool permissions/manage_app_tokens 
 
 Allows an application to manage (create, destroy, Z-order) application tokens in the window manager.
 
-bool permissions/manage_documents 🔗
+bool permissions/manage_documents 
 
 Allows an application to manage access to documents, usually as part of a document picker. See MANAGE_DOCUMENTS.
 
-bool permissions/manage_external_storage 🔗
+bool permissions/manage_external_storage 
 
 Allows an application a broad access to external storage in scoped storage. See MANAGE_EXTERNAL_STORAGE.
 
-bool permissions/master_clear 🔗
+bool permissions/master_clear 
 
-bool permissions/media_content_control 🔗
+bool permissions/media_content_control 
 
 Allows an application to know what content is playing and control its playback. See MEDIA_CONTENT_CONTROL.
 
-bool permissions/modify_audio_settings 🔗
+bool permissions/modify_audio_settings 
 
 Allows an application to modify global audio settings. See MODIFY_AUDIO_SETTINGS.
 
-bool permissions/modify_phone_state 🔗
+bool permissions/modify_phone_state 
 
 Allows modification of the telephony state - power on, mmi, etc. Does not include placing calls. See MODIFY_PHONE_STATE.
 
-bool permissions/mount_format_filesystems 🔗
+bool permissions/mount_format_filesystems 
 
 Allows formatting file systems for removable storage. See MOUNT_FORMAT_FILESYSTEMS.
 
-bool permissions/mount_unmount_filesystems 🔗
+bool permissions/mount_unmount_filesystems 
 
 Allows mounting and unmounting file systems for removable storage. See MOUNT_UNMOUNT_FILESYSTEMS.
 
-bool permissions/nfc 🔗
+bool permissions/nfc 
 
 Allows applications to perform I/O operations over NFC. See NFC.
 
-bool permissions/persistent_activity 🔗
+bool permissions/persistent_activity 
 
 Deprecated: Deprecated in API level 15.
 
 Allows an application to make its activities persistent.
 
-bool permissions/post_notifications 🔗
+bool permissions/post_notifications 
 
 Allows an application to post notifications. Added in API level 33. See Notification runtime permission.
 
-bool permissions/process_outgoing_calls 🔗
+bool permissions/process_outgoing_calls 
 
 Deprecated: Deprecated in API level 29.
 
 Allows an application to see the number being dialed during an outgoing call with the option to redirect the call to a different number or abort the call altogether. See PROCESS_OUTGOING_CALLS.
 
-bool permissions/read_calendar 🔗
+bool permissions/read_calendar 
 
 Allows an application to read the user's calendar data. See READ_CALENDAR.
 
-bool permissions/read_call_log 🔗
+bool permissions/read_call_log 
 
 Allows an application to read the user's call log. See READ_CALL_LOG.
 
-bool permissions/read_contacts 🔗
+bool permissions/read_contacts 
 
 Allows an application to read the user's contacts data. See READ_CONTACTS.
 
-bool permissions/read_external_storage 🔗
+bool permissions/read_external_storage 
 
 Deprecated: Deprecated in API level 33.
 
 Allows an application to read from external storage. See READ_EXTERNAL_STORAGE.
 
-bool permissions/read_frame_buffer 🔗
+bool permissions/read_frame_buffer 
 
 Allows an application to take screen shots and more generally get access to the frame buffer data.
 
-bool permissions/read_history_bookmarks 🔗
+bool permissions/read_history_bookmarks 
 
 Allows an application to read (but not write) the user's browsing history and bookmarks.
 
-bool permissions/read_input_state 🔗
+bool permissions/read_input_state 
 
 Deprecated: Deprecated in API level 16.
 
-bool permissions/read_logs 🔗
+bool permissions/read_logs 
 
 Allows an application to read the low-level system log files. See READ_LOGS.
 
-bool permissions/read_media_audio 🔗
+bool permissions/read_media_audio 
 
 Allows an application to read audio files from external storage. See READ_MEDIA_AUDIO.
 
-bool permissions/read_media_images 🔗
+bool permissions/read_media_images 
 
 Allows an application to read image files from external storage. See READ_MEDIA_IMAGES.
 
-bool permissions/read_media_video 🔗
+bool permissions/read_media_video 
 
 Allows an application to read video files from external storage. See READ_MEDIA_VIDEO.
 
-bool permissions/read_media_visual_user_selected 🔗
+bool permissions/read_media_visual_user_selected 
 
 Allows an application to read image or video files from external storage that a user has selected via the permission prompt photo picker. See READ_MEDIA_VISUAL_USER_SELECTED.
 
-bool permissions/read_phone_state 🔗
+bool permissions/read_phone_state 
 
 Allows read only access to phone state. See READ_PHONE_STATE.
 
-bool permissions/read_profile 🔗
+bool permissions/read_profile 
 
 Allows an application to read the user's personal profile data.
 
-bool permissions/read_sms 🔗
+bool permissions/read_sms 
 
 Allows an application to read SMS messages. See READ_SMS.
 
-bool permissions/read_social_stream 🔗
+bool permissions/read_social_stream 
 
 Allows an application to read from the user's social stream.
 
-bool permissions/read_sync_settings 🔗
+bool permissions/read_sync_settings 
 
 Allows applications to read the sync settings. See READ_SYNC_SETTINGS.
 
-bool permissions/read_sync_stats 🔗
+bool permissions/read_sync_stats 
 
 Allows applications to read the sync stats. See READ_SYNC_STATS.
 
-bool permissions/read_user_dictionary 🔗
+bool permissions/read_user_dictionary 
 
 Allows an application to read the user dictionary.
 
-bool permissions/reboot 🔗
+bool permissions/reboot 
 
 Required to be able to reboot the device. See REBOOT.
 
-bool permissions/receive_boot_completed 🔗
+bool permissions/receive_boot_completed 
 
 Allows an application to receive the Intent.ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting. See RECEIVE_BOOT_COMPLETED.
 
-bool permissions/receive_mms 🔗
+bool permissions/receive_mms 
 
 Allows an application to monitor incoming MMS messages. See RECEIVE_MMS.
 
-bool permissions/receive_sms 🔗
+bool permissions/receive_sms 
 
 Allows an application to receive SMS messages. See RECEIVE_SMS.
 
-bool permissions/receive_wap_push 🔗
+bool permissions/receive_wap_push 
 
 Allows an application to receive WAP push messages. See RECEIVE_WAP_PUSH.
 
-bool permissions/record_audio 🔗
+bool permissions/record_audio 
 
 Allows an application to record audio. See RECORD_AUDIO.
 
-bool permissions/reorder_tasks 🔗
+bool permissions/reorder_tasks 
 
 Allows an application to change the Z-order of tasks. See REORDER_TASKS.
 
-bool permissions/restart_packages 🔗
+bool permissions/restart_packages 
 
 Deprecated: Deprecated in API level 15.
 
-bool permissions/send_respond_via_message 🔗
+bool permissions/send_respond_via_message 
 
 Allows an application (Phone) to send a request to other applications to handle the respond-via-message action during incoming calls. See SEND_RESPOND_VIA_MESSAGE.
 
-bool permissions/send_sms 🔗
+bool permissions/send_sms 
 
 Allows an application to send SMS messages. See SEND_SMS.
 
-bool permissions/set_activity_watcher 🔗
+bool permissions/set_activity_watcher 
 
 Allows an application to watch and control how activities are started globally in the system.
 
-bool permissions/set_alarm 🔗
+bool permissions/set_alarm 
 
 Allows an application to broadcast an Intent to set an alarm for the user. See SET_ALARM.
 
-bool permissions/set_always_finish 🔗
+bool permissions/set_always_finish 
 
 Allows an application to control whether activities are immediately finished when put in the background. See SET_ALWAYS_FINISH.
 
-bool permissions/set_animation_scale 🔗
+bool permissions/set_animation_scale 
 
 Allows to modify the global animation scaling factor. See SET_ANIMATION_SCALE.
 
-bool permissions/set_debug_app 🔗
+bool permissions/set_debug_app 
 
 Configure an application for debugging. See SET_DEBUG_APP.
 
-bool permissions/set_orientation 🔗
+bool permissions/set_orientation 
 
 Allows low-level access to setting the orientation (actually rotation) of the screen.
 
-bool permissions/set_pointer_speed 🔗
+bool permissions/set_pointer_speed 
 
 Allows low-level access to setting the pointer speed.
 
-bool permissions/set_preferred_applications 🔗
+bool permissions/set_preferred_applications 
 
 Deprecated: Deprecated in API level 15.
 
-bool permissions/set_process_limit 🔗
+bool permissions/set_process_limit 
 
 Allows an application to set the maximum number of (not needed) application processes that can be running. See SET_PROCESS_LIMIT.
 
-bool permissions/set_time 🔗
+bool permissions/set_time 
 
 Allows applications to set the system time directly. See SET_TIME.
 
-bool permissions/set_time_zone 🔗
+bool permissions/set_time_zone 
 
 Allows applications to set the system time zone directly. See SET_TIME_ZONE.
 
-bool permissions/set_wallpaper 🔗
+bool permissions/set_wallpaper 
 
 Allows applications to set the wallpaper. See SET_WALLPAPER.
 
-bool permissions/set_wallpaper_hints 🔗
+bool permissions/set_wallpaper_hints 
 
 Allows applications to set the wallpaper hints. See SET_WALLPAPER_HINTS.
 
-bool permissions/signal_persistent_processes 🔗
+bool permissions/signal_persistent_processes 
 
 Allow an application to request that a signal be sent to all persistent processes. See SIGNAL_PERSISTENT_PROCESSES.
 
-bool permissions/status_bar 🔗
+bool permissions/status_bar 
 
 Allows an application to open, close, or disable the status bar and its icons. See STATUS_BAR.
 
-bool permissions/subscribed_feeds_read 🔗
+bool permissions/subscribed_feeds_read 
 
 Allows an application to allow access the subscribed feeds ContentProvider.
 
-bool permissions/subscribed_feeds_write 🔗
+bool permissions/subscribed_feeds_write 
 
 Deprecated: This property may be changed or removed in future versions.
 
-bool permissions/system_alert_window 🔗
+bool permissions/system_alert_window 
 
 Allows an app to create windows using the type WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, shown on top of all other apps. See SYSTEM_ALERT_WINDOW.
 
-bool permissions/transmit_ir 🔗
+bool permissions/transmit_ir 
 
 Allows using the device's IR transmitter, if available. See TRANSMIT_IR.
 
-bool permissions/uninstall_shortcut 🔗
+bool permissions/uninstall_shortcut 
 
 Deprecated: This property may be changed or removed in future versions.
 
-bool permissions/update_device_stats 🔗
+bool permissions/update_device_stats 
 
 Allows an application to update device statistics. See UPDATE_DEVICE_STATS.
 
-bool permissions/use_credentials 🔗
+bool permissions/use_credentials 
 
 Allows an application to request authtokens from the AccountManager.
 
-bool permissions/use_sip 🔗
+bool permissions/use_sip 
 
 Allows an application to use SIP service. See USE_SIP.
 
-bool permissions/vibrate 🔗
+bool permissions/vibrate 
 
 Allows access to the vibrator. See VIBRATE.
 
-bool permissions/wake_lock 🔗
+bool permissions/wake_lock 
 
 Allows using PowerManager WakeLocks to keep processor from sleeping or screen from dimming. See WAKE_LOCK.
 
-bool permissions/write_apn_settings 🔗
+bool permissions/write_apn_settings 
 
 Allows applications to write the apn settings and read sensitive fields of an existing apn settings like user and password. See WRITE_APN_SETTINGS.
 
-bool permissions/write_calendar 🔗
+bool permissions/write_calendar 
 
 Allows an application to write the user's calendar data. See WRITE_CALENDAR.
 
-bool permissions/write_call_log 🔗
+bool permissions/write_call_log 
 
 Allows an application to write (but not read) the user's call log data. See WRITE_CALL_LOG.
 
-bool permissions/write_contacts 🔗
+bool permissions/write_contacts 
 
 Allows an application to write the user's contacts data. See WRITE_CONTACTS.
 
-bool permissions/write_external_storage 🔗
+bool permissions/write_external_storage 
 
 Allows an application to write to external storage. See WRITE_EXTERNAL_STORAGE.
 
-bool permissions/write_gservices 🔗
+bool permissions/write_gservices 
 
 Allows an application to modify the Google service map. See WRITE_GSERVICES.
 
-bool permissions/write_history_bookmarks 🔗
+bool permissions/write_history_bookmarks 
 
 Allows an application to write (but not read) the user's browsing history and bookmarks.
 
-bool permissions/write_profile 🔗
+bool permissions/write_profile 
 
 Allows an application to write (but not read) the user's personal profile data.
 
-bool permissions/write_secure_settings 🔗
+bool permissions/write_secure_settings 
 
 Allows an application to read or write the secure system settings. See WRITE_SECURE_SETTINGS.
 
-bool permissions/write_settings 🔗
+bool permissions/write_settings 
 
 Allows an application to read or write the system settings. See WRITE_SETTINGS.
 
-bool permissions/write_sms 🔗
+bool permissions/write_sms 
 
 Allows an application to write SMS messages.
 
-bool permissions/write_social_stream 🔗
+bool permissions/write_social_stream 
 
 Allows an application to write (but not read) the user's social stream data.
 
-bool permissions/write_sync_settings 🔗
+bool permissions/write_sync_settings 
 
 Allows applications to write the sync settings. See WRITE_SYNC_SETTINGS.
 
-bool permissions/write_user_dictionary 🔗
+bool permissions/write_user_dictionary 
 
 Allows an application to write to the user dictionary.
 
-Color screen/background_color 🔗
+Color screen/background_color 
 
 The background color used for the root window. Default is black.
 
-bool screen/edge_to_edge 🔗
+bool screen/edge_to_edge 
 
 If true, this makes the navigation and status bars translucent and allows the application content to extend edge to edge.
 
 Note: You should ensure that none of the application content is occluded by system elements by using the DisplayServer.get_display_safe_area() and DisplayServer.get_display_cutouts() methods.
 
-bool screen/immersive_mode 🔗
+bool screen/immersive_mode 
 
 If true, hides the navigation and status bar. Set DisplayServer.window_set_mode() to change this at runtime.
 
-bool screen/support_large 🔗
+bool screen/support_large 
 
 Indicates whether the application supports larger screen form-factors.
 
-bool screen/support_normal 🔗
+bool screen/support_normal 
 
 Indicates whether an application supports the "normal" screen form-factors.
 
-bool screen/support_small 🔗
+bool screen/support_small 
 
 Indicates whether the application supports smaller screen form-factors.
 
-bool screen/support_xlarge 🔗
+bool screen/support_xlarge 
 
 Indicates whether the application supports extra large screen form-factors.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
-bool user_data_backup/allow 🔗
+bool user_data_backup/allow 
 
 If true, allows the application to participate in the backup and restore infrastructure.
 
 Machine-readable application version. This must be incremented for every new release pushed to the Play Store.
 
-String version/name 🔗
+String version/name 
 
 Application version visible to the user. Falls back to ProjectSettings.application/config/version if left empty.
 
-int xr_features/xr_mode 🔗
+int xr_features/xr_mode 
 
 The extended reality (XR) mode for this application.
 
@@ -3048,23 +3048,23 @@ set_config_error(error_text: String) const
 
 set_config_missing_templates(missing_templates: bool) const
 
-bool _can_export(preset: EditorExportPreset, debug: bool) virtual const 🔗
+bool _can_export(preset: EditorExportPreset, debug: bool) virtual const 
 
 Returns true, if specified preset is valid and can be exported. Use set_config_error() and set_config_missing_templates() to set error details.
 
 Usual implementation can call _has_valid_export_configuration() and _has_valid_project_configuration() to determine if export is possible.
 
-void _cleanup() virtual 🔗
+void _cleanup() virtual 
 
 Called by the editor before platform is unregistered.
 
-Error _export_pack(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual 🔗
+Error _export_pack(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual 
 
 Creates a PCK archive at path for the specified preset.
 
 This method is called when "Export PCK/ZIP" button is pressed in the export dialog, with "Export as Patch" disabled, and PCK is selected as a file type.
 
-Error _export_pack_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray, flags: BitField[DebugFlags]) virtual 🔗
+Error _export_pack_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray, flags: BitField[DebugFlags]) virtual 
 
 Creates a patch PCK archive at path for the specified preset, containing only the files that have changed since the last patch.
 
@@ -3072,7 +3072,7 @@ This method is called when "Export PCK/ZIP" button is pressed in the export dial
 
 Note: The patches provided in patches have already been loaded when this method is called and are merely provided as context. When empty the patches defined in the export preset have been loaded instead.
 
-Error _export_project(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual required 🔗
+Error _export_project(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual required 
 
 Creates a full project at path for the specified preset.
 
@@ -3080,13 +3080,13 @@ This method is called when "Export" button is pressed in the export dialog.
 
 This method implementation can call EditorExportPlatform.save_pack() or EditorExportPlatform.save_zip() to use default PCK/ZIP export process, or calls EditorExportPlatform.export_project_files() and implement custom callback for processing each exported file.
 
-Error _export_zip(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual 🔗
+Error _export_zip(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags]) virtual 
 
 Create a ZIP archive at path for the specified preset.
 
 This method is called when "Export PCK/ZIP" button is pressed in the export dialog, with "Export as Patch" disabled, and ZIP is selected as a file type.
 
-Error _export_zip_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray, flags: BitField[DebugFlags]) virtual 🔗
+Error _export_zip_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray, flags: BitField[DebugFlags]) virtual 
 
 Create a ZIP archive at path for the specified preset, containing only the files that have changed since the last patch.
 
@@ -3094,27 +3094,27 @@ This method is called when "Export PCK/ZIP" button is pressed in the export dial
 
 Note: The patches provided in patches have already been loaded when this method is called and are merely provided as context. When empty the patches defined in the export preset have been loaded instead.
 
-PackedStringArray _get_binary_extensions(preset: EditorExportPreset) virtual required const 🔗
+PackedStringArray _get_binary_extensions(preset: EditorExportPreset) virtual required const 
 
 Returns array of supported binary extensions for the full project export.
 
-String _get_debug_protocol() virtual const 🔗
+String _get_debug_protocol() virtual const 
 
 Returns protocol used for remote debugging. Default implementation return tcp://.
 
-String _get_device_architecture(device: int) virtual const 🔗
+String _get_device_architecture(device: int) virtual const 
 
 Returns device architecture for one-click deploy.
 
-bool _get_export_option_visibility(preset: EditorExportPreset, option: String) virtual const 🔗
+bool _get_export_option_visibility(preset: EditorExportPreset, option: String) virtual const 
 
 Validates option and returns visibility for the specified preset. Default implementation return true for all options.
 
-String _get_export_option_warning(preset: EditorExportPreset, option: StringName) virtual const 🔗
+String _get_export_option_warning(preset: EditorExportPreset, option: StringName) virtual const 
 
 Validates option and returns warning message for the specified preset. Default implementation return empty string for all options.
 
-Array[Dictionary] _get_export_options() virtual const 🔗
+Array[Dictionary] _get_export_options() virtual const 
 
 Returns a property list, as an Array of dictionaries. Each Dictionary must at least contain the name: StringName and type: Variant.Type entries.
 
@@ -3132,89 +3132,89 @@ required: bool, if set to true, this property warnings are critical, and should 
 
 See also Object._get_property_list().
 
-Texture2D _get_logo() virtual required const 🔗
+Texture2D _get_logo() virtual required const 
 
 Returns the platform logo displayed in the export dialog. The logo should be 32×32 pixels, adjusted for the current editor scale (see EditorInterface.get_editor_scale()).
 
-String _get_name() virtual required const 🔗
+String _get_name() virtual required const 
 
 Returns export platform name.
 
-Texture2D _get_option_icon(device: int) virtual const 🔗
+Texture2D _get_option_icon(device: int) virtual const 
 
 Returns the item icon for the specified device in the one-click deploy menu. The icon should be 16×16 pixels, adjusted for the current editor scale (see EditorInterface.get_editor_scale()).
 
-String _get_option_label(device: int) virtual const 🔗
+String _get_option_label(device: int) virtual const 
 
 Returns one-click deploy menu item label for the specified device.
 
-String _get_option_tooltip(device: int) virtual const 🔗
+String _get_option_tooltip(device: int) virtual const 
 
 Returns one-click deploy menu item tooltip for the specified device.
 
-int _get_options_count() virtual const 🔗
+int _get_options_count() virtual const 
 
 Returns the number of devices (or other options) available in the one-click deploy menu.
 
-String _get_options_tooltip() virtual const 🔗
+String _get_options_tooltip() virtual const 
 
 Returns tooltip of the one-click deploy menu button.
 
-String _get_os_name() virtual required const 🔗
+String _get_os_name() virtual required const 
 
 Returns target OS name.
 
-PackedStringArray _get_platform_features() virtual required const 🔗
+PackedStringArray _get_platform_features() virtual required const 
 
 Returns array of platform specific features.
 
-PackedStringArray _get_preset_features(preset: EditorExportPreset) virtual required const 🔗
+PackedStringArray _get_preset_features(preset: EditorExportPreset) virtual required const 
 
 Returns array of platform specific features for the specified preset.
 
-Texture2D _get_run_icon() virtual const 🔗
+Texture2D _get_run_icon() virtual const 
 
 Returns the icon of the one-click deploy menu button. The icon should be 16×16 pixels, adjusted for the current editor scale (see EditorInterface.get_editor_scale()).
 
-bool _has_valid_export_configuration(preset: EditorExportPreset, debug: bool) virtual required const 🔗
+bool _has_valid_export_configuration(preset: EditorExportPreset, debug: bool) virtual required const 
 
 Returns true if export configuration is valid.
 
-bool _has_valid_project_configuration(preset: EditorExportPreset) virtual required const 🔗
+bool _has_valid_project_configuration(preset: EditorExportPreset) virtual required const 
 
 Returns true if project configuration is valid.
 
-bool _is_executable(path: String) virtual const 🔗
+bool _is_executable(path: String) virtual const 
 
 Returns true if specified file is a valid executable (native executable or script) for the target platform.
 
-bool _poll_export() virtual 🔗
+bool _poll_export() virtual 
 
 Returns true if one-click deploy options are changed and editor interface should be updated.
 
-Error _run(preset: EditorExportPreset, device: int, debug_flags: BitField[DebugFlags]) virtual 🔗
+Error _run(preset: EditorExportPreset, device: int, debug_flags: BitField[DebugFlags]) virtual 
 
 This method is called when device one-click deploy menu option is selected.
 
 Implementation should export project to a temporary location, upload and run it on the specific device, or perform another action associated with the menu item.
 
-bool _should_update_export_options() virtual 🔗
+bool _should_update_export_options() virtual 
 
 Returns true if export options list is changed and presets should be updated.
 
-String get_config_error() const 🔗
+String get_config_error() const 
 
 Returns current configuration error message text. This method should be called only from the _can_export(), _has_valid_export_configuration(), or _has_valid_project_configuration() implementations.
 
-bool get_config_missing_templates() const 🔗
+bool get_config_missing_templates() const 
 
 Returns true is export templates are missing from the current configuration. This method should be called only from the _can_export(), _has_valid_export_configuration(), or _has_valid_project_configuration() implementations.
 
-void set_config_error(error_text: String) const 🔗
+void set_config_error(error_text: String) const 
 
 Sets current configuration error message text. This method should be called only from the _can_export(), _has_valid_export_configuration(), or _has_valid_project_configuration() implementations.
 
-void set_config_missing_templates(missing_templates: bool) const 🔗
+void set_config_missing_templates(missing_templates: bool) const 
 
 Set to true is export templates are missing from the current configuration. This method should be called only from the _can_export(), _has_valid_export_configuration(), or _has_valid_project_configuration() implementations.
 
@@ -3695,991 +3695,991 @@ user_data/accessible_from_files_app
 
 user_data/accessible_from_itunes_sharing
 
-String application/additional_plist_content 🔗
+String application/additional_plist_content 
 
 Additional data added to the root <dict> section of the Info.plist file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-String application/app_store_team_id 🔗
+String application/app_store_team_id 
 
 Apple Team ID, unique 10-character string. To locate your Team ID check "Membership details" section in your Apple developer account dashboard, or "Organizational Unit" of your code signing certificate. See Locate your Team ID.
 
-String application/bundle_identifier 🔗
+String application/bundle_identifier 
 
 Unique application identifier in a reverse-DNS format, can only contain alphanumeric characters (A-Z, a-z, and 0-9), hyphens (-), and periods (.).
 
-String application/code_sign_identity_debug 🔗
+String application/code_sign_identity_debug 
 
 The "Full Name", "Common Name", or SHA-1 hash of the signing identity used for debug export.
 
-String application/code_sign_identity_release 🔗
+String application/code_sign_identity_release 
 
 The "Full Name", "Common Name", or SHA-1 hash of the signing identity used for release export.
 
-bool application/delete_old_export_files_unconditionally 🔗
+bool application/delete_old_export_files_unconditionally 
 
 If true, existing "project name" and "project name.xcodeproj" in the export destination directory will be unconditionally deleted during export.
 
-int application/export_method_debug 🔗
+int application/export_method_debug 
 
 Application distribution target (debug export).
 
-int application/export_method_release 🔗
+int application/export_method_release 
 
 Application distribution target (release export).
 
-bool application/export_project_only 🔗
+bool application/export_project_only 
 
 If true, exports iOS project files without building an XCArchive or .ipa file. If false, exports iOS project files and builds an XCArchive and .ipa file at the same time. When combining Godot with Fastlane or other build pipelines, you may want to set this to true.
 
-int application/icon_interpolation 🔗
+int application/icon_interpolation 
 
 Interpolation method used to resize application icon.
 
-String application/min_ios_version 🔗
+String application/min_ios_version 
 
 Minimum version of iOS required for this application to run in the major.minor.patch or major.minor format, can only contain numeric characters (0-9) and periods (.).
 
-String application/provisioning_profile_specifier_debug 🔗
+String application/provisioning_profile_specifier_debug 
 
 Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for debug. Used for manual provisioning.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG.
 
-String application/provisioning_profile_specifier_release 🔗
+String application/provisioning_profile_specifier_release 
 
 Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for release. Used for manual provisioning.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE.
 
-String application/provisioning_profile_uuid_debug 🔗
+String application/provisioning_profile_uuid_debug 
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See Edit, download, or delete provisioning profiles.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_DEBUG.
 
-String application/provisioning_profile_uuid_release 🔗
+String application/provisioning_profile_uuid_release 
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See Edit, download, or delete provisioning profiles.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_RELEASE.
 
-String application/short_version 🔗
+String application/short_version 
 
 Application version visible to the user. Can only contain numeric characters (0-9) and periods (.). Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Version value in the generated Xcode project.
 
-String application/signature 🔗
+String application/signature 
 
 A four-character creator code that is specific to the bundle. Optional.
 
-int application/targeted_device_family 🔗
+int application/targeted_device_family 
 
 Supported device family.
 
-String application/version 🔗
+String application/version 
 
 Machine-readable application version in the major.minor.patch format. Can only contain numeric characters (0-9) and periods (.). This must be incremented with every new release pushed to the App Store. Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Build value in the generated Xcode project.
 
-bool architectures/arm64 🔗
+bool architectures/arm64 
 
 If true, arm64 binaries are included into exported project.
 
-bool capabilities/access_wifi 🔗
+bool capabilities/access_wifi 
 
 If true, networking features related to Wi-Fi access are enabled. See Required Device Capabilities.
 
-PackedStringArray capabilities/additional 🔗
+PackedStringArray capabilities/additional 
 
 Additional data added to the UIRequiredDeviceCapabilities array of the Info.plist file.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool capabilities/performance_a12 🔗
+bool capabilities/performance_a12 
 
 Requires the graphics performance and features of the A12 Bionic and later chips (devices supporting all Vulkan renderer features).
 
 Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen), and newer.
 
-bool capabilities/performance_gaming_tier 🔗
+bool capabilities/performance_gaming_tier 
 
 Requires the graphics performance and features of the A17 Pro and later chips.
 
 Enabling this option limits supported devices to: iPhone 15 Pro and newer.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to the custom export template. If left empty, default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to the custom export template. If left empty, default template is used.
 
-String entitlements/additional 🔗
+String entitlements/additional 
 
 Additional data added to the root <dict> section of the .entitlements file. The value should be an XML section with pairs of key-value elements, for example:
 
-bool entitlements/game_center 🔗
+bool entitlements/game_center 
 
 If true, allows access to Game Center features. See com.apple.developer.game-center.
 
-bool entitlements/increased_memory_limit 🔗
+bool entitlements/increased_memory_limit 
 
 If true, hints that the app might perform better with a higher memory limit. See com.apple.developer.kernel.increased-memory-limit.
 
-String entitlements/push_notifications 🔗
+String entitlements/push_notifications 
 
 Environment for Apple Push Notification service. See aps-environment.
 
-String icons/app_store_1024x1024 🔗
+String icons/app_store_1024x1024 
 
 App Store application icon file. If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/app_store_1024x1024_dark 🔗
+String icons/app_store_1024x1024_dark 
 
 App Store application icon file, dark version. See App icons.
 
-String icons/app_store_1024x1024_tinted 🔗
+String icons/app_store_1024x1024_tinted 
 
 App Store application icon file, tinted version. See App icons.
 
-String icons/icon_1024x1024 🔗
+String icons/icon_1024x1024 
 
 Base application icon used to generate other icons. If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/icon_1024x1024_dark 🔗
+String icons/icon_1024x1024_dark 
 
 Base application icon used to generate other icons, dark version. See App icons.
 
-String icons/icon_1024x1024_tinted 🔗
+String icons/icon_1024x1024_tinted 
 
 Base application icon used to generate other icons, tinted version. See App icons.
 
-String icons/ios_128x128 🔗
+String icons/ios_128x128 
 
 iOS application 64x64 icon file (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/ios_128x128_dark 🔗
+String icons/ios_128x128_dark 
 
 iOS application 64x64 icon file (2x DPI), dark version. See App icons.
 
-String icons/ios_128x128_tinted 🔗
+String icons/ios_128x128_tinted 
 
 iOS application 64x64 icon file (2x DPI), tinted version. See App icons.
 
-String icons/ios_136x136 🔗
+String icons/ios_136x136 
 
 iOS application 68x68 icon file (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/ios_136x136_dark 🔗
+String icons/ios_136x136_dark 
 
 iOS application 68x68 icon file (2x DPI), dark version. See App icons.
 
-String icons/ios_136x136_tinted 🔗
+String icons/ios_136x136_tinted 
 
 iOS application 68x68 icon file (2x DPI), tinted version. See App icons.
 
-String icons/ios_192x192 🔗
+String icons/ios_192x192 
 
 iOS application 64x64 icon file (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/ios_192x192_dark 🔗
+String icons/ios_192x192_dark 
 
 iOS application 64x64 icon file (3x DPI), dark version. See App icons.
 
-String icons/ios_192x192_tinted 🔗
+String icons/ios_192x192_tinted 
 
 iOS application 64x64 icon file (3x DPI), tinted version. See App icons.
 
-String icons/ipad_152x152 🔗
+String icons/ipad_152x152 
 
 Home screen application icon file on iPad (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/ipad_152x152_dark 🔗
+String icons/ipad_152x152_dark 
 
 Home screen application icon file on iPad (2x DPI), dark version. See App icons.
 
-String icons/ipad_152x152_tinted 🔗
+String icons/ipad_152x152_tinted 
 
 Home screen application icon file on iPad (2x DPI), tinted version. See App icons.
 
-String icons/ipad_167x167 🔗
+String icons/ipad_167x167 
 
 Home screen application icon file on iPad (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/ipad_167x167_dark 🔗
+String icons/ipad_167x167_dark 
 
 Home screen application icon file on iPad (3x DPI), dark version. See App icons.
 
-String icons/ipad_167x167_tinted 🔗
+String icons/ipad_167x167_tinted 
 
 Home screen application icon file on iPad (3x DPI), tinted version. See App icons.
 
-String icons/iphone_120x120 🔗
+String icons/iphone_120x120 
 
 Home screen application icon file on iPhone (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/iphone_120x120_dark 🔗
+String icons/iphone_120x120_dark 
 
 Home screen application icon file on iPhone (2x DPI), dark version. See App icons.
 
-String icons/iphone_120x120_tinted 🔗
+String icons/iphone_120x120_tinted 
 
 Home screen application icon file on iPhone (2x DPI), tinted version. See App icons.
 
-String icons/iphone_180x180 🔗
+String icons/iphone_180x180 
 
 Home screen application icon file on iPhone (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/iphone_180x180_dark 🔗
+String icons/iphone_180x180_dark 
 
 Home screen application icon file on iPhone (3x DPI), dark version. See App icons.
 
-String icons/iphone_180x180_tinted 🔗
+String icons/iphone_180x180_tinted 
 
 Home screen application icon file on iPhone (3x DPI), tinted version. See App icons.
 
-String icons/notification_40x40 🔗
+String icons/notification_40x40 
 
 Notification icon file on iPad and iPhone (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/notification_40x40_dark 🔗
+String icons/notification_40x40_dark 
 
 Notification icon file on iPad and iPhone (2x DPI), dark version. See App icons.
 
-String icons/notification_40x40_tinted 🔗
+String icons/notification_40x40_tinted 
 
 Notification icon file on iPad and iPhone (2x DPI), tinted version. See App icons.
 
-String icons/notification_60x60 🔗
+String icons/notification_60x60 
 
 Notification icon file on iPhone (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/notification_60x60_dark 🔗
+String icons/notification_60x60_dark 
 
 Notification icon file on iPhone (3x DPI), dark version. See App icons.
 
-String icons/notification_60x60_tinted 🔗
+String icons/notification_60x60_tinted 
 
 Notification icon file on iPhone (3x DPI), tinted version. See App icons.
 
-String icons/notification_76x76 🔗
+String icons/notification_76x76 
 
 Notification icon file on iPad and iPhone (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/notification_76x76_dark 🔗
+String icons/notification_76x76_dark 
 
 Notification icon file on iPad and iPhone (2x DPI), dark version. See App icons.
 
-String icons/notification_76x76_tinted 🔗
+String icons/notification_76x76_tinted 
 
 Notification icon file on iPad and iPhone (2x DPI), tinted version. See App icons.
 
-String icons/notification_114x114 🔗
+String icons/notification_114x114 
 
 Notification icon file on iPad and iPhone (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/notification_114x114_dark 🔗
+String icons/notification_114x114_dark 
 
 Notification icon file on iPad and iPhone (3x DPI), dark version. See App icons.
 
-String icons/notification_114x114_tinted 🔗
+String icons/notification_114x114_tinted 
 
 Notification icon file on iPad and iPhone (3x DPI), tinted version. See App icons.
 
-String icons/settings_58x58 🔗
+String icons/settings_58x58 
 
 Application settings icon file on iPad and iPhone (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/settings_58x58_dark 🔗
+String icons/settings_58x58_dark 
 
 Application settings icon file on iPad and iPhone (2x DPI), dark version. See App icons.
 
-String icons/settings_58x58_tinted 🔗
+String icons/settings_58x58_tinted 
 
 Application settings icon file on iPad and iPhone (2x DPI), tinted version. See App icons.
 
-String icons/settings_87x87 🔗
+String icons/settings_87x87 
 
 Application settings icon file on iPhone (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/settings_87x87_dark 🔗
+String icons/settings_87x87_dark 
 
 Application settings icon file on iPhone (3x DPI), dark version. See App icons.
 
-String icons/settings_87x87_tinted 🔗
+String icons/settings_87x87_tinted 
 
 Application settings icon file on iPhone (3x DPI), tinted version. See App icons.
 
-String icons/spotlight_80x80 🔗
+String icons/spotlight_80x80 
 
 Spotlight icon file on iPad and iPhone (2x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/spotlight_80x80_dark 🔗
+String icons/spotlight_80x80_dark 
 
 Spotlight icon file on iPad and iPhone (2x DPI), dark version. See App icons.
 
-String icons/spotlight_80x80_tinted 🔗
+String icons/spotlight_80x80_tinted 
 
 Spotlight icon file on iPad and iPhone (2x DPI), tinted version. See App icons.
 
-String icons/spotlight_120x120 🔗
+String icons/spotlight_120x120 
 
 Spotlight icon file on iPad and iPhone (3x DPI). If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/spotlight_120x120_dark 🔗
+String icons/spotlight_120x120_dark 
 
 Spotlight icon file on iPad and iPhone (3x DPI), dark version. See App icons.
 
-String icons/spotlight_120x120_tinted 🔗
+String icons/spotlight_120x120_tinted 
 
 Spotlight icon file on iPad and iPhone (3x DPI), tinted version. See App icons.
 
-int privacy/active_keyboard_access_reasons 🔗
+int privacy/active_keyboard_access_reasons 
 
 The reasons your app use active keyboard API. See Describing use of required reason API.
 
-String privacy/camera_usage_description 🔗
+String privacy/camera_usage_description 
 
 A message displayed when requesting access to the device's camera (in English).
 
-Dictionary privacy/camera_usage_description_localized 🔗
+Dictionary privacy/camera_usage_description_localized 
 
 A message displayed when requesting access to the device's camera (localized).
 
-bool privacy/collected_data/advertising_data/collected 🔗
+bool privacy/collected_data/advertising_data/collected 
 
 Indicates whether your app collects advertising data.
 
-int privacy/collected_data/advertising_data/collection_purposes 🔗
+int privacy/collected_data/advertising_data/collection_purposes 
 
 The reasons your app collects advertising data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/advertising_data/linked_to_user 🔗
+bool privacy/collected_data/advertising_data/linked_to_user 
 
 Indicates whether your app links advertising data to the user's identity.
 
-bool privacy/collected_data/advertising_data/used_for_tracking 🔗
+bool privacy/collected_data/advertising_data/used_for_tracking 
 
 Indicates whether your app uses advertising data for tracking.
 
-bool privacy/collected_data/audio_data/collected 🔗
+bool privacy/collected_data/audio_data/collected 
 
 Indicates whether your app collects audio data.
 
-int privacy/collected_data/audio_data/collection_purposes 🔗
+int privacy/collected_data/audio_data/collection_purposes 
 
 The reasons your app collects audio data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/audio_data/linked_to_user 🔗
+bool privacy/collected_data/audio_data/linked_to_user 
 
 Indicates whether your app links audio data to the user's identity.
 
-bool privacy/collected_data/audio_data/used_for_tracking 🔗
+bool privacy/collected_data/audio_data/used_for_tracking 
 
 Indicates whether your app uses audio data for tracking.
 
-bool privacy/collected_data/browsing_history/collected 🔗
+bool privacy/collected_data/browsing_history/collected 
 
 Indicates whether your app collects browsing history.
 
-int privacy/collected_data/browsing_history/collection_purposes 🔗
+int privacy/collected_data/browsing_history/collection_purposes 
 
 The reasons your app collects browsing history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/browsing_history/linked_to_user 🔗
+bool privacy/collected_data/browsing_history/linked_to_user 
 
 Indicates whether your app links browsing history to the user's identity.
 
-bool privacy/collected_data/browsing_history/used_for_tracking 🔗
+bool privacy/collected_data/browsing_history/used_for_tracking 
 
 Indicates whether your app uses browsing history for tracking.
 
-bool privacy/collected_data/coarse_location/collected 🔗
+bool privacy/collected_data/coarse_location/collected 
 
 Indicates whether your app collects coarse location data.
 
-int privacy/collected_data/coarse_location/collection_purposes 🔗
+int privacy/collected_data/coarse_location/collection_purposes 
 
 The reasons your app collects coarse location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/coarse_location/linked_to_user 🔗
+bool privacy/collected_data/coarse_location/linked_to_user 
 
 Indicates whether your app links coarse location data to the user's identity.
 
-bool privacy/collected_data/coarse_location/used_for_tracking 🔗
+bool privacy/collected_data/coarse_location/used_for_tracking 
 
 Indicates whether your app uses coarse location data for tracking.
 
-bool privacy/collected_data/contacts/collected 🔗
+bool privacy/collected_data/contacts/collected 
 
 Indicates whether your app collects contacts.
 
-int privacy/collected_data/contacts/collection_purposes 🔗
+int privacy/collected_data/contacts/collection_purposes 
 
 The reasons your app collects contacts. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/contacts/linked_to_user 🔗
+bool privacy/collected_data/contacts/linked_to_user 
 
 Indicates whether your app links contacts to the user's identity.
 
-bool privacy/collected_data/contacts/used_for_tracking 🔗
+bool privacy/collected_data/contacts/used_for_tracking 
 
 Indicates whether your app uses contacts for tracking.
 
-bool privacy/collected_data/crash_data/collected 🔗
+bool privacy/collected_data/crash_data/collected 
 
 Indicates whether your app collects crash data.
 
-int privacy/collected_data/crash_data/collection_purposes 🔗
+int privacy/collected_data/crash_data/collection_purposes 
 
 The reasons your app collects crash data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/crash_data/linked_to_user 🔗
+bool privacy/collected_data/crash_data/linked_to_user 
 
 Indicates whether your app links crash data to the user's identity.
 
-bool privacy/collected_data/crash_data/used_for_tracking 🔗
+bool privacy/collected_data/crash_data/used_for_tracking 
 
 Indicates whether your app uses crash data for tracking.
 
-bool privacy/collected_data/credit_info/collected 🔗
+bool privacy/collected_data/credit_info/collected 
 
 Indicates whether your app collects credit information.
 
-int privacy/collected_data/credit_info/collection_purposes 🔗
+int privacy/collected_data/credit_info/collection_purposes 
 
 The reasons your app collects credit information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/credit_info/linked_to_user 🔗
+bool privacy/collected_data/credit_info/linked_to_user 
 
 Indicates whether your app links credit information to the user's identity.
 
-bool privacy/collected_data/credit_info/used_for_tracking 🔗
+bool privacy/collected_data/credit_info/used_for_tracking 
 
 Indicates whether your app uses credit information for tracking.
 
-bool privacy/collected_data/customer_support/collected 🔗
+bool privacy/collected_data/customer_support/collected 
 
 Indicates whether your app collects customer support data.
 
-int privacy/collected_data/customer_support/collection_purposes 🔗
+int privacy/collected_data/customer_support/collection_purposes 
 
 The reasons your app collects customer support data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/customer_support/linked_to_user 🔗
+bool privacy/collected_data/customer_support/linked_to_user 
 
 Indicates whether your app links customer support data to the user's identity.
 
-bool privacy/collected_data/customer_support/used_for_tracking 🔗
+bool privacy/collected_data/customer_support/used_for_tracking 
 
 Indicates whether your app uses customer support data for tracking.
 
-bool privacy/collected_data/device_id/collected 🔗
+bool privacy/collected_data/device_id/collected 
 
 Indicates whether your app collects device IDs.
 
-int privacy/collected_data/device_id/collection_purposes 🔗
+int privacy/collected_data/device_id/collection_purposes 
 
 The reasons your app collects device IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/device_id/linked_to_user 🔗
+bool privacy/collected_data/device_id/linked_to_user 
 
 Indicates whether your app links device IDs to the user's identity.
 
-bool privacy/collected_data/device_id/used_for_tracking 🔗
+bool privacy/collected_data/device_id/used_for_tracking 
 
 Indicates whether your app uses device IDs for tracking.
 
-bool privacy/collected_data/email_address/collected 🔗
+bool privacy/collected_data/email_address/collected 
 
 Indicates whether your app collects email address.
 
-int privacy/collected_data/email_address/collection_purposes 🔗
+int privacy/collected_data/email_address/collection_purposes 
 
 The reasons your app collects email address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/email_address/linked_to_user 🔗
+bool privacy/collected_data/email_address/linked_to_user 
 
 Indicates whether your app links email address to the user's identity.
 
-bool privacy/collected_data/email_address/used_for_tracking 🔗
+bool privacy/collected_data/email_address/used_for_tracking 
 
 Indicates whether your app uses email address for tracking.
 
-bool privacy/collected_data/emails_or_text_messages/collected 🔗
+bool privacy/collected_data/emails_or_text_messages/collected 
 
 Indicates whether your app collects emails or text messages.
 
-int privacy/collected_data/emails_or_text_messages/collection_purposes 🔗
+int privacy/collected_data/emails_or_text_messages/collection_purposes 
 
 The reasons your app collects emails or text messages. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/emails_or_text_messages/linked_to_user 🔗
+bool privacy/collected_data/emails_or_text_messages/linked_to_user 
 
 Indicates whether your app links emails or text messages to the user's identity.
 
-bool privacy/collected_data/emails_or_text_messages/used_for_tracking 🔗
+bool privacy/collected_data/emails_or_text_messages/used_for_tracking 
 
 Indicates whether your app uses emails or text messages for tracking.
 
-bool privacy/collected_data/environment_scanning/collected 🔗
+bool privacy/collected_data/environment_scanning/collected 
 
 Indicates whether your app collects environment scanning data.
 
-int privacy/collected_data/environment_scanning/collection_purposes 🔗
+int privacy/collected_data/environment_scanning/collection_purposes 
 
 The reasons your app collects environment scanning data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/environment_scanning/linked_to_user 🔗
+bool privacy/collected_data/environment_scanning/linked_to_user 
 
 Indicates whether your app links environment scanning data to the user's identity.
 
-bool privacy/collected_data/environment_scanning/used_for_tracking 🔗
+bool privacy/collected_data/environment_scanning/used_for_tracking 
 
 Indicates whether your app uses environment scanning data for tracking.
 
-bool privacy/collected_data/fitness/collected 🔗
+bool privacy/collected_data/fitness/collected 
 
 Indicates whether your app collects fitness and exercise data.
 
-int privacy/collected_data/fitness/collection_purposes 🔗
+int privacy/collected_data/fitness/collection_purposes 
 
 The reasons your app collects fitness and exercise data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/fitness/linked_to_user 🔗
+bool privacy/collected_data/fitness/linked_to_user 
 
 Indicates whether your app links fitness and exercise data to the user's identity.
 
-bool privacy/collected_data/fitness/used_for_tracking 🔗
+bool privacy/collected_data/fitness/used_for_tracking 
 
 Indicates whether your app uses fitness and exercise data for tracking.
 
-bool privacy/collected_data/gameplay_content/collected 🔗
+bool privacy/collected_data/gameplay_content/collected 
 
 Indicates whether your app collects gameplay content.
 
-int privacy/collected_data/gameplay_content/collection_purposes 🔗
+int privacy/collected_data/gameplay_content/collection_purposes 
 
 The reasons your app collects gameplay content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/gameplay_content/linked_to_user 🔗
+bool privacy/collected_data/gameplay_content/linked_to_user 
 
 Indicates whether your app links gameplay content to the user's identity.
 
-bool privacy/collected_data/gameplay_content/used_for_tracking 🔗
+bool privacy/collected_data/gameplay_content/used_for_tracking 
 
 Indicates whether your app uses gameplay content for tracking.
 
-bool privacy/collected_data/hands/collected 🔗
+bool privacy/collected_data/hands/collected 
 
 Indicates whether your app collects user's hand structure and hand movements.
 
-int privacy/collected_data/hands/collection_purposes 🔗
+int privacy/collected_data/hands/collection_purposes 
 
 The reasons your app collects user's hand structure and hand movements. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/hands/linked_to_user 🔗
+bool privacy/collected_data/hands/linked_to_user 
 
 Indicates whether your app links user's hand structure and hand movements to the user's identity.
 
-bool privacy/collected_data/hands/used_for_tracking 🔗
+bool privacy/collected_data/hands/used_for_tracking 
 
 Indicates whether your app uses user's hand structure and hand movements for tracking.
 
-bool privacy/collected_data/head/collected 🔗
+bool privacy/collected_data/head/collected 
 
 Indicates whether your app collects user's head movement.
 
-int privacy/collected_data/head/collection_purposes 🔗
+int privacy/collected_data/head/collection_purposes 
 
 The reasons your app collects user's head movement. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/head/linked_to_user 🔗
+bool privacy/collected_data/head/linked_to_user 
 
 Indicates whether your app links user's head movement to the user's identity.
 
-bool privacy/collected_data/head/used_for_tracking 🔗
+bool privacy/collected_data/head/used_for_tracking 
 
 Indicates whether your app uses user's head movement for tracking.
 
-bool privacy/collected_data/health/collected 🔗
+bool privacy/collected_data/health/collected 
 
 Indicates whether your app collects health and medical data.
 
-int privacy/collected_data/health/collection_purposes 🔗
+int privacy/collected_data/health/collection_purposes 
 
 The reasons your app collects health and medical data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/health/linked_to_user 🔗
+bool privacy/collected_data/health/linked_to_user 
 
 Indicates whether your app links health and medical data to the user's identity.
 
-bool privacy/collected_data/health/used_for_tracking 🔗
+bool privacy/collected_data/health/used_for_tracking 
 
 Indicates whether your app uses health and medical data for tracking.
 
-bool privacy/collected_data/name/collected 🔗
+bool privacy/collected_data/name/collected 
 
 Indicates whether your app collects user's name.
 
-int privacy/collected_data/name/collection_purposes 🔗
+int privacy/collected_data/name/collection_purposes 
 
 The reasons your app collects user's name. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/name/linked_to_user 🔗
+bool privacy/collected_data/name/linked_to_user 
 
 Indicates whether your app links user's name to the user's identity.
 
-bool privacy/collected_data/name/used_for_tracking 🔗
+bool privacy/collected_data/name/used_for_tracking 
 
 Indicates whether your app uses user's name for tracking.
 
-bool privacy/collected_data/other_contact_info/collected 🔗
+bool privacy/collected_data/other_contact_info/collected 
 
 Indicates whether your app collects any other contact information.
 
-int privacy/collected_data/other_contact_info/collection_purposes 🔗
+int privacy/collected_data/other_contact_info/collection_purposes 
 
 The reasons your app collects any other contact information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_contact_info/linked_to_user 🔗
+bool privacy/collected_data/other_contact_info/linked_to_user 
 
 Indicates whether your app links any other contact information to the user's identity.
 
-bool privacy/collected_data/other_contact_info/used_for_tracking 🔗
+bool privacy/collected_data/other_contact_info/used_for_tracking 
 
 Indicates whether your app uses any other contact information for tracking.
 
-bool privacy/collected_data/other_data_types/collected 🔗
+bool privacy/collected_data/other_data_types/collected 
 
 Indicates whether your app collects any other data.
 
-int privacy/collected_data/other_data_types/collection_purposes 🔗
+int privacy/collected_data/other_data_types/collection_purposes 
 
 The reasons your app collects any other data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_data_types/linked_to_user 🔗
+bool privacy/collected_data/other_data_types/linked_to_user 
 
 Indicates whether your app links any other data to the user's identity.
 
-bool privacy/collected_data/other_data_types/used_for_tracking 🔗
+bool privacy/collected_data/other_data_types/used_for_tracking 
 
 Indicates whether your app uses any other data for tracking.
 
-bool privacy/collected_data/other_diagnostic_data/collected 🔗
+bool privacy/collected_data/other_diagnostic_data/collected 
 
 Indicates whether your app collects any other diagnostic data.
 
-int privacy/collected_data/other_diagnostic_data/collection_purposes 🔗
+int privacy/collected_data/other_diagnostic_data/collection_purposes 
 
 The reasons your app collects any other diagnostic data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_diagnostic_data/linked_to_user 🔗
+bool privacy/collected_data/other_diagnostic_data/linked_to_user 
 
 Indicates whether your app links any other diagnostic data to the user's identity.
 
-bool privacy/collected_data/other_diagnostic_data/used_for_tracking 🔗
+bool privacy/collected_data/other_diagnostic_data/used_for_tracking 
 
 Indicates whether your app uses any other diagnostic data for tracking.
 
-bool privacy/collected_data/other_financial_info/collected 🔗
+bool privacy/collected_data/other_financial_info/collected 
 
 Indicates whether your app collects any other financial information.
 
-int privacy/collected_data/other_financial_info/collection_purposes 🔗
+int privacy/collected_data/other_financial_info/collection_purposes 
 
 The reasons your app collects any other financial information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_financial_info/linked_to_user 🔗
+bool privacy/collected_data/other_financial_info/linked_to_user 
 
 Indicates whether your app links any other financial information to the user's identity.
 
-bool privacy/collected_data/other_financial_info/used_for_tracking 🔗
+bool privacy/collected_data/other_financial_info/used_for_tracking 
 
 Indicates whether your app uses any other financial information for tracking.
 
-bool privacy/collected_data/other_usage_data/collected 🔗
+bool privacy/collected_data/other_usage_data/collected 
 
 Indicates whether your app collects any other usage data.
 
-int privacy/collected_data/other_usage_data/collection_purposes 🔗
+int privacy/collected_data/other_usage_data/collection_purposes 
 
 The reasons your app collects any other usage data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_usage_data/linked_to_user 🔗
+bool privacy/collected_data/other_usage_data/linked_to_user 
 
 Indicates whether your app links any other usage data to the user's identity.
 
-bool privacy/collected_data/other_usage_data/used_for_tracking 🔗
+bool privacy/collected_data/other_usage_data/used_for_tracking 
 
 Indicates whether your app uses any other usage data for tracking.
 
-bool privacy/collected_data/other_user_content/collected 🔗
+bool privacy/collected_data/other_user_content/collected 
 
 Indicates whether your app collects any other user generated content.
 
-int privacy/collected_data/other_user_content/collection_purposes 🔗
+int privacy/collected_data/other_user_content/collection_purposes 
 
 The reasons your app collects any other user generated content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_user_content/linked_to_user 🔗
+bool privacy/collected_data/other_user_content/linked_to_user 
 
 Indicates whether your app links any other user generated content to the user's identity.
 
-bool privacy/collected_data/other_user_content/used_for_tracking 🔗
+bool privacy/collected_data/other_user_content/used_for_tracking 
 
 Indicates whether your app uses any other user generated content for tracking.
 
-bool privacy/collected_data/payment_info/collected 🔗
+bool privacy/collected_data/payment_info/collected 
 
 Indicates whether your app collects payment information.
 
-int privacy/collected_data/payment_info/collection_purposes 🔗
+int privacy/collected_data/payment_info/collection_purposes 
 
 The reasons your app collects payment information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/payment_info/linked_to_user 🔗
+bool privacy/collected_data/payment_info/linked_to_user 
 
 Indicates whether your app links payment information to the user's identity.
 
-bool privacy/collected_data/payment_info/used_for_tracking 🔗
+bool privacy/collected_data/payment_info/used_for_tracking 
 
 Indicates whether your app uses payment information for tracking.
 
-bool privacy/collected_data/performance_data/collected 🔗
+bool privacy/collected_data/performance_data/collected 
 
 Indicates whether your app collects performance data.
 
-int privacy/collected_data/performance_data/collection_purposes 🔗
+int privacy/collected_data/performance_data/collection_purposes 
 
 The reasons your app collects performance data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/performance_data/linked_to_user 🔗
+bool privacy/collected_data/performance_data/linked_to_user 
 
 Indicates whether your app links performance data to the user's identity.
 
-bool privacy/collected_data/performance_data/used_for_tracking 🔗
+bool privacy/collected_data/performance_data/used_for_tracking 
 
 Indicates whether your app uses performance data for tracking.
 
-bool privacy/collected_data/phone_number/collected 🔗
+bool privacy/collected_data/phone_number/collected 
 
 Indicates whether your app collects phone number.
 
-int privacy/collected_data/phone_number/collection_purposes 🔗
+int privacy/collected_data/phone_number/collection_purposes 
 
 The reasons your app collects phone number. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/phone_number/linked_to_user 🔗
+bool privacy/collected_data/phone_number/linked_to_user 
 
 Indicates whether your app links phone number to the user's identity.
 
-bool privacy/collected_data/phone_number/used_for_tracking 🔗
+bool privacy/collected_data/phone_number/used_for_tracking 
 
 Indicates whether your app uses phone number for tracking.
 
-bool privacy/collected_data/photos_or_videos/collected 🔗
+bool privacy/collected_data/photos_or_videos/collected 
 
 Indicates whether your app collects photos or videos.
 
-int privacy/collected_data/photos_or_videos/collection_purposes 🔗
+int privacy/collected_data/photos_or_videos/collection_purposes 
 
 The reasons your app collects photos or videos. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/photos_or_videos/linked_to_user 🔗
+bool privacy/collected_data/photos_or_videos/linked_to_user 
 
 Indicates whether your app links photos or videos to the user's identity.
 
-bool privacy/collected_data/photos_or_videos/used_for_tracking 🔗
+bool privacy/collected_data/photos_or_videos/used_for_tracking 
 
 Indicates whether your app uses photos or videos for tracking.
 
-bool privacy/collected_data/physical_address/collected 🔗
+bool privacy/collected_data/physical_address/collected 
 
 Indicates whether your app collects physical address.
 
-int privacy/collected_data/physical_address/collection_purposes 🔗
+int privacy/collected_data/physical_address/collection_purposes 
 
 The reasons your app collects physical address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/physical_address/linked_to_user 🔗
+bool privacy/collected_data/physical_address/linked_to_user 
 
 Indicates whether your app links physical address to the user's identity.
 
-bool privacy/collected_data/physical_address/used_for_tracking 🔗
+bool privacy/collected_data/physical_address/used_for_tracking 
 
 Indicates whether your app uses physical address for tracking.
 
-bool privacy/collected_data/precise_location/collected 🔗
+bool privacy/collected_data/precise_location/collected 
 
 Indicates whether your app collects precise location data.
 
-int privacy/collected_data/precise_location/collection_purposes 🔗
+int privacy/collected_data/precise_location/collection_purposes 
 
 The reasons your app collects precise location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/precise_location/linked_to_user 🔗
+bool privacy/collected_data/precise_location/linked_to_user 
 
 Indicates whether your app links precise location data to the user's identity.
 
-bool privacy/collected_data/precise_location/used_for_tracking 🔗
+bool privacy/collected_data/precise_location/used_for_tracking 
 
 Indicates whether your app uses precise location data for tracking.
 
-bool privacy/collected_data/product_interaction/collected 🔗
+bool privacy/collected_data/product_interaction/collected 
 
 Indicates whether your app collects product interaction data.
 
-int privacy/collected_data/product_interaction/collection_purposes 🔗
+int privacy/collected_data/product_interaction/collection_purposes 
 
 The reasons your app collects product interaction data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/product_interaction/linked_to_user 🔗
+bool privacy/collected_data/product_interaction/linked_to_user 
 
 Indicates whether your app links product interaction data to the user's identity.
 
-bool privacy/collected_data/product_interaction/used_for_tracking 🔗
+bool privacy/collected_data/product_interaction/used_for_tracking 
 
 Indicates whether your app uses product interaction data for tracking.
 
-bool privacy/collected_data/purchase_history/collected 🔗
+bool privacy/collected_data/purchase_history/collected 
 
 Indicates whether your app collects purchase history.
 
-int privacy/collected_data/purchase_history/collection_purposes 🔗
+int privacy/collected_data/purchase_history/collection_purposes 
 
 The reasons your app collects purchase history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/purchase_history/linked_to_user 🔗
+bool privacy/collected_data/purchase_history/linked_to_user 
 
 Indicates whether your app links purchase history to the user's identity.
 
-bool privacy/collected_data/purchase_history/used_for_tracking 🔗
+bool privacy/collected_data/purchase_history/used_for_tracking 
 
 Indicates whether your app uses purchase history for tracking.
 
-bool privacy/collected_data/search_hhistory/collected 🔗
+bool privacy/collected_data/search_hhistory/collected 
 
 Indicates whether your app collects search history.
 
-int privacy/collected_data/search_hhistory/collection_purposes 🔗
+int privacy/collected_data/search_hhistory/collection_purposes 
 
 The reasons your app collects search history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/search_hhistory/linked_to_user 🔗
+bool privacy/collected_data/search_hhistory/linked_to_user 
 
 Indicates whether your app links search history to the user's identity.
 
-bool privacy/collected_data/search_hhistory/used_for_tracking 🔗
+bool privacy/collected_data/search_hhistory/used_for_tracking 
 
 Indicates whether your app uses search history for tracking.
 
-bool privacy/collected_data/sensitive_info/collected 🔗
+bool privacy/collected_data/sensitive_info/collected 
 
 Indicates whether your app collects sensitive user information.
 
-int privacy/collected_data/sensitive_info/collection_purposes 🔗
+int privacy/collected_data/sensitive_info/collection_purposes 
 
 The reasons your app collects sensitive user information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/sensitive_info/linked_to_user 🔗
+bool privacy/collected_data/sensitive_info/linked_to_user 
 
 Indicates whether your app links sensitive user information to the user's identity.
 
-bool privacy/collected_data/sensitive_info/used_for_tracking 🔗
+bool privacy/collected_data/sensitive_info/used_for_tracking 
 
 Indicates whether your app uses sensitive user information for tracking.
 
-bool privacy/collected_data/user_id/collected 🔗
+bool privacy/collected_data/user_id/collected 
 
 Indicates whether your app collects user IDs.
 
-int privacy/collected_data/user_id/collection_purposes 🔗
+int privacy/collected_data/user_id/collection_purposes 
 
 The reasons your app collects user IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/user_id/linked_to_user 🔗
+bool privacy/collected_data/user_id/linked_to_user 
 
 Indicates whether your app links user IDs to the user's identity.
 
-bool privacy/collected_data/user_id/used_for_tracking 🔗
+bool privacy/collected_data/user_id/used_for_tracking 
 
 Indicates whether your app uses user IDs for tracking.
 
-int privacy/disk_space_access_reasons 🔗
+int privacy/disk_space_access_reasons 
 
 The reasons your app use free disk space API. See Describing use of required reason API.
 
-int privacy/file_timestamp_access_reasons 🔗
+int privacy/file_timestamp_access_reasons 
 
 The reasons your app use file timestamp/metadata API. See Describing use of required reason API.
 
-String privacy/microphone_usage_description 🔗
+String privacy/microphone_usage_description 
 
 A message displayed when requesting access to the device's microphone (in English).
 
-Dictionary privacy/microphone_usage_description_localized 🔗
+Dictionary privacy/microphone_usage_description_localized 
 
 A message displayed when requesting access to the device's microphone (localized).
 
-String privacy/photolibrary_usage_description 🔗
+String privacy/photolibrary_usage_description 
 
 A message displayed when requesting access to the user's photo library (in English).
 
-Dictionary privacy/photolibrary_usage_description_localized 🔗
+Dictionary privacy/photolibrary_usage_description_localized 
 
 A message displayed when requesting access to the user's photo library (localized).
 
-int privacy/system_boot_time_access_reasons 🔗
+int privacy/system_boot_time_access_reasons 
 
 The reasons your app use system boot time / absolute time API. See Describing use of required reason API.
 
-PackedStringArray privacy/tracking_domains 🔗
+PackedStringArray privacy/tracking_domains 
 
 The list of internet domains your app connects to that engage in tracking. See Privacy manifest files.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool privacy/tracking_enabled 🔗
+bool privacy/tracking_enabled 
 
 Indicates whether your app uses data for tracking. See Privacy manifest files.
 
-int privacy/user_defaults_access_reasons 🔗
+int privacy/user_defaults_access_reasons 
 
 The reasons your app use user defaults API. See Describing use of required reason API.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
-Color storyboard/custom_bg_color 🔗
+Color storyboard/custom_bg_color 
 
 A custom background color of the storyboard launch screen.
 
-String storyboard/custom_image@2x 🔗
+String storyboard/custom_image@2x 
 
 Application launch screen image file (2x DPI). If left empty, it will fallback to ProjectSettings.application/boot_splash/image.
 
-String storyboard/custom_image@3x 🔗
+String storyboard/custom_image@3x 
 
 Application launch screen image file (3x DPI). If left empty, it will fallback to ProjectSettings.application/boot_splash/image.
 
-int storyboard/image_scale_mode 🔗
+int storyboard/image_scale_mode 
 
 Launch screen image scaling mode.
 
-bool storyboard/use_custom_bg_color 🔗
+bool storyboard/use_custom_bg_color 
 
 If true, storyboard/custom_bg_color is used as a launch screen background color, otherwise application/boot_splash/bg_color project setting is used.
 
-bool user_data/accessible_from_files_app 🔗
+bool user_data/accessible_from_files_app 
 
 If true, the app "Documents" folder can be accessed via "Files" app. See LSSupportsOpeningDocumentsInPlace.
 
-bool user_data/accessible_from_itunes_sharing 🔗
+bool user_data/accessible_from_itunes_sharing 
 
 If true, the app "Documents" folder can be accessed via iTunes file sharing. See UIFileSharingEnabled.
 
@@ -4744,7 +4744,7 @@ texture_format/etc2_astc
 
 texture_format/s3tc_bptc
 
-String binary_format/architecture 🔗
+String binary_format/architecture 
 
 Application executable architecture.
 
@@ -4752,27 +4752,27 @@ Supported architectures: x86_32, x86_64, arm64, arm32, rv64, ppc64, and loongarc
 
 Official export templates include x86_32, x86_64, arm32, and arm64 binaries only.
 
-bool binary_format/embed_pck 🔗
+bool binary_format/embed_pck 
 
 If true, project resources are embedded into the executable.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to the custom export template. If left empty, default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to the custom export template. If left empty, default template is used.
 
-int debug/export_console_wrapper 🔗
+int debug/export_console_wrapper 
 
 If true, a console wrapper is exported alongside the main executable, which allows running the project with enabled console output.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
-String ssh_remote_deploy/cleanup_script 🔗
+String ssh_remote_deploy/cleanup_script 
 
 Script code to execute on the remote host when app is finished.
 
@@ -4786,27 +4786,27 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-bool ssh_remote_deploy/enabled 🔗
+bool ssh_remote_deploy/enabled 
 
 Enables remote deploy using SSH/SCP.
 
-String ssh_remote_deploy/extra_args_scp 🔗
+String ssh_remote_deploy/extra_args_scp 
 
 Array of the additional command line arguments passed to the SCP.
 
-String ssh_remote_deploy/extra_args_ssh 🔗
+String ssh_remote_deploy/extra_args_ssh 
 
 Array of the additional command line arguments passed to the SSH.
 
-String ssh_remote_deploy/host 🔗
+String ssh_remote_deploy/host 
 
 Remote host SSH user name and address, in user@address format.
 
-String ssh_remote_deploy/port 🔗
+String ssh_remote_deploy/port 
 
 Remote host SSH port number.
 
-String ssh_remote_deploy/run_script 🔗
+String ssh_remote_deploy/run_script 
 
 Script code to execute on the remote host when running the app.
 
@@ -4820,11 +4820,11 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-bool texture_format/etc2_astc 🔗
+bool texture_format/etc2_astc 
 
 If true, project textures are exported in the ETC2/ASTC format.
 
-bool texture_format/s3tc_bptc 🔗
+bool texture_format/s3tc_bptc 
 
 If true, project textures are exported in the S3TC/BPTC format.
 
@@ -5293,63 +5293,63 @@ ssh_remote_deploy/port
 
 ssh_remote_deploy/run_script
 
-String application/additional_plist_content 🔗
+String application/additional_plist_content 
 
 Additional data added to the root <dict> section of the Info.plist file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-String application/app_category 🔗
+String application/app_category 
 
 Application category for the App Store.
 
-String application/bundle_identifier 🔗
+String application/bundle_identifier 
 
 Unique application identifier in a reverse-DNS format, can only contain alphanumeric characters (A-Z, a-z, and 0-9), hyphens (-), and periods (.).
 
-String application/copyright 🔗
+String application/copyright 
 
 Copyright notice for the bundle visible to the user (in English).
 
-Dictionary application/copyright_localized 🔗
+Dictionary application/copyright_localized 
 
 Copyright notice for the bundle visible to the user (localized).
 
-int application/export_angle 🔗
+int application/export_angle 
 
 If set to 1, ANGLE libraries are exported with the exported application. If set to 0, ANGLE libraries are exported only if ProjectSettings.rendering/gl_compatibility/driver is set to "opengl3_angle".
 
-String application/icon 🔗
+String application/icon 
 
 Application icon file. If left empty, it will fallback to ProjectSettings.application/config/macos_native_icon, and then to ProjectSettings.application/config/icon.
 
-int application/icon_interpolation 🔗
+int application/icon_interpolation 
 
 Interpolation method used to resize application icon.
 
-String application/min_macos_version_arm64 🔗
+String application/min_macos_version_arm64 
 
 Minimum version of macOS required for this application to run on Apple Silicon Macs, in the major.minor.patch or major.minor format, can only contain numeric characters (0-9) and periods (.).
 
-String application/min_macos_version_x86_64 🔗
+String application/min_macos_version_x86_64 
 
 Minimum version of macOS required for this application to run on Intel Macs, in the major.minor.patch or major.minor format, can only contain numeric characters (0-9) and periods (.).
 
-String application/short_version 🔗
+String application/short_version 
 
 Application version visible to the user. Can only contain numeric characters (0-9) and periods (.). Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Version value in the generated Xcode project.
 
-String application/signature 🔗
+String application/signature 
 
 A four-character creator code that is specific to the bundle. Optional.
 
-String application/version 🔗
+String application/version 
 
 Machine-readable application version in the major.minor.patch format. Can only contain numeric characters (0-9) and periods (.). This must be incremented with every new release pushed to the App Store. Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Build value in the generated Xcode project.
 
-String binary_format/architecture 🔗
+String binary_format/architecture 
 
 Application executable architecture.
 
@@ -5357,865 +5357,865 @@ Supported architectures: x86_64, arm64, and universal (x86_64 + arm64).
 
 Official export templates include universal binaries only.
 
-String codesign/apple_team_id 🔗
+String codesign/apple_team_id 
 
 Apple Team ID, unique 10-character string. To locate your Team ID check "Membership details" section in your Apple developer account dashboard, or "Organizational Unit" of your code signing certificate. See Locate your Team ID.
 
-String codesign/certificate_file 🔗
+String codesign/certificate_file 
 
 PKCS #12 certificate file used to sign .app bundle.
 
 Can be overridden with the environment variable GODOT_MACOS_CODESIGN_CERTIFICATE_FILE.
 
-String codesign/certificate_password 🔗
+String codesign/certificate_password 
 
 Password for the certificate file used to sign .app bundle.
 
 Can be overridden with the environment variable GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD.
 
-int codesign/codesign 🔗
+int codesign/codesign 
 
 Tool to use for code signing.
 
-PackedStringArray codesign/custom_options 🔗
+PackedStringArray codesign/custom_options 
 
 Array of the additional command line arguments passed to the code signing tool.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-String codesign/entitlements/additional 🔗
+String codesign/entitlements/additional 
 
 Additional data added to the root <dict> section of the .entitlements file. The value should be an XML section with pairs of key-value elements, for example:
 
-bool codesign/entitlements/address_book 🔗
+bool codesign/entitlements/address_book 
 
 Enable to allow access to contacts in the user's address book, if it's enabled you should also provide usage message in the privacy/address_book_usage_description option. See com.apple.security.personal-information.addressbook.
 
-bool codesign/entitlements/allow_dyld_environment_variables 🔗
+bool codesign/entitlements/allow_dyld_environment_variables 
 
 Allows app to use dynamic linker environment variables to inject code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. See com.apple.security.cs.allow-dyld-environment-variables.
 
-bool codesign/entitlements/allow_jit_code_execution 🔗
+bool codesign/entitlements/allow_jit_code_execution 
 
 Allows creating writable and executable memory for JIT code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. See com.apple.security.cs.allow-jit.
 
-bool codesign/entitlements/allow_unsigned_executable_memory 🔗
+bool codesign/entitlements/allow_unsigned_executable_memory 
 
 Allows creating writable and executable memory without JIT restrictions. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. See com.apple.security.cs.allow-unsigned-executable-memory.
 
-bool codesign/entitlements/app_sandbox/device_bluetooth 🔗
+bool codesign/entitlements/app_sandbox/device_bluetooth 
 
 Enable to allow app to interact with Bluetooth devices. This entitlement is required to use wireless controllers. See com.apple.security.device.bluetooth.
 
-bool codesign/entitlements/app_sandbox/device_usb 🔗
+bool codesign/entitlements/app_sandbox/device_usb 
 
 Enable to allow app to interact with USB devices. This entitlement is required to use wired controllers. See com.apple.security.device.usb.
 
-bool codesign/entitlements/app_sandbox/enabled 🔗
+bool codesign/entitlements/app_sandbox/enabled 
 
 Enables App Sandbox. The App Sandbox restricts access to user data, networking, and devices. Sandboxed apps can't access most of the file system, can't use custom file dialogs and execute binaries outside the .app bundle. See App Sandbox.
 
 Note: To distribute an app through the App Store, you must enable the App Sandbox.
 
-int codesign/entitlements/app_sandbox/files_downloads 🔗
+int codesign/entitlements/app_sandbox/files_downloads 
 
 Allows read or write access to the user's "Downloads" folder. See com.apple.security.files.downloads.read-write.
 
-int codesign/entitlements/app_sandbox/files_movies 🔗
+int codesign/entitlements/app_sandbox/files_movies 
 
 Allows read or write access to the user's "Movies" folder. See com.apple.security.files.movies.read-write.
 
-int codesign/entitlements/app_sandbox/files_music 🔗
+int codesign/entitlements/app_sandbox/files_music 
 
 Allows read or write access to the user's "Music" folder. See com.apple.security.files.music.read-write.
 
-int codesign/entitlements/app_sandbox/files_pictures 🔗
+int codesign/entitlements/app_sandbox/files_pictures 
 
 Allows read or write access to the user's "Pictures" folder. See com.apple.security.files.pictures.read-write.
 
-int codesign/entitlements/app_sandbox/files_user_selected 🔗
+int codesign/entitlements/app_sandbox/files_user_selected 
 
 Allows read or write access to the locations the user has selected using a native file dialog. See com.apple.security.files.user-selected.read-write.
 
-Array codesign/entitlements/app_sandbox/helper_executables 🔗
+Array codesign/entitlements/app_sandbox/helper_executables 
 
 List of helper executables to embedded to the app bundle. Sandboxed app are limited to execute only these executable. See Embedding a command-line tool in a sandboxed app.
 
-bool codesign/entitlements/app_sandbox/network_client 🔗
+bool codesign/entitlements/app_sandbox/network_client 
 
 Enable to allow app to establish outgoing network connections. See com.apple.security.network.client.
 
-bool codesign/entitlements/app_sandbox/network_server 🔗
+bool codesign/entitlements/app_sandbox/network_server 
 
 Enable to allow app to listen for incoming network connections. See com.apple.security.network.server.
 
-bool codesign/entitlements/apple_events 🔗
+bool codesign/entitlements/apple_events 
 
 Enable to allow app to send Apple events to other apps. See com.apple.security.automation.apple-events.
 
-bool codesign/entitlements/audio_input 🔗
+bool codesign/entitlements/audio_input 
 
 Enable if you need to use the microphone or other audio input sources, if it's enabled you should also provide usage message in the privacy/microphone_usage_description option. See com.apple.security.device.audio-input.
 
-bool codesign/entitlements/calendars 🔗
+bool codesign/entitlements/calendars 
 
 Enable to allow access to the user's calendar, if it's enabled you should also provide usage message in the privacy/calendar_usage_description option. See com.apple.security.personal-information.calendars.
 
-bool codesign/entitlements/camera 🔗
+bool codesign/entitlements/camera 
 
 Enable if you need to use the camera, if it's enabled you should also provide usage message in the privacy/camera_usage_description option. See com.apple.security.device.camera.
 
-String codesign/entitlements/custom_file 🔗
+String codesign/entitlements/custom_file 
 
 Custom entitlements .plist file, if specified the rest of entitlements in the export config are ignored.
 
-bool codesign/entitlements/debugging 🔗
+bool codesign/entitlements/debugging 
 
 You can temporarily enable this entitlement to use native debugger (GDB, LLDB) with the exported app. This entitlement should be disabled for production export. See Embedding a command-line tool in a sandboxed app.
 
-bool codesign/entitlements/disable_library_validation 🔗
+bool codesign/entitlements/disable_library_validation 
 
 Allows app to load arbitrary libraries and frameworks (not signed with the same Team ID as the main executable or by Apple). Enable it if you are using GDExtension add-ons or ad-hoc signing, or want to support user-provided external add-ons. See com.apple.security.cs.disable-library-validation.
 
-bool codesign/entitlements/location 🔗
+bool codesign/entitlements/location 
 
 Enable if you need to use location information from Location Services, if it's enabled you should also provide usage message in the privacy/location_usage_description option. See com.apple.security.personal-information.location.
 
-bool codesign/entitlements/photos_library 🔗
+bool codesign/entitlements/photos_library 
 
 Enable to allow access to the user's Photos library, if it's enabled you should also provide usage message in the privacy/photos_library_usage_description option. See com.apple.security.personal-information.photos-library.
 
-String codesign/identity 🔗
+String codesign/identity 
 
 The "Full Name", "Common Name" or SHA-1 hash of the signing identity used to sign .app bundle.
 
-String codesign/installer_identity 🔗
+String codesign/installer_identity 
 
 The "Full Name", "Common Name" or SHA-1 hash of the signing identity used to sign .pkg installer package for App Store distribution, use 3rd Party Mac Developer Installer: Name. identity.
 
-String codesign/provisioning_profile 🔗
+String codesign/provisioning_profile 
 
 Provisioning profile file downloaded from Apple developer account dashboard. See Edit, download, or delete provisioning profiles.
 
 Can be overridden with the environment variable GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to the custom export template. If left empty, default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to the custom export template. If left empty, default template is used.
 
-int debug/export_console_wrapper 🔗
+int debug/export_console_wrapper 
 
 If enabled, a wrapper that can be used to run the application with console output is created alongside the exported application.
 
-bool display/high_res 🔗
+bool display/high_res 
 
 If true, the application is rendered at native display resolution, otherwise it is always rendered at loDPI resolution and upscaled by OS when required.
 
-int export/distribution_type 🔗
+int export/distribution_type 
 
 Application distribution target.
 
-String notarization/api_key 🔗
+String notarization/api_key 
 
 Apple App Store Connect API issuer key file.
 
 Can be overridden with the environment variable GODOT_MACOS_NOTARIZATION_API_KEY.
 
-String notarization/api_key_id 🔗
+String notarization/api_key_id 
 
 Apple App Store Connect API issuer key ID.
 
 Can be overridden with the environment variable GODOT_MACOS_NOTARIZATION_API_KEY_ID.
 
-String notarization/api_uuid 🔗
+String notarization/api_uuid 
 
 Apple App Store Connect API issuer UUID.
 
 Can be overridden with the environment variable GODOT_MACOS_NOTARIZATION_API_UUID.
 
-String notarization/apple_id_name 🔗
+String notarization/apple_id_name 
 
 Apple ID account name (email address).
 
 Can be overridden with the environment variable GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME.
 
-String notarization/apple_id_password 🔗
+String notarization/apple_id_password 
 
 Apple ID app-specific password.
 
 Can be overridden with the environment variable GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD.
 
-int notarization/notarization 🔗
+int notarization/notarization 
 
 Tool to use for notarization.
 
-String privacy/address_book_usage_description 🔗
+String privacy/address_book_usage_description 
 
 A message displayed when requesting access to the user's contacts (in English).
 
-Dictionary privacy/address_book_usage_description_localized 🔗
+Dictionary privacy/address_book_usage_description_localized 
 
 A message displayed when requesting access to the user's contacts (localized).
 
-String privacy/calendar_usage_description 🔗
+String privacy/calendar_usage_description 
 
 A message displayed when requesting access to the user's calendar data (in English).
 
-Dictionary privacy/calendar_usage_description_localized 🔗
+Dictionary privacy/calendar_usage_description_localized 
 
 A message displayed when requesting access to the user's calendar data (localized).
 
-String privacy/camera_usage_description 🔗
+String privacy/camera_usage_description 
 
 A message displayed when requesting access to the device's camera (in English).
 
-Dictionary privacy/camera_usage_description_localized 🔗
+Dictionary privacy/camera_usage_description_localized 
 
 A message displayed when requesting access to the device's camera (localized).
 
-bool privacy/collected_data/advertising_data/collected 🔗
+bool privacy/collected_data/advertising_data/collected 
 
 Indicates whether your app collects advertising data.
 
-int privacy/collected_data/advertising_data/collection_purposes 🔗
+int privacy/collected_data/advertising_data/collection_purposes 
 
 The reasons your app collects advertising data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/advertising_data/linked_to_user 🔗
+bool privacy/collected_data/advertising_data/linked_to_user 
 
 Indicates whether your app links advertising data to the user's identity.
 
-bool privacy/collected_data/advertising_data/used_for_tracking 🔗
+bool privacy/collected_data/advertising_data/used_for_tracking 
 
 Indicates whether your app uses advertising data for tracking.
 
-bool privacy/collected_data/audio_data/collected 🔗
+bool privacy/collected_data/audio_data/collected 
 
 Indicates whether your app collects audio data.
 
-int privacy/collected_data/audio_data/collection_purposes 🔗
+int privacy/collected_data/audio_data/collection_purposes 
 
 The reasons your app collects audio data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/audio_data/linked_to_user 🔗
+bool privacy/collected_data/audio_data/linked_to_user 
 
 Indicates whether your app links audio data to the user's identity.
 
-bool privacy/collected_data/audio_data/used_for_tracking 🔗
+bool privacy/collected_data/audio_data/used_for_tracking 
 
 Indicates whether your app uses audio data for tracking.
 
-bool privacy/collected_data/browsing_history/collected 🔗
+bool privacy/collected_data/browsing_history/collected 
 
 Indicates whether your app collects browsing history.
 
-int privacy/collected_data/browsing_history/collection_purposes 🔗
+int privacy/collected_data/browsing_history/collection_purposes 
 
 The reasons your app collects browsing history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/browsing_history/linked_to_user 🔗
+bool privacy/collected_data/browsing_history/linked_to_user 
 
 Indicates whether your app links browsing history to the user's identity.
 
-bool privacy/collected_data/browsing_history/used_for_tracking 🔗
+bool privacy/collected_data/browsing_history/used_for_tracking 
 
 Indicates whether your app uses browsing history for tracking.
 
-bool privacy/collected_data/coarse_location/collected 🔗
+bool privacy/collected_data/coarse_location/collected 
 
 Indicates whether your app collects coarse location data.
 
-int privacy/collected_data/coarse_location/collection_purposes 🔗
+int privacy/collected_data/coarse_location/collection_purposes 
 
 The reasons your app collects coarse location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/coarse_location/linked_to_user 🔗
+bool privacy/collected_data/coarse_location/linked_to_user 
 
 Indicates whether your app links coarse location data to the user's identity.
 
-bool privacy/collected_data/coarse_location/used_for_tracking 🔗
+bool privacy/collected_data/coarse_location/used_for_tracking 
 
 Indicates whether your app uses coarse location data for tracking.
 
-bool privacy/collected_data/contacts/collected 🔗
+bool privacy/collected_data/contacts/collected 
 
 Indicates whether your app collects contacts.
 
-int privacy/collected_data/contacts/collection_purposes 🔗
+int privacy/collected_data/contacts/collection_purposes 
 
 The reasons your app collects contacts. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/contacts/linked_to_user 🔗
+bool privacy/collected_data/contacts/linked_to_user 
 
 Indicates whether your app links contacts to the user's identity.
 
-bool privacy/collected_data/contacts/used_for_tracking 🔗
+bool privacy/collected_data/contacts/used_for_tracking 
 
 Indicates whether your app uses contacts for tracking.
 
-bool privacy/collected_data/crash_data/collected 🔗
+bool privacy/collected_data/crash_data/collected 
 
 Indicates whether your app collects crash data.
 
-int privacy/collected_data/crash_data/collection_purposes 🔗
+int privacy/collected_data/crash_data/collection_purposes 
 
 The reasons your app collects crash data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/crash_data/linked_to_user 🔗
+bool privacy/collected_data/crash_data/linked_to_user 
 
 Indicates whether your app links crash data to the user's identity.
 
-bool privacy/collected_data/crash_data/used_for_tracking 🔗
+bool privacy/collected_data/crash_data/used_for_tracking 
 
 Indicates whether your app uses crash data for tracking.
 
-bool privacy/collected_data/credit_info/collected 🔗
+bool privacy/collected_data/credit_info/collected 
 
 Indicates whether your app collects credit information.
 
-int privacy/collected_data/credit_info/collection_purposes 🔗
+int privacy/collected_data/credit_info/collection_purposes 
 
 The reasons your app collects credit information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/credit_info/linked_to_user 🔗
+bool privacy/collected_data/credit_info/linked_to_user 
 
 Indicates whether your app links credit information to the user's identity.
 
-bool privacy/collected_data/credit_info/used_for_tracking 🔗
+bool privacy/collected_data/credit_info/used_for_tracking 
 
 Indicates whether your app uses credit information for tracking.
 
-bool privacy/collected_data/customer_support/collected 🔗
+bool privacy/collected_data/customer_support/collected 
 
 Indicates whether your app collects customer support data.
 
-int privacy/collected_data/customer_support/collection_purposes 🔗
+int privacy/collected_data/customer_support/collection_purposes 
 
 The reasons your app collects customer support data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/customer_support/linked_to_user 🔗
+bool privacy/collected_data/customer_support/linked_to_user 
 
 Indicates whether your app links customer support data to the user's identity.
 
-bool privacy/collected_data/customer_support/used_for_tracking 🔗
+bool privacy/collected_data/customer_support/used_for_tracking 
 
 Indicates whether your app uses customer support data for tracking.
 
-bool privacy/collected_data/device_id/collected 🔗
+bool privacy/collected_data/device_id/collected 
 
 Indicates whether your app collects device IDs.
 
-int privacy/collected_data/device_id/collection_purposes 🔗
+int privacy/collected_data/device_id/collection_purposes 
 
 The reasons your app collects device IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/device_id/linked_to_user 🔗
+bool privacy/collected_data/device_id/linked_to_user 
 
 Indicates whether your app links device IDs to the user's identity.
 
-bool privacy/collected_data/device_id/used_for_tracking 🔗
+bool privacy/collected_data/device_id/used_for_tracking 
 
 Indicates whether your app uses device IDs for tracking.
 
-bool privacy/collected_data/email_address/collected 🔗
+bool privacy/collected_data/email_address/collected 
 
 Indicates whether your app collects email address.
 
-int privacy/collected_data/email_address/collection_purposes 🔗
+int privacy/collected_data/email_address/collection_purposes 
 
 The reasons your app collects email address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/email_address/linked_to_user 🔗
+bool privacy/collected_data/email_address/linked_to_user 
 
 Indicates whether your app links email address to the user's identity.
 
-bool privacy/collected_data/email_address/used_for_tracking 🔗
+bool privacy/collected_data/email_address/used_for_tracking 
 
 Indicates whether your app uses email address for tracking.
 
-bool privacy/collected_data/emails_or_text_messages/collected 🔗
+bool privacy/collected_data/emails_or_text_messages/collected 
 
 Indicates whether your app collects emails or text messages.
 
-int privacy/collected_data/emails_or_text_messages/collection_purposes 🔗
+int privacy/collected_data/emails_or_text_messages/collection_purposes 
 
 The reasons your app collects emails or text messages. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/emails_or_text_messages/linked_to_user 🔗
+bool privacy/collected_data/emails_or_text_messages/linked_to_user 
 
 Indicates whether your app links emails or text messages to the user's identity.
 
-bool privacy/collected_data/emails_or_text_messages/used_for_tracking 🔗
+bool privacy/collected_data/emails_or_text_messages/used_for_tracking 
 
 Indicates whether your app uses emails or text messages for tracking.
 
-bool privacy/collected_data/environment_scanning/collected 🔗
+bool privacy/collected_data/environment_scanning/collected 
 
 Indicates whether your app collects environment scanning data.
 
-int privacy/collected_data/environment_scanning/collection_purposes 🔗
+int privacy/collected_data/environment_scanning/collection_purposes 
 
 The reasons your app collects environment scanning data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/environment_scanning/linked_to_user 🔗
+bool privacy/collected_data/environment_scanning/linked_to_user 
 
 Indicates whether your app links environment scanning data to the user's identity.
 
-bool privacy/collected_data/environment_scanning/used_for_tracking 🔗
+bool privacy/collected_data/environment_scanning/used_for_tracking 
 
 Indicates whether your app uses environment scanning data for tracking.
 
-bool privacy/collected_data/fitness/collected 🔗
+bool privacy/collected_data/fitness/collected 
 
 Indicates whether your app collects fitness and exercise data.
 
-int privacy/collected_data/fitness/collection_purposes 🔗
+int privacy/collected_data/fitness/collection_purposes 
 
 The reasons your app collects fitness and exercise data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/fitness/linked_to_user 🔗
+bool privacy/collected_data/fitness/linked_to_user 
 
 Indicates whether your app links fitness and exercise data to the user's identity.
 
-bool privacy/collected_data/fitness/used_for_tracking 🔗
+bool privacy/collected_data/fitness/used_for_tracking 
 
 Indicates whether your app uses fitness and exercise data for tracking.
 
-bool privacy/collected_data/gameplay_content/collected 🔗
+bool privacy/collected_data/gameplay_content/collected 
 
 Indicates whether your app collects gameplay content.
 
-int privacy/collected_data/gameplay_content/collection_purposes 🔗
+int privacy/collected_data/gameplay_content/collection_purposes 
 
 The reasons your app collects gameplay content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/gameplay_content/linked_to_user 🔗
+bool privacy/collected_data/gameplay_content/linked_to_user 
 
 Indicates whether your app links gameplay content to the user's identity.
 
-bool privacy/collected_data/gameplay_content/used_for_tracking 🔗
+bool privacy/collected_data/gameplay_content/used_for_tracking 
 
 Indicates whether your app uses gameplay content for tracking.
 
-bool privacy/collected_data/hands/collected 🔗
+bool privacy/collected_data/hands/collected 
 
 Indicates whether your app collects user's hand structure and hand movements.
 
-int privacy/collected_data/hands/collection_purposes 🔗
+int privacy/collected_data/hands/collection_purposes 
 
 The reasons your app collects user's hand structure and hand movements. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/hands/linked_to_user 🔗
+bool privacy/collected_data/hands/linked_to_user 
 
 Indicates whether your app links user's hand structure and hand movements to the user's identity.
 
-bool privacy/collected_data/hands/used_for_tracking 🔗
+bool privacy/collected_data/hands/used_for_tracking 
 
 Indicates whether your app uses user's hand structure and hand movements for tracking.
 
-bool privacy/collected_data/head/collected 🔗
+bool privacy/collected_data/head/collected 
 
 Indicates whether your app collects user's head movement.
 
-int privacy/collected_data/head/collection_purposes 🔗
+int privacy/collected_data/head/collection_purposes 
 
 The reasons your app collects user's head movement. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/head/linked_to_user 🔗
+bool privacy/collected_data/head/linked_to_user 
 
 Indicates whether your app links user's head movement to the user's identity.
 
-bool privacy/collected_data/head/used_for_tracking 🔗
+bool privacy/collected_data/head/used_for_tracking 
 
 Indicates whether your app uses user's head movement for tracking.
 
-bool privacy/collected_data/health/collected 🔗
+bool privacy/collected_data/health/collected 
 
 Indicates whether your app collects health and medical data.
 
-int privacy/collected_data/health/collection_purposes 🔗
+int privacy/collected_data/health/collection_purposes 
 
 The reasons your app collects health and medical data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/health/linked_to_user 🔗
+bool privacy/collected_data/health/linked_to_user 
 
 Indicates whether your app links health and medical data to the user's identity.
 
-bool privacy/collected_data/health/used_for_tracking 🔗
+bool privacy/collected_data/health/used_for_tracking 
 
 Indicates whether your app uses health and medical data for tracking.
 
-bool privacy/collected_data/name/collected 🔗
+bool privacy/collected_data/name/collected 
 
 Indicates whether your app collects user's name.
 
-int privacy/collected_data/name/collection_purposes 🔗
+int privacy/collected_data/name/collection_purposes 
 
 The reasons your app collects user's name. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/name/linked_to_user 🔗
+bool privacy/collected_data/name/linked_to_user 
 
 Indicates whether your app links user's name to the user's identity.
 
-bool privacy/collected_data/name/used_for_tracking 🔗
+bool privacy/collected_data/name/used_for_tracking 
 
 Indicates whether your app uses user's name for tracking.
 
-bool privacy/collected_data/other_contact_info/collected 🔗
+bool privacy/collected_data/other_contact_info/collected 
 
 Indicates whether your app collects any other contact information.
 
-int privacy/collected_data/other_contact_info/collection_purposes 🔗
+int privacy/collected_data/other_contact_info/collection_purposes 
 
 The reasons your app collects any other contact information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_contact_info/linked_to_user 🔗
+bool privacy/collected_data/other_contact_info/linked_to_user 
 
 Indicates whether your app links any other contact information to the user's identity.
 
-bool privacy/collected_data/other_contact_info/used_for_tracking 🔗
+bool privacy/collected_data/other_contact_info/used_for_tracking 
 
 Indicates whether your app uses any other contact information for tracking.
 
-bool privacy/collected_data/other_data_types/collected 🔗
+bool privacy/collected_data/other_data_types/collected 
 
 Indicates whether your app collects any other data.
 
-int privacy/collected_data/other_data_types/collection_purposes 🔗
+int privacy/collected_data/other_data_types/collection_purposes 
 
 The reasons your app collects any other data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_data_types/linked_to_user 🔗
+bool privacy/collected_data/other_data_types/linked_to_user 
 
 Indicates whether your app links any other data to the user's identity.
 
-bool privacy/collected_data/other_data_types/used_for_tracking 🔗
+bool privacy/collected_data/other_data_types/used_for_tracking 
 
 Indicates whether your app uses any other data for tracking.
 
-bool privacy/collected_data/other_diagnostic_data/collected 🔗
+bool privacy/collected_data/other_diagnostic_data/collected 
 
 Indicates whether your app collects any other diagnostic data.
 
-int privacy/collected_data/other_diagnostic_data/collection_purposes 🔗
+int privacy/collected_data/other_diagnostic_data/collection_purposes 
 
 The reasons your app collects any other diagnostic data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_diagnostic_data/linked_to_user 🔗
+bool privacy/collected_data/other_diagnostic_data/linked_to_user 
 
 Indicates whether your app links any other diagnostic data to the user's identity.
 
-bool privacy/collected_data/other_diagnostic_data/used_for_tracking 🔗
+bool privacy/collected_data/other_diagnostic_data/used_for_tracking 
 
 Indicates whether your app uses any other diagnostic data for tracking.
 
-bool privacy/collected_data/other_financial_info/collected 🔗
+bool privacy/collected_data/other_financial_info/collected 
 
 Indicates whether your app collects any other financial information.
 
-int privacy/collected_data/other_financial_info/collection_purposes 🔗
+int privacy/collected_data/other_financial_info/collection_purposes 
 
 The reasons your app collects any other financial information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_financial_info/linked_to_user 🔗
+bool privacy/collected_data/other_financial_info/linked_to_user 
 
 Indicates whether your app links any other financial information to the user's identity.
 
-bool privacy/collected_data/other_financial_info/used_for_tracking 🔗
+bool privacy/collected_data/other_financial_info/used_for_tracking 
 
 Indicates whether your app uses any other financial information for tracking.
 
-bool privacy/collected_data/other_usage_data/collected 🔗
+bool privacy/collected_data/other_usage_data/collected 
 
 Indicates whether your app collects any other usage data.
 
-int privacy/collected_data/other_usage_data/collection_purposes 🔗
+int privacy/collected_data/other_usage_data/collection_purposes 
 
 The reasons your app collects any other usage data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_usage_data/linked_to_user 🔗
+bool privacy/collected_data/other_usage_data/linked_to_user 
 
 Indicates whether your app links any other usage data to the user's identity.
 
-bool privacy/collected_data/other_usage_data/used_for_tracking 🔗
+bool privacy/collected_data/other_usage_data/used_for_tracking 
 
 Indicates whether your app uses any other usage data for tracking.
 
-bool privacy/collected_data/other_user_content/collected 🔗
+bool privacy/collected_data/other_user_content/collected 
 
 Indicates whether your app collects any other user generated content.
 
-int privacy/collected_data/other_user_content/collection_purposes 🔗
+int privacy/collected_data/other_user_content/collection_purposes 
 
 The reasons your app collects any other user generated content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_user_content/linked_to_user 🔗
+bool privacy/collected_data/other_user_content/linked_to_user 
 
 Indicates whether your app links any other user generated content to the user's identity.
 
-bool privacy/collected_data/other_user_content/used_for_tracking 🔗
+bool privacy/collected_data/other_user_content/used_for_tracking 
 
 Indicates whether your app uses any other user generated content for tracking.
 
-bool privacy/collected_data/payment_info/collected 🔗
+bool privacy/collected_data/payment_info/collected 
 
 Indicates whether your app collects payment information.
 
-int privacy/collected_data/payment_info/collection_purposes 🔗
+int privacy/collected_data/payment_info/collection_purposes 
 
 The reasons your app collects payment information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/payment_info/linked_to_user 🔗
+bool privacy/collected_data/payment_info/linked_to_user 
 
 Indicates whether your app links payment information to the user's identity.
 
-bool privacy/collected_data/payment_info/used_for_tracking 🔗
+bool privacy/collected_data/payment_info/used_for_tracking 
 
 Indicates whether your app uses payment information for tracking.
 
-bool privacy/collected_data/performance_data/collected 🔗
+bool privacy/collected_data/performance_data/collected 
 
 Indicates whether your app collects performance data.
 
-int privacy/collected_data/performance_data/collection_purposes 🔗
+int privacy/collected_data/performance_data/collection_purposes 
 
 The reasons your app collects performance data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/performance_data/linked_to_user 🔗
+bool privacy/collected_data/performance_data/linked_to_user 
 
 Indicates whether your app links performance data to the user's identity.
 
-bool privacy/collected_data/performance_data/used_for_tracking 🔗
+bool privacy/collected_data/performance_data/used_for_tracking 
 
 Indicates whether your app uses performance data for tracking.
 
-bool privacy/collected_data/phone_number/collected 🔗
+bool privacy/collected_data/phone_number/collected 
 
 Indicates whether your app collects phone number.
 
-int privacy/collected_data/phone_number/collection_purposes 🔗
+int privacy/collected_data/phone_number/collection_purposes 
 
 The reasons your app collects phone number. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/phone_number/linked_to_user 🔗
+bool privacy/collected_data/phone_number/linked_to_user 
 
 Indicates whether your app links phone number to the user's identity.
 
-bool privacy/collected_data/phone_number/used_for_tracking 🔗
+bool privacy/collected_data/phone_number/used_for_tracking 
 
 Indicates whether your app uses phone number for tracking.
 
-bool privacy/collected_data/photos_or_videos/collected 🔗
+bool privacy/collected_data/photos_or_videos/collected 
 
 Indicates whether your app collects photos or videos.
 
-int privacy/collected_data/photos_or_videos/collection_purposes 🔗
+int privacy/collected_data/photos_or_videos/collection_purposes 
 
 The reasons your app collects photos or videos. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/photos_or_videos/linked_to_user 🔗
+bool privacy/collected_data/photos_or_videos/linked_to_user 
 
 Indicates whether your app links photos or videos to the user's identity.
 
-bool privacy/collected_data/photos_or_videos/used_for_tracking 🔗
+bool privacy/collected_data/photos_or_videos/used_for_tracking 
 
 Indicates whether your app uses photos or videos for tracking.
 
-bool privacy/collected_data/physical_address/collected 🔗
+bool privacy/collected_data/physical_address/collected 
 
 Indicates whether your app collects physical address.
 
-int privacy/collected_data/physical_address/collection_purposes 🔗
+int privacy/collected_data/physical_address/collection_purposes 
 
 The reasons your app collects physical address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/physical_address/linked_to_user 🔗
+bool privacy/collected_data/physical_address/linked_to_user 
 
 Indicates whether your app links physical address to the user's identity.
 
-bool privacy/collected_data/physical_address/used_for_tracking 🔗
+bool privacy/collected_data/physical_address/used_for_tracking 
 
 Indicates whether your app uses physical address for tracking.
 
-bool privacy/collected_data/precise_location/collected 🔗
+bool privacy/collected_data/precise_location/collected 
 
 Indicates whether your app collects precise location data.
 
-int privacy/collected_data/precise_location/collection_purposes 🔗
+int privacy/collected_data/precise_location/collection_purposes 
 
 The reasons your app collects precise location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/precise_location/linked_to_user 🔗
+bool privacy/collected_data/precise_location/linked_to_user 
 
 Indicates whether your app links precise location data to the user's identity.
 
-bool privacy/collected_data/precise_location/used_for_tracking 🔗
+bool privacy/collected_data/precise_location/used_for_tracking 
 
 Indicates whether your app uses precise location data for tracking.
 
-bool privacy/collected_data/product_interaction/collected 🔗
+bool privacy/collected_data/product_interaction/collected 
 
 Indicates whether your app collects product interaction data.
 
-int privacy/collected_data/product_interaction/collection_purposes 🔗
+int privacy/collected_data/product_interaction/collection_purposes 
 
 The reasons your app collects product interaction data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/product_interaction/linked_to_user 🔗
+bool privacy/collected_data/product_interaction/linked_to_user 
 
 Indicates whether your app links product interaction data to the user's identity.
 
-bool privacy/collected_data/product_interaction/used_for_tracking 🔗
+bool privacy/collected_data/product_interaction/used_for_tracking 
 
 Indicates whether your app uses product interaction data for tracking.
 
-bool privacy/collected_data/purchase_history/collected 🔗
+bool privacy/collected_data/purchase_history/collected 
 
 Indicates whether your app collects purchase history.
 
-int privacy/collected_data/purchase_history/collection_purposes 🔗
+int privacy/collected_data/purchase_history/collection_purposes 
 
 The reasons your app collects purchase history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/purchase_history/linked_to_user 🔗
+bool privacy/collected_data/purchase_history/linked_to_user 
 
 Indicates whether your app links purchase history to the user's identity.
 
-bool privacy/collected_data/purchase_history/used_for_tracking 🔗
+bool privacy/collected_data/purchase_history/used_for_tracking 
 
 Indicates whether your app uses purchase history for tracking.
 
-bool privacy/collected_data/search_hhistory/collected 🔗
+bool privacy/collected_data/search_hhistory/collected 
 
 Indicates whether your app collects search history.
 
-int privacy/collected_data/search_hhistory/collection_purposes 🔗
+int privacy/collected_data/search_hhistory/collection_purposes 
 
 The reasons your app collects search history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/search_hhistory/linked_to_user 🔗
+bool privacy/collected_data/search_hhistory/linked_to_user 
 
 Indicates whether your app links search history to the user's identity.
 
-bool privacy/collected_data/search_hhistory/used_for_tracking 🔗
+bool privacy/collected_data/search_hhistory/used_for_tracking 
 
 Indicates whether your app uses search history for tracking.
 
-bool privacy/collected_data/sensitive_info/collected 🔗
+bool privacy/collected_data/sensitive_info/collected 
 
 Indicates whether your app collects sensitive user information.
 
-int privacy/collected_data/sensitive_info/collection_purposes 🔗
+int privacy/collected_data/sensitive_info/collection_purposes 
 
 The reasons your app collects sensitive user information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/sensitive_info/linked_to_user 🔗
+bool privacy/collected_data/sensitive_info/linked_to_user 
 
 Indicates whether your app links sensitive user information to the user's identity.
 
-bool privacy/collected_data/sensitive_info/used_for_tracking 🔗
+bool privacy/collected_data/sensitive_info/used_for_tracking 
 
 Indicates whether your app uses sensitive user information for tracking.
 
-bool privacy/collected_data/user_id/collected 🔗
+bool privacy/collected_data/user_id/collected 
 
 Indicates whether your app collects user IDs.
 
-int privacy/collected_data/user_id/collection_purposes 🔗
+int privacy/collected_data/user_id/collection_purposes 
 
 The reasons your app collects user IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/user_id/linked_to_user 🔗
+bool privacy/collected_data/user_id/linked_to_user 
 
 Indicates whether your app links user IDs to the user's identity.
 
-bool privacy/collected_data/user_id/used_for_tracking 🔗
+bool privacy/collected_data/user_id/used_for_tracking 
 
 Indicates whether your app uses user IDs for tracking.
 
-String privacy/desktop_folder_usage_description 🔗
+String privacy/desktop_folder_usage_description 
 
 A message displayed when requesting access to the user's "Desktop" folder (in English).
 
-Dictionary privacy/desktop_folder_usage_description_localized 🔗
+Dictionary privacy/desktop_folder_usage_description_localized 
 
 A message displayed when requesting access to the user's "Desktop" folder (localized).
 
-String privacy/documents_folder_usage_description 🔗
+String privacy/documents_folder_usage_description 
 
 A message displayed when requesting access to the user's "Documents" folder (in English).
 
-Dictionary privacy/documents_folder_usage_description_localized 🔗
+Dictionary privacy/documents_folder_usage_description_localized 
 
 A message displayed when requesting access to the user's "Documents" folder (localized).
 
-String privacy/downloads_folder_usage_description 🔗
+String privacy/downloads_folder_usage_description 
 
 A message displayed when requesting access to the user's "Downloads" folder (in English).
 
-Dictionary privacy/downloads_folder_usage_description_localized 🔗
+Dictionary privacy/downloads_folder_usage_description_localized 
 
 A message displayed when requesting access to the user's "Downloads" folder (localized).
 
-String privacy/location_usage_description 🔗
+String privacy/location_usage_description 
 
 A message displayed when requesting access to the user's location information (in English).
 
-Dictionary privacy/location_usage_description_localized 🔗
+Dictionary privacy/location_usage_description_localized 
 
 A message displayed when requesting access to the user's location information (localized).
 
-String privacy/microphone_usage_description 🔗
+String privacy/microphone_usage_description 
 
 A message displayed when requesting access to the device's microphone (in English).
 
-Dictionary privacy/microphone_usage_description_localized 🔗
+Dictionary privacy/microphone_usage_description_localized 
 
 A message displayed when requesting access to the device's microphone (localized).
 
-String privacy/network_volumes_usage_description 🔗
+String privacy/network_volumes_usage_description 
 
 A message displayed when requesting access to the user's network drives (in English).
 
-Dictionary privacy/network_volumes_usage_description_localized 🔗
+Dictionary privacy/network_volumes_usage_description_localized 
 
 A message displayed when requesting access to the user's network drives (localized).
 
-String privacy/photos_library_usage_description 🔗
+String privacy/photos_library_usage_description 
 
 A message displayed when requesting access to the user's photo library (in English).
 
-Dictionary privacy/photos_library_usage_description_localized 🔗
+Dictionary privacy/photos_library_usage_description_localized 
 
 A message displayed when requesting access to the user's photo library (localized).
 
-String privacy/removable_volumes_usage_description 🔗
+String privacy/removable_volumes_usage_description 
 
 A message displayed when requesting access to the user's removable drives (in English).
 
-Dictionary privacy/removable_volumes_usage_description_localized 🔗
+Dictionary privacy/removable_volumes_usage_description_localized 
 
 A message displayed when requesting access to the user's removable drives (localized).
 
-PackedStringArray privacy/tracking_domains 🔗
+PackedStringArray privacy/tracking_domains 
 
 The list of internet domains your app connects to that engage in tracking. See Privacy manifest files.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool privacy/tracking_enabled 🔗
+bool privacy/tracking_enabled 
 
 Indicates whether your app uses data for tracking. See Privacy manifest files.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ or Mobile renderers.
 
-String ssh_remote_deploy/cleanup_script 🔗
+String ssh_remote_deploy/cleanup_script 
 
 Script code to execute on the remote host when app is finished.
 
@@ -6229,27 +6229,27 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-bool ssh_remote_deploy/enabled 🔗
+bool ssh_remote_deploy/enabled 
 
 Enables remote deploy using SSH/SCP.
 
-String ssh_remote_deploy/extra_args_scp 🔗
+String ssh_remote_deploy/extra_args_scp 
 
 Array of the additional command line arguments passed to the SCP.
 
-String ssh_remote_deploy/extra_args_ssh 🔗
+String ssh_remote_deploy/extra_args_ssh 
 
 Array of the additional command line arguments passed to the SSH.
 
-String ssh_remote_deploy/host 🔗
+String ssh_remote_deploy/host 
 
 Remote host SSH user name and address, in user@address format.
 
-String ssh_remote_deploy/port 🔗
+String ssh_remote_deploy/port 
 
 Remote host SSH port number.
 
-String ssh_remote_deploy/run_script 🔗
+String ssh_remote_deploy/run_script 
 
 Script code to execute on the remote host when running the app.
 
@@ -6263,27 +6263,27 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-String xcode/platform_build 🔗
+String xcode/platform_build 
 
 macOS build number used to build application executable.
 
-String xcode/sdk_build 🔗
+String xcode/sdk_build 
 
 macOS SDK build number used to build application executable.
 
-String xcode/sdk_name 🔗
+String xcode/sdk_name 
 
 macOS SDK name used to build application executable.
 
-String xcode/sdk_version 🔗
+String xcode/sdk_version 
 
 macOS SDK version used to build application executable in the major.minor format.
 
-String xcode/xcode_build 🔗
+String xcode/xcode_build 
 
 Xcode build number used to build application executable.
 
-String xcode/xcode_version 🔗
+String xcode/xcode_version 
 
 Xcode version used to build application executable.
 
@@ -6714,775 +6714,775 @@ user_data/accessible_from_files_app
 
 user_data/accessible_from_itunes_sharing
 
-String application/additional_plist_content 🔗
+String application/additional_plist_content 
 
 Additional data added to the root <dict> section of the Info.plist file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-String application/app_store_team_id 🔗
+String application/app_store_team_id 
 
 Apple Team ID, unique 10-character string. To locate your Team ID check "Membership details" section in your Apple developer account dashboard, or "Organizational Unit" of your code signing certificate. See Locate your Team ID.
 
-String application/bundle_identifier 🔗
+String application/bundle_identifier 
 
 Unique application identifier in a reverse-DNS format, can only contain alphanumeric characters (A-Z, a-z, and 0-9), hyphens (-), and periods (.).
 
-String application/code_sign_identity_debug 🔗
+String application/code_sign_identity_debug 
 
 The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for debug export.
 
-String application/code_sign_identity_release 🔗
+String application/code_sign_identity_release 
 
 The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for release export.
 
-bool application/delete_old_export_files_unconditionally 🔗
+bool application/delete_old_export_files_unconditionally 
 
 If true, existing "project name" and "project name.xcodeproj" in the export destination directory will be unconditionally deleted during export.
 
-int application/export_method_debug 🔗
+int application/export_method_debug 
 
 Application distribution target (debug export).
 
-int application/export_method_release 🔗
+int application/export_method_release 
 
 Application distribution target (release export).
 
-bool application/export_project_only 🔗
+bool application/export_project_only 
 
 If true, exports iOS project files without building an XCArchive or .ipa file. If false, exports iOS project files and builds an XCArchive and .ipa file at the same time. When combining Godot with Fastlane or other build pipelines, you may want to set this to true.
 
-int application/icon_interpolation 🔗
+int application/icon_interpolation 
 
 Interpolation method used to resize application icon.
 
-String application/min_visionos_version 🔗
+String application/min_visionos_version 
 
 There is currently no description for this property. Please help us by contributing one!
 
-String application/provisioning_profile_specifier_debug 🔗
+String application/provisioning_profile_specifier_debug 
 
 Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for debug. Used for manual provisioning.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG.
 
-String application/provisioning_profile_specifier_release 🔗
+String application/provisioning_profile_specifier_release 
 
 Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for release. Used for manual provisioning.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE.
 
-String application/provisioning_profile_uuid_debug 🔗
+String application/provisioning_profile_uuid_debug 
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See Edit, download, or delete provisioning profiles.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_DEBUG.
 
-String application/provisioning_profile_uuid_release 🔗
+String application/provisioning_profile_uuid_release 
 
 UUID of the provisioning profile. If left empty, Xcode will download or create a provisioning profile automatically. See Edit, download, or delete provisioning profiles.
 
 Can be overridden with the environment variable GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_RELEASE.
 
-String application/short_version 🔗
+String application/short_version 
 
 Application version visible to the user. Can only contain numeric characters (0-9) and periods (.). Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Version value in the generated Xcode project.
 
-String application/signature 🔗
+String application/signature 
 
 A four-character creator code that is specific to the bundle. Optional.
 
-String application/version 🔗
+String application/version 
 
 Machine-readable application version in the major.minor.patch format. Can only contain numeric characters (0-9) and periods (.). This must be incremented with every new release pushed to the App Store. Falls back to ProjectSettings.application/config/version if left empty.
 
 Note: This value is used for the Identity > Build value in the generated Xcode project.
 
-bool architectures/arm64 🔗
+bool architectures/arm64 
 
 If true, arm64 binaries are included into exported project.
 
-bool capabilities/access_wifi 🔗
+bool capabilities/access_wifi 
 
 If true, networking features related to Wi-Fi access are enabled. See Required Device Capabilities.
 
-PackedStringArray capabilities/additional 🔗
+PackedStringArray capabilities/additional 
 
 Additional data added to the UIRequiredDeviceCapabilities array of the Info.plist file.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool capabilities/performance_a12 🔗
+bool capabilities/performance_a12 
 
 Requires the graphics performance and features of the A12 Bionic and later chips (devices supporting all Vulkan renderer features).
 
 Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen) and newer.
 
-bool capabilities/performance_gaming_tier 🔗
+bool capabilities/performance_gaming_tier 
 
 Requires the graphics performance and features of the A17 Pro and later chips.
 
 Enabling this option limits supported devices to: iPhone 15 Pro and newer.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to the custom export template. If left empty, default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to the custom export template. If left empty, default template is used.
 
-String entitlements/additional 🔗
+String entitlements/additional 
 
 Additional data added to the root <dict> section of the .entitlements file. The value should be an XML section with pairs of key-value elements, for example:
 
-bool entitlements/game_center 🔗
+bool entitlements/game_center 
 
 If true, allows access to Game Center features. See com.apple.developer.game-center.
 
-bool entitlements/increased_memory_limit 🔗
+bool entitlements/increased_memory_limit 
 
 If true, hints that the app might perform better with a higher memory limit. See com.apple.developer.kernel.increased-memory-limit.
 
-String entitlements/push_notifications 🔗
+String entitlements/push_notifications 
 
 Environment for Apple Push Notification service. See aps-environment.
 
-String icons/icon_1024x1024 🔗
+String icons/icon_1024x1024 
 
 Base application icon used to generate other icons. If left empty, it will fallback to ProjectSettings.application/config/icon. See App icons.
 
-String icons/icon_1024x1024_dark 🔗
+String icons/icon_1024x1024_dark 
 
 Base application icon used to generate other icons, dark version. See App icons.
 
-String icons/icon_1024x1024_tinted 🔗
+String icons/icon_1024x1024_tinted 
 
 Base application icon used to generate other icons, tinted version. See App icons.
 
-int privacy/active_keyboard_access_reasons 🔗
+int privacy/active_keyboard_access_reasons 
 
 The reasons your app use active keyboard API. See Describing use of required reason API.
 
-String privacy/camera_usage_description 🔗
+String privacy/camera_usage_description 
 
 A message displayed when requesting access to the device's camera (in English).
 
-Dictionary privacy/camera_usage_description_localized 🔗
+Dictionary privacy/camera_usage_description_localized 
 
 A message displayed when requesting access to the device's camera (localized).
 
-bool privacy/collected_data/advertising_data/collected 🔗
+bool privacy/collected_data/advertising_data/collected 
 
 Indicates whether your app collects advertising data.
 
-int privacy/collected_data/advertising_data/collection_purposes 🔗
+int privacy/collected_data/advertising_data/collection_purposes 
 
 The reasons your app collects advertising data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/advertising_data/linked_to_user 🔗
+bool privacy/collected_data/advertising_data/linked_to_user 
 
 Indicates whether your app links advertising data to the user's identity.
 
-bool privacy/collected_data/advertising_data/used_for_tracking 🔗
+bool privacy/collected_data/advertising_data/used_for_tracking 
 
 Indicates whether your app uses advertising data for tracking.
 
-bool privacy/collected_data/audio_data/collected 🔗
+bool privacy/collected_data/audio_data/collected 
 
 Indicates whether your app collects audio data.
 
-int privacy/collected_data/audio_data/collection_purposes 🔗
+int privacy/collected_data/audio_data/collection_purposes 
 
 The reasons your app collects audio data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/audio_data/linked_to_user 🔗
+bool privacy/collected_data/audio_data/linked_to_user 
 
 Indicates whether your app links audio data to the user's identity.
 
-bool privacy/collected_data/audio_data/used_for_tracking 🔗
+bool privacy/collected_data/audio_data/used_for_tracking 
 
 Indicates whether your app uses audio data for tracking.
 
-bool privacy/collected_data/browsing_history/collected 🔗
+bool privacy/collected_data/browsing_history/collected 
 
 Indicates whether your app collects browsing history.
 
-int privacy/collected_data/browsing_history/collection_purposes 🔗
+int privacy/collected_data/browsing_history/collection_purposes 
 
 The reasons your app collects browsing history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/browsing_history/linked_to_user 🔗
+bool privacy/collected_data/browsing_history/linked_to_user 
 
 Indicates whether your app links browsing history to the user's identity.
 
-bool privacy/collected_data/browsing_history/used_for_tracking 🔗
+bool privacy/collected_data/browsing_history/used_for_tracking 
 
 Indicates whether your app uses browsing history for tracking.
 
-bool privacy/collected_data/coarse_location/collected 🔗
+bool privacy/collected_data/coarse_location/collected 
 
 Indicates whether your app collects coarse location data.
 
-int privacy/collected_data/coarse_location/collection_purposes 🔗
+int privacy/collected_data/coarse_location/collection_purposes 
 
 The reasons your app collects coarse location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/coarse_location/linked_to_user 🔗
+bool privacy/collected_data/coarse_location/linked_to_user 
 
 Indicates whether your app links coarse location data to the user's identity.
 
-bool privacy/collected_data/coarse_location/used_for_tracking 🔗
+bool privacy/collected_data/coarse_location/used_for_tracking 
 
 Indicates whether your app uses coarse location data for tracking.
 
-bool privacy/collected_data/contacts/collected 🔗
+bool privacy/collected_data/contacts/collected 
 
 Indicates whether your app collects contacts.
 
-int privacy/collected_data/contacts/collection_purposes 🔗
+int privacy/collected_data/contacts/collection_purposes 
 
 The reasons your app collects contacts. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/contacts/linked_to_user 🔗
+bool privacy/collected_data/contacts/linked_to_user 
 
 Indicates whether your app links contacts to the user's identity.
 
-bool privacy/collected_data/contacts/used_for_tracking 🔗
+bool privacy/collected_data/contacts/used_for_tracking 
 
 Indicates whether your app uses contacts for tracking.
 
-bool privacy/collected_data/crash_data/collected 🔗
+bool privacy/collected_data/crash_data/collected 
 
 Indicates whether your app collects crash data.
 
-int privacy/collected_data/crash_data/collection_purposes 🔗
+int privacy/collected_data/crash_data/collection_purposes 
 
 The reasons your app collects crash data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/crash_data/linked_to_user 🔗
+bool privacy/collected_data/crash_data/linked_to_user 
 
 Indicates whether your app links crash data to the user's identity.
 
-bool privacy/collected_data/crash_data/used_for_tracking 🔗
+bool privacy/collected_data/crash_data/used_for_tracking 
 
 Indicates whether your app uses crash data for tracking.
 
-bool privacy/collected_data/credit_info/collected 🔗
+bool privacy/collected_data/credit_info/collected 
 
 Indicates whether your app collects credit information.
 
-int privacy/collected_data/credit_info/collection_purposes 🔗
+int privacy/collected_data/credit_info/collection_purposes 
 
 The reasons your app collects credit information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/credit_info/linked_to_user 🔗
+bool privacy/collected_data/credit_info/linked_to_user 
 
 Indicates whether your app links credit information to the user's identity.
 
-bool privacy/collected_data/credit_info/used_for_tracking 🔗
+bool privacy/collected_data/credit_info/used_for_tracking 
 
 Indicates whether your app uses credit information for tracking.
 
-bool privacy/collected_data/customer_support/collected 🔗
+bool privacy/collected_data/customer_support/collected 
 
 Indicates whether your app collects customer support data.
 
-int privacy/collected_data/customer_support/collection_purposes 🔗
+int privacy/collected_data/customer_support/collection_purposes 
 
 The reasons your app collects customer support data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/customer_support/linked_to_user 🔗
+bool privacy/collected_data/customer_support/linked_to_user 
 
 Indicates whether your app links customer support data to the user's identity.
 
-bool privacy/collected_data/customer_support/used_for_tracking 🔗
+bool privacy/collected_data/customer_support/used_for_tracking 
 
 Indicates whether your app uses customer support data for tracking.
 
-bool privacy/collected_data/device_id/collected 🔗
+bool privacy/collected_data/device_id/collected 
 
 Indicates whether your app collects device IDs.
 
-int privacy/collected_data/device_id/collection_purposes 🔗
+int privacy/collected_data/device_id/collection_purposes 
 
 The reasons your app collects device IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/device_id/linked_to_user 🔗
+bool privacy/collected_data/device_id/linked_to_user 
 
 Indicates whether your app links device IDs to the user's identity.
 
-bool privacy/collected_data/device_id/used_for_tracking 🔗
+bool privacy/collected_data/device_id/used_for_tracking 
 
 Indicates whether your app uses device IDs for tracking.
 
-bool privacy/collected_data/email_address/collected 🔗
+bool privacy/collected_data/email_address/collected 
 
 Indicates whether your app collects email address.
 
-int privacy/collected_data/email_address/collection_purposes 🔗
+int privacy/collected_data/email_address/collection_purposes 
 
 The reasons your app collects email address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/email_address/linked_to_user 🔗
+bool privacy/collected_data/email_address/linked_to_user 
 
 Indicates whether your app links email address to the user's identity.
 
-bool privacy/collected_data/email_address/used_for_tracking 🔗
+bool privacy/collected_data/email_address/used_for_tracking 
 
 Indicates whether your app uses email address for tracking.
 
-bool privacy/collected_data/emails_or_text_messages/collected 🔗
+bool privacy/collected_data/emails_or_text_messages/collected 
 
 Indicates whether your app collects emails or text messages.
 
-int privacy/collected_data/emails_or_text_messages/collection_purposes 🔗
+int privacy/collected_data/emails_or_text_messages/collection_purposes 
 
 The reasons your app collects emails or text messages. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/emails_or_text_messages/linked_to_user 🔗
+bool privacy/collected_data/emails_or_text_messages/linked_to_user 
 
 Indicates whether your app links emails or text messages to the user's identity.
 
-bool privacy/collected_data/emails_or_text_messages/used_for_tracking 🔗
+bool privacy/collected_data/emails_or_text_messages/used_for_tracking 
 
 Indicates whether your app uses emails or text messages for tracking.
 
-bool privacy/collected_data/environment_scanning/collected 🔗
+bool privacy/collected_data/environment_scanning/collected 
 
 Indicates whether your app collects environment scanning data.
 
-int privacy/collected_data/environment_scanning/collection_purposes 🔗
+int privacy/collected_data/environment_scanning/collection_purposes 
 
 The reasons your app collects environment scanning data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/environment_scanning/linked_to_user 🔗
+bool privacy/collected_data/environment_scanning/linked_to_user 
 
 Indicates whether your app links environment scanning data to the user's identity.
 
-bool privacy/collected_data/environment_scanning/used_for_tracking 🔗
+bool privacy/collected_data/environment_scanning/used_for_tracking 
 
 Indicates whether your app uses environment scanning data for tracking.
 
-bool privacy/collected_data/fitness/collected 🔗
+bool privacy/collected_data/fitness/collected 
 
 Indicates whether your app collects fitness and exercise data.
 
-int privacy/collected_data/fitness/collection_purposes 🔗
+int privacy/collected_data/fitness/collection_purposes 
 
 The reasons your app collects fitness and exercise data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/fitness/linked_to_user 🔗
+bool privacy/collected_data/fitness/linked_to_user 
 
 Indicates whether your app links fitness and exercise data to the user's identity.
 
-bool privacy/collected_data/fitness/used_for_tracking 🔗
+bool privacy/collected_data/fitness/used_for_tracking 
 
 Indicates whether your app uses fitness and exercise data for tracking.
 
-bool privacy/collected_data/gameplay_content/collected 🔗
+bool privacy/collected_data/gameplay_content/collected 
 
 Indicates whether your app collects gameplay content.
 
-int privacy/collected_data/gameplay_content/collection_purposes 🔗
+int privacy/collected_data/gameplay_content/collection_purposes 
 
 The reasons your app collects gameplay content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/gameplay_content/linked_to_user 🔗
+bool privacy/collected_data/gameplay_content/linked_to_user 
 
 Indicates whether your app links gameplay content to the user's identity.
 
-bool privacy/collected_data/gameplay_content/used_for_tracking 🔗
+bool privacy/collected_data/gameplay_content/used_for_tracking 
 
 Indicates whether your app uses gameplay content for tracking.
 
-bool privacy/collected_data/hands/collected 🔗
+bool privacy/collected_data/hands/collected 
 
 Indicates whether your app collects user's hand structure and hand movements.
 
-int privacy/collected_data/hands/collection_purposes 🔗
+int privacy/collected_data/hands/collection_purposes 
 
 The reasons your app collects user's hand structure and hand movements. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/hands/linked_to_user 🔗
+bool privacy/collected_data/hands/linked_to_user 
 
 Indicates whether your app links user's hand structure and hand movements to the user's identity.
 
-bool privacy/collected_data/hands/used_for_tracking 🔗
+bool privacy/collected_data/hands/used_for_tracking 
 
 Indicates whether your app uses user's hand structure and hand movements for tracking.
 
-bool privacy/collected_data/head/collected 🔗
+bool privacy/collected_data/head/collected 
 
 Indicates whether your app collects user's head movement.
 
-int privacy/collected_data/head/collection_purposes 🔗
+int privacy/collected_data/head/collection_purposes 
 
 The reasons your app collects user's head movement. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/head/linked_to_user 🔗
+bool privacy/collected_data/head/linked_to_user 
 
 Indicates whether your app links user's head movement to the user's identity.
 
-bool privacy/collected_data/head/used_for_tracking 🔗
+bool privacy/collected_data/head/used_for_tracking 
 
 Indicates whether your app uses user's head movement for tracking.
 
-bool privacy/collected_data/health/collected 🔗
+bool privacy/collected_data/health/collected 
 
 Indicates whether your app collects health and medical data.
 
-int privacy/collected_data/health/collection_purposes 🔗
+int privacy/collected_data/health/collection_purposes 
 
 The reasons your app collects health and medical data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/health/linked_to_user 🔗
+bool privacy/collected_data/health/linked_to_user 
 
 Indicates whether your app links health and medical data to the user's identity.
 
-bool privacy/collected_data/health/used_for_tracking 🔗
+bool privacy/collected_data/health/used_for_tracking 
 
 Indicates whether your app uses health and medical data for tracking.
 
-bool privacy/collected_data/name/collected 🔗
+bool privacy/collected_data/name/collected 
 
 Indicates whether your app collects user's name.
 
-int privacy/collected_data/name/collection_purposes 🔗
+int privacy/collected_data/name/collection_purposes 
 
 The reasons your app collects user's name. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/name/linked_to_user 🔗
+bool privacy/collected_data/name/linked_to_user 
 
 Indicates whether your app links user's name to the user's identity.
 
-bool privacy/collected_data/name/used_for_tracking 🔗
+bool privacy/collected_data/name/used_for_tracking 
 
 Indicates whether your app uses user's name for tracking.
 
-bool privacy/collected_data/other_contact_info/collected 🔗
+bool privacy/collected_data/other_contact_info/collected 
 
 Indicates whether your app collects any other contact information.
 
-int privacy/collected_data/other_contact_info/collection_purposes 🔗
+int privacy/collected_data/other_contact_info/collection_purposes 
 
 The reasons your app collects any other contact information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_contact_info/linked_to_user 🔗
+bool privacy/collected_data/other_contact_info/linked_to_user 
 
 Indicates whether your app links any other contact information to the user's identity.
 
-bool privacy/collected_data/other_contact_info/used_for_tracking 🔗
+bool privacy/collected_data/other_contact_info/used_for_tracking 
 
 Indicates whether your app uses any other contact information for tracking.
 
-bool privacy/collected_data/other_data_types/collected 🔗
+bool privacy/collected_data/other_data_types/collected 
 
 Indicates whether your app collects any other data.
 
-int privacy/collected_data/other_data_types/collection_purposes 🔗
+int privacy/collected_data/other_data_types/collection_purposes 
 
 The reasons your app collects any other data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_data_types/linked_to_user 🔗
+bool privacy/collected_data/other_data_types/linked_to_user 
 
 Indicates whether your app links any other data to the user's identity.
 
-bool privacy/collected_data/other_data_types/used_for_tracking 🔗
+bool privacy/collected_data/other_data_types/used_for_tracking 
 
 Indicates whether your app uses any other data for tracking.
 
-bool privacy/collected_data/other_diagnostic_data/collected 🔗
+bool privacy/collected_data/other_diagnostic_data/collected 
 
 Indicates whether your app collects any other diagnostic data.
 
-int privacy/collected_data/other_diagnostic_data/collection_purposes 🔗
+int privacy/collected_data/other_diagnostic_data/collection_purposes 
 
 The reasons your app collects any other diagnostic data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_diagnostic_data/linked_to_user 🔗
+bool privacy/collected_data/other_diagnostic_data/linked_to_user 
 
 Indicates whether your app links any other diagnostic data to the user's identity.
 
-bool privacy/collected_data/other_diagnostic_data/used_for_tracking 🔗
+bool privacy/collected_data/other_diagnostic_data/used_for_tracking 
 
 Indicates whether your app uses any other diagnostic data for tracking.
 
-bool privacy/collected_data/other_financial_info/collected 🔗
+bool privacy/collected_data/other_financial_info/collected 
 
 Indicates whether your app collects any other financial information.
 
-int privacy/collected_data/other_financial_info/collection_purposes 🔗
+int privacy/collected_data/other_financial_info/collection_purposes 
 
 The reasons your app collects any other financial information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_financial_info/linked_to_user 🔗
+bool privacy/collected_data/other_financial_info/linked_to_user 
 
 Indicates whether your app links any other financial information to the user's identity.
 
-bool privacy/collected_data/other_financial_info/used_for_tracking 🔗
+bool privacy/collected_data/other_financial_info/used_for_tracking 
 
 Indicates whether your app uses any other financial information for tracking.
 
-bool privacy/collected_data/other_usage_data/collected 🔗
+bool privacy/collected_data/other_usage_data/collected 
 
 Indicates whether your app collects any other usage data.
 
-int privacy/collected_data/other_usage_data/collection_purposes 🔗
+int privacy/collected_data/other_usage_data/collection_purposes 
 
 The reasons your app collects any other usage data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_usage_data/linked_to_user 🔗
+bool privacy/collected_data/other_usage_data/linked_to_user 
 
 Indicates whether your app links any other usage data to the user's identity.
 
-bool privacy/collected_data/other_usage_data/used_for_tracking 🔗
+bool privacy/collected_data/other_usage_data/used_for_tracking 
 
 Indicates whether your app uses any other usage data for tracking.
 
-bool privacy/collected_data/other_user_content/collected 🔗
+bool privacy/collected_data/other_user_content/collected 
 
 Indicates whether your app collects any other user generated content.
 
-int privacy/collected_data/other_user_content/collection_purposes 🔗
+int privacy/collected_data/other_user_content/collection_purposes 
 
 The reasons your app collects any other user generated content. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/other_user_content/linked_to_user 🔗
+bool privacy/collected_data/other_user_content/linked_to_user 
 
 Indicates whether your app links any other user generated content to the user's identity.
 
-bool privacy/collected_data/other_user_content/used_for_tracking 🔗
+bool privacy/collected_data/other_user_content/used_for_tracking 
 
 Indicates whether your app uses any other user generated content for tracking.
 
-bool privacy/collected_data/payment_info/collected 🔗
+bool privacy/collected_data/payment_info/collected 
 
 Indicates whether your app collects payment information.
 
-int privacy/collected_data/payment_info/collection_purposes 🔗
+int privacy/collected_data/payment_info/collection_purposes 
 
 The reasons your app collects payment information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/payment_info/linked_to_user 🔗
+bool privacy/collected_data/payment_info/linked_to_user 
 
 Indicates whether your app links payment information to the user's identity.
 
-bool privacy/collected_data/payment_info/used_for_tracking 🔗
+bool privacy/collected_data/payment_info/used_for_tracking 
 
 Indicates whether your app uses payment information for tracking.
 
-bool privacy/collected_data/performance_data/collected 🔗
+bool privacy/collected_data/performance_data/collected 
 
 Indicates whether your app collects performance data.
 
-int privacy/collected_data/performance_data/collection_purposes 🔗
+int privacy/collected_data/performance_data/collection_purposes 
 
 The reasons your app collects performance data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/performance_data/linked_to_user 🔗
+bool privacy/collected_data/performance_data/linked_to_user 
 
 Indicates whether your app links performance data to the user's identity.
 
-bool privacy/collected_data/performance_data/used_for_tracking 🔗
+bool privacy/collected_data/performance_data/used_for_tracking 
 
 Indicates whether your app uses performance data for tracking.
 
-bool privacy/collected_data/phone_number/collected 🔗
+bool privacy/collected_data/phone_number/collected 
 
 Indicates whether your app collects phone number.
 
-int privacy/collected_data/phone_number/collection_purposes 🔗
+int privacy/collected_data/phone_number/collection_purposes 
 
 The reasons your app collects phone number. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/phone_number/linked_to_user 🔗
+bool privacy/collected_data/phone_number/linked_to_user 
 
 Indicates whether your app links phone number to the user's identity.
 
-bool privacy/collected_data/phone_number/used_for_tracking 🔗
+bool privacy/collected_data/phone_number/used_for_tracking 
 
 Indicates whether your app uses phone number for tracking.
 
-bool privacy/collected_data/photos_or_videos/collected 🔗
+bool privacy/collected_data/photos_or_videos/collected 
 
 Indicates whether your app collects photos or videos.
 
-int privacy/collected_data/photos_or_videos/collection_purposes 🔗
+int privacy/collected_data/photos_or_videos/collection_purposes 
 
 The reasons your app collects photos or videos. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/photos_or_videos/linked_to_user 🔗
+bool privacy/collected_data/photos_or_videos/linked_to_user 
 
 Indicates whether your app links photos or videos to the user's identity.
 
-bool privacy/collected_data/photos_or_videos/used_for_tracking 🔗
+bool privacy/collected_data/photos_or_videos/used_for_tracking 
 
 Indicates whether your app uses photos or videos for tracking.
 
-bool privacy/collected_data/physical_address/collected 🔗
+bool privacy/collected_data/physical_address/collected 
 
 Indicates whether your app collects physical address.
 
-int privacy/collected_data/physical_address/collection_purposes 🔗
+int privacy/collected_data/physical_address/collection_purposes 
 
 The reasons your app collects physical address. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/physical_address/linked_to_user 🔗
+bool privacy/collected_data/physical_address/linked_to_user 
 
 Indicates whether your app links physical address to the user's identity.
 
-bool privacy/collected_data/physical_address/used_for_tracking 🔗
+bool privacy/collected_data/physical_address/used_for_tracking 
 
 Indicates whether your app uses physical address for tracking.
 
-bool privacy/collected_data/precise_location/collected 🔗
+bool privacy/collected_data/precise_location/collected 
 
 Indicates whether your app collects precise location data.
 
-int privacy/collected_data/precise_location/collection_purposes 🔗
+int privacy/collected_data/precise_location/collection_purposes 
 
 The reasons your app collects precise location data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/precise_location/linked_to_user 🔗
+bool privacy/collected_data/precise_location/linked_to_user 
 
 Indicates whether your app links precise location data to the user's identity.
 
-bool privacy/collected_data/precise_location/used_for_tracking 🔗
+bool privacy/collected_data/precise_location/used_for_tracking 
 
 Indicates whether your app uses precise location data for tracking.
 
-bool privacy/collected_data/product_interaction/collected 🔗
+bool privacy/collected_data/product_interaction/collected 
 
 Indicates whether your app collects product interaction data.
 
-int privacy/collected_data/product_interaction/collection_purposes 🔗
+int privacy/collected_data/product_interaction/collection_purposes 
 
 The reasons your app collects product interaction data. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/product_interaction/linked_to_user 🔗
+bool privacy/collected_data/product_interaction/linked_to_user 
 
 Indicates whether your app links product interaction data to the user's identity.
 
-bool privacy/collected_data/product_interaction/used_for_tracking 🔗
+bool privacy/collected_data/product_interaction/used_for_tracking 
 
 Indicates whether your app uses product interaction data for tracking.
 
-bool privacy/collected_data/purchase_history/collected 🔗
+bool privacy/collected_data/purchase_history/collected 
 
 Indicates whether your app collects purchase history.
 
-int privacy/collected_data/purchase_history/collection_purposes 🔗
+int privacy/collected_data/purchase_history/collection_purposes 
 
 The reasons your app collects purchase history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/purchase_history/linked_to_user 🔗
+bool privacy/collected_data/purchase_history/linked_to_user 
 
 Indicates whether your app links purchase history to the user's identity.
 
-bool privacy/collected_data/purchase_history/used_for_tracking 🔗
+bool privacy/collected_data/purchase_history/used_for_tracking 
 
 Indicates whether your app uses purchase history for tracking.
 
-bool privacy/collected_data/search_hhistory/collected 🔗
+bool privacy/collected_data/search_hhistory/collected 
 
 Indicates whether your app collects search history.
 
-int privacy/collected_data/search_hhistory/collection_purposes 🔗
+int privacy/collected_data/search_hhistory/collection_purposes 
 
 The reasons your app collects search history. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/search_hhistory/linked_to_user 🔗
+bool privacy/collected_data/search_hhistory/linked_to_user 
 
 Indicates whether your app links search history to the user's identity.
 
-bool privacy/collected_data/search_hhistory/used_for_tracking 🔗
+bool privacy/collected_data/search_hhistory/used_for_tracking 
 
 Indicates whether your app uses search history for tracking.
 
-bool privacy/collected_data/sensitive_info/collected 🔗
+bool privacy/collected_data/sensitive_info/collected 
 
 Indicates whether your app collects sensitive user information.
 
-int privacy/collected_data/sensitive_info/collection_purposes 🔗
+int privacy/collected_data/sensitive_info/collection_purposes 
 
 The reasons your app collects sensitive user information. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/sensitive_info/linked_to_user 🔗
+bool privacy/collected_data/sensitive_info/linked_to_user 
 
 Indicates whether your app links sensitive user information to the user's identity.
 
-bool privacy/collected_data/sensitive_info/used_for_tracking 🔗
+bool privacy/collected_data/sensitive_info/used_for_tracking 
 
 Indicates whether your app uses sensitive user information for tracking.
 
-bool privacy/collected_data/user_id/collected 🔗
+bool privacy/collected_data/user_id/collected 
 
 Indicates whether your app collects user IDs.
 
-int privacy/collected_data/user_id/collection_purposes 🔗
+int privacy/collected_data/user_id/collection_purposes 
 
 The reasons your app collects user IDs. See Describing data use in privacy manifests.
 
-bool privacy/collected_data/user_id/linked_to_user 🔗
+bool privacy/collected_data/user_id/linked_to_user 
 
 Indicates whether your app links user IDs to the user's identity.
 
-bool privacy/collected_data/user_id/used_for_tracking 🔗
+bool privacy/collected_data/user_id/used_for_tracking 
 
 Indicates whether your app uses user IDs for tracking.
 
-int privacy/disk_space_access_reasons 🔗
+int privacy/disk_space_access_reasons 
 
 The reasons your app use free disk space API. See Describing use of required reason API.
 
-int privacy/file_timestamp_access_reasons 🔗
+int privacy/file_timestamp_access_reasons 
 
 The reasons your app use file timestamp/metadata API. See Describing use of required reason API.
 
-String privacy/microphone_usage_description 🔗
+String privacy/microphone_usage_description 
 
 A message displayed when requesting access to the device's microphone (in English).
 
-Dictionary privacy/microphone_usage_description_localized 🔗
+Dictionary privacy/microphone_usage_description_localized 
 
 A message displayed when requesting access to the device's microphone (localized).
 
-String privacy/photolibrary_usage_description 🔗
+String privacy/photolibrary_usage_description 
 
 A message displayed when requesting access to the user's photo library (in English).
 
-Dictionary privacy/photolibrary_usage_description_localized 🔗
+Dictionary privacy/photolibrary_usage_description_localized 
 
 A message displayed when requesting access to the user's photo library (localized).
 
-int privacy/system_boot_time_access_reasons 🔗
+int privacy/system_boot_time_access_reasons 
 
 The reasons your app use system boot time / absolute time API. See Describing use of required reason API.
 
-PackedStringArray privacy/tracking_domains 🔗
+PackedStringArray privacy/tracking_domains 
 
 The list of internet domains your app connects to that engage in tracking. See Privacy manifest files.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool privacy/tracking_enabled 🔗
+bool privacy/tracking_enabled 
 
 Indicates whether your app uses data for tracking. See Privacy manifest files.
 
-int privacy/user_defaults_access_reasons 🔗
+int privacy/user_defaults_access_reasons 
 
 The reasons your app use user defaults API. See Describing use of required reason API.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ and Mobile renderers.
 
-bool user_data/accessible_from_files_app 🔗
+bool user_data/accessible_from_files_app 
 
 If true, the app "Documents" folder can be accessed via "Files" app. See LSSupportsOpeningDocumentsInPlace.
 
-bool user_data/accessible_from_itunes_sharing 🔗
+bool user_data/accessible_from_itunes_sharing 
 
 If true, the app "Documents" folder can be accessed via iTunes file sharing. See UIFileSharingEnabled.
 
@@ -7570,15 +7570,15 @@ vram_texture_compression/for_desktop
 
 vram_texture_compression/for_mobile
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 File path to the custom export template used for debug builds. If left empty, the default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 File path to the custom export template used for release builds. If left empty, the default template is used.
 
-int html/canvas_resize_policy 🔗
+int html/canvas_resize_policy 
 
 Determines how the canvas should be resized by Godot.
 
@@ -7588,37 +7588,37 @@ Project: The size of the canvas is dependent on the ProjectSettings.
 
 Adaptive: The canvas is automatically resized to fit as much of the web page as possible.
 
-String html/custom_html_shell 🔗
+String html/custom_html_shell 
 
 The custom HTML page that wraps the exported web build. If left empty, the default HTML shell is used.
 
 For more information, see the Customizing HTML5 Shell tutorial.
 
-bool html/experimental_virtual_keyboard 🔗
+bool html/experimental_virtual_keyboard 
 
 Experimental: This property may be changed or removed in future versions.
 
 If true, embeds support for a virtual keyboard into the web page, which is shown when necessary on touchscreen devices.
 
-bool html/export_icon 🔗
+bool html/export_icon 
 
 If true, the project icon will be used as the favicon for this application's web page.
 
-bool html/focus_canvas_on_start 🔗
+bool html/focus_canvas_on_start 
 
 If true, the canvas will be focused as soon as the application is loaded, if the browser window is already in focus.
 
-String html/head_include 🔗
+String html/head_include 
 
 Additional HTML tags to include inside the <head>, such as <meta> tags.
 
 Note: You do not need to add a <title> tag, as it is automatically included based on the project's name.
 
-Color progressive_web_app/background_color 🔗
+Color progressive_web_app/background_color 
 
 The background color used behind the web application.
 
-int progressive_web_app/display 🔗
+int progressive_web_app/display 
 
 The display mode to use for this progressive web application. Different browsers and platforms may not behave the same.
 
@@ -7630,39 +7630,39 @@ Minimal UI: Displays the app in a separate window and only shows the browser's U
 
 Browser: Displays the app as a normal web page.
 
-bool progressive_web_app/enabled 🔗
+bool progressive_web_app/enabled 
 
 If true, turns this web build into a progressive web application (PWA).
 
-bool progressive_web_app/ensure_cross_origin_isolation_headers 🔗
+bool progressive_web_app/ensure_cross_origin_isolation_headers 
 
 When enabled, the progressive web app will make sure that each request has cross-origin isolation headers (COEP/COOP).
 
 This can simplify the setup to serve the exported game.
 
-String progressive_web_app/icon_144x144 🔗
+String progressive_web_app/icon_144x144 
 
 File path to the smallest icon for this web application. If not defined, defaults to the project icon.
 
 Note: If the icon is not 144×144, it will be automatically resized for the final build.
 
-String progressive_web_app/icon_180x180 🔗
+String progressive_web_app/icon_180x180 
 
 File path to the small icon for this web application. If not defined, defaults to the project icon.
 
 Note: If the icon is not 180×180, it will be automatically resized for the final build.
 
-String progressive_web_app/icon_512x512 🔗
+String progressive_web_app/icon_512x512 
 
 File path to the largest icon for this web application. If not defined, defaults to the project icon.
 
 Note: If the icon is not 512×512, it will be automatically resized for the final build.
 
-String progressive_web_app/offline_page 🔗
+String progressive_web_app/offline_page 
 
 The page to display, should the server hosting the page not be available. This page is saved in the client's machine.
 
-int progressive_web_app/orientation 🔗
+int progressive_web_app/orientation 
 
 The orientation to use when the web application is run through a mobile device.
 
@@ -7672,33 +7672,33 @@ Landscape: Forces a horizontal layout (wider than it is taller).
 
 Portrait: Forces a vertical layout (taller than it is wider).
 
-int threads/emscripten_pool_size 🔗
+int threads/emscripten_pool_size 
 
 The number of threads that emscripten will allocate at startup. A smaller value will allocate fewer threads and consume fewer system resources, but you may run the risk of running out of threads in the pool and needing to allocate more threads at run time which may cause a deadlock.
 
 Note: Some browsers have a hard cap on the number of threads that can be allocated, so it is best to be cautious and keep this number low.
 
-int threads/godot_pool_size 🔗
+int threads/godot_pool_size 
 
 Override for the default size of the WorkerThreadPool. This setting is used when ProjectSettings.threading/worker_pool/max_threads size is set to -1 (which it is by default). This size must be smaller than threads/emscripten_pool_size otherwise deadlocks may occur.
 
 When using threads this size needs to be large enough to accommodate features that rely on having a dedicated thread like ProjectSettings.physics/2d/run_on_separate_thread or ProjectSettings.rendering/driver/threads/thread_model. In general, it is best to ensure that this is at least 4 and is at least 2 or 3 less than threads/emscripten_pool_size.
 
-bool variant/extensions_support 🔗
+bool variant/extensions_support 
 
 If true enables GDExtension support for this web build.
 
-bool variant/thread_support 🔗
+bool variant/thread_support 
 
 If true, the exported game will support threads. It requires a "cross-origin isolated" website, which may be difficult to set up and is limited for security reasons (such as not being able to communicate with third-party websites).
 
 If false, the exported game will not support threads. As a result, it is more prone to performance and audio issues, but will only require to be run on an HTTPS website.
 
-bool vram_texture_compression/for_desktop 🔗
+bool vram_texture_compression/for_desktop 
 
 If true, allows textures to be optimized for desktop through the S3TC/BPTC algorithm.
 
-bool vram_texture_compression/for_mobile 🔗
+bool vram_texture_compression/for_mobile 
 
 If true allows textures to be optimized for mobile through the ETC2/ASTC algorithm.
 
@@ -7788,133 +7788,133 @@ texture_format/etc2_astc
 
 texture_format/s3tc_bptc
 
-String application/company_name 🔗
+String application/company_name 
 
 Company that produced the application. Required. See StringFileInfo.
 
-String application/console_wrapper_icon 🔗
+String application/console_wrapper_icon 
 
 Console wrapper icon file. If left empty, it will fallback to application/icon, then to ProjectSettings.application/config/windows_native_icon, and lastly, ProjectSettings.application/config/icon.
 
-String application/copyright 🔗
+String application/copyright 
 
 Copyright notice for the bundle visible to the user. Optional. See StringFileInfo.
 
-bool application/d3d12_agility_sdk_multiarch 🔗
+bool application/d3d12_agility_sdk_multiarch 
 
 If true, and application/export_d3d12 is set, the Agility SDK DLLs will be stored in arch-specific subdirectories.
 
-int application/export_angle 🔗
+int application/export_angle 
 
 If set to 1, ANGLE libraries are exported with the exported application. If set to 0, ANGLE libraries are exported only if ProjectSettings.rendering/gl_compatibility/driver is set to "opengl3_angle".
 
-int application/export_d3d12 🔗
+int application/export_d3d12 
 
 If set to 1, the Direct3D 12 runtime libraries (Agility SDK, PIX) are exported with the exported application. If set to 0, Direct3D 12 libraries are exported only if ProjectSettings.rendering/rendering_device/driver is set to "d3d12".
 
-String application/file_description 🔗
+String application/file_description 
 
 File description to be presented to users. Required. See StringFileInfo.
 
-String application/file_version 🔗
+String application/file_version 
 
 Version number of the file. Falls back to ProjectSettings.application/config/version if left empty. See StringFileInfo.
 
-String application/icon 🔗
+String application/icon 
 
 Application icon file. If left empty, it will fallback to ProjectSettings.application/config/windows_native_icon, and then to ProjectSettings.application/config/icon.
 
-int application/icon_interpolation 🔗
+int application/icon_interpolation 
 
 Interpolation method used to resize application icon.
 
-bool application/modify_resources 🔗
+bool application/modify_resources 
 
 If enabled, icon and metadata of the exported executable is set according to the other application/* values.
 
-String application/product_name 🔗
+String application/product_name 
 
 Name of the application. Required. See StringFileInfo.
 
-String application/product_version 🔗
+String application/product_version 
 
 Application version visible to the user. Falls back to ProjectSettings.application/config/version if left empty. See StringFileInfo.
 
-String application/trademarks 🔗
+String application/trademarks 
 
 Trademarks and registered trademarks that apply to the file. Optional. See StringFileInfo.
 
-String binary_format/architecture 🔗
+String binary_format/architecture 
 
 Application executable architecture.
 
 Supported architectures: x86_32, x86_64, and arm64.
 
-bool binary_format/embed_pck 🔗
+bool binary_format/embed_pck 
 
 If true, project resources are embedded into the executable.
 
-PackedStringArray codesign/custom_options 🔗
+PackedStringArray codesign/custom_options 
 
 Array of the additional command line arguments passed to the code signing tool. See Sign Tool.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-String codesign/description 🔗
+String codesign/description 
 
 Description of the signed content. See Sign Tool.
 
-int codesign/digest_algorithm 🔗
+int codesign/digest_algorithm 
 
 Digest algorithm to use for creating signature. See Sign Tool.
 
-bool codesign/enable 🔗
+bool codesign/enable 
 
 If true, executable signing is enabled.
 
-String codesign/identity 🔗
+String codesign/identity 
 
 PKCS #12 certificate file used to sign executable or certificate SHA-1 hash (if codesign/identity_type is set to "Use certificate store"). See Sign Tool.
 
 Can be overridden with the environment variable GODOT_WINDOWS_CODESIGN_IDENTITY.
 
-int codesign/identity_type 🔗
+int codesign/identity_type 
 
 Type of identity to use. See Sign Tool.
 
 Can be overridden with the environment variable GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE.
 
-String codesign/password 🔗
+String codesign/password 
 
 Password for the certificate file used to sign executable. See Sign Tool.
 
 Can be overridden with the environment variable GODOT_WINDOWS_CODESIGN_PASSWORD.
 
-bool codesign/timestamp 🔗
+bool codesign/timestamp 
 
 If true, time-stamp is added to the signature. See Sign Tool.
 
-String codesign/timestamp_server_url 🔗
+String codesign/timestamp_server_url 
 
 URL of the time stamp server. If left empty, the default server is used. See Sign Tool.
 
-String custom_template/debug 🔗
+String custom_template/debug 
 
 Path to the custom export template. If left empty, default template is used.
 
-String custom_template/release 🔗
+String custom_template/release 
 
 Path to the custom export template. If left empty, default template is used.
 
-int debug/export_console_wrapper 🔗
+int debug/export_console_wrapper 
 
 If true, a console wrapper executable is exported alongside the main executable, which allows running the project with enabled console output.
 
-bool shader_baker/enabled 🔗
+bool shader_baker/enabled 
 
 If true, shaders will be compiled and embedded in the application. This option is only supported when using the Forward+ and Mobile renderers.
 
-String ssh_remote_deploy/cleanup_script 🔗
+String ssh_remote_deploy/cleanup_script 
 
 Script code to execute on the remote host when app is finished.
 
@@ -7928,27 +7928,27 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-bool ssh_remote_deploy/enabled 🔗
+bool ssh_remote_deploy/enabled 
 
 Enables remote deploy using SSH/SCP.
 
-String ssh_remote_deploy/extra_args_scp 🔗
+String ssh_remote_deploy/extra_args_scp 
 
 Array of the additional command line arguments passed to the SCP.
 
-String ssh_remote_deploy/extra_args_ssh 🔗
+String ssh_remote_deploy/extra_args_ssh 
 
 Array of the additional command line arguments passed to the SSH.
 
-String ssh_remote_deploy/host 🔗
+String ssh_remote_deploy/host 
 
 Remote host SSH user name and address, in user@address format.
 
-String ssh_remote_deploy/port 🔗
+String ssh_remote_deploy/port 
 
 Remote host SSH port number.
 
-String ssh_remote_deploy/run_script 🔗
+String ssh_remote_deploy/run_script 
 
 Script code to execute on the remote host when running the app.
 
@@ -7962,11 +7962,11 @@ The following variables can be used in the script:
 
 {cmd_args} - Array of the command line argument for the application.
 
-bool texture_format/etc2_astc 🔗
+bool texture_format/etc2_astc 
 
 If true, project textures are exported in the ETC2/ASTC format.
 
-bool texture_format/s3tc_bptc 🔗
+bool texture_format/s3tc_bptc 
 
 If true, project textures are exported in the S3TC/BPTC format.
 
@@ -8047,7 +8047,7 @@ ssh_run_on_remote(host: String, port: String, ssh_arg: PackedStringArray, cmd_ar
 
 ssh_run_on_remote_no_wait(host: String, port: String, ssh_args: PackedStringArray, cmd_args: String, port_fwd: int = -1) const
 
-enum ExportMessageType: 🔗
+enum ExportMessageType: 
 
 ExportMessageType EXPORT_MESSAGE_NONE = 0
 
@@ -8085,33 +8085,33 @@ DebugFlags DEBUG_FLAG_VIEW_NAVIGATION = 16
 
 Flag is set if the "Visible Navigation" remote debug option is enabled. If set, gen_export_flags() will append the --debug-navigation command line argument to the returned list.
 
-void add_message(type: ExportMessageType, category: String, message: String) 🔗
+void add_message(type: ExportMessageType, category: String, message: String) 
 
 Adds a message to the export log that will be displayed when exporting ends.
 
-void clear_messages() 🔗
+void clear_messages() 
 
 Clears the export log.
 
-EditorExportPreset create_preset() 🔗
+EditorExportPreset create_preset() 
 
 Create a new preset for this platform.
 
-Error export_pack(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 🔗
+Error export_pack(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 
 
 Creates a PCK archive at path for the specified preset.
 
-Error export_pack_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray = PackedStringArray(), flags: BitField[DebugFlags] = 0) 🔗
+Error export_pack_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray = PackedStringArray(), flags: BitField[DebugFlags] = 0) 
 
 Creates a patch PCK archive at path for the specified preset, containing only the files that have changed since the last patch.
 
 Note: patches is an optional override of the set of patches defined in the export preset. When empty the patches defined in the export preset will be used instead.
 
-Error export_project(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 🔗
+Error export_project(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 
 
 Creates a full project at path for the specified preset.
 
-Error export_project_files(preset: EditorExportPreset, debug: bool, save_cb: Callable, shared_cb: Callable = Callable()) 🔗
+Error export_project_files(preset: EditorExportPreset, debug: bool, save_cb: Callable, shared_cb: Callable = Callable()) 
 
 Exports project files for the specified preset. This method can be used to implement custom export format, other than PCK and ZIP. One of the callbacks is called for each exported file.
 
@@ -8121,87 +8121,87 @@ shared_cb is called for exported native shared/static libraries and have the fol
 
 Note: file_index and file_count are intended for progress tracking only and aren't necessarily unique and precise.
 
-Error export_zip(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 🔗
+Error export_zip(preset: EditorExportPreset, debug: bool, path: String, flags: BitField[DebugFlags] = 0) 
 
 Create a ZIP archive at path for the specified preset.
 
-Error export_zip_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray = PackedStringArray(), flags: BitField[DebugFlags] = 0) 🔗
+Error export_zip_patch(preset: EditorExportPreset, debug: bool, path: String, patches: PackedStringArray = PackedStringArray(), flags: BitField[DebugFlags] = 0) 
 
 Create a patch ZIP archive at path for the specified preset, containing only the files that have changed since the last patch.
 
 Note: patches is an optional override of the set of patches defined in the export preset. When empty the patches defined in the export preset will be used instead.
 
-Dictionary find_export_template(template_file_name: String) const 🔗
+Dictionary find_export_template(template_file_name: String) const 
 
 Locates export template for the platform, and returns Dictionary with the following keys: path: String and error: String. This method is provided for convenience and custom export platforms aren't required to use it or keep export templates stored in the same way official templates are.
 
-PackedStringArray gen_export_flags(flags: BitField[DebugFlags]) 🔗
+PackedStringArray gen_export_flags(flags: BitField[DebugFlags]) 
 
 Generates array of command line arguments for the default export templates for the debug flags and editor settings.
 
-Array get_current_presets() const 🔗
+Array get_current_presets() const 
 
 Returns array of EditorExportPresets for this platform.
 
-PackedStringArray get_forced_export_files(preset: EditorExportPreset = null) static 🔗
+PackedStringArray get_forced_export_files(preset: EditorExportPreset = null) static 
 
 Returns array of core file names that always should be exported regardless of preset config.
 
-Dictionary get_internal_export_files(preset: EditorExportPreset, debug: bool) 🔗
+Dictionary get_internal_export_files(preset: EditorExportPreset, debug: bool) 
 
 Returns additional files that should always be exported regardless of preset configuration, and are not part of the project source. The returned Dictionary contains filename keys (String) and their corresponding raw data (PackedByteArray).
 
-String get_message_category(index: int) const 🔗
+String get_message_category(index: int) const 
 
 Returns message category, for the message with index.
 
-int get_message_count() const 🔗
+int get_message_count() const 
 
 Returns number of messages in the export log.
 
-String get_message_text(index: int) const 🔗
+String get_message_text(index: int) const 
 
 Returns message text, for the message with index.
 
-ExportMessageType get_message_type(index: int) const 🔗
+ExportMessageType get_message_type(index: int) const 
 
 Returns message type, for the message with index.
 
-String get_os_name() const 🔗
+String get_os_name() const 
 
 Returns the name of the export operating system handled by this EditorExportPlatform class, as a friendly string. Possible return values are Windows, Linux, macOS, Android, iOS, and Web.
 
-ExportMessageType get_worst_message_type() const 🔗
+ExportMessageType get_worst_message_type() const 
 
 Returns most severe message type currently present in the export log.
 
-Dictionary save_pack(preset: EditorExportPreset, debug: bool, path: String, embed: bool = false) 🔗
+Dictionary save_pack(preset: EditorExportPreset, debug: bool, path: String, embed: bool = false) 
 
 Saves PCK archive and returns Dictionary with the following keys: result: Error, so_files: Array (array of the shared/static objects which contains dictionaries with the following keys: path: String, tags: PackedStringArray, and target_folder: String).
 
 If embed is true, PCK content is appended to the end of path file and return Dictionary additionally include following keys: embedded_start: int (embedded PCK offset) and embedded_size: int (embedded PCK size).
 
-Dictionary save_pack_patch(preset: EditorExportPreset, debug: bool, path: String) 🔗
+Dictionary save_pack_patch(preset: EditorExportPreset, debug: bool, path: String) 
 
 Saves patch PCK archive and returns Dictionary with the following keys: result: Error, so_files: Array (array of the shared/static objects which contains dictionaries with the following keys: path: String, tags: PackedStringArray, and target_folder: String).
 
-Dictionary save_zip(preset: EditorExportPreset, debug: bool, path: String) 🔗
+Dictionary save_zip(preset: EditorExportPreset, debug: bool, path: String) 
 
 Saves ZIP archive and returns Dictionary with the following keys: result: Error, so_files: Array (array of the shared/static objects which contains dictionaries with the following keys: path: String, tags: PackedStringArray, and target_folder: String).
 
-Dictionary save_zip_patch(preset: EditorExportPreset, debug: bool, path: String) 🔗
+Dictionary save_zip_patch(preset: EditorExportPreset, debug: bool, path: String) 
 
 Saves patch ZIP archive and returns Dictionary with the following keys: result: Error, so_files: Array (array of the shared/static objects which contains dictionaries with the following keys: path: String, tags: PackedStringArray, and target_folder: String).
 
-Error ssh_push_to_remote(host: String, port: String, scp_args: PackedStringArray, src_file: String, dst_file: String) const 🔗
+Error ssh_push_to_remote(host: String, port: String, scp_args: PackedStringArray, src_file: String, dst_file: String) const 
 
 Uploads specified file over SCP protocol to the remote host.
 
-Error ssh_run_on_remote(host: String, port: String, ssh_arg: PackedStringArray, cmd_args: String, output: Array = [], port_fwd: int = -1) const 🔗
+Error ssh_run_on_remote(host: String, port: String, ssh_arg: PackedStringArray, cmd_args: String, output: Array = [], port_fwd: int = -1) const 
 
 Executes specified command on the remote host via SSH protocol and returns command output in the output.
 
-int ssh_run_on_remote_no_wait(host: String, port: String, ssh_args: PackedStringArray, cmd_args: String, port_fwd: int = -1) const 🔗
+int ssh_run_on_remote_no_wait(host: String, port: String, ssh_args: PackedStringArray, cmd_args: String, port_fwd: int = -1) const 
 
 Executes specified command on the remote host via SSH protocol and returns process ID (on the remote host) without waiting for command to finish.
 
@@ -8321,13 +8321,13 @@ get_export_preset() const
 
 get_option(name: StringName) const
 
-bool _begin_customize_resources(platform: EditorExportPlatform, features: PackedStringArray) virtual const 🔗
+bool _begin_customize_resources(platform: EditorExportPlatform, features: PackedStringArray) virtual const 
 
 Return true if this plugin will customize resources based on the platform and features used.
 
 When enabled, _get_customization_configuration_hash() and _customize_resource() will be called and must be implemented.
 
-bool _begin_customize_scenes(platform: EditorExportPlatform, features: PackedStringArray) virtual const 🔗
+bool _begin_customize_scenes(platform: EditorExportPlatform, features: PackedStringArray) virtual const 
 
 Return true if this plugin will customize scenes based on the platform and features used.
 
@@ -8335,7 +8335,7 @@ When enabled, _get_customization_configuration_hash() and _customize_scene() wil
 
 Note: _customize_scene() will only be called for scenes that have been modified since the last export.
 
-Resource _customize_resource(resource: Resource, path: String) virtual required 🔗
+Resource _customize_resource(resource: Resource, path: String) virtual required 
 
 Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return null. When a new resource is returned, resource will be replaced by a copy of the new resource.
 
@@ -8349,35 +8349,35 @@ CompressedCubemapArray
 
 CompressedTexture2DArray
 
-Node _customize_scene(scene: Node, path: String) virtual required 🔗
+Node _customize_scene(scene: Node, path: String) virtual required 
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return null. If a new scene is returned, it is up to you to dispose of the old one.
 
 Implementing this method is required if _begin_customize_scenes() returns true.
 
-void _end_customize_resources() virtual 🔗
+void _end_customize_resources() virtual 
 
 This is called when the customization process for resources ends.
 
-void _end_customize_scenes() virtual 🔗
+void _end_customize_scenes() virtual 
 
 This is called when the customization process for scenes ends.
 
-void _export_begin(features: PackedStringArray, is_debug: bool, path: String, flags: int) virtual 🔗
+void _export_begin(features: PackedStringArray, is_debug: bool, path: String, flags: int) virtual 
 
 Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export. features is the list of features for the export, is_debug is true for debug builds, path is the target path for the exported project. flags is only used when running a runnable profile, e.g. when using native run on Android.
 
-void _export_end() virtual 🔗
+void _export_end() virtual 
 
 Virtual method to be overridden by the user. Called when the export is finished.
 
-void _export_file(path: String, type: String, features: PackedStringArray) virtual 🔗
+void _export_file(path: String, type: String, features: PackedStringArray) virtual 
 
 Virtual method to be overridden by the user. Called for each exported file before _customize_resource() and _customize_scene(). The arguments can be used to identify the file. path is the path of the file, type is the Resource represented by the file (e.g. PackedScene), and features is the list of features for the export.
 
 Calling skip() inside this callback will make the file not included in the export.
 
-PackedStringArray _get_android_dependencies(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+PackedStringArray _get_android_dependencies(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is called to retrieve the set of Android dependencies provided by this plugin. Each returned Android dependency should have the format of an Android remote binary dependency: org.godot.example:my-plugin:0.0.0
 
@@ -8385,7 +8385,7 @@ For more information see Android documentation on dependencies.
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-PackedStringArray _get_android_dependencies_maven_repos(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+PackedStringArray _get_android_dependencies_maven_repos(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is called to retrieve the URLs of Maven repositories for the set of Android dependencies provided by this plugin.
 
@@ -8395,7 +8395,7 @@ Note: Google's Maven repo and the Maven Central repo are already included by def
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-PackedStringArray _get_android_libraries(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+PackedStringArray _get_android_libraries(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is called to retrieve the local paths of the Android libraries archive (AAR) files provided by this plugin.
 
@@ -8403,45 +8403,45 @@ Note: Relative paths must be relative to Godot's res://addons/ directory. For ex
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-String _get_android_manifest_activity_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+String _get_android_manifest_activity_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the activity element in the generated Android manifest.
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-String _get_android_manifest_application_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+String _get_android_manifest_application_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the application element in the generated Android manifest.
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-String _get_android_manifest_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+String _get_android_manifest_element_contents(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Virtual method to be overridden by the user. This is used at export time to update the contents of the manifest element in the generated Android manifest.
 
 Note: Only supported on Android and requires EditorExportPlatformAndroid.gradle_build/use_gradle_build to be enabled.
 
-int _get_customization_configuration_hash() virtual required const 🔗
+int _get_customization_configuration_hash() virtual required const 
 
 Return a hash based on the configuration passed (for both scenes and resources). This helps keep separate caches for separate export configurations.
 
 Implementing this method is required if _begin_customize_resources() returns true.
 
-PackedStringArray _get_export_features(platform: EditorExportPlatform, debug: bool) virtual const 🔗
+PackedStringArray _get_export_features(platform: EditorExportPlatform, debug: bool) virtual const 
 
 Return a PackedStringArray of additional features this preset, for the given platform, should have.
 
-bool _get_export_option_visibility(platform: EditorExportPlatform, option: String) virtual const 🔗
+bool _get_export_option_visibility(platform: EditorExportPlatform, option: String) virtual const 
 
 Validates option and returns the visibility for the specified platform. The default implementation returns true for all options.
 
-String _get_export_option_warning(platform: EditorExportPlatform, option: String) virtual const 🔗
+String _get_export_option_warning(platform: EditorExportPlatform, option: String) virtual const 
 
 Check the requirements for the given option and return a non-empty warning string if they are not met.
 
 Note: Use get_option() to check the value of the export options.
 
-Array[Dictionary] _get_export_options(platform: EditorExportPlatform) virtual const 🔗
+Array[Dictionary] _get_export_options(platform: EditorExportPlatform) virtual const 
 
 Return a list of export options that can be configured for this export plugin.
 
@@ -8453,25 +8453,25 @@ default_value: The default value for this option.
 
 update_visibility: An optional boolean value. If set to true, the preset will emit Object.property_list_changed when the option is changed.
 
-Dictionary _get_export_options_overrides(platform: EditorExportPlatform) virtual const 🔗
+Dictionary _get_export_options_overrides(platform: EditorExportPlatform) virtual const 
 
 Return a Dictionary of override values for export options, that will be used instead of user-provided values. Overridden options will be hidden from the user interface.
 
-String _get_name() virtual required const 🔗
+String _get_name() virtual required const 
 
 Return the name identifier of this plugin (for future identification by the exporter). The plugins are sorted by name before exporting.
 
 Implementing this method is required.
 
-bool _should_update_export_options(platform: EditorExportPlatform) virtual const 🔗
+bool _should_update_export_options(platform: EditorExportPlatform) virtual const 
 
 Return true if the result of _get_export_options() has changed and the export options of the preset corresponding to platform should be updated.
 
-bool _supports_platform(platform: EditorExportPlatform) virtual const 🔗
+bool _supports_platform(platform: EditorExportPlatform) virtual const 
 
 Return true if the plugin supports the given platform.
 
-PackedByteArray _update_android_prebuilt_manifest(platform: EditorExportPlatform, manifest_data: PackedByteArray) virtual const 🔗
+PackedByteArray _update_android_prebuilt_manifest(platform: EditorExportPlatform, manifest_data: PackedByteArray) virtual const 
 
 Provide access to the Android prebuilt manifest and allows the plugin to modify it if needed.
 
@@ -8479,15 +8479,15 @@ Implementers of this virtual method should take the binary manifest data from ma
 
 If no modifications are needed, then an empty PackedByteArray should be returned.
 
-void add_apple_embedded_platform_bundle_file(path: String) 🔗
+void add_apple_embedded_platform_bundle_file(path: String) 
 
 Adds an Apple embedded platform bundle file from the given path to the exported project.
 
-void add_apple_embedded_platform_cpp_code(code: String) 🔗
+void add_apple_embedded_platform_cpp_code(code: String) 
 
 Adds C++ code to the Apple embedded platform export. The final code is created from the code appended by each active export plugin.
 
-void add_apple_embedded_platform_embedded_framework(path: String) 🔗
+void add_apple_embedded_platform_embedded_framework(path: String) 
 
 Adds a dynamic library (*.dylib, *.framework) to the Linking Phase in the Apple embedded platform's Xcode project and embeds it into the resulting binary.
 
@@ -8495,23 +8495,23 @@ Note: For static libraries (*.a), this works in the same way as add_apple_embedd
 
 Note: This method should not be used for System libraries as they are already present on the device.
 
-void add_apple_embedded_platform_framework(path: String) 🔗
+void add_apple_embedded_platform_framework(path: String) 
 
 Adds a static library (*.a) or a dynamic library (*.dylib, *.framework) to the Linking Phase to the Apple embedded platform's Xcode project.
 
-void add_apple_embedded_platform_linker_flags(flags: String) 🔗
+void add_apple_embedded_platform_linker_flags(flags: String) 
 
 Adds linker flags for the Apple embedded platform export.
 
-void add_apple_embedded_platform_plist_content(plist_content: String) 🔗
+void add_apple_embedded_platform_plist_content(plist_content: String) 
 
 Adds additional fields to the Apple embedded platform's project Info.plist file.
 
-void add_apple_embedded_platform_project_static_lib(path: String) 🔗
+void add_apple_embedded_platform_project_static_lib(path: String) 
 
 Adds a static library from the given path to the Apple embedded platform project.
 
-void add_file(path: String, file: PackedByteArray, remap: bool) 🔗
+void add_file(path: String, file: PackedByteArray, remap: bool) 
 
 Adds a custom file to be exported. path is the virtual path that can be used to load the file, file is the binary data of the file.
 
@@ -8519,19 +8519,19 @@ When called inside _export_file() and remap is true, the current file will not b
 
 file will not be imported, so consider using _customize_resource() to remap imported resources.
 
-void add_ios_bundle_file(path: String) 🔗
+void add_ios_bundle_file(path: String) 
 
 Deprecated: Use add_apple_embedded_platform_bundle_file() instead.
 
 Adds an iOS bundle file from the given path to the exported project.
 
-void add_ios_cpp_code(code: String) 🔗
+void add_ios_cpp_code(code: String) 
 
 Deprecated: Use add_apple_embedded_platform_cpp_code() instead.
 
 Adds C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
 
-void add_ios_embedded_framework(path: String) 🔗
+void add_ios_embedded_framework(path: String) 
 
 Deprecated: Use add_apple_embedded_platform_embedded_framework() instead.
 
@@ -8541,37 +8541,37 @@ Note: For static libraries (*.a), this works the in same way as add_apple_embedd
 
 Note: This method should not be used for System libraries as they are already present on the device.
 
-void add_ios_framework(path: String) 🔗
+void add_ios_framework(path: String) 
 
 Deprecated: Use add_apple_embedded_platform_framework() instead.
 
 Adds a static library (*.a) or a dynamic library (*.dylib, *.framework) to the Linking Phase to the iOS Xcode project.
 
-void add_ios_linker_flags(flags: String) 🔗
+void add_ios_linker_flags(flags: String) 
 
 Deprecated: Use add_apple_embedded_platform_linker_flags() instead.
 
 Adds linker flags for the iOS export.
 
-void add_ios_plist_content(plist_content: String) 🔗
+void add_ios_plist_content(plist_content: String) 
 
 Deprecated: Use add_apple_embedded_platform_plist_content() instead.
 
 Adds additional fields to the iOS project Info.plist file.
 
-void add_ios_project_static_lib(path: String) 🔗
+void add_ios_project_static_lib(path: String) 
 
 Deprecated: Use add_apple_embedded_platform_project_static_lib() instead.
 
 Adds a static library from the given path to the iOS project.
 
-void add_macos_plugin_file(path: String) 🔗
+void add_macos_plugin_file(path: String) 
 
 Adds file or directory matching path to PlugIns directory of macOS app bundle.
 
 Note: This is useful only for macOS exports.
 
-void add_shared_object(path: String, tags: PackedStringArray, target: String) 🔗
+void add_shared_object(path: String, tags: PackedStringArray, target: String) 
 
 Adds a shared object or a directory containing only shared objects with the given tags and destination path.
 
@@ -8579,15 +8579,15 @@ Note: In case of macOS exports, those shared objects will be added to Frameworks
 
 In case of a directory code-sign will error if you place non code object in directory.
 
-EditorExportPlatform get_export_platform() const 🔗
+EditorExportPlatform get_export_platform() const 
 
 Returns currently used export platform.
 
-EditorExportPreset get_export_preset() const 🔗
+EditorExportPreset get_export_preset() const 
 
 Returns currently used export preset.
 
-Variant get_option(name: StringName) const 🔗
+Variant get_option(name: StringName) const 
 
 Returns the current value of an export option supplied by _get_export_options().
 
@@ -8702,7 +8702,7 @@ ExportFilter EXPORT_CUSTOMIZED = 4
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum FileExportMode: 🔗
+enum FileExportMode: 
 
 FileExportMode MODE_FILE_NOT_CUSTOMIZED = 0
 
@@ -8720,7 +8720,7 @@ FileExportMode MODE_FILE_REMOVE = 3
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum ScriptExportMode: 🔗
+enum ScriptExportMode: 
 
 ScriptExportMode MODE_SCRIPT_TEXT = 0
 
@@ -8734,105 +8734,105 @@ ScriptExportMode MODE_SCRIPT_BINARY_TOKENS_COMPRESSED = 2
 
 There is currently no description for this enum. Please help us by contributing one!
 
-bool are_advanced_options_enabled() const 🔗
+bool are_advanced_options_enabled() const 
 
 Returns true if the "Advanced" toggle is enabled in the export dialog.
 
-String get_custom_features() const 🔗
+String get_custom_features() const 
 
 Returns a comma-separated list of custom features added to this preset, as a string. See Feature tags in the documentation for more information.
 
-Dictionary get_customized_files() const 🔗
+Dictionary get_customized_files() const 
 
 Returns a dictionary of files selected in the "Resources" tab of the export dialog. The dictionary's keys are file paths, and its values are the corresponding export modes: "strip", "keep", or "remove". See also get_file_export_mode().
 
-int get_customized_files_count() const 🔗
+int get_customized_files_count() const 
 
 Returns the number of files selected in the "Resources" tab of the export dialog.
 
-bool get_encrypt_directory() const 🔗
+bool get_encrypt_directory() const 
 
 Returns true if PCK directory encryption is enabled in the export dialog.
 
-bool get_encrypt_pck() const 🔗
+bool get_encrypt_pck() const 
 
 Returns true if PCK encryption is enabled in the export dialog.
 
-String get_encryption_ex_filter() const 🔗
+String get_encryption_ex_filter() const 
 
 Returns file filters to exclude during PCK encryption.
 
-String get_encryption_in_filter() const 🔗
+String get_encryption_in_filter() const 
 
 Returns file filters to include during PCK encryption.
 
-String get_encryption_key() const 🔗
+String get_encryption_key() const 
 
 Returns PCK encryption key.
 
-String get_exclude_filter() const 🔗
+String get_exclude_filter() const 
 
 Returns file filters to exclude during export.
 
-ExportFilter get_export_filter() const 🔗
+ExportFilter get_export_filter() const 
 
 Returns export file filter mode selected in the "Resources" tab of the export dialog.
 
-String get_export_path() const 🔗
+String get_export_path() const 
 
 Returns export target path.
 
-FileExportMode get_file_export_mode(path: String, default: FileExportMode = 0) const 🔗
+FileExportMode get_file_export_mode(path: String, default: FileExportMode = 0) const 
 
 Returns file export mode for the specified file.
 
-PackedStringArray get_files_to_export() const 🔗
+PackedStringArray get_files_to_export() const 
 
 Returns array of files to export.
 
-String get_include_filter() const 🔗
+String get_include_filter() const 
 
 Returns file filters to include during export.
 
-Variant get_or_env(name: StringName, env_var: String) const 🔗
+Variant get_or_env(name: StringName, env_var: String) const 
 
 Returns export option value or value of environment variable if it is set.
 
-PackedStringArray get_patches() const 🔗
+PackedStringArray get_patches() const 
 
 Returns the list of packs on which to base a patch export on.
 
-String get_preset_name() const 🔗
+String get_preset_name() const 
 
 Returns this export preset's name.
 
-Variant get_project_setting(name: StringName) 🔗
+Variant get_project_setting(name: StringName) 
 
 Returns the value of the setting identified by name using export preset feature tag overrides instead of current OS features.
 
-int get_script_export_mode() const 🔗
+int get_script_export_mode() const 
 
 Returns the export mode used by GDScript files. 0 for "Text", 1 for "Binary tokens", and 2 for "Compressed binary tokens (smaller files)".
 
-String get_version(name: StringName, windows_version: bool) const 🔗
+String get_version(name: StringName, windows_version: bool) const 
 
 Returns the preset's version number, or fall back to the ProjectSettings.application/config/version project setting if set to an empty string.
 
 If windows_version is true, formats the returned version number to be compatible with Windows executable metadata.
 
-bool has(property: StringName) const 🔗
+bool has(property: StringName) const 
 
 Returns true if the preset has the property named property.
 
-bool has_export_file(path: String) 🔗
+bool has_export_file(path: String) 
 
 Returns true if the file at the specified path will be exported.
 
-bool is_dedicated_server() const 🔗
+bool is_dedicated_server() const 
 
 Returns true if the dedicated server export mode is selected in the export dialog.
 
-bool is_runnable() const 🔗
+bool is_runnable() const 
 
 Returns true if the "Runnable" toggle is enabled in the export dialog.
 
@@ -8922,51 +8922,51 @@ Feature FEATURE_MAX = 9
 
 Represents the size of the Feature enum.
 
-String get_feature_name(feature: Feature) 🔗
+String get_feature_name(feature: Feature) 
 
 Returns the specified feature's human-readable name.
 
-bool is_class_disabled(class_name: StringName) const 🔗
+bool is_class_disabled(class_name: StringName) const 
 
 Returns true if the class specified by class_name is disabled. When disabled, the class won't appear in the Create New Node dialog.
 
-bool is_class_editor_disabled(class_name: StringName) const 🔗
+bool is_class_editor_disabled(class_name: StringName) const 
 
 Returns true if editing for the class specified by class_name is disabled. When disabled, the class will still appear in the Create New Node dialog but the Inspector will be read-only when selecting a node that extends the class.
 
-bool is_class_property_disabled(class_name: StringName, property: StringName) const 🔗
+bool is_class_property_disabled(class_name: StringName, property: StringName) const 
 
 Returns true if property is disabled in the class specified by class_name. When a property is disabled, it won't appear in the Inspector when selecting a node that extends the class specified by class_name.
 
-bool is_feature_disabled(feature: Feature) const 🔗
+bool is_feature_disabled(feature: Feature) const 
 
 Returns true if the feature is disabled. When a feature is disabled, it will disappear from the editor entirely.
 
-Error load_from_file(path: String) 🔗
+Error load_from_file(path: String) 
 
 Loads an editor feature profile from a file. The file must follow the JSON format obtained by using the feature profile manager's Export button or the save_to_file() method.
 
 Note: Feature profiles created via the user interface are loaded from the feature_profiles directory, as a file with the .profile extension. The editor configuration folder can be found by using EditorPaths.get_config_dir().
 
-Error save_to_file(path: String) 🔗
+Error save_to_file(path: String) 
 
 Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's Import button or the load_from_file() method.
 
 Note: Feature profiles created via the user interface are saved in the feature_profiles directory, as a file with the .profile extension. The editor configuration folder can be found by using EditorPaths.get_config_dir().
 
-void set_disable_class(class_name: StringName, disable: bool) 🔗
+void set_disable_class(class_name: StringName, disable: bool) 
 
 If disable is true, disables the class specified by class_name. When disabled, the class won't appear in the Create New Node dialog.
 
-void set_disable_class_editor(class_name: StringName, disable: bool) 🔗
+void set_disable_class_editor(class_name: StringName, disable: bool) 
 
 If disable is true, disables editing for the class specified by class_name. When disabled, the class will still appear in the Create New Node dialog but the Inspector will be read-only when selecting a node that extends the class.
 
-void set_disable_class_property(class_name: StringName, property: StringName, disable: bool) 🔗
+void set_disable_class_property(class_name: StringName, property: StringName, disable: bool) 
 
 If disable is true, disables editing for property in the class specified by class_name. When a property is disabled, it won't appear in the Inspector when selecting a node that extends the class specified by class_name.
 
-void set_disable_feature(feature: Feature, disable: bool) 🔗
+void set_disable_feature(feature: Feature, disable: bool) 
 
 If disable is true, disables the editor feature specified in feature. When a feature is disabled, it will disappear from the editor entirely.
 
@@ -9029,19 +9029,19 @@ set_option_name(option: int, name: String)
 
 set_option_values(option: int, values: PackedStringArray)
 
-dir_selected(dir: String) 🔗
+dir_selected(dir: String) 
 
 Emitted when a directory is selected.
 
-file_selected(path: String) 🔗
+file_selected(path: String) 
 
 Emitted when a file is selected.
 
-filename_filter_changed(filter: String) 🔗
+filename_filter_changed(filter: String) 
 
 Emitted when the filter for file names changes.
 
-files_selected(paths: PackedStringArray) 🔗
+files_selected(paths: PackedStringArray) 
 
 Emitted when multiple files are selected.
 
@@ -9095,7 +9095,7 @@ String get_current_dir()
 
 The currently occupied directory.
 
-String current_file 🔗
+String current_file 
 
 void set_current_file(value: String)
 
@@ -9103,7 +9103,7 @@ String get_current_file()
 
 The currently selected file.
 
-String current_path 🔗
+String current_path 
 
 void set_current_path(value: String)
 
@@ -9111,7 +9111,7 @@ String get_current_path()
 
 The file system path in the address bar.
 
-bool disable_overwrite_warning = false 🔗
+bool disable_overwrite_warning = false 
 
 void set_disable_overwrite_warning(value: bool)
 
@@ -9119,7 +9119,7 @@ bool is_overwrite_warning_disabled()
 
 If true, the EditorFileDialog will not warn the user before overwriting files.
 
-DisplayMode display_mode = 0 🔗
+DisplayMode display_mode = 0 
 
 void set_display_mode(value: DisplayMode)
 
@@ -9127,7 +9127,7 @@ DisplayMode get_display_mode()
 
 The view format in which the EditorFileDialog displays resources to the user.
 
-FileMode file_mode = 4 🔗
+FileMode file_mode = 4 
 
 void set_file_mode(value: FileMode)
 
@@ -9135,7 +9135,7 @@ FileMode get_file_mode()
 
 The dialog's open or save mode, which affects the selection behavior.
 
-PackedStringArray filters = PackedStringArray() 🔗
+PackedStringArray filters = PackedStringArray() 
 
 void set_filters(value: PackedStringArray)
 
@@ -9145,7 +9145,7 @@ The available file type filters. For example, this shows only .png and .gd files
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-int option_count = 0 🔗
+int option_count = 0 
 
 void set_option_count(value: int)
 
@@ -9153,7 +9153,7 @@ int get_option_count()
 
 The number of additional OptionButtons and CheckBoxes in the dialog.
 
-bool show_hidden_files = false 🔗
+bool show_hidden_files = false 
 
 void set_show_hidden_files(value: bool)
 
@@ -9161,7 +9161,7 @@ bool is_showing_hidden_files()
 
 If true, hidden files and directories will be visible in the EditorFileDialog. This property is synchronized with EditorSettings.filesystem/file_dialog/show_hidden_files.
 
-void add_filter(filter: String, description: String = "") 🔗
+void add_filter(filter: String, description: String = "") 
 
 Adds a comma-separated file name filter option to the EditorFileDialog with an optional description, which restricts what files can be picked.
 
@@ -9169,51 +9169,51 @@ A filter should be of the form "filename.extension", where filename and extensio
 
 For example, a filter of "*.tscn, *.scn" and a description of "Scenes" results in filter text "Scenes (*.tscn, *.scn)".
 
-void add_option(name: String, values: PackedStringArray, default_value_index: int) 🔗
+void add_option(name: String, values: PackedStringArray, default_value_index: int) 
 
 Adds an additional OptionButton to the file dialog. If values is empty, a CheckBox is added instead.
 
 default_value_index should be an index of the value in the values. If values is empty it should be either 1 (checked), or 0 (unchecked).
 
-void add_side_menu(menu: Control, title: String = "") 🔗
+void add_side_menu(menu: Control, title: String = "") 
 
 Adds the given menu to the side of the file dialog with the given title text on top. Only one side menu is allowed.
 
-void clear_filename_filter() 🔗
+void clear_filename_filter() 
 
 Clear the filter for file names.
 
-void clear_filters() 🔗
+void clear_filters() 
 
 Removes all filters except for "All Files (*.*)".
 
-String get_filename_filter() const 🔗
+String get_filename_filter() const 
 
 Returns the value of the filter for file names.
 
-LineEdit get_line_edit() 🔗
+LineEdit get_line_edit() 
 
 Returns the LineEdit for the selected file.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-int get_option_default(option: int) const 🔗
+int get_option_default(option: int) const 
 
 Returns the default value index of the OptionButton or CheckBox with index option.
 
-String get_option_name(option: int) const 🔗
+String get_option_name(option: int) const 
 
 Returns the name of the OptionButton or CheckBox with index option.
 
-PackedStringArray get_option_values(option: int) const 🔗
+PackedStringArray get_option_values(option: int) const 
 
 Returns an array of values of the OptionButton with index option.
 
-Dictionary get_selected_options() const 🔗
+Dictionary get_selected_options() const 
 
 Returns a Dictionary with the selected values of the additional OptionButtons and/or CheckBoxes. Dictionary keys are names and values are selected value indices.
 
-VBoxContainer get_vbox() 🔗
+VBoxContainer get_vbox() 
 
 Returns the VBoxContainer used to display the file system.
 
@@ -9221,23 +9221,23 @@ Warning: This is a required internal node, removing and freeing it may cause a c
 
 Notify the EditorFileDialog that its view of the data is no longer accurate. Updates the view contents on next view update.
 
-void popup_file_dialog() 🔗
+void popup_file_dialog() 
 
 Shows the EditorFileDialog at the default size and position for file dialogs in the editor, and selects the file name if there is a current file.
 
-void set_filename_filter(filter: String) 🔗
+void set_filename_filter(filter: String) 
 
 Sets the value of the filter for file names.
 
-void set_option_default(option: int, default_value_index: int) 🔗
+void set_option_default(option: int, default_value_index: int) 
 
 Sets the default value index of the OptionButton or CheckBox with index option.
 
-void set_option_name(option: int, name: String) 🔗
+void set_option_name(option: int, name: String) 
 
 Sets the name of the OptionButton or CheckBox with index option.
 
-void set_option_values(option: int, values: PackedStringArray) 🔗
+void set_option_values(option: int, values: PackedStringArray) 
 
 Sets the option values of the OptionButton with index option.
 
@@ -9284,57 +9284,57 @@ EditorFileSystemDirectory
 
 get_subdir_count() const
 
-int find_dir_index(name: String) const 🔗
+int find_dir_index(name: String) const 
 
 Returns the index of the directory with name name or -1 if not found.
 
-int find_file_index(name: String) const 🔗
+int find_file_index(name: String) const 
 
 Returns the index of the file with name name or -1 if not found.
 
-String get_file(idx: int) const 🔗
+String get_file(idx: int) const 
 
 Returns the name of the file at index idx.
 
-int get_file_count() const 🔗
+int get_file_count() const 
 
 Returns the number of files in this directory.
 
-bool get_file_import_is_valid(idx: int) const 🔗
+bool get_file_import_is_valid(idx: int) const 
 
 Returns true if the file at index idx imported properly.
 
-String get_file_path(idx: int) const 🔗
+String get_file_path(idx: int) const 
 
 Returns the path to the file at index idx.
 
-String get_file_script_class_extends(idx: int) const 🔗
+String get_file_script_class_extends(idx: int) const 
 
 Returns the base class of the script class defined in the file at index idx. If the file doesn't define a script class using the class_name syntax, this will return an empty string.
 
-String get_file_script_class_name(idx: int) const 🔗
+String get_file_script_class_name(idx: int) const 
 
 Returns the name of the script class defined in the file at index idx. If the file doesn't define a script class using the class_name syntax, this will return an empty string.
 
-StringName get_file_type(idx: int) const 🔗
+StringName get_file_type(idx: int) const 
 
 Returns the resource type of the file at index idx. This returns a string such as "Resource" or "GDScript", not a file extension such as ".gd".
 
 Returns the name of this directory.
 
-EditorFileSystemDirectory get_parent() 🔗
+EditorFileSystemDirectory get_parent() 
 
 Returns the parent directory for this directory or null if called on a directory at res:// or user://.
 
-String get_path() const 🔗
+String get_path() const 
 
 Returns the path to this directory.
 
-EditorFileSystemDirectory get_subdir(idx: int) 🔗
+EditorFileSystemDirectory get_subdir(idx: int) 
 
 Returns the subdirectory at index idx.
 
-int get_subdir_count() const 🔗
+int get_subdir_count() const 
 
 Returns the number of subdirectories in this directory.
 
@@ -9365,15 +9365,15 @@ _is_active() virtual required const
 
 _query() virtual required const
 
-PackedStringArray _get_file_extensions() virtual required const 🔗
+PackedStringArray _get_file_extensions() virtual required const 
 
 Return the file extensions supported.
 
-bool _is_active() virtual required const 🔗
+bool _is_active() virtual required const 
 
 Return whether this importer is active.
 
-bool _query() virtual required const 🔗
+bool _query() virtual required const 
 
 Query support. Return false if import must not continue.
 
@@ -9415,51 +9415,51 @@ reimport_files(files: PackedStringArray)
 
 update_file(path: String)
 
-filesystem_changed() 🔗
+filesystem_changed() 
 
 Emitted if the filesystem changed.
 
-resources_reimported(resources: PackedStringArray) 🔗
+resources_reimported(resources: PackedStringArray) 
 
 Emitted if a resource is reimported.
 
-resources_reimporting(resources: PackedStringArray) 🔗
+resources_reimporting(resources: PackedStringArray) 
 
 Emitted before a resource is reimported.
 
-resources_reload(resources: PackedStringArray) 🔗
+resources_reload(resources: PackedStringArray) 
 
 Emitted if at least one resource is reloaded when the filesystem is scanned.
 
-script_classes_updated() 🔗
+script_classes_updated() 
 
 Emitted when the list of global script classes gets updated.
 
-sources_changed(exist: bool) 🔗
+sources_changed(exist: bool) 
 
 Emitted if the source of any imported file changed.
 
-String get_file_type(path: String) const 🔗
+String get_file_type(path: String) const 
 
 Returns the resource type of the file, given the full path. This returns a string such as "Resource" or "GDScript", not a file extension such as ".gd".
 
-EditorFileSystemDirectory get_filesystem() 🔗
+EditorFileSystemDirectory get_filesystem() 
 
 Gets the root directory object.
 
-EditorFileSystemDirectory get_filesystem_path(path: String) 🔗
+EditorFileSystemDirectory get_filesystem_path(path: String) 
 
 Returns a view into the filesystem at path.
 
-float get_scanning_progress() const 🔗
+float get_scanning_progress() const 
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
 
-bool is_scanning() const 🔗
+bool is_scanning() const 
 
 Returns true if the filesystem is being scanned.
 
-void reimport_files(files: PackedStringArray) 🔗
+void reimport_files(files: PackedStringArray) 
 
 Reimports a set of files. Call this if these files or their .import files were directly edited by script or an external program.
 
@@ -9469,11 +9469,11 @@ Note: This function blocks until the import is finished. However, the main loop 
 
 Scan the filesystem for changes.
 
-void scan_sources() 🔗
+void scan_sources() 
 
 Check if the source of any imported resource changed.
 
-void update_file(path: String) 🔗
+void update_file(path: String) 
 
 Add a file in an existing directory, or schedule file information to be updated on editor restart. Can be used to update text files saved by an external program.
 
@@ -9537,7 +9537,7 @@ _import(source_file: String, save_path: String, options: Dictionary, platform_va
 
 append_import_external_resource(path: String, custom_options: Dictionary = {}, custom_importer: String = "", generator_parameters: Variant = null)
 
-bool _can_import_threaded() virtual const 🔗
+bool _can_import_threaded() virtual const 
 
 Tells whether this importer can be run in parallel on threads, or, on the contrary, it's only safe for the editor to call it from the main thread, for one file at a time.
 
@@ -9545,55 +9545,55 @@ If this method is not overridden, it will return false by default.
 
 If this importer's implementation is thread-safe and can be run in parallel, override this with true to optimize for concurrency.
 
-int _get_format_version() virtual const 🔗
+int _get_format_version() virtual const 
 
 Gets the format version of this importer. Increment this version when making incompatible changes to the format of the imported resources.
 
-Array[Dictionary] _get_import_options(path: String, preset_index: int) virtual const 🔗
+Array[Dictionary] _get_import_options(path: String, preset_index: int) virtual const 
 
 Gets the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: name, default_value, property_hint (optional), hint_string (optional), usage (optional).
 
-int _get_import_order() virtual const 🔗
+int _get_import_order() virtual const 
 
 Gets the order of this importer to be run when importing resources. Importers with lower import orders will be called first, and higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported. The default import order is 0 unless overridden by a specific importer. See ImportOrder for some predefined values.
 
-String _get_importer_name() virtual const 🔗
+String _get_importer_name() virtual const 
 
 Gets the unique name of the importer.
 
-bool _get_option_visibility(path: String, option_name: StringName, options: Dictionary) virtual const 🔗
+bool _get_option_visibility(path: String, option_name: StringName, options: Dictionary) virtual const 
 
 Gets whether the import option specified by option_name should be visible in the Import dock. The default implementation always returns true, making all options visible. This is mainly useful for hiding options that depend on others if one of them is disabled.
 
-int _get_preset_count() virtual const 🔗
+int _get_preset_count() virtual const 
 
 Gets the number of initial presets defined by the plugin. Use _get_import_options() to get the default options for the preset and _get_preset_name() to get the name of the preset.
 
-String _get_preset_name(preset_index: int) virtual const 🔗
+String _get_preset_name(preset_index: int) virtual const 
 
 Gets the name of the options preset at this index.
 
-float _get_priority() virtual const 🔗
+float _get_priority() virtual const 
 
 Gets the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. The default priority is 1.0.
 
-PackedStringArray _get_recognized_extensions() virtual const 🔗
+PackedStringArray _get_recognized_extensions() virtual const 
 
 Gets the list of file extensions to associate with this loader (case-insensitive). e.g. ["obj"].
 
-String _get_resource_type() virtual const 🔗
+String _get_resource_type() virtual const 
 
 Gets the Godot resource type associated with this loader. e.g. "Mesh" or "Animation".
 
-String _get_save_extension() virtual const 🔗
+String _get_save_extension() virtual const 
 
 Gets the extension used to save this resource in the .godot/imported directory (see ProjectSettings.application/config/use_hidden_project_data_directory).
 
-String _get_visible_name() virtual const 🔗
+String _get_visible_name() virtual const 
 
 Gets the name to display in the import window. You should choose this name as a continuation to "Import as", e.g. "Import as Special Mesh".
 
-Error _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) virtual const 🔗
+Error _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) virtual const 
 
 Imports source_file with the import options specified. Should return @GlobalScope.OK if the import is successful, other values indicate failure.
 
@@ -9603,7 +9603,7 @@ If additional resource files are generated in the resource filesystem (res://), 
 
 This method must be overridden to do the actual importing work. See this class' description for an example of overriding this method.
 
-Error append_import_external_resource(path: String, custom_options: Dictionary = {}, custom_importer: String = "", generator_parameters: Variant = null) 🔗
+Error append_import_external_resource(path: String, custom_options: Dictionary = {}, custom_importer: String = "", generator_parameters: Variant = null) 
 
 This function can only be called during the _import() callback and it allows manually importing resources from it. This is useful when the imported file generates external resources that require importing (as example, images). Custom parameters for the ".import" file can be passed via the custom_options. Additionally, in cases where multiple importers can handle a file, the custom_importer can be specified to force a specific one. This function performs a resource import and returns immediately with a success or error code. generator_parameters defines optional extra metadata which will be stored as generator_parameters in the remap section of the .import file, for example to store a md5 hash of the source data.
 
@@ -9794,35 +9794,35 @@ add_property_editor(property: String, editor: Control, add_to_end: bool = false,
 
 add_property_editor_for_multiple_properties(label: String, properties: PackedStringArray, editor: Control)
 
-bool _can_handle(object: Object) virtual const 🔗
+bool _can_handle(object: Object) virtual const 
 
 Returns true if this object can be handled by this plugin.
 
-void _parse_begin(object: Object) virtual 🔗
+void _parse_begin(object: Object) virtual 
 
 Called to allow adding controls at the beginning of the property list for object.
 
-void _parse_category(object: Object, category: String) virtual 🔗
+void _parse_category(object: Object, category: String) virtual 
 
 Called to allow adding controls at the beginning of a category in the property list for object.
 
-void _parse_end(object: Object) virtual 🔗
+void _parse_end(object: Object) virtual 
 
 Called to allow adding controls at the end of the property list for object.
 
-void _parse_group(object: Object, group: String) virtual 🔗
+void _parse_group(object: Object, group: String) virtual 
 
 Called to allow adding controls at the beginning of a group or a sub-group in the property list for object.
 
-bool _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: BitField[PropertyUsageFlags], wide: bool) virtual 🔗
+bool _parse_property(object: Object, type: Variant.Type, name: String, hint_type: PropertyHint, hint_string: String, usage_flags: BitField[PropertyUsageFlags], wide: bool) virtual 
 
 Called to allow adding property-specific editors to the property list for object. The added editor control must extend EditorProperty. Returning true removes the built-in editor for this property, otherwise allows to insert a custom editor before the built-in one.
 
-void add_custom_control(control: Control) 🔗
+void add_custom_control(control: Control) 
 
 Adds a custom control, which is not necessarily a property editor.
 
-void add_property_editor(property: String, editor: Control, add_to_end: bool = false, label: String = "") 🔗
+void add_property_editor(property: String, editor: Control, add_to_end: bool = false, label: String = "") 
 
 Adds a property editor for an individual property. The editor control must extend EditorProperty.
 
@@ -9830,7 +9830,7 @@ There can be multiple property editors for a property. If add_to_end is true, th
 
 label can be used to choose a custom label for the property editor in the inspector. If left empty, the label is computed from the name of the property instead.
 
-void add_property_editor_for_multiple_properties(label: String, properties: PackedStringArray, editor: Control) 🔗
+void add_property_editor_for_multiple_properties(label: String, properties: PackedStringArray, editor: Control) 
 
 Adds an editor that allows modifying multiple properties. The editor control must extend EditorProperty.
 
@@ -9881,59 +9881,59 @@ get_selected_path() const
 
 instantiate_property_editor(object: Object, type: Variant.Type, path: String, hint: PropertyHint, hint_text: String, usage: int, wide: bool = false) static
 
-edited_object_changed() 🔗
+edited_object_changed() 
 
 Emitted when the object being edited by the inspector has changed.
 
-object_id_selected(id: int) 🔗
+object_id_selected(id: int) 
 
 Emitted when the Edit button of an Object has been pressed in the inspector. This is mainly used in the remote scene tree Inspector.
 
-property_deleted(property: String) 🔗
+property_deleted(property: String) 
 
 Emitted when a property is removed from the inspector.
 
-property_edited(property: String) 🔗
+property_edited(property: String) 
 
 Emitted when a property is edited in the inspector.
 
-property_keyed(property: String, value: Variant, advance: bool) 🔗
+property_keyed(property: String, value: Variant, advance: bool) 
 
 Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
 
-property_selected(property: String) 🔗
+property_selected(property: String) 
 
 Emitted when a property is selected in the inspector.
 
-property_toggled(property: String, checked: bool) 🔗
+property_toggled(property: String, checked: bool) 
 
 Emitted when a boolean property is toggled in the inspector.
 
 Note: This signal is never emitted if the internal autoclear property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
 
-resource_selected(resource: Resource, path: String) 🔗
+resource_selected(resource: Resource, path: String) 
 
 Emitted when a resource is selected in the inspector.
 
-restart_requested() 🔗
+restart_requested() 
 
 Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
 
-void edit(object: Object) 🔗
+void edit(object: Object) 
 
 Shows the properties of the given object in this inspector for editing. To clear the inspector, call this method with null.
 
 Note: If you want to edit an object in the editor's main inspector, use the edit_* methods in EditorInterface instead.
 
-Object get_edited_object() 🔗
+Object get_edited_object() 
 
 Returns the object currently selected in this inspector.
 
-String get_selected_path() const 🔗
+String get_selected_path() const 
 
 Gets the path of the currently selected property.
 
-EditorProperty instantiate_property_editor(object: Object, type: Variant.Type, path: String, hint: PropertyHint, hint_text: String, usage: int, wide: bool = false) static 🔗
+EditorProperty instantiate_property_editor(object: Object, type: Variant.Type, path: String, hint: PropertyHint, hint_text: String, usage: int, wide: bool = false) static 
 
 Creates a property editor that can be used by plugin UI to edit the specified property of an object.
 
@@ -10070,7 +10070,7 @@ set_main_screen_editor(name: String)
 
 set_plugin_enabled(plugin: String, enabled: bool)
 
-bool distraction_free_mode 🔗
+bool distraction_free_mode 
 
 void set_distraction_free_mode(value: bool)
 
@@ -10078,7 +10078,7 @@ bool is_distraction_free_mode_enabled()
 
 If true, enables distraction-free mode which hides side docks to increase the space available for the main view.
 
-bool movie_maker_enabled 🔗
+bool movie_maker_enabled 
 
 void set_movie_maker_enabled(value: bool)
 
@@ -10086,39 +10086,39 @@ bool is_movie_maker_enabled()
 
 If true, the Movie Maker mode is enabled in the editor. See MovieWriter for more information.
 
-Error close_scene() 🔗
+Error close_scene() 
 
 Closes the currently active scene, discarding any pending changes in the process. Returns @GlobalScope.OK on success or @GlobalScope.ERR_DOES_NOT_EXIST if there is no scene to close.
 
-void edit_node(node: Node) 🔗
+void edit_node(node: Node) 
 
 Edits the given Node. The node will be also selected if it's inside the scene tree.
 
-void edit_resource(resource: Resource) 🔗
+void edit_resource(resource: Resource) 
 
 Edits the given Resource. If the resource is a Script you can also edit it with edit_script() to specify the line and column position.
 
-void edit_script(script: Script, line: int = -1, column: int = 0, grab_focus: bool = true) 🔗
+void edit_script(script: Script, line: int = -1, column: int = 0, grab_focus: bool = true) 
 
 Edits the given Script. The line and column on which to open the script can also be specified. The script will be open with the user-configured editor for the script's language which may be an external editor.
 
-Control get_base_control() const 🔗
+Control get_base_control() const 
 
 Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 
 Warning: Removing and freeing this node will render the editor useless and may cause a crash.
 
-EditorCommandPalette get_command_palette() const 🔗
+EditorCommandPalette get_command_palette() const 
 
 Returns the editor's EditorCommandPalette instance.
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-String get_current_directory() const 🔗
+String get_current_directory() const 
 
 Returns the current directory being viewed in the FileSystemDock. If a file is selected, its base directory will be returned using String.get_base_dir() instead.
 
-String get_current_feature_profile() const 🔗
+String get_current_feature_profile() const 
 
 Returns the name of the currently activated feature profile. If the default profile is currently active, an empty string is returned instead.
 
@@ -10126,15 +10126,15 @@ In order to get a reference to the EditorFeatureProfile, you must load the featu
 
 Note: Feature profiles created via the user interface are loaded from the feature_profiles directory, as a file with the .profile extension. The editor configuration folder can be found by using EditorPaths.get_config_dir().
 
-String get_current_path() const 🔗
+String get_current_path() const 
 
 Returns the current path being viewed in the FileSystemDock.
 
-Node get_edited_scene_root() const 🔗
+Node get_edited_scene_root() const 
 
 Returns the edited (current) scene's root Node.
 
-VBoxContainer get_editor_main_screen() const 🔗
+VBoxContainer get_editor_main_screen() const 
 
 Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement EditorPlugin._has_main_screen().
 
@@ -10142,93 +10142,93 @@ Note: This node is a VBoxContainer, which means that if you add a Control child 
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-EditorPaths get_editor_paths() const 🔗
+EditorPaths get_editor_paths() const 
 
 Returns the EditorPaths singleton.
 
-float get_editor_scale() const 🔗
+float get_editor_scale() const 
 
 Returns the actual scale of the editor UI (1.0 being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.
 
 Note: This value is set via the EditorSettings.interface/editor/display_scale and EditorSettings.interface/editor/custom_display_scale settings. The editor must be restarted for changes to be properly applied.
 
-EditorSettings get_editor_settings() const 🔗
+EditorSettings get_editor_settings() const 
 
 Returns the editor's EditorSettings instance.
 
-Theme get_editor_theme() const 🔗
+Theme get_editor_theme() const 
 
 Returns the editor's Theme.
 
 Note: When creating custom editor UI, prefer accessing theme items directly from your GUI nodes using the get_theme_* methods.
 
-EditorToaster get_editor_toaster() const 🔗
+EditorToaster get_editor_toaster() const 
 
 Returns the editor's EditorToaster.
 
-EditorUndoRedoManager get_editor_undo_redo() const 🔗
+EditorUndoRedoManager get_editor_undo_redo() const 
 
 Returns the editor's EditorUndoRedoManager.
 
-SubViewport get_editor_viewport_2d() const 🔗
+SubViewport get_editor_viewport_2d() const 
 
 Returns the 2D editor SubViewport. It does not have a camera. Instead, the view transforms are done directly and can be accessed with Viewport.global_canvas_transform.
 
-SubViewport get_editor_viewport_3d(idx: int = 0) const 🔗
+SubViewport get_editor_viewport_3d(idx: int = 0) const 
 
 Returns the specified 3D editor SubViewport, from 0 to 3. The viewport can be used to access the active editor cameras with Viewport.get_camera_3d().
 
-FileSystemDock get_file_system_dock() const 🔗
+FileSystemDock get_file_system_dock() const 
 
 Returns the editor's FileSystemDock instance.
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-EditorInspector get_inspector() const 🔗
+EditorInspector get_inspector() const 
 
 Returns the editor's EditorInspector instance.
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-Array[Node] get_open_scene_roots() const 🔗
+Array[Node] get_open_scene_roots() const 
 
 Returns an array with references to the root nodes of the currently opened scenes.
 
-PackedStringArray get_open_scenes() const 🔗
+PackedStringArray get_open_scenes() const 
 
 Returns an array with the file paths of the currently opened scenes.
 
-String get_playing_scene() const 🔗
+String get_playing_scene() const 
 
 Returns the name of the scene that is being played. If no scene is currently being played, returns an empty string.
 
-EditorFileSystem get_resource_filesystem() const 🔗
+EditorFileSystem get_resource_filesystem() const 
 
 Returns the editor's EditorFileSystem instance.
 
-EditorResourcePreview get_resource_previewer() const 🔗
+EditorResourcePreview get_resource_previewer() const 
 
 Returns the editor's EditorResourcePreview instance.
 
-ScriptEditor get_script_editor() const 🔗
+ScriptEditor get_script_editor() const 
 
 Returns the editor's ScriptEditor instance.
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-PackedStringArray get_selected_paths() const 🔗
+PackedStringArray get_selected_paths() const 
 
 Returns an array containing the paths of the currently selected files (and directories) in the FileSystemDock.
 
-EditorSelection get_selection() const 🔗
+EditorSelection get_selection() const 
 
 Returns the editor's EditorSelection instance.
 
-void inspect_object(object: Object, for_property: String = "", inspector_only: bool = false) 🔗
+void inspect_object(object: Object, for_property: String = "", inspector_only: bool = false) 
 
 Shows the given property on the given object in the editor's Inspector dock. If inspector_only is true, plugins will not attempt to edit object.
 
-bool is_multi_window_enabled() const 🔗
+bool is_multi_window_enabled() const 
 
 Returns true if multiple window support is enabled in the editor. Multiple window support is enabled if all of these statements are true:
 
@@ -10238,39 +10238,39 @@ EditorSettings.interface/editor/single_window_mode is false.
 
 Viewport.gui_embed_subwindows is false. This is forced to true on platforms that don't support multiple windows such as Web, or when the --single-window command line argument is used.
 
-bool is_playing_scene() const 🔗
+bool is_playing_scene() const 
 
 Returns true if a scene is currently being played, false otherwise. Paused scenes are considered as being played.
 
-bool is_plugin_enabled(plugin: String) const 🔗
+bool is_plugin_enabled(plugin: String) const 
 
 Returns true if the specified plugin is enabled. The plugin name is the same as its directory name.
 
-Array[Texture2D] make_mesh_previews(meshes: Array[Mesh], preview_size: int) 🔗
+Array[Texture2D] make_mesh_previews(meshes: Array[Mesh], preview_size: int) 
 
 Returns mesh previews rendered at the given size as an Array of Texture2Ds.
 
-void mark_scene_as_unsaved() 🔗
+void mark_scene_as_unsaved() 
 
 Marks the current scene tab as unsaved.
 
-void open_scene_from_path(scene_filepath: String, set_inherited: bool = false) 🔗
+void open_scene_from_path(scene_filepath: String, set_inherited: bool = false) 
 
 Opens the scene at the given path. If set_inherited is true, creates a new inherited scene.
 
-void play_current_scene() 🔗
+void play_current_scene() 
 
 Plays the currently active scene.
 
-void play_custom_scene(scene_filepath: String) 🔗
+void play_custom_scene(scene_filepath: String) 
 
 Plays the scene specified by its filepath.
 
-void play_main_scene() 🔗
+void play_main_scene() 
 
 Plays the main scene.
 
-void popup_create_dialog(callback: Callable, base_type: StringName = "", current_type: String = "", dialog_title: String = "", type_blocklist: Array[StringName] = []) 🔗
+void popup_create_dialog(callback: Callable, base_type: StringName = "", current_type: String = "", dialog_title: String = "", type_blocklist: Array[StringName] = []) 
 
 Experimental: This method may be changed or removed in future versions.
 
@@ -10288,71 +10288,71 @@ The type_blocklist contains a list of type names, and the types in the blocklist
 
 Note: Trying to list the base type in the type_blocklist will hide all types derived from the base type from the create dialog.
 
-void popup_dialog(dialog: Window, rect: Rect2i = Rect2i(0, 0, 0, 0)) 🔗
+void popup_dialog(dialog: Window, rect: Rect2i = Rect2i(0, 0, 0, 0)) 
 
 Pops up the dialog in the editor UI with Window.popup_exclusive(). The dialog must have no current parent, otherwise the method fails.
 
 See also Window.set_unparent_when_invisible().
 
-void popup_dialog_centered(dialog: Window, minsize: Vector2i = Vector2i(0, 0)) 🔗
+void popup_dialog_centered(dialog: Window, minsize: Vector2i = Vector2i(0, 0)) 
 
 Pops up the dialog in the editor UI with Window.popup_exclusive_centered(). The dialog must have no current parent, otherwise the method fails.
 
 See also Window.set_unparent_when_invisible().
 
-void popup_dialog_centered_clamped(dialog: Window, minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 🔗
+void popup_dialog_centered_clamped(dialog: Window, minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 
 
 Pops up the dialog in the editor UI with Window.popup_exclusive_centered_clamped(). The dialog must have no current parent, otherwise the method fails.
 
 See also Window.set_unparent_when_invisible().
 
-void popup_dialog_centered_ratio(dialog: Window, ratio: float = 0.8) 🔗
+void popup_dialog_centered_ratio(dialog: Window, ratio: float = 0.8) 
 
 Pops up the dialog in the editor UI with Window.popup_exclusive_centered_ratio(). The dialog must have no current parent, otherwise the method fails.
 
 See also Window.set_unparent_when_invisible().
 
-void popup_method_selector(object: Object, callback: Callable, current_value: String = "") 🔗
+void popup_method_selector(object: Object, callback: Callable, current_value: String = "") 
 
 Pops up an editor dialog for selecting a method from object. The callback must take a single argument of type String which will contain the name of the selected method or be empty if the dialog is canceled. If current_value is provided, the method will be selected automatically in the method list, if it exists.
 
-void popup_node_selector(callback: Callable, valid_types: Array[StringName] = [], current_value: Node = null) 🔗
+void popup_node_selector(callback: Callable, valid_types: Array[StringName] = [], current_value: Node = null) 
 
 Pops up an editor dialog for selecting a Node from the edited scene. The callback must take a single argument of type NodePath. It is called on the selected NodePath or the empty path ^"" if the dialog is canceled. If valid_types is provided, the dialog will only show Nodes that match one of the listed Node types. If current_value is provided, the Node will be automatically selected in the tree, if it exists.
 
 Example: Display the node selection dialog as soon as this node is added to the tree for the first time:
 
-void popup_property_selector(object: Object, callback: Callable, type_filter: PackedInt32Array = PackedInt32Array(), current_value: String = "") 🔗
+void popup_property_selector(object: Object, callback: Callable, type_filter: PackedInt32Array = PackedInt32Array(), current_value: String = "") 
 
 Pops up an editor dialog for selecting properties from object. The callback must take a single argument of type NodePath. It is called on the selected property path (see NodePath.get_as_property_path()) or the empty path ^"" if the dialog is canceled. If type_filter is provided, the dialog will only show properties that match one of the listed Variant.Type values. If current_value is provided, the property will be selected automatically in the property list, if it exists.
 
-void popup_quick_open(callback: Callable, base_types: Array[StringName] = []) 🔗
+void popup_quick_open(callback: Callable, base_types: Array[StringName] = []) 
 
 Pops up an editor dialog for quick selecting a resource file. The callback must take a single argument of type String which will contain the path of the selected resource or be empty if the dialog is canceled. If base_types is provided, the dialog will only show resources that match these types. Only types deriving from Resource are supported.
 
-void reload_scene_from_path(scene_filepath: String) 🔗
+void reload_scene_from_path(scene_filepath: String) 
 
 Reloads the scene at the given path.
 
-void restart_editor(save: bool = true) 🔗
+void restart_editor(save: bool = true) 
 
 Restarts the editor. This closes the editor and then opens the same project. If save is true, the project will be saved before restarting.
 
-void save_all_scenes() 🔗
+void save_all_scenes() 
 
 Saves all opened scenes in the editor.
 
 Saves the currently active scene. Returns either @GlobalScope.OK or @GlobalScope.ERR_CANT_CREATE.
 
-void save_scene_as(path: String, with_preview: bool = true) 🔗
+void save_scene_as(path: String, with_preview: bool = true) 
 
 Saves the currently active scene as a file at path.
 
-void select_file(file: String) 🔗
+void select_file(file: String) 
 
 Selects the file, with the path provided by file, in the FileSystem dock.
 
-void set_current_feature_profile(profile_name: String) 🔗
+void set_current_feature_profile(profile_name: String) 
 
 Selects and activates the specified feature profile with the given profile_name. Set profile_name to an empty string to reset to the default feature profile.
 
@@ -10360,15 +10360,15 @@ A feature profile can be created programmatically using the EditorFeatureProfile
 
 Note: The feature profile that gets activated must be located in the feature_profiles directory, as a file with the .profile extension. If a profile could not be found, an error occurs. The editor configuration folder can be found by using EditorPaths.get_config_dir().
 
-void set_main_screen_editor(name: String) 🔗
+void set_main_screen_editor(name: String) 
 
 Sets the editor's current main screen to the one specified in name. name must match the title of the tab in question exactly (e.g. 2D, 3D, Script, Game, or AssetLib for default tabs).
 
-void set_plugin_enabled(plugin: String, enabled: bool) 🔗
+void set_plugin_enabled(plugin: String, enabled: bool) 
 
 Sets the enabled status of a plugin. The plugin name is the same as its directory name.
 
-void stop_playing_scene() 🔗
+void stop_playing_scene() 
 
 Stops the scene that is currently playing.
 
@@ -10481,15 +10481,15 @@ create_material(name: String, color: Color, billboard: bool = false, on_top: boo
 
 get_material(name: String, gizmo: EditorNode3DGizmo = null)
 
-void _begin_handle_action(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual 🔗
+void _begin_handle_action(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-bool _can_be_hidden() virtual const 🔗
+bool _can_be_hidden() virtual const 
 
 Override this method to define whether the gizmos handled by this plugin can be hidden or not. Returns true if not overridden.
 
-void _commit_handle(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool, restore: Variant, cancel: bool) virtual 🔗
+void _commit_handle(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool, restore: Variant, cancel: bool) virtual 
 
 Override this method to commit a handle being edited (handles must have been previously added by EditorNode3DGizmo.add_handles() during _redraw()). This usually means creating an UndoRedo action for the change, using the current handle value as "do" and the restore argument as "undo".
 
@@ -10499,25 +10499,25 @@ The secondary argument is true when the committed handle is secondary (see Edito
 
 Called for this plugin's active gizmos.
 
-void _commit_subgizmos(gizmo: EditorNode3DGizmo, ids: PackedInt32Array, restores: Array[Transform3D], cancel: bool) virtual 🔗
+void _commit_subgizmos(gizmo: EditorNode3DGizmo, ids: PackedInt32Array, restores: Array[Transform3D], cancel: bool) virtual 
 
 Override this method to commit a group of subgizmos being edited (see _subgizmos_intersect_ray() and _subgizmos_intersect_frustum()). This usually means creating an UndoRedo action for the change, using the current transforms as "do" and the restores transforms as "undo".
 
 If the cancel argument is true, the restores transforms should be directly set, without any UndoRedo action. As with all subgizmo methods, transforms are given in local space respect to the gizmo's Node3D. Called for this plugin's active gizmos.
 
-EditorNode3DGizmo _create_gizmo(for_node_3d: Node3D) virtual const 🔗
+EditorNode3DGizmo _create_gizmo(for_node_3d: Node3D) virtual const 
 
 Override this method to return a custom EditorNode3DGizmo for the 3D nodes of your choice, return null for the rest of nodes. See also _has_gizmo().
 
-String _get_gizmo_name() virtual const 🔗
+String _get_gizmo_name() virtual const 
 
 Override this method to provide the name that will appear in the gizmo visibility menu.
 
-String _get_handle_name(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 🔗
+String _get_handle_name(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 
 
 Override this method to provide gizmo's handle names. The secondary argument is true when the requested handle is secondary (see EditorNode3DGizmo.add_handles() for more information). Called for this plugin's active gizmos.
 
-Variant _get_handle_value(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 🔗
+Variant _get_handle_value(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 
 
 Override this method to return the current value of a handle. This value will be requested at the start of an edit and used as the restore argument in _commit_handle().
 
@@ -10525,33 +10525,33 @@ The secondary argument is true when the requested handle is secondary (see Edito
 
 Called for this plugin's active gizmos.
 
-int _get_priority() virtual const 🔗
+int _get_priority() virtual const 
 
 Override this method to set the gizmo's priority. Gizmos with higher priority will have precedence when processing inputs like handles or subgizmos selection.
 
 All built-in editor gizmos return a priority of -1. If not overridden, this method will return 0, which means custom gizmos will automatically get higher priority than built-in gizmos.
 
-Transform3D _get_subgizmo_transform(gizmo: EditorNode3DGizmo, subgizmo_id: int) virtual const 🔗
+Transform3D _get_subgizmo_transform(gizmo: EditorNode3DGizmo, subgizmo_id: int) virtual const 
 
 Override this method to return the current transform of a subgizmo. As with all subgizmo methods, the transform should be in local space respect to the gizmo's Node3D. This transform will be requested at the start of an edit and used in the restore argument in _commit_subgizmos(). Called for this plugin's active gizmos.
 
-bool _has_gizmo(for_node_3d: Node3D) virtual const 🔗
+bool _has_gizmo(for_node_3d: Node3D) virtual const 
 
 Override this method to define which Node3D nodes have a gizmo from this plugin. Whenever a Node3D node is added to a scene this method is called, if it returns true the node gets a generic EditorNode3DGizmo assigned and is added to this plugin's list of active gizmos.
 
-bool _is_handle_highlighted(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 🔗
+bool _is_handle_highlighted(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool) virtual const 
 
 Override this method to return true whenever to given handle should be highlighted in the editor. The secondary argument is true when the requested handle is secondary (see EditorNode3DGizmo.add_handles() for more information). Called for this plugin's active gizmos.
 
-bool _is_selectable_when_hidden() virtual const 🔗
+bool _is_selectable_when_hidden() virtual const 
 
 Override this method to define whether Node3D with this gizmo should be selectable even when the gizmo is hidden.
 
-void _redraw(gizmo: EditorNode3DGizmo) virtual 🔗
+void _redraw(gizmo: EditorNode3DGizmo) virtual 
 
 Override this method to add all the gizmo elements whenever a gizmo update is requested. It's common to call EditorNode3DGizmo.clear() at the beginning of this method and then add visual elements depending on the node's properties.
 
-void _set_handle(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool, camera: Camera3D, screen_pos: Vector2) virtual 🔗
+void _set_handle(gizmo: EditorNode3DGizmo, handle_id: int, secondary: bool, camera: Camera3D, screen_pos: Vector2) virtual 
 
 Override this method to update the node's properties when the user drags a gizmo handle (previously added with EditorNode3DGizmo.add_handles()). The provided screen_pos is the mouse position in screen coordinates and the camera can be used to convert it to raycasts.
 
@@ -10559,37 +10559,37 @@ The secondary argument is true when the edited handle is secondary (see EditorNo
 
 Called for this plugin's active gizmos.
 
-void _set_subgizmo_transform(gizmo: EditorNode3DGizmo, subgizmo_id: int, transform: Transform3D) virtual 🔗
+void _set_subgizmo_transform(gizmo: EditorNode3DGizmo, subgizmo_id: int, transform: Transform3D) virtual 
 
 Override this method to update the node properties during subgizmo editing (see _subgizmos_intersect_ray() and _subgizmos_intersect_frustum()). The transform is given in the Node3D's local coordinate system. Called for this plugin's active gizmos.
 
-PackedInt32Array _subgizmos_intersect_frustum(gizmo: EditorNode3DGizmo, camera: Camera3D, frustum_planes: Array[Plane]) virtual const 🔗
+PackedInt32Array _subgizmos_intersect_frustum(gizmo: EditorNode3DGizmo, camera: Camera3D, frustum_planes: Array[Plane]) virtual const 
 
 Override this method to allow selecting subgizmos using mouse drag box selection. Given a camera and frustum_planes, this method should return which subgizmos are contained within the frustums. The frustum_planes argument consists of an array with all the Planes that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like _get_subgizmo_transform() or _commit_subgizmos(). Called for this plugin's active gizmos.
 
-int _subgizmos_intersect_ray(gizmo: EditorNode3DGizmo, camera: Camera3D, screen_pos: Vector2) virtual const 🔗
+int _subgizmos_intersect_ray(gizmo: EditorNode3DGizmo, camera: Camera3D, screen_pos: Vector2) virtual const 
 
 Override this method to allow selecting subgizmos using mouse clicks. Given a camera and a screen_pos in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like _get_subgizmo_transform() or _commit_subgizmos(). Called for this plugin's active gizmos.
 
-void add_material(name: String, material: StandardMaterial3D) 🔗
+void add_material(name: String, material: StandardMaterial3D) 
 
 Adds a new material to the internal material list for the plugin. It can then be accessed with get_material(). Should not be overridden.
 
-void create_handle_material(name: String, billboard: bool = false, texture: Texture2D = null) 🔗
+void create_handle_material(name: String, billboard: bool = false, texture: Texture2D = null) 
 
 Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with get_material() and used in EditorNode3DGizmo.add_handles(). Should not be overridden.
 
 You can optionally provide a texture to use instead of the default icon.
 
-void create_icon_material(name: String, texture: Texture2D, on_top: bool = false, color: Color = Color(1, 1, 1, 1)) 🔗
+void create_icon_material(name: String, texture: Texture2D, on_top: bool = false, color: Color = Color(1, 1, 1, 1)) 
 
 Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with get_material() and used in EditorNode3DGizmo.add_unscaled_billboard(). Should not be overridden.
 
-void create_material(name: String, color: Color, billboard: bool = false, on_top: bool = false, use_vertex_color: bool = false) 🔗
+void create_material(name: String, color: Color, billboard: bool = false, on_top: bool = false, use_vertex_color: bool = false) 
 
 Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with get_material() and used in EditorNode3DGizmo.add_mesh() and EditorNode3DGizmo.add_lines(). Should not be overridden.
 
-StandardMaterial3D get_material(name: String, gizmo: EditorNode3DGizmo = null) 🔗
+StandardMaterial3D get_material(name: String, gizmo: EditorNode3DGizmo = null) 
 
 Gets material from the internal list of materials. If an EditorNode3DGizmo is provided, it will try to get the corresponding variant (selected and/or editable).
 
@@ -10658,11 +10658,11 @@ set_hidden(hidden: bool)
 
 set_node_3d(node: Node)
 
-void _begin_handle_action(id: int, secondary: bool) virtual 🔗
+void _begin_handle_action(id: int, secondary: bool) virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void _commit_handle(id: int, secondary: bool, restore: Variant, cancel: bool) virtual 🔗
+void _commit_handle(id: int, secondary: bool, restore: Variant, cancel: bool) virtual 
 
 Override this method to commit a handle being edited (handles must have been previously added by add_handles()). This usually means creating an UndoRedo action for the change, using the current handle value as "do" and the restore argument as "undo".
 
@@ -10670,65 +10670,65 @@ If the cancel argument is true, the restore value should be directly set, withou
 
 The secondary argument is true when the committed handle is secondary (see add_handles() for more information).
 
-void _commit_subgizmos(ids: PackedInt32Array, restores: Array[Transform3D], cancel: bool) virtual 🔗
+void _commit_subgizmos(ids: PackedInt32Array, restores: Array[Transform3D], cancel: bool) virtual 
 
 Override this method to commit a group of subgizmos being edited (see _subgizmos_intersect_ray() and _subgizmos_intersect_frustum()). This usually means creating an UndoRedo action for the change, using the current transforms as "do" and the restores transforms as "undo".
 
 If the cancel argument is true, the restores transforms should be directly set, without any UndoRedo action.
 
-String _get_handle_name(id: int, secondary: bool) virtual const 🔗
+String _get_handle_name(id: int, secondary: bool) virtual const 
 
 Override this method to return the name of an edited handle (handles must have been previously added by add_handles()). Handles can be named for reference to the user when editing.
 
 The secondary argument is true when the requested handle is secondary (see add_handles() for more information).
 
-Variant _get_handle_value(id: int, secondary: bool) virtual const 🔗
+Variant _get_handle_value(id: int, secondary: bool) virtual const 
 
 Override this method to return the current value of a handle. This value will be requested at the start of an edit and used as the restore argument in _commit_handle().
 
 The secondary argument is true when the requested handle is secondary (see add_handles() for more information).
 
-Transform3D _get_subgizmo_transform(id: int) virtual const 🔗
+Transform3D _get_subgizmo_transform(id: int) virtual const 
 
 Override this method to return the current transform of a subgizmo. This transform will be requested at the start of an edit and used as the restore argument in _commit_subgizmos().
 
-bool _is_handle_highlighted(id: int, secondary: bool) virtual const 🔗
+bool _is_handle_highlighted(id: int, secondary: bool) virtual const 
 
 Override this method to return true whenever the given handle should be highlighted in the editor.
 
 The secondary argument is true when the requested handle is secondary (see add_handles() for more information).
 
-void _redraw() virtual 🔗
+void _redraw() virtual 
 
 Override this method to add all the gizmo elements whenever a gizmo update is requested. It's common to call clear() at the beginning of this method and then add visual elements depending on the node's properties.
 
-void _set_handle(id: int, secondary: bool, camera: Camera3D, point: Vector2) virtual 🔗
+void _set_handle(id: int, secondary: bool, camera: Camera3D, point: Vector2) virtual 
 
 Override this method to update the node properties when the user drags a gizmo handle (previously added with add_handles()). The provided point is the mouse position in screen coordinates and the camera can be used to convert it to raycasts.
 
 The secondary argument is true when the edited handle is secondary (see add_handles() for more information).
 
-void _set_subgizmo_transform(id: int, transform: Transform3D) virtual 🔗
+void _set_subgizmo_transform(id: int, transform: Transform3D) virtual 
 
 Override this method to update the node properties during subgizmo editing (see _subgizmos_intersect_ray() and _subgizmos_intersect_frustum()). The transform is given in the Node3D's local coordinate system.
 
-PackedInt32Array _subgizmos_intersect_frustum(camera: Camera3D, frustum: Array[Plane]) virtual const 🔗
+PackedInt32Array _subgizmos_intersect_frustum(camera: Camera3D, frustum: Array[Plane]) virtual const 
 
 Override this method to allow selecting subgizmos using mouse drag box selection. Given a camera and a frustum, this method should return which subgizmos are contained within the frustum. The frustum argument consists of an array with all the Planes that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, which can have any non-negative value and will be used in other virtual methods like _get_subgizmo_transform() or _commit_subgizmos().
 
-int _subgizmos_intersect_ray(camera: Camera3D, point: Vector2) virtual const 🔗
+int _subgizmos_intersect_ray(camera: Camera3D, point: Vector2) virtual const 
 
 Override this method to allow selecting subgizmos using mouse clicks. Given a camera and a point in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like _get_subgizmo_transform() or _commit_subgizmos().
 
-void add_collision_segments(segments: PackedVector3Array) 🔗
+void add_collision_segments(segments: PackedVector3Array) 
 
 Adds the specified segments to the gizmo's collision shape for picking. Call this method during _redraw().
 
-void add_collision_triangles(triangles: TriangleMesh) 🔗
+void add_collision_triangles(triangles: TriangleMesh) 
 
 Adds collision triangles to the gizmo for picking. A TriangleMesh can be generated from a regular Mesh too. Call this method during _redraw().
 
-void add_handles(handles: PackedVector3Array, material: Material, ids: PackedInt32Array, billboard: bool = false, secondary: bool = false) 🔗
+void add_handles(handles: PackedVector3Array, material: Material, ids: PackedInt32Array, billboard: bool = false, secondary: bool = false) 
 
 Adds a list of handles (points) which can be used to edit the properties of the gizmo's Node3D. The ids argument can be used to specify a custom identifier for each handle, if an empty array is passed, the ids will be assigned automatically from the handles argument order.
 
@@ -10736,41 +10736,41 @@ The secondary argument marks the added handles as secondary, meaning they will n
 
 There are virtual methods which will be called upon editing of these handles. Call this method during _redraw().
 
-void add_lines(lines: PackedVector3Array, material: Material, billboard: bool = false, modulate: Color = Color(1, 1, 1, 1)) 🔗
+void add_lines(lines: PackedVector3Array, material: Material, billboard: bool = false, modulate: Color = Color(1, 1, 1, 1)) 
 
 Adds lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this method during _redraw().
 
-void add_mesh(mesh: Mesh, material: Material = null, transform: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), skeleton: SkinReference = null) 🔗
+void add_mesh(mesh: Mesh, material: Material = null, transform: Transform3D = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), skeleton: SkinReference = null) 
 
 Adds a mesh to the gizmo with the specified material, local transform and skeleton. Call this method during _redraw().
 
-void add_unscaled_billboard(material: Material, default_scale: float = 1, modulate: Color = Color(1, 1, 1, 1)) 🔗
+void add_unscaled_billboard(material: Material, default_scale: float = 1, modulate: Color = Color(1, 1, 1, 1)) 
 
 Adds an unscaled billboard for visualization and selection. Call this method during _redraw().
 
 Removes everything in the gizmo including meshes, collisions and handles.
 
-Node3D get_node_3d() const 🔗
+Node3D get_node_3d() const 
 
 Returns the Node3D node associated with this gizmo.
 
-EditorNode3DGizmoPlugin get_plugin() const 🔗
+EditorNode3DGizmoPlugin get_plugin() const 
 
 Returns the EditorNode3DGizmoPlugin that owns this gizmo. It's useful to retrieve materials using EditorNode3DGizmoPlugin.get_material().
 
-PackedInt32Array get_subgizmo_selection() const 🔗
+PackedInt32Array get_subgizmo_selection() const 
 
 Returns a list of the currently selected subgizmos. Can be used to highlight selected elements during _redraw().
 
-bool is_subgizmo_selected(id: int) const 🔗
+bool is_subgizmo_selected(id: int) const 
 
 Returns true if the given subgizmo is currently selected. Can be used to highlight selected elements during _redraw().
 
-void set_hidden(hidden: bool) 🔗
+void set_hidden(hidden: bool) 
 
 Sets the gizmo's hidden state. If true, the gizmo will be hidden. If false, it will be shown.
 
-void set_node_3d(node: Node) 🔗
+void set_node_3d(node: Node) 
 
 Sets the reference Node3D node for the gizmo. node must inherit from Node3D.
 
@@ -10810,33 +10810,33 @@ get_self_contained_file() const
 
 is_self_contained() const
 
-String get_cache_dir() const 🔗
+String get_cache_dir() const 
 
 Returns the absolute path to the user's cache folder. This folder should be used for temporary data that can be removed safely whenever the editor is closed (such as generated resource thumbnails).
 
 Default paths per platform:
 
-String get_config_dir() const 🔗
+String get_config_dir() const 
 
 Returns the absolute path to the user's configuration folder. This folder should be used for persistent user configuration files.
 
 Default paths per platform:
 
-String get_data_dir() const 🔗
+String get_data_dir() const 
 
 Returns the absolute path to the user's data folder. This folder should be used for persistent user data files such as installed export templates.
 
 Default paths per platform:
 
-String get_project_settings_dir() const 🔗
+String get_project_settings_dir() const 
 
 Returns the project-specific editor settings path. Projects all have a unique subdirectory inside the settings path where project-specific editor settings are saved.
 
-String get_self_contained_file() const 🔗
+String get_self_contained_file() const 
 
 Returns the absolute path to the self-contained file that makes the current Godot editor instance be considered as self-contained. Returns an empty string if the current Godot editor instance isn't self-contained. See also is_self_contained().
 
-bool is_self_contained() const 🔗
+bool is_self_contained() const 
 
 Returns true if the editor is marked as self-contained, false otherwise. When self-contained mode is enabled, user configuration, data and cache files are saved in an editor_data/ folder next to the editor binary. This makes portable usage easier and ensures the Godot editor minimizes file writes outside its own folder. Self-contained mode is not available for exported projects.
 
@@ -11037,33 +11037,33 @@ set_input_event_forwarding_always_enabled()
 
 update_overlays() const
 
-main_screen_changed(screen_name: String) 🔗
+main_screen_changed(screen_name: String) 
 
 Emitted when user changes the workspace (2D, 3D, Script, Game, AssetLib). Also works with custom screens defined by plugins.
 
-project_settings_changed() 🔗
+project_settings_changed() 
 
 Deprecated: Use ProjectSettings.settings_changed instead.
 
 Emitted when any project setting has changed.
 
-resource_saved(resource: Resource) 🔗
+resource_saved(resource: Resource) 
 
 Emitted when the given resource was saved on disc. See also scene_saved.
 
-scene_changed(scene_root: Node) 🔗
+scene_changed(scene_root: Node) 
 
 Emitted when the scene is changed in the editor. The argument will return the root node of the scene that has just become active. If this scene is new and empty, the argument will be null.
 
-scene_closed(filepath: String) 🔗
+scene_closed(filepath: String) 
 
 Emitted when user closes a scene. The argument is a file path to the closed scene.
 
-scene_saved(filepath: String) 🔗
+scene_saved(filepath: String) 
 
 Emitted when a scene was saved on disc. The argument is a file path to the saved scene. See also resource_saved.
 
-enum CustomControlContainer: 🔗
+enum CustomControlContainer: 
 
 CustomControlContainer CONTAINER_TOOLBAR = 0
 
@@ -11149,7 +11149,7 @@ DockSlot DOCK_SLOT_MAX = 8
 
 Represents the size of the DockSlot enum.
 
-enum AfterGUIInput: 🔗
+enum AfterGUIInput: 
 
 AfterGUIInput AFTER_GUI_INPUT_PASS = 0
 
@@ -11163,73 +11163,73 @@ AfterGUIInput AFTER_GUI_INPUT_CUSTOM = 2
 
 Pass the InputEvent to other editor plugins except the main Node3D one. This can be used to prevent node selection changes and work with sub-gizmos instead.
 
-void _apply_changes() virtual 🔗
+void _apply_changes() virtual 
 
 This method is called when the editor is about to save the project, switch to another tab, etc. It asks the plugin to apply any pending state changes to ensure consistency.
 
 This is used, for example, in shader editors to let the plugin know that it must apply the shader code being written by the user to the object.
 
-bool _build() virtual 🔗
+bool _build() virtual 
 
 This method is called when the editor is about to run the project. The plugin can then perform required operations before the project runs.
 
 This method must return a boolean. If this method returns false, the project will not run. The run is aborted immediately, so this also prevents all other plugins' _build() methods from running.
 
-void _clear() virtual 🔗
+void _clear() virtual 
 
 Clear all the state and reset the object being edited to zero. This ensures your plugin does not keep editing a currently existing node, or a node from the wrong scene.
 
-void _disable_plugin() virtual 🔗
+void _disable_plugin() virtual 
 
 Called by the engine when the user disables the EditorPlugin in the Plugin tab of the project settings window.
 
-void _edit(object: Object) virtual 🔗
+void _edit(object: Object) virtual 
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
 object can be null if the plugin was editing an object, but there is no longer any selected object handled by this plugin. It can be used to cleanup editing state.
 
-void _enable_plugin() virtual 🔗
+void _enable_plugin() virtual 
 
 Called by the engine when the user enables the EditorPlugin in the Plugin tab of the project settings window.
 
-void _forward_3d_draw_over_viewport(viewport_control: Control) virtual 🔗
+void _forward_3d_draw_over_viewport(viewport_control: Control) virtual 
 
 Called by the engine when the 3D editor's viewport is updated. viewport_control is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling update_overlays().
 
-void _forward_3d_force_draw_over_viewport(viewport_control: Control) virtual 🔗
+void _forward_3d_force_draw_over_viewport(viewport_control: Control) virtual 
 
 This method is the same as _forward_3d_draw_over_viewport(), except it draws on top of everything. Useful when you need an extra layer that shows over anything else.
 
 You need to enable calling of this method by using set_force_draw_over_forwarding_enabled().
 
-int _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) virtual 🔗
+int _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) virtual 
 
 Called when there is a root node in the current edited scene, _handles() is implemented, and an InputEvent happens in the 3D viewport. The return value decides whether the InputEvent is consumed or forwarded to other EditorPlugins. See AfterGUIInput for options.
 
 This method must return AFTER_GUI_INPUT_PASS in order to forward the InputEvent to other Editor classes.
 
-void _forward_canvas_draw_over_viewport(viewport_control: Control) virtual 🔗
+void _forward_canvas_draw_over_viewport(viewport_control: Control) virtual 
 
 Called by the engine when the 2D editor's viewport is updated. viewport_control is an overlay on top of the viewport and it can be used for drawing. You can update the viewport manually by calling update_overlays().
 
-void _forward_canvas_force_draw_over_viewport(viewport_control: Control) virtual 🔗
+void _forward_canvas_force_draw_over_viewport(viewport_control: Control) virtual 
 
 This method is the same as _forward_canvas_draw_over_viewport(), except it draws on top of everything. Useful when you need an extra layer that shows over anything else.
 
 You need to enable calling of this method by using set_force_draw_over_forwarding_enabled().
 
-bool _forward_canvas_gui_input(event: InputEvent) virtual 🔗
+bool _forward_canvas_gui_input(event: InputEvent) virtual 
 
 Called when there is a root node in the current edited scene, _handles() is implemented, and an InputEvent happens in the 2D viewport. If this method returns true, event is intercepted by this EditorPlugin, otherwise event is forwarded to other Editor classes.
 
 This method must return false in order to forward the InputEvent to other Editor classes.
 
-PackedStringArray _get_breakpoints() virtual const 🔗
+PackedStringArray _get_breakpoints() virtual const 
 
 This is for editors that edit script-based objects. You can return a list of breakpoints in the format (script:line), for example: res://path_to_script.gd:25.
 
-Texture2D _get_plugin_icon() virtual const 🔗
+Texture2D _get_plugin_icon() virtual const 
 
 Override this method in your plugin to return a Texture2D in order to give it an icon.
 
@@ -11237,13 +11237,13 @@ For main screen plugins, this appears at the top of the screen, to the right of 
 
 Ideally, the plugin icon should be white with a transparent background and 16×16 pixels in size.
 
-String _get_plugin_name() virtual const 🔗
+String _get_plugin_name() virtual const 
 
 Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.
 
 For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", "Game", and "AssetLib" buttons.
 
-Dictionary _get_state() virtual const 🔗
+Dictionary _get_state() virtual const 
 
 Override this method to provide a state data you want to be saved, like view position, grid settings, folding, etc. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns). This data is automatically saved for each scene in an editstate file in the editor metadata folder. If you want to store global (scene-independent) editor data for your plugin, you can use _get_window_layout() instead.
 
@@ -11253,7 +11253,7 @@ Note: This method should not be used to save important settings that should pers
 
 Note: You must implement _get_plugin_name() for the state to be stored and restored correctly.
 
-String _get_unsaved_status(for_scene: String) virtual const 🔗
+String _get_unsaved_status(for_scene: String) virtual const 
 
 Override this method to provide a custom message that lists unsaved changes. The editor will call this method when exiting or when closing a scene, and display the returned string in a confirmation dialog. Return empty string if the plugin has no unsaved changes.
 
@@ -11263,19 +11263,19 @@ If the user confirms saving, _save_external_data() will be called, before closin
 
 If the plugin has no scene-specific changes, you can ignore the calls when closing scenes:
 
-void _get_window_layout(configuration: ConfigFile) virtual 🔗
+void _get_window_layout(configuration: ConfigFile) virtual 
 
 Override this method to provide the GUI layout of the plugin or any other data you want to be stored. This is used to save the project's editor layout when queue_save_layout() is called or the editor layout was changed (for example changing the position of a dock). The data is stored in the editor_layout.cfg file in the editor metadata directory.
 
 Use _set_window_layout() to restore your saved layout.
 
-bool _handles(object: Object) virtual const 🔗
+bool _handles(object: Object) virtual const 
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions _edit() and _make_visible() called when the editor requests them. If you have declared the methods _forward_canvas_gui_input() and _forward_3d_gui_input() these will be called too.
 
 Note: Each plugin should handle only one type of objects at a time. If a plugin handles more types of objects and they are edited at the same time, it will result in errors.
 
-bool _has_main_screen() virtual const 🔗
+bool _has_main_screen() virtual const 
 
 Returns true if this is a main screen editor plugin (it goes in the workspace selector together with 2D, 3D, Script, Game, and AssetLib).
 
@@ -11283,43 +11283,43 @@ When the plugin's workspace is selected, other main screen plugins will be hidde
 
 Use _get_plugin_name() and _get_plugin_icon() to customize the plugin button's appearance.
 
-void _make_visible(visible: bool) virtual 🔗
+void _make_visible(visible: bool) virtual 
 
 This function will be called when the editor is requested to become visible. It is used for plugins that edit a specific object type.
 
 Remember that you have to manage the visibility of all your editor controls manually.
 
-void _save_external_data() virtual 🔗
+void _save_external_data() virtual 
 
 This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
-void _set_state(state: Dictionary) virtual 🔗
+void _set_state(state: Dictionary) virtual 
 
 Restore the state saved by _get_state(). This method is called when the current scene tab is changed in the editor.
 
 Note: Your plugin must implement _get_plugin_name(), otherwise it will not be recognized and this method will not be called.
 
-void _set_window_layout(configuration: ConfigFile) virtual 🔗
+void _set_window_layout(configuration: ConfigFile) virtual 
 
 Restore the plugin GUI layout and data saved by _get_window_layout(). This method is called for every plugin on editor startup. Use the provided configuration file to read your saved data.
 
-void add_autoload_singleton(name: String, path: String) 🔗
+void add_autoload_singleton(name: String, path: String) 
 
 Adds a script at path to the Autoload list as name.
 
-void add_context_menu_plugin(slot: ContextMenuSlot, plugin: EditorContextMenuPlugin) 🔗
+void add_context_menu_plugin(slot: ContextMenuSlot, plugin: EditorContextMenuPlugin) 
 
 Adds a plugin to the context menu. slot is the context menu where the plugin will be added.
 
 Note: A plugin instance can belong only to a single context menu slot.
 
-Button add_control_to_bottom_panel(control: Control, title: String, shortcut: Shortcut = null) 🔗
+Button add_control_to_bottom_panel(control: Control, title: String, shortcut: Shortcut = null) 
 
 Adds a control to the bottom panel (together with Output, Debug, Animation, etc.). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with remove_control_from_bottom_panel() and free it with Node.queue_free().
 
 Optionally, you can specify a shortcut parameter. When pressed, this shortcut will toggle the bottom panel's visibility. See the default editor bottom panel shortcuts in the Editor Settings for inspiration. Per convention, they all use Alt modifier.
 
-void add_control_to_container(container: CustomControlContainer, control: Control) 🔗
+void add_control_to_container(container: CustomControlContainer, control: Control) 
 
 Adds a custom control to a container in the editor UI.
 
@@ -11327,7 +11327,7 @@ Please remember that you have to manage the visibility of your custom controls y
 
 When your plugin is deactivated, make sure to remove your custom control with remove_control_from_container() and free it with Node.queue_free().
 
-void add_control_to_dock(slot: DockSlot, control: Control, shortcut: Shortcut = null) 🔗
+void add_control_to_dock(slot: DockSlot, control: Control, shortcut: Shortcut = null) 
 
 Adds the control to a specific dock slot.
 
@@ -11337,7 +11337,7 @@ When your plugin is deactivated, make sure to remove your custom control with re
 
 Optionally, you can specify a shortcut parameter. When pressed, this shortcut will open and focus the dock.
 
-void add_custom_type(type: String, base: String, script: Script, icon: Texture2D) 🔗
+void add_custom_type(type: String, base: String, script: Script, icon: Texture2D) 
 
 Adds a custom type, which will appear in the list of nodes or resources.
 
@@ -11351,21 +11351,21 @@ During run-time, this will be a simple object with a script so this function doe
 
 Note: Custom types added this way are not true classes. They are just a helper to create a node with specific script.
 
-void add_debugger_plugin(script: EditorDebuggerPlugin) 🔗
+void add_debugger_plugin(script: EditorDebuggerPlugin) 
 
 Adds a Script as debugger plugin to the Debugger. The script must extend EditorDebuggerPlugin.
 
-void add_export_platform(platform: EditorExportPlatform) 🔗
+void add_export_platform(platform: EditorExportPlatform) 
 
 Registers a new EditorExportPlatform. Export platforms provides functionality of exporting to the specific platform.
 
-void add_export_plugin(plugin: EditorExportPlugin) 🔗
+void add_export_plugin(plugin: EditorExportPlugin) 
 
 Registers a new EditorExportPlugin. Export plugins are used to perform tasks when the project is being exported.
 
 See add_inspector_plugin() for an example of how to register a plugin.
 
-void add_import_plugin(importer: EditorImportPlugin, first_priority: bool = false) 🔗
+void add_import_plugin(importer: EditorImportPlugin, first_priority: bool = false) 
 
 Registers a new EditorImportPlugin. Import plugins are used to import custom and unsupported assets as a custom Resource type.
 
@@ -11375,69 +11375,69 @@ Note: If you want to import custom 3D asset formats use add_scene_format_importe
 
 See add_inspector_plugin() for an example of how to register a plugin.
 
-void add_inspector_plugin(plugin: EditorInspectorPlugin) 🔗
+void add_inspector_plugin(plugin: EditorInspectorPlugin) 
 
 Registers a new EditorInspectorPlugin. Inspector plugins are used to extend EditorInspector and provide custom configuration tools for your object's properties.
 
 Note: Always use remove_inspector_plugin() to remove the registered EditorInspectorPlugin when your EditorPlugin is disabled to prevent leaks and an unexpected behavior.
 
-void add_node_3d_gizmo_plugin(plugin: EditorNode3DGizmoPlugin) 🔗
+void add_node_3d_gizmo_plugin(plugin: EditorNode3DGizmoPlugin) 
 
 Registers a new EditorNode3DGizmoPlugin. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a Node3D.
 
 See add_inspector_plugin() for an example of how to register a plugin.
 
-void add_resource_conversion_plugin(plugin: EditorResourceConversionPlugin) 🔗
+void add_resource_conversion_plugin(plugin: EditorResourceConversionPlugin) 
 
 Registers a new EditorResourceConversionPlugin. Resource conversion plugins are used to add custom resource converters to the editor inspector.
 
 See EditorResourceConversionPlugin for an example of how to create a resource conversion plugin.
 
-void add_scene_format_importer_plugin(scene_format_importer: EditorSceneFormatImporter, first_priority: bool = false) 🔗
+void add_scene_format_importer_plugin(scene_format_importer: EditorSceneFormatImporter, first_priority: bool = false) 
 
 Registers a new EditorSceneFormatImporter. Scene importers are used to import custom 3D asset formats as scenes.
 
 If first_priority is true, the new import plugin is inserted first in the list and takes precedence over pre-existing plugins.
 
-void add_scene_post_import_plugin(scene_import_plugin: EditorScenePostImportPlugin, first_priority: bool = false) 🔗
+void add_scene_post_import_plugin(scene_import_plugin: EditorScenePostImportPlugin, first_priority: bool = false) 
 
 Add an EditorScenePostImportPlugin. These plugins allow customizing the import process of 3D assets by adding new options to the import dialogs.
 
 If first_priority is true, the new import plugin is inserted first in the list and takes precedence over pre-existing plugins.
 
-void add_tool_menu_item(name: String, callable: Callable) 🔗
+void add_tool_menu_item(name: String, callable: Callable) 
 
 Adds a custom menu item to Project > Tools named name. When clicked, the provided callable will be called.
 
-void add_tool_submenu_item(name: String, submenu: PopupMenu) 🔗
+void add_tool_submenu_item(name: String, submenu: PopupMenu) 
 
 Adds a custom PopupMenu submenu under Project > Tools > name. Use remove_tool_menu_item() on plugin clean up to remove the menu.
 
-void add_translation_parser_plugin(parser: EditorTranslationParserPlugin) 🔗
+void add_translation_parser_plugin(parser: EditorTranslationParserPlugin) 
 
 Registers a custom translation parser plugin for extracting translatable strings from custom files.
 
-void add_undo_redo_inspector_hook_callback(callable: Callable) 🔗
+void add_undo_redo_inspector_hook_callback(callable: Callable) 
 
 Hooks a callback into the undo/redo action creation when a property is modified in the inspector. This allows, for example, to save other properties that may be lost when a given property is modified.
 
 The callback should have 4 arguments: Object undo_redo, Object modified_object, String property and Variant new_value. They are, respectively, the UndoRedo object used by the inspector, the currently modified object, the name of the modified property and the new value the property is about to take.
 
-EditorInterface get_editor_interface() 🔗
+EditorInterface get_editor_interface() 
 
 Deprecated: EditorInterface is a global singleton and can be accessed directly by its name.
 
 Returns the EditorInterface singleton instance.
 
-PopupMenu get_export_as_menu() 🔗
+PopupMenu get_export_as_menu() 
 
 Returns the PopupMenu under Scene > Export As....
 
-String get_plugin_version() const 🔗
+String get_plugin_version() const 
 
 Provide the version of the plugin declared in the plugin.cfg config file.
 
-ScriptCreateDialog get_script_create_dialog() 🔗
+ScriptCreateDialog get_script_create_dialog() 
 
 Gets the Editor's dialog used for making scripts.
 
@@ -11445,107 +11445,107 @@ Note: Users can configure it before use.
 
 Warning: Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
-EditorUndoRedoManager get_undo_redo() 🔗
+EditorUndoRedoManager get_undo_redo() 
 
 Gets the undo/redo object. Most actions in the editor can be undoable, so use this object to make sure this happens when it's worth it.
 
-void hide_bottom_panel() 🔗
+void hide_bottom_panel() 
 
 Minimizes the bottom panel.
 
-void make_bottom_panel_item_visible(item: Control) 🔗
+void make_bottom_panel_item_visible(item: Control) 
 
 Makes a specific item in the bottom panel visible.
 
-void queue_save_layout() 🔗
+void queue_save_layout() 
 
 Queue save the project's editor layout.
 
-void remove_autoload_singleton(name: String) 🔗
+void remove_autoload_singleton(name: String) 
 
 Removes an Autoload name from the list.
 
-void remove_context_menu_plugin(plugin: EditorContextMenuPlugin) 🔗
+void remove_context_menu_plugin(plugin: EditorContextMenuPlugin) 
 
 Removes the specified context menu plugin.
 
-void remove_control_from_bottom_panel(control: Control) 🔗
+void remove_control_from_bottom_panel(control: Control) 
 
 Removes the control from the bottom panel. You have to manually Node.queue_free() the control.
 
-void remove_control_from_container(container: CustomControlContainer, control: Control) 🔗
+void remove_control_from_container(container: CustomControlContainer, control: Control) 
 
 Removes the control from the specified container. You have to manually Node.queue_free() the control.
 
-void remove_control_from_docks(control: Control) 🔗
+void remove_control_from_docks(control: Control) 
 
 Removes the control from the dock. You have to manually Node.queue_free() the control.
 
-void remove_custom_type(type: String) 🔗
+void remove_custom_type(type: String) 
 
 Removes a custom type added by add_custom_type().
 
-void remove_debugger_plugin(script: EditorDebuggerPlugin) 🔗
+void remove_debugger_plugin(script: EditorDebuggerPlugin) 
 
 Removes the debugger plugin with given script from the Debugger.
 
-void remove_export_platform(platform: EditorExportPlatform) 🔗
+void remove_export_platform(platform: EditorExportPlatform) 
 
 Removes an export platform registered by add_export_platform().
 
-void remove_export_plugin(plugin: EditorExportPlugin) 🔗
+void remove_export_plugin(plugin: EditorExportPlugin) 
 
 Removes an export plugin registered by add_export_plugin().
 
-void remove_import_plugin(importer: EditorImportPlugin) 🔗
+void remove_import_plugin(importer: EditorImportPlugin) 
 
 Removes an import plugin registered by add_import_plugin().
 
-void remove_inspector_plugin(plugin: EditorInspectorPlugin) 🔗
+void remove_inspector_plugin(plugin: EditorInspectorPlugin) 
 
 Removes an inspector plugin registered by add_inspector_plugin().
 
-void remove_node_3d_gizmo_plugin(plugin: EditorNode3DGizmoPlugin) 🔗
+void remove_node_3d_gizmo_plugin(plugin: EditorNode3DGizmoPlugin) 
 
 Removes a gizmo plugin registered by add_node_3d_gizmo_plugin().
 
-void remove_resource_conversion_plugin(plugin: EditorResourceConversionPlugin) 🔗
+void remove_resource_conversion_plugin(plugin: EditorResourceConversionPlugin) 
 
 Removes a resource conversion plugin registered by add_resource_conversion_plugin().
 
-void remove_scene_format_importer_plugin(scene_format_importer: EditorSceneFormatImporter) 🔗
+void remove_scene_format_importer_plugin(scene_format_importer: EditorSceneFormatImporter) 
 
 Removes a scene format importer registered by add_scene_format_importer_plugin().
 
-void remove_scene_post_import_plugin(scene_import_plugin: EditorScenePostImportPlugin) 🔗
+void remove_scene_post_import_plugin(scene_import_plugin: EditorScenePostImportPlugin) 
 
 Remove the EditorScenePostImportPlugin, added with add_scene_post_import_plugin().
 
-void remove_tool_menu_item(name: String) 🔗
+void remove_tool_menu_item(name: String) 
 
 Removes a menu name from Project > Tools.
 
-void remove_translation_parser_plugin(parser: EditorTranslationParserPlugin) 🔗
+void remove_translation_parser_plugin(parser: EditorTranslationParserPlugin) 
 
 Removes a custom translation parser plugin registered by add_translation_parser_plugin().
 
-void remove_undo_redo_inspector_hook_callback(callable: Callable) 🔗
+void remove_undo_redo_inspector_hook_callback(callable: Callable) 
 
 Removes a callback previously added by add_undo_redo_inspector_hook_callback().
 
-void set_dock_tab_icon(control: Control, icon: Texture2D) 🔗
+void set_dock_tab_icon(control: Control, icon: Texture2D) 
 
 Sets the tab icon for the given control in a dock slot. Setting to null removes the icon.
 
-void set_force_draw_over_forwarding_enabled() 🔗
+void set_force_draw_over_forwarding_enabled() 
 
 Enables calling of _forward_canvas_force_draw_over_viewport() for the 2D editor and _forward_3d_force_draw_over_viewport() for the 3D editor when their viewports are updated. You need to call this method only once and it will work permanently for this plugin.
 
-void set_input_event_forwarding_always_enabled() 🔗
+void set_input_event_forwarding_always_enabled() 
 
 Use this method if you always want to receive inputs from 3D view screen inside _forward_3d_gui_input(). It might be especially usable if your plugin will want to use raycast in the scene.
 
-int update_overlays() const 🔗
+int update_overlays() const 
 
 Updates the overlays of the 2D and 3D editor viewport. Causes methods _forward_canvas_draw_over_viewport(), _forward_canvas_force_draw_over_viewport(), _forward_3d_draw_over_viewport() and _forward_3d_force_draw_over_viewport() to be called.
 
@@ -11645,79 +11645,79 @@ set_label_reference(control: Control)
 
 set_object_and_property(object: Object, property: StringName)
 
-multiple_properties_changed(properties: PackedStringArray, value: Array) 🔗
+multiple_properties_changed(properties: PackedStringArray, value: Array) 
 
 Emit it if you want multiple properties modified at the same time. Do not use if added via EditorInspectorPlugin._parse_property().
 
-object_id_selected(property: StringName, id: int) 🔗
+object_id_selected(property: StringName, id: int) 
 
 Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
-property_can_revert_changed(property: StringName, can_revert: bool) 🔗
+property_can_revert_changed(property: StringName, can_revert: bool) 
 
 Emitted when the revertability (i.e., whether it has a non-default value and thus is displayed with a revert icon) of a property has changed.
 
-property_changed(property: StringName, value: Variant, field: StringName, changing: bool) 🔗
+property_changed(property: StringName, value: Variant, field: StringName, changing: bool) 
 
 Do not emit this manually, use the emit_changed() method instead.
 
-property_checked(property: StringName, checked: bool) 🔗
+property_checked(property: StringName, checked: bool) 
 
 Emitted when a property was checked. Used internally.
 
-property_deleted(property: StringName) 🔗
+property_deleted(property: StringName) 
 
 Emitted when a property was deleted. Used internally.
 
-property_favorited(property: StringName, favorited: bool) 🔗
+property_favorited(property: StringName, favorited: bool) 
 
 Emit it if you want to mark a property as favorited, making it appear at the top of the inspector.
 
-property_keyed(property: StringName) 🔗
+property_keyed(property: StringName) 
 
 Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
-property_keyed_with_value(property: StringName, value: Variant) 🔗
+property_keyed_with_value(property: StringName, value: Variant) 
 
 Emit it if you want to key a property with a single value.
 
-property_overridden() 🔗
+property_overridden() 
 
 Emitted when a setting override for the current project is requested.
 
-property_pinned(property: StringName, pinned: bool) 🔗
+property_pinned(property: StringName, pinned: bool) 
 
 Emit it if you want to mark (or unmark) the value of a property for being saved regardless of being equal to the default value.
 
 The default value is the one the property will get when the node is just instantiated and can come from an ancestor scene in the inheritance/instantiation chain, a script or a builtin class.
 
-resource_selected(path: String, resource: Resource) 🔗
+resource_selected(path: String, resource: Resource) 
 
 If you want a sub-resource to be edited, emit this signal with the resource.
 
-selected(path: String, focusable_idx: int) 🔗
+selected(path: String, focusable_idx: int) 
 
 Emitted when selected. Used internally.
 
-bool checkable = false 🔗
+bool checkable = false 
 
 void set_checkable(value: bool)
 
 Used by the inspector, set to true when the property is checkable.
 
-bool checked = false 🔗
+bool checked = false 
 
 void set_checked(value: bool)
 
 Used by the inspector, set to true when the property is checked.
 
-bool deletable = false 🔗
+bool deletable = false 
 
 void set_deletable(value: bool)
 
 Used by the inspector, set to true when the property can be deleted by the user.
 
-bool draw_background = true 🔗
+bool draw_background = true 
 
 void set_draw_background(value: bool)
 
@@ -11725,13 +11725,13 @@ bool is_draw_background()
 
 Used by the inspector, set to true when the property background is drawn.
 
-bool draw_label = true 🔗
+bool draw_label = true 
 
 void set_draw_label(value: bool)
 
 Used by the inspector, set to true when the property label is drawn.
 
-bool draw_warning = false 🔗
+bool draw_warning = false 
 
 void set_draw_warning(value: bool)
 
@@ -11739,7 +11739,7 @@ bool is_draw_warning()
 
 Used by the inspector, set to true when the property is drawn with the editor theme's warning color. This is used for editable children's properties.
 
-bool keying = false 🔗
+bool keying = false 
 
 void set_keying(value: bool)
 
@@ -11749,7 +11749,7 @@ void set_label(value: String)
 
 Set this property to change the label (if you want to show one).
 
-float name_split_ratio = 0.5 🔗
+float name_split_ratio = 0.5 
 
 void set_name_split_ratio(value: float)
 
@@ -11757,19 +11757,19 @@ float get_name_split_ratio()
 
 Space distribution ratio between the label and the editing field.
 
-bool read_only = false 🔗
+bool read_only = false 
 
 void set_read_only(value: bool)
 
 Used by the inspector, set to true when the property is read-only.
 
-bool selectable = true 🔗
+bool selectable = true 
 
 void set_selectable(value: bool)
 
 Used by the inspector, set to true when the property is selectable.
 
-bool use_folding = false 🔗
+bool use_folding = false 
 
 void set_use_folding(value: bool)
 
@@ -11777,57 +11777,57 @@ bool is_using_folding()
 
 Used by the inspector, set to true when the property is using folding.
 
-void _set_read_only(read_only: bool) virtual 🔗
+void _set_read_only(read_only: bool) virtual 
 
 Called when the read-only status of the property is changed. It may be used to change custom controls into a read-only or modifiable state.
 
-void _update_property() virtual 🔗
+void _update_property() virtual 
 
 When this virtual function is called, you must update your editor.
 
-void add_focusable(control: Control) 🔗
+void add_focusable(control: Control) 
 
 If any of the controls added can gain keyboard focus, add it here. This ensures that focus will be restored if the inspector is refreshed.
 
 Draw property as not selected. Used by the inspector.
 
-void emit_changed(property: StringName, value: Variant, field: StringName = &"", changing: bool = false) 🔗
+void emit_changed(property: StringName, value: Variant, field: StringName = &"", changing: bool = false) 
 
 If one or several properties have changed, this must be called. field is used in case your editor can modify fields separately (as an example, Vector3.x). The changing argument avoids the editor requesting this property to be refreshed (leave as false if unsure).
 
-Object get_edited_object() 🔗
+Object get_edited_object() 
 
 Returns the edited object.
 
 Note: This method could return null if the editor has not yet been associated with a property. However, in _update_property() and _set_read_only(), this value is guaranteed to be non-null.
 
-StringName get_edited_property() const 🔗
+StringName get_edited_property() const 
 
 Returns the edited property. If your editor is for a single property (added via EditorInspectorPlugin._parse_property()), then this will return the property.
 
 Note: This method could return null if the editor has not yet been associated with a property. However, in _update_property() and _set_read_only(), this value is guaranteed to be non-null.
 
-bool is_selected() const 🔗
+bool is_selected() const 
 
 Returns true if property is drawn as selected. Used by the inspector.
 
-void select(focusable: int = -1) 🔗
+void select(focusable: int = -1) 
 
 Draw property as selected. Used by the inspector.
 
-void set_bottom_editor(editor: Control) 🔗
+void set_bottom_editor(editor: Control) 
 
 Puts the editor control below the property label. The control must be previously added using Node.add_child().
 
-void set_label_reference(control: Control) 🔗
+void set_label_reference(control: Control) 
 
 Used by the inspector, set to a control that will be used as a reference to calculate the size of the label.
 
-void set_object_and_property(object: Object, property: StringName) 🔗
+void set_object_and_property(object: Object, property: StringName) 
 
 Assigns object and property to edit.
 
-void update_property() 🔗
+void update_property() 
 
 Forces a refresh of the property display.
 
@@ -11862,15 +11862,15 @@ _converts_to() virtual const
 
 _handles(resource: Resource) virtual const
 
-Resource _convert(resource: Resource) virtual const 🔗
+Resource _convert(resource: Resource) virtual const 
 
 Takes an input Resource and converts it to the type given in _converts_to(). The returned Resource is the result of the conversion, and the input Resource remains unchanged.
 
-String _converts_to() virtual const 🔗
+String _converts_to() virtual const 
 
 Returns the class name of the target type of Resource that this plugin converts source resources to.
 
-bool _handles(resource: Resource) virtual const 🔗
+bool _handles(resource: Resource) virtual const 
 
 Called to determine whether a particular Resource can be converted to the target resource type by this plugin.
 
@@ -11928,15 +11928,15 @@ get_allowed_types() const
 
 set_toggle_pressed(pressed: bool)
 
-resource_changed(resource: Resource) 🔗
+resource_changed(resource: Resource) 
 
 Emitted when the value of the edited resource was changed.
 
-resource_selected(resource: Resource, inspect: bool) 🔗
+resource_selected(resource: Resource, inspect: bool) 
 
 Emitted when the resource value was set and user clicked to edit it. When inspect is true, the signal was caused by the context menu "Edit" or "Inspect" option.
 
-String base_type = "" 🔗
+String base_type = "" 
 
 void set_base_type(value: String)
 
@@ -11944,13 +11944,13 @@ String get_base_type()
 
 The base type of allowed resource types. Can be a comma-separated list of several options.
 
-bool editable = true 🔗
+bool editable = true 
 
 void set_editable(value: bool)
 
 If true, the value can be selected and edited.
 
-Resource edited_resource 🔗
+Resource edited_resource 
 
 void set_edited_resource(value: Resource)
 
@@ -11958,7 +11958,7 @@ Resource get_edited_resource()
 
 The edited resource value.
 
-bool toggle_mode = false 🔗
+bool toggle_mode = false 
 
 void set_toggle_mode(value: bool)
 
@@ -11966,21 +11966,21 @@ bool is_toggle_mode()
 
 If true, the main button with the resource preview works in the toggle mode. Use set_toggle_pressed() to manually set the state.
 
-bool _handle_menu_selected(id: int) virtual 🔗
+bool _handle_menu_selected(id: int) virtual 
 
 This virtual method can be implemented to handle context menu items not handled by default. See _set_create_options().
 
-void _set_create_options(menu_node: Object) virtual 🔗
+void _set_create_options(menu_node: Object) virtual 
 
 This virtual method is called when updating the context menu of EditorResourcePicker. Implement this method to override the "New ..." items with your own options. menu_node is a reference to the PopupMenu node.
 
 Note: Implement _handle_menu_selected() to handle these custom items.
 
-PackedStringArray get_allowed_types() const 🔗
+PackedStringArray get_allowed_types() const 
 
 Returns a list of all allowed types and subtypes corresponding to the base_type. If the base_type is empty, an empty list is returned.
 
-void set_toggle_pressed(pressed: bool) 🔗
+void set_toggle_pressed(pressed: bool) 
 
 Sets the toggle mode state for the main button. Works only if toggle_mode is set to true.
 
@@ -12015,13 +12015,13 @@ _generate_small_preview_automatically() virtual const
 
 _handles(type: String) virtual const
 
-bool _can_generate_small_preview() virtual const 🔗
+bool _can_generate_small_preview() virtual const 
 
 If this function returns true, the generator will call _generate() or _generate_from_path() for small previews as well.
 
 By default, it returns false.
 
-Texture2D _generate(resource: Resource, size: Vector2i, metadata: Dictionary) virtual const 🔗
+Texture2D _generate(resource: Resource, size: Vector2i, metadata: Dictionary) virtual const 
 
 Generate a preview from a given resource with the specified size. This must always be implemented.
 
@@ -12031,7 +12031,7 @@ Care must be taken because this function is always called from a thread (not the
 
 metadata dictionary can be modified to store file-specific metadata that can be used in EditorResourceTooltipPlugin._make_tooltip_for_path() (like image size, sample length etc.).
 
-Texture2D _generate_from_path(path: String, size: Vector2i, metadata: Dictionary) virtual const 🔗
+Texture2D _generate_from_path(path: String, size: Vector2i, metadata: Dictionary) virtual const 
 
 Generate a preview directly from a path with the specified size. Implementing this is optional, as default code will load and call _generate().
 
@@ -12041,13 +12041,13 @@ Care must be taken because this function is always called from a thread (not the
 
 metadata dictionary can be modified to store file-specific metadata that can be used in EditorResourceTooltipPlugin._make_tooltip_for_path() (like image size, sample length etc.).
 
-bool _generate_small_preview_automatically() virtual const 🔗
+bool _generate_small_preview_automatically() virtual const 
 
 If this function returns true, the generator will automatically generate the small previews from the normal preview texture generated by the methods _generate() or _generate_from_path().
 
 By default, it returns false.
 
-bool _handles(type: String) virtual const 🔗
+bool _handles(type: String) virtual const 
 
 Returns true if your generator supports the resource of type type.
 
@@ -12085,31 +12085,31 @@ queue_resource_preview(path: String, receiver: Object, receiver_func: StringName
 
 remove_preview_generator(generator: EditorResourcePreviewGenerator)
 
-preview_invalidated(path: String) 🔗
+preview_invalidated(path: String) 
 
 Emitted if a preview was invalidated (changed). path corresponds to the path of the preview.
 
-void add_preview_generator(generator: EditorResourcePreviewGenerator) 🔗
+void add_preview_generator(generator: EditorResourcePreviewGenerator) 
 
 Create an own, custom preview generator.
 
-void check_for_invalidation(path: String) 🔗
+void check_for_invalidation(path: String) 
 
 Check if the resource changed, if so, it will be invalidated and the corresponding signal emitted.
 
-void queue_edited_resource_preview(resource: Resource, receiver: Object, receiver_func: StringName, userdata: Variant) 🔗
+void queue_edited_resource_preview(resource: Resource, receiver: Object, receiver_func: StringName, userdata: Variant) 
 
 Queue the resource being edited for preview. Once the preview is ready, the receiver's receiver_func will be called. The receiver_func must take the following four arguments: String path, Texture2D preview, Texture2D thumbnail_preview, Variant userdata. userdata can be anything, and will be returned when receiver_func is called.
 
 Note: If it was not possible to create the preview the receiver_func will still be called, but the preview will be null.
 
-void queue_resource_preview(path: String, receiver: Object, receiver_func: StringName, userdata: Variant) 🔗
+void queue_resource_preview(path: String, receiver: Object, receiver_func: StringName, userdata: Variant) 
 
 Queue a resource file located at path for preview. Once the preview is ready, the receiver's receiver_func will be called. The receiver_func must take the following four arguments: String path, Texture2D preview, Texture2D thumbnail_preview, Variant userdata. userdata can be anything, and will be returned when receiver_func is called.
 
 Note: If it was not possible to create the preview the receiver_func will still be called, but the preview will be null.
 
-void remove_preview_generator(generator: EditorResourcePreviewGenerator) 🔗
+void remove_preview_generator(generator: EditorResourcePreviewGenerator) 
 
 Removes a custom preview generator.
 
@@ -12142,11 +12142,11 @@ _make_tooltip_for_path(path: String, metadata: Dictionary, base: Control) virtua
 
 request_thumbnail(path: String, control: TextureRect) const
 
-bool _handles(type: String) virtual const 🔗
+bool _handles(type: String) virtual const 
 
 Return true if the plugin is going to handle the given Resource type.
 
-Control _make_tooltip_for_path(path: String, metadata: Dictionary, base: Control) virtual const 🔗
+Control _make_tooltip_for_path(path: String, metadata: Dictionary, base: Control) virtual const 
 
 Create and return a tooltip that will be displayed when the user hovers a resource under the given path in filesystem dock.
 
@@ -12158,7 +12158,7 @@ Note: It's unadvised to use ResourceLoader.load(), especially with heavy resourc
 
 Note: If you decide to discard the base, make sure to call Node.queue_free(), because it's not freed automatically.
 
-void request_thumbnail(path: String, control: TextureRect) const 🔗
+void request_thumbnail(path: String, control: TextureRect) const 
 
 Requests a thumbnail for the given TextureRect. The thumbnail is created asynchronously by EditorResourcePreview and automatically set when available.
 
@@ -12300,35 +12300,35 @@ add_import_option_advanced(type: Variant.Type, name: String, default_value: Vari
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_ANIMATION = 2 🔗
+IMPORT_ANIMATION = 2 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_FAIL_ON_MISSING_DEPENDENCIES = 4 🔗
+IMPORT_FAIL_ON_MISSING_DEPENDENCIES = 4 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_GENERATE_TANGENT_ARRAYS = 8 🔗
+IMPORT_GENERATE_TANGENT_ARRAYS = 8 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_USE_NAMED_SKIN_BINDS = 16 🔗
+IMPORT_USE_NAMED_SKIN_BINDS = 16 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_DISCARD_MESHES_AND_MATERIALS = 32 🔗
+IMPORT_DISCARD_MESHES_AND_MATERIALS = 32 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-IMPORT_FORCE_DISABLE_MESH_COMPRESSION = 64 🔗
+IMPORT_FORCE_DISABLE_MESH_COMPRESSION = 64 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-PackedStringArray _get_extensions() virtual const 🔗
+PackedStringArray _get_extensions() virtual const 
 
 Return supported file extensions for this scene importer.
 
-void _get_import_options(path: String) virtual 🔗
+void _get_import_options(path: String) virtual 
 
 Override to add general import options. These will appear in the main import dock on the editor. Add options via add_import_option() and add_import_option_advanced().
 
@@ -12336,19 +12336,19 @@ Note: All EditorSceneFormatImporter and EditorScenePostImportPlugin instances wi
 
 When the user is editing project settings, path will be empty. It is recommended to add all options when path is empty to allow the user to customize Import Defaults.
 
-Variant _get_option_visibility(path: String, for_animation: bool, option: String) virtual const 🔗
+Variant _get_option_visibility(path: String, for_animation: bool, option: String) virtual const 
 
 Should return true to show the given option, false to hide the given option, or null to ignore.
 
-Object _import_scene(path: String, flags: int, options: Dictionary) virtual 🔗
+Object _import_scene(path: String, flags: int, options: Dictionary) virtual 
 
 Perform the bulk of the scene import logic here, for example using GLTFDocument or FBXDocument.
 
-void add_import_option(name: String, value: Variant) 🔗
+void add_import_option(name: String, value: Variant) 
 
 Add a specific import option (name and default value only). This function can only be called from _get_import_options().
 
-void add_import_option_advanced(type: Variant.Type, name: String, default_value: Variant, hint: PropertyHint = 0, hint_string: String = "", usage_flags: int = 6) 🔗
+void add_import_option_advanced(type: Variant.Type, name: String, default_value: Variant, hint: PropertyHint = 0, hint_string: String = "", usage_flags: int = 6) 
 
 Add a specific import option. This function can only be called from _get_import_options().
 
@@ -12396,7 +12396,7 @@ add_import_option_advanced(type: Variant.Type, name: String, default_value: Vari
 
 get_option_value(name: StringName) const
 
-enum InternalImportCategory: 🔗
+enum InternalImportCategory: 
 
 InternalImportCategory INTERNAL_IMPORT_CATEGORY_NODE = 0
 
@@ -12430,49 +12430,49 @@ InternalImportCategory INTERNAL_IMPORT_CATEGORY_MAX = 7
 
 There is currently no description for this enum. Please help us by contributing one!
 
-void _get_import_options(path: String) virtual 🔗
+void _get_import_options(path: String) virtual 
 
 Override to add general import options. These will appear in the main import dock on the editor. Add options via add_import_option() and add_import_option_advanced().
 
-void _get_internal_import_options(category: int) virtual 🔗
+void _get_internal_import_options(category: int) virtual 
 
 Override to add internal import options. These will appear in the 3D scene import dialog. Add options via add_import_option() and add_import_option_advanced().
 
-Variant _get_internal_option_update_view_required(category: int, option: String) virtual const 🔗
+Variant _get_internal_option_update_view_required(category: int, option: String) virtual const 
 
 Should return true if the 3D view of the import dialog needs to update when changing the given option.
 
-Variant _get_internal_option_visibility(category: int, for_animation: bool, option: String) virtual const 🔗
+Variant _get_internal_option_visibility(category: int, for_animation: bool, option: String) virtual const 
 
 Should return true to show the given option, false to hide the given option, or null to ignore.
 
-Variant _get_option_visibility(path: String, for_animation: bool, option: String) virtual const 🔗
+Variant _get_option_visibility(path: String, for_animation: bool, option: String) virtual const 
 
 Should return true to show the given option, false to hide the given option, or null to ignore.
 
-void _internal_process(category: int, base_node: Node, node: Node, resource: Resource) virtual 🔗
+void _internal_process(category: int, base_node: Node, node: Node, resource: Resource) virtual 
 
 Process a specific node or resource for a given category.
 
-void _post_process(scene: Node) virtual 🔗
+void _post_process(scene: Node) virtual 
 
 Post-process the scene. This function is called after the final scene has been configured.
 
-void _pre_process(scene: Node) virtual 🔗
+void _pre_process(scene: Node) virtual 
 
 Pre-process the scene. This function is called right after the scene format loader loaded the scene and no changes have been made.
 
 Pre-process may be used to adjust internal import options in the "nodes", "meshes", "animations" or "materials" keys inside get_option_value("_subresources").
 
-void add_import_option(name: String, value: Variant) 🔗
+void add_import_option(name: String, value: Variant) 
 
 Add a specific import option (name and default value only). This function can only be called from _get_import_options() and _get_internal_import_options().
 
-void add_import_option_advanced(type: Variant.Type, name: String, default_value: Variant, hint: PropertyHint = 0, hint_string: String = "", usage_flags: int = 6) 🔗
+void add_import_option_advanced(type: Variant.Type, name: String, default_value: Variant, hint: PropertyHint = 0, hint_string: String = "", usage_flags: int = 6) 
 
 Add a specific import option. This function can only be called from _get_import_options() and _get_internal_import_options().
 
-Variant get_option_value(name: StringName) const 🔗
+Variant get_option_value(name: StringName) const 
 
 Query the value of an option. This function can only be called from those querying visibility, or processing.
 
@@ -12506,11 +12506,11 @@ _post_import(scene: Node) virtual
 
 get_source_file() const
 
-Object _post_import(scene: Node) virtual 🔗
+Object _post_import(scene: Node) virtual 
 
 Called after the scene was imported. This method must return the modified version of the scene.
 
-String get_source_file() const 🔗
+String get_source_file() const 
 
 Returns the source file path which got imported (e.g. res://scene.dae).
 
@@ -12629,21 +12629,21 @@ add_root_node(node: Node)
 
 get_editor_interface() const
 
-void _run() virtual required 🔗
+void _run() virtual required 
 
 This method is executed by the Editor when File > Run is used.
 
-void add_root_node(node: Node) 🔗
+void add_root_node(node: Node) 
 
 Makes node root of the currently opened scene. Only works if the scene is empty. If the node is a scene instance, an inheriting scene will be created.
 
-EditorInterface get_editor_interface() const 🔗
+EditorInterface get_editor_interface() const 
 
 Deprecated: EditorInterface is a global singleton and can be accessed directly by its name.
 
 Returns the EditorInterface singleton instance.
 
-Node get_scene() const 🔗
+Node get_scene() const 
 
 Returns the edited (current) scene's root Node. Equivalent of EditorInterface.get_edited_scene_root().
 
@@ -12700,33 +12700,33 @@ get_transformable_selected_nodes()
 
 remove_node(node: Node)
 
-selection_changed() 🔗
+selection_changed() 
 
 Emitted when the selection changes.
 
-void add_node(node: Node) 🔗
+void add_node(node: Node) 
 
 Adds a node to the selection.
 
 Note: The newly selected node will not be automatically edited in the inspector. If you want to edit a node, use EditorInterface.edit_node().
 
-Array[Node] get_selected_nodes() 🔗
+Array[Node] get_selected_nodes() 
 
 Returns the list of selected nodes.
 
-Array[Node] get_top_selected_nodes() 🔗
+Array[Node] get_top_selected_nodes() 
 
 Returns the list of top selected nodes only, excluding any children. This is useful for performing transform operations (moving them, rotating, etc.).
 
 For example, if there is a node A with a child B and a sibling C, then selecting all three will cause this method to return only A and C. Changing the global transform of A will affect the global transform of B, so there is no need to change B separately.
 
-Array[Node] get_transformable_selected_nodes() 🔗
+Array[Node] get_transformable_selected_nodes() 
 
 Deprecated: Use get_top_selected_nodes() instead.
 
 Returns the list of top selected nodes only, excluding any children. This is useful for performing transform operations (moving them, rotating, etc.). See get_top_selected_nodes().
 
-void remove_node(node: Node) 🔗
+void remove_node(node: Node) 
 
 Removes a node from the selection.
 
@@ -13649,191 +13649,191 @@ set_setting(name: String, value: Variant)
 
 Emitted after any editor setting has changed.
 
-NOTIFICATION_EDITOR_SETTINGS_CHANGED = 10000 🔗
+NOTIFICATION_EDITOR_SETTINGS_CHANGED = 10000 
 
 Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
 
-bool asset_library/use_threads 🔗
+bool asset_library/use_threads 
 
 If true, the Asset Library uses multiple threads for its HTTP requests. This prevents the Asset Library from blocking the main thread for every loaded asset.
 
-bool debugger/auto_switch_to_remote_scene_tree 🔗
+bool debugger/auto_switch_to_remote_scene_tree 
 
 If true, automatically switches to the Remote scene tree when running the project from the editor. If false, stays on the Local scene tree when running the project from the editor.
 
 Warning: Enabling this setting can cause stuttering when running a project with a large amount of nodes (typically a few thousands of nodes or more), even if the editor window isn't focused. This is due to the remote scene tree being updated every second regardless of whether the editor is focused.
 
-bool debugger/auto_switch_to_stack_trace 🔗
+bool debugger/auto_switch_to_stack_trace 
 
 If true, automatically switches to the Stack Trace panel when the debugger hits a breakpoint or steps.
 
-int debugger/max_node_selection 🔗
+int debugger/max_node_selection 
 
 The limit of how many remote nodes can be selected at once.
 
 Warning: Increasing this value is not recommended, as selecting too many can make the editing and inspection of remote properties unreliable.
 
-bool debugger/profile_native_calls 🔗
+bool debugger/profile_native_calls 
 
 If true, enables collection of profiling data from non-GDScript Godot functions, such as engine class methods. Enabling this slows execution while profiling further.
 
-int debugger/profiler_frame_history_size 🔗
+int debugger/profiler_frame_history_size 
 
 The size of the profiler's frame history. The default value (3600) allows seeing up to 60 seconds of profiling if the project renders at a constant 60 FPS. Higher values allow viewing longer periods of profiling in the graphs, especially when the project is running at high framerates.
 
-int debugger/profiler_frame_max_functions 🔗
+int debugger/profiler_frame_max_functions 
 
 The maximum number of script functions that can be displayed per frame in the profiler. If there are more script functions called in a given profiler frame, these functions will be discarded from the profiling results entirely.
 
 Note: This setting is only read when the profiler is first started, so changing it during profiling will have no effect.
 
-int debugger/profiler_target_fps 🔗
+int debugger/profiler_target_fps 
 
 The target frame rate shown in the visual profiler graph, in frames per second.
 
-float debugger/remote_inspect_refresh_interval 🔗
+float debugger/remote_inspect_refresh_interval 
 
 The refresh interval for the remote inspector's properties (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the Remote scene tree is selected in the Scene tree dock.
 
-float debugger/remote_scene_tree_refresh_interval 🔗
+float debugger/remote_scene_tree_refresh_interval 
 
 The refresh interval for the remote scene tree (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the Remote scene tree is selected in the Scene tree dock.
 
-bool docks/filesystem/always_show_folders 🔗
+bool docks/filesystem/always_show_folders 
 
 If true, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If false, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the res:// folder path.
 
 Note: This setting has no effect when split mode is disabled (which is the default).
 
-String docks/filesystem/other_file_extensions 🔗
+String docks/filesystem/other_file_extensions 
 
 A comma separated list of unsupported file extensions to show in the FileSystem dock, e.g. "ico,icns".
 
-String docks/filesystem/textfile_extensions 🔗
+String docks/filesystem/textfile_extensions 
 
 A comma separated list of file extensions to consider as editable text files in the FileSystem dock (by double-clicking on the files), e.g. "txt,md,cfg,ini,log,json,yml,yaml,toml,xml".
 
-int docks/filesystem/thumbnail_size 🔗
+int docks/filesystem/thumbnail_size 
 
 The thumbnail size to use in the FileSystem dock (in pixels). See also filesystem/file_dialog/thumbnail_size.
 
-float docks/property_editor/auto_refresh_interval 🔗
+float docks/property_editor/auto_refresh_interval 
 
 The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector refresh more often, but take up more CPU time.
 
-float docks/property_editor/subresource_hue_tint 🔗
+float docks/property_editor/subresource_hue_tint 
 
 The tint intensity to use for the subresources background in the Inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
 
-bool docks/scene_tree/accessibility_warnings 🔗
+bool docks/scene_tree/accessibility_warnings 
 
 If true, accessibility related warnings are displayed alongside other configuration warnings.
 
-bool docks/scene_tree/ask_before_deleting_related_animation_tracks 🔗
+bool docks/scene_tree/ask_before_deleting_related_animation_tracks 
 
 If true, when a node is deleted with animation tracks referencing it, a confirmation dialog appears before the tracks are deleted. The dialog will appear even when using the "Delete (No Confirm)" shortcut.
 
-bool docks/scene_tree/ask_before_revoking_unique_name 🔗
+bool docks/scene_tree/ask_before_revoking_unique_name 
 
 If true, displays a confirmation dialog after left-clicking the "percent" icon next to a node name in the Scene tree dock. When clicked, this icon revokes the node's scene-unique name, which can impact the behavior of scripts that rely on this scene-unique name due to identifiers not being found anymore.
 
-bool docks/scene_tree/auto_expand_to_selected 🔗
+bool docks/scene_tree/auto_expand_to_selected 
 
 If true, the scene tree dock will automatically unfold nodes when a node that has folded parents is selected.
 
-bool docks/scene_tree/center_node_on_reparent 🔗
+bool docks/scene_tree/center_node_on_reparent 
 
 If true, new node created when reparenting node(s) will be positioned at the average position of the selected node(s).
 
-bool docks/scene_tree/hide_filtered_out_parents 🔗
+bool docks/scene_tree/hide_filtered_out_parents 
 
 If true, the scene tree dock will only show nodes that match the filter, without showing parents that don't. This settings can also be changed in the Scene dock's top menu.
 
-bool docks/scene_tree/start_create_dialog_fully_expanded 🔗
+bool docks/scene_tree/start_create_dialog_fully_expanded 
 
 If true, the Create dialog (Create New Node/Create New Resource) will start with all its sections expanded. Otherwise, sections will be collapsed until the user starts searching (which will automatically expand sections as needed).
 
-Color editors/2d/bone_color1 🔗
+Color editors/2d/bone_color1 
 
 The "start" stop of the color gradient to use for bones in the 2D skeleton editor.
 
-Color editors/2d/bone_color2 🔗
+Color editors/2d/bone_color2 
 
 The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
 
-Color editors/2d/bone_ik_color 🔗
+Color editors/2d/bone_ik_color 
 
 The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
 
-Color editors/2d/bone_outline_color 🔗
+Color editors/2d/bone_outline_color 
 
 The outline color to use for non-selected bones in the 2D skeleton editor. See also editors/2d/bone_selected_color.
 
-float editors/2d/bone_outline_size 🔗
+float editors/2d/bone_outline_size 
 
 The outline size in the 2D skeleton editor (in pixels). See also editors/2d/bone_width.
 
 Note: Changes to this value only apply after modifying a Bone2D node in any way, or closing and reopening the scene.
 
-Color editors/2d/bone_selected_color 🔗
+Color editors/2d/bone_selected_color 
 
 The color to use for selected bones in the 2D skeleton editor. See also editors/2d/bone_outline_color.
 
-float editors/2d/bone_width 🔗
+float editors/2d/bone_width 
 
 The bone width in the 2D skeleton editor (in pixels). See also editors/2d/bone_outline_size.
 
 Note: Changes to this value only apply after modifying a Bone2D node in any way, or closing and reopening the scene.
 
-Color editors/2d/grid_color 🔗
+Color editors/2d/grid_color 
 
 The grid color to use in the 2D editor.
 
-Color editors/2d/guides_color 🔗
+Color editors/2d/guides_color 
 
 The guides color to use in the 2D editor. Guides can be created by dragging the mouse cursor from the rulers.
 
-float editors/2d/ruler_width 🔗
+float editors/2d/ruler_width 
 
 The thickness of the coordinate ruler in the 2D editor. Increasing this will also increase the size of the ruler font, improving readability when using a lower editor scale. The editor may force a minimum size to keep the ruler numbers legible.
 
-Color editors/2d/smart_snapping_line_color 🔗
+Color editors/2d/smart_snapping_line_color 
 
 The color to use when drawing smart snapping lines in the 2D editor. The smart snapping lines will automatically display when moving 2D nodes if smart snapping is enabled in the Snapping Options menu at the top of the 2D editor viewport.
 
-bool editors/2d/use_integer_zoom_by_default 🔗
+bool editors/2d/use_integer_zoom_by_default 
 
 If true, the 2D editor will snap to integer zoom values when not holding the Alt key. If false, this behavior is swapped.
 
-Color editors/2d/viewport_border_color 🔗
+Color editors/2d/viewport_border_color 
 
 The color of the viewport border in the 2D editor. This border represents the viewport's size at the base resolution defined in the Project Settings. Objects placed outside this border will not be visible unless a Camera2D node is used, or unless the window is resized and the stretch mode is set to disabled.
 
-float editors/2d/zoom_speed_factor 🔗
+float editors/2d/zoom_speed_factor 
 
 The factor to use when zooming in or out in the 2D editor. For example, 1.1 will zoom in by 10% with every step. If set to 2.0, zooming will only cycle through powers of two.
 
-Color editors/3d/active_selection_box_color 🔗
+Color editors/3d/active_selection_box_color 
 
 The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
 
 Note: The term "active" indicates that this object is the primary selection used as the basis for certain operations. This is the last selected Node3D, which can be reordered with Shift + Left mouse button.
 
-float editors/3d/default_fov 🔗
+float editors/3d/default_fov 
 
 The default camera vertical field of view to use in the 3D editor (in degrees). The camera field of view can be adjusted on a per-scene basis using the View menu at the top of the 3D editor. If a scene had its camera field of view adjusted using the View menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
 
 Note: The editor camera always uses the Keep Height aspect mode.
 
-float editors/3d/default_z_far 🔗
+float editors/3d/default_z_far 
 
 The default camera far clip distance to use in the 3D editor (in degrees). Higher values make it possible to view objects placed further away from the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera far clip distance can be adjusted on a per-scene basis using the View menu at the top of the 3D editor. If a scene had its camera far clip distance adjusted using the View menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
 
-float editors/3d/default_z_near 🔗
+float editors/3d/default_z_near 
 
 The default camera near clip distance to use in the 3D editor (in degrees). Lower values make it possible to view objects placed closer to the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera near clip distance can be adjusted on a per-scene basis using the View menu at the top of the 3D editor. If a scene had its camera near clip distance adjusted using the View menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
 
-int editors/3d/freelook/freelook_activation_modifier 🔗
+int editors/3d/freelook/freelook_activation_modifier 
 
 The modifier key to use to enable freelook in the 3D editor (on top of pressing the right mouse button).
 
@@ -13841,15 +13841,15 @@ Note: Regardless of this setting, the freelook toggle keyboard shortcut (Shift +
 
 Note: On certain window managers on Linux, the Alt key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
 
-float editors/3d/freelook/freelook_base_speed 🔗
+float editors/3d/freelook/freelook_base_speed 
 
 The base 3D freelook speed in units per second. This can be adjusted by using the mouse wheel while in freelook mode, or by holding down the "fast" or "slow" modifier keys (Shift and Alt by default, respectively).
 
-float editors/3d/freelook/freelook_inertia 🔗
+float editors/3d/freelook/freelook_inertia 
 
 The inertia of the 3D freelook camera. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
-int editors/3d/freelook/freelook_navigation_scheme 🔗
+int editors/3d/freelook/freelook_navigation_scheme 
 
 The navigation scheme to use when freelook is enabled in the 3D editor. Some of the navigation schemes below may be more convenient when designing specific levels in the 3D editor.
 
@@ -13861,69 +13861,69 @@ Fully Axis-Locked: The "Freelook Forward", "Freelook Backward", "Freelook Up" an
 
 See also editors/3d/navigation/navigation_scheme.
 
-float editors/3d/freelook/freelook_sensitivity 🔗
+float editors/3d/freelook/freelook_sensitivity 
 
 The mouse sensitivity to use while freelook mode is active in the 3D editor. See also editors/3d/navigation_feel/orbit_sensitivity.
 
-bool editors/3d/freelook/freelook_speed_zoom_link 🔗
+bool editors/3d/freelook/freelook_speed_zoom_link 
 
 If true, freelook speed is linked to the zoom value used in the camera orbit mode in the 3D editor.
 
-float editors/3d/grid_division_level_bias 🔗
+float editors/3d/grid_division_level_bias 
 
 The grid division bias to use in the 3D editor. Negative values will cause small grid divisions to appear earlier, whereas positive values will cause small grid divisions to appear later.
 
-int editors/3d/grid_division_level_max 🔗
+int editors/3d/grid_division_level_max 
 
 The largest grid division to use in the 3D editor. Together with editors/3d/primary_grid_steps, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than primary_grid_steps ^ grid_division_level_max units. By default, when editors/3d/primary_grid_steps is 8, this means grid divisions cannot get larger than 64 units each (so primary grid lines are 512 units apart), no matter how far away the camera is from the grid.
 
-int editors/3d/grid_division_level_min 🔗
+int editors/3d/grid_division_level_min 
 
 The smallest grid division to use in the 3D editor. Together with editors/3d/primary_grid_steps, this determines how small the grid divisions can be. The grid divisions will not be able to get smaller than primary_grid_steps ^ grid_division_level_min units. By default, this means grid divisions cannot get smaller than 1 unit each, no matter how close the camera is from the grid.
 
-int editors/3d/grid_size 🔗
+int editors/3d/grid_size 
 
 The grid size in units. Higher values prevent the grid from appearing "cut off" at certain angles, but make the grid more demanding to render. Depending on the camera's position, the grid may not be fully visible since a shader is used to fade it progressively.
 
-bool editors/3d/grid_xy_plane 🔗
+bool editors/3d/grid_xy_plane 
 
 If true, renders the grid on the XY plane in perspective view. This can be useful for 3D side-scrolling games.
 
-bool editors/3d/grid_xz_plane 🔗
+bool editors/3d/grid_xz_plane 
 
 If true, renders the grid on the XZ plane in perspective view.
 
-bool editors/3d/grid_yz_plane 🔗
+bool editors/3d/grid_yz_plane 
 
 If true, renders the grid on the YZ plane in perspective view. This can be useful for 3D side-scrolling games.
 
-float editors/3d/manipulator_gizmo_opacity 🔗
+float editors/3d/manipulator_gizmo_opacity 
 
 Opacity of the default gizmo for moving, rotating, and scaling 3D nodes.
 
-int editors/3d/manipulator_gizmo_size 🔗
+int editors/3d/manipulator_gizmo_size 
 
 Size of the default gizmo for moving, rotating, and scaling 3D nodes.
 
-bool editors/3d/navigation/emulate_3_button_mouse 🔗
+bool editors/3d/navigation/emulate_3_button_mouse 
 
 If true, enables 3-button mouse emulation mode. This is useful on laptops when using a trackpad.
 
 When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers can always be used in the 3D editor viewport, even when not holding down any mouse button.
 
-bool editors/3d/navigation/emulate_numpad 🔗
+bool editors/3d/navigation/emulate_numpad 
 
 If true, allows using the top row 0-9 keys to function as their equivalent numpad keys for 3D editor navigation. This should be enabled on keyboards that have no numeric keypad available.
 
-bool editors/3d/navigation/invert_x_axis 🔗
+bool editors/3d/navigation/invert_x_axis 
 
 If true, invert the horizontal mouse axis when panning or orbiting in the 3D editor. This setting does not apply to freelook mode.
 
-bool editors/3d/navigation/invert_y_axis 🔗
+bool editors/3d/navigation/invert_y_axis 
 
 If true, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
 
-int editors/3d/navigation/navigation_scheme 🔗
+int editors/3d/navigation/navigation_scheme 
 
 The navigation scheme preset to use in the 3D editor. Changing this setting will affect the mouse button and modifier keys used to navigate the 3D editor viewport.
 
@@ -13941,441 +13941,441 @@ See also editors/3d/navigation/orbit_mouse_button, editors/3d/navigation/pan_mou
 
 Note: On certain window managers on Linux, the Alt key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
 
-int editors/3d/navigation/orbit_mouse_button 🔗
+int editors/3d/navigation/orbit_mouse_button 
 
 The mouse button that needs to be held down to orbit in the 3D editor viewport.
 
-int editors/3d/navigation/pan_mouse_button 🔗
+int editors/3d/navigation/pan_mouse_button 
 
 The mouse button that needs to be held down to pan in the 3D editor viewport.
 
-bool editors/3d/navigation/show_viewport_navigation_gizmo 🔗
+bool editors/3d/navigation/show_viewport_navigation_gizmo 
 
 If true, shows gizmos for moving and rotating the camera in the bottom corners of the 3D editor's viewport. Useful for devices that use touch screen.
 
-bool editors/3d/navigation/show_viewport_rotation_gizmo 🔗
+bool editors/3d/navigation/show_viewport_rotation_gizmo 
 
 If true, shows a small orientation gizmo in the top-right corner of the 3D editor's viewports.
 
-bool editors/3d/navigation/warped_mouse_panning 🔗
+bool editors/3d/navigation/warped_mouse_panning 
 
 If true, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
-int editors/3d/navigation/zoom_mouse_button 🔗
+int editors/3d/navigation/zoom_mouse_button 
 
 The mouse button that needs to be held down to zoom in the 3D editor viewport.
 
-int editors/3d/navigation/zoom_style 🔗
+int editors/3d/navigation/zoom_style 
 
 The mouse cursor movement direction to use when zooming by moving the mouse. This does not affect zooming with the mouse wheel.
 
-float editors/3d/navigation_feel/orbit_inertia 🔗
+float editors/3d/navigation_feel/orbit_inertia 
 
 The inertia to use when orbiting in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
-float editors/3d/navigation_feel/orbit_sensitivity 🔗
+float editors/3d/navigation_feel/orbit_sensitivity 
 
 The mouse sensitivity to use when orbiting in the 3D editor. See also editors/3d/freelook/freelook_sensitivity.
 
-float editors/3d/navigation_feel/translation_inertia 🔗
+float editors/3d/navigation_feel/translation_inertia 
 
 The inertia to use when panning in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
-float editors/3d/navigation_feel/translation_sensitivity 🔗
+float editors/3d/navigation_feel/translation_sensitivity 
 
 The mouse sensitivity to use when panning in the 3D editor.
 
-float editors/3d/navigation_feel/zoom_inertia 🔗
+float editors/3d/navigation_feel/zoom_inertia 
 
 The inertia to use when zooming in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
-Color editors/3d/primary_grid_color 🔗
+Color editors/3d/primary_grid_color 
 
 The color to use for the primary 3D grid. The color's alpha channel affects the grid's opacity.
 
-int editors/3d/primary_grid_steps 🔗
+int editors/3d/primary_grid_steps 
 
 If set above 0, where a primary grid line should be drawn. By default, primary lines are configured to be more visible than secondary lines. This helps with measurements in the 3D editor. See also editors/3d/primary_grid_color and editors/3d/secondary_grid_color.
 
-Color editors/3d/secondary_grid_color 🔗
+Color editors/3d/secondary_grid_color 
 
 The color to use for the secondary 3D grid. This is generally a less visible color than editors/3d/primary_grid_color. The color's alpha channel affects the grid's opacity.
 
-Color editors/3d/selection_box_color 🔗
+Color editors/3d/selection_box_color 
 
 The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
 
-Color editors/3d_gizmos/gizmo_colors/aabb 🔗
+Color editors/3d_gizmos/gizmo_colors/aabb 
 
 The color to use for the AABB gizmo that displays the GeometryInstance3D's custom AABB.
 
-Color editors/3d_gizmos/gizmo_colors/camera 🔗
+Color editors/3d_gizmos/gizmo_colors/camera 
 
 The 3D editor gizmo color for Camera3Ds.
 
-Color editors/3d_gizmos/gizmo_colors/csg 🔗
+Color editors/3d_gizmos/gizmo_colors/csg 
 
 The 3D editor gizmo color for CSG nodes (such as CSGShape3D or CSGBox3D).
 
-Color editors/3d_gizmos/gizmo_colors/decal 🔗
+Color editors/3d_gizmos/gizmo_colors/decal 
 
 The 3D editor gizmo color for Decal nodes.
 
-Color editors/3d_gizmos/gizmo_colors/fog_volume 🔗
+Color editors/3d_gizmos/gizmo_colors/fog_volume 
 
 The 3D editor gizmo color for FogVolume nodes.
 
-Color editors/3d_gizmos/gizmo_colors/gridmap_grid 🔗
+Color editors/3d_gizmos/gizmo_colors/gridmap_grid 
 
 The 3D editor gizmo color for the GridMap grid.
 
-Color editors/3d_gizmos/gizmo_colors/instantiated 🔗
+Color editors/3d_gizmos/gizmo_colors/instantiated 
 
 The color override to use for 3D editor gizmos if the Node3D in question is part of an instantiated scene file (from the perspective of the current scene).
 
-Color editors/3d_gizmos/gizmo_colors/joint 🔗
+Color editors/3d_gizmos/gizmo_colors/joint 
 
 The 3D editor gizmo color for Joint3Ds and PhysicalBone3Ds.
 
-Color editors/3d_gizmos/gizmo_colors/joint_body_a 🔗
+Color editors/3d_gizmos/gizmo_colors/joint_body_a 
 
 Color for representing Joint3D.node_a for some Joint3D types.
 
-Color editors/3d_gizmos/gizmo_colors/joint_body_b 🔗
+Color editors/3d_gizmos/gizmo_colors/joint_body_b 
 
 Color for representing Joint3D.node_b for some Joint3D types.
 
-Color editors/3d_gizmos/gizmo_colors/lightmap_lines 🔗
+Color editors/3d_gizmos/gizmo_colors/lightmap_lines 
 
 Color of lines displayed in baked LightmapGI node's grid.
 
-Color editors/3d_gizmos/gizmo_colors/lightprobe_lines 🔗
+Color editors/3d_gizmos/gizmo_colors/lightprobe_lines 
 
 The 3D editor gizmo color used for LightmapProbe nodes.
 
-Color editors/3d_gizmos/gizmo_colors/occluder 🔗
+Color editors/3d_gizmos/gizmo_colors/occluder 
 
 The 3D editor gizmo color used for OccluderInstance3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/particle_attractor 🔗
+Color editors/3d_gizmos/gizmo_colors/particle_attractor 
 
 The 3D editor gizmo color used for GPUParticlesAttractor3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/particle_collision 🔗
+Color editors/3d_gizmos/gizmo_colors/particle_collision 
 
 The 3D editor gizmo color used for GPUParticlesCollision3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/particles 🔗
+Color editors/3d_gizmos/gizmo_colors/particles 
 
 The 3D editor gizmo color used for CPUParticles3D and GPUParticles3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/path_tilt 🔗
+Color editors/3d_gizmos/gizmo_colors/path_tilt 
 
 The 3D editor gizmo color used for Path3D tilt circles, which indicate the direction the Curve3D is tilted towards.
 
-Color editors/3d_gizmos/gizmo_colors/reflection_probe 🔗
+Color editors/3d_gizmos/gizmo_colors/reflection_probe 
 
 The 3D editor gizmo color used for ReflectionProbe nodes.
 
-Color editors/3d_gizmos/gizmo_colors/selected_bone 🔗
+Color editors/3d_gizmos/gizmo_colors/selected_bone 
 
 The 3D editor gizmo color used for the currently selected Skeleton3D bone.
 
-Color editors/3d_gizmos/gizmo_colors/skeleton 🔗
+Color editors/3d_gizmos/gizmo_colors/skeleton 
 
 The 3D editor gizmo color used for Skeleton3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/spring_bone_collision 🔗
+Color editors/3d_gizmos/gizmo_colors/spring_bone_collision 
 
 The 3D editor gizmo color used for SpringBoneCollision3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/spring_bone_inside_collision 🔗
+Color editors/3d_gizmos/gizmo_colors/spring_bone_inside_collision 
 
 The 3D editor gizmo color used for SpringBoneCollision3D nodes with inside mode.
 
-Color editors/3d_gizmos/gizmo_colors/spring_bone_joint 🔗
+Color editors/3d_gizmos/gizmo_colors/spring_bone_joint 
 
 The 3D editor gizmo color used for SpringBoneSimulator3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/stream_player_3d 🔗
+Color editors/3d_gizmos/gizmo_colors/stream_player_3d 
 
 The 3D editor gizmo color used for AudioStreamPlayer3D's emission angle.
 
-Color editors/3d_gizmos/gizmo_colors/visibility_notifier 🔗
+Color editors/3d_gizmos/gizmo_colors/visibility_notifier 
 
 The 3D editor gizmo color used for VisibleOnScreenNotifier3D and VisibleOnScreenEnabler3D nodes.
 
-Color editors/3d_gizmos/gizmo_colors/voxel_gi 🔗
+Color editors/3d_gizmos/gizmo_colors/voxel_gi 
 
 The 3D editor gizmo color used for VoxelGI nodes.
 
-float editors/3d_gizmos/gizmo_settings/bone_axis_length 🔗
+float editors/3d_gizmos/gizmo_settings/bone_axis_length 
 
 The length of Skeleton3D bone gizmos in the 3D editor.
 
-int editors/3d_gizmos/gizmo_settings/bone_shape 🔗
+int editors/3d_gizmos/gizmo_settings/bone_shape 
 
 The shape of Skeleton3D bone gizmos in the 3D editor. Wire is a thin line, while Octahedron is a set of lines that represent a thicker hollow line pointing in a specific direction (similar to most 3D animation software).
 
-float editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size 🔗
+float editors/3d_gizmos/gizmo_settings/lightmap_gi_probe_size 
 
 Size of probe gizmos displayed when editing LightmapGI and LightmapProbe nodes. Setting this to 0.0 will hide the probe spheres of LightmapGI and wireframes of LightmapProbe nodes, but will keep the wireframes linking probes from LightmapGI and billboard icons from LightmapProbe intact.
 
-float editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size 🔗
+float editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size 
 
 Size of the disk gizmo displayed when editing Path3D's tilt handles.
 
-bool editors/animation/autorename_animation_tracks 🔗
+bool editors/animation/autorename_animation_tracks 
 
 If true, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
 
-bool editors/animation/confirm_insert_track 🔗
+bool editors/animation/confirm_insert_track 
 
 If true, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property. Holding Shift will bypass the dialog.
 
 If false, the behavior is reversed, i.e. the dialog only appears when Shift is held.
 
-float editors/animation/default_animation_step 🔗
+float editors/animation/default_animation_step 
 
 Default step used when creating a new Animation in the Animation bottom panel. Only affects the first animation created in the AnimationPlayer. By default, other newly created animations will use the step from the previous ones.
 
 This value is always expressed in seconds. If you want e.g. 10 FPS to be the default, you need to set the default step to 0.1.
 
-bool editors/animation/default_create_bezier_tracks 🔗
+bool editors/animation/default_create_bezier_tracks 
 
 If true, create a Bezier track instead of a standard track when pressing the "key" icon next to a property. Bezier tracks provide more control over animation curves, but are more difficult to adjust quickly.
 
-bool editors/animation/default_create_reset_tracks 🔗
+bool editors/animation/default_create_reset_tracks 
 
 If true, create a RESET track when creating a new animation track. This track can be used to restore the animation to a "default" state.
 
-bool editors/animation/default_fps_compatibility 🔗
+bool editors/animation/default_fps_compatibility 
 
 Controls whether AnimationPlayer will apply snapping to nearest integer FPS when snapping is in Seconds mode. The option is remembered locally for a scene and this option only determines the default value when scene doesn't have local state yet.
 
-int editors/animation/default_fps_mode 🔗
+int editors/animation/default_fps_mode 
 
 Default step mode for AnimationPlayer (seconds or FPS). The option is remembered locally for a scene and this option only determines the default value when scene doesn't have local state yet.
 
-Color editors/animation/onion_layers_future_color 🔗
+Color editors/animation/onion_layers_future_color 
 
 The modulate color to use for "future" frames displayed in the animation editor's onion skinning feature.
 
-Color editors/animation/onion_layers_past_color 🔗
+Color editors/animation/onion_layers_past_color 
 
 The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
 
-Color editors/bone_mapper/handle_colors/error 🔗
+Color editors/bone_mapper/handle_colors/error 
 
 There is currently no description for this property. Please help us by contributing one!
 
-Color editors/bone_mapper/handle_colors/missing 🔗
+Color editors/bone_mapper/handle_colors/missing 
 
 There is currently no description for this property. Please help us by contributing one!
 
-Color editors/bone_mapper/handle_colors/set 🔗
+Color editors/bone_mapper/handle_colors/set 
 
 There is currently no description for this property. Please help us by contributing one!
 
-Color editors/bone_mapper/handle_colors/unset 🔗
+Color editors/bone_mapper/handle_colors/unset 
 
 There is currently no description for this property. Please help us by contributing one!
 
-int editors/grid_map/palette_min_width 🔗
+int editors/grid_map/palette_min_width 
 
 Minimum width of GridMap's mesh palette side panel.
 
-float editors/grid_map/pick_distance 🔗
+float editors/grid_map/pick_distance 
 
 The maximum distance at which tiles can be placed on a GridMap, relative to the camera position (in 3D units).
 
-int editors/grid_map/preview_size 🔗
+int editors/grid_map/preview_size 
 
 Texture size of mesh previews generated for GridMap's MeshLibrary.
 
-int editors/panning/2d_editor_pan_speed 🔗
+int editors/panning/2d_editor_pan_speed 
 
 The panning speed when using the mouse wheel or touchscreen events in the 2D editor. This setting does not apply to panning by holding down the middle or right mouse buttons.
 
-int editors/panning/2d_editor_panning_scheme 🔗
+int editors/panning/2d_editor_panning_scheme 
 
 Controls whether the mouse wheel scroll zooms or pans in the 2D editor. See also editors/panning/sub_editors_panning_scheme and editors/panning/animation_editors_panning_scheme.
 
-int editors/panning/animation_editors_panning_scheme 🔗
+int editors/panning/animation_editors_panning_scheme 
 
 Controls whether the mouse wheel scroll zooms or pans in the animation track and Bezier editors. See also editors/panning/2d_editor_panning_scheme and editors/panning/sub_editors_panning_scheme (which controls the animation blend tree editor's pan behavior).
 
-bool editors/panning/simple_panning 🔗
+bool editors/panning/simple_panning 
 
 If true, allows panning by holding down Space in the 2D editor viewport (in addition to panning with the middle or right mouse buttons). If false, the left mouse button must be held down while holding down Space to pan in the 2D editor viewport.
 
-int editors/panning/sub_editors_panning_scheme 🔗
+int editors/panning/sub_editors_panning_scheme 
 
 Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of affected subeditors is: animation blend tree editor, Polygon2D editor, tileset editor, texture region editor and visual shader editor. See also editors/panning/2d_editor_panning_scheme and editors/panning/animation_editors_panning_scheme.
 
-bool editors/panning/warped_mouse_panning 🔗
+bool editors/panning/warped_mouse_panning 
 
 If true, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
-int editors/panning/zoom_style 🔗
+int editors/panning/zoom_style 
 
 The mouse cursor movement direction to use when drag-zooming in any editor (except 3D scene editor) by moving the mouse. This does not affect zooming with the mouse wheel.
 
-float editors/polygon_editor/auto_bake_delay 🔗
+float editors/polygon_editor/auto_bake_delay 
 
 The delay in seconds until more complex and performance costly polygon editors commit their outlines, e.g. the 2D navigation polygon editor rebakes the navigation mesh polygons. A negative value stops the auto bake.
 
-int editors/polygon_editor/point_grab_radius 🔗
+int editors/polygon_editor/point_grab_radius 
 
 The radius in which points can be selected in the Polygon2D and CollisionPolygon2D editors (in pixels). Higher values make it easier to select points quickly, but can make it more difficult to select the expected point when several points are located close to each other.
 
-bool editors/polygon_editor/show_previous_outline 🔗
+bool editors/polygon_editor/show_previous_outline 
 
 If true, displays the polygon's previous shape in the 2D polygon editors with an opaque gray outline. This outline is displayed while dragging a point until the left mouse button is released.
 
-bool editors/shader_editor/behavior/files/restore_shaders_on_load 🔗
+bool editors/shader_editor/behavior/files/restore_shaders_on_load 
 
 If true, reopens shader files that were open in the shader editor when the project was last closed.
 
-bool editors/tiles_editor/display_grid 🔗
+bool editors/tiles_editor/display_grid 
 
 If true, displays a grid while the TileMap editor is active. See also editors/tiles_editor/grid_color.
 
-Color editors/tiles_editor/grid_color 🔗
+Color editors/tiles_editor/grid_color 
 
 The color to use for the TileMap editor's grid.
 
 Note: Only effective if editors/tiles_editor/display_grid is true.
 
-bool editors/tiles_editor/highlight_selected_layer 🔗
+bool editors/tiles_editor/highlight_selected_layer 
 
 Highlight the currently selected TileMapLayer by dimming the other ones in the scene.
 
-Color editors/visual_editors/category_colors/color_color 🔗
+Color editors/visual_editors/category_colors/color_color 
 
 The color of a graph node's header when it belongs to the "Color" category.
 
-Color editors/visual_editors/category_colors/conditional_color 🔗
+Color editors/visual_editors/category_colors/conditional_color 
 
 The color of a graph node's header when it belongs to the "Conditional" category.
 
-Color editors/visual_editors/category_colors/input_color 🔗
+Color editors/visual_editors/category_colors/input_color 
 
 The color of a graph node's header when it belongs to the "Input" category.
 
-Color editors/visual_editors/category_colors/output_color 🔗
+Color editors/visual_editors/category_colors/output_color 
 
 The color of a graph node's header when it belongs to the "Output" category.
 
-Color editors/visual_editors/category_colors/particle_color 🔗
+Color editors/visual_editors/category_colors/particle_color 
 
 The color of a graph node's header when it belongs to the "Particle" category.
 
-Color editors/visual_editors/category_colors/scalar_color 🔗
+Color editors/visual_editors/category_colors/scalar_color 
 
 The color of a graph node's header when it belongs to the "Scalar" category.
 
-Color editors/visual_editors/category_colors/special_color 🔗
+Color editors/visual_editors/category_colors/special_color 
 
 The color of a graph node's header when it belongs to the "Special" category.
 
-Color editors/visual_editors/category_colors/textures_color 🔗
+Color editors/visual_editors/category_colors/textures_color 
 
 The color of a graph node's header when it belongs to the "Textures" category.
 
-Color editors/visual_editors/category_colors/transform_color 🔗
+Color editors/visual_editors/category_colors/transform_color 
 
 The color of a graph node's header when it belongs to the "Transform" category.
 
-Color editors/visual_editors/category_colors/utility_color 🔗
+Color editors/visual_editors/category_colors/utility_color 
 
 The color of a graph node's header when it belongs to the "Utility" category.
 
-Color editors/visual_editors/category_colors/vector_color 🔗
+Color editors/visual_editors/category_colors/vector_color 
 
 The color of a graph node's header when it belongs to the "Vector" category.
 
-String editors/visual_editors/color_theme 🔗
+String editors/visual_editors/color_theme 
 
 The color theme to use in the visual shader editor.
 
-Color editors/visual_editors/connection_colors/boolean_color 🔗
+Color editors/visual_editors/connection_colors/boolean_color 
 
 The color of a port/connection of boolean type.
 
-Color editors/visual_editors/connection_colors/sampler_color 🔗
+Color editors/visual_editors/connection_colors/sampler_color 
 
 The color of a port/connection of sampler type.
 
-Color editors/visual_editors/connection_colors/scalar_color 🔗
+Color editors/visual_editors/connection_colors/scalar_color 
 
 The color of a port/connection of scalar type (float, int, unsigned int).
 
-Color editors/visual_editors/connection_colors/transform_color 🔗
+Color editors/visual_editors/connection_colors/transform_color 
 
 The color of a port/connection of transform type.
 
-Color editors/visual_editors/connection_colors/vector2_color 🔗
+Color editors/visual_editors/connection_colors/vector2_color 
 
 The color of a port/connection of Vector2 type.
 
-Color editors/visual_editors/connection_colors/vector3_color 🔗
+Color editors/visual_editors/connection_colors/vector3_color 
 
 The color of a port/connection of Vector3 type.
 
-Color editors/visual_editors/connection_colors/vector4_color 🔗
+Color editors/visual_editors/connection_colors/vector4_color 
 
 The color of a port/connection of Vector4 type.
 
-int editors/visual_editors/grid_pattern 🔗
+int editors/visual_editors/grid_pattern 
 
 The pattern used for the background grid.
 
-float editors/visual_editors/lines_curvature 🔗
+float editors/visual_editors/lines_curvature 
 
 The curvature to use for connection lines in the visual shader editor. Higher values will make connection lines appear more curved, with values above 0.5 resulting in more "angular" turns in the middle of connection lines.
 
-float editors/visual_editors/minimap_opacity 🔗
+float editors/visual_editors/minimap_opacity 
 
 The opacity of the minimap displayed in the bottom-right corner of the visual shader editor.
 
-int editors/visual_editors/visual_shader/port_preview_size 🔗
+int editors/visual_editors/visual_shader/port_preview_size 
 
 The size to use for port previews in the visual shader uniforms (toggled by clicking the "eye" icon next to an output). The value is defined in pixels at 100% zoom, and will scale with zoom automatically.
 
-String export/ssh/scp 🔗
+String export/ssh/scp 
 
 Path to the SCP (secure copy) executable (used for remote deploy to desktop platforms). If left empty, the editor will attempt to run scp from PATH.
 
 Note: SCP is not the same as SFTP. Specifying the SFTP executable here will not work.
 
-String export/ssh/ssh 🔗
+String export/ssh/ssh 
 
 Path to the SSH executable (used for remote deploy to desktop platforms). If left empty, the editor will attempt to run ssh from PATH.
 
-String filesystem/directories/autoscan_project_path 🔗
+String filesystem/directories/autoscan_project_path 
 
 The folder where projects should be scanned for (recursively), in a way similar to the project manager's Scan button. This can be set to the same value as filesystem/directories/default_project_path for convenience.
 
 Note: Setting this path to a folder with very large amounts of files/folders can slow down the project manager startup significantly. To keep the project manager quick to start up, it is recommended to set this value to a folder as "specific" as possible.
 
-String filesystem/directories/default_project_path 🔗
+String filesystem/directories/default_project_path 
 
 The folder where new projects should be created by default when clicking the project manager's New Project button. This can be set to the same value as filesystem/directories/autoscan_project_path for convenience.
 
-String filesystem/external_programs/3d_model_editor 🔗
+String filesystem/external_programs/3d_model_editor 
 
 The program that opens 3D model scene files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
-String filesystem/external_programs/audio_editor 🔗
+String filesystem/external_programs/audio_editor 
 
 The program that opens audio files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
-String filesystem/external_programs/raster_image_editor 🔗
+String filesystem/external_programs/raster_image_editor 
 
 The program that opens raster image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
-String filesystem/external_programs/terminal_emulator 🔗
+String filesystem/external_programs/terminal_emulator 
 
 The terminal emulator program to use when using Open in Terminal context menu action in the FileSystem dock. You can enter an absolute path to a program binary, or a path to a program that is present in the PATH environment variable.
 
@@ -14389,7 +14389,7 @@ On macOS, make sure to point to the actual program binary located within the Pro
 
 If specifying a custom terminal emulator, you may need to override filesystem/external_programs/terminal_emulator_flags so it opens in the correct folder.
 
-String filesystem/external_programs/terminal_emulator_flags 🔗
+String filesystem/external_programs/terminal_emulator_flags 
 
 The command-line arguments to pass to the terminal emulator that is run when using Open in Terminal context menu action in the FileSystem dock. See also filesystem/external_programs/terminal_emulator.
 
@@ -14397,11 +14397,11 @@ If left empty, the default flags are {directory}, which is replaced by the absol
 
 Note: If the terminal emulator is set to PowerShell, cmd, or Konsole, Godot will automatically prepend arguments to this list, as these terminals require nonstandard arguments to open in the correct folder.
 
-String filesystem/external_programs/vector_image_editor 🔗
+String filesystem/external_programs/vector_image_editor 
 
 The program that opens vector image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
-int filesystem/file_dialog/display_mode 🔗
+int filesystem/file_dialog/display_mode 
 
 The display mode to use in the editor's file dialogs.
 
@@ -14409,23 +14409,23 @@ Thumbnails takes more space, but displays dynamic resource thumbnails, making re
 
 List is more compact but doesn't display dynamic resource thumbnails. Instead, it displays static icons based on the file extension.
 
-bool filesystem/file_dialog/show_hidden_files 🔗
+bool filesystem/file_dialog/show_hidden_files 
 
 If true, display hidden files in the editor's file dialogs. Files that have names starting with . are considered hidden (e.g. .hidden_file).
 
-int filesystem/file_dialog/thumbnail_size 🔗
+int filesystem/file_dialog/thumbnail_size 
 
 The thumbnail size to use in the editor's file dialogs (in pixels). See also docks/filesystem/thumbnail_size.
 
-String filesystem/file_server/password 🔗
+String filesystem/file_server/password 
 
 Password used for file server when exporting project with remote file system.
 
-int filesystem/file_server/port 🔗
+int filesystem/file_server/port 
 
 Port used for file server when exporting project with remote file system.
 
-String filesystem/import/blender/blender_path 🔗
+String filesystem/import/blender/blender_path 
 
 The path to the Blender executable used for converting the Blender 3D scene files .blend to glTF 2.0 format during import. Blender 3.0 or later is required.
 
@@ -14433,39 +14433,39 @@ To enable this feature for your specific project, use ProjectSettings.filesystem
 
 If this setting is empty, Blender's default paths will be detected and used automatically if present in this order:
 
-int filesystem/import/blender/rpc_port 🔗
+int filesystem/import/blender/rpc_port 
 
 The port number used for Remote Procedure Call (RPC) communication with Godot's created process of the blender executable.
 
 Setting this to 0 effectively disables communication with Godot and the blender process, making performance slower.
 
-float filesystem/import/blender/rpc_server_uptime 🔗
+float filesystem/import/blender/rpc_server_uptime 
 
 The maximum idle uptime (in seconds) of the Blender process.
 
 This prevents Godot from having to create a new process for each import within the given seconds.
 
-String filesystem/import/fbx/fbx2gltf_path 🔗
+String filesystem/import/fbx/fbx2gltf_path 
 
 The path to the FBX2glTF executable used for converting Autodesk FBX 3D scene files .fbx to glTF 2.0 format during import.
 
 To enable this feature for your specific project, use ProjectSettings.filesystem/import/fbx2gltf/enabled.
 
-bool filesystem/on_save/compress_binary_resources 🔗
+bool filesystem/on_save/compress_binary_resources 
 
 If true, uses lossless compression for binary resources.
 
-bool filesystem/on_save/safe_save_on_backup_then_rename 🔗
+bool filesystem/on_save/safe_save_on_backup_then_rename 
 
 If true, when saving a file, the editor will rename the old file to a different name, save a new file, then only remove the old file once the new file has been saved. This makes loss of data less likely to happen if the editor or operating system exits unexpectedly while saving (e.g. due to a crash or power outage).
 
 Note: On Windows, this feature can interact negatively with certain antivirus programs. In this case, you may have to set this to false to prevent file locking issues.
 
-int filesystem/quick_open_dialog/default_display_mode 🔗
+int filesystem/quick_open_dialog/default_display_mode 
 
 If set to Adaptive, the dialog opens in list view or grid view depending on the requested type. If set to Last Used, the display mode will always open the way you last used it.
 
-bool filesystem/quick_open_dialog/enable_fuzzy_matching 🔗
+bool filesystem/quick_open_dialog/enable_fuzzy_matching 
 
 If true, together with exact matches of a filename, the dialog includes approximate matches.
 
@@ -14473,29 +14473,29 @@ This is useful for finding the correct files even when there are typos in the se
 
 See also filesystem/quick_open_dialog/max_fuzzy_misses.
 
-bool filesystem/quick_open_dialog/include_addons 🔗
+bool filesystem/quick_open_dialog/include_addons 
 
 If true, results will include files located in the addons folder.
 
-int filesystem/quick_open_dialog/max_fuzzy_misses 🔗
+int filesystem/quick_open_dialog/max_fuzzy_misses 
 
 The number of missed query characters allowed in a match when fuzzy matching is enabled. For example, with the default value of 2, "normal" would match "narmal" and "norma" but not "nor".
 
-int filesystem/quick_open_dialog/max_results 🔗
+int filesystem/quick_open_dialog/max_results 
 
 Maximum number of matches to show in dialog.
 
-bool filesystem/quick_open_dialog/show_search_highlight 🔗
+bool filesystem/quick_open_dialog/show_search_highlight 
 
 If true, results will be highlighted with their search matches.
 
-String filesystem/tools/oidn/oidn_denoise_path 🔗
+String filesystem/tools/oidn/oidn_denoise_path 
 
 The path to the directory containing the Open Image Denoise (OIDN) executable, used optionally for denoising lightmaps. It can be downloaded from openimagedenoise.org.
 
 To enable this feature for your specific project, use ProjectSettings.rendering/lightmapping/denoising/denoiser.
 
-bool input/buffering/agile_event_flushing 🔗
+bool input/buffering/agile_event_flushing 
 
 If true, input events will be flushed just before every idle and physics frame.
 
@@ -14503,7 +14503,7 @@ If false, these events will be flushed only once per process frame, between iter
 
 Enabling this setting can greatly improve input responsiveness, especially in devices that struggle to run at the project's intended frame rate.
 
-bool input/buffering/use_accumulated_input 🔗
+bool input/buffering/use_accumulated_input 
 
 If true, similar input events sent by the operating system are accumulated. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
 
@@ -14511,7 +14511,7 @@ Input accumulation can be disabled to get slightly more precise/reactive input a
 
 Note: Input accumulation is enabled by default.
 
-int interface/accessibility/accessibility_support 🔗
+int interface/accessibility/accessibility_support 
 
 Editor accessibility support mode:
 
@@ -14523,7 +14523,7 @@ Disabled (2): Accessibility support is fully disabled.
 
 Note: Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD) do not count as assistive apps. To test your project with these tools, use Always Active.
 
-int interface/editor/accept_dialog_cancel_ok_buttons 🔗
+int interface/editor/accept_dialog_cancel_ok_buttons 
 
 How to position the Cancel and OK buttons in the editor's AcceptDialogs. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
 
@@ -14533,37 +14533,37 @@ Cancel First forces the ordering Cancel/OK.
 
 OK First forces the ordering OK/Cancel.
 
-bool interface/editor/automatically_open_screenshots 🔗
+bool interface/editor/automatically_open_screenshots 
 
 If true, automatically opens screenshots with the default program associated to .png files after a screenshot is taken using the Editor > Take Screenshot action.
 
-String interface/editor/code_font 🔗
+String interface/editor/code_font 
 
 The font to use for the script editor. Must be a resource of a Font type such as a .ttf or .otf font file.
 
-int interface/editor/code_font_contextual_ligatures 🔗
+int interface/editor/code_font_contextual_ligatures 
 
 The font ligatures to enable for the currently configured code font. Not all fonts include support for ligatures.
 
 Note: The default editor code font (JetBrains Mono) has contextual ligatures in its font file.
 
-String interface/editor/code_font_custom_opentype_features 🔗
+String interface/editor/code_font_custom_opentype_features 
 
 List of custom OpenType features to use, if supported by the currently configured code font. Not all fonts include support for custom OpenType features. The string should follow the OpenType specification.
 
 Note: The default editor code font (JetBrains Mono) has custom OpenType features in its font file, but there is no documented list yet.
 
-String interface/editor/code_font_custom_variations 🔗
+String interface/editor/code_font_custom_variations 
 
 List of alternative characters to use, if supported by the currently configured code font. Not all fonts include support for custom variations. The string should follow the OpenType specification.
 
 Note: The default editor code font (JetBrains Mono) has alternate characters in its font file, but there is no documented list yet.
 
-int interface/editor/code_font_size 🔗
+int interface/editor/code_font_size 
 
 The size of the font in the script editor. This setting does not impact the font size of the Output panel (see run/output/font_size).
 
-bool interface/editor/collapse_main_menu 🔗
+bool interface/editor/collapse_main_menu 
 
 If true, the main menu collapses into a MenuButton.
 
@@ -14571,13 +14571,13 @@ Note: This setting is only applicable on macOS when interface/editor/use_embedde
 
 Note: Defaults to true on the Android editor.
 
-float interface/editor/custom_display_scale 🔗
+float interface/editor/custom_display_scale 
 
 The custom editor scale factor to use. This can be used for displays with very high DPI where a scale factor of 200% is not sufficient.
 
 Note: Only effective if interface/editor/display_scale is set to Custom.
 
-int interface/editor/display_scale 🔗
+int interface/editor/display_scale 
 
 The display scale factor to use for the editor interface. Higher values are more suited to hiDPI/Retina displays.
 
@@ -14585,39 +14585,39 @@ If set to Auto, the editor scale is automatically determined based on the screen
 
 If set to Custom, the scaling value in interface/editor/custom_display_scale will be used.
 
-int interface/editor/dock_tab_style 🔗
+int interface/editor/dock_tab_style 
 
 Tab style of editor docks.
 
-String interface/editor/editor_language 🔗
+String interface/editor/editor_language 
 
 The language to use for the editor interface.
 
 Translations are provided by the community. If you spot a mistake, contribute to editor translations on Weblate!
 
-int interface/editor/editor_screen 🔗
+int interface/editor/editor_screen 
 
 The preferred monitor to display the editor. If Auto, the editor will remember the last screen it was displayed on across multiple sessions.
 
-bool interface/editor/expand_to_title 🔗
+bool interface/editor/expand_to_title 
 
 Expanding main editor window content to the title, if supported by DisplayServer. See DisplayServer.WINDOW_FLAG_EXTEND_TO_TITLE.
 
 Specific to the macOS platform.
 
-bool interface/editor/font_allow_msdf 🔗
+bool interface/editor/font_allow_msdf 
 
 If set to true, MSDF font rendering will be used for the visual shader graph editor. You may need to set this to false when using a custom main font, as some fonts will look broken due to the use of self-intersecting outlines in their font data. Downloading the font from the font maker's official website as opposed to a service like Google Fonts can help resolve this issue.
 
-int interface/editor/font_antialiasing 🔗
+int interface/editor/font_antialiasing 
 
 FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts are not designed to look good with anti-aliasing disabled, so it's recommended to leave this enabled unless you're using a pixel art font.
 
-bool interface/editor/font_disable_embedded_bitmaps 🔗
+bool interface/editor/font_disable_embedded_bitmaps 
 
 If set to true, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
-int interface/editor/font_hinting 🔗
+int interface/editor/font_hinting 
 
 The font hinting mode to use for the editor fonts. FreeType supports the following font hinting modes:
 
@@ -14629,73 +14629,73 @@ Normal: Use hinting on both X and Y axes. This results in a sharp font, but it d
 
 If set to Auto, the font hinting mode will be set to match the current operating system in use. This means the Light hinting mode will be used on Windows and Linux, and the None hinting mode will be used on macOS.
 
-int interface/editor/font_subpixel_positioning 🔗
+int interface/editor/font_subpixel_positioning 
 
 The subpixel positioning mode to use when rendering editor font glyphs. This affects both the main and code fonts. Disabled is the fastest to render and uses the least memory. Auto only uses subpixel positioning for small font sizes (where the benefit is the most noticeable). One Half of a Pixel and One Quarter of a Pixel force the same subpixel positioning mode for all editor fonts, regardless of their size (with One Quarter of a Pixel being the highest-quality option).
 
-bool interface/editor/import_resources_when_unfocused 🔗
+bool interface/editor/import_resources_when_unfocused 
 
 If true, (re)imports resources even if the editor window is unfocused or minimized. If false, resources are only (re)imported when the editor window is focused. This can be set to true to speed up iteration by starting the import process earlier when saving files in the project folder. This also allows getting visual feedback on changes without having to click the editor window, which is useful with multi-monitor setups. The downside of setting this to true is that it increases idle CPU usage and may steal CPU time from other applications when importing resources.
 
-bool interface/editor/keep_screen_on 🔗
+bool interface/editor/keep_screen_on 
 
 If true, keeps the screen on (even in case of inactivity), so the screensaver does not take over. Works on desktop and mobile platforms.
 
-bool interface/editor/localize_settings 🔗
+bool interface/editor/localize_settings 
 
 If true, setting names in the editor are localized when possible.
 
 Note: This setting affects most EditorInspectors in the editor UI, primarily Project Settings and Editor Settings. To control names displayed in the Inspector dock, use interface/inspector/default_property_name_style instead.
 
-int interface/editor/low_processor_mode_sleep_usec 🔗
+int interface/editor/low_processor_mode_sleep_usec 
 
 The amount of sleeping between frames in the editor (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also interface/editor/unfocused_low_processor_mode_sleep_usec.
 
 Note: This setting is ignored if interface/editor/update_continuously is true, as enabling that setting disables low-processor mode.
 
-String interface/editor/main_font 🔗
+String interface/editor/main_font 
 
 The font to use for the editor interface. Must be a resource of a Font type such as a .ttf or .otf font file.
 
 Note: If the provided font is variable, a weight of 400 (normal) will be used.
 
-String interface/editor/main_font_bold 🔗
+String interface/editor/main_font_bold 
 
 The font to use for bold text in the editor interface. Must be a resource of a Font type such as a .ttf or .otf font file.
 
 Note: If the provided font is variable, a weight of 700 (bold) will be used.
 
-int interface/editor/main_font_size 🔗
+int interface/editor/main_font_size 
 
 The size of the font in the editor interface.
 
-bool interface/editor/mouse_extra_buttons_navigate_history 🔗
+bool interface/editor/mouse_extra_buttons_navigate_history 
 
 If true, the mouse's additional side buttons will be usable to navigate in the script editor's file history. Set this to false if you're using the side buttons for other purposes (such as a push-to-talk button in a VoIP program).
 
-int interface/editor/project_manager_screen 🔗
+int interface/editor/project_manager_screen 
 
 The preferred monitor to display the project manager.
 
-bool interface/editor/save_each_scene_on_quit 🔗
+bool interface/editor/save_each_scene_on_quit 
 
 If false, the editor will save all scenes when confirming the Save action when quitting the editor or quitting to the project list. If true, the editor will ask to save each scene individually.
 
-bool interface/editor/save_on_focus_loss 🔗
+bool interface/editor/save_on_focus_loss 
 
 If true, scenes and scripts are saved when the editor loses focus. Depending on the work flow, this behavior can be less intrusive than text_editor/behavior/files/autosave_interval_secs or remembering to save manually.
 
-bool interface/editor/separate_distraction_mode 🔗
+bool interface/editor/separate_distraction_mode 
 
 If true, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/Game/AssetLib tabs. If false, the distraction-free mode toggle is shared between all tabs.
 
-int interface/editor/show_internal_errors_in_toast_notifications 🔗
+int interface/editor/show_internal_errors_in_toast_notifications 
 
 If enabled, displays internal engine errors in toast notifications (toggleable by clicking the "bell" icon at the bottom of the editor). No matter the value of this setting, non-internal engine errors will always be visible in toast notifications.
 
 The default Auto value will only enable this if the editor was compiled with the dev_build=yes SCons option (the default is dev_build=no).
 
-int interface/editor/show_update_spinner 🔗
+int interface/editor/show_update_spinner 
 
 If enabled, displays an icon in the top-right corner of the editor that spins when the editor redraws a frame. This can be used to diagnose situations where the engine is constantly redrawing, which should be avoided as this increases CPU and GPU utilization for no good reason. To further troubleshoot these situations, start the editor with the --debug-canvas-item-redraw command line argument.
 
@@ -14707,7 +14707,7 @@ Note: If interface/editor/update_continuously is true, the spinner icon displays
 
 Note: If the editor was started with the --debug-canvas-item-redraw command line argument, the update spinner will never display regardless of this setting's value. This is to avoid confusion with what would cause redrawing in real world scenarios.
 
-bool interface/editor/single_window_mode 🔗
+bool interface/editor/single_window_mode 
 
 If true, embed modal windows such as docks inside the main editor window. When single-window mode is enabled, tooltips will also be embedded inside the main editor window, which means they can't be displayed outside of the editor window. Single-window mode can be faster as it does not need to create a separate window for every popup and tooltip, which can be a slow operation depending on the operating system and rendering method in use.
 
@@ -14717,37 +14717,37 @@ Note: To query whether the editor can use multiple windows in an editor plugin, 
 
 Note: If true, game embedding is disabled.
 
-int interface/editor/tablet_driver 🔗
+int interface/editor/tablet_driver 
 
 Overrides the tablet driver used by the editor.
 
-int interface/editor/ui_layout_direction 🔗
+int interface/editor/ui_layout_direction 
 
 Editor UI default layout direction.
 
-int interface/editor/unfocused_low_processor_mode_sleep_usec 🔗
+int interface/editor/unfocused_low_processor_mode_sleep_usec 
 
 When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 10 FPS when the editor window is unfocused. See also interface/editor/low_processor_mode_sleep_usec.
 
 Note: This setting is ignored if interface/editor/update_continuously is true, as enabling that setting disables low-processor mode.
 
-bool interface/editor/update_continuously 🔗
+bool interface/editor/update_continuously 
 
 If true, redraws the editor every frame even if nothing has changed on screen. When this setting is enabled, the update spinner displays in red (see interface/editor/show_update_spinner).
 
 Warning: This greatly increases CPU and GPU utilization, leading to increased power usage. This should only be enabled for troubleshooting purposes.
 
-bool interface/editor/use_embedded_menu 🔗
+bool interface/editor/use_embedded_menu 
 
 If true, editor main menu is using embedded MenuBar instead of system global menu.
 
 Specific to the macOS platform.
 
-bool interface/editor/use_native_file_dialogs 🔗
+bool interface/editor/use_native_file_dialogs 
 
 If true, editor UI uses OS native file/directory selection dialogs.
 
-int interface/editor/vsync_mode 🔗
+int interface/editor/vsync_mode 
 
 Sets the V-Sync mode for the editor. Does not affect the project when run from the editor (this is controlled by ProjectSettings.display/window/vsync/vsync_mode).
 
@@ -14755,37 +14755,37 @@ Depending on the platform and used renderer, the engine will fall back to Enable
 
 Note: V-Sync modes other than Enabled are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
-bool interface/editors/derive_script_globals_by_name 🔗
+bool interface/editors/derive_script_globals_by_name 
 
 If true, when extending a script, the global class name of the script is inserted in the script creation dialog, if it exists. If false, the script's file path is always inserted.
 
-bool interface/editors/show_scene_tree_root_selection 🔗
+bool interface/editors/show_scene_tree_root_selection 
 
 If true, the Scene dock will display buttons to quickly add a root node to a newly created scene.
 
-bool interface/inspector/auto_unfold_foreign_scenes 🔗
+bool interface/inspector/auto_unfold_foreign_scenes 
 
 If true, automatically unfolds Inspector property groups containing modified values when opening a scene for the first time. Only affects scenes without saved folding preferences and only unfolds groups with properties that have been changed from their default values.
 
 Note: This setting only works in specific scenarios: when opening a scene brought in from another project, or when opening a new scene that already has modified properties (e.g., from version control). Duplicated scenes are not considered foreign, so this setting will not affect them.
 
-bool interface/inspector/color_picker_show_intensity 🔗
+bool interface/inspector/color_picker_show_intensity 
 
 If true, show the intensity slider in the ColorPickers opened in the editor.
 
-int interface/inspector/default_color_picker_mode 🔗
+int interface/inspector/default_color_picker_mode 
 
 The default color picker mode to use when opening ColorPickers in the editor. This mode can be temporarily adjusted on the color picker itself.
 
-int interface/inspector/default_color_picker_shape 🔗
+int interface/inspector/default_color_picker_shape 
 
 The default color picker shape to use when opening ColorPickers in the editor. This shape can be temporarily adjusted on the color picker itself.
 
-float interface/inspector/default_float_step 🔗
+float interface/inspector/default_float_step 
 
 The floating-point precision to use for properties that don't define an explicit precision step. Lower values allow entering more precise values.
 
-int interface/inspector/default_property_name_style 🔗
+int interface/inspector/default_property_name_style 
 
 The default property name style to display in the Inspector dock. This style can be temporarily adjusted in the Inspector dock's menu.
 
@@ -14797,33 +14797,33 @@ Localized: Displays the localized string for the current editor language if a tr
 
 Note: To display translated setting names in Project Settings and Editor Settings, use interface/editor/localize_settings instead.
 
-bool interface/inspector/delimitate_all_container_and_resources 🔗
+bool interface/inspector/delimitate_all_container_and_resources 
 
 If true, add a margin around Array, Dictionary, and Resource Editors that are not already colored.
 
 Note: If interface/inspector/nested_color_mode is set to Containers & Resources this parameter will have no effect since those editors will already be colored.
 
-bool interface/inspector/disable_folding 🔗
+bool interface/inspector/disable_folding 
 
 If true, forces all property groups to be expanded in the Inspector dock and prevents collapsing them.
 
-float interface/inspector/float_drag_speed 🔗
+float interface/inspector/float_drag_speed 
 
 Base speed for increasing/decreasing float values by dragging them in the inspector.
 
-bool interface/inspector/horizontal_vector2_editing 🔗
+bool interface/inspector/horizontal_vector2_editing 
 
 If true, Vector2 and Vector2i properties are shown on a single line in the inspector instead of two lines. This is overall more compact, but it can be harder to view and edit large values without expanding the inspector horizontally.
 
-bool interface/inspector/horizontal_vector_types_editing 🔗
+bool interface/inspector/horizontal_vector_types_editing 
 
 If true, Vector3, Vector3i, Vector4, Vector4i, Rect2, Rect2i, Plane, and Quaternion properties are shown on a single line in the inspector instead of multiple lines. This is overall more compact, but it can be harder to view and edit large values without expanding the inspector horizontally.
 
-int interface/inspector/max_array_dictionary_items_per_page 🔗
+int interface/inspector/max_array_dictionary_items_per_page 
 
 The number of Array or Dictionary items to display on each "page" in the inspector. Higher values allow viewing more values per page, but take more time to load. This increased load time is noticeable when selecting nodes that have array or dictionary properties in the editor.
 
-int interface/inspector/nested_color_mode 🔗
+int interface/inspector/nested_color_mode 
 
 Control which property editors are colored when they are opened.
 
@@ -14833,21 +14833,21 @@ Resources: Color all Resource Editors.
 
 External Resources: Color Resource Editors that edits an external resource.
 
-bool interface/inspector/open_resources_in_current_inspector 🔗
+bool interface/inspector/open_resources_in_current_inspector 
 
 If true, subresources can be edited in the current inspector view. If the resource type is defined in interface/inspector/resources_to_open_in_new_inspector or if this setting is false, attempting to edit a subresource always opens a new inspector view.
 
-PackedStringArray interface/inspector/resources_to_open_in_new_inspector 🔗
+PackedStringArray interface/inspector/resources_to_open_in_new_inspector 
 
 List of resources that should always be opened in a new inspector view, even if interface/inspector/open_resources_in_current_inspector is true.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-bool interface/inspector/show_low_level_opentype_features 🔗
+bool interface/inspector/show_low_level_opentype_features 
 
 If true, display OpenType features marked as hidden by the font file in the Font editor.
 
-bool interface/multi_window/enable 🔗
+bool interface/multi_window/enable 
 
 If true, multiple window support in editor is enabled. The following panels can become dedicated windows (i.e. made floating): Docks, Script editor, Shader editor, and Game Workspace.
 
@@ -14855,81 +14855,81 @@ Note: When interface/editor/single_window_mode is true, the multi window support
 
 Note: To query whether the editor can use multiple windows in an editor plugin, use EditorInterface.is_multi_window_enabled() instead of querying the value of this editor setting.
 
-bool interface/multi_window/maximize_window 🔗
+bool interface/multi_window/maximize_window 
 
 If true, when panels are made floating they will be maximized.
 
 If false, when panels are made floating their position and size will match the ones when they are attached (excluding window border) to the editor window.
 
-bool interface/multi_window/restore_windows_on_load 🔗
+bool interface/multi_window/restore_windows_on_load 
 
 If true, the floating panel position, size, and screen will be saved on editor exit. On next launch the panels that were floating will be made floating in the saved positions, sizes and screens, if possible.
 
-int interface/scene_tabs/display_close_button 🔗
+int interface/scene_tabs/display_close_button 
 
 Controls when the Close (X) button is displayed on scene tabs at the top of the editor.
 
-int interface/scene_tabs/maximum_width 🔗
+int interface/scene_tabs/maximum_width 
 
 The maximum width of each scene tab at the top editor (in pixels).
 
-bool interface/scene_tabs/restore_scenes_on_load 🔗
+bool interface/scene_tabs/restore_scenes_on_load 
 
 If true, when a project is loaded, restores scenes that were opened on the last editor session.
 
 Note: With many opened scenes, the editor may take longer to become usable. If starting the editor quickly is necessary, consider setting this to false.
 
-bool interface/scene_tabs/show_script_button 🔗
+bool interface/scene_tabs/show_script_button 
 
 If true, show a button next to each scene tab that opens the scene's "dominant" script when clicked. The "dominant" script is the one that is at the highest level in the scene's hierarchy.
 
-bool interface/scene_tabs/show_thumbnail_on_hover 🔗
+bool interface/scene_tabs/show_thumbnail_on_hover 
 
 If true, display an automatically-generated thumbnail when hovering scene tabs with the mouse. Scene thumbnails are generated when saving the scene.
 
-Color interface/theme/accent_color 🔗
+Color interface/theme/accent_color 
 
 The color to use for "highlighted" user interface elements in the editor (pressed and hovered items).
 
-int interface/theme/additional_spacing 🔗
+int interface/theme/additional_spacing 
 
 The extra spacing to add to various GUI elements in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
 
 See also interface/theme/spacing_preset.
 
-Color interface/theme/base_color 🔗
+Color interface/theme/base_color 
 
 The base color to use for user interface elements in the editor. Secondary colors (such as darker/lighter variants) are derived from this color.
 
-int interface/theme/base_spacing 🔗
+int interface/theme/base_spacing 
 
 The base spacing used by various GUI elements in the editor (in pixels). See also interface/theme/spacing_preset.
 
-int interface/theme/border_size 🔗
+int interface/theme/border_size 
 
 The border size to use for interface elements (in pixels).
 
-float interface/theme/contrast 🔗
+float interface/theme/contrast 
 
 The contrast factor to use when deriving the editor theme's base color (see interface/theme/base_color). When using a positive values, the derived colors will be darker than the base color. This contrast factor can be set to a negative value, which will make the derived colors brighter than the base color. Negative contrast rates often look better for light themes.
 
-int interface/theme/corner_radius 🔗
+int interface/theme/corner_radius 
 
 The corner radius to use for interface elements (in pixels). 0 is square.
 
-String interface/theme/custom_theme 🔗
+String interface/theme/custom_theme 
 
 The custom theme resource to use for the editor. Must be a Godot theme resource in .tres or .res format.
 
-bool interface/theme/draw_extra_borders 🔗
+bool interface/theme/draw_extra_borders 
 
 If true, draws additional borders around interactive UI elements in the editor. This is automatically enabled when using the Black (OLED) theme preset, as this theme preset uses a fully black background.
 
-bool interface/theme/follow_system_theme 🔗
+bool interface/theme/follow_system_theme 
 
 If true, the editor theme preset will attempt to automatically match the system theme.
 
-int interface/theme/icon_and_font_color 🔗
+int interface/theme/icon_and_font_color 
 
 The icon and font color scheme to use in the editor.
 
@@ -14939,61 +14939,61 @@ Dark makes fonts and icons dark (suitable for light themes). Icon colors are aut
 
 Light makes fonts and icons light (suitable for dark themes).
 
-float interface/theme/icon_saturation 🔗
+float interface/theme/icon_saturation 
 
 The saturation to use for editor icons. Higher values result in more vibrant colors.
 
 Note: The default editor icon saturation was increased by 30% in Godot 4.0 and later. To get Godot 3.x's icon saturation back, set interface/theme/icon_saturation to 0.77.
 
-String interface/theme/preset 🔗
+String interface/theme/preset 
 
 The editor theme preset to use.
 
-float interface/theme/relationship_line_opacity 🔗
+float interface/theme/relationship_line_opacity 
 
 The opacity to use when drawing relationship lines in the editor's Tree-based GUIs (such as the Scene tree dock).
 
-String interface/theme/spacing_preset 🔗
+String interface/theme/spacing_preset 
 
 The editor theme spacing preset to use. See also interface/theme/base_spacing and interface/theme/additional_spacing.
 
-bool interface/theme/use_system_accent_color 🔗
+bool interface/theme/use_system_accent_color 
 
 If true, set accent color based on system settings.
 
 Note: This setting is only effective on Windows, MacOS, and Android.
 
-bool interface/touchscreen/enable_long_press_as_right_click 🔗
+bool interface/touchscreen/enable_long_press_as_right_click 
 
 If true, long press on touchscreen is treated as right click.
 
 Note: Defaults to true on touchscreen devices.
 
-bool interface/touchscreen/enable_pan_and_scale_gestures 🔗
+bool interface/touchscreen/enable_pan_and_scale_gestures 
 
 If true, enable two finger pan and scale gestures on touchscreen devices.
 
 Note: Defaults to true on touchscreen devices.
 
-bool interface/touchscreen/enable_touch_optimizations 🔗
+bool interface/touchscreen/enable_touch_optimizations 
 
 If true, increases the scrollbar touch area and enables a larger dragger for split containers to improve usability on touchscreen devices
 
 Note: Defaults to true on touchscreen devices.
 
-float interface/touchscreen/scale_gizmo_handles 🔗
+float interface/touchscreen/scale_gizmo_handles 
 
 Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
 
 Note: Defaults to 1 on non-touchscreen devices.
 
-int interface/touchscreen/touch_actions_panel 🔗
+int interface/touchscreen/touch_actions_panel 
 
 A touch-friendly panel that provides easy access to common actions such as save, delete, undo, and redo without requiring a keyboard.
 
 Note: Only available in the Android and XR editor.
 
-int network/connection/check_for_updates 🔗
+int network/connection/check_for_updates 
 
 Specifies how the engine should check for updates.
 
@@ -15007,87 +15007,87 @@ Check Newest Patch will check for the latest available stable version, but only 
 
 All update modes will ignore builds with different major versions (e.g. Godot 4 -> Godot 5).
 
-int network/connection/network_mode 🔗
+int network/connection/network_mode 
 
 Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
 
 Editor plugins and tool scripts are recommended to follow this setting. However, Godot can't prevent them from violating this rule.
 
-String network/debug/remote_host 🔗
+String network/debug/remote_host 
 
 The address to listen to when starting the remote debugger. This can be set to this device's local IP address to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from localhost).
 
-int network/debug/remote_port 🔗
+int network/debug/remote_port 
 
 The port to listen to when starting the remote debugger. Godot will try to use port numbers above the configured number if the configured number is already taken by another application.
 
-String network/http_proxy/host 🔗
+String network/http_proxy/host 
 
 The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also network/http_proxy/port.
 
 Note: Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
-int network/http_proxy/port 🔗
+int network/http_proxy/port 
 
 The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also network/http_proxy/host.
 
 Note: Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
-String network/tls/editor_tls_certificates 🔗
+String network/tls/editor_tls_certificates 
 
 The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the included Mozilla certificate bundle will be used.
 
-bool network/tls/enable_tls_v1.3 🔗
+bool network/tls/enable_tls_v1.3 
 
 If true, enable TLSv1.3 negotiation.
 
 Note: Only supported when using Mbed TLS 3.0 or later (Linux distribution packages may be compiled against older system Mbed TLS packages), otherwise the maximum supported TLS version is always TLSv1.2.
 
-String project_manager/default_renderer 🔗
+String project_manager/default_renderer 
 
 The renderer type that will be checked off by default when creating a new project. Accepted strings are "forward_plus", "mobile" or "gl_compatibility".
 
-int project_manager/directory_naming_convention 🔗
+int project_manager/directory_naming_convention 
 
 Directory naming convention for the project manager. Options are "No convention" (project name is directory name), "kebab-case" (default), "snake_case", "camelCase", "PascalCase", or "Title Case".
 
-int project_manager/sorting_order 🔗
+int project_manager/sorting_order 
 
 The sorting order to use in the project manager. When changing the sorting order in the project manager, this setting is set permanently in the editor settings.
 
-bool run/auto_save/save_before_running 🔗
+bool run/auto_save/save_before_running 
 
 If true, saves all scenes and scripts automatically before running the project. Setting this to false prevents the editor from saving if there are no changes which can speed up the project startup slightly, but it makes it possible to run a project that has unsaved changes. (Unsaved changes will not be visible in the running project.)
 
-int run/bottom_panel/action_on_play 🔗
+int run/bottom_panel/action_on_play 
 
 The action to execute on the bottom panel when running the project.
 
 Note: This option won't do anything if the bottom panel switching is locked using the pin button in the corner of the bottom panel.
 
-int run/bottom_panel/action_on_stop 🔗
+int run/bottom_panel/action_on_stop 
 
 The action to execute on the bottom panel when stopping the project.
 
 Note: This option won't do anything if the bottom panel switching is locked using the pin button in the corner of the bottom panel.
 
-bool run/output/always_clear_output_on_play 🔗
+bool run/output/always_clear_output_on_play 
 
 If true, the editor will clear the Output panel when running the project.
 
-int run/output/font_size 🔗
+int run/output/font_size 
 
 The size of the font in the Output panel at the bottom of the editor. This setting does not impact the font size of the script editor (see interface/editor/code_font_size).
 
-int run/output/max_lines 🔗
+int run/output/max_lines 
 
 Maximum number of lines to show at any one time in the Output panel.
 
-bool run/platforms/linuxbsd/prefer_wayland 🔗
+bool run/platforms/linuxbsd/prefer_wayland 
 
 If true, on Linux/BSD, the editor will check for Wayland first instead of X11 (if available).
 
-int run/window_placement/android_window 🔗
+int run/window_placement/android_window 
 
 Specifies how the Play window is launched relative to the Android editor.
 
@@ -15099,117 +15099,117 @@ Side-by-side with Editor will launch the Play window side-by-side with the Edito
 
 Note: Only available in the Android editor.
 
-int run/window_placement/game_embed_mode 🔗
+int run/window_placement/game_embed_mode 
 
 Overrides game embedding setting for all newly opened projects. If enabled, game embedding settings are not saved.
 
-int run/window_placement/rect 🔗
+int run/window_placement/rect 
 
 The window mode to use to display the project when starting the project from the editor.
 
 Note: Game embedding is not available for "Force Maximized" or "Force Fullscreen".
 
-Vector2 run/window_placement/rect_custom_position 🔗
+Vector2 run/window_placement/rect_custom_position 
 
 The custom position to use when starting the project from the editor (in pixels from the top-left corner). Only effective if run/window_placement/rect is set to Custom Position.
 
-int run/window_placement/screen 🔗
+int run/window_placement/screen 
 
 The monitor to display the project on when starting the project from the editor.
 
-bool text_editor/appearance/caret/caret_blink 🔗
+bool text_editor/appearance/caret/caret_blink 
 
 If true, makes the caret blink according to text_editor/appearance/caret/caret_blink_interval. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
 
-float text_editor/appearance/caret/caret_blink_interval 🔗
+float text_editor/appearance/caret/caret_blink_interval 
 
 The interval at which the caret will blink (in seconds). See also text_editor/appearance/caret/caret_blink.
 
-bool text_editor/appearance/caret/highlight_all_occurrences 🔗
+bool text_editor/appearance/caret/highlight_all_occurrences 
 
 If true, highlights all occurrences of the currently selected text in the script editor. See also text_editor/theme/highlighting/word_highlighted_color.
 
-bool text_editor/appearance/caret/highlight_current_line 🔗
+bool text_editor/appearance/caret/highlight_current_line 
 
 If true, colors the background of the line the caret is currently on with text_editor/theme/highlighting/current_line_color.
 
-int text_editor/appearance/caret/type 🔗
+int text_editor/appearance/caret/type 
 
 The shape of the caret to use in the script editor. Line displays a vertical line to the left of the current character, whereas Block displays an outline over the current character.
 
-bool text_editor/appearance/enable_inline_color_picker 🔗
+bool text_editor/appearance/enable_inline_color_picker 
 
 If true, displays a colored button before any Color constructor in the script editor. Clicking on them allows the color to be modified through a color picker.
 
-int text_editor/appearance/guidelines/line_length_guideline_hard_column 🔗
+int text_editor/appearance/guidelines/line_length_guideline_hard_column 
 
 The column at which to display a subtle line as a line length guideline for scripts. This should generally be greater than text_editor/appearance/guidelines/line_length_guideline_soft_column.
 
-int text_editor/appearance/guidelines/line_length_guideline_soft_column 🔗
+int text_editor/appearance/guidelines/line_length_guideline_soft_column 
 
 The column at which to display a very subtle line as a line length guideline for scripts. This should generally be lower than text_editor/appearance/guidelines/line_length_guideline_hard_column.
 
-bool text_editor/appearance/guidelines/show_line_length_guidelines 🔗
+bool text_editor/appearance/guidelines/show_line_length_guidelines 
 
 If true, displays line length guidelines to help you keep line lengths in check. See also text_editor/appearance/guidelines/line_length_guideline_soft_column and text_editor/appearance/guidelines/line_length_guideline_hard_column.
 
-bool text_editor/appearance/gutters/highlight_type_safe_lines 🔗
+bool text_editor/appearance/gutters/highlight_type_safe_lines 
 
 If true, highlights type-safe lines by displaying their line number color with text_editor/theme/highlighting/safe_line_number_color instead of text_editor/theme/highlighting/line_number_color. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines may run faster thanks to typed instructions.
 
-bool text_editor/appearance/gutters/line_numbers_zero_padded 🔗
+bool text_editor/appearance/gutters/line_numbers_zero_padded 
 
 If true, displays line numbers with zero padding (e.g. 007 instead of 7).
 
-bool text_editor/appearance/gutters/show_info_gutter 🔗
+bool text_editor/appearance/gutters/show_info_gutter 
 
 If true, displays a gutter at the left containing icons for methods with signal connections and for overridden methods.
 
-bool text_editor/appearance/gutters/show_line_numbers 🔗
+bool text_editor/appearance/gutters/show_line_numbers 
 
 If true, displays line numbers in a gutter at the left.
 
-int text_editor/appearance/lines/autowrap_mode 🔗
+int text_editor/appearance/lines/autowrap_mode 
 
 If text_editor/appearance/lines/word_wrap is set to 1, sets text wrapping mode. To see how each mode behaves, see AutowrapMode.
 
-bool text_editor/appearance/lines/code_folding 🔗
+bool text_editor/appearance/lines/code_folding 
 
 If true, displays the folding arrows next to indented code sections and allows code folding. If false, hides the folding arrows next to indented code sections and disallows code folding.
 
-int text_editor/appearance/lines/word_wrap 🔗
+int text_editor/appearance/lines/word_wrap 
 
 If true, wraps long lines over multiple lines to avoid horizontal scrolling. This is a display-only feature; it does not actually insert line breaks in your scripts.
 
-int text_editor/appearance/minimap/minimap_width 🔗
+int text_editor/appearance/minimap/minimap_width 
 
 The width of the minimap in the script editor (in pixels).
 
-bool text_editor/appearance/minimap/show_minimap 🔗
+bool text_editor/appearance/minimap/show_minimap 
 
 If true, draws an overview of the script near the scroll bar. The minimap can be left-clicked to scroll directly to a location in an "absolute" manner.
 
-bool text_editor/appearance/whitespace/draw_spaces 🔗
+bool text_editor/appearance/whitespace/draw_spaces 
 
 If true, draws space characters as centered points.
 
-bool text_editor/appearance/whitespace/draw_tabs 🔗
+bool text_editor/appearance/whitespace/draw_tabs 
 
 If true, draws tab characters as chevrons.
 
-int text_editor/appearance/whitespace/line_spacing 🔗
+int text_editor/appearance/whitespace/line_spacing 
 
 The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
 
-bool text_editor/behavior/documentation/enable_tooltips 🔗
+bool text_editor/behavior/documentation/enable_tooltips 
 
 If true, documentation tooltips will appear when hovering over a symbol.
 
-bool text_editor/behavior/files/auto_reload_and_parse_scripts_on_save 🔗
+bool text_editor/behavior/files/auto_reload_and_parse_scripts_on_save 
 
 If true, tool scripts will be automatically soft-reloaded after they are saved.
 
-bool text_editor/behavior/files/auto_reload_scripts_on_external_change 🔗
+bool text_editor/behavior/files/auto_reload_scripts_on_external_change 
 
 If true, automatically reloads scripts and text-based shaders in the editor when they have been modified and saved by external editors or tools and the editor regains focus. External changes can be discarded by using the Undo function after they've been loaded in the editor.
 
@@ -15217,111 +15217,111 @@ If false, a file conflict dialog will always be displayed when the editor regain
 
 Note: Even when this setting is true, a file conflict dialog is still displayed in certain situations. For instance, it will display when the script editor has unsaved changes that the external editor did not account for.
 
-int text_editor/behavior/files/autosave_interval_secs 🔗
+int text_editor/behavior/files/autosave_interval_secs 
 
 If set to a value greater than 0, automatically saves the current script following the specified interval (in seconds). This can be used to prevent data loss if the editor crashes.
 
-bool text_editor/behavior/files/convert_indent_on_save 🔗
+bool text_editor/behavior/files/convert_indent_on_save 
 
 If true, converts indentation to match the script editor's indentation settings when saving a script. See also text_editor/behavior/indent/type.
 
-bool text_editor/behavior/files/drop_preload_resources_as_uid 🔗
+bool text_editor/behavior/files/drop_preload_resources_as_uid 
 
 If true, when dropping a Resource file to script editor while Ctrl is held, the resource will be preloaded with a UID. If false, the resource will be preloaded with a path.
 
 When you hold Ctrl+Shift, the behavior is reversed.
 
-bool text_editor/behavior/files/open_dominant_script_on_scene_change 🔗
+bool text_editor/behavior/files/open_dominant_script_on_scene_change 
 
 If true, opening a scene automatically opens the script attached to the root node, or the topmost node if the root has no script.
 
-bool text_editor/behavior/files/restore_scripts_on_load 🔗
+bool text_editor/behavior/files/restore_scripts_on_load 
 
 If true, reopens scripts that were opened in the last session when the editor is reopened on a given project.
 
-bool text_editor/behavior/files/trim_final_newlines_on_save 🔗
+bool text_editor/behavior/files/trim_final_newlines_on_save 
 
 If true, trims all empty newlines after the final newline when saving a script. Final newlines refer to the empty newlines found at the end of files. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
 
-bool text_editor/behavior/files/trim_trailing_whitespace_on_save 🔗
+bool text_editor/behavior/files/trim_trailing_whitespace_on_save 
 
 If true, trims trailing whitespace when saving a script. Trailing whitespace refers to tab and space characters placed at the end of lines. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
 
-bool text_editor/behavior/general/empty_selection_clipboard 🔗
+bool text_editor/behavior/general/empty_selection_clipboard 
 
 If true, copying or cutting without a selection is performed on all lines with a caret. Otherwise, copy and cut require a selection.
 
-bool text_editor/behavior/indent/auto_indent 🔗
+bool text_editor/behavior/indent/auto_indent 
 
 If true, automatically indents code when pressing the Enter key based on blocks above the new line.
 
-bool text_editor/behavior/indent/indent_wrapped_lines 🔗
+bool text_editor/behavior/indent/indent_wrapped_lines 
 
 If true, all wrapped lines are indented to the same amount as the unwrapped line.
 
-int text_editor/behavior/indent/size 🔗
+int text_editor/behavior/indent/size 
 
 When using tab indentation, determines the length of each tab. When using space indentation, determines how many spaces are inserted when pressing Tab and when automatic indentation is performed.
 
-int text_editor/behavior/indent/type 🔗
+int text_editor/behavior/indent/type 
 
 The indentation style to use (tabs or spaces).
 
 Note: The GDScript style guide recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
 
-String text_editor/behavior/navigation/custom_word_separators 🔗
+String text_editor/behavior/navigation/custom_word_separators 
 
-The characters to consider as word delimiters if text_editor/behavior/navigation/use_custom_word_separators is true. This is in addition to default characters if text_editor/behavior/navigation/use_default_word_separators is true. The characters should be defined without separation, for example _♥=.
+The characters to consider as word delimiters if text_editor/behavior/navigation/use_custom_word_separators is true. This is in addition to default characters if text_editor/behavior/navigation/use_default_word_separators is true. The characters should be defined without separation, for example _=.
 
-bool text_editor/behavior/navigation/drag_and_drop_selection 🔗
+bool text_editor/behavior/navigation/drag_and_drop_selection 
 
 If true, allows drag-and-dropping text in the script editor to move text. Disable this if you find yourself accidentally drag-and-dropping text in the script editor.
 
-bool text_editor/behavior/navigation/move_caret_on_right_click 🔗
+bool text_editor/behavior/navigation/move_caret_on_right_click 
 
 If true, the caret will be moved when right-clicking somewhere in the script editor (like when left-clicking or middle-clicking). If false, the caret will only be moved when left-clicking or middle-clicking somewhere.
 
-bool text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method 🔗
+bool text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method 
 
 If true, opens the script editor when connecting a signal to an existing script method from the Node dock.
 
-bool text_editor/behavior/navigation/scroll_past_end_of_file 🔗
+bool text_editor/behavior/navigation/scroll_past_end_of_file 
 
 If true, allows scrolling past the end of the file.
 
-bool text_editor/behavior/navigation/smooth_scrolling 🔗
+bool text_editor/behavior/navigation/smooth_scrolling 
 
 If true, enables a smooth scrolling animation when using the mouse wheel to scroll. See text_editor/behavior/navigation/v_scroll_speed for the speed of this animation.
 
 Note: text_editor/behavior/navigation/smooth_scrolling currently behaves poorly in projects where ProjectSettings.physics/common/physics_ticks_per_second has been increased significantly from its default value (60). In this case, it is recommended to disable this setting.
 
-bool text_editor/behavior/navigation/stay_in_script_editor_on_node_selected 🔗
+bool text_editor/behavior/navigation/stay_in_script_editor_on_node_selected 
 
 If true, prevents automatically switching between the Script and 2D/3D screens when selecting a node in the Scene tree dock.
 
-bool text_editor/behavior/navigation/use_custom_word_separators 🔗
+bool text_editor/behavior/navigation/use_custom_word_separators 
 
 If true, uses the characters in text_editor/behavior/navigation/custom_word_separators as word separators for word navigation and operations. This is in addition to the default characters if text_editor/behavior/navigation/use_default_word_separators is also enabled. Word navigation and operations include double-clicking on a word or holding Ctrl (Cmd on macOS) while pressing left, right, backspace, or delete.
 
-bool text_editor/behavior/navigation/use_default_word_separators 🔗
+bool text_editor/behavior/navigation/use_default_word_separators 
 
 If true, uses the characters in `!"#$%&'()*+,-./:;<=>?@[\]^`{|}~, the Unicode General Punctuation table, and the Unicode CJK Punctuation table as word separators for word navigation and operations. If false, a subset of these characters are used and does not include the characters <>$~^=+|. This is in addition to custom characters if text_editor/behavior/navigation/use_custom_word_separators is also enabled. These characters are used to determine where a word stops. Word navigation and operations include double-clicking on a word or holding Ctrl (Cmd on macOS) while pressing left, right, backspace, or delete.
 
-int text_editor/behavior/navigation/v_scroll_speed 🔗
+int text_editor/behavior/navigation/v_scroll_speed 
 
 The speed of scrolling in lines per second when text_editor/behavior/navigation/smooth_scrolling is true. Higher values make the script scroll by faster when using the mouse wheel.
 
 Note: You can hold down Alt while using the mouse wheel to temporarily scroll 5 times faster.
 
-bool text_editor/completion/add_node_path_literals 🔗
+bool text_editor/completion/add_node_path_literals 
 
 If true, uses NodePath instead of String when appropriate for code autocompletion or for drag and dropping object properties into the script editor.
 
-bool text_editor/completion/add_string_name_literals 🔗
+bool text_editor/completion/add_string_name_literals 
 
 If true, uses StringName instead of String when appropriate for code autocompletion.
 
-bool text_editor/completion/add_type_hints 🔗
+bool text_editor/completion/add_type_hints 
 
 If true, automatically adds GDScript static typing (such as -> void and : int) in many situations where it's possible to, including when:
 
@@ -15333,113 +15333,113 @@ Connecting signals from the Node dock;
 
 Creating variables prefixed with @GDScript.@onready, by dropping nodes from the Scene dock into the script editor while holding Ctrl.
 
-bool text_editor/completion/auto_brace_complete 🔗
+bool text_editor/completion/auto_brace_complete 
 
 If true, automatically inserts the matching closing brace when the opening brace is inserted by typing or autocompletion. Also automatically removes the closing brace when pressing Backspace on the opening brace. This includes brackets ((), [], {}), string quotation marks ('', ""), and comments (/**/) if the language supports it.
 
-float text_editor/completion/code_complete_delay 🔗
+float text_editor/completion/code_complete_delay 
 
 The delay in seconds after which autocompletion suggestions should be displayed when the user stops typing.
 
-bool text_editor/completion/code_complete_enabled 🔗
+bool text_editor/completion/code_complete_enabled 
 
 If true, code completion will be triggered automatically after text_editor/completion/code_complete_delay. Even if false, code completion can be triggered manually with the ui_text_completion_query action (by default Ctrl + Space or Cmd + Space on macOS).
 
-bool text_editor/completion/colorize_suggestions 🔗
+bool text_editor/completion/colorize_suggestions 
 
 If true enables the coloring for some items in the autocompletion suggestions, like vector components.
 
-bool text_editor/completion/complete_file_paths 🔗
+bool text_editor/completion/complete_file_paths 
 
 If true, provides autocompletion suggestions for file paths in methods such as load() and preload().
 
-float text_editor/completion/idle_parse_delay 🔗
+float text_editor/completion/idle_parse_delay 
 
 The delay in seconds after which the script editor should check for errors when the user stops typing.
 
-float text_editor/completion/idle_parse_delay_with_errors_found 🔗
+float text_editor/completion/idle_parse_delay_with_errors_found 
 
 The delay used instead of text_editor/completion/idle_parse_delay, when the parser has found errors. A lower value should feel more responsive while fixing code, but may cause notable stuttering and increase CPU usage.
 
-bool text_editor/completion/put_callhint_tooltip_below_current_line 🔗
+bool text_editor/completion/put_callhint_tooltip_below_current_line 
 
 If true, the code completion tooltip will appear below the current line unless there is no space on screen below the current line. If false, the code completion tooltip will appear above the current line.
 
-bool text_editor/completion/use_single_quotes 🔗
+bool text_editor/completion/use_single_quotes 
 
 If true, performs string autocompletion with single quotes. If false, performs string autocompletion with double quotes (which matches the GDScript style guide).
 
-String text_editor/external/exec_flags 🔗
+String text_editor/external/exec_flags 
 
 The command-line arguments to pass to the external text editor that is run when text_editor/external/use_external_editor is true. See also text_editor/external/exec_path.
 
-String text_editor/external/exec_path 🔗
+String text_editor/external/exec_path 
 
 The path to the text editor executable used to edit text files if text_editor/external/use_external_editor is true.
 
-bool text_editor/external/use_external_editor 🔗
+bool text_editor/external/use_external_editor 
 
 If true, uses an external editor instead of the built-in Script Editor. See also text_editor/external/exec_path and text_editor/external/exec_flags.
 
-int text_editor/help/class_reference_examples 🔗
+int text_editor/help/class_reference_examples 
 
 Controls which multi-line code blocks should be displayed in the editor help. This setting does not affect single-line code literals in the editor help.
 
-int text_editor/help/help_font_size 🔗
+int text_editor/help/help_font_size 
 
 The font size to use for the editor help (built-in class reference).
 
-int text_editor/help/help_source_font_size 🔗
+int text_editor/help/help_source_font_size 
 
 The font size to use for code samples in the editor help (built-in class reference).
 
-int text_editor/help/help_title_font_size 🔗
+int text_editor/help/help_title_font_size 
 
 The font size to use for headings in the editor help (built-in class reference).
 
-bool text_editor/help/show_help_index 🔗
+bool text_editor/help/show_help_index 
 
 If true, displays a table of contents at the left of the editor help (at the location where the members overview would appear when editing a script).
 
-bool text_editor/help/sort_functions_alphabetically 🔗
+bool text_editor/help/sort_functions_alphabetically 
 
 If true, the script's method list in the Script Editor is sorted alphabetically.
 
-bool text_editor/script_list/group_help_pages 🔗
+bool text_editor/script_list/group_help_pages 
 
 If true, class reference pages are grouped together at the bottom of the Script Editor's script list.
 
-bool text_editor/script_list/highlight_scene_scripts 🔗
+bool text_editor/script_list/highlight_scene_scripts 
 
 If true, the scripts that are used by the current scene are highlighted in the Script Editor's script list.
 
-int text_editor/script_list/list_script_names_as 🔗
+int text_editor/script_list/list_script_names_as 
 
 Specifies how script paths should be displayed in Script Editor's script list. If using the "Name" option and some scripts share the same file name, more parts of their paths are revealed to avoid conflicts.
 
-bool text_editor/script_list/script_temperature_enabled 🔗
+bool text_editor/script_list/script_temperature_enabled 
 
 If true, the names of recently opened scripts in the Script Editor are highlighted with the accent color, with its intensity based on how recently they were opened.
 
-int text_editor/script_list/script_temperature_history_size 🔗
+int text_editor/script_list/script_temperature_history_size 
 
 How many script names can be highlighted at most, if text_editor/script_list/script_temperature_enabled is true. Scripts older than this value use the default font color.
 
-bool text_editor/script_list/show_members_overview 🔗
+bool text_editor/script_list/show_members_overview 
 
 If true, displays an overview of the current script's member variables and functions at the left of the script editor. See also text_editor/script_list/sort_members_outline_alphabetically.
 
-bool text_editor/script_list/sort_members_outline_alphabetically 🔗
+bool text_editor/script_list/sort_members_outline_alphabetically 
 
 If true, sorts the members outline (located at the left of the script editor) using alphabetical order. If false, sorts the members outline depending on the order in which members are found in the script.
 
 Note: Only effective if text_editor/script_list/show_members_overview is true.
 
-int text_editor/script_list/sort_scripts_by 🔗
+int text_editor/script_list/sort_scripts_by 
 
 Specifies sorting used for Script Editor's open script list.
 
-String text_editor/theme/color_theme 🔗
+String text_editor/theme/color_theme 
 
 The syntax theme to use in the script editor.
 
@@ -15447,239 +15447,239 @@ You can save your own syntax theme from your current settings by using File > Th
 
 You can find additional syntax themes to install in the godot-syntax-themes repository.
 
-Color text_editor/theme/highlighting/background_color 🔗
+Color text_editor/theme/highlighting/background_color 
 
 The script editor's background color. If set to a translucent color, the editor theme's base color will be visible behind.
 
-Color text_editor/theme/highlighting/base_type_color 🔗
+Color text_editor/theme/highlighting/base_type_color 
 
 The script editor's base type color (used for types like Vector2, Vector3, Color, ...).
 
-Color text_editor/theme/highlighting/bookmark_color 🔗
+Color text_editor/theme/highlighting/bookmark_color 
 
 The script editor's bookmark icon color (displayed in the gutter).
 
-Color text_editor/theme/highlighting/brace_mismatch_color 🔗
+Color text_editor/theme/highlighting/brace_mismatch_color 
 
 The script editor's brace mismatch color. Used when the caret is currently on a mismatched brace, parenthesis or bracket character.
 
-Color text_editor/theme/highlighting/breakpoint_color 🔗
+Color text_editor/theme/highlighting/breakpoint_color 
 
 The script editor's breakpoint icon color (displayed in the gutter).
 
-Color text_editor/theme/highlighting/caret_background_color 🔗
+Color text_editor/theme/highlighting/caret_background_color 
 
 The script editor's caret background color.
 
 Note: This setting has no effect as it's currently unused.
 
-Color text_editor/theme/highlighting/caret_color 🔗
+Color text_editor/theme/highlighting/caret_color 
 
 The script editor's caret color.
 
-Color text_editor/theme/highlighting/code_folding_color 🔗
+Color text_editor/theme/highlighting/code_folding_color 
 
 The script editor's color for the code folding icon (displayed in the gutter).
 
-Color text_editor/theme/highlighting/comment_color 🔗
+Color text_editor/theme/highlighting/comment_color 
 
 The script editor's comment color.
 
 Note: In GDScript, unlike Python, multiline strings are not considered to be comments, and will use the string highlighting color instead.
 
-Color text_editor/theme/highlighting/comment_markers/critical_color 🔗
+Color text_editor/theme/highlighting/comment_markers/critical_color 
 
 The script editor's critical comment marker text color. These markers are determined by text_editor/theme/highlighting/comment_markers/critical_list.
 
-String text_editor/theme/highlighting/comment_markers/critical_list 🔗
+String text_editor/theme/highlighting/comment_markers/critical_list 
 
 A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the text_editor/theme/highlighting/comment_markers/critical_color color. These must not include spaces or symbols or they will not be highlighted.
 
 Note: This is only implemented in the GDScript syntax highlighter.
 
-Color text_editor/theme/highlighting/comment_markers/notice_color 🔗
+Color text_editor/theme/highlighting/comment_markers/notice_color 
 
 The script editor's notice comment marker text color. These markers are determined by text_editor/theme/highlighting/comment_markers/notice_list.
 
-String text_editor/theme/highlighting/comment_markers/notice_list 🔗
+String text_editor/theme/highlighting/comment_markers/notice_list 
 
 A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the text_editor/theme/highlighting/comment_markers/notice_color color. These must not include spaces or symbols or they will not be highlighted.
 
 Note: This is only implemented in the GDScript syntax highlighter.
 
-Color text_editor/theme/highlighting/comment_markers/warning_color 🔗
+Color text_editor/theme/highlighting/comment_markers/warning_color 
 
 The script editor's warning comment marker text color. These markers are determined by text_editor/theme/highlighting/comment_markers/warning_list.
 
-String text_editor/theme/highlighting/comment_markers/warning_list 🔗
+String text_editor/theme/highlighting/comment_markers/warning_list 
 
 A comma-separated list of case-sensitive words to highlight in comments. The text will be highlighted in the script editor with the text_editor/theme/highlighting/comment_markers/warning_color color. These must not include spaces or symbols or they will not be highlighted.
 
 Note: This is only implemented in the GDScript syntax highlighter.
 
-Color text_editor/theme/highlighting/completion_background_color 🔗
+Color text_editor/theme/highlighting/completion_background_color 
 
 The script editor's autocompletion box background color.
 
-Color text_editor/theme/highlighting/completion_existing_color 🔗
+Color text_editor/theme/highlighting/completion_existing_color 
 
 The script editor's autocompletion box background color to highlight existing characters in the completion results. This should be a translucent color so that text_editor/theme/highlighting/completion_selected_color can be seen behind.
 
-Color text_editor/theme/highlighting/completion_font_color 🔗
+Color text_editor/theme/highlighting/completion_font_color 
 
 The script editor's autocompletion box text color.
 
-Color text_editor/theme/highlighting/completion_scroll_color 🔗
+Color text_editor/theme/highlighting/completion_scroll_color 
 
 The script editor's autocompletion box scroll bar color.
 
-Color text_editor/theme/highlighting/completion_scroll_hovered_color 🔗
+Color text_editor/theme/highlighting/completion_scroll_hovered_color 
 
 The script editor's autocompletion box scroll bar color when hovered or pressed with the mouse.
 
-Color text_editor/theme/highlighting/completion_selected_color 🔗
+Color text_editor/theme/highlighting/completion_selected_color 
 
 The script editor's autocompletion box background color for the currently selected line.
 
-Color text_editor/theme/highlighting/control_flow_keyword_color 🔗
+Color text_editor/theme/highlighting/control_flow_keyword_color 
 
 The script editor's control flow keyword color (used for keywords like if, for, return, ...).
 
-Color text_editor/theme/highlighting/current_line_color 🔗
+Color text_editor/theme/highlighting/current_line_color 
 
 The script editor's background color for the line the caret is currently on. This should be set to a translucent color so that it can display on top of other line color modifiers such as text_editor/theme/highlighting/mark_color.
 
-Color text_editor/theme/highlighting/doc_comment_color 🔗
+Color text_editor/theme/highlighting/doc_comment_color 
 
 The script editor's documentation comment color. In GDScript, this is used for comments starting with ##. In C#, this is used for comments starting with /// or /**.
 
-Color text_editor/theme/highlighting/engine_type_color 🔗
+Color text_editor/theme/highlighting/engine_type_color 
 
 The script editor's engine type color (Object, Mesh, Node, ...).
 
-Color text_editor/theme/highlighting/executing_line_color 🔗
+Color text_editor/theme/highlighting/executing_line_color 
 
 The script editor's color for the debugger's executing line icon (displayed in the gutter).
 
-Color text_editor/theme/highlighting/folded_code_region_color 🔗
+Color text_editor/theme/highlighting/folded_code_region_color 
 
 The script editor's background line highlighting color for folded code region.
 
-Color text_editor/theme/highlighting/function_color 🔗
+Color text_editor/theme/highlighting/function_color 
 
 The script editor's function call color.
 
 Note: When using the GDScript syntax highlighter, this is only used when calling some functions since function definitions and global functions have their own colors text_editor/theme/highlighting/gdscript/function_definition_color and text_editor/theme/highlighting/gdscript/global_function_color.
 
-Color text_editor/theme/highlighting/gdscript/annotation_color 🔗
+Color text_editor/theme/highlighting/gdscript/annotation_color 
 
 The GDScript syntax highlighter text color for annotations (e.g. @export).
 
-Color text_editor/theme/highlighting/gdscript/function_definition_color 🔗
+Color text_editor/theme/highlighting/gdscript/function_definition_color 
 
 The GDScript syntax highlighter text color for function definitions (e.g. the _ready in func _ready():).
 
-Color text_editor/theme/highlighting/gdscript/global_function_color 🔗
+Color text_editor/theme/highlighting/gdscript/global_function_color 
 
 The GDScript syntax highlighter text color for global functions, such as the ones in @GlobalScope (e.g. preload()).
 
-Color text_editor/theme/highlighting/gdscript/node_path_color 🔗
+Color text_editor/theme/highlighting/gdscript/node_path_color 
 
 The GDScript syntax highlighter text color for NodePath literals (e.g. ^"position:x").
 
-Color text_editor/theme/highlighting/gdscript/node_reference_color 🔗
+Color text_editor/theme/highlighting/gdscript/node_reference_color 
 
 The GDScript syntax highlighter text color for node reference literals (e.g. $"Sprite" and %"Sprite"]).
 
-Color text_editor/theme/highlighting/gdscript/string_name_color 🔗
+Color text_editor/theme/highlighting/gdscript/string_name_color 
 
 The GDScript syntax highlighter text color for StringName literals (e.g. &"example").
 
-Color text_editor/theme/highlighting/keyword_color 🔗
+Color text_editor/theme/highlighting/keyword_color 
 
 The script editor's non-control flow keyword color (used for keywords like var, func, extends, ...).
 
-Color text_editor/theme/highlighting/line_length_guideline_color 🔗
+Color text_editor/theme/highlighting/line_length_guideline_color 
 
 The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with half of its opacity.
 
-Color text_editor/theme/highlighting/line_number_color 🔗
+Color text_editor/theme/highlighting/line_number_color 
 
 The script editor's color for line numbers. See also text_editor/theme/highlighting/safe_line_number_color.
 
-Color text_editor/theme/highlighting/mark_color 🔗
+Color text_editor/theme/highlighting/mark_color 
 
 The script editor's background color for lines with errors. This should be set to a translucent color so that it can display on top of other line color modifiers such as text_editor/theme/highlighting/current_line_color.
 
-Color text_editor/theme/highlighting/member_variable_color 🔗
+Color text_editor/theme/highlighting/member_variable_color 
 
 The script editor's color for member variables on objects (e.g. self.some_property).
 
 Note: This color is not used for local variable declaration and access.
 
-Color text_editor/theme/highlighting/number_color 🔗
+Color text_editor/theme/highlighting/number_color 
 
 The script editor's color for numbers (integer and floating-point).
 
-Color text_editor/theme/highlighting/safe_line_number_color 🔗
+Color text_editor/theme/highlighting/safe_line_number_color 
 
 The script editor's color for type-safe line numbers. See also text_editor/theme/highlighting/line_number_color.
 
 Note: Only displayed if text_editor/appearance/gutters/highlight_type_safe_lines is true.
 
-Color text_editor/theme/highlighting/search_result_border_color 🔗
+Color text_editor/theme/highlighting/search_result_border_color 
 
 The script editor's color for the border of search results. This border helps bring further attention to the search result. Set this color's opacity to 0 to disable the border.
 
-Color text_editor/theme/highlighting/search_result_color 🔗
+Color text_editor/theme/highlighting/search_result_color 
 
 The script editor's background color for search results.
 
-Color text_editor/theme/highlighting/selection_color 🔗
+Color text_editor/theme/highlighting/selection_color 
 
 The script editor's background color for the currently selected text.
 
-Color text_editor/theme/highlighting/string_color 🔗
+Color text_editor/theme/highlighting/string_color 
 
 The script editor's color for strings (single-line and multi-line).
 
-Color text_editor/theme/highlighting/symbol_color 🔗
+Color text_editor/theme/highlighting/symbol_color 
 
 The script editor's color for operators (( ) [ ] { } + - * /, ...).
 
-Color text_editor/theme/highlighting/text_color 🔗
+Color text_editor/theme/highlighting/text_color 
 
 The script editor's color for text not highlighted by any syntax highlighting rule.
 
-Color text_editor/theme/highlighting/text_selected_color 🔗
+Color text_editor/theme/highlighting/text_selected_color 
 
 The script editor's background color for text. This should be set to a translucent color so that it can display on top of other line color modifiers such as text_editor/theme/highlighting/current_line_color.
 
-Color text_editor/theme/highlighting/user_type_color 🔗
+Color text_editor/theme/highlighting/user_type_color 
 
 The script editor's color for user-defined types (using class_name).
 
-Color text_editor/theme/highlighting/warning_color 🔗
+Color text_editor/theme/highlighting/warning_color 
 
 The script editor's background color for lines with warnings. This should be set to a translucent color so that it can display on top of other line color modifiers such as text_editor/theme/highlighting/current_line_color.
 
-Color text_editor/theme/highlighting/word_highlighted_color 🔗
+Color text_editor/theme/highlighting/word_highlighted_color 
 
 The script editor's color for words highlighted by selecting them. Only visible if text_editor/appearance/caret/highlight_all_occurrences is true.
 
-String version_control/ssh_private_key_path 🔗
+String version_control/ssh_private_key_path 
 
 Path to private SSH key file for the editor's Version Control integration credentials.
 
-String version_control/ssh_public_key_path 🔗
+String version_control/ssh_public_key_path 
 
 Path to public SSH key file for the editor's Version Control integration credentials.
 
-String version_control/username 🔗
+String version_control/username 
 
 Default username for editor's Version Control integration.
 
-void add_property_info(info: Dictionary) 🔗
+void add_property_info(info: Dictionary) 
 
 Adds a custom property info to a property. The dictionary must contain:
 
@@ -15689,63 +15689,63 @@ type: int (see Variant.Type)
 
 optionally hint: int (see PropertyHint) and hint_string: String
 
-bool check_changed_settings_in_group(setting_prefix: String) const 🔗
+bool check_changed_settings_in_group(setting_prefix: String) const 
 
 Checks if any settings with the prefix setting_prefix exist in the set of changed settings. See also get_changed_settings().
 
-void erase(property: String) 🔗
+void erase(property: String) 
 
 Erases the setting whose name is specified by property.
 
-PackedStringArray get_changed_settings() const 🔗
+PackedStringArray get_changed_settings() const 
 
 Gets an array of the settings which have been changed since the last save. Note that internally changed_settings is cleared after a successful save, so generally the most appropriate place to use this method is when processing NOTIFICATION_EDITOR_SETTINGS_CHANGED.
 
-PackedStringArray get_favorites() const 🔗
+PackedStringArray get_favorites() const 
 
 Returns the list of favorite files and directories for this project.
 
-Variant get_project_metadata(section: String, key: String, default: Variant = null) const 🔗
+Variant get_project_metadata(section: String, key: String, default: Variant = null) const 
 
 Returns project-specific metadata for the section and key specified. If the metadata doesn't exist, default will be returned instead. See also set_project_metadata().
 
-PackedStringArray get_recent_dirs() const 🔗
+PackedStringArray get_recent_dirs() const 
 
 Returns the list of recently visited folders in the file dialog for this project.
 
-Variant get_setting(name: String) const 🔗
+Variant get_setting(name: String) const 
 
 Returns the value of the setting specified by name. This is equivalent to using Object.get() on the EditorSettings instance.
 
-bool has_setting(name: String) const 🔗
+bool has_setting(name: String) const 
 
 Returns true if the setting specified by name exists, false otherwise.
 
-void mark_setting_changed(setting: String) 🔗
+void mark_setting_changed(setting: String) 
 
 Marks the passed editor setting as being changed, see get_changed_settings(). Only settings which exist (see has_setting()) will be accepted.
 
-void set_builtin_action_override(name: String, actions_list: Array[InputEvent]) 🔗
+void set_builtin_action_override(name: String, actions_list: Array[InputEvent]) 
 
 Overrides the built-in editor action name with the input actions defined in actions_list.
 
-void set_favorites(dirs: PackedStringArray) 🔗
+void set_favorites(dirs: PackedStringArray) 
 
 Sets the list of favorite files and directories for this project.
 
-void set_initial_value(name: StringName, value: Variant, update_current: bool) 🔗
+void set_initial_value(name: StringName, value: Variant, update_current: bool) 
 
 Sets the initial value of the setting specified by name to value. This is used to provide a value for the Revert button in the Editor Settings. If update_current is true, the setting is reset to value as well.
 
-void set_project_metadata(section: String, key: String, data: Variant) 🔗
+void set_project_metadata(section: String, key: String, data: Variant) 
 
 Sets project-specific metadata with the section, key and data specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also get_project_metadata().
 
-void set_recent_dirs(dirs: PackedStringArray) 🔗
+void set_recent_dirs(dirs: PackedStringArray) 
 
 Sets the list of recently visited folders in the file dialog for this project.
 
-void set_setting(name: String, value: Variant) 🔗
+void set_setting(name: String, value: Variant) 
 
 Sets the value of the setting specified by name. This is equivalent to using Object.set() on the EditorSettings instance.
 
@@ -15824,15 +15824,15 @@ Emitted when the spinner/slider is ungrabbed.
 
 Emitted when the updown button is pressed.
 
-value_focus_entered() 🔗
+value_focus_entered() 
 
 Emitted when the value form gains focus.
 
-value_focus_exited() 🔗
+value_focus_exited() 
 
 Emitted when the value form loses focus.
 
-bool editing_integer = false 🔗
+bool editing_integer = false 
 
 void set_editing_integer(value: bool)
 
@@ -15844,7 +15844,7 @@ void set_flat(value: bool)
 
 If true, the slider will not draw background.
 
-bool hide_slider = false 🔗
+bool hide_slider = false 
 
 void set_hide_slider(value: bool)
 
@@ -15856,7 +15856,7 @@ void set_label(value: String)
 
 The text that displays to the left of the value.
 
-bool read_only = false 🔗
+bool read_only = false 
 
 void set_read_only(value: bool)
 
@@ -15868,7 +15868,7 @@ The suffix to display after the value (in a faded color). This should generally 
 
 Single texture representing both the up and down buttons.
 
-Texture2D updown_disabled 🔗
+Texture2D updown_disabled 
 
 Single texture representing both the up and down buttons, when the control is readonly or disabled.
 
@@ -15905,15 +15905,15 @@ _get_name() virtual const
 
 _get_supported_languages() virtual const
 
-EditorSyntaxHighlighter _create() virtual const 🔗
+EditorSyntaxHighlighter _create() virtual const 
 
 Virtual method which creates a new instance of the syntax highlighter.
 
-String _get_name() virtual const 🔗
+String _get_name() virtual const 
 
 Virtual method which can be overridden to return the syntax highlighter name.
 
-PackedStringArray _get_supported_languages() virtual const 🔗
+PackedStringArray _get_supported_languages() virtual const 
 
 Virtual method which can be overridden to return the supported language names.
 
@@ -15955,7 +15955,7 @@ Severity SEVERITY_ERROR = 2
 
 Toast will display with an ERROR severity and have a corresponding color.
 
-void push_toast(message: String, severity: Severity = 0, tooltip: String = "") 🔗
+void push_toast(message: String, severity: Severity = 0, tooltip: String = "") 
 
 Pushes a toast notification to the editor for display.
 
@@ -15998,11 +15998,11 @@ Array[PackedStringArray]
 
 _parse_file(path: String) virtual
 
-PackedStringArray _get_recognized_extensions() virtual const 🔗
+PackedStringArray _get_recognized_extensions() virtual const 
 
 Gets the list of file extensions to associate with this parser, e.g. ["csv"].
 
-Array[PackedStringArray] _parse_file(path: String) virtual 🔗
+Array[PackedStringArray] _parse_file(path: String) virtual 
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 
@@ -16141,7 +16141,7 @@ Emitted when the list of actions in any history has changed, either when an acti
 
 Emitted when the version of any history has changed as a result of undo or redo call.
 
-enum SpecialHistory: 🔗
+enum SpecialHistory: 
 
 SpecialHistory GLOBAL_HISTORY = 0
 
@@ -16155,39 +16155,39 @@ SpecialHistory INVALID_HISTORY = -99
 
 Invalid "null" history. It's a special value, not associated with any object.
 
-void add_do_method(object: Object, method: StringName, ...) vararg 🔗
+void add_do_method(object: Object, method: StringName, ...) vararg 
 
 Register a method that will be called when the action is committed (i.e. the "do" action).
 
 If this is the first operation, the object will be used to deduce target undo history.
 
-void add_do_property(object: Object, property: StringName, value: Variant) 🔗
+void add_do_property(object: Object, property: StringName, value: Variant) 
 
 Register a property value change for "do".
 
 If this is the first operation, the object will be used to deduce target undo history.
 
-void add_do_reference(object: Object) 🔗
+void add_do_reference(object: Object) 
 
 Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
 
-void add_undo_method(object: Object, method: StringName, ...) vararg 🔗
+void add_undo_method(object: Object, method: StringName, ...) vararg 
 
 Register a method that will be called when the action is undone (i.e. the "undo" action).
 
 If this is the first operation, the object will be used to deduce target undo history.
 
-void add_undo_property(object: Object, property: StringName, value: Variant) 🔗
+void add_undo_property(object: Object, property: StringName, value: Variant) 
 
 Register a property value change for "undo".
 
 If this is the first operation, the object will be used to deduce target undo history.
 
-void add_undo_reference(object: Object) 🔗
+void add_undo_reference(object: Object) 
 
 Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
 
-void clear_history(id: int = -99, increase_version: bool = true) 🔗
+void clear_history(id: int = -99, increase_version: bool = true) 
 
 Clears the given undo history. You can clear history for a specific scene, global history, or for all scenes at once if id is INVALID_HISTORY.
 
@@ -16195,11 +16195,11 @@ If increase_version is true, the undo history version will be increased, marking
 
 Note: If you want to mark an edited scene as unsaved without clearing its history, use EditorInterface.mark_scene_as_unsaved() instead.
 
-void commit_action(execute: bool = true) 🔗
+void commit_action(execute: bool = true) 
 
 Commits the action. If execute is true (default), all "do" methods/properties are called/set when this function is called.
 
-void create_action(name: String, merge_mode: MergeMode = 0, custom_context: Object = null, backward_undo_ops: bool = false, mark_unsaved: bool = true) 🔗
+void create_action(name: String, merge_mode: MergeMode = 0, custom_context: Object = null, backward_undo_ops: bool = false, mark_unsaved: bool = true) 
 
 Create a new action. After this is called, do all your calls to add_do_method(), add_undo_method(), add_do_property(), and add_undo_property(), then commit the action with commit_action().
 
@@ -16211,13 +16211,13 @@ The way undo operation are ordered in actions is dictated by backward_undo_ops. 
 
 If mark_unsaved is false, the action will not mark the history as unsaved. This is useful for example for actions that change a selection, or a setting that will be saved automatically. Otherwise, this should be left to true if the action requires saving by the user or if it can cause data loss when left unsaved.
 
-void force_fixed_history() 🔗
+void force_fixed_history() 
 
 Forces the next operation (e.g. add_do_method()) to use the action's history rather than guessing it from the object. This is sometimes needed when a history can't be correctly determined, like for a nested resource that doesn't have a path yet.
 
 This method should only be used when absolutely necessary, otherwise it might cause invalid history state. For most of complex cases, the custom_context parameter of create_action() is sufficient.
 
-UndoRedo get_history_undo_redo(id: int) const 🔗
+UndoRedo get_history_undo_redo(id: int) const 
 
 Returns the UndoRedo object associated with the given history id.
 
@@ -16225,11 +16225,11 @@ id above 0 are mapped to the opened scene tabs (but it doesn't match their order
 
 Best used with get_object_history_id(). This method is only provided in case you need some more advanced methods of UndoRedo (but keep in mind that directly operating on the UndoRedo object might affect editor's stability).
 
-int get_object_history_id(object: Object) const 🔗
+int get_object_history_id(object: Object) const 
 
 Returns the history ID deduced from the given object. It can be used with get_history_undo_redo().
 
-bool is_committing_action() const 🔗
+bool is_committing_action() const 
 
 Returns true if the EditorUndoRedoManager is currently committing the action, i.e. running its "do" method or property change (see commit_action()).
 
@@ -16363,127 +16363,127 @@ TreeArea TREE_AREA_UNSTAGED = 2
 
 A file is encountered from the unstaged area.
 
-bool _checkout_branch(branch_name: String) virtual required 🔗
+bool _checkout_branch(branch_name: String) virtual required 
 
 Checks out a branch_name in the VCS.
 
-void _commit(msg: String) virtual required 🔗
+void _commit(msg: String) virtual required 
 
 Commits the currently staged changes and applies the commit msg to the resulting commit.
 
-void _create_branch(branch_name: String) virtual required 🔗
+void _create_branch(branch_name: String) virtual required 
 
 Creates a new branch named branch_name in the VCS.
 
-void _create_remote(remote_name: String, remote_url: String) virtual required 🔗
+void _create_remote(remote_name: String, remote_url: String) virtual required 
 
 Creates a new remote destination with name remote_name and points it to remote_url. This can be an HTTPS remote or an SSH remote.
 
-void _discard_file(file_path: String) virtual required 🔗
+void _discard_file(file_path: String) virtual required 
 
 Discards the changes made in a file present at file_path.
 
-void _fetch(remote: String) virtual required 🔗
+void _fetch(remote: String) virtual required 
 
 Fetches new changes from the remote, but doesn't write changes to the current working directory. Equivalent to git fetch.
 
-Array[String] _get_branch_list() virtual required 🔗
+Array[String] _get_branch_list() virtual required 
 
 Gets an instance of an Array of Strings containing available branch names in the VCS.
 
-String _get_current_branch_name() virtual required 🔗
+String _get_current_branch_name() virtual required 
 
 Gets the current branch name defined in the VCS.
 
-Array[Dictionary] _get_diff(identifier: String, area: int) virtual required 🔗
+Array[Dictionary] _get_diff(identifier: String, area: int) virtual required 
 
 Returns an array of Dictionary items (see create_diff_file(), create_diff_hunk(), create_diff_line(), add_line_diffs_into_diff_hunk() and add_diff_hunks_into_diff_file()), each containing information about a diff. If identifier is a file path, returns a file diff, and if it is a commit identifier, then returns a commit diff.
 
-Array[Dictionary] _get_line_diff(file_path: String, text: String) virtual required 🔗
+Array[Dictionary] _get_line_diff(file_path: String, text: String) virtual required 
 
 Returns an Array of Dictionary items (see create_diff_hunk()), each containing a line diff between a file at file_path and the text which is passed in.
 
-Array[Dictionary] _get_modified_files_data() virtual required 🔗
+Array[Dictionary] _get_modified_files_data() virtual required 
 
 Returns an Array of Dictionary items (see create_status_file()), each containing the status data of every modified file in the project folder.
 
-Array[Dictionary] _get_previous_commits(max_commits: int) virtual required 🔗
+Array[Dictionary] _get_previous_commits(max_commits: int) virtual required 
 
 Returns an Array of Dictionary items (see create_commit()), each containing the data for a past commit.
 
-Array[String] _get_remotes() virtual required 🔗
+Array[String] _get_remotes() virtual required 
 
 Returns an Array of Strings, each containing the name of a remote configured in the VCS.
 
-String _get_vcs_name() virtual required 🔗
+String _get_vcs_name() virtual required 
 
 Returns the name of the underlying VCS provider.
 
-bool _initialize(project_path: String) virtual required 🔗
+bool _initialize(project_path: String) virtual required 
 
 Initializes the VCS plugin when called from the editor. Returns whether or not the plugin was successfully initialized. A VCS project is initialized at project_path.
 
-void _pull(remote: String) virtual required 🔗
+void _pull(remote: String) virtual required 
 
 Pulls changes from the remote. This can give rise to merge conflicts.
 
-void _push(remote: String, force: bool) virtual required 🔗
+void _push(remote: String, force: bool) virtual required 
 
 Pushes changes to the remote. If force is true, a force push will override the change history already present on the remote.
 
-void _remove_branch(branch_name: String) virtual required 🔗
+void _remove_branch(branch_name: String) virtual required 
 
 Remove a branch from the local VCS.
 
-void _remove_remote(remote_name: String) virtual required 🔗
+void _remove_remote(remote_name: String) virtual required 
 
 Remove a remote from the local VCS.
 
-void _set_credentials(username: String, password: String, ssh_public_key_path: String, ssh_private_key_path: String, ssh_passphrase: String) virtual required 🔗
+void _set_credentials(username: String, password: String, ssh_public_key_path: String, ssh_private_key_path: String, ssh_passphrase: String) virtual required 
 
 Set user credentials in the underlying VCS. username and password are used only during HTTPS authentication unless not already mentioned in the remote URL. ssh_public_key_path, ssh_private_key_path, and ssh_passphrase are only used during SSH authentication.
 
-bool _shut_down() virtual required 🔗
+bool _shut_down() virtual required 
 
 Shuts down VCS plugin instance. Called when the user either closes the editor or shuts down the VCS plugin through the editor UI.
 
-void _stage_file(file_path: String) virtual required 🔗
+void _stage_file(file_path: String) virtual required 
 
 Stages the file present at file_path to the staged area.
 
-void _unstage_file(file_path: String) virtual required 🔗
+void _unstage_file(file_path: String) virtual required 
 
 Unstages the file present at file_path from the staged area to the unstaged area.
 
-Dictionary add_diff_hunks_into_diff_file(diff_file: Dictionary, diff_hunks: Array[Dictionary]) 🔗
+Dictionary add_diff_hunks_into_diff_file(diff_file: Dictionary, diff_hunks: Array[Dictionary]) 
 
 Helper function to add an array of diff_hunks into a diff_file.
 
-Dictionary add_line_diffs_into_diff_hunk(diff_hunk: Dictionary, line_diffs: Array[Dictionary]) 🔗
+Dictionary add_line_diffs_into_diff_hunk(diff_hunk: Dictionary, line_diffs: Array[Dictionary]) 
 
 Helper function to add an array of line_diffs into a diff_hunk.
 
-Dictionary create_commit(msg: String, author: String, id: String, unix_timestamp: int, offset_minutes: int) 🔗
+Dictionary create_commit(msg: String, author: String, id: String, unix_timestamp: int, offset_minutes: int) 
 
 Helper function to create a commit Dictionary item. msg is the commit message of the commit. author is a single human-readable string containing all the author's details, e.g. the email and name configured in the VCS. id is the identifier of the commit, in whichever format your VCS may provide an identifier to commits. unix_timestamp is the UTC Unix timestamp of when the commit was created. offset_minutes is the timezone offset in minutes, recorded from the system timezone where the commit was created.
 
-Dictionary create_diff_file(new_file: String, old_file: String) 🔗
+Dictionary create_diff_file(new_file: String, old_file: String) 
 
 Helper function to create a Dictionary for storing old and new diff file paths.
 
-Dictionary create_diff_hunk(old_start: int, new_start: int, old_lines: int, new_lines: int) 🔗
+Dictionary create_diff_hunk(old_start: int, new_start: int, old_lines: int, new_lines: int) 
 
 Helper function to create a Dictionary for storing diff hunk data. old_start is the starting line number in old file. new_start is the starting line number in new file. old_lines is the number of lines in the old file. new_lines is the number of lines in the new file.
 
-Dictionary create_diff_line(new_line_no: int, old_line_no: int, content: String, status: String) 🔗
+Dictionary create_diff_line(new_line_no: int, old_line_no: int, content: String, status: String) 
 
 Helper function to create a Dictionary for storing a line diff. new_line_no is the line number in the new file (can be -1 if the line is deleted). old_line_no is the line number in the old file (can be -1 if the line is added). content is the diff text. status is a single character string which stores the line origin.
 
-Dictionary create_status_file(file_path: String, change_type: ChangeType, area: TreeArea) 🔗
+Dictionary create_status_file(file_path: String, change_type: ChangeType, area: TreeArea) 
 
 Helper function to create a Dictionary used by editor to read the status of a file.
 
-void popup_error(msg: String) 🔗
+void popup_error(msg: String) 
 
 Pops up an error message in the editor which is shown as coming from the underlying VCS. Use this to show VCS specific error messages.
 
@@ -16571,63 +16571,63 @@ unregister_message_capture(name: StringName)
 
 unregister_profiler(name: StringName)
 
-void clear_breakpoints() 🔗
+void clear_breakpoints() 
 
 Clears all breakpoints.
 
-void debug(can_continue: bool = true, is_error_breakpoint: bool = false) 🔗
+void debug(can_continue: bool = true, is_error_breakpoint: bool = false) 
 
 Starts a debug break in script execution, optionally specifying whether the program can continue based on can_continue and whether the break was due to a breakpoint.
 
-int get_depth() const 🔗
+int get_depth() const 
 
 Experimental: This method may be changed or removed in future versions.
 
 Returns the current debug depth.
 
-int get_lines_left() const 🔗
+int get_lines_left() const 
 
 Experimental: This method may be changed or removed in future versions.
 
 Returns the number of lines that remain.
 
-bool has_capture(name: StringName) 🔗
+bool has_capture(name: StringName) 
 
 Returns true if a capture with the given name is present otherwise false.
 
-bool has_profiler(name: StringName) 🔗
+bool has_profiler(name: StringName) 
 
 Returns true if a profiler with the given name is present otherwise false.
 
-void insert_breakpoint(line: int, source: StringName) 🔗
+void insert_breakpoint(line: int, source: StringName) 
 
 Inserts a new breakpoint with the given source and line.
 
 Returns true if the debugger is active otherwise false.
 
-bool is_breakpoint(line: int, source: StringName) const 🔗
+bool is_breakpoint(line: int, source: StringName) const 
 
 Returns true if the given source and line represent an existing breakpoint.
 
-bool is_profiling(name: StringName) 🔗
+bool is_profiling(name: StringName) 
 
 Returns true if a profiler with the given name is present and active otherwise false.
 
-bool is_skipping_breakpoints() const 🔗
+bool is_skipping_breakpoints() const 
 
 Returns true if the debugger is skipping breakpoints otherwise false.
 
 Forces a processing loop of debugger events. The purpose of this method is just processing events every now and then when the script might get too busy, so that bugs like infinite loops can be caught.
 
-void profiler_add_frame_data(name: StringName, data: Array) 🔗
+void profiler_add_frame_data(name: StringName, data: Array) 
 
 Calls the add callable of the profiler with given name and data.
 
-void profiler_enable(name: StringName, enable: bool, arguments: Array = []) 🔗
+void profiler_enable(name: StringName, enable: bool, arguments: Array = []) 
 
 Calls the toggle callable of the profiler with given name and arguments. Enables/Disables the same profiler depending on enable argument.
 
-void register_message_capture(name: StringName, callable: Callable) 🔗
+void register_message_capture(name: StringName, callable: Callable) 
 
 Registers a message capture with given name. If name is "my_message" then messages starting with "my_message:" will be called with the given callable.
 
@@ -16635,39 +16635,39 @@ The callable must accept a message string and a data array as argument. The call
 
 Note: The callable will receive the message with the prefix stripped, unlike EditorDebuggerPlugin._capture(). See the EditorDebuggerPlugin description for an example.
 
-void register_profiler(name: StringName, profiler: EngineProfiler) 🔗
+void register_profiler(name: StringName, profiler: EngineProfiler) 
 
 Registers a profiler with the given name. See EngineProfiler for more information.
 
-void remove_breakpoint(line: int, source: StringName) 🔗
+void remove_breakpoint(line: int, source: StringName) 
 
 Removes a breakpoint with the given source and line.
 
-void script_debug(language: ScriptLanguage, can_continue: bool = true, is_error_breakpoint: bool = false) 🔗
+void script_debug(language: ScriptLanguage, can_continue: bool = true, is_error_breakpoint: bool = false) 
 
 Starts a debug break in script execution, optionally specifying whether the program can continue based on can_continue and whether the break was due to a breakpoint.
 
-void send_message(message: String, data: Array) 🔗
+void send_message(message: String, data: Array) 
 
 Sends a message with given message and data array.
 
-void set_depth(depth: int) 🔗
+void set_depth(depth: int) 
 
 Experimental: This method may be changed or removed in future versions.
 
 Sets the current debugging depth.
 
-void set_lines_left(lines: int) 🔗
+void set_lines_left(lines: int) 
 
 Experimental: This method may be changed or removed in future versions.
 
 Sets the current debugging lines that remain.
 
-void unregister_message_capture(name: StringName) 🔗
+void unregister_message_capture(name: StringName) 
 
 Unregisters the message capture with given name.
 
-void unregister_profiler(name: StringName) 🔗
+void unregister_profiler(name: StringName) 
 
 Unregisters a profiler with given name.
 
@@ -16700,15 +16700,15 @@ _tick(frame_time: float, process_time: float, physics_time: float, physics_frame
 
 _toggle(enable: bool, options: Array) virtual
 
-void _add_frame(data: Array) virtual 🔗
+void _add_frame(data: Array) virtual 
 
 Called when data is added to profiler using EngineDebugger.profiler_add_frame_data().
 
-void _tick(frame_time: float, process_time: float, physics_time: float, physics_frame_time: float) virtual 🔗
+void _tick(frame_time: float, process_time: float, physics_time: float, physics_frame_time: float) virtual 
 
 Called once every engine iteration when the profiler is active with information about the current frame. All time values are in seconds. Lower values represent faster processing times and are therefore considered better.
 
-void _toggle(enable: bool, options: Array) virtual 🔗
+void _toggle(enable: bool, options: Array) virtual 
 
 Called when the profiler is enabled/disabled, along with a set of options.
 
@@ -16742,51 +16742,51 @@ navigate_to_path(path: String)
 
 remove_resource_tooltip_plugin(plugin: EditorResourceTooltipPlugin)
 
-display_mode_changed() 🔗
+display_mode_changed() 
 
 Emitted when the user switches file display mode or split mode.
 
-file_removed(file: String) 🔗
+file_removed(file: String) 
 
 Emitted when the given file was removed.
 
-files_moved(old_file: String, new_file: String) 🔗
+files_moved(old_file: String, new_file: String) 
 
 Emitted when a file is moved from old_file path to new_file path.
 
-folder_color_changed() 🔗
+folder_color_changed() 
 
 Emitted when folders change color.
 
-folder_moved(old_folder: String, new_folder: String) 🔗
+folder_moved(old_folder: String, new_folder: String) 
 
 Emitted when a folder is moved from old_folder path to new_folder path.
 
-folder_removed(folder: String) 🔗
+folder_removed(folder: String) 
 
 Emitted when the given folder was removed.
 
-inherit(file: String) 🔗
+inherit(file: String) 
 
 Emitted when a new scene is created that inherits the scene at file path.
 
-instantiate(files: PackedStringArray) 🔗
+instantiate(files: PackedStringArray) 
 
 Emitted when the given scenes are being instantiated in the editor.
 
-resource_removed(resource: Resource) 🔗
+resource_removed(resource: Resource) 
 
 Emitted when an external resource had its file removed.
 
-void add_resource_tooltip_plugin(plugin: EditorResourceTooltipPlugin) 🔗
+void add_resource_tooltip_plugin(plugin: EditorResourceTooltipPlugin) 
 
 Registers a new EditorResourceTooltipPlugin.
 
-void navigate_to_path(path: String) 🔗
+void navigate_to_path(path: String) 
 
 Sets the given path as currently selected, ensuring that the selected file/directory is visible.
 
-void remove_resource_tooltip_plugin(plugin: EditorResourceTooltipPlugin) 🔗
+void remove_resource_tooltip_plugin(plugin: EditorResourceTooltipPlugin) 
 
 Removes an EditorResourceTooltipPlugin. Fails if the plugin wasn't previously added.
 
@@ -17140,39 +17140,39 @@ set_selected_palette_item(item: int) const
 
 set_selection(begin: Vector3i, end: Vector3i)
 
-void clear_selection() 🔗
+void clear_selection() 
 
 Deselects any currently selected cells.
 
-GridMap get_current_grid_map() const 🔗
+GridMap get_current_grid_map() const 
 
 Returns the GridMap node currently edited by the grid map editor.
 
-Array get_selected_cells() const 🔗
+Array get_selected_cells() const 
 
 Returns an array of Vector3is with the selected cells' coordinates.
 
-int get_selected_palette_item() const 🔗
+int get_selected_palette_item() const 
 
 Returns the index of the selected MeshLibrary item in the grid map editor's palette or -1 if no item is selected.
 
 Note: The indices might not be in the same order as they appear in the editor's interface.
 
-AABB get_selection() const 🔗
+AABB get_selection() const 
 
 Returns the cell coordinate bounds of the current selection. Use has_selection() to check if there is an active selection.
 
-bool has_selection() const 🔗
+bool has_selection() const 
 
 Returns true if there are selected cells.
 
-void set_selected_palette_item(item: int) const 🔗
+void set_selected_palette_item(item: int) const 
 
 Selects the MeshLibrary item with the given index in the grid map editor's palette. If a negative index is given, no item will be selected. If a value greater than the last index is given, the last item will be selected.
 
 Note: The indices might not be in the same order as they appear in the editor's interface.
 
-void set_selection(begin: Vector3i, end: Vector3i) 🔗
+void set_selection(begin: Vector3i, end: Vector3i) 
 
 Selects the cells inside the given bounds from begin to end.
 
@@ -17221,25 +17221,25 @@ set_image(image: Image)
 
 set_size_override(size: Vector2i)
 
-ImageTexture create_from_image(image: Image) static 🔗
+ImageTexture create_from_image(image: Image) static 
 
 Creates a new ImageTexture and initializes it by allocating and setting the data from an Image.
 
-Format get_format() const 🔗
+Format get_format() const 
 
 Returns the format of the texture.
 
-void set_image(image: Image) 🔗
+void set_image(image: Image) 
 
 Replaces the texture's data with a new Image. This will re-allocate new memory for the texture.
 
 If you want to update the image, but don't need to change its parameters (format, size), use update() instead for better performance.
 
-void set_size_override(size: Vector2i) 🔗
+void set_size_override(size: Vector2i) 
 
 Resizes the texture to the specified dimensions.
 
-void update(image: Image) 🔗
+void update(image: Image) 
 
 Replaces the texture's data with a new Image.
 
@@ -18217,7 +18217,7 @@ void set_item_count(value: int)
 
 The number of items currently in the list.
 
-bool switch_on_hover = false 🔗
+bool switch_on_hover = false 
 
 void set_switch_on_hover(value: bool)
 
@@ -18225,13 +18225,13 @@ bool is_switch_on_hover()
 
 If true, when the cursor hovers above another MenuButton within the same parent which also has switch_on_hover enabled, it will close the current MenuButton and open the other one.
 
-PopupMenu get_popup() const 🔗
+PopupMenu get_popup() const 
 
 Returns the PopupMenu contained in this button.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their Window.visible property.
 
-void set_disable_shortcuts(disabled: bool) 🔗
+void set_disable_shortcuts(disabled: bool) 
 
 If true, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -18266,7 +18266,7 @@ Note: For Android, ProjectSettings.input_devices/sensors/enable_accelerometer, P
 
 1 (overrides XRInterface)
 
-float display_to_lens = 4.0 🔗
+float display_to_lens = 4.0 
 
 void set_display_to_lens(value: float)
 
@@ -18274,7 +18274,7 @@ float get_display_to_lens()
 
 The distance between the display and the lenses inside of the device in centimeters.
 
-float display_width = 14.5 🔗
+float display_width = 14.5 
 
 void set_display_width(value: float)
 
@@ -18282,7 +18282,7 @@ float get_display_width()
 
 The width of the display in centimeters.
 
-float eye_height = 1.85 🔗
+float eye_height = 1.85 
 
 void set_eye_height(value: float)
 
@@ -18302,7 +18302,7 @@ void set_k2(value: float)
 
 The k2 lens factor, see k1.
 
-Rect2 offset_rect = Rect2(0, 0, 1, 1) 🔗
+Rect2 offset_rect = Rect2(0, 0, 1, 1) 
 
 void set_offset_rect(value: Rect2)
 
@@ -18310,7 +18310,7 @@ Rect2 get_offset_rect()
 
 Set the offset rect relative to the area being rendered. A length of 1 represents the whole rendering area on that axis.
 
-float oversample = 1.5 🔗
+float oversample = 1.5 
 
 void set_oversample(value: float)
 
@@ -18318,7 +18318,7 @@ float get_oversample()
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 
-float vrs_min_radius = 20.0 🔗
+float vrs_min_radius = 20.0 
 
 void set_vrs_min_radius(value: float)
 
@@ -18328,7 +18328,7 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 
 Note: Mobile and Forward+ renderers only. Requires Viewport.vrs_mode to be set to Viewport.VRS_XR.
 
-float vrs_strength = 1.0 🔗
+float vrs_strength = 1.0 
 
 void set_vrs_strength(value: float)
 
@@ -18589,27 +18589,27 @@ set_translation_domain_inherited()
 
 update_configuration_warnings()
 
-child_entered_tree(node: Node) 🔗
+child_entered_tree(node: Node) 
 
 Emitted when the child node enters the SceneTree, usually because this node entered the tree (see tree_entered), or add_child() has been called.
 
 This signal is emitted after the child node's own NOTIFICATION_ENTER_TREE and tree_entered.
 
-child_exiting_tree(node: Node) 🔗
+child_exiting_tree(node: Node) 
 
 Emitted when the child node is about to exit the SceneTree, usually because this node is exiting the tree (see tree_exiting), or because the child node is being removed or freed.
 
 When this signal is received, the child node is still accessible inside the tree. This signal is emitted after the child node's own tree_exiting and NOTIFICATION_EXIT_TREE.
 
-child_order_changed() 🔗
+child_order_changed() 
 
 Emitted when the list of children is changed. This happens when child nodes are added, moved or removed.
 
-editor_description_changed(node: Node) 🔗
+editor_description_changed(node: Node) 
 
 Emitted when the node's editor description field changed.
 
-editor_state_changed() 🔗
+editor_state_changed() 
 
 Emitted when an attribute of the node that is relevant to the editor is changed. Only emitted in the editor.
 
@@ -18617,7 +18617,7 @@ Emitted when the node is considered ready, after _ready() is called.
 
 Emitted when the node's name is changed, if the node is inside the tree.
 
-replacing_by(node: Node) 🔗
+replacing_by(node: Node) 
 
 Emitted when this node is being replaced by the node, see replace_by().
 
@@ -18655,7 +18655,7 @@ ProcessMode PROCESS_MODE_DISABLED = 4
 
 Never process. Completely disables processing, ignoring SceneTree.paused. This is the inverse of PROCESS_MODE_ALWAYS.
 
-enum ProcessThreadGroup: 🔗
+enum ProcessThreadGroup: 
 
 ProcessThreadGroup PROCESS_THREAD_GROUP_INHERIT = 0
 
@@ -18669,7 +18669,7 @@ ProcessThreadGroup PROCESS_THREAD_GROUP_SUB_THREAD = 2
 
 Process this node (and child nodes set to inherit) on a sub-thread. See process_thread_group for more information.
 
-flags ProcessThreadMessages: 🔗
+flags ProcessThreadMessages: 
 
 ProcessThreadMessages FLAG_PROCESS_THREAD_MESSAGES = 1
 
@@ -18683,7 +18683,7 @@ ProcessThreadMessages FLAG_PROCESS_THREAD_MESSAGES_ALL = 3
 
 Allows this node to process threaded messages created with call_deferred_thread_group() right before either _process() or _physics_process() are called.
 
-enum PhysicsInterpolationMode: 🔗
+enum PhysicsInterpolationMode: 
 
 PhysicsInterpolationMode PHYSICS_INTERPOLATION_MODE_INHERIT = 0
 
@@ -18697,7 +18697,7 @@ PhysicsInterpolationMode PHYSICS_INTERPOLATION_MODE_OFF = 2
 
 Disables physics interpolation for this node and for children set to PHYSICS_INTERPOLATION_MODE_INHERIT.
 
-enum DuplicateFlags: 🔗
+enum DuplicateFlags: 
 
 DuplicateFlags DUPLICATE_SIGNALS = 1
 
@@ -18727,7 +18727,7 @@ InternalMode INTERNAL_MODE_BACK = 2
 
 The node will be placed at the end of the parent's children, after any non-internal sibling.
 
-enum AutoTranslateMode: 🔗
+enum AutoTranslateMode: 
 
 AutoTranslateMode AUTO_TRANSLATE_MODE_INHERIT = 0
 
@@ -18743,59 +18743,59 @@ Never automatically translate. This is the inverse of AUTO_TRANSLATE_MODE_ALWAYS
 
 String parsing for POT generation will be skipped for this node and children that are set to AUTO_TRANSLATE_MODE_INHERIT.
 
-NOTIFICATION_ENTER_TREE = 10 🔗
+NOTIFICATION_ENTER_TREE = 10 
 
 Notification received when the node enters a SceneTree. See _enter_tree().
 
 This notification is received before the related tree_entered signal.
 
-NOTIFICATION_EXIT_TREE = 11 🔗
+NOTIFICATION_EXIT_TREE = 11 
 
 Notification received when the node is about to exit a SceneTree. See _exit_tree().
 
 This notification is received after the related tree_exiting signal.
 
-NOTIFICATION_MOVED_IN_PARENT = 12 🔗
+NOTIFICATION_MOVED_IN_PARENT = 12 
 
 Deprecated: This notification is no longer sent by the engine. Use NOTIFICATION_CHILD_ORDER_CHANGED instead.
 
-NOTIFICATION_READY = 13 🔗
+NOTIFICATION_READY = 13 
 
 Notification received when the node is ready. See _ready().
 
-NOTIFICATION_PAUSED = 14 🔗
+NOTIFICATION_PAUSED = 14 
 
 Notification received when the node is paused. See process_mode.
 
-NOTIFICATION_UNPAUSED = 15 🔗
+NOTIFICATION_UNPAUSED = 15 
 
 Notification received when the node is unpaused. See process_mode.
 
-NOTIFICATION_PHYSICS_PROCESS = 16 🔗
+NOTIFICATION_PHYSICS_PROCESS = 16 
 
 Notification received from the tree every physics frame when is_physics_processing() returns true. See _physics_process().
 
-NOTIFICATION_PROCESS = 17 🔗
+NOTIFICATION_PROCESS = 17 
 
 Notification received from the tree every rendered frame when is_processing() returns true. See _process().
 
-NOTIFICATION_PARENTED = 18 🔗
+NOTIFICATION_PARENTED = 18 
 
 Notification received when the node is set as a child of another node (see add_child() and add_sibling()).
 
 Note: This does not mean that the node entered the SceneTree.
 
-NOTIFICATION_UNPARENTED = 19 🔗
+NOTIFICATION_UNPARENTED = 19 
 
 Notification received when the parent node calls remove_child() on this node.
 
 Note: This does not mean that the node exited the SceneTree.
 
-NOTIFICATION_SCENE_INSTANTIATED = 20 🔗
+NOTIFICATION_SCENE_INSTANTIATED = 20 
 
 Notification received only by the newly instantiated scene root node, when PackedScene.instantiate() is completed.
 
-NOTIFICATION_DRAG_BEGIN = 21 🔗
+NOTIFICATION_DRAG_BEGIN = 21 
 
 Notification received when a drag operation begins. All nodes receive this notification, not only the dragged one.
 
@@ -18803,147 +18803,147 @@ Can be triggered either by dragging a Control that provides drag data (see Contr
 
 Use Viewport.gui_get_drag_data() to get the dragged data.
 
-NOTIFICATION_DRAG_END = 22 🔗
+NOTIFICATION_DRAG_END = 22 
 
 Notification received when a drag operation ends.
 
 Use Viewport.gui_is_drag_successful() to check if the drag succeeded.
 
-NOTIFICATION_PATH_RENAMED = 23 🔗
+NOTIFICATION_PATH_RENAMED = 23 
 
 Notification received when the node's name or one of its ancestors' name is changed. This notification is not received when the node is removed from the SceneTree.
 
-NOTIFICATION_CHILD_ORDER_CHANGED = 24 🔗
+NOTIFICATION_CHILD_ORDER_CHANGED = 24 
 
 Notification received when the list of children is changed. This happens when child nodes are added, moved or removed.
 
-NOTIFICATION_INTERNAL_PROCESS = 25 🔗
+NOTIFICATION_INTERNAL_PROCESS = 25 
 
 Notification received from the tree every rendered frame when is_processing_internal() returns true.
 
-NOTIFICATION_INTERNAL_PHYSICS_PROCESS = 26 🔗
+NOTIFICATION_INTERNAL_PHYSICS_PROCESS = 26 
 
 Notification received from the tree every physics frame when is_physics_processing_internal() returns true.
 
-NOTIFICATION_POST_ENTER_TREE = 27 🔗
+NOTIFICATION_POST_ENTER_TREE = 27 
 
 Notification received when the node enters the tree, just before NOTIFICATION_READY may be received. Unlike the latter, it is sent every time the node enters tree, not just once.
 
-NOTIFICATION_DISABLED = 28 🔗
+NOTIFICATION_DISABLED = 28 
 
 Notification received when the node is disabled. See PROCESS_MODE_DISABLED.
 
-NOTIFICATION_ENABLED = 29 🔗
+NOTIFICATION_ENABLED = 29 
 
 Notification received when the node is enabled again after being disabled. See PROCESS_MODE_DISABLED.
 
-NOTIFICATION_RESET_PHYSICS_INTERPOLATION = 2001 🔗
+NOTIFICATION_RESET_PHYSICS_INTERPOLATION = 2001 
 
 Notification received when reset_physics_interpolation() is called on the node or its ancestors.
 
-NOTIFICATION_EDITOR_PRE_SAVE = 9001 🔗
+NOTIFICATION_EDITOR_PRE_SAVE = 9001 
 
 Notification received right before the scene with the node is saved in the editor. This notification is only sent in the Godot editor and will not occur in exported projects.
 
-NOTIFICATION_EDITOR_POST_SAVE = 9002 🔗
+NOTIFICATION_EDITOR_POST_SAVE = 9002 
 
 Notification received right after the scene with the node is saved in the editor. This notification is only sent in the Godot editor and will not occur in exported projects.
 
-NOTIFICATION_WM_MOUSE_ENTER = 1002 🔗
+NOTIFICATION_WM_MOUSE_ENTER = 1002 
 
 Notification received when the mouse enters the window.
 
 Implemented for embedded windows and on desktop and web platforms.
 
-NOTIFICATION_WM_MOUSE_EXIT = 1003 🔗
+NOTIFICATION_WM_MOUSE_EXIT = 1003 
 
 Notification received when the mouse leaves the window.
 
 Implemented for embedded windows and on desktop and web platforms.
 
-NOTIFICATION_WM_WINDOW_FOCUS_IN = 1004 🔗
+NOTIFICATION_WM_WINDOW_FOCUS_IN = 1004 
 
 Notification received from the OS when the node's Window ancestor is focused. This may be a change of focus between two windows of the same engine instance, or from the OS desktop or a third-party application to a window of the game (in which case NOTIFICATION_APPLICATION_FOCUS_IN is also received).
 
 A Window node receives this notification when it is focused.
 
-NOTIFICATION_WM_WINDOW_FOCUS_OUT = 1005 🔗
+NOTIFICATION_WM_WINDOW_FOCUS_OUT = 1005 
 
 Notification received from the OS when the node's Window ancestor is defocused. This may be a change of focus between two windows of the same engine instance, or from a window of the game to the OS desktop or a third-party application (in which case NOTIFICATION_APPLICATION_FOCUS_OUT is also received).
 
 A Window node receives this notification when it is defocused.
 
-NOTIFICATION_WM_CLOSE_REQUEST = 1006 🔗
+NOTIFICATION_WM_CLOSE_REQUEST = 1006 
 
 Notification received from the OS when a close request is sent (e.g. closing the window with a "Close" button or Alt + F4).
 
 Implemented on desktop platforms.
 
-NOTIFICATION_WM_GO_BACK_REQUEST = 1007 🔗
+NOTIFICATION_WM_GO_BACK_REQUEST = 1007 
 
 Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
 
 Implemented only on Android.
 
-NOTIFICATION_WM_SIZE_CHANGED = 1008 🔗
+NOTIFICATION_WM_SIZE_CHANGED = 1008 
 
 Notification received when the window is resized.
 
 Note: Only the resized Window node receives this notification, and it's not propagated to the child nodes.
 
-NOTIFICATION_WM_DPI_CHANGE = 1009 🔗
+NOTIFICATION_WM_DPI_CHANGE = 1009 
 
 Notification received from the OS when the screen's dots per inch (DPI) scale is changed. Only implemented on macOS.
 
-NOTIFICATION_VP_MOUSE_ENTER = 1010 🔗
+NOTIFICATION_VP_MOUSE_ENTER = 1010 
 
 Notification received when the mouse cursor enters the Viewport's visible area, that is not occluded behind other Controls or Windows, provided its Viewport.gui_disable_input is false and regardless if it's currently focused or not.
 
-NOTIFICATION_VP_MOUSE_EXIT = 1011 🔗
+NOTIFICATION_VP_MOUSE_EXIT = 1011 
 
 Notification received when the mouse cursor leaves the Viewport's visible area, that is not occluded behind other Controls or Windows, provided its Viewport.gui_disable_input is false and regardless if it's currently focused or not.
 
-NOTIFICATION_WM_POSITION_CHANGED = 1012 🔗
+NOTIFICATION_WM_POSITION_CHANGED = 1012 
 
 Notification received when the window is moved.
 
-NOTIFICATION_OS_MEMORY_WARNING = 2009 🔗
+NOTIFICATION_OS_MEMORY_WARNING = 2009 
 
 Notification received from the OS when the application is exceeding its allocated memory.
 
 Implemented only on iOS.
 
-NOTIFICATION_TRANSLATION_CHANGED = 2010 🔗
+NOTIFICATION_TRANSLATION_CHANGED = 2010 
 
 Notification received when translations may have changed. Can be triggered by the user changing the locale, changing auto_translate_mode or when the node enters the scene tree. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like Object.tr().
 
 Note: This notification is received alongside NOTIFICATION_ENTER_TREE, so if you are instantiating a scene, the child nodes will not be initialized yet. You can use it to setup translations for this node, child nodes created from script, or if you want to access child nodes added in the editor, make sure the node is ready using is_node_ready().
 
-NOTIFICATION_WM_ABOUT = 2011 🔗
+NOTIFICATION_WM_ABOUT = 2011 
 
 Notification received from the OS when a request for "About" information is sent.
 
 Implemented only on macOS.
 
-NOTIFICATION_CRASH = 2012 🔗
+NOTIFICATION_CRASH = 2012 
 
 Notification received from Godot's crash handler when the engine is about to crash.
 
 Implemented on desktop platforms, if the crash handler is enabled.
 
-NOTIFICATION_OS_IME_UPDATE = 2013 🔗
+NOTIFICATION_OS_IME_UPDATE = 2013 
 
 Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
 Implemented only on macOS.
 
-NOTIFICATION_APPLICATION_RESUMED = 2014 🔗
+NOTIFICATION_APPLICATION_RESUMED = 2014 
 
 Notification received from the OS when the application is resumed.
 
 Specific to the Android and iOS platforms.
 
-NOTIFICATION_APPLICATION_PAUSED = 2015 🔗
+NOTIFICATION_APPLICATION_PAUSED = 2015 
 
 Notification received from the OS when the application is paused.
 
@@ -18951,31 +18951,31 @@ Specific to the Android and iOS platforms.
 
 Note: On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
 
-NOTIFICATION_APPLICATION_FOCUS_IN = 2016 🔗
+NOTIFICATION_APPLICATION_FOCUS_IN = 2016 
 
 Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
 Implemented on desktop and mobile platforms.
 
-NOTIFICATION_APPLICATION_FOCUS_OUT = 2017 🔗
+NOTIFICATION_APPLICATION_FOCUS_OUT = 2017 
 
 Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
 Implemented on desktop and mobile platforms.
 
-NOTIFICATION_TEXT_SERVER_CHANGED = 2018 🔗
+NOTIFICATION_TEXT_SERVER_CHANGED = 2018 
 
 Notification received when the TextServer is changed.
 
-NOTIFICATION_ACCESSIBILITY_UPDATE = 3000 🔗
+NOTIFICATION_ACCESSIBILITY_UPDATE = 3000 
 
 Notification received when an accessibility information update is required.
 
-NOTIFICATION_ACCESSIBILITY_INVALIDATE = 3001 🔗
+NOTIFICATION_ACCESSIBILITY_INVALIDATE = 3001 
 
 Notification received when accessibility elements are invalidated. All node accessibility elements are automatically deleted after receiving this message, therefore all existing references to such elements should be discarded.
 
-AutoTranslateMode auto_translate_mode = 0 🔗
+AutoTranslateMode auto_translate_mode = 0 
 
 void set_auto_translate_mode(value: AutoTranslateMode)
 
@@ -18985,7 +18985,7 @@ Defines if any text should automatically change to its translated version depend
 
 Note: For the root node, auto translate mode can also be set via ProjectSettings.internationalization/rendering/root_node_auto_translate.
 
-String editor_description = "" 🔗
+String editor_description = "" 
 
 void set_editor_description(value: String)
 
@@ -18993,7 +18993,7 @@ String get_editor_description()
 
 An optional description to the node. It will be displayed as a tooltip when hovering over the node in the editor's Scene dock.
 
-MultiplayerAPI multiplayer 🔗
+MultiplayerAPI multiplayer 
 
 MultiplayerAPI get_multiplayer()
 
@@ -19015,7 +19015,7 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 
 Note: In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will not be saved. To prevent this, remember to set the owner after calling add_child().
 
-PhysicsInterpolationMode physics_interpolation_mode = 0 🔗
+PhysicsInterpolationMode physics_interpolation_mode = 0 
 
 void set_physics_interpolation_mode(value: PhysicsInterpolationMode)
 
@@ -19029,7 +19029,7 @@ Note: Some node types like VehicleWheel3D have physics interpolation disabled by
 
 Note: When teleporting a node to a distant position, it's recommended to temporarily disable interpolation with reset_physics_interpolation() after moving the node. This avoids creating a visual streak between the old and new positions.
 
-ProcessMode process_mode = 0 🔗
+ProcessMode process_mode = 0 
 
 void set_process_mode(value: ProcessMode)
 
@@ -19037,7 +19037,7 @@ ProcessMode get_process_mode()
 
 The node's processing behavior. To check if the node can process in its current mode, use can_process().
 
-int process_physics_priority = 0 🔗
+int process_physics_priority = 0 
 
 void set_physics_process_priority(value: int)
 
@@ -19045,7 +19045,7 @@ int get_physics_process_priority()
 
 Similar to process_priority but for NOTIFICATION_PHYSICS_PROCESS, _physics_process(), or NOTIFICATION_INTERNAL_PHYSICS_PROCESS.
 
-int process_priority = 0 🔗
+int process_priority = 0 
 
 void set_process_priority(value: int)
 
@@ -19053,7 +19053,7 @@ int get_process_priority()
 
 The node's execution order of the process callbacks (_process(), NOTIFICATION_PROCESS, and NOTIFICATION_INTERNAL_PROCESS). Nodes whose priority value is lower call their process callbacks first, regardless of tree order.
 
-ProcessThreadGroup process_thread_group = 0 🔗
+ProcessThreadGroup process_thread_group = 0 
 
 void set_process_thread_group(value: ProcessThreadGroup)
 
@@ -19067,7 +19067,7 @@ During processing in a sub-thread, accessing most functions in nodes outside the
 
 To better understand process thread groups, the idea is that any node set to any other value than PROCESS_THREAD_GROUP_INHERIT will include any child (and grandchild) nodes set to inherit into its process thread group. This means that the processing of all the nodes in the group will happen together, at the same time as the node including them.
 
-int process_thread_group_order 🔗
+int process_thread_group_order 
 
 void set_process_thread_group_order(value: int)
 
@@ -19075,7 +19075,7 @@ int get_process_thread_group_order()
 
 Change the process thread group order. Groups with a lesser order will process before groups with a greater order. This is useful when a large amount of nodes process in sub thread and, afterwards, another group wants to collect their result in the main thread, as an example.
 
-BitField[ProcessThreadMessages] process_thread_messages 🔗
+BitField[ProcessThreadMessages] process_thread_messages 
 
 void set_process_thread_messages(value: BitField[ProcessThreadMessages])
 
@@ -19083,7 +19083,7 @@ BitField[ProcessThreadMessages] get_process_thread_messages()
 
 Set whether the current thread group will process messages (calls to call_deferred_thread_group() on threads), and whether it wants to receive them during regular process or physics process callbacks.
 
-String scene_file_path 🔗
+String scene_file_path 
 
 void set_scene_file_path(value: String)
 
@@ -19091,7 +19091,7 @@ String get_scene_file_path()
 
 The original scene's file path, if the node has been instantiated from a PackedScene file. Only scene root nodes contains this.
 
-bool unique_name_in_owner = false 🔗
+bool unique_name_in_owner = false 
 
 void set_unique_name_in_owner(value: bool)
 
@@ -19101,25 +19101,25 @@ If true, the node can be accessed from any node sharing the same owner or from t
 
 Note: If another node with the same owner shares the same name as this node, the other node will no longer be accessible as unique.
 
-void _enter_tree() virtual 🔗
+void _enter_tree() virtual 
 
 Called when the node enters the SceneTree (e.g. upon instantiating, scene changing, or after calling add_child() in a script). If the node has children, its _enter_tree() callback will be called first, and then that of the children.
 
 Corresponds to the NOTIFICATION_ENTER_TREE notification in Object._notification().
 
-void _exit_tree() virtual 🔗
+void _exit_tree() virtual 
 
 Called when the node is about to leave the SceneTree (e.g. upon freeing, scene changing, or after calling remove_child() in a script). If the node has children, its _exit_tree() callback will be called last, after all its children have left the tree.
 
 Corresponds to the NOTIFICATION_EXIT_TREE notification in Object._notification() and signal tree_exiting. To get notified when the node has already left the active tree, connect to the tree_exited.
 
-PackedStringArray _get_accessibility_configuration_warnings() virtual const 🔗
+PackedStringArray _get_accessibility_configuration_warnings() virtual const 
 
 The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a tool script, and accessibility warnings are enabled in the editor settings.
 
 Returning an empty array produces no warnings.
 
-PackedStringArray _get_configuration_warnings() virtual const 🔗
+PackedStringArray _get_configuration_warnings() virtual const 
 
 The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a tool script.
 
@@ -19127,11 +19127,11 @@ Returning an empty array produces no warnings.
 
 Call update_configuration_warnings() when the warnings need to be updated for this node.
 
-RID _get_focused_accessibility_element() virtual const 🔗
+RID _get_focused_accessibility_element() virtual const 
 
 Called during accessibility information updates to determine the currently focused sub-element, should return a sub-element RID or the value returned by get_accessibility_element().
 
-void _input(event: InputEvent) virtual 🔗
+void _input(event: InputEvent) virtual 
 
 Called when there is an input event. The input event propagates up through the node tree until a node consumes it.
 
@@ -19143,7 +19143,7 @@ For gameplay input, _unhandled_input() and _unhandled_key_input() are usually a 
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void _physics_process(delta: float) virtual 🔗
+void _physics_process(delta: float) virtual 
 
 Called once on each physics tick, and allows Nodes to synchronize their logic with physics ticks. delta is the logical time between physics ticks in seconds and is equal to Engine.time_scale / Engine.physics_ticks_per_second.
 
@@ -19157,7 +19157,7 @@ Note: This method is only called if the node is present in the scene tree (i.e. 
 
 Note: Accumulated delta may diverge from real world seconds.
 
-void _process(delta: float) virtual 🔗
+void _process(delta: float) virtual 
 
 Called on each idle frame, prior to rendering, and after physics ticks have been processed. delta is the time between frames in seconds.
 
@@ -19175,7 +19175,7 @@ Note: When --fixed-fps is enabled or the engine is running in Movie Maker mode (
 
 Note: Frame delta may be post-processed by OS.delta_smoothing if this is enabled for the project.
 
-void _ready() virtual 🔗
+void _ready() virtual 
 
 Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their _ready() callbacks get triggered first, and the parent node will receive the ready notification afterwards.
 
@@ -19185,7 +19185,7 @@ Usually used for initialization. For even earlier initialization, Object._init()
 
 Note: This method may be called only once for each node. After removing a node from the scene tree and adding it again, _ready() will not be called a second time. This can be bypassed by requesting another call with request_ready(), which may be called anywhere before adding the node again.
 
-void _shortcut_input(event: InputEvent) virtual 🔗
+void _shortcut_input(event: InputEvent) virtual 
 
 Called when an InputEventKey, InputEventShortcut, or InputEventJoypadButton hasn't been consumed by _input() or any GUI Control item. It is called before _unhandled_key_input() and _unhandled_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -19197,7 +19197,7 @@ This method can be used to handle shortcuts. For generic GUI events, use _input(
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
-void _unhandled_input(event: InputEvent) virtual 🔗
+void _unhandled_input(event: InputEvent) virtual 
 
 Called when an InputEvent hasn't been consumed by _input() or any GUI Control item. It is called after _shortcut_input() and after _unhandled_key_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -19209,7 +19209,7 @@ For gameplay input, this method is usually a better fit than _input(), as GUI ev
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void _unhandled_key_input(event: InputEvent) virtual 🔗
+void _unhandled_key_input(event: InputEvent) virtual 
 
 Called when an InputEventKey hasn't been consumed by _input() or any GUI Control item. It is called after _shortcut_input() but before _unhandled_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -19223,7 +19223,7 @@ For gameplay input, this and _unhandled_input() are usually a better fit than _i
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void add_child(node: Node, force_readable_name: bool = false, internal: InternalMode = 0) 🔗
+void add_child(node: Node, force_readable_name: bool = false, internal: InternalMode = 0) 
 
 Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.
 
@@ -19237,7 +19237,7 @@ If you need the child node to be added below a specific node in the list of chil
 
 Note: If you want a child to be persisted to a PackedScene, you must set owner in addition to calling add_child(). This is typically relevant for tool scripts and editor plugins. If add_child() is called without setting owner, the newly added Node will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
-void add_sibling(sibling: Node, force_readable_name: bool = false) 🔗
+void add_sibling(sibling: Node, force_readable_name: bool = false) 
 
 Adds a sibling node to this node's parent, and moves the added sibling right below this node.
 
@@ -19247,7 +19247,7 @@ Use add_child() instead of this method if you don't need the child node to be ad
 
 Note: If this node is internal, the added sibling will be internal too (see add_child()'s internal parameter).
 
-void add_to_group(group: StringName, persistent: bool = false) 🔗
+void add_to_group(group: StringName, persistent: bool = false) 
 
 Adds the node to the group. Groups can be helpful to organize a subset of nodes, for example "enemies" or "collectables". See notes in the description, and the group methods in SceneTree.
 
@@ -19257,7 +19257,7 @@ Note: To improve performance, the order of group names is not guaranteed and may
 
 Note: SceneTree's group methods will not work on this node if not inside the tree (see is_inside_tree()).
 
-String atr(message: String, context: StringName = "") const 🔗
+String atr(message: String, context: StringName = "") const 
 
 Translates a message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation. Note that most Control nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
 
@@ -19267,7 +19267,7 @@ If Object.can_translate_messages() is false, or no translation is available, thi
 
 For detailed examples, see Internationalizing games.
 
-String atr_n(message: String, plural_message: StringName, n: int, context: StringName = "") const 🔗
+String atr_n(message: String, plural_message: StringName, n: int, context: StringName = "") const 
 
 Translates a message or plural_message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation.
 
@@ -19281,19 +19281,19 @@ For detailed examples, see Localization using gettext.
 
 Note: Negative and float numbers may not properly apply to some countable subjects. It's recommended to handle these cases with atr().
 
-Variant call_deferred_thread_group(method: StringName, ...) vararg 🔗
+Variant call_deferred_thread_group(method: StringName, ...) vararg 
 
 This function is similar to Object.call_deferred() except that the call will take place when the node thread group is processed. If the node thread group processes in sub-threads, then the call will be done on that thread, right before NOTIFICATION_PROCESS or NOTIFICATION_PHYSICS_PROCESS, the _process() or _physics_process() or their internal versions are called.
 
-Variant call_thread_safe(method: StringName, ...) vararg 🔗
+Variant call_thread_safe(method: StringName, ...) vararg 
 
 This function ensures that the calling of this function will succeed, no matter whether it's being done from a thread or not. If called from a thread that is not allowed to call the function, the call will become deferred. Otherwise, the call will go through directly.
 
-bool can_auto_translate() const 🔗
+bool can_auto_translate() const 
 
 Returns true if this node can automatically translate messages depending on the current locale. See auto_translate_mode, atr(), and atr_n().
 
-bool can_process() const 🔗
+bool can_process() const 
 
 Returns true if the node can receive processing notifications and input callbacks (NOTIFICATION_PROCESS, _input(), etc.) from the SceneTree and Viewport. The returned value depends on process_mode:
 
@@ -19309,7 +19309,7 @@ If set to PROCESS_MODE_INHERIT, use the parent node's process_mode to determine 
 
 If the node is not inside the tree, returns false no matter the value of process_mode.
 
-Tween create_tween() 🔗
+Tween create_tween() 
 
 Creates a new Tween and binds it to this node.
 
@@ -19319,13 +19319,13 @@ The Tween will start automatically on the next process frame or physics frame (d
 
 Note: The method can still be used when the node is not inside SceneTree. It can fail in an unlikely case of using a custom MainLoop.
 
-Node duplicate(flags: int = 15) const 🔗
+Node duplicate(flags: int = 15) const 
 
 Duplicates the node, returning a new node with all of its properties, signals, groups, and children copied from the original. The behavior can be tweaked through the flags (see DuplicateFlags). Internal nodes are not duplicated.
 
 Note: For nodes with a Script attached, if Object._init() has been defined with required parameters, the duplicated node will not have a Script.
 
-Node find_child(pattern: String, recursive: bool = true, owned: bool = true) const 🔗
+Node find_child(pattern: String, recursive: bool = true, owned: bool = true) const 
 
 Finds the first descendant of this node whose name matches pattern, returning null if no match is found. The matching is done against node names, not their paths, through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character.
 
@@ -19337,7 +19337,7 @@ Note: This method can be very slow. Consider storing a reference to the found no
 
 Note: To find all descendant nodes matching a pattern or a class type, see find_children().
 
-Array[Node] find_children(pattern: String, type: String = "", recursive: bool = true, owned: bool = true) const 🔗
+Array[Node] find_children(pattern: String, type: String = "", recursive: bool = true, owned: bool = true) const 
 
 Finds all descendants of this node whose names match pattern, returning an empty Array if no match is found. The matching is done against node names, not their paths, through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character.
 
@@ -19351,19 +19351,19 @@ Note: This method can be very slow. Consider storing references to the found nod
 
 Note: To find a single descendant node matching a pattern, see find_child().
 
-Node find_parent(pattern: String) const 🔗
+Node find_parent(pattern: String) const 
 
 Finds the first ancestor of this node whose name matches pattern, returning null if no match is found. The matching is done through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character. See also find_child() and find_children().
 
 Note: As this method walks upwards in the scene tree, it can be slow in large, deeply nested nodes. Consider storing a reference to the found node in a variable. Alternatively, use get_node() with unique names (see unique_name_in_owner).
 
-RID get_accessibility_element() const 🔗
+RID get_accessibility_element() const 
 
 Returns main accessibility element RID.
 
 Note: This method should be called only during accessibility information updates (NOTIFICATION_ACCESSIBILITY_UPDATE).
 
-Node get_child(idx: int, include_internal: bool = false) const 🔗
+Node get_child(idx: int, include_internal: bool = false) const 
 
 Fetches a child node by its index. Each child node has an index relative to its siblings (see get_index()). The first child is at index 0. Negative values can also be used to start from the end of the list. This method can be used in combination with get_child_count() to iterate over this node's children. If no child exists at the given index, this method returns null and an error is generated.
 
@@ -19371,19 +19371,19 @@ If include_internal is false, internal children are ignored (see add_child()'s i
 
 Note: To fetch a node by NodePath, use get_node().
 
-int get_child_count(include_internal: bool = false) const 🔗
+int get_child_count(include_internal: bool = false) const 
 
 Returns the number of children of this node.
 
 If include_internal is false, internal children are not counted (see add_child()'s internal parameter).
 
-Array[Node] get_children(include_internal: bool = false) const 🔗
+Array[Node] get_children(include_internal: bool = false) const 
 
 Returns all children of this node inside an Array.
 
 If include_internal is false, excludes internal children from the returned array (see add_child()'s internal parameter).
 
-Array[StringName] get_groups() const 🔗
+Array[StringName] get_groups() const 
 
 Returns an Array of group names that the node has been added to.
 
@@ -19391,21 +19391,21 @@ Note: To improve performance, the order of group names is not guaranteed and may
 
 Note: This method may also return some group names starting with an underscore (_). These are internally used by the engine. To avoid conflicts, do not use custom groups starting with underscores. To exclude internal groups, see the following code snippet:
 
-int get_index(include_internal: bool = false) const 🔗
+int get_index(include_internal: bool = false) const 
 
 Returns this node's order among its siblings. The first node's index is 0. See also get_child().
 
 If include_internal is false, returns the index ignoring internal children. The first, non-internal child will have an index of 0 (see add_child()'s internal parameter).
 
-Window get_last_exclusive_window() const 🔗
+Window get_last_exclusive_window() const 
 
 Returns the Window that contains this node, or the last exclusive child in a chain of windows starting with the one that contains this node.
 
-int get_multiplayer_authority() const 🔗
+int get_multiplayer_authority() const 
 
 Returns the peer ID of the multiplayer authority for this node. See set_multiplayer_authority().
 
-Node get_node(path: NodePath) const 🔗
+Node get_node(path: NodePath) const 
 
 Fetches a node. The NodePath can either be a relative path (from this node), or an absolute path (from the SceneTree.root) to a node. If path does not point to a valid node, generates an error and returns null. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
 
@@ -19415,7 +19415,7 @@ Example: Assume this method is called from the Character node, inside the follow
 
 The following calls will return a valid node:
 
-Array get_node_and_resource(path: NodePath) 🔗
+Array get_node_and_resource(path: NodePath) 
 
 Fetches a node and its most nested resource as specified by the NodePath's subname. Returns an Array of size 3 where:
 
@@ -19427,31 +19427,31 @@ Element 2 is the remaining NodePath, referring to an existing, non-Resource prop
 
 Example: Assume that the child's Sprite2D.texture has been assigned an AtlasTexture:
 
-Node get_node_or_null(path: NodePath) const 🔗
+Node get_node_or_null(path: NodePath) const 
 
 Fetches a node by NodePath. Similar to get_node(), but does not generate an error if path does not point to a valid node.
 
-Variant get_node_rpc_config() const 🔗
+Variant get_node_rpc_config() const 
 
 Returns a Dictionary mapping method names to their RPC configuration defined for this node using rpc_config().
 
 Note: This method only returns the RPC configuration assigned via rpc_config(). See Script.get_rpc_config() to retrieve the RPCs defined by the Script.
 
-Array[int] get_orphan_node_ids() static 🔗
+Array[int] get_orphan_node_ids() static 
 
 Returns object IDs of all orphan nodes (nodes outside the SceneTree). Used for debugging.
 
 Note: get_orphan_node_ids() only works in debug builds. When called in a project exported in release mode, get_orphan_node_ids() will return an empty array.
 
-Node get_parent() const 🔗
+Node get_parent() const 
 
 Returns this node's parent node, or null if the node doesn't have a parent.
 
-NodePath get_path() const 🔗
+NodePath get_path() const 
 
 Returns the node's absolute path, relative to the SceneTree.root. If the node is not inside the scene tree, this method fails and returns an empty NodePath.
 
-NodePath get_path_to(node: Node, use_unique_path: bool = false) const 🔗
+NodePath get_path_to(node: Node, use_unique_path: bool = false) const 
 
 Returns the relative NodePath from this node to the specified node. Both nodes must be in the same SceneTree or scene hierarchy, otherwise this method fails and returns an empty NodePath.
 
@@ -19459,99 +19459,99 @@ If use_unique_path is true, returns the shortest path accounting for this node's
 
 Note: If you get a relative path which starts from a unique node, the path may be longer than a normal relative path, due to the addition of the unique node's name.
 
-float get_physics_process_delta_time() const 🔗
+float get_physics_process_delta_time() const 
 
 Returns the time elapsed (in seconds) since the last physics callback. This value is identical to _physics_process()'s delta parameter, and is often consistent at run-time, unless Engine.physics_ticks_per_second is changed. See also NOTIFICATION_PHYSICS_PROCESS.
 
 Note: The returned value will be larger than expected if running at a framerate lower than Engine.physics_ticks_per_second / Engine.max_physics_steps_per_frame FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both _process() and _physics_process(). As a result, avoid using delta for time measurements in real-world seconds. Use the Time singleton's methods for this purpose instead, such as Time.get_ticks_usec().
 
-float get_process_delta_time() const 🔗
+float get_process_delta_time() const 
 
 Returns the time elapsed (in seconds) since the last process callback. This value is identical to _process()'s delta parameter, and may vary from frame to frame. See also NOTIFICATION_PROCESS.
 
 Note: The returned value will be larger than expected if running at a framerate lower than Engine.physics_ticks_per_second / Engine.max_physics_steps_per_frame FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both _process() and _physics_process(). As a result, avoid using delta for time measurements in real-world seconds. Use the Time singleton's methods for this purpose instead, such as Time.get_ticks_usec().
 
-bool get_scene_instance_load_placeholder() const 🔗
+bool get_scene_instance_load_placeholder() const 
 
 Returns true if this node is an instance load placeholder. See InstancePlaceholder and set_scene_instance_load_placeholder().
 
-SceneTree get_tree() const 🔗
+SceneTree get_tree() const 
 
 Returns the SceneTree that contains this node. If this node is not inside the tree, generates an error and returns null. See also is_inside_tree().
 
-String get_tree_string() 🔗
+String get_tree_string() 
 
 Returns the tree as a String. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the get_node() function. It also can be used in game UI/UX.
 
 May print, for example:
 
-String get_tree_string_pretty() 🔗
+String get_tree_string_pretty() 
 
 Similar to get_tree_string(), this returns the tree as a String. This version displays a more graphical representation similar to what is displayed in the Scene Dock. It is useful for inspecting larger trees.
 
 May print, for example:
 
-Viewport get_viewport() const 🔗
+Viewport get_viewport() const 
 
 Returns the node's closest Viewport ancestor, if the node is inside the tree. Otherwise, returns null.
 
-Window get_window() const 🔗
+Window get_window() const 
 
 Returns the Window that contains this node. If the node is in the main window, this is equivalent to getting the root node (get_tree().get_root()).
 
-bool has_node(path: NodePath) const 🔗
+bool has_node(path: NodePath) const 
 
 Returns true if the path points to a valid node. See also get_node().
 
-bool has_node_and_resource(path: NodePath) const 🔗
+bool has_node_and_resource(path: NodePath) const 
 
 Returns true if path points to a valid node and its subnames point to a valid Resource, e.g. Area2D/CollisionShape2D:shape. Properties that are not Resource types (such as nodes or other Variant types) are not considered. See also get_node_and_resource().
 
-bool is_ancestor_of(node: Node) const 🔗
+bool is_ancestor_of(node: Node) const 
 
 Returns true if the given node is a direct or indirect child of this node.
 
-bool is_displayed_folded() const 🔗
+bool is_displayed_folded() const 
 
 Returns true if the node is folded (collapsed) in the Scene dock. This method is intended to be used in editor plugins and tools. See also set_display_folded().
 
-bool is_editable_instance(node: Node) const 🔗
+bool is_editable_instance(node: Node) const 
 
 Returns true if node has editable children enabled relative to this node. This method is intended to be used in editor plugins and tools. See also set_editable_instance().
 
-bool is_greater_than(node: Node) const 🔗
+bool is_greater_than(node: Node) const 
 
 Returns true if the given node occurs later in the scene hierarchy than this node. A node occurring later is usually processed last.
 
-bool is_in_group(group: StringName) const 🔗
+bool is_in_group(group: StringName) const 
 
 Returns true if this node has been added to the given group. See add_to_group() and remove_from_group(). See also notes in the description, and the SceneTree's group methods.
 
-bool is_inside_tree() const 🔗
+bool is_inside_tree() const 
 
 Returns true if this node is currently inside a SceneTree. See also get_tree().
 
-bool is_multiplayer_authority() const 🔗
+bool is_multiplayer_authority() const 
 
 Returns true if the local system is the multiplayer authority of this node.
 
-bool is_node_ready() const 🔗
+bool is_node_ready() const 
 
 Returns true if the node is ready, i.e. it's inside scene tree and all its children are initialized.
 
 request_ready() resets it back to false.
 
-bool is_part_of_edited_scene() const 🔗
+bool is_part_of_edited_scene() const 
 
 Returns true if the node is part of the scene currently opened in the editor.
 
-bool is_physics_interpolated() const 🔗
+bool is_physics_interpolated() const 
 
 Returns true if physics interpolation is enabled for this node (see physics_interpolation_mode).
 
 Note: Interpolation will only be active if both the flag is set and physics interpolation is enabled within the SceneTree. This can be tested using is_physics_interpolated_and_enabled().
 
-bool is_physics_interpolated_and_enabled() const 🔗
+bool is_physics_interpolated_and_enabled() const 
 
 Returns true if physics interpolation is enabled (see physics_interpolation_mode) and enabled in the SceneTree.
 
@@ -19559,53 +19559,53 @@ This is a convenience version of is_physics_interpolated() that also checks whet
 
 See SceneTree.physics_interpolation and ProjectSettings.physics/common/physics_interpolation.
 
-bool is_physics_processing() const 🔗
+bool is_physics_processing() const 
 
 Returns true if physics processing is enabled (see set_physics_process()).
 
-bool is_physics_processing_internal() const 🔗
+bool is_physics_processing_internal() const 
 
 Returns true if internal physics processing is enabled (see set_physics_process_internal()).
 
-bool is_processing() const 🔗
+bool is_processing() const 
 
 Returns true if processing is enabled (see set_process()).
 
-bool is_processing_input() const 🔗
+bool is_processing_input() const 
 
 Returns true if the node is processing input (see set_process_input()).
 
-bool is_processing_internal() const 🔗
+bool is_processing_internal() const 
 
 Returns true if internal processing is enabled (see set_process_internal()).
 
-bool is_processing_shortcut_input() const 🔗
+bool is_processing_shortcut_input() const 
 
 Returns true if the node is processing shortcuts (see set_process_shortcut_input()).
 
-bool is_processing_unhandled_input() const 🔗
+bool is_processing_unhandled_input() const 
 
 Returns true if the node is processing unhandled input (see set_process_unhandled_input()).
 
-bool is_processing_unhandled_key_input() const 🔗
+bool is_processing_unhandled_key_input() const 
 
 Returns true if the node is processing unhandled key input (see set_process_unhandled_key_input()).
 
-void move_child(child_node: Node, to_index: int) 🔗
+void move_child(child_node: Node, to_index: int) 
 
 Moves child_node to the given index. A node's index is the order among its siblings. If to_index is negative, the index is counted from the end of the list. See also get_child() and get_index().
 
 Note: The processing order of several engine callbacks (_ready(), _process(), etc.) and notifications sent through propagate_notification() is affected by tree order. CanvasItem nodes are also rendered in tree order. See also process_priority.
 
-void notify_deferred_thread_group(what: int) 🔗
+void notify_deferred_thread_group(what: int) 
 
 Similar to call_deferred_thread_group(), but for notifications.
 
-void notify_thread_safe(what: int) 🔗
+void notify_thread_safe(what: int) 
 
 Similar to call_thread_safe(), but for notifications.
 
-void print_orphan_nodes() static 🔗
+void print_orphan_nodes() static 
 
 Prints all orphan nodes (nodes outside the SceneTree). Useful for debugging.
 
@@ -19615,23 +19615,23 @@ Prints the node and its children to the console, recursively. The node does not 
 
 May print, for example:
 
-void print_tree_pretty() 🔗
+void print_tree_pretty() 
 
 Prints the node and its children to the console, recursively. The node does not have to be inside the tree. Similar to print_tree(), but the graphical representation looks like what is displayed in the editor's Scene dock. It is useful for inspecting larger trees.
 
 May print, for example:
 
-void propagate_call(method: StringName, args: Array = [], parent_first: bool = false) 🔗
+void propagate_call(method: StringName, args: Array = [], parent_first: bool = false) 
 
 Calls the given method name, passing args as arguments, on this node and all of its children, recursively.
 
 If parent_first is true, the method is called on this node first, then on all of its children. If false, the children's methods are called first.
 
-void propagate_notification(what: int) 🔗
+void propagate_notification(what: int) 
 
 Calls Object.notification() with what on this node and all of its children, recursively.
 
-void queue_accessibility_update() 🔗
+void queue_accessibility_update() 
 
 Queues an accessibility information update for this node.
 
@@ -19641,23 +19641,23 @@ Unlike with Object.free(), the node is not deleted instantly, and it can still b
 
 Note: The node will only be freed after all other deferred calls are finished. Using this method is not always the same as calling Object.free() through Object.call_deferred().
 
-void remove_child(node: Node) 🔗
+void remove_child(node: Node) 
 
 Removes a child node. The node, along with its children, are not deleted. To delete a node, see queue_free().
 
 Note: When this node is inside the tree, this method sets the owner of the removed node (or its descendants) to null, if their owner is no longer an ancestor (see is_ancestor_of()).
 
-void remove_from_group(group: StringName) 🔗
+void remove_from_group(group: StringName) 
 
 Removes the node from the given group. Does nothing if the node is not in the group. See also notes in the description, and the SceneTree's group methods.
 
-void reparent(new_parent: Node, keep_global_transform: bool = true) 🔗
+void reparent(new_parent: Node, keep_global_transform: bool = true) 
 
 Changes the parent of this Node to the new_parent. The node needs to already have a parent. The node's owner is preserved if its owner is still reachable from the new location (i.e., the node is still a descendant of the new parent after the operation).
 
 If keep_global_transform is true, the node's global transform will be preserved if supported. Node2D, Node3D and Control support this argument (but Control keeps only position).
 
-void replace_by(node: Node, keep_groups: bool = false) 🔗
+void replace_by(node: Node, keep_groups: bool = false) 
 
 Replaces this node by the given node. All children of this node are moved to node.
 
@@ -19665,13 +19665,13 @@ If keep_groups is true, the node is added to the same groups that the replaced n
 
 Warning: The replaced node is removed from the tree, but it is not deleted. To prevent memory leaks, store a reference to the node in a variable, or use Object.free().
 
-void request_ready() 🔗
+void request_ready() 
 
 Requests _ready() to be called again the next time the node enters the tree. Does not immediately call _ready().
 
 Note: This method only affects the current node. If the node's children also need to request ready, this method needs to be called for each one of them. When the node and its children enter the tree again, the order of _ready() callbacks will be the same as normal.
 
-void reset_physics_interpolation() 🔗
+void reset_physics_interpolation() 
 
 When physics interpolation is active, moving a node to a radically different transform (such as placement within a level) can result in a visible glitch as the object is rendered moving from the old to new position over the physics tick.
 
@@ -19681,7 +19681,7 @@ The notification NOTIFICATION_RESET_PHYSICS_INTERPOLATION will be received by th
 
 Note: This function should be called after moving the node, rather than before.
 
-Error rpc(method: StringName, ...) vararg 🔗
+Error rpc(method: StringName, ...) vararg 
 
 Sends a remote procedure call request for the given method to peers on the network (and locally), sending additional arguments to the method called by the RPC. The call request will only be received by nodes with the same NodePath, including the exact same name. Behavior depends on the RPC configuration for the given method (see rpc_config() and @GDScript.@rpc). By default, methods are not exposed to RPCs.
 
@@ -19689,7 +19689,7 @@ May return @GlobalScope.OK if the call is successful, @GlobalScope.ERR_INVALID_P
 
 Note: You can only safely use RPCs on clients after you received the MultiplayerAPI.connected_to_server signal from the MultiplayerAPI. You also need to keep track of the connection state, either by the MultiplayerAPI signals like MultiplayerAPI.server_disconnected or by checking (get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED).
 
-void rpc_config(method: StringName, config: Variant) 🔗
+void rpc_config(method: StringName, config: Variant) 
 
 Changes the RPC configuration for the given method. config should either be null to disable the feature (as by default), or a Dictionary containing the following entries:
 
@@ -19703,25 +19703,25 @@ channel: an int representing the channel to send the RPC on.
 
 Note: In GDScript, this method corresponds to the @GDScript.@rpc annotation, with various parameters passed (@rpc(any), @rpc(authority)...). See also the high-level multiplayer tutorial.
 
-Error rpc_id(peer_id: int, method: StringName, ...) vararg 🔗
+Error rpc_id(peer_id: int, method: StringName, ...) vararg 
 
 Sends a rpc() to a specific peer identified by peer_id (see MultiplayerPeer.set_target_peer()).
 
 May return @GlobalScope.OK if the call is successful, @GlobalScope.ERR_INVALID_PARAMETER if the arguments passed in the method do not match, @GlobalScope.ERR_UNCONFIGURED if the node's multiplayer cannot be fetched (such as when the node is not inside the tree), @GlobalScope.ERR_CONNECTION_ERROR if multiplayer's connection is not available.
 
-void set_deferred_thread_group(property: StringName, value: Variant) 🔗
+void set_deferred_thread_group(property: StringName, value: Variant) 
 
 Similar to call_deferred_thread_group(), but for setting properties.
 
-void set_display_folded(fold: bool) 🔗
+void set_display_folded(fold: bool) 
 
 If set to true, the node appears folded in the Scene dock. As a result, all of its children are hidden. This method is intended to be used in editor plugins and tools, but it also works in release builds. See also is_displayed_folded().
 
-void set_editable_instance(node: Node, is_editable: bool) 🔗
+void set_editable_instance(node: Node, is_editable: bool) 
 
 Set to true to allow all nodes owned by node to be available, and editable, in the Scene dock, even if their owner is not the scene root. This method is intended to be used in editor plugins and tools, but it also works in release builds. See also is_editable_instance().
 
-void set_multiplayer_authority(id: int, recursive: bool = true) 🔗
+void set_multiplayer_authority(id: int, recursive: bool = true) 
 
 Sets the node's multiplayer authority to the peer with the given peer id. The multiplayer authority is the peer that has authority over the node on the network. Defaults to peer ID 1 (the server). Useful in conjunction with rpc_config() and the MultiplayerAPI.
 
@@ -19729,19 +19729,19 @@ If recursive is true, the given peer is recursively set as the authority for all
 
 Warning: This does not automatically replicate the new authority to other peers. It is the developer's responsibility to do so. You may replicate the new authority's information using MultiplayerSpawner.spawn_function, an RPC, or a MultiplayerSynchronizer. Furthermore, the parent's authority does not propagate to newly added children.
 
-void set_physics_process(enable: bool) 🔗
+void set_physics_process(enable: bool) 
 
 If set to true, enables physics (fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 FPS, see Engine.physics_ticks_per_second to change) interval (and the _physics_process() callback will be called if it exists).
 
 Note: If _physics_process() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_physics_process_internal(enable: bool) 🔗
+void set_physics_process_internal(enable: bool) 
 
 If set to true, enables internal physics for this node. Internal physics processing happens in isolation from the normal _physics_process() calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (set_physics_process()).
 
 Warning: Built-in nodes rely on internal processing for their internal logic. Disabling it is unsafe and may lead to unexpected behavior. Use this method if you know what you are doing.
 
-void set_process(enable: bool) 🔗
+void set_process(enable: bool) 
 
 If set to true, enables processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the _process() callback will be called if it exists).
 
@@ -19749,51 +19749,51 @@ Note: If _process() is overridden, this will be automatically enabled before _re
 
 Note: This method only affects the _process() callback, i.e. it has no effect on other callbacks like _physics_process(). If you want to disable all processing for the node, set process_mode to PROCESS_MODE_DISABLED.
 
-void set_process_input(enable: bool) 🔗
+void set_process_input(enable: bool) 
 
 If set to true, enables input processing.
 
 Note: If _input() is overridden, this will be automatically enabled before _ready() is called. Input processing is also already enabled for GUI controls, such as Button and TextEdit.
 
-void set_process_internal(enable: bool) 🔗
+void set_process_internal(enable: bool) 
 
 If set to true, enables internal processing for this node. Internal processing happens in isolation from the normal _process() calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (set_process()).
 
 Warning: Built-in nodes rely on internal processing for their internal logic. Disabling it is unsafe and may lead to unexpected behavior. Use this method if you know what you are doing.
 
-void set_process_shortcut_input(enable: bool) 🔗
+void set_process_shortcut_input(enable: bool) 
 
 If set to true, enables shortcut processing for this node.
 
 Note: If _shortcut_input() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_process_unhandled_input(enable: bool) 🔗
+void set_process_unhandled_input(enable: bool) 
 
 If set to true, enables unhandled input processing. It enables the node to receive all input that was not previously handled (usually by a Control).
 
 Note: If _unhandled_input() is overridden, this will be automatically enabled before _ready() is called. Unhandled input processing is also already enabled for GUI controls, such as Button and TextEdit.
 
-void set_process_unhandled_key_input(enable: bool) 🔗
+void set_process_unhandled_key_input(enable: bool) 
 
 If set to true, enables unhandled key input processing.
 
 Note: If _unhandled_key_input() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_scene_instance_load_placeholder(load_placeholder: bool) 🔗
+void set_scene_instance_load_placeholder(load_placeholder: bool) 
 
 If set to true, the node becomes an InstancePlaceholder when packed and instantiated from a PackedScene. See also get_scene_instance_load_placeholder().
 
-void set_thread_safe(property: StringName, value: Variant) 🔗
+void set_thread_safe(property: StringName, value: Variant) 
 
 Similar to call_thread_safe(), but for setting properties.
 
-void set_translation_domain_inherited() 🔗
+void set_translation_domain_inherited() 
 
 Makes this node inherit the translation domain from its parent node. If this node has no parent, the main translation domain will be used.
 
 This is the default behavior for all nodes. Calling Object.set_translation_domain() disables this behavior.
 
-void update_configuration_warnings() 🔗
+void update_configuration_warnings() 
 
 Refreshes the warnings displayed for this node in the Scene dock. Use _get_configuration_warnings() to customize the warning messages to display.
 
@@ -20001,7 +20001,7 @@ tr(message: StringName, context: StringName = &"") const
 
 tr_n(message: StringName, plural_message: StringName, n: int, context: StringName = &"") const
 
-property_list_changed() 🔗
+property_list_changed() 
 
 Emitted when notify_property_list_changed() is called.
 
@@ -20029,19 +20029,19 @@ ConnectFlags CONNECT_APPEND_SOURCE_OBJECT = 16
 
 The source object is automatically bound when a PackedScene is instantiated. If this flag bit is enabled, the source object will be appended right after the original arguments of the signal.
 
-NOTIFICATION_POSTINITIALIZE = 0 🔗
+NOTIFICATION_POSTINITIALIZE = 0 
 
 Notification received when the object is initialized, before its script is attached. Used internally.
 
-NOTIFICATION_PREDELETE = 1 🔗
+NOTIFICATION_PREDELETE = 1 
 
 Notification received when the object is about to be deleted. Can be used like destructors in object-oriented programming languages.
 
-NOTIFICATION_EXTENSION_RELOADED = 2 🔗
+NOTIFICATION_EXTENSION_RELOADED = 2 
 
 Notification received when the object finishes hot reloading. This notification is only sent for extensions classes and derived.
 
-Variant _get(property: StringName) virtual 🔗
+Variant _get(property: StringName) virtual 
 
 Override this method to customize the behavior of get(). Should return the given property's value, or null if the property should be handled normally.
 
@@ -20049,7 +20049,7 @@ Combined with _set() and _get_property_list(), this method allows defining custo
 
 Note: This method is not called when getting built-in properties of an object, including properties defined with @GDScript.@export.
 
-Array[Dictionary] _get_property_list() virtual 🔗
+Array[Dictionary] _get_property_list() virtual 
 
 Override this method to provide a custom list of additional properties to handle by the engine.
 
@@ -20063,29 +20063,29 @@ Note: This method is intended for advanced purposes. For most common use cases, 
 
 Note: If the object's script is not @GDScript.@tool, this method will not be called in the editor.
 
-void _init() virtual 🔗
+void _init() virtual 
 
 Called when the object's script is instantiated, oftentimes after the object is initialized in memory (through Object.new() in GDScript, or new GodotObject in C#). It can be also defined to take in parameters. This method is similar to a constructor in most programming languages.
 
 Note: If _init() is defined with required parameters, the Object with script may only be created directly. If any other means (such as PackedScene.instantiate() or Node.duplicate()) are used, the script's initialization will fail.
 
-Variant _iter_get(iter: Variant) virtual 🔗
+Variant _iter_get(iter: Variant) virtual 
 
 Returns the current iterable value. iter stores the iteration state, but unlike _iter_init() and _iter_next() the state is supposed to be read-only, so there is no Array wrapper.
 
 Tip: In GDScript, you can use a subtype of Variant as the return type for _iter_get(). The specified type will be used to set the type of the iterator variable in for loops, enhancing type safety.
 
-bool _iter_init(iter: Array) virtual 🔗
+bool _iter_init(iter: Array) virtual 
 
 Initializes the iterator. iter stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns true so long as the iterator has not reached the end.
 
 Note: Alternatively, you can ignore iter and use the object's state instead, see online docs for an example. Note that in this case you will not be able to reuse the same iterator instance in nested loops. Also, make sure you reset the iterator state in this method if you want to reuse the same instance multiple times.
 
-bool _iter_next(iter: Array) virtual 🔗
+bool _iter_next(iter: Array) virtual 
 
 Moves the iterator to the next iteration. iter stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns true so long as the iterator has not reached the end.
 
-void _notification(what: int) virtual 🔗
+void _notification(what: int) virtual 
 
 Called when the object receives a notification, which can be identified in what by comparing it with a constant. See also notification().
 
@@ -20093,19 +20093,19 @@ Note: The base Object defines a few notifications (NOTIFICATION_POSTINITIALIZE a
 
 Note: Unlike other virtual methods, this method is called automatically for every script that overrides it. This means that the base implementation should not be called via super in GDScript or its equivalents in other languages.
 
-bool _property_can_revert(property: StringName) virtual 🔗
+bool _property_can_revert(property: StringName) virtual 
 
 Override this method to customize the given property's revert behavior. Should return true if the property has a custom default value and is revertible in the Inspector dock. Use _property_get_revert() to specify the property's default value.
 
 Note: This method must return consistently, regardless of the current value of the property.
 
-Variant _property_get_revert(property: StringName) virtual 🔗
+Variant _property_get_revert(property: StringName) virtual 
 
 Override this method to customize the given property's revert behavior. Should return the default value for the property. If the default value differs from the property's current value, a revert icon is displayed in the Inspector dock.
 
 Note: _property_can_revert() must also be overridden for this method to be called.
 
-bool _set(property: StringName, value: Variant) virtual 🔗
+bool _set(property: StringName, value: Variant) virtual 
 
 Override this method to customize the behavior of set(). Should set the property to value and return true, or false if the property should be handled normally. The exact way to set the property is up to this method's implementation.
 
@@ -20113,25 +20113,25 @@ Combined with _get() and _get_property_list(), this method allows defining custo
 
 Note: This method is not called when setting built-in properties of an object, including properties defined with @GDScript.@export.
 
-String _to_string() virtual 🔗
+String _to_string() virtual 
 
 Override this method to customize the return value of to_string(), and therefore the object's representation as a String.
 
-void _validate_property(property: Dictionary) virtual 🔗
+void _validate_property(property: Dictionary) virtual 
 
 Override this method to customize existing properties. Every property info goes through this method, except properties added with _get_property_list(). The dictionary contents is the same as in _get_property_list().
 
-void add_user_signal(signal: String, arguments: Array = []) 🔗
+void add_user_signal(signal: String, arguments: Array = []) 
 
 Adds a user-defined signal named signal. Optional arguments for the signal can be added as an Array of dictionaries, each defining a name String and a type int (see Variant.Type). See also has_user_signal() and remove_user_signal().
 
-Variant call(method: StringName, ...) vararg 🔗
+Variant call(method: StringName, ...) vararg 
 
 Calls the method on the object and returns the result. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-Variant call_deferred(method: StringName, ...) vararg 🔗
+Variant call_deferred(method: StringName, ...) vararg 
 
 Calls the method on the object during idle time. Always returns null, not the method's result.
 
@@ -20145,19 +20145,19 @@ Note: In C#, method must be in snake_case when referring to built-in Godot metho
 
 Note: If you're looking to delay the function call by a frame, refer to the SceneTree.process_frame and SceneTree.physics_frame signals.
 
-Variant callv(method: StringName, arg_array: Array) 🔗
+Variant callv(method: StringName, arg_array: Array) 
 
 Calls the method on the object and returns the result. Unlike call(), this method expects all parameters to be contained inside arg_array.
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-bool can_translate_messages() const 🔗
+bool can_translate_messages() const 
 
 Returns true if the object is allowed to translate messages with tr() and tr_n(). See also set_message_translation().
 
 If this method is called during NOTIFICATION_PREDELETE, this object will reject being freed and will remain allocated. This is mostly an internal function used for error handling to avoid the user from freeing objects when they are not intended to.
 
-Error connect(signal: StringName, callable: Callable, flags: int = 0) 🔗
+Error connect(signal: StringName, callable: Callable, flags: int = 0) 
 
 Connects a signal by name to a callable. Optional flags can be also added to configure the connection's behavior (see ConnectFlags constants).
 
@@ -20169,11 +20169,11 @@ Note: In GDScript, it is generally recommended to connect signals with Signal.co
 
 Note: This operation (and all other signal related operations) is thread-safe.
 
-void disconnect(signal: StringName, callable: Callable) 🔗
+void disconnect(signal: StringName, callable: Callable) 
 
 Disconnects a signal by name from a given callable. If the connection does not exist, generates an error. Use is_connected() to make sure that the connection exists.
 
-Error emit_signal(signal: StringName, ...) vararg 🔗
+Error emit_signal(signal: StringName, ...) vararg 
 
 Emits the given signal by name. The signal must exist, so it should be a built-in signal of this class or one of its inherited classes, or a user-defined signal (see add_user_signal()). This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
@@ -20183,19 +20183,19 @@ Note: In C#, signal must be in snake_case when referring to built-in Godot signa
 
 Deletes the object from memory. Pre-existing references to the object become invalid, and any attempt to access them will result in a runtime error. Checking the references with @GlobalScope.is_instance_valid() will return false. This is equivalent to the memdelete function in GDExtension C++.
 
-Variant get(property: StringName) const 🔗
+Variant get(property: StringName) const 
 
 Returns the Variant value of the given property. If the property does not exist, this method returns null.
 
 Note: In C#, property must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-String get_class() const 🔗
+String get_class() const 
 
 Returns the object's built-in class name, as a String. See also is_class().
 
 Note: This method ignores class_name declarations. If this object's script has defined a class_name, the base, built-in class name is returned instead.
 
-Array[Dictionary] get_incoming_connections() const 🔗
+Array[Dictionary] get_incoming_connections() const 
 
 Returns an Array of signal connections received by this object. Each connection is represented as a Dictionary that contains three entries:
 
@@ -20205,7 +20205,7 @@ callable is a reference to the Callable;
 
 flags is a combination of ConnectFlags.
 
-Variant get_indexed(property_path: NodePath) const 🔗
+Variant get_indexed(property_path: NodePath) const 
 
 Gets the object's property indexed by the given property_path. The path should be a NodePath relative to the current object and can use the colon character (:) to access nested properties.
 
@@ -20215,13 +20215,13 @@ Note: In C#, property_path must be in snake_case when referring to built-in Godo
 
 Note: This method does not support actual paths to nodes in the SceneTree, only sub-property paths. In the context of nodes, use Node.get_node_and_resource() instead.
 
-int get_instance_id() const 🔗
+int get_instance_id() const 
 
 Returns the object's unique instance ID. This ID can be saved in EncodedObjectAsID, and can be used to retrieve this object instance with @GlobalScope.instance_from_id().
 
 Note: This ID is only useful during the current session. It won't correspond to a similar object if the ID is sent over a network, or loaded from a file at a later time.
 
-Variant get_meta(name: StringName, default: Variant = null) const 🔗
+Variant get_meta(name: StringName, default: Variant = null) const 
 
 Returns the object's metadata value for the given entry name. If the entry does not exist, returns default. If default is null, an error is also generated.
 
@@ -20229,17 +20229,17 @@ Note: A metadata's name must be a valid identifier as per StringName.is_valid_id
 
 Note: Metadata that has a name starting with an underscore (_) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
-Array[StringName] get_meta_list() const 🔗
+Array[StringName] get_meta_list() const 
 
 Returns the object's metadata entry names as an Array of StringNames.
 
-int get_method_argument_count(method: StringName) const 🔗
+int get_method_argument_count(method: StringName) const 
 
 Returns the number of arguments of the given method by name.
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-Array[Dictionary] get_method_list() const 🔗
+Array[Dictionary] get_method_list() const 
 
 Returns this object's methods and their signatures as an Array of dictionaries. Each Dictionary contains the following entries:
 
@@ -20257,7 +20257,7 @@ return is the returned value, as a Dictionary;
 
 Note: The dictionaries of args and return are formatted identically to the results of get_property_list(), although not all entries are used.
 
-Array[Dictionary] get_property_list() const 🔗
+Array[Dictionary] get_property_list() const 
 
 Returns the object's property list as an Array of dictionaries. Each Dictionary contains the following entries:
 
@@ -20275,11 +20275,11 @@ usage is a combination of PropertyUsageFlags.
 
 Note: In GDScript, all class members are treated as properties. In C# and GDExtension, it may be necessary to explicitly mark class members as Godot properties using decorators or attributes.
 
-Variant get_script() const 🔗
+Variant get_script() const 
 
 Returns the object's Script instance, or null if no script is attached.
 
-Array[Dictionary] get_signal_connection_list(signal: StringName) const 🔗
+Array[Dictionary] get_signal_connection_list(signal: StringName) const 
 
 Returns an Array of connections for the given signal name. Each connection is represented as a Dictionary that contains three entries:
 
@@ -20289,23 +20289,23 @@ callable is a reference to the connected Callable;
 
 flags is a combination of ConnectFlags.
 
-Array[Dictionary] get_signal_list() const 🔗
+Array[Dictionary] get_signal_list() const 
 
 Returns the list of existing signals as an Array of dictionaries.
 
 Note: Due of the implementation, each Dictionary is formatted very similarly to the returned values of get_method_list().
 
-StringName get_translation_domain() const 🔗
+StringName get_translation_domain() const 
 
 Returns the name of the translation domain used by tr() and tr_n(). See also TranslationServer.
 
-bool has_connections(signal: StringName) const 🔗
+bool has_connections(signal: StringName) const 
 
 Returns true if any connection exists on the given signal name.
 
 Note: In C#, signal must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the SignalName class to avoid allocating a new StringName on each call.
 
-bool has_meta(name: StringName) const 🔗
+bool has_meta(name: StringName) const 
 
 Returns true if a metadata entry is found with the given name. See also get_meta(), set_meta() and remove_meta().
 
@@ -20313,65 +20313,65 @@ Note: A metadata's name must be a valid identifier as per StringName.is_valid_id
 
 Note: Metadata that has a name starting with an underscore (_) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
-bool has_method(method: StringName) const 🔗
+bool has_method(method: StringName) const 
 
 Returns true if the given method name exists in the object.
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-bool has_signal(signal: StringName) const 🔗
+bool has_signal(signal: StringName) const 
 
 Returns true if the given signal name exists in the object.
 
 Note: In C#, signal must be in snake_case when referring to built-in Godot signals. Prefer using the names exposed in the SignalName class to avoid allocating a new StringName on each call.
 
-bool has_user_signal(signal: StringName) const 🔗
+bool has_user_signal(signal: StringName) const 
 
 Returns true if the given user-defined signal name exists. Only signals added with add_user_signal() are included. See also remove_user_signal().
 
-bool is_blocking_signals() const 🔗
+bool is_blocking_signals() const 
 
 Returns true if the object is blocking its signals from being emitted. See set_block_signals().
 
-bool is_class(class: String) const 🔗
+bool is_class(class: String) const 
 
 Returns true if the object inherits from the given class. See also get_class().
 
 Note: This method ignores class_name declarations in the object's script.
 
-bool is_connected(signal: StringName, callable: Callable) const 🔗
+bool is_connected(signal: StringName, callable: Callable) const 
 
 Returns true if a connection exists between the given signal name and callable.
 
 Note: In C#, signal must be in snake_case when referring to built-in Godot signals. Prefer using the names exposed in the SignalName class to avoid allocating a new StringName on each call.
 
-bool is_queued_for_deletion() const 🔗
+bool is_queued_for_deletion() const 
 
 Returns true if the Node.queue_free() method was called for the object.
 
-void notification(what: int, reversed: bool = false) 🔗
+void notification(what: int, reversed: bool = false) 
 
 Sends the given what notification to all classes inherited by the object, triggering calls to _notification(), starting from the highest ancestor (the Object class) and going down to the object's script.
 
 If reversed is true, the call order is reversed.
 
-void notify_property_list_changed() 🔗
+void notify_property_list_changed() 
 
 Emits the property_list_changed signal. This is mainly used to refresh the editor, so that the Inspector and editor plugins are properly updated.
 
-bool property_can_revert(property: StringName) const 🔗
+bool property_can_revert(property: StringName) const 
 
 Returns true if the given property has a custom default value. Use property_get_revert() to get the property's default value.
 
 Note: This method is used by the Inspector dock to display a revert icon. The object must implement _property_can_revert() to customize the default value. If _property_can_revert() is not implemented, this method returns false.
 
-Variant property_get_revert(property: StringName) const 🔗
+Variant property_get_revert(property: StringName) const 
 
 Returns the custom default value of the given property. Use property_can_revert() to check if the property has a custom default value.
 
 Note: This method is used by the Inspector dock to display a revert icon. The object must implement _property_get_revert() to customize the default value. If _property_get_revert() is not implemented, this method returns null.
 
-void remove_meta(name: StringName) 🔗
+void remove_meta(name: StringName) 
 
 Removes the given entry name from the object's metadata. See also has_meta(), get_meta() and set_meta().
 
@@ -20379,37 +20379,37 @@ Note: A metadata's name must be a valid identifier as per StringName.is_valid_id
 
 Note: Metadata that has a name starting with an underscore (_) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
-void remove_user_signal(signal: StringName) 🔗
+void remove_user_signal(signal: StringName) 
 
 Removes the given user signal signal from the object. See also add_user_signal() and has_user_signal().
 
-void set(property: StringName, value: Variant) 🔗
+void set(property: StringName, value: Variant) 
 
 Assigns value to the given property. If the property does not exist or the given value's type doesn't match, nothing happens.
 
 Note: In C#, property must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-void set_block_signals(enable: bool) 🔗
+void set_block_signals(enable: bool) 
 
 If set to true, the object becomes unable to emit signals. As such, emit_signal() and signal connections will not work, until it is set to false.
 
-void set_deferred(property: StringName, value: Variant) 🔗
+void set_deferred(property: StringName, value: Variant) 
 
 Assigns value to the given property, at the end of the current frame. This is equivalent to calling set() through call_deferred().
 
 Note: In C#, property must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-void set_indexed(property_path: NodePath, value: Variant) 🔗
+void set_indexed(property_path: NodePath, value: Variant) 
 
 Assigns a new value to the property identified by the property_path. The path should be a NodePath relative to this object, and can use the colon character (:) to access nested properties.
 
 Note: In C#, property_path must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-void set_message_translation(enable: bool) 🔗
+void set_message_translation(enable: bool) 
 
 If set to true, allows the object to translate messages with tr() and tr_n(). Enabled by default. See also can_translate_messages().
 
-void set_meta(name: StringName, value: Variant) 🔗
+void set_meta(name: StringName, value: Variant) 
 
 Adds or changes the entry name inside the object's metadata. The metadata value can be any Variant, although some types cannot be serialized correctly.
 
@@ -20419,19 +20419,19 @@ Note: A metadata's name must be a valid identifier as per StringName.is_valid_id
 
 Note: Metadata that has a name starting with an underscore (_) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
-void set_script(script: Variant) 🔗
+void set_script(script: Variant) 
 
 Attaches script to the object, and instantiates it. As a result, the script's _init() is called. A Script is used to extend the object's functionality.
 
 If a script already exists, its instance is detached, and its property values and state are lost. Built-in property values are still kept.
 
-void set_translation_domain(domain: StringName) 🔗
+void set_translation_domain(domain: StringName) 
 
 Sets the name of the translation domain used by tr() and tr_n(). See also TranslationServer.
 
 Returns a String representing the object. Defaults to "<ClassName#RID>". Override _to_string() to customize the string representation of the object.
 
-String tr(message: StringName, context: StringName = &"") const 🔗
+String tr(message: StringName, context: StringName = &"") const 
 
 Translates a message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation. Note that most Control nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
 
@@ -20441,7 +20441,7 @@ For detailed examples, see Internationalizing games.
 
 Note: This method can't be used without an Object instance, as it requires the can_translate_messages() method. To translate strings in a static context, use TranslationServer.translate().
 
-String tr_n(message: StringName, plural_message: StringName, n: int, context: StringName = &"") const 🔗
+String tr_n(message: StringName, plural_message: StringName, n: int, context: StringName = &"") const 
 
 Translates a message or plural_message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation.
 
@@ -20576,15 +20576,15 @@ get_binding_modifier() const
 
 setup(action_map: OpenXRActionMap, binding_modifier: OpenXRBindingModifier)
 
-binding_modifier_removed(binding_modifier_editor: Object) 🔗
+binding_modifier_removed(binding_modifier_editor: Object) 
 
 Signal emitted when the user presses the delete binding modifier button for this modifier.
 
-OpenXRBindingModifier get_binding_modifier() const 🔗
+OpenXRBindingModifier get_binding_modifier() const 
 
 Returns the OpenXRBindingModifier currently being edited.
 
-void setup(action_map: OpenXRActionMap, binding_modifier: OpenXRBindingModifier) 🔗
+void setup(action_map: OpenXRActionMap, binding_modifier: OpenXRBindingModifier) 
 
 Setup this editor for the provided action_map and binding_modifier.
 
@@ -20620,7 +20620,7 @@ size_flags_horizontal
 
 setup(action_map: OpenXRActionMap, interaction_profile: OpenXRInteractionProfile)
 
-void setup(action_map: OpenXRActionMap, interaction_profile: OpenXRInteractionProfile) 🔗
+void setup(action_map: OpenXRActionMap, interaction_profile: OpenXRInteractionProfile) 
 
 Setup this editor for the provided action_map and interaction_profile.
 
@@ -20713,11 +20713,11 @@ set_gpu_level(level: PerfSettingsLevel)
 
 set_motion_range(hand: Hand, motion_range: HandMotionRange)
 
-cpu_level_changed(sub_domain: int, from_level: int, to_level: int) 🔗
+cpu_level_changed(sub_domain: int, from_level: int, to_level: int) 
 
 Informs the device CPU performance level has changed in the specified subdomain.
 
-gpu_level_changed(sub_domain: int, from_level: int, to_level: int) 🔗
+gpu_level_changed(sub_domain: int, from_level: int, to_level: int) 
 
 Informs the device GPU performance level has changed in the specified subdomain.
 
@@ -20725,7 +20725,7 @@ Informs our OpenXR instance is exiting.
 
 Informs the user queued a recenter of the player position.
 
-refresh_rate_changed(refresh_rate: float) 🔗
+refresh_rate_changed(refresh_rate: float) 
 
 Informs the user the HMD refresh rate has changed.
 
@@ -20735,13 +20735,13 @@ Informs our OpenXR session has been started.
 
 Informs our OpenXR session now has focus, for example output is sent to the HMD and we're receiving XR input.
 
-session_loss_pending() 🔗
+session_loss_pending() 
 
 Informs our OpenXR session is in the process of being lost.
 
 Informs our OpenXR session is stopping.
 
-session_synchronized() 🔗
+session_synchronized() 
 
 Informs our OpenXR session has been synchronized.
 
@@ -20789,7 +20789,7 @@ The OpenXR instance is about to be destroyed and we're existing. instance_exitin
 
 Maximum value for the hand enum.
 
-enum HandMotionRange: 🔗
+enum HandMotionRange: 
 
 HandMotionRange HAND_MOTION_RANGE_UNOBSTRUCTED = 0
 
@@ -20803,7 +20803,7 @@ HandMotionRange HAND_MOTION_RANGE_MAX = 2
 
 Maximum value for the motion range enum.
 
-enum HandTrackedSource: 🔗
+enum HandTrackedSource: 
 
 HandTrackedSource HAND_TRACKED_SOURCE_UNKNOWN = 0
 
@@ -20921,7 +20921,7 @@ HandJoints HAND_JOINT_MAX = 26
 
 Represents the size of the HandJoints enum.
 
-enum PerfSettingsLevel: 🔗
+enum PerfSettingsLevel: 
 
 PerfSettingsLevel PERF_SETTINGS_LEVEL_POWER_SAVINGS = 0
 
@@ -20939,7 +20939,7 @@ PerfSettingsLevel PERF_SETTINGS_LEVEL_BOOST = 3
 
 The application has entered a section with very high complexity, during which the XR Runtime is allowed to step up beyond the thermally sustainable range.
 
-enum PerfSettingsSubDomain: 🔗
+enum PerfSettingsSubDomain: 
 
 PerfSettingsSubDomain PERF_SETTINGS_SUB_DOMAIN_COMPOSITING = 0
 
@@ -20953,7 +20953,7 @@ PerfSettingsSubDomain PERF_SETTINGS_SUB_DOMAIN_THERMAL = 2
 
 The temperature of the device has reached a new level.
 
-enum PerfSettingsNotificationLevel: 🔗
+enum PerfSettingsNotificationLevel: 
 
 PerfSettingsNotificationLevel PERF_SETTINGS_NOTIF_LEVEL_NORMAL = 0
 
@@ -20967,7 +20967,7 @@ PerfSettingsNotificationLevel PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED = 2
 
 The sub-domain has reached a critical level where the application should start drastic mitigation actions.
 
-flags HandJointFlags: 🔗
+flags HandJointFlags: 
 
 HandJointFlags HAND_JOINT_NONE = 0
 
@@ -20995,7 +20995,7 @@ HandJointFlags HAND_JOINT_ANGULAR_VELOCITY_VALID = 32
 
 If set, our angular velocity data is valid, otherwise, the angular velocity data is unreliable and should not be used.
 
-float display_refresh_rate = 0.0 🔗
+float display_refresh_rate = 0.0 
 
 void set_display_refresh_rate(value: float)
 
@@ -21003,7 +21003,7 @@ float get_display_refresh_rate()
 
 The display refresh rate for the current HMD. Only functional if this feature is supported by the OpenXR runtime and after the interface has been initialized.
 
-bool foveation_dynamic = false 🔗
+bool foveation_dynamic = false 
 
 void set_foveation_dynamic(value: bool)
 
@@ -21013,7 +21013,7 @@ Enable dynamic foveation adjustment, the interface must be initialized before th
 
 Note: Only works on the Compatibility renderer.
 
-int foveation_level = 0 🔗
+int foveation_level = 0 
 
 void set_foveation_level(value: int)
 
@@ -21023,7 +21023,7 @@ Set foveation level from 0 (off) to 3 (high), the interface must be initialized 
 
 Note: Only works on the Compatibility renderer.
 
-float render_target_size_multiplier = 1.0 🔗
+float render_target_size_multiplier = 1.0 
 
 void set_render_target_size_multiplier(value: float)
 
@@ -21031,7 +21031,7 @@ float get_render_target_size_multiplier()
 
 The render size multiplier for the current HMD. Must be set before the interface has been initialized.
 
-float vrs_min_radius = 20.0 🔗
+float vrs_min_radius = 20.0 
 
 void set_vrs_min_radius(value: float)
 
@@ -21041,7 +21041,7 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 
 Note: Mobile and Forward+ renderers only. Requires Viewport.vrs_mode to be set to Viewport.VRS_XR.
 
-float vrs_strength = 1.0 🔗
+float vrs_strength = 1.0 
 
 void set_vrs_strength(value: float)
 
@@ -21051,105 +21051,105 @@ The strength used to calculate the VRS density map. The greater this value, the 
 
 Note: Mobile and Forward+ renderers only. Requires Viewport.vrs_mode to be set to Viewport.VRS_XR.
 
-Array get_action_sets() const 🔗
+Array get_action_sets() const 
 
 Returns a list of action sets registered with Godot (loaded from the action map at runtime).
 
-Array get_available_display_refresh_rates() const 🔗
+Array get_available_display_refresh_rates() const 
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
 
-Vector3 get_hand_joint_angular_velocity(hand: Hand, joint: HandJoints) const 🔗
+Vector3 get_hand_joint_angular_velocity(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_angular_velocity() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns the angular velocity of a joint (joint) of a hand (hand) as provided by OpenXR. This is relative to XROrigin3D!
 
-BitField[HandJointFlags] get_hand_joint_flags(hand: Hand, joint: HandJoints) const 🔗
+BitField[HandJointFlags] get_hand_joint_flags(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_flags() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns flags that inform us of the validity of the tracking data.
 
-Vector3 get_hand_joint_linear_velocity(hand: Hand, joint: HandJoints) const 🔗
+Vector3 get_hand_joint_linear_velocity(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_linear_velocity() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns the linear velocity of a joint (joint) of a hand (hand) as provided by OpenXR. This is relative to XROrigin3D without worldscale applied!
 
-Vector3 get_hand_joint_position(hand: Hand, joint: HandJoints) const 🔗
+Vector3 get_hand_joint_position(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_transform() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns the position of a joint (joint) of a hand (hand) as provided by OpenXR. This is relative to XROrigin3D without worldscale applied!
 
-float get_hand_joint_radius(hand: Hand, joint: HandJoints) const 🔗
+float get_hand_joint_radius(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_radius() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns the radius of a joint (joint) of a hand (hand) as provided by OpenXR. This is without worldscale applied!
 
-Quaternion get_hand_joint_rotation(hand: Hand, joint: HandJoints) const 🔗
+Quaternion get_hand_joint_rotation(hand: Hand, joint: HandJoints) const 
 
 Deprecated: Use XRHandTracker.get_hand_joint_transform() obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled, returns the rotation of a joint (joint) of a hand (hand) as provided by OpenXR.
 
-HandTrackedSource get_hand_tracking_source(hand: Hand) const 🔗
+HandTrackedSource get_hand_tracking_source(hand: Hand) const 
 
 Deprecated: Use XRHandTracker.hand_tracking_source obtained from XRServer.get_tracker() instead.
 
 If handtracking is enabled and hand tracking source is supported, gets the source of the hand tracking data for hand.
 
-HandMotionRange get_motion_range(hand: Hand) const 🔗
+HandMotionRange get_motion_range(hand: Hand) const 
 
 If handtracking is enabled and motion range is supported, gets the currently configured motion range for hand.
 
-SessionState get_session_state() 🔗
+SessionState get_session_state() 
 
 Returns the current state of our OpenXR session.
 
-bool is_action_set_active(name: String) const 🔗
+bool is_action_set_active(name: String) const 
 
 Returns true if the given action set is active.
 
-bool is_eye_gaze_interaction_supported() 🔗
+bool is_eye_gaze_interaction_supported() 
 
 Returns the capabilities of the eye gaze interaction extension.
 
 Note: This only returns a valid value after OpenXR has been initialized.
 
-bool is_foveation_supported() const 🔗
+bool is_foveation_supported() const 
 
 Returns true if OpenXR's foveation extension is supported, the interface must be initialized before this returns a valid value.
 
 Note: This feature is only available on the Compatibility renderer and currently only available on some stand alone headsets. For Vulkan set Viewport.vrs_mode to VRS_XR on desktop.
 
-bool is_hand_interaction_supported() const 🔗
+bool is_hand_interaction_supported() const 
 
 Returns true if OpenXR's hand interaction profile is supported and enabled.
 
 Note: This only returns a valid value after OpenXR has been initialized.
 
-bool is_hand_tracking_supported() 🔗
+bool is_hand_tracking_supported() 
 
 Returns true if OpenXR's hand tracking is supported and enabled.
 
 Note: This only returns a valid value after OpenXR has been initialized.
 
-void set_action_set_active(name: String, active: bool) 🔗
+void set_action_set_active(name: String, active: bool) 
 
 Sets the given action set as active or inactive.
 
-void set_cpu_level(level: PerfSettingsLevel) 🔗
+void set_cpu_level(level: PerfSettingsLevel) 
 
 Sets the CPU performance level of the OpenXR device.
 
-void set_gpu_level(level: PerfSettingsLevel) 🔗
+void set_gpu_level(level: PerfSettingsLevel) 
 
 Sets the GPU performance level of the OpenXR device.
 
-void set_motion_range(hand: Hand, motion_range: HandMotionRange) 🔗
+void set_motion_range(hand: Hand, motion_range: HandMotionRange) 
 
 If handtracking is enabled and motion range is supported, sets the currently configured motion range for hand to motion_range.
 
@@ -21433,7 +21433,7 @@ Monitor MONITOR_MAX = 59
 
 Represents the size of the Monitor enum.
 
-void add_custom_monitor(id: StringName, callable: Callable, arguments: Array = []) 🔗
+void add_custom_monitor(id: StringName, callable: Callable, arguments: Array = []) 
 
 Adds a custom monitor with the name id. You can specify the category of the monitor using slash delimiters in id (for example: "Game/NumberOfNPCs"). If there is more than one slash delimiter, then the default category is used. The default category is "Custom". Prints an error if given id is already present.
 
@@ -21441,29 +21441,29 @@ The debugger calls the callable to get the value of custom monitor. The callable
 
 Callables are called with arguments supplied in argument array.
 
-Variant get_custom_monitor(id: StringName) 🔗
+Variant get_custom_monitor(id: StringName) 
 
 Returns the value of custom monitor with given id. The callable is called to get the value of custom monitor. See also has_custom_monitor(). Prints an error if the given id is absent.
 
-Array[StringName] get_custom_monitor_names() 🔗
+Array[StringName] get_custom_monitor_names() 
 
 Returns the names of active custom monitors in an Array.
 
-float get_monitor(monitor: Monitor) const 🔗
+float get_monitor(monitor: Monitor) const 
 
 Returns the value of one of the available built-in monitors. You should provide one of the Monitor constants as the argument, like this:
 
 See get_custom_monitor() to query custom performance monitors' values.
 
-int get_monitor_modification_time() 🔗
+int get_monitor_modification_time() 
 
 Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to Time.get_ticks_usec() when the monitor is updated.
 
-bool has_custom_monitor(id: StringName) 🔗
+bool has_custom_monitor(id: StringName) 
 
 Returns true if custom monitor with the given id is present, false otherwise.
 
-void remove_custom_monitor(id: StringName) 🔗
+void remove_custom_monitor(id: StringName) 
 
 Removes the custom monitor with given id. Prints an error if the given id is already absent.
 
@@ -21635,7 +21635,7 @@ When and how to avoid using nodes for everything
 
 get_reference_count() const
 
-int get_reference_count() const 🔗
+int get_reference_count() const 
 
 Returns the current reference count.
 
@@ -21823,49 +21823,49 @@ add_syntax_highlighter(highlighter: EditorSyntaxHighlighter)
 
 get_base_editor() const
 
-edited_script_changed() 🔗
+edited_script_changed() 
 
 Emitted after script validation.
 
-go_to_help(what: String) 🔗
+go_to_help(what: String) 
 
 Emitted when the user requests a specific documentation page.
 
-go_to_method(script: Object, method: String) 🔗
+go_to_method(script: Object, method: String) 
 
 Emitted when the user requests to view a specific method of a script, similar to request_open_script_at_line.
 
 Emitted after script validation or when the edited resource has changed.
 
-replace_in_files_requested(text: String) 🔗
+replace_in_files_requested(text: String) 
 
 Emitted when the user request to find and replace text in the file system.
 
-request_help(topic: String) 🔗
+request_help(topic: String) 
 
 Emitted when the user requests contextual help.
 
-request_open_script_at_line(script: Object, line: int) 🔗
+request_open_script_at_line(script: Object, line: int) 
 
 Emitted when the user requests to view a specific line of a script, similar to go_to_method.
 
-request_save_history() 🔗
+request_save_history() 
 
 Emitted when the user contextual goto and the item is in the same script.
 
-request_save_previous_state(state: Dictionary) 🔗
+request_save_previous_state(state: Dictionary) 
 
 Emitted when the user changes current script or moves caret by 10 or more columns within the same script.
 
-search_in_files_requested(text: String) 🔗
+search_in_files_requested(text: String) 
 
 Emitted when the user request to search text in the file system.
 
-void add_syntax_highlighter(highlighter: EditorSyntaxHighlighter) 🔗
+void add_syntax_highlighter(highlighter: EditorSyntaxHighlighter) 
 
 Adds an EditorSyntaxHighlighter to the open script.
 
-Control get_base_editor() const 🔗
+Control get_base_editor() const 
 
 Returns the underlying Control used for editing scripts. For text scripts, this is a CodeEdit.
 
@@ -21915,67 +21915,67 @@ unregister_syntax_highlighter(syntax_highlighter: EditorSyntaxHighlighter)
 
 update_docs_from_script(script: Script)
 
-editor_script_changed(script: Script) 🔗
+editor_script_changed(script: Script) 
 
 Emitted when user changed active script. Argument is a freshly activated Script.
 
-script_close(script: Script) 🔗
+script_close(script: Script) 
 
 Emitted when editor is about to close the active script. Argument is a Script that is going to be closed.
 
-void clear_docs_from_script(script: Script) 🔗
+void clear_docs_from_script(script: Script) 
 
 Removes the documentation for the given script.
 
 Note: This should be called whenever the script is changed to keep the open documentation state up to date.
 
-PackedStringArray get_breakpoints() 🔗
+PackedStringArray get_breakpoints() 
 
 Returns array of breakpoints.
 
-ScriptEditorBase get_current_editor() const 🔗
+ScriptEditorBase get_current_editor() const 
 
 Returns the ScriptEditorBase object that the user is currently editing.
 
-Script get_current_script() 🔗
+Script get_current_script() 
 
 Returns a Script that is currently active in editor.
 
-Array[ScriptEditorBase] get_open_script_editors() const 🔗
+Array[ScriptEditorBase] get_open_script_editors() const 
 
 Returns an array with all ScriptEditorBase objects which are currently open in editor.
 
-Array[Script] get_open_scripts() const 🔗
+Array[Script] get_open_scripts() const 
 
 Returns an array with all Script objects which are currently open in editor.
 
-void goto_help(topic: String) 🔗
+void goto_help(topic: String) 
 
 Opens help for the given topic. The topic is an encoded string that controls which class, method, constant, signal, annotation, property, or theme item should be focused.
 
 The supported topic formats include class_name:class, class_method:class:method, class_constant:class:constant, class_signal:class:signal, class_annotation:class:@annotation, class_property:class:property, and class_theme_item:class:item, where class is the class name, method is the method name, constant is the constant name, signal is the signal name, annotation is the annotation name, property is the property name, and item is the theme item.
 
-void goto_line(line_number: int) 🔗
+void goto_line(line_number: int) 
 
 Goes to the specified line in the current script.
 
-void open_script_create_dialog(base_name: String, base_path: String) 🔗
+void open_script_create_dialog(base_name: String, base_path: String) 
 
 Opens the script create dialog. The script will extend base_name. The file extension can be omitted from base_path. It will be added based on the selected scripting language.
 
-void register_syntax_highlighter(syntax_highlighter: EditorSyntaxHighlighter) 🔗
+void register_syntax_highlighter(syntax_highlighter: EditorSyntaxHighlighter) 
 
 Registers the EditorSyntaxHighlighter to the editor, the EditorSyntaxHighlighter will be available on all open scripts.
 
 Note: Does not apply to scripts that are already opened.
 
-void unregister_syntax_highlighter(syntax_highlighter: EditorSyntaxHighlighter) 🔗
+void unregister_syntax_highlighter(syntax_highlighter: EditorSyntaxHighlighter) 
 
 Unregisters the EditorSyntaxHighlighter from the editor.
 
 Note: The EditorSyntaxHighlighter will still be applied to scripts that are already opened.
 
-void update_docs_from_script(script: Script) 🔗
+void update_docs_from_script(script: Script) 
 
 Updates the documentation for the given script.
 
@@ -22319,7 +22319,7 @@ ScrollMode SCROLL_MODE_RESERVE = 4
 
 Combines SCROLL_MODE_AUTO and SCROLL_MODE_SHOW_ALWAYS. The scrollbar is only visible if necessary, but the content size is adjusted as if it was always visible. It's useful for ensuring that content size stays the same regardless if the scrollbar is visible.
 
-bool draw_focus_border = false 🔗
+bool draw_focus_border = false 
 
 void set_draw_focus_border(value: bool)
 
@@ -22327,7 +22327,7 @@ bool get_draw_focus_border()
 
 If true, focus is drawn when the ScrollContainer or one of its descendant nodes is focused.
 
-bool follow_focus = false 🔗
+bool follow_focus = false 
 
 void set_follow_focus(value: bool)
 
@@ -22335,7 +22335,7 @@ bool is_following_focus()
 
 If true, the ScrollContainer will automatically scroll to focused children (including indirect children) to make sure they are fully visible.
 
-ScrollMode horizontal_scroll_mode = 1 🔗
+ScrollMode horizontal_scroll_mode = 1 
 
 void set_horizontal_scroll_mode(value: ScrollMode)
 
@@ -22343,13 +22343,13 @@ ScrollMode get_horizontal_scroll_mode()
 
 Controls whether horizontal scrollbar can be used and when it should be visible.
 
-int scroll_deadzone = 0 🔗
+int scroll_deadzone = 0 
 
 void set_deadzone(value: int)
 
 Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
-int scroll_horizontal = 0 🔗
+int scroll_horizontal = 0 
 
 void set_h_scroll(value: int)
 
@@ -22357,7 +22357,7 @@ The current horizontal scroll value.
 
 Note: If you are setting this value in the Node._ready() function or earlier, it needs to be wrapped with Object.set_deferred(), since scroll bar's Range.max_value is not initialized yet.
 
-float scroll_horizontal_custom_step = -1.0 🔗
+float scroll_horizontal_custom_step = -1.0 
 
 void set_horizontal_custom_step(value: float)
 
@@ -22365,7 +22365,7 @@ float get_horizontal_custom_step()
 
 Overrides the ScrollBar.custom_step used when clicking the internal scroll bar's horizontal increment and decrement buttons or when using arrow keys when the ScrollBar is focused.
 
-int scroll_vertical = 0 🔗
+int scroll_vertical = 0 
 
 void set_v_scroll(value: int)
 
@@ -22373,7 +22373,7 @@ The current vertical scroll value.
 
 Note: Setting it early needs to be deferred, just like in scroll_horizontal.
 
-float scroll_vertical_custom_step = -1.0 🔗
+float scroll_vertical_custom_step = -1.0 
 
 void set_vertical_custom_step(value: float)
 
@@ -22381,7 +22381,7 @@ float get_vertical_custom_step()
 
 Overrides the ScrollBar.custom_step used when clicking the internal scroll bar's vertical increment and decrement buttons or when using arrow keys when the ScrollBar is focused.
 
-ScrollMode vertical_scroll_mode = 1 🔗
+ScrollMode vertical_scroll_mode = 1 
 
 void set_vertical_scroll_mode(value: ScrollMode)
 
@@ -22389,19 +22389,19 @@ ScrollMode get_vertical_scroll_mode()
 
 Controls whether vertical scrollbar can be used and when it should be visible.
 
-void ensure_control_visible(control: Control) 🔗
+void ensure_control_visible(control: Control) 
 
 Ensures the given control is visible (must be a direct or indirect child of the ScrollContainer). Used by follow_focus.
 
 Note: This will not work on a node that was just added during the same frame. If you want to scroll to a newly added child, you must wait until the next frame using SceneTree.process_frame:
 
-HScrollBar get_h_scroll_bar() 🔗
+HScrollBar get_h_scroll_bar() 
 
 Returns the horizontal scrollbar HScrollBar of this ScrollContainer.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to disable or hide a scrollbar, you can use horizontal_scroll_mode.
 
-VScrollBar get_v_scroll_bar() 🔗
+VScrollBar get_v_scroll_bar() 
 
 Returns the vertical scrollbar VScrollBar of this ScrollContainer.
 
@@ -23829,11 +23829,11 @@ is_session_supported(session_mode: String)
 
 set_display_refresh_rate(refresh_rate: float)
 
-display_refresh_rate_changed() 🔗
+display_refresh_rate_changed() 
 
 Emitted after the display's refresh rate has changed.
 
-reference_space_reset() 🔗
+reference_space_reset() 
 
 Emitted to indicate that the reference space has been reset or reconfigured.
 
@@ -23841,19 +23841,19 @@ When (or whether) this is emitted depends on the user's browser or device, but m
 
 See WebXR's XRReferenceSpace reset event for more information.
 
-select(input_source_id: int) 🔗
+select(input_source_id: int) 
 
 Emitted after one of the input sources has finished its "primary action".
 
 Use get_input_source_tracker() and get_input_source_target_ray_mode() to get more information about the input source.
 
-selectend(input_source_id: int) 🔗
+selectend(input_source_id: int) 
 
 Emitted when one of the input sources has finished its "primary action".
 
 Use get_input_source_tracker() and get_input_source_target_ray_mode() to get more information about the input source.
 
-selectstart(input_source_id: int) 🔗
+selectstart(input_source_id: int) 
 
 Emitted when one of the input source has started its "primary action".
 
@@ -23863,7 +23863,7 @@ Emitted when the user ends the WebXR session (which can be done using UI from th
 
 At this point, you should do get_viewport().use_xr = false to instruct Godot to resume rendering to the screen.
 
-session_failed(message: String) 🔗
+session_failed(message: String) 
 
 Emitted by XRInterface.initialize() if the session fails to start.
 
@@ -23873,33 +23873,33 @@ Emitted by XRInterface.initialize() if the session is successfully started.
 
 At this point, it's safe to do get_viewport().use_xr = true to instruct Godot to start rendering to the XR device.
 
-session_supported(session_mode: String, supported: bool) 🔗
+session_supported(session_mode: String, supported: bool) 
 
 Emitted by is_session_supported() to indicate if the given session_mode is supported or not.
 
-squeeze(input_source_id: int) 🔗
+squeeze(input_source_id: int) 
 
 Emitted after one of the input sources has finished its "primary squeeze action".
 
 Use get_input_source_tracker() and get_input_source_target_ray_mode() to get more information about the input source.
 
-squeezeend(input_source_id: int) 🔗
+squeezeend(input_source_id: int) 
 
 Emitted when one of the input sources has finished its "primary squeeze action".
 
 Use get_input_source_tracker() and get_input_source_target_ray_mode() to get more information about the input source.
 
-squeezestart(input_source_id: int) 🔗
+squeezestart(input_source_id: int) 
 
 Emitted when one of the input sources has started its "primary squeeze action".
 
 Use get_input_source_tracker() and get_input_source_target_ray_mode() to get more information about the input source.
 
-visibility_state_changed() 🔗
+visibility_state_changed() 
 
 Emitted when visibility_state has changed.
 
-enum TargetRayMode: 🔗
+enum TargetRayMode: 
 
 TargetRayMode TARGET_RAY_MODE_UNKNOWN = 0
 
@@ -23917,7 +23917,7 @@ TargetRayMode TARGET_RAY_MODE_SCREEN = 3
 
 Target ray from touch screen, mouse or other tactile input device.
 
-String enabled_features 🔗
+String enabled_features 
 
 String get_enabled_features()
 
@@ -23927,7 +23927,7 @@ This may include features requested by setting required_features and optional_fe
 
 Note: This may not be support by all web browsers, in which case it will be an empty string.
 
-String optional_features 🔗
+String optional_features 
 
 void set_optional_features(value: String)
 
@@ -23941,7 +23941,7 @@ This doesn't have any effect on the interface when already initialized.
 
 See the MDN documentation on WebXR's session features for a list of possible values.
 
-String reference_space_type 🔗
+String reference_space_type 
 
 String get_reference_space_type()
 
@@ -23949,7 +23949,7 @@ The reference space type (from the list of requested types set in the requested_
 
 Possible values come from WebXR's XRReferenceSpaceType. If you want to use a particular reference space type, it must be listed in either required_features or optional_features.
 
-String requested_reference_space_types 🔗
+String requested_reference_space_types 
 
 void set_requested_reference_space_types(value: String)
 
@@ -23963,7 +23963,7 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from WebXR's XRReferenceSpaceType. If you want to use a particular reference space type, it must be listed in either required_features or optional_features.
 
-String required_features 🔗
+String required_features 
 
 void set_required_features(value: String)
 
@@ -23977,7 +23977,7 @@ This doesn't have any effect on the interface when already initialized.
 
 See the MDN documentation on WebXR's session features for a list of possible values.
 
-String session_mode 🔗
+String session_mode 
 
 void set_session_mode(value: String)
 
@@ -23989,7 +23989,7 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from WebXR's XRSessionMode, including: "immersive-vr", "immersive-ar", and "inline".
 
-String visibility_state 🔗
+String visibility_state 
 
 String get_visibility_state()
 
@@ -23997,21 +23997,21 @@ Indicates if the WebXR session's imagery is visible to the user.
 
 Possible values come from WebXR's XRVisibilityState, including "hidden", "visible", and "visible-blurred".
 
-Array get_available_display_refresh_rates() const 🔗
+Array get_available_display_refresh_rates() const 
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the web browser and after the interface has been initialized.
 
-float get_display_refresh_rate() const 🔗
+float get_display_refresh_rate() const 
 
 Returns the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It may not report an accurate value until after using set_display_refresh_rate().
 
-TargetRayMode get_input_source_target_ray_mode(input_source_id: int) const 🔗
+TargetRayMode get_input_source_target_ray_mode(input_source_id: int) const 
 
 Returns the target ray mode for the given input_source_id.
 
 This can help interpret the input coming from that input source. See XRInputSource.targetRayMode for more information.
 
-XRControllerTracker get_input_source_tracker(input_source_id: int) const 🔗
+XRControllerTracker get_input_source_tracker(input_source_id: int) const 
 
 Gets an XRControllerTracker for the given input_source_id.
 
@@ -24019,11 +24019,11 @@ In the context of WebXR, an input source can be an advanced VR controller like t
 
 Use this method to get information about the input source that triggered one of these signals:
 
-bool is_input_source_active(input_source_id: int) const 🔗
+bool is_input_source_active(input_source_id: int) const 
 
 Returns true if there is an active input source with the given input_source_id.
 
-void is_session_supported(session_mode: String) 🔗
+void is_session_supported(session_mode: String) 
 
 Checks if the given session_mode is supported by the user's browser.
 
@@ -24031,7 +24031,7 @@ Possible values come from WebXR's XRSessionMode, including: "immersive-vr", "imm
 
 This method returns nothing, instead it emits the session_supported signal with the result.
 
-void set_display_refresh_rate(refresh_rate: float) 🔗
+void set_display_refresh_rate(refresh_rate: float) 
 
 Sets the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It won't take effect right away until after display_refresh_rate_changed is emitted.
 
@@ -24208,151 +24208,151 @@ get_render_target_texture(render_target: RID)
 
 get_velocity_texture()
 
-void _end_frame() virtual 🔗
+void _end_frame() virtual 
 
 Called if interface is active and queues have been submitted.
 
-bool _get_anchor_detection_is_enabled() virtual const 🔗
+bool _get_anchor_detection_is_enabled() virtual const 
 
 Return true if anchor detection is enabled for this interface.
 
-int _get_camera_feed_id() virtual const 🔗
+int _get_camera_feed_id() virtual const 
 
 Returns the camera feed ID for the CameraFeed registered with the CameraServer that should be presented as the background on an AR capable device (if applicable).
 
-Transform3D _get_camera_transform() virtual 🔗
+Transform3D _get_camera_transform() virtual 
 
 Returns the Transform3D that positions the XRCamera3D in the world.
 
-int _get_capabilities() virtual const 🔗
+int _get_capabilities() virtual const 
 
 Returns the capabilities of this interface.
 
-RID _get_color_texture() virtual 🔗
+RID _get_color_texture() virtual 
 
 Return color texture into which to render (if applicable).
 
-RID _get_depth_texture() virtual 🔗
+RID _get_depth_texture() virtual 
 
 Return depth texture into which to render (if applicable).
 
-StringName _get_name() virtual const 🔗
+StringName _get_name() virtual const 
 
 Returns the name of this interface.
 
-PackedVector3Array _get_play_area() virtual const 🔗
+PackedVector3Array _get_play_area() virtual const 
 
 Returns a PackedVector3Array that represents the play areas boundaries (if applicable).
 
-PlayAreaMode _get_play_area_mode() virtual const 🔗
+PlayAreaMode _get_play_area_mode() virtual const 
 
 Returns the play area mode that sets up our play area.
 
-PackedFloat64Array _get_projection_for_view(view: int, aspect: float, z_near: float, z_far: float) virtual 🔗
+PackedFloat64Array _get_projection_for_view(view: int, aspect: float, z_near: float, z_far: float) virtual 
 
 Returns the projection matrix for the given view as a PackedFloat64Array.
 
-Vector2 _get_render_target_size() virtual 🔗
+Vector2 _get_render_target_size() virtual 
 
 Returns the size of our render target for this interface, this overrides the size of the Viewport marked as the xr viewport.
 
-PackedStringArray _get_suggested_pose_names(tracker_name: StringName) virtual const 🔗
+PackedStringArray _get_suggested_pose_names(tracker_name: StringName) virtual const 
 
 Returns a PackedStringArray with pose names configured by this interface. Note that user configuration can override this list.
 
-PackedStringArray _get_suggested_tracker_names() virtual const 🔗
+PackedStringArray _get_suggested_tracker_names() virtual const 
 
 Returns a PackedStringArray with tracker names configured by this interface. Note that user configuration can override this list.
 
-Dictionary _get_system_info() virtual const 🔗
+Dictionary _get_system_info() virtual const 
 
 Returns a Dictionary with system information related to this interface.
 
-TrackingStatus _get_tracking_status() virtual const 🔗
+TrackingStatus _get_tracking_status() virtual const 
 
 Returns an TrackingStatus specifying the current status of our tracking.
 
-Transform3D _get_transform_for_view(view: int, cam_transform: Transform3D) virtual 🔗
+Transform3D _get_transform_for_view(view: int, cam_transform: Transform3D) virtual 
 
 Returns a Transform3D for a given view.
 
-RID _get_velocity_texture() virtual 🔗
+RID _get_velocity_texture() virtual 
 
 Return velocity texture into which to render (if applicable).
 
-int _get_view_count() virtual 🔗
+int _get_view_count() virtual 
 
 Returns the number of views this interface requires, 1 for mono, 2 for stereoscopic.
 
-RID _get_vrs_texture() virtual 🔗
+RID _get_vrs_texture() virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-VRSTextureFormat _get_vrs_texture_format() virtual 🔗
+VRSTextureFormat _get_vrs_texture_format() virtual 
 
 Returns the format of the texture returned by _get_vrs_texture().
 
-bool _initialize() virtual 🔗
+bool _initialize() virtual 
 
 Initializes the interface, returns true on success.
 
-bool _is_initialized() virtual const 🔗
+bool _is_initialized() virtual const 
 
 Returns true if this interface has been initialized.
 
-void _post_draw_viewport(render_target: RID, screen_rect: Rect2) virtual 🔗
+void _post_draw_viewport(render_target: RID, screen_rect: Rect2) virtual 
 
 Called after the XR Viewport draw logic has completed.
 
-bool _pre_draw_viewport(render_target: RID) virtual 🔗
+bool _pre_draw_viewport(render_target: RID) virtual 
 
 Called if this is our primary XRInterfaceExtension before we start processing a Viewport for every active XR Viewport, returns true if that viewport should be rendered. An XR interface may return false if the user has taken off their headset and we can pause rendering.
 
-void _pre_render() virtual 🔗
+void _pre_render() virtual 
 
 Called if this XRInterfaceExtension is active before rendering starts. Most XR interfaces will sync tracking at this point in time.
 
-void _process() virtual 🔗
+void _process() virtual 
 
 Called if this XRInterfaceExtension is active before our physics and game process is called. Most XR interfaces will update its XRPositionalTrackers at this point in time.
 
-void _set_anchor_detection_is_enabled(enabled: bool) virtual 🔗
+void _set_anchor_detection_is_enabled(enabled: bool) virtual 
 
 Enables anchor detection on this interface if supported.
 
-bool _set_play_area_mode(mode: PlayAreaMode) virtual const 🔗
+bool _set_play_area_mode(mode: PlayAreaMode) virtual const 
 
 Set the play area mode for this interface.
 
-bool _supports_play_area_mode(mode: PlayAreaMode) virtual const 🔗
+bool _supports_play_area_mode(mode: PlayAreaMode) virtual const 
 
 Returns true if this interface supports this play area mode.
 
-void _trigger_haptic_pulse(action_name: String, tracker_name: StringName, frequency: float, amplitude: float, duration_sec: float, delay_sec: float) virtual 🔗
+void _trigger_haptic_pulse(action_name: String, tracker_name: StringName, frequency: float, amplitude: float, duration_sec: float, delay_sec: float) virtual 
 
 Triggers a haptic pulse to be emitted on the specified tracker.
 
-void _uninitialize() virtual 🔗
+void _uninitialize() virtual 
 
 Uninitialize the interface.
 
-void add_blit(render_target: RID, src_rect: Rect2, dst_rect: Rect2i, use_layer: bool, layer: int, apply_lens_distortion: bool, eye_center: Vector2, k1: float, k2: float, upscale: float, aspect_ratio: float) 🔗
+void add_blit(render_target: RID, src_rect: Rect2, dst_rect: Rect2i, use_layer: bool, layer: int, apply_lens_distortion: bool, eye_center: Vector2, k1: float, k2: float, upscale: float, aspect_ratio: float) 
 
 Blits our render results to screen optionally applying lens distortion. This can only be called while processing _commit_views.
 
-RID get_color_texture() 🔗
+RID get_color_texture() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-RID get_depth_texture() 🔗
+RID get_depth_texture() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-RID get_render_target_texture(render_target: RID) 🔗
+RID get_render_target_texture(render_target: RID) 
 
 Returns a valid RID for a texture to which we should render the current frame if supported by the interface.
 
-RID get_velocity_texture() 🔗
+RID get_velocity_texture() 
 
 There is currently no description for this method. Please help us by contributing one!
 
@@ -24420,7 +24420,7 @@ supports_play_area_mode(mode: PlayAreaMode)
 
 trigger_haptic_pulse(action_name: String, tracker_name: StringName, frequency: float, amplitude: float, duration_sec: float, delay_sec: float)
 
-play_area_changed(mode: int) 🔗
+play_area_changed(mode: int) 
 
 Emitted when the play area is changed. This can be a result of the player resetting the boundary or entering a new play area, the player changing the play area mode, the world scale changing or the player resetting their headset orientation.
 
@@ -24450,7 +24450,7 @@ Capabilities XR_EXTERNAL = 32
 
 This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of get_render_target_size()). Using a separate viewport node frees up the main viewport for other purposes.
 
-enum TrackingStatus: 🔗
+enum TrackingStatus: 
 
 TrackingStatus XR_NORMAL_TRACKING = 0
 
@@ -24496,7 +24496,7 @@ PlayAreaMode XR_PLAY_AREA_CUSTOM = 2147483647
 
 Custom play area set by a GDExtension.
 
-enum EnvironmentBlendMode: 🔗
+enum EnvironmentBlendMode: 
 
 EnvironmentBlendMode XR_ENV_BLEND_MODE_OPAQUE = 0
 
@@ -24510,7 +24510,7 @@ EnvironmentBlendMode XR_ENV_BLEND_MODE_ALPHA_BLEND = 2
 
 Alpha blend mode. This is typically used for AR or VR devices with passthrough capabilities. The alpha channel controls how much of the passthrough is visible. Alpha of 0.0 means the passthrough is visible and this pixel works in ADDITIVE mode. Alpha of 1.0 means that the passthrough is not visible and this pixel works in OPAQUE mode.
 
-enum VRSTextureFormat: 🔗
+enum VRSTextureFormat: 
 
 VRSTextureFormat XR_VRS_TEXTURE_FORMAT_UNIFIED = 0
 
@@ -24524,7 +24524,7 @@ VRSTextureFormat XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP = 2
 
 The texture format is the same as expected by the Vulkan VK_EXT_fragment_density_map extension.
 
-bool ar_is_anchor_detection_enabled = false 🔗
+bool ar_is_anchor_detection_enabled = false 
 
 void set_anchor_detection_is_enabled(value: bool)
 
@@ -24532,7 +24532,7 @@ bool get_anchor_detection_is_enabled()
 
 On an AR interface, true if anchor detection is enabled.
 
-EnvironmentBlendMode environment_blend_mode = 0 🔗
+EnvironmentBlendMode environment_blend_mode = 0 
 
 bool set_environment_blend_mode(mode: EnvironmentBlendMode)
 
@@ -24540,13 +24540,13 @@ EnvironmentBlendMode get_environment_blend_mode()
 
 Specify how XR should blend in the environment. This is specific to certain AR and passthrough devices where camera images are blended in by the XR compositor.
 
-bool interface_is_primary = false 🔗
+bool interface_is_primary = false 
 
 void set_primary(value: bool)
 
 true if this is the primary interface.
 
-PlayAreaMode xr_play_area_mode = 0 🔗
+PlayAreaMode xr_play_area_mode = 0 
 
 bool set_play_area_mode(mode: PlayAreaMode)
 
@@ -24554,45 +24554,45 @@ PlayAreaMode get_play_area_mode()
 
 The play area mode for this interface.
 
-int get_camera_feed_id() 🔗
+int get_camera_feed_id() 
 
 If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed ID in the CameraServer for this interface.
 
-int get_capabilities() const 🔗
+int get_capabilities() const 
 
 Returns a combination of Capabilities flags providing information about the capabilities of this interface.
 
-StringName get_name() const 🔗
+StringName get_name() const 
 
 Returns the name of this interface ("OpenXR", "OpenVR", "OpenHMD", "ARKit", etc.).
 
-PackedVector3Array get_play_area() const 🔗
+PackedVector3Array get_play_area() const 
 
 Returns an array of vectors that represent the physical play area mapped to the virtual space around the XROrigin3D point. The points form a convex polygon that can be used to react to or visualize the play area. This returns an empty array if this feature is not supported or if the information is not yet available.
 
-Projection get_projection_for_view(view: int, aspect: float, near: float, far: float) 🔗
+Projection get_projection_for_view(view: int, aspect: float, near: float, far: float) 
 
 Returns the projection matrix for a view/eye.
 
-Vector2 get_render_target_size() 🔗
+Vector2 get_render_target_size() 
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
-Array get_supported_environment_blend_modes() 🔗
+Array get_supported_environment_blend_modes() 
 
 Returns the an array of supported environment blend modes, see EnvironmentBlendMode.
 
-Dictionary get_system_info() 🔗
+Dictionary get_system_info() 
 
 Returns a Dictionary with extra system info. Interfaces are expected to return XRRuntimeName and XRRuntimeVersion providing info about the used XR runtime. Additional entries may be provided specific to an interface.
 
 Note:This information may only be available after initialize() was successfully called.
 
-TrackingStatus get_tracking_status() const 🔗
+TrackingStatus get_tracking_status() const 
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 
-Transform3D get_transform_for_view(view: int, cam_transform: Transform3D) 🔗
+Transform3D get_transform_for_view(view: int, cam_transform: Transform3D) 
 
 Returns the transform for a view/eye.
 
@@ -24600,7 +24600,7 @@ view is the view/eye index.
 
 cam_transform is the transform that maps device coordinates to scene coordinates, typically the Node3D.global_transform of the current XROrigin3D.
 
-int get_view_count() 🔗
+int get_view_count() 
 
 Returns the number of views that need to be rendered for this device. 1 for Monoscopic, 2 for Stereoscopic.
 
@@ -24614,23 +24614,23 @@ If you do this for a platform that handles its own output (such as OpenVR) Godot
 
 While currently not used, you can activate additional interfaces. You may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
 
-bool is_initialized() const 🔗
+bool is_initialized() const 
 
 Returns true if this interface has been initialized.
 
-bool is_passthrough_enabled() 🔗
+bool is_passthrough_enabled() 
 
 Deprecated: Check if environment_blend_mode is XR_ENV_BLEND_MODE_ALPHA_BLEND, instead.
 
 Returns true if passthrough is enabled.
 
-bool is_passthrough_supported() 🔗
+bool is_passthrough_supported() 
 
 Deprecated: Check that XR_ENV_BLEND_MODE_ALPHA_BLEND is supported using get_supported_environment_blend_modes(), instead.
 
 Returns true if this interface supports passthrough.
 
-bool set_environment_blend_mode(mode: EnvironmentBlendMode) 🔗
+bool set_environment_blend_mode(mode: EnvironmentBlendMode) 
 
 Sets the active environment blend mode.
 
@@ -24638,13 +24638,13 @@ mode is the environment blend mode starting with the next frame.
 
 Note: Not all runtimes support all environment blend modes, so it is important to check this at startup. For example:
 
-bool set_play_area_mode(mode: PlayAreaMode) 🔗
+bool set_play_area_mode(mode: PlayAreaMode) 
 
 Sets the active play area mode, will return false if the mode can't be used with this interface.
 
 Note: Changing this after the interface has already been initialized can be jarring for the player, so it's recommended to recenter on the HMD with XRServer.center_on_hmd() (if switching to XR_PLAY_AREA_STAGE) or make the switch during a scene change.
 
-bool start_passthrough() 🔗
+bool start_passthrough() 
 
 Deprecated: Set the environment_blend_mode to XR_ENV_BLEND_MODE_ALPHA_BLEND, instead.
 
@@ -24652,15 +24652,15 @@ Starts passthrough, will return false if passthrough couldn't be started.
 
 Note: The viewport used for XR must have a transparent background, otherwise passthrough may not properly render.
 
-void stop_passthrough() 🔗
+void stop_passthrough() 
 
 Deprecated: Set the environment_blend_mode to XR_ENV_BLEND_MODE_OPAQUE, instead.
 
-bool supports_play_area_mode(mode: PlayAreaMode) 🔗
+bool supports_play_area_mode(mode: PlayAreaMode) 
 
 Call this to find out if a given play area mode is supported by this interface.
 
-void trigger_haptic_pulse(action_name: String, tracker_name: StringName, frequency: float, amplitude: float, duration_sec: float, delay_sec: float) 🔗
+void trigger_haptic_pulse(action_name: String, tracker_name: StringName, frequency: float, amplitude: float, duration_sec: float, delay_sec: float) 
 
 Triggers a haptic pulse on a device associated with this interface.
 
@@ -24676,7 +24676,7 @@ duration_sec is the duration of the pulse in seconds.
 
 delay_sec is a delay in seconds before the pulse is given.
 
-void uninitialize() 🔗
+void uninitialize() 
 
 Turns the interface off.
 

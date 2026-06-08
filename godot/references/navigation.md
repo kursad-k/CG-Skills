@@ -71,7 +71,7 @@ set_parsed_collision_mask_value(layer_number: int, value: bool)
 
 set_vertices(vertices: PackedVector2Array)
 
-enum SamplePartitionType: 🔗
+enum SamplePartitionType: 
 
 SamplePartitionType SAMPLE_PARTITION_CONVEX_PARTITION = 0
 
@@ -85,7 +85,7 @@ SamplePartitionType SAMPLE_PARTITION_MAX = 2
 
 Represents the size of the SamplePartitionType enum.
 
-enum ParsedGeometryType: 🔗
+enum ParsedGeometryType: 
 
 ParsedGeometryType PARSED_GEOMETRY_MESH_INSTANCES = 0
 
@@ -105,7 +105,7 @@ ParsedGeometryType PARSED_GEOMETRY_MAX = 3
 
 Represents the size of the ParsedGeometryType enum.
 
-enum SourceGeometryMode: 🔗
+enum SourceGeometryMode: 
 
 SourceGeometryMode SOURCE_GEOMETRY_ROOT_NODE_CHILDREN = 0
 
@@ -123,7 +123,7 @@ SourceGeometryMode SOURCE_GEOMETRY_MAX = 3
 
 Represents the size of the SourceGeometryMode enum.
 
-float agent_radius = 10.0 🔗
+float agent_radius = 10.0 
 
 void set_agent_radius(value: float)
 
@@ -133,7 +133,7 @@ The distance to erode/shrink the walkable surface when baking the navigation mes
 
 Note: The radius must be equal or higher than 0.0. If the radius is 0.0, it won't be possible to fix invalid outline overlaps and other precision errors during the baking process. As a result, some obstacles may be excluded incorrectly from the final navigation mesh, or may delete the navigation mesh's polygons.
 
-Rect2 baking_rect = Rect2(0, 0, 0, 0) 🔗
+Rect2 baking_rect = Rect2(0, 0, 0, 0) 
 
 void set_baking_rect(value: Rect2)
 
@@ -141,7 +141,7 @@ Rect2 get_baking_rect()
 
 If the baking Rect2 has an area the navigation mesh baking will be restricted to its enclosing area.
 
-Vector2 baking_rect_offset = Vector2(0, 0) 🔗
+Vector2 baking_rect_offset = Vector2(0, 0) 
 
 void set_baking_rect_offset(value: Vector2)
 
@@ -149,7 +149,7 @@ Vector2 get_baking_rect_offset()
 
 The position offset applied to the baking_rect Rect2.
 
-float border_size = 0.0 🔗
+float border_size = 0.0 
 
 void set_border_size(value: float)
 
@@ -159,7 +159,7 @@ The size of the non-navigable border around the bake bounding area defined by th
 
 In conjunction with the baking_rect the border size can be used to bake tile aligned navigation meshes without the tile edges being shrunk by agent_radius.
 
-float cell_size = 1.0 🔗
+float cell_size = 1.0 
 
 void set_cell_size(value: float)
 
@@ -167,7 +167,7 @@ float get_cell_size()
 
 The cell size used to rasterize the navigation mesh vertices. Must match with the cell size on the navigation map.
 
-int parsed_collision_mask = 4294967295 🔗
+int parsed_collision_mask = 4294967295 
 
 void set_parsed_collision_mask(value: int)
 
@@ -177,7 +177,7 @@ The physics layers to scan for static colliders.
 
 Only used when parsed_geometry_type is PARSED_GEOMETRY_STATIC_COLLIDERS or PARSED_GEOMETRY_BOTH.
 
-ParsedGeometryType parsed_geometry_type = 2 🔗
+ParsedGeometryType parsed_geometry_type = 2 
 
 void set_parsed_geometry_type(value: ParsedGeometryType)
 
@@ -185,7 +185,7 @@ ParsedGeometryType get_parsed_geometry_type()
 
 Determines which type of nodes will be parsed as geometry.
 
-SamplePartitionType sample_partition_type = 0 🔗
+SamplePartitionType sample_partition_type = 0 
 
 void set_sample_partition_type(value: SamplePartitionType)
 
@@ -193,7 +193,7 @@ SamplePartitionType get_sample_partition_type()
 
 Partitioning algorithm for creating the navigation mesh polys.
 
-StringName source_geometry_group_name = &"navigation_polygon_source_geometry_group" 🔗
+StringName source_geometry_group_name = &"navigation_polygon_source_geometry_group" 
 
 void set_source_geometry_group_name(value: StringName)
 
@@ -203,7 +203,7 @@ The group name of nodes that should be parsed for baking source geometry.
 
 Only used when source_geometry_mode is SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN or SOURCE_GEOMETRY_GROUPS_EXPLICIT.
 
-SourceGeometryMode source_geometry_mode = 0 🔗
+SourceGeometryMode source_geometry_mode = 0 
 
 void set_source_geometry_mode(value: SourceGeometryMode)
 
@@ -211,75 +211,75 @@ SourceGeometryMode get_source_geometry_mode()
 
 The source of the geometry used when baking.
 
-void add_outline(outline: PackedVector2Array) 🔗
+void add_outline(outline: PackedVector2Array) 
 
 Appends a PackedVector2Array that contains the vertices of an outline to the internal array that contains all the outlines.
 
-void add_outline_at_index(outline: PackedVector2Array, index: int) 🔗
+void add_outline_at_index(outline: PackedVector2Array, index: int) 
 
 Adds a PackedVector2Array that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position.
 
-void add_polygon(polygon: PackedInt32Array) 🔗
+void add_polygon(polygon: PackedInt32Array) 
 
 Adds a polygon using the indices of the vertices you get when calling get_vertices().
 
 Clears the internal arrays for vertices and polygon indices.
 
-void clear_outlines() 🔗
+void clear_outlines() 
 
 Clears the array of the outlines, but it doesn't clear the vertices and the polygons that were created by them.
 
-void clear_polygons() 🔗
+void clear_polygons() 
 
 Clears the array of polygons, but it doesn't clear the array of outlines and vertices.
 
-NavigationMesh get_navigation_mesh() 🔗
+NavigationMesh get_navigation_mesh() 
 
 Returns the NavigationMesh resulting from this navigation polygon. This navigation mesh can be used to update the navigation mesh of a region with the NavigationServer3D.region_set_navigation_mesh() API directly.
 
-PackedVector2Array get_outline(idx: int) const 🔗
+PackedVector2Array get_outline(idx: int) const 
 
 Returns a PackedVector2Array containing the vertices of an outline that was created in the editor or by script.
 
-int get_outline_count() const 🔗
+int get_outline_count() const 
 
 Returns the number of outlines that were created in the editor or by script.
 
-bool get_parsed_collision_mask_value(layer_number: int) const 🔗
+bool get_parsed_collision_mask_value(layer_number: int) const 
 
 Returns whether or not the specified layer of the parsed_collision_mask is enabled, given a layer_number between 1 and 32.
 
-PackedInt32Array get_polygon(idx: int) 🔗
+PackedInt32Array get_polygon(idx: int) 
 
 Returns a PackedInt32Array containing the indices of the vertices of a created polygon.
 
-int get_polygon_count() const 🔗
+int get_polygon_count() const 
 
 Returns the count of all polygons.
 
-PackedVector2Array get_vertices() const 🔗
+PackedVector2Array get_vertices() const 
 
 Returns a PackedVector2Array containing all the vertices being used to create the polygons.
 
-void make_polygons_from_outlines() 🔗
+void make_polygons_from_outlines() 
 
 Deprecated: Use NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.
 
 Creates polygons from the outlines added in the editor or by script.
 
-void remove_outline(idx: int) 🔗
+void remove_outline(idx: int) 
 
 Removes an outline created in the editor or by script. You have to call make_polygons_from_outlines() for the polygons to update.
 
-void set_outline(idx: int, outline: PackedVector2Array) 🔗
+void set_outline(idx: int, outline: PackedVector2Array) 
 
 Changes an outline created in the editor or by script. You have to call make_polygons_from_outlines() for the polygons to update.
 
-void set_parsed_collision_mask_value(layer_number: int, value: bool) 🔗
+void set_parsed_collision_mask_value(layer_number: int, value: bool) 
 
 Based on value, enables or disables the specified layer in the parsed_collision_mask, given a layer_number between 1 and 32.
 
-void set_vertices(vertices: PackedVector2Array) 🔗
+void set_vertices(vertices: PackedVector2Array) 
 
 Sets the vertices that can be then indexed to create polygons with the add_polygon() method.
 

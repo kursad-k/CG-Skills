@@ -193,7 +193,7 @@ Array Array(from: PackedVector4Array)
 
 Constructs an array from a PackedVector4Array.
 
-bool all(method: Callable) const 🔗
+bool all(method: Callable) const 
 
 Calls the given Callable on each element in the array and returns true if the Callable returns true for all elements in the array. If the Callable returns false for one array element or more, this method returns false.
 
@@ -205,7 +205,7 @@ Note: Unlike relying on the size of an array returned by filter(), this method w
 
 Note: For an empty array, this method always returns true.
 
-bool any(method: Callable) const 🔗
+bool any(method: Callable) const 
 
 Calls the given Callable on each element in the array and returns true if the Callable returns true for one or more elements in the array. If the Callable returns false for all elements in the array, this method returns false.
 
@@ -217,25 +217,25 @@ Note: Unlike relying on the size of an array returned by filter(), this method w
 
 Note: For an empty array, this method always returns false.
 
-void append(value: Variant) 🔗
+void append(value: Variant) 
 
 Appends value at the end of the array (alias of push_back()).
 
-void append_array(array: Array) 🔗
+void append_array(array: Array) 
 
 Appends another array at the end of this array.
 
-void assign(array: Array) 🔗
+void assign(array: Array) 
 
 Assigns elements of another array into the array. Resizes the array to match array. Performs type conversions if the array is typed.
 
-Variant back() const 🔗
+Variant back() const 
 
 Returns the last element of the array. If the array is empty, fails and returns null. See also front().
 
 Note: Unlike with the [] operator (array[-1]), an error is generated without stopping project execution.
 
-int bsearch(value: Variant, before: bool = true) const 🔗
+int bsearch(value: Variant, before: bool = true) const 
 
 Returns the index of value in the sorted array. If it cannot be found, returns where value should be inserted to keep the array sorted. The algorithm used is binary search.
 
@@ -243,7 +243,7 @@ If before is true (as by default), the returned index comes before all existing 
 
 Note: Calling bsearch() on an unsorted array will result in unexpected behavior. Use sort() before calling this method.
 
-int bsearch_custom(value: Variant, func: Callable, before: bool = true) const 🔗
+int bsearch_custom(value: Variant, func: Callable, before: bool = true) const 
 
 Returns the index of value in the sorted array. If it cannot be found, returns where value should be inserted to keep the array sorted (using func for the comparisons). The algorithm used is binary search.
 
@@ -255,13 +255,13 @@ Note: Calling bsearch_custom() on an unsorted array will result in unexpected be
 
 Removes all elements from the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: Variant) const 🔗
+int count(value: Variant) const 
 
 Returns the number of times an element is in the array.
 
 To count how many elements in an array satisfy a condition, see reduce().
 
-Array duplicate(deep: bool = false) const 🔗
+Array duplicate(deep: bool = false) const 
 
 Returns a new copy of the array.
 
@@ -269,13 +269,13 @@ By default, a shallow copy is returned: all nested Array, Dictionary, and Resour
 
 If deep is true, a deep copy is returned: all nested arrays and dictionaries are also duplicated (recursively). Any Resource is still shared with the original array, though.
 
-Array duplicate_deep(deep_subresources_mode: int = 1) const 🔗
+Array duplicate_deep(deep_subresources_mode: int = 1) const 
 
 Duplicates this array, deeply, like duplicate()(true), with extra control over how subresources are handled.
 
 deep_subresources_mode must be one of the values from DeepDuplicateMode. By default, only internal resources will be duplicated (recursively).
 
-void erase(value: Variant) 🔗
+void erase(value: Variant) 
 
 Finds and removes the first occurrence of value from the array. If value does not exist in the array, nothing happens. To remove an element by index, use remove_at() instead.
 
@@ -283,7 +283,7 @@ Note: This method shifts every element's index after the removed value back, whi
 
 Note: Erasing elements while iterating over arrays is not supported and will result in unpredictable behavior.
 
-void fill(value: Variant) 🔗
+void fill(value: Variant) 
 
 Assigns the given value to all elements in the array.
 
@@ -291,7 +291,7 @@ This method can often be combined with resize() to create an array with a given 
 
 Note: If value is a Variant passed by reference (Object-derived, Array, Dictionary, etc.), the array will be filled with references to the same value, which are not duplicates.
 
-Array filter(method: Callable) const 🔗
+Array filter(method: Callable) const 
 
 Calls the given Callable on each element in the array and returns a new, filtered Array.
 
@@ -299,7 +299,7 @@ The method receives one of the array elements as an argument, and should return 
 
 See also any(), all(), map() and reduce().
 
-int find(what: Variant, from: int = 0) const 🔗
+int find(what: Variant, from: int = 0) const 
 
 Returns the index of the first occurrence of what in this array, or -1 if there are none. The search's start can be specified with from, continuing to the end of the array.
 
@@ -307,7 +307,7 @@ Note: If you just want to know whether the array contains what, use has() (Conta
 
 Note: For performance reasons, the search is affected by what's Variant.Type. For example, 7 (int) and 7.0 (float) are not considered equal for this method.
 
-int find_custom(method: Callable, from: int = 0) const 🔗
+int find_custom(method: Callable, from: int = 0) const 
 
 Returns the index of the first element in the array that causes method to return true, or -1 if there are none. The search's start can be specified with from, continuing to the end of the array.
 
@@ -315,31 +315,31 @@ method is a callable that takes an element of the array, and returns a bool.
 
 Note: If you just want to know whether the array contains anything that satisfies method, use any().
 
-Variant front() const 🔗
+Variant front() const 
 
 Returns the first element of the array. If the array is empty, fails and returns null. See also back().
 
 Note: Unlike with the [] operator (array[0]), an error is generated without stopping project execution.
 
-Variant get(index: int) const 🔗
+Variant get(index: int) const 
 
 Returns the element at the given index in the array. If index out-of-bounds or negative, this method fails and returns null.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-int get_typed_builtin() const 🔗
+int get_typed_builtin() const 
 
 Returns the built-in Variant type of the typed array as a Variant.Type constant. If the array is not typed, returns @GlobalScope.TYPE_NIL. See also is_typed().
 
-StringName get_typed_class_name() const 🔗
+StringName get_typed_class_name() const 
 
 Returns the built-in class name of the typed array, if the built-in Variant type @GlobalScope.TYPE_OBJECT. Otherwise, returns an empty StringName. See also is_typed() and Object.get_class().
 
-Variant get_typed_script() const 🔗
+Variant get_typed_script() const 
 
 Returns the Script instance associated with this typed array, or null if it does not exist. See also is_typed().
 
-bool has(value: Variant) const 🔗
+bool has(value: Variant) const 
 
 Returns true if the array contains the given value.
 
@@ -351,7 +351,7 @@ Returns a hashed 32-bit integer value representing the array and its contents.
 
 Note: Arrays with equal hash values are not guaranteed to be the same, as a result of hash collisions. On the countrary, arrays with different hash values are guaranteed to be different.
 
-int insert(position: int, value: Variant) 🔗
+int insert(position: int, value: Variant) 
 
 Inserts a new element (value) at a given index (position) in the array. position should be between 0 and the array's size(). If negative, position is considered relative to the end of the array.
 
@@ -359,33 +359,33 @@ Returns @GlobalScope.OK on success, or one of the other Error constants if this 
 
 Note: Every element's index after position needs to be shifted forward, which may have a noticeable performance cost, especially on larger arrays.
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty ([]). See also size().
 
-bool is_read_only() const 🔗
+bool is_read_only() const 
 
 Returns true if the array is read-only. See make_read_only().
 
 In GDScript, arrays are automatically read-only if declared with the const keyword.
 
-bool is_same_typed(array: Array) const 🔗
+bool is_same_typed(array: Array) const 
 
 Returns true if this array is typed the same as the given array. See also is_typed().
 
-bool is_typed() const 🔗
+bool is_typed() const 
 
 Returns true if the array is typed. Typed arrays can only contain elements of a specific type, as defined by the typed array constructor. The methods of a typed array are still expected to return a generic Variant.
 
 In GDScript, it is possible to define a typed array with static typing:
 
-void make_read_only() 🔗
+void make_read_only() 
 
 Makes the array read-only. The array's elements cannot be overridden with different values, and their order cannot change. Does not apply to nested elements, such as dictionaries.
 
 In GDScript, arrays are automatically read-only if declared with the const keyword.
 
-Array map(method: Callable) const 🔗
+Array map(method: Callable) const 
 
 Calls the given Callable for each element in the array and returns a new array filled with values returned by the method.
 
@@ -393,23 +393,23 @@ The method should take one Variant parameter (the current array element) and can
 
 See also filter(), reduce(), any() and all().
 
-Variant max() const 🔗
+Variant max() const 
 
 Returns the maximum value contained in the array, if all elements can be compared. Otherwise, returns null. See also min().
 
 To find the maximum value using a custom comparator, you can use reduce().
 
-Variant min() const 🔗
+Variant min() const 
 
 Returns the minimum value contained in the array, if all elements can be compared. Otherwise, returns null. See also max().
 
-Variant pick_random() const 🔗
+Variant pick_random() const 
 
 Returns a random element from the array. Generates an error and returns null if the array is empty.
 
 Note: Like many similar functions in the engine (such as @GlobalScope.randi() or shuffle()), this method uses a common, global random seed. To get a predictable outcome from this method, see @GlobalScope.seed().
 
-Variant pop_at(position: int) 🔗
+Variant pop_at(position: int) 
 
 Removes and returns the element of the array at index position. If negative, position is considered relative to the end of the array. Returns null if the array is empty. If position is out of bounds, an error message is also generated.
 
@@ -417,23 +417,23 @@ Note: This method shifts every element's index after position back, which may ha
 
 Removes and returns the last element of the array. Returns null if the array is empty, without generating an error. See also pop_front().
 
-Variant pop_front() 🔗
+Variant pop_front() 
 
 Removes and returns the first element of the array. Returns null if the array is empty, without generating an error. See also pop_back().
 
 Note: This method shifts every other element's index back, which may have a noticeable performance cost, especially on larger arrays.
 
-void push_back(value: Variant) 🔗
+void push_back(value: Variant) 
 
 Appends an element at the end of the array. See also push_front().
 
-void push_front(value: Variant) 🔗
+void push_front(value: Variant) 
 
 Adds an element at the beginning of the array. See also push_back().
 
 Note: This method shifts every other element's index forward, which may have a noticeable performance cost, especially on larger arrays.
 
-Variant reduce(method: Callable, accum: Variant = null) const 🔗
+Variant reduce(method: Callable, accum: Variant = null) const 
 
 Calls the given Callable for each element in array, accumulates the result in accum, then returns it.
 
@@ -445,7 +445,7 @@ This method can also be used to count how many elements in an array satisfy a ce
 
 See also map(), filter(), any(), and all().
 
-void remove_at(position: int) 🔗
+void remove_at(position: int) 
 
 Removes the element from the array at the given index (position). If the index is out of bounds, this method fails. If the index is negative, position is considered relative to the end of the array.
 
@@ -455,7 +455,7 @@ Note: This method shifts every element's index after position back, which may ha
 
 Note: The position cannot be negative. To remove an element relative to the end of the array, use arr.remove_at(arr.size() - (i + 1)). To remove the last element from the array, use arr.resize(arr.size() - 1).
 
-int resize(size: int) 🔗
+int resize(size: int) 
 
 Sets the array's number of elements to size. If size is smaller than the array's current size, the elements at the end are removed. If size is greater, new default elements (usually null) are added, depending on the array's type.
 
@@ -465,15 +465,15 @@ Note: Calling this method once and assigning the new values is faster than calli
 
 Reverses the order of all elements in the array.
 
-int rfind(what: Variant, from: int = -1) const 🔗
+int rfind(what: Variant, from: int = -1) const 
 
 Returns the index of the last occurrence of what in this array, or -1 if there are none. The search's start can be specified with from, continuing to the beginning of the array. This method is the reverse of find().
 
-int rfind_custom(method: Callable, from: int = -1) const 🔗
+int rfind_custom(method: Callable, from: int = -1) const 
 
 Returns the index of the last element of the array that causes method to return true, or -1 if there are none. The search's start can be specified with from, continuing to the beginning of the array. This method is the reverse of find_custom().
 
-void set(index: int, value: Variant) 🔗
+void set(index: int, value: Variant) 
 
 Sets the value of the element at the given index to the given value. This will not change the size of the array, it only changes the value at an index already in the array. This is the same as using the [] operator (array[index] = value).
 
@@ -483,7 +483,7 @@ Note: Like many similar functions in the engine (such as @GlobalScope.randi() or
 
 Returns the number of elements in the array. Empty arrays ([]) always return 0. See also is_empty().
 
-Array slice(begin: int, end: int = 2147483647, step: int = 1, deep: bool = false) const 🔗
+Array slice(begin: int, end: int = 2147483647, step: int = 1, deep: bool = false) const 
 
 Returns a new Array containing this array's elements, from index begin (inclusive) to end (exclusive), every step elements.
 
@@ -497,7 +497,7 @@ Sorts the array in ascending order. The final order is dependent on the "less th
 
 Note: The sorting algorithm used is not stable. This means that equivalent elements (such as 2 and 2.0) may have their order changed when calling sort().
 
-void sort_custom(func: Callable) 🔗
+void sort_custom(func: Callable) 
 
 Sorts the array using a custom Callable.
 
@@ -511,45 +511,45 @@ Note: The sorting algorithm used is not stable. This means that values considere
 
 Note: You should not randomize the return value of func, as the heapsort algorithm expects a consistent result. Randomizing the return value will result in unexpected behavior.
 
-bool operator !=(right: Array) 🔗
+bool operator !=(right: Array) 
 
 Returns true if the array's size or its elements are different than right's.
 
-Array operator +(right: Array) 🔗
+Array operator +(right: Array) 
 
 Appends the right array to the left operand, creating a new Array. This is also known as an array concatenation.
 
 Note: For existing arrays, append_array() is much more efficient than concatenation and assignment with the += operator.
 
-bool operator <(right: Array) 🔗
+bool operator <(right: Array) 
 
 Compares the elements of both arrays in order, starting from index 0 and ending on the last index in common between both arrays. For each pair of elements, returns true if this array's element is less than right's, false if this element is greater. Otherwise, continues to the next pair.
 
 If all searched elements are equal, returns true if this array's size is less than right's, otherwise returns false.
 
-bool operator <=(right: Array) 🔗
+bool operator <=(right: Array) 
 
 Compares the elements of both arrays in order, starting from index 0 and ending on the last index in common between both arrays. For each pair of elements, returns true if this array's element is less than right's, false if this element is greater. Otherwise, continues to the next pair.
 
 If all searched elements are equal, returns true if this array's size is less or equal to right's, otherwise returns false.
 
-bool operator ==(right: Array) 🔗
+bool operator ==(right: Array) 
 
 Compares the left operand Array against the right Array. Returns true if the sizes and contents of the arrays are equal, false otherwise.
 
-bool operator >(right: Array) 🔗
+bool operator >(right: Array) 
 
 Compares the elements of both arrays in order, starting from index 0 and ending on the last index in common between both arrays. For each pair of elements, returns true if this array's element is greater than right's, false if this element is less. Otherwise, continues to the next pair.
 
 If all searched elements are equal, returns true if this array's size is greater than right's, otherwise returns false.
 
-bool operator >=(right: Array) 🔗
+bool operator >=(right: Array) 
 
 Compares the elements of both arrays in order, starting from index 0 and ending on the last index in common between both arrays. For each pair of elements, returns true if this array's element is greater than right's, false if this element is less. Otherwise, continues to the next pair.
 
 If all searched elements are equal, returns true if this array's size is greater or equal to right's, otherwise returns false.
 
-Variant operator [](index: int) 🔗
+Variant operator [](index: int) 
 
 Returns the Variant element at the specified index. Arrays start at index 0. If index is greater or equal to 0, the element is fetched starting from the beginning of the array. If index is a negative value, the element is fetched starting from the end. Accessing an array out-of-bounds will cause a run-time error, pausing the project execution if run from the editor.
 
@@ -1013,7 +1013,7 @@ This class represents a C# script. It is the C# equivalent of the GDScript class
 
 C# documentation index
 
-Variant new(...) vararg 🔗
+Variant new(...) vararg 
 
 Returns a new instance of the script.
 
@@ -1054,7 +1054,7 @@ Note: CubemapArray is not supported in the Compatibility renderer due to graphic
 
 create_placeholder() const
 
-Resource create_placeholder() const 🔗
+Resource create_placeholder() const 
 
 Creates a placeholder version of this resource (PlaceholderCubemapArray).
 
@@ -1156,7 +1156,7 @@ void set_base_font(value: Font)
 
 Base font used to create a variation. If not set, default Theme font is used.
 
-float baseline_offset = 0.0 🔗
+float baseline_offset = 0.0 
 
 void set_baseline_offset(value: float)
 
@@ -1164,7 +1164,7 @@ float get_baseline_offset()
 
 Extra baseline offset (as a fraction of font height).
 
-Dictionary opentype_features = {} 🔗
+Dictionary opentype_features = {} 
 
 void set_opentype_features(value: Dictionary)
 
@@ -1172,31 +1172,31 @@ Dictionary get_opentype_features()
 
 A set of OpenType feature tags. More info: OpenType feature tags.
 
-int spacing_bottom = 0 🔗
+int spacing_bottom = 0 
 
 void set_spacing(spacing: SpacingType, value: int)
 
 Extra spacing at the bottom of the line in pixels.
 
-int spacing_glyph = 0 🔗
+int spacing_glyph = 0 
 
 void set_spacing(spacing: SpacingType, value: int)
 
 Extra spacing between graphical glyphs.
 
-int spacing_space = 0 🔗
+int spacing_space = 0 
 
 void set_spacing(spacing: SpacingType, value: int)
 
 Extra width of the space glyphs.
 
-int spacing_top = 0 🔗
+int spacing_top = 0 
 
 void set_spacing(spacing: SpacingType, value: int)
 
 Extra spacing at the top of the line in pixels.
 
-float variation_embolden = 0.0 🔗
+float variation_embolden = 0.0 
 
 void set_variation_embolden(value: float)
 
@@ -1206,7 +1206,7 @@ If is not equal to zero, emboldens the font outlines. Negative values reduce the
 
 Note: Emboldened fonts might have self-intersecting outlines, which will prevent MSDF fonts and TextMesh from working correctly.
 
-int variation_face_index = 0 🔗
+int variation_face_index = 0 
 
 void set_variation_face_index(value: int)
 
@@ -1214,7 +1214,7 @@ int get_variation_face_index()
 
 Active face index in the TrueType / OpenType collection file.
 
-Dictionary variation_opentype = {} 🔗
+Dictionary variation_opentype = {} 
 
 void set_variation_opentype(value: Dictionary)
 
@@ -1226,7 +1226,7 @@ Note: This Dictionary uses OpenType tags as keys. Variation axes can be identifi
 
 Note: To get available variation axes of a font, use Font.get_supported_variation_list().
 
-Transform2D variation_transform = Transform2D(1, 0, 0, 1, 0, 0) 🔗
+Transform2D variation_transform = Transform2D(1, 0, 0, 1, 0, 0) 
 
 void set_variation_transform(value: Transform2D)
 
@@ -1236,7 +1236,7 @@ Transform2D get_variation_transform()
 
 For example, to simulate italic typeface by slanting, apply the following transform Transform2D(1.0, slant, 0.0, 1.0, 0.0, 0.0).
 
-void set_spacing(spacing: SpacingType, value: int) 🔗
+void set_spacing(spacing: SpacingType, value: int) 
 
 Sets the spacing for spacing to value in pixels (not relative to the font size).
 
@@ -2015,15 +2015,15 @@ utf8_to_base64(utf8_str: String)
 
 variant_to_base64(variant: Variant, full_objects: bool = false)
 
-PackedByteArray base64_to_raw(base64_str: String) 🔗
+PackedByteArray base64_to_raw(base64_str: String) 
 
 Returns a decoded PackedByteArray corresponding to the Base64-encoded string base64_str.
 
-String base64_to_utf8(base64_str: String) 🔗
+String base64_to_utf8(base64_str: String) 
 
 Returns a decoded string corresponding to the Base64-encoded string base64_str.
 
-Variant base64_to_variant(base64_str: String, allow_objects: bool = false) 🔗
+Variant base64_to_variant(base64_str: String, allow_objects: bool = false) 
 
 Returns a decoded Variant corresponding to the Base64-encoded string base64_str. If allow_objects is true, decoding objects is allowed.
 
@@ -2031,15 +2031,15 @@ Internally, this uses the same decoding mechanism as the @GlobalScope.bytes_to_v
 
 Warning: Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
-String raw_to_base64(array: PackedByteArray) 🔗
+String raw_to_base64(array: PackedByteArray) 
 
 Returns a Base64-encoded string of a given PackedByteArray.
 
-String utf8_to_base64(utf8_str: String) 🔗
+String utf8_to_base64(utf8_str: String) 
 
 Returns a Base64-encoded string of the UTF-8 string utf8_str.
 
-String variant_to_base64(variant: Variant, full_objects: bool = false) 🔗
+String variant_to_base64(variant: Variant, full_objects: bool = false) 
 
 Returns a Base64-encoded string of the Variant variant. If full_objects is true, encoding objects is allowed (and can potentially include code).
 
@@ -2119,7 +2119,7 @@ remove_action_set(action_set: OpenXRActionSet)
 
 remove_interaction_profile(interaction_profile: OpenXRInteractionProfile)
 
-Array action_sets = [] 🔗
+Array action_sets = [] 
 
 void set_action_sets(value: Array)
 
@@ -2127,7 +2127,7 @@ Array get_action_sets()
 
 Collection of OpenXRActionSets that are part of this action map.
 
-Array interaction_profiles = [] 🔗
+Array interaction_profiles = [] 
 
 void set_interaction_profiles(value: Array)
 
@@ -2135,45 +2135,45 @@ Array get_interaction_profiles()
 
 Collection of OpenXRInteractionProfiles that are part of this action map.
 
-void add_action_set(action_set: OpenXRActionSet) 🔗
+void add_action_set(action_set: OpenXRActionSet) 
 
-void add_interaction_profile(interaction_profile: OpenXRInteractionProfile) 🔗
+void add_interaction_profile(interaction_profile: OpenXRInteractionProfile) 
 
 Add an interaction profile.
 
-void create_default_action_sets() 🔗
+void create_default_action_sets() 
 
 Setup this action set with our default actions.
 
-OpenXRActionSet find_action_set(name: String) const 🔗
+OpenXRActionSet find_action_set(name: String) const 
 
 Retrieve an action set by name.
 
-OpenXRInteractionProfile find_interaction_profile(name: String) const 🔗
+OpenXRInteractionProfile find_interaction_profile(name: String) const 
 
 Find an interaction profile by its name (path).
 
-OpenXRActionSet get_action_set(idx: int) const 🔗
+OpenXRActionSet get_action_set(idx: int) const 
 
 Retrieve the action set at this index.
 
-int get_action_set_count() const 🔗
+int get_action_set_count() const 
 
 Retrieve the number of actions sets in our action map.
 
-OpenXRInteractionProfile get_interaction_profile(idx: int) const 🔗
+OpenXRInteractionProfile get_interaction_profile(idx: int) const 
 
 Get the interaction profile at this index.
 
-int get_interaction_profile_count() const 🔗
+int get_interaction_profile_count() const 
 
 Retrieve the number of interaction profiles in our action map.
 
-void remove_action_set(action_set: OpenXRActionSet) 🔗
+void remove_action_set(action_set: OpenXRActionSet) 
 
 Remove an action set.
 
-void remove_interaction_profile(interaction_profile: OpenXRInteractionProfile) 🔗
+void remove_interaction_profile(interaction_profile: OpenXRInteractionProfile) 
 
 Remove an interaction profile.
 
@@ -2212,7 +2212,7 @@ void set_actions(value: Array)
 
 Collection of actions for this action set.
 
-String localized_name = "" 🔗
+String localized_name = "" 
 
 void set_localized_name(value: String)
 
@@ -2224,15 +2224,15 @@ void set_priority(value: int)
 
 The priority for this action set.
 
-void add_action(action: OpenXRAction) 🔗
+void add_action(action: OpenXRAction) 
 
 Add an action to this action set.
 
-int get_action_count() const 🔗
+int get_action_count() const 
 
 Retrieve the number of actions in our action set.
 
-void remove_action(action: OpenXRAction) 🔗
+void remove_action(action: OpenXRAction) 
 
 Remove an action from this action set.
 
@@ -2278,13 +2278,13 @@ ActionType OPENXR_ACTION_POSE = 3
 
 There is currently no description for this enum. Please help us by contributing one!
 
-ActionType action_type = 1 🔗
+ActionType action_type = 1 
 
 void set_action_type(value: ActionType)
 
 ActionType get_action_type()
 
-String localized_name = "" 🔗
+String localized_name = "" 
 
 void set_localized_name(value: String)
 
@@ -2292,7 +2292,7 @@ String get_localized_name()
 
 The localized description of this action.
 
-PackedStringArray toplevel_paths = PackedStringArray() 🔗
+PackedStringArray toplevel_paths = PackedStringArray() 
 
 void set_toplevel_paths(value: PackedStringArray)
 
@@ -2325,7 +2325,7 @@ The analog threshold binding modifier can modify a float input to a boolean inpu
 
 See XR_VALVE_analog_threshold for in-depth details.
 
-OpenXRHapticBase off_haptic 🔗
+OpenXRHapticBase off_haptic 
 
 void set_off_haptic(value: OpenXRHapticBase)
 
@@ -2333,7 +2333,7 @@ OpenXRHapticBase get_off_haptic()
 
 Haptic pulse to emit when the user releases the input.
 
-float off_threshold = 0.4 🔗
+float off_threshold = 0.4 
 
 void set_off_threshold(value: float)
 
@@ -2341,7 +2341,7 @@ float get_off_threshold()
 
 When our input value falls below this, our output becomes false.
 
-OpenXRHapticBase on_haptic 🔗
+OpenXRHapticBase on_haptic 
 
 void set_on_haptic(value: OpenXRHapticBase)
 
@@ -2349,7 +2349,7 @@ OpenXRHapticBase get_on_haptic()
 
 Haptic pulse to emit when the user presses the input.
 
-float on_threshold = 0.6 🔗
+float on_threshold = 0.6 
 
 void set_on_threshold(value: float)
 
@@ -2474,7 +2474,7 @@ unregister_projection_views_extension(extension: OpenXRExtensionWrapper)
 
 xr_result(result: int, format: String, args: Array)
 
-enum OpenXRAlphaBlendModeSupport: 🔗
+enum OpenXRAlphaBlendModeSupport: 
 
 OpenXRAlphaBlendModeSupport OPENXR_ALPHA_BLEND_MODE_SUPPORT_NONE = 0
 
@@ -2488,65 +2488,65 @@ OpenXRAlphaBlendModeSupport OPENXR_ALPHA_BLEND_MODE_SUPPORT_EMULATING = 2
 
 Means that XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND is emulated.
 
-int action_get_handle(action: RID) 🔗
+int action_get_handle(action: RID) 
 
 Returns the corresponding XrAction OpenXR handle for the given action RID.
 
-void begin_debug_label_region(label_name: String) 🔗
+void begin_debug_label_region(label_name: String) 
 
 Begins a new debug label region, this label will be reported in debug messages for any calls following this until end_debug_label_region() is called. Debug labels can be stacked.
 
 Returns true if OpenXR is initialized for rendering with an XR viewport.
 
-void end_debug_label_region() 🔗
+void end_debug_label_region() 
 
 Marks the end of a debug label region. Removes the latest debug label region added by calling begin_debug_label_region().
 
-RID find_action(name: String, action_set: RID) 🔗
+RID find_action(name: String, action_set: RID) 
 
 Returns the RID corresponding to an Action of a matching name, optionally limited to a specified action set.
 
-String get_error_string(result: int) 🔗
+String get_error_string(result: int) 
 
 Returns an error string for the given XrResult.
 
-int get_hand_tracker(hand_index: int) 🔗
+int get_hand_tracker(hand_index: int) 
 
 Returns the corresponding XRHandTrackerEXT handle for the given hand index value.
 
 Returns the XrInstance created during the initialization of the OpenXR API.
 
-int get_instance_proc_addr(name: String) 🔗
+int get_instance_proc_addr(name: String) 
 
 Returns the function pointer of the OpenXR function with the specified name, cast to an integer. If the function with the given name does not exist, the method returns 0.
 
 Note: openxr/util.h contains utility macros for acquiring OpenXR functions, e.g. GDEXTENSION_INIT_XR_FUNC_V(xrCreateAction).
 
-int get_next_frame_time() 🔗
+int get_next_frame_time() 
 
 Returns the predicted display timing for the next frame.
 
-int get_play_space() 🔗
+int get_play_space() 
 
 Returns the play space, which is an XrSpace cast to an integer.
 
-int get_predicted_display_time() 🔗
+int get_predicted_display_time() 
 
 Returns the predicted display timing for the current frame.
 
-int get_projection_layer() 🔗
+int get_projection_layer() 
 
 Returns a pointer to the render state's XrCompositionLayerProjection struct.
 
 Note: This method should only be called from the rendering thread.
 
-float get_render_state_z_far() 🔗
+float get_render_state_z_far() 
 
 Returns the far boundary value of the camera frustum.
 
 Note: This is only accessible in the render thread.
 
-float get_render_state_z_near() 🔗
+float get_render_state_z_near() 
 
 Returns the near boundary value of the camera frustum.
 
@@ -2554,117 +2554,117 @@ Note: This is only accessible in the render thread.
 
 Returns the OpenXR session, which is an XrSession cast to an integer.
 
-PackedInt64Array get_supported_swapchain_formats() 🔗
+PackedInt64Array get_supported_swapchain_formats() 
 
 Returns an array of supported swapchain formats.
 
-String get_swapchain_format_name(swapchain_format: int) 🔗
+String get_swapchain_format_name(swapchain_format: int) 
 
 Returns the name of the specified swapchain format.
 
-int get_system_id() 🔗
+int get_system_id() 
 
 Returns the id of the system, which is an XrSystemId cast to an integer.
 
-void insert_debug_label(label_name: String) 🔗
+void insert_debug_label(label_name: String) 
 
 Inserts a debug label, this label is reported in any debug message resulting from the OpenXR calls that follows, until any of begin_debug_label_region(), end_debug_label_region(), or insert_debug_label() is called.
 
-OpenXRAlphaBlendModeSupport is_environment_blend_mode_alpha_supported() 🔗
+OpenXRAlphaBlendModeSupport is_environment_blend_mode_alpha_supported() 
 
 Returns OpenXRAlphaBlendModeSupport denoting if XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND is really supported, emulated or not supported at all.
 
-bool is_initialized() 🔗
+bool is_initialized() 
 
 Returns true if OpenXR is initialized.
 
 Returns true if OpenXR is running (xrBeginSession was successfully called and the swapchains were created).
 
-bool openxr_is_enabled(check_run_in_editor: bool) static 🔗
+bool openxr_is_enabled(check_run_in_editor: bool) static 
 
 Returns true if OpenXR is enabled.
 
-void openxr_swapchain_acquire(swapchain: int) 🔗
+void openxr_swapchain_acquire(swapchain: int) 
 
 Acquires the image of the provided swapchain.
 
-int openxr_swapchain_create(create_flags: int, usage_flags: int, swapchain_format: int, width: int, height: int, sample_count: int, array_size: int) 🔗
+int openxr_swapchain_create(create_flags: int, usage_flags: int, swapchain_format: int, width: int, height: int, sample_count: int, array_size: int) 
 
 Returns a pointer to a new swapchain created using the provided parameters.
 
-void openxr_swapchain_free(swapchain: int) 🔗
+void openxr_swapchain_free(swapchain: int) 
 
 Destroys the provided swapchain and frees it from memory.
 
-RID openxr_swapchain_get_image(swapchain: int) 🔗
+RID openxr_swapchain_get_image(swapchain: int) 
 
 Returns the RID of the provided swapchain's image.
 
-int openxr_swapchain_get_swapchain(swapchain: int) 🔗
+int openxr_swapchain_get_swapchain(swapchain: int) 
 
 Returns the XrSwapchain handle of the provided swapchain.
 
-void openxr_swapchain_release(swapchain: int) 🔗
+void openxr_swapchain_release(swapchain: int) 
 
 Releases the image of the provided swapchain.
 
-void register_composition_layer_provider(extension: OpenXRExtensionWrapper) 🔗
+void register_composition_layer_provider(extension: OpenXRExtensionWrapper) 
 
 Registers the given extension as a composition layer provider.
 
-void register_frame_info_extension(extension: OpenXRExtensionWrapper) 🔗
+void register_frame_info_extension(extension: OpenXRExtensionWrapper) 
 
 Registers the given extension as modifying frame info via the OpenXRExtensionWrapper._set_frame_wait_info_and_get_next_pointer(), OpenXRExtensionWrapper._set_view_locate_info_and_get_next_pointer(), or OpenXRExtensionWrapper._set_frame_end_info_and_get_next_pointer() virtual methods.
 
-void register_projection_views_extension(extension: OpenXRExtensionWrapper) 🔗
+void register_projection_views_extension(extension: OpenXRExtensionWrapper) 
 
 Registers the given extension as a provider of additional data structures to projections views.
 
-void set_custom_play_space(space: const void*) 🔗
+void set_custom_play_space(space: const void*) 
 
 Sets the reference space used by OpenXR to the given XrSpace (cast to a void *).
 
-void set_emulate_environment_blend_mode_alpha_blend(enabled: bool) 🔗
+void set_emulate_environment_blend_mode_alpha_blend(enabled: bool) 
 
 If set to true, an OpenXR extension is loaded which is capable of emulating the XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND blend mode.
 
-void set_object_name(object_type: int, object_handle: int, object_name: String) 🔗
+void set_object_name(object_type: int, object_handle: int, object_name: String) 
 
 Set the object name of an OpenXR object, used for debug output. object_type must be a valid OpenXR XrObjectType enum and object_handle must be a valid OpenXR object handle.
 
-void set_render_region(render_region: Rect2i) 🔗
+void set_render_region(render_region: Rect2i) 
 
 Sets the render region to render_region, overriding the normal render target's rect.
 
-void set_velocity_depth_texture(render_target: RID) 🔗
+void set_velocity_depth_texture(render_target: RID) 
 
 Sets the render target of the velocity depth texture.
 
-void set_velocity_target_size(target_size: Vector2i) 🔗
+void set_velocity_target_size(target_size: Vector2i) 
 
 Sets the target size of the velocity and velocity depth textures.
 
-void set_velocity_texture(render_target: RID) 🔗
+void set_velocity_texture(render_target: RID) 
 
 Sets the render target of the velocity texture.
 
-Transform3D transform_from_pose(pose: const void*) 🔗
+Transform3D transform_from_pose(pose: const void*) 
 
 Creates a Transform3D from an XrPosef.
 
-void unregister_composition_layer_provider(extension: OpenXRExtensionWrapper) 🔗
+void unregister_composition_layer_provider(extension: OpenXRExtensionWrapper) 
 
 Unregisters the given extension as a composition layer provider.
 
-void unregister_frame_info_extension(extension: OpenXRExtensionWrapper) 🔗
+void unregister_frame_info_extension(extension: OpenXRExtensionWrapper) 
 
 Unregisters the given extension as modifying frame info.
 
-void unregister_projection_views_extension(extension: OpenXRExtensionWrapper) 🔗
+void unregister_projection_views_extension(extension: OpenXRExtensionWrapper) 
 
 Unregisters the given extension as a provider of additional data structures to projections views.
 
-bool xr_result(result: int, format: String, args: Array) 🔗
+bool xr_result(result: int, format: String, args: Array) 
 
 Returns true if the provided XrResult (cast to an integer) is successful. Otherwise returns false and prints the XrResult converted to a string, with the specified additional information.
 
@@ -2695,11 +2695,11 @@ _get_description() virtual required const
 
 _get_ip_modification() virtual required
 
-String _get_description() virtual required const 🔗
+String _get_description() virtual required const 
 
 Return the description of this class that is used for the title bar of the binding modifier editor.
 
-PackedByteArray _get_ip_modification() virtual required 🔗
+PackedByteArray _get_ip_modification() virtual required 
 
 Returns the data that is sent to OpenXR when submitting the suggested interacting bindings this modifier is a part of.
 
@@ -2730,7 +2730,7 @@ See XR_EXT_dpad_binding for in-depth details.
 
 Note: If the DPad binding modifier extension is enabled, all dpad binding paths will be available in the action map. Adding the modifier to an interaction profile allows you to further customize the behavior.
 
-OpenXRActionSet action_set 🔗
+OpenXRActionSet action_set 
 
 void set_action_set(value: OpenXRActionSet)
 
@@ -2738,7 +2738,7 @@ OpenXRActionSet get_action_set()
 
 Action set for which this dpad binding modifier is active.
 
-float center_region = 0.1 🔗
+float center_region = 0.1 
 
 void set_center_region(value: float)
 
@@ -2746,7 +2746,7 @@ float get_center_region()
 
 Center region in which our center position of our dpad return true.
 
-String input_path = "" 🔗
+String input_path = "" 
 
 void set_input_path(value: String)
 
@@ -2754,7 +2754,7 @@ String get_input_path()
 
 Input path for this dpad binding modifier.
 
-bool is_sticky = false 🔗
+bool is_sticky = false 
 
 void set_is_sticky(value: bool)
 
@@ -2762,7 +2762,7 @@ If false, when the joystick enters a new dpad zone this becomes true.
 
 If true, when the joystick remains in active dpad zone, this remains true even if we overlap with another zone.
 
-OpenXRHapticBase off_haptic 🔗
+OpenXRHapticBase off_haptic 
 
 void set_off_haptic(value: OpenXRHapticBase)
 
@@ -2770,7 +2770,7 @@ OpenXRHapticBase get_off_haptic()
 
 Haptic pulse to emit when the user releases the input.
 
-OpenXRHapticBase on_haptic 🔗
+OpenXRHapticBase on_haptic 
 
 void set_on_haptic(value: OpenXRHapticBase)
 
@@ -2778,7 +2778,7 @@ OpenXRHapticBase get_on_haptic()
 
 Haptic pulse to emit when the user presses the input.
 
-float threshold = 0.6 🔗
+float threshold = 0.6 
 
 void set_threshold(value: float)
 
@@ -2786,7 +2786,7 @@ float get_threshold()
 
 When our input value is equal or larger than this value, our dpad in that direction becomes true. It stays true until it falls under the threshold_released value.
 
-float threshold_released = 0.4 🔗
+float threshold_released = 0.4 
 
 void set_threshold_released(value: float)
 
@@ -2794,7 +2794,7 @@ float get_threshold_released()
 
 When our input value falls below this, our output becomes false.
 
-float wedge_angle = 1.5707964 🔗
+float wedge_angle = 1.5707964 
 
 void set_wedge_angle(value: float)
 
@@ -2928,25 +2928,25 @@ _set_viewport_composition_layer_and_get_next_pointer(layer: const void*, propert
 
 register_extension_wrapper()
 
-int _get_composition_layer(index: int) virtual 🔗
+int _get_composition_layer(index: int) virtual 
 
 Returns a pointer to an XrCompositionLayerBaseHeader struct to provide the given composition layer.
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_composition_layer_provider().
 
-int _get_composition_layer_count() virtual 🔗
+int _get_composition_layer_count() virtual 
 
 Returns the number of composition layers this extension wrapper provides via _get_composition_layer().
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_composition_layer_provider().
 
-int _get_composition_layer_order(index: int) virtual 🔗
+int _get_composition_layer_order(index: int) virtual 
 
 Returns an integer that will be used to sort the given composition layer provided via _get_composition_layer(). Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of 0, so layers provided by this method should probably be above or below (but not exactly) 0.
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_composition_layer_provider().
 
-Dictionary _get_requested_extensions() virtual 🔗
+Dictionary _get_requested_extensions() virtual 
 
 Returns a Dictionary of OpenXR extensions related to this extension. The Dictionary should contain the name of the extension, mapped to a bool * cast to an integer:
 
@@ -2954,165 +2954,165 @@ If the bool * is a nullptr this extension is mandatory.
 
 If the bool * points to a boolean, the boolean will be updated to true if the extension is enabled.
 
-PackedStringArray _get_suggested_tracker_names() virtual 🔗
+PackedStringArray _get_suggested_tracker_names() virtual 
 
 Returns a PackedStringArray of positional tracker names that are used within the extension wrapper.
 
-Array[Dictionary] _get_viewport_composition_layer_extension_properties() virtual 🔗
+Array[Dictionary] _get_viewport_composition_layer_extension_properties() virtual 
 
 Gets an array of Dictionarys that represent properties, just like Object._get_property_list(), that will be added to OpenXRCompositionLayer nodes.
 
-Dictionary _get_viewport_composition_layer_extension_property_defaults() virtual 🔗
+Dictionary _get_viewport_composition_layer_extension_property_defaults() virtual 
 
 Gets a Dictionary containing the default values for the properties returned by _get_viewport_composition_layer_extension_properties().
 
-void _on_before_instance_created() virtual 🔗
+void _on_before_instance_created() virtual 
 
 Called before the OpenXR instance is created.
 
-bool _on_event_polled(event: const void*) virtual 🔗
+bool _on_event_polled(event: const void*) virtual 
 
 Called when there is an OpenXR event to process. When implementing, return true if the event was handled, return false otherwise.
 
-void _on_instance_created(instance: int) virtual 🔗
+void _on_instance_created(instance: int) virtual 
 
 Called right after the OpenXR instance is created.
 
-void _on_instance_destroyed() virtual 🔗
+void _on_instance_destroyed() virtual 
 
 Called right before the OpenXR instance is destroyed.
 
-void _on_main_swapchains_created() virtual 🔗
+void _on_main_swapchains_created() virtual 
 
 Called right after the main swapchains are (re)created.
 
-void _on_post_draw_viewport(viewport: RID) virtual 🔗
+void _on_post_draw_viewport(viewport: RID) virtual 
 
 Called right after the given viewport is rendered.
 
 Note: The draw commands might only be queued at this point, not executed.
 
-void _on_pre_draw_viewport(viewport: RID) virtual 🔗
+void _on_pre_draw_viewport(viewport: RID) virtual 
 
 Called right before the given viewport is rendered.
 
-void _on_pre_render() virtual 🔗
+void _on_pre_render() virtual 
 
 Called right before the XR viewports begin their rendering step.
 
-void _on_process() virtual 🔗
+void _on_process() virtual 
 
 Called as part of the OpenXR process handling. This happens right before general and physics processing steps of the main loop. During this step controller data is queried and made available to game logic.
 
-void _on_register_metadata() virtual 🔗
+void _on_register_metadata() virtual 
 
 Allows extensions to register additional controller metadata. This function is called even when the OpenXR API is not constructed as the metadata needs to be available to the editor.
 
 Extensions should also provide metadata regardless of whether they are supported on the host system. The controller data is used to setup action maps for users who may have access to the relevant hardware.
 
-void _on_session_created(session: int) virtual 🔗
+void _on_session_created(session: int) virtual 
 
 Called right after the OpenXR session is created.
 
-void _on_session_destroyed() virtual 🔗
+void _on_session_destroyed() virtual 
 
 Called right before the OpenXR session is destroyed.
 
-void _on_state_exiting() virtual 🔗
+void _on_state_exiting() virtual 
 
 Called when the OpenXR session state is changed to exiting.
 
-void _on_state_focused() virtual 🔗
+void _on_state_focused() virtual 
 
 Called when the OpenXR session state is changed to focused. This state is the active state when the game runs.
 
-void _on_state_idle() virtual 🔗
+void _on_state_idle() virtual 
 
 Called when the OpenXR session state is changed to idle.
 
-void _on_state_loss_pending() virtual 🔗
+void _on_state_loss_pending() virtual 
 
 Called when the OpenXR session state is changed to loss pending.
 
-void _on_state_ready() virtual 🔗
+void _on_state_ready() virtual 
 
 Called when the OpenXR session state is changed to ready. This means OpenXR is ready to set up the session.
 
-void _on_state_stopping() virtual 🔗
+void _on_state_stopping() virtual 
 
 Called when the OpenXR session state is changed to stopping.
 
-void _on_state_synchronized() virtual 🔗
+void _on_state_synchronized() virtual 
 
 Called when the OpenXR session state is changed to synchronized. OpenXR also returns to this state when the application loses focus.
 
-void _on_state_visible() virtual 🔗
+void _on_state_visible() virtual 
 
 Called when the OpenXR session state is changed to visible. This means OpenXR is now ready to receive frames.
 
-void _on_sync_actions() virtual 🔗
+void _on_sync_actions() virtual 
 
 Called when OpenXR has performed its action sync.
 
-void _on_viewport_composition_layer_destroyed(layer: const void*) virtual 🔗
+void _on_viewport_composition_layer_destroyed(layer: const void*) virtual 
 
 Called when a composition layer created via OpenXRCompositionLayer is destroyed.
 
 layer is a pointer to an XrCompositionLayerBaseHeader struct.
 
-int _set_android_surface_swapchain_create_info_and_get_next_pointer(property_values: Dictionary, next_pointer: void*) virtual 🔗
+int _set_android_surface_swapchain_create_info_and_get_next_pointer(property_values: Dictionary, next_pointer: void*) virtual 
 
 Adds additional data structures to Android surface swapchains created by OpenXRCompositionLayer.
 
 property_values contains the values of the properties returned by _get_viewport_composition_layer_extension_properties().
 
-int _set_frame_end_info_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_frame_end_info_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures to XrFrameEndInfo.
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_frame_info_extension().
 
-int _set_frame_wait_info_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_frame_wait_info_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures to XrFrameWaitInfo.
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_frame_info_extension().
 
-int _set_hand_joint_locations_and_get_next_pointer(hand_index: int, next_pointer: void*) virtual 🔗
+int _set_hand_joint_locations_and_get_next_pointer(hand_index: int, next_pointer: void*) virtual 
 
 Adds additional data structures when each hand tracker is created.
 
-int _set_instance_create_info_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_instance_create_info_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures when the OpenXR instance is created.
 
-int _set_projection_views_and_get_next_pointer(view_index: int, next_pointer: void*) virtual 🔗
+int _set_projection_views_and_get_next_pointer(view_index: int, next_pointer: void*) virtual 
 
 Adds additional data structures to the projection view of the given view_index.
 
-int _set_reference_space_create_info_and_get_next_pointer(reference_space_type: int, next_pointer: void*) virtual 🔗
+int _set_reference_space_create_info_and_get_next_pointer(reference_space_type: int, next_pointer: void*) virtual 
 
 Adds additional data structures to XrReferenceSpaceCreateInfo.
 
-int _set_session_create_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_session_create_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures when the OpenXR session is created.
 
-int _set_swapchain_create_info_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_swapchain_create_info_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures when creating OpenXR swapchains.
 
-int _set_system_properties_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_system_properties_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures when querying OpenXR system abilities.
 
-int _set_view_locate_info_and_get_next_pointer(next_pointer: void*) virtual 🔗
+int _set_view_locate_info_and_get_next_pointer(next_pointer: void*) virtual 
 
 Adds additional data structures to XrViewLocateInfo.
 
 This will only be called if the extension previously registered itself with OpenXRAPIExtension.register_frame_info_extension().
 
-int _set_viewport_composition_layer_and_get_next_pointer(layer: const void*, property_values: Dictionary, next_pointer: void*) virtual 🔗
+int _set_viewport_composition_layer_and_get_next_pointer(layer: const void*, property_values: Dictionary, next_pointer: void*) virtual 
 
 Adds additional data structures to composition layers created by OpenXRCompositionLayer.
 
@@ -3120,11 +3120,11 @@ property_values contains the values of the properties returned by _get_viewport_
 
 layer is a pointer to an XrCompositionLayerBaseHeader struct.
 
-OpenXRAPIExtension get_openxr_api() 🔗
+OpenXRAPIExtension get_openxr_api() 
 
 Returns the created OpenXRAPIExtension, which can be used to access the OpenXR API.
 
-void register_extension_wrapper() 🔗
+void register_extension_wrapper() 
 
 Registers the extension. This should happen at core module initialization level.
 
@@ -3153,15 +3153,15 @@ cancel_future(future: int)
 
 register_future(future: int, on_success: Callable = Callable())
 
-void cancel_future(future: int) 🔗
+void cancel_future(future: int) 
 
 Cancels an in-progress future. future must be an XrFutureEXT value previously returned by an API that started an asynchronous function.
 
-bool is_active() const 🔗
+bool is_active() const 
 
 Returns true if futures are available in the OpenXR runtime used. This function will only return a usable result after OpenXR has been initialized.
 
-OpenXRFutureResult register_future(future: int, on_success: Callable = Callable()) 🔗
+OpenXRFutureResult register_future(future: int, on_success: Callable = Callable()) 
 
 Register an OpenXR Future object so we monitor for completion. future must be an XrFutureEXT value previously returned by an API that started an asynchronous function.
 
@@ -3207,7 +3207,7 @@ get_result_value() const
 
 set_result_value(result_value: Variant)
 
-completed(result: OpenXRFutureResult) 🔗
+completed(result: OpenXRFutureResult) 
 
 Emitted when the asynchronous function is finished or has been cancelled.
 
@@ -3223,23 +3223,23 @@ ResultStatus RESULT_CANCELLED = 2
 
 The asynchronous function has been cancelled.
 
-void cancel_future() 🔗
+void cancel_future() 
 
 Cancel this future, this will interrupt and stop the asynchronous function.
 
-int get_future() const 🔗
+int get_future() const 
 
 Return the XrFutureEXT value this result relates to.
 
-Variant get_result_value() const 🔗
+Variant get_result_value() const 
 
 Returns the result value of our asynchronous function (if set by the extension). The type of this result value depends on the function being called. Consult the documentation of the relevant function.
 
-ResultStatus get_status() const 🔗
+ResultStatus get_status() const 
 
 Returns the status of this result.
 
-void set_result_value(result_value: Variant) 🔗
+void set_result_value(result_value: Variant) 
 
 Stores the result value we expose to the user.
 
@@ -3287,7 +3287,7 @@ Vibration haptic feedback.
 
 This haptic feedback resource makes it possible to define a vibration based haptic feedback pulse that can be triggered through actions in the OpenXR action map.
 
-float amplitude = 1.0 🔗
+float amplitude = 1.0 
 
 void set_amplitude(value: float)
 
@@ -3299,7 +3299,7 @@ void set_duration(value: int)
 
 The duration of the pulse in nanoseconds. Use -1 for a minimum duration pulse for the current XR runtime.
 
-float frequency = 0.0 🔗
+float frequency = 0.0 
 
 void set_frequency(value: float)
 
@@ -3374,75 +3374,75 @@ render_model_is_animatable_node_visible(render_model: RID, index: int) const
 
 render_model_new_scene_instance(render_model: RID) const
 
-render_model_added(render_model: RID) 🔗
+render_model_added(render_model: RID) 
 
 Emitted when a new render model is added.
 
-render_model_removed(render_model: RID) 🔗
+render_model_removed(render_model: RID) 
 
 Emitted when a render model is removed.
 
-render_model_top_level_path_changed(render_model: RID) 🔗
+render_model_top_level_path_changed(render_model: RID) 
 
 Emitted when the top level path associated with a render model changed.
 
-bool is_active() const 🔗
+bool is_active() const 
 
 Returns true if OpenXR's render model extension is supported and enabled.
 
 Note: This only returns a valid value after OpenXR has been initialized.
 
-RID render_model_create(render_model_id: int) 🔗
+RID render_model_create(render_model_id: int) 
 
 Creates a render model object within OpenXR using a render model id.
 
 Note: This function is exposed for dependent OpenXR extensions that provide render model ids to be used with the render model extension.
 
-void render_model_destroy(render_model: RID) 🔗
+void render_model_destroy(render_model: RID) 
 
 Destroys a render model object within OpenXR that was previously created with render_model_create().
 
 Note: This function is exposed for dependent OpenXR extensions that provide render model ids to be used with the render model extension.
 
-Array[RID] render_model_get_all() 🔗
+Array[RID] render_model_get_all() 
 
 Returns an array of all currently active render models registered with this extension.
 
-int render_model_get_animatable_node_count(render_model: RID) const 🔗
+int render_model_get_animatable_node_count(render_model: RID) const 
 
 Returns the number of animatable nodes this render model has.
 
-String render_model_get_animatable_node_name(render_model: RID, index: int) const 🔗
+String render_model_get_animatable_node_name(render_model: RID, index: int) const 
 
 Returns the name of the given animatable node.
 
-Transform3D render_model_get_animatable_node_transform(render_model: RID, index: int) const 🔗
+Transform3D render_model_get_animatable_node_transform(render_model: RID, index: int) const 
 
 Returns the current local transform for an animatable node. This is updated every frame.
 
-TrackingConfidence render_model_get_confidence(render_model: RID) const 🔗
+TrackingConfidence render_model_get_confidence(render_model: RID) const 
 
 Returns the tracking confidence of the tracking data for the render model.
 
-Transform3D render_model_get_root_transform(render_model: RID) const 🔗
+Transform3D render_model_get_root_transform(render_model: RID) const 
 
 Returns the root transform of a render model. This is the tracked position relative to our XROrigin3D node.
 
-PackedStringArray render_model_get_subaction_paths(render_model: RID) 🔗
+PackedStringArray render_model_get_subaction_paths(render_model: RID) 
 
 Returns a list of active subaction paths for this render_model.
 
 Note: If different devices are bound to your actions than available in suggested interaction bindings, this information shows paths related to the interaction bindings being mimicked by that device.
 
-String render_model_get_top_level_path(render_model: RID) const 🔗
+String render_model_get_top_level_path(render_model: RID) const 
 
 Returns the top level path associated with this render_model. If provided this identifies whether the render model is associated with the player's hands or other body part.
 
-bool render_model_is_animatable_node_visible(render_model: RID, index: int) const 🔗
+bool render_model_is_animatable_node_visible(render_model: RID, index: int) const 
 
 Returns true if this animatable node should be visible.
 
-Node3D render_model_new_scene_instance(render_model: RID) const 🔗
+Node3D render_model_new_scene_instance(render_model: RID) const 
 
 Returns an instance of a subscene that contains all MeshInstance3D nodes that allow you to visualize the render model.
 
@@ -3471,15 +3471,15 @@ This helper node will automatically manage displaying render models. It will cre
 
 Note: If you want more control over this logic you can alternatively call OpenXRRenderModelExtension.render_model_get_all() to obtain a list of active render model ids and create OpenXRRenderModel instances for each render model id provided.
 
-render_model_added(render_model: OpenXRRenderModel) 🔗
+render_model_added(render_model: OpenXRRenderModel) 
 
 Emitted when a render model node is added as a child to this node.
 
-render_model_removed(render_model: OpenXRRenderModel) 🔗
+render_model_removed(render_model: OpenXRRenderModel) 
 
 Emitted when a render model child node is about to be removed from this node.
 
-enum RenderModelTracker: 🔗
+enum RenderModelTracker: 
 
 RenderModelTracker RENDER_MODEL_TRACKER_ANY = 0
 
@@ -3497,7 +3497,7 @@ RenderModelTracker RENDER_MODEL_TRACKER_RIGHT_HAND = 3
 
 Only active render models are shown that are related to the right hand tracker.
 
-String make_local_to_pose = "" 🔗
+String make_local_to_pose = "" 
 
 void set_make_local_to_pose(value: String)
 
@@ -3505,7 +3505,7 @@ String get_make_local_to_pose()
 
 Position render models local to this pose (this will adjust the position of the render models container node).
 
-RenderModelTracker tracker = 0 🔗
+RenderModelTracker tracker = 0 
 
 void set_tracker(value: RenderModelTracker)
 
@@ -4433,7 +4433,7 @@ operator ==(right: PackedByteArray)
 
 operator [](index: int)
 
-PackedByteArray PackedByteArray() 🔗
+PackedByteArray PackedByteArray() 
 
 Constructs an empty PackedByteArray.
 
@@ -4445,101 +4445,101 @@ PackedByteArray PackedByteArray(from: Array)
 
 Constructs a new PackedByteArray. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: int) 🔗
+bool append(value: int) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedByteArray) 🔗
+void append_array(array: PackedByteArray) 
 
 Appends a PackedByteArray at the end of this array.
 
-int bsearch(value: int, before: bool = true) 🔗
+int bsearch(value: int, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
 Note: Calling bsearch() on an unsorted array results in unexpected behavior.
 
-void bswap16(offset: int = 0, count: int = -1) 🔗
+void bswap16(offset: int = 0, count: int = -1) 
 
 Swaps the byte order of count 16-bit segments of the array starting at offset. Swap is done in-place. If count is less than zero, all segments to the end of array are processed, if processed data size is not a multiple of 2, the byte after the last processed 16-bit segment is not modified.
 
-void bswap32(offset: int = 0, count: int = -1) 🔗
+void bswap32(offset: int = 0, count: int = -1) 
 
 Swaps the byte order of count 32-bit segments of the array starting at offset. Swap is done in-place. If count is less than zero, all segments to the end of array are processed, if processed data size is not a multiple of 4, bytes after the last processed 32-bit segment are not modified.
 
-void bswap64(offset: int = 0, count: int = -1) 🔗
+void bswap64(offset: int = 0, count: int = -1) 
 
 Swaps the byte order of count 64-bit segments of the array starting at offset. Swap is done in-place. If count is less than zero, all segments to the end of array are processed, if processed data size is not a multiple of 8, bytes after the last processed 64-bit segment are not modified.
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-PackedByteArray compress(compression_mode: int = 0) const 🔗
+PackedByteArray compress(compression_mode: int = 0) const 
 
 Returns a new PackedByteArray with the data compressed. Set the compression mode using one of CompressionMode's constants.
 
-int count(value: int) const 🔗
+int count(value: int) const 
 
 Returns the number of times an element is in the array.
 
-float decode_double(byte_offset: int) const 🔗
+float decode_double(byte_offset: int) const 
 
 Decodes a 64-bit floating-point number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0.0 if a valid number can't be decoded.
 
-float decode_float(byte_offset: int) const 🔗
+float decode_float(byte_offset: int) const 
 
 Decodes a 32-bit floating-point number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0.0 if a valid number can't be decoded.
 
-float decode_half(byte_offset: int) const 🔗
+float decode_half(byte_offset: int) const 
 
 Decodes a 16-bit floating-point number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0.0 if a valid number can't be decoded.
 
-int decode_s8(byte_offset: int) const 🔗
+int decode_s8(byte_offset: int) const 
 
 Decodes a 8-bit signed integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_s16(byte_offset: int) const 🔗
+int decode_s16(byte_offset: int) const 
 
 Decodes a 16-bit signed integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_s32(byte_offset: int) const 🔗
+int decode_s32(byte_offset: int) const 
 
 Decodes a 32-bit signed integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_s64(byte_offset: int) const 🔗
+int decode_s64(byte_offset: int) const 
 
 Decodes a 64-bit signed integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_u8(byte_offset: int) const 🔗
+int decode_u8(byte_offset: int) const 
 
 Decodes a 8-bit unsigned integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_u16(byte_offset: int) const 🔗
+int decode_u16(byte_offset: int) const 
 
 Decodes a 16-bit unsigned integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_u32(byte_offset: int) const 🔗
+int decode_u32(byte_offset: int) const 
 
 Decodes a 32-bit unsigned integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-int decode_u64(byte_offset: int) const 🔗
+int decode_u64(byte_offset: int) const 
 
 Decodes a 64-bit unsigned integer number from the bytes starting at byte_offset. Fails if the byte count is insufficient. Returns 0 if a valid number can't be decoded.
 
-Variant decode_var(byte_offset: int, allow_objects: bool = false) const 🔗
+Variant decode_var(byte_offset: int, allow_objects: bool = false) const 
 
 Decodes a Variant from the bytes starting at byte_offset. Returns null if a valid variant can't be decoded or the value is Object-derived and allow_objects is false.
 
-int decode_var_size(byte_offset: int, allow_objects: bool = false) const 🔗
+int decode_var_size(byte_offset: int, allow_objects: bool = false) const 
 
 Decodes a size of a Variant from the bytes starting at byte_offset. Requires at least 4 bytes of data starting at the offset, otherwise fails.
 
-PackedByteArray decompress(buffer_size: int, compression_mode: int = 0) const 🔗
+PackedByteArray decompress(buffer_size: int, compression_mode: int = 0) const 
 
 Returns a new PackedByteArray with the data decompressed. Set buffer_size to the size of the uncompressed data. Set the compression mode using one of CompressionMode's constants.
 
 Note: Decompression is not guaranteed to work with data not compressed by Godot, for example if data compressed with the deflate compression mode lacks a checksum or header.
 
-PackedByteArray decompress_dynamic(max_output_size: int, compression_mode: int = 0) const 🔗
+PackedByteArray decompress_dynamic(max_output_size: int, compression_mode: int = 0) const 
 
 Returns a new PackedByteArray with the data decompressed. Set the compression mode using one of CompressionMode's constants. This method only accepts brotli, gzip, and deflate compression modes.
 
@@ -4549,81 +4549,81 @@ GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a
 
 Note: Decompression is not guaranteed to work with data not compressed by Godot, for example if data compressed with the deflate compression mode lacks a checksum or header.
 
-PackedByteArray duplicate() 🔗
+PackedByteArray duplicate() 
 
 Creates a copy of the array, and returns it.
 
-void encode_double(byte_offset: int, value: float) 🔗
+void encode_double(byte_offset: int, value: float) 
 
 Encodes a 64-bit floating-point number as bytes at the index of byte_offset bytes. The array must have at least 8 bytes of allocated space, starting at the offset.
 
-void encode_float(byte_offset: int, value: float) 🔗
+void encode_float(byte_offset: int, value: float) 
 
 Encodes a 32-bit floating-point number as bytes at the index of byte_offset bytes. The array must have at least 4 bytes of space, starting at the offset.
 
-void encode_half(byte_offset: int, value: float) 🔗
+void encode_half(byte_offset: int, value: float) 
 
 Encodes a 16-bit floating-point number as bytes at the index of byte_offset bytes. The array must have at least 2 bytes of space, starting at the offset.
 
-void encode_s8(byte_offset: int, value: int) 🔗
+void encode_s8(byte_offset: int, value: int) 
 
 Encodes a 8-bit signed integer number (signed byte) at the index of byte_offset bytes. The array must have at least 1 byte of space, starting at the offset.
 
-void encode_s16(byte_offset: int, value: int) 🔗
+void encode_s16(byte_offset: int, value: int) 
 
 Encodes a 16-bit signed integer number as bytes at the index of byte_offset bytes. The array must have at least 2 bytes of space, starting at the offset.
 
-void encode_s32(byte_offset: int, value: int) 🔗
+void encode_s32(byte_offset: int, value: int) 
 
 Encodes a 32-bit signed integer number as bytes at the index of byte_offset bytes. The array must have at least 4 bytes of space, starting at the offset.
 
-void encode_s64(byte_offset: int, value: int) 🔗
+void encode_s64(byte_offset: int, value: int) 
 
 Encodes a 64-bit signed integer number as bytes at the index of byte_offset bytes. The array must have at least 8 bytes of space, starting at the offset.
 
-void encode_u8(byte_offset: int, value: int) 🔗
+void encode_u8(byte_offset: int, value: int) 
 
 Encodes a 8-bit unsigned integer number (byte) at the index of byte_offset bytes. The array must have at least 1 byte of space, starting at the offset.
 
-void encode_u16(byte_offset: int, value: int) 🔗
+void encode_u16(byte_offset: int, value: int) 
 
 Encodes a 16-bit unsigned integer number as bytes at the index of byte_offset bytes. The array must have at least 2 bytes of space, starting at the offset.
 
-void encode_u32(byte_offset: int, value: int) 🔗
+void encode_u32(byte_offset: int, value: int) 
 
 Encodes a 32-bit unsigned integer number as bytes at the index of byte_offset bytes. The array must have at least 4 bytes of space, starting at the offset.
 
-void encode_u64(byte_offset: int, value: int) 🔗
+void encode_u64(byte_offset: int, value: int) 
 
 Encodes a 64-bit unsigned integer number as bytes at the index of byte_offset bytes. The array must have at least 8 bytes of space, starting at the offset.
 
-int encode_var(byte_offset: int, value: Variant, allow_objects: bool = false) 🔗
+int encode_var(byte_offset: int, value: Variant, allow_objects: bool = false) 
 
 Encodes a Variant at the index of byte_offset bytes. A sufficient space must be allocated, depending on the encoded variant's size. If allow_objects is false, Object-derived values are not permitted and will instead be serialized as ID-only.
 
-bool erase(value: int) 🔗
+bool erase(value: int) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
-void fill(value: int) 🔗
+void fill(value: int) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: int, from: int = 0) const 🔗
+int find(value: int, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
-int get(index: int) const 🔗
+int get(index: int) const 
 
 Returns the byte at the given index in the array. If index out-of-bounds or negative, this method fails and returns 0.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-String get_string_from_ascii() const 🔗
+String get_string_from_ascii() const 
 
 Converts ASCII/Latin-1 encoded array to String. Fast alternative to get_string_from_utf8() if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use get_string_from_utf8(). This is the inverse of String.to_ascii_buffer().
 
-String get_string_from_multibyte_char(encoding: String = "") const 🔗
+String get_string_from_multibyte_char(encoding: String = "") const 
 
 Converts system multibyte code page encoded array to String. If conversion fails, empty string is returned. This is the inverse of String.to_multibyte_char_buffer().
 
@@ -4633,51 +4633,51 @@ For Windows, see Code Page Identifiers .NET names.
 
 For macOS and Linux/BSD, see libiconv library documentation and iconv --list for a list of supported encodings.
 
-String get_string_from_utf8() const 🔗
+String get_string_from_utf8() const 
 
 Converts UTF-8 encoded array to String. Slower than get_string_from_ascii() but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of String.to_utf8_buffer().
 
-String get_string_from_utf16() const 🔗
+String get_string_from_utf16() const 
 
 Converts UTF-16 encoded array to String. If the BOM is missing, little-endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of String.to_utf16_buffer().
 
-String get_string_from_utf32() const 🔗
+String get_string_from_utf32() const 
 
 Converts UTF-32 encoded array to String. Returns empty string if source array is not valid UTF-32 string. This is the inverse of String.to_utf32_buffer().
 
-String get_string_from_wchar() const 🔗
+String get_string_from_wchar() const 
 
 Converts wide character (wchar_t, UTF-16 on Windows, UTF-32 on other platforms) encoded array to String. Returns empty string if source array is not valid wide string. This is the inverse of String.to_wchar_buffer().
 
-bool has(value: int) const 🔗
+bool has(value: int) const 
 
 Returns true if the array contains value.
 
-bool has_encoded_var(byte_offset: int, allow_objects: bool = false) const 🔗
+bool has_encoded_var(byte_offset: int, allow_objects: bool = false) const 
 
 Returns true if a valid Variant value can be decoded at the byte_offset. Returns false otherwise or when the value is Object-derived and allow_objects is false.
 
-String hex_encode() const 🔗
+String hex_encode() const 
 
 Returns a hexadecimal representation of this array as a String.
 
-int insert(at_index: int, value: int) 🔗
+int insert(at_index: int, value: int) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: int) 🔗
+bool push_back(value: int) 
 
 Appends an element at the end of the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -4685,17 +4685,17 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: int, from: int = -1) const 🔗
+int rfind(value: int, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
-void set(index: int, value: int) 🔗
+void set(index: int, value: int) 
 
 Changes the byte at the given index.
 
 Returns the number of elements in the array.
 
-PackedByteArray slice(begin: int, end: int = 2147483647) const 🔗
+PackedByteArray slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedByteArray, from begin (inclusive) to end (exclusive), as a new PackedByteArray.
 
@@ -4705,13 +4705,13 @@ If either begin or end are negative, they will be relative to the end of the arr
 
 Sorts the elements of the array in ascending order.
 
-PackedColorArray to_color_array() const 🔗
+PackedColorArray to_color_array() const 
 
 Returns a copy of the data converted to a PackedColorArray, where each block of 16 bytes has been converted to a Color variant.
 
 Note: The size of the input array must be a multiple of 16 (size of four 32-bit float variables). The size of the new array will be byte_array.size() / 16. If the original data can't be converted to Color variants, the resulting data is undefined.
 
-PackedFloat32Array to_float32_array() const 🔗
+PackedFloat32Array to_float32_array() const 
 
 Returns a copy of the data converted to a PackedFloat32Array, where each block of 4 bytes has been converted to a 32-bit float (C++ float).
 
@@ -4719,7 +4719,7 @@ The size of the input array must be a multiple of 4 (size of 32-bit float). The 
 
 If the original data can't be converted to 32-bit floats, the resulting data is undefined.
 
-PackedFloat64Array to_float64_array() const 🔗
+PackedFloat64Array to_float64_array() const 
 
 Returns a copy of the data converted to a PackedFloat64Array, where each block of 8 bytes has been converted to a 64-bit float (C++ double, Godot float).
 
@@ -4727,7 +4727,7 @@ The size of the input array must be a multiple of 8 (size of 64-bit double). The
 
 If the original data can't be converted to 64-bit floats, the resulting data is undefined.
 
-PackedInt32Array to_int32_array() const 🔗
+PackedInt32Array to_int32_array() const 
 
 Returns a copy of the data converted to a PackedInt32Array, where each block of 4 bytes has been converted to a signed 32-bit integer (C++ int32_t).
 
@@ -4735,7 +4735,7 @@ The size of the input array must be a multiple of 4 (size of 32-bit integer). Th
 
 If the original data can't be converted to signed 32-bit integers, the resulting data is undefined.
 
-PackedInt64Array to_int64_array() const 🔗
+PackedInt64Array to_int64_array() const 
 
 Returns a copy of the data converted to a PackedInt64Array, where each block of 8 bytes has been converted to a signed 64-bit integer (C++ int64_t, Godot int).
 
@@ -4743,37 +4743,37 @@ The size of the input array must be a multiple of 8 (size of 64-bit integer). Th
 
 If the original data can't be converted to signed 64-bit integers, the resulting data is undefined.
 
-PackedVector2Array to_vector2_array() const 🔗
+PackedVector2Array to_vector2_array() const 
 
 Returns a copy of the data converted to a PackedVector2Array, where each block of 8 bytes or 16 bytes (32-bit or 64-bit) has been converted to a Vector2 variant.
 
 Note: The size of the input array must be a multiple of 8 or 16 (depending on the build settings, see Vector2 for more details). The size of the new array will be byte_array.size() / (8 or 16). If the original data can't be converted to Vector2 variants, the resulting data is undefined.
 
-PackedVector3Array to_vector3_array() const 🔗
+PackedVector3Array to_vector3_array() const 
 
 Returns a copy of the data converted to a PackedVector3Array, where each block of 12 or 24 bytes (32-bit or 64-bit) has been converted to a Vector3 variant.
 
 Note: The size of the input array must be a multiple of 12 or 24 (depending on the build settings, see Vector3 for more details). The size of the new array will be byte_array.size() / (12 or 24). If the original data can't be converted to Vector3 variants, the resulting data is undefined.
 
-PackedVector4Array to_vector4_array() const 🔗
+PackedVector4Array to_vector4_array() const 
 
 Returns a copy of the data converted to a PackedVector4Array, where each block of 16 or 32 bytes (32-bit or 64-bit) has been converted to a Vector4 variant.
 
 Note: The size of the input array must be a multiple of 16 or 32 (depending on the build settings, see Vector4 for more details). The size of the new array will be byte_array.size() / (16 or 32). If the original data can't be converted to Vector4 variants, the resulting data is undefined.
 
-bool operator !=(right: PackedByteArray) 🔗
+bool operator !=(right: PackedByteArray) 
 
 Returns true if contents of the arrays differ.
 
-PackedByteArray operator +(right: PackedByteArray) 🔗
+PackedByteArray operator +(right: PackedByteArray) 
 
 Returns a new PackedByteArray with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedByteArray) 🔗
+bool operator ==(right: PackedByteArray) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal bytes at the corresponding indices.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Returns the byte at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -4862,7 +4862,7 @@ operator ==(right: PackedColorArray)
 
 operator [](index: int)
 
-PackedColorArray PackedColorArray() 🔗
+PackedColorArray PackedColorArray() 
 
 Constructs an empty PackedColorArray.
 
@@ -4876,15 +4876,15 @@ Constructs a new PackedColorArray. Optionally, you can pass in a generic Array t
 
 Note: When initializing a PackedColorArray with elements, it must be initialized with an Array of Color values:
 
-bool append(value: Color) 🔗
+bool append(value: Color) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedColorArray) 🔗
+void append_array(array: PackedColorArray) 
 
 Appends a PackedColorArray at the end of this array.
 
-int bsearch(value: Color, before: bool = true) 🔗
+int bsearch(value: Color, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -4892,53 +4892,53 @@ Note: Calling bsearch() on an unsorted array results in unexpected behavior.
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: Color) const 🔗
+int count(value: Color) const 
 
 Returns the number of times an element is in the array.
 
-PackedColorArray duplicate() 🔗
+PackedColorArray duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: Color) 🔗
+bool erase(value: Color) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
-void fill(value: Color) 🔗
+void fill(value: Color) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: Color, from: int = 0) const 🔗
+int find(value: Color, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
-Color get(index: int) const 🔗
+Color get(index: int) const 
 
 Returns the Color at the given index in the array. If index out-of-bounds or negative, this method fails and returns Color(0, 0, 0, 1).
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: Color) const 🔗
+bool has(value: Color) const 
 
 Returns true if the array contains value.
 
-int insert(at_index: int, value: Color) 🔗
+int insert(at_index: int, value: Color) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: Color) 🔗
+bool push_back(value: Color) 
 
 Appends a value to the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -4946,17 +4946,17 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: Color, from: int = -1) const 🔗
+int rfind(value: Color, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
-void set(index: int, value: Color) 🔗
+void set(index: int, value: Color) 
 
 Changes the Color at the given index.
 
 Returns the number of elements in the array.
 
-PackedColorArray slice(begin: int, end: int = 2147483647) const 🔗
+PackedColorArray slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedColorArray, from begin (inclusive) to end (exclusive), as a new PackedColorArray.
 
@@ -4966,23 +4966,23 @@ If either begin or end are negative, they will be relative to the end of the arr
 
 Sorts the elements of the array in ascending order.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a PackedByteArray with each color encoded as bytes.
 
-bool operator !=(right: PackedColorArray) 🔗
+bool operator !=(right: PackedColorArray) 
 
 Returns true if contents of the arrays differ.
 
-PackedColorArray operator +(right: PackedColorArray) 🔗
+PackedColorArray operator +(right: PackedColorArray) 
 
 Returns a new PackedColorArray with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedColorArray) 🔗
+bool operator ==(right: PackedColorArray) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal Colors at the corresponding indices.
 
-Color operator [](index: int) 🔗
+Color operator [](index: int) 
 
 Returns the Color at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -5062,7 +5062,7 @@ operator ==(right: PackedFloat32Array)
 
 operator [](index: int)
 
-PackedFloat32Array PackedFloat32Array() 🔗
+PackedFloat32Array PackedFloat32Array() 
 
 Constructs an empty PackedFloat32Array.
 
@@ -5074,15 +5074,15 @@ PackedFloat32Array PackedFloat32Array(from: Array)
 
 Constructs a new PackedFloat32Array. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: float) 🔗
+bool append(value: float) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedFloat32Array) 🔗
+void append_array(array: PackedFloat32Array) 
 
 Appends a PackedFloat32Array at the end of this array.
 
-int bsearch(value: float, before: bool = true) 🔗
+int bsearch(value: float, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -5092,61 +5092,61 @@ Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the res
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: float) const 🔗
+int count(value: float) const 
 
 Returns the number of times an element is in the array.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedFloat32Array duplicate() 🔗
+PackedFloat32Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: float) 🔗
+bool erase(value: float) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void fill(value: float) 🔗
+void fill(value: float) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: float, from: int = 0) const 🔗
+int find(value: float, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-float get(index: int) const 🔗
+float get(index: int) const 
 
 Returns the 32-bit float at the given index in the array. If index out-of-bounds or negative, this method fails and returns 0.0.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: float) const 🔗
+bool has(value: float) const 
 
 Returns true if the array contains value.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-int insert(at_index: int, value: float) 🔗
+int insert(at_index: int, value: float) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: float) 🔗
+bool push_back(value: float) 
 
 Appends an element at the end of the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -5154,19 +5154,19 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: float, from: int = -1) const 🔗
+int rfind(value: float, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void set(index: int, value: float) 🔗
+void set(index: int, value: float) 
 
 Changes the float at the given index.
 
 Returns the number of elements in the array.
 
-PackedFloat32Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedFloat32Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedFloat32Array, from begin (inclusive) to end (exclusive), as a new PackedFloat32Array.
 
@@ -5178,25 +5178,25 @@ Sorts the elements of the array in ascending order.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a copy of the data converted to a PackedByteArray, where each element has been encoded as 4 bytes.
 
 The size of the new array will be float32_array.size() * 4.
 
-bool operator !=(right: PackedFloat32Array) 🔗
+bool operator !=(right: PackedFloat32Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedFloat32Array operator +(right: PackedFloat32Array) 🔗
+PackedFloat32Array operator +(right: PackedFloat32Array) 
 
 Returns a new PackedFloat32Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedFloat32Array) 🔗
+bool operator ==(right: PackedFloat32Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal floats at the corresponding indices.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Returns the float at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -5273,7 +5273,7 @@ operator ==(right: PackedFloat64Array)
 
 operator [](index: int)
 
-PackedFloat64Array PackedFloat64Array() 🔗
+PackedFloat64Array PackedFloat64Array() 
 
 Constructs an empty PackedFloat64Array.
 
@@ -5285,15 +5285,15 @@ PackedFloat64Array PackedFloat64Array(from: Array)
 
 Constructs a new PackedFloat64Array. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: float) 🔗
+bool append(value: float) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedFloat64Array) 🔗
+void append_array(array: PackedFloat64Array) 
 
 Appends a PackedFloat64Array at the end of this array.
 
-int bsearch(value: float, before: bool = true) 🔗
+int bsearch(value: float, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -5303,61 +5303,61 @@ Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the res
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: float) const 🔗
+int count(value: float) const 
 
 Returns the number of times an element is in the array.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedFloat64Array duplicate() 🔗
+PackedFloat64Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: float) 🔗
+bool erase(value: float) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void fill(value: float) 🔗
+void fill(value: float) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: float, from: int = 0) const 🔗
+int find(value: float, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-float get(index: int) const 🔗
+float get(index: int) const 
 
 Returns the 64-bit float at the given index in the array. If index out-of-bounds or negative, this method fails and returns 0.0.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: float) const 🔗
+bool has(value: float) const 
 
 Returns true if the array contains value.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-int insert(at_index: int, value: float) 🔗
+int insert(at_index: int, value: float) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: float) 🔗
+bool push_back(value: float) 
 
 Appends an element at the end of the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -5365,19 +5365,19 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: float, from: int = -1) const 🔗
+int rfind(value: float, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void set(index: int, value: float) 🔗
+void set(index: int, value: float) 
 
 Changes the float at the given index.
 
 Returns the number of elements in the array.
 
-PackedFloat64Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedFloat64Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedFloat64Array, from begin (inclusive) to end (exclusive), as a new PackedFloat64Array.
 
@@ -5389,25 +5389,25 @@ Sorts the elements of the array in ascending order.
 
 Note: @GDScript.NAN doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a copy of the data converted to a PackedByteArray, where each element has been encoded as 8 bytes.
 
 The size of the new array will be float64_array.size() * 8.
 
-bool operator !=(right: PackedFloat64Array) 🔗
+bool operator !=(right: PackedFloat64Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedFloat64Array operator +(right: PackedFloat64Array) 🔗
+PackedFloat64Array operator +(right: PackedFloat64Array) 
 
 Returns a new PackedFloat64Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedFloat64Array) 🔗
+bool operator ==(right: PackedFloat64Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal doubles at the corresponding indices.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Returns the float at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -5480,7 +5480,7 @@ operator ==(right: PackedInt32Array)
 
 operator [](index: int)
 
-PackedInt32Array PackedInt32Array() 🔗
+PackedInt32Array PackedInt32Array() 
 
 Constructs an empty PackedInt32Array.
 
@@ -5492,15 +5492,15 @@ PackedInt32Array PackedInt32Array(from: Array)
 
 Constructs a new PackedInt32Array. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: int) 🔗
+bool append(value: int) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedInt32Array) 🔗
+void append_array(array: PackedInt32Array) 
 
 Appends a PackedInt32Array at the end of this array.
 
-int bsearch(value: int, before: bool = true) 🔗
+int bsearch(value: int, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -5508,53 +5508,53 @@ Note: Calling bsearch() on an unsorted array results in unexpected behavior.
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: int) const 🔗
+int count(value: int) const 
 
 Returns the number of times an element is in the array.
 
-PackedInt32Array duplicate() 🔗
+PackedInt32Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: int) 🔗
+bool erase(value: int) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
-void fill(value: int) 🔗
+void fill(value: int) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: int, from: int = 0) const 🔗
+int find(value: int, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
-int get(index: int) const 🔗
+int get(index: int) const 
 
 Returns the 32-bit integer at the given index in the array. If index out-of-bounds or negative, this method fails and returns 0.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: int) const 🔗
+bool has(value: int) const 
 
 Returns true if the array contains value.
 
-int insert(at_index: int, value: int) 🔗
+int insert(at_index: int, value: int) 
 
 Inserts a new integer at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: int) 🔗
+bool push_back(value: int) 
 
 Appends a value to the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -5562,17 +5562,17 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: int, from: int = -1) const 🔗
+int rfind(value: int, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
-void set(index: int, value: int) 🔗
+void set(index: int, value: int) 
 
 Changes the integer at the given index.
 
 Returns the number of elements in the array.
 
-PackedInt32Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedInt32Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedInt32Array, from begin (inclusive) to end (exclusive), as a new PackedInt32Array.
 
@@ -5582,25 +5582,25 @@ If either begin or end are negative, they will be relative to the end of the arr
 
 Sorts the elements of the array in ascending order.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a copy of the data converted to a PackedByteArray, where each element has been encoded as 4 bytes.
 
 The size of the new array will be int32_array.size() * 4.
 
-bool operator !=(right: PackedInt32Array) 🔗
+bool operator !=(right: PackedInt32Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedInt32Array operator +(right: PackedInt32Array) 🔗
+PackedInt32Array operator +(right: PackedInt32Array) 
 
 Returns a new PackedInt32Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedInt32Array) 🔗
+bool operator ==(right: PackedInt32Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal ints at the corresponding indices.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Returns the int at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -5677,7 +5677,7 @@ operator ==(right: PackedInt64Array)
 
 operator [](index: int)
 
-PackedInt64Array PackedInt64Array() 🔗
+PackedInt64Array PackedInt64Array() 
 
 Constructs an empty PackedInt64Array.
 
@@ -5689,15 +5689,15 @@ PackedInt64Array PackedInt64Array(from: Array)
 
 Constructs a new PackedInt64Array. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: int) 🔗
+bool append(value: int) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedInt64Array) 🔗
+void append_array(array: PackedInt64Array) 
 
 Appends a PackedInt64Array at the end of this array.
 
-int bsearch(value: int, before: bool = true) 🔗
+int bsearch(value: int, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -5705,53 +5705,53 @@ Note: Calling bsearch() on an unsorted array results in unexpected behavior.
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: int) const 🔗
+int count(value: int) const 
 
 Returns the number of times an element is in the array.
 
-PackedInt64Array duplicate() 🔗
+PackedInt64Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: int) 🔗
+bool erase(value: int) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
-void fill(value: int) 🔗
+void fill(value: int) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: int, from: int = 0) const 🔗
+int find(value: int, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
-int get(index: int) const 🔗
+int get(index: int) const 
 
 Returns the 64-bit integer at the given index in the array. If index out-of-bounds or negative, this method fails and returns 0.
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: int) const 🔗
+bool has(value: int) const 
 
 Returns true if the array contains value.
 
-int insert(at_index: int, value: int) 🔗
+int insert(at_index: int, value: int) 
 
 Inserts a new integer at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: int) 🔗
+bool push_back(value: int) 
 
 Appends a value to the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -5759,17 +5759,17 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: int, from: int = -1) const 🔗
+int rfind(value: int, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
-void set(index: int, value: int) 🔗
+void set(index: int, value: int) 
 
 Changes the integer at the given index.
 
 Returns the number of elements in the array.
 
-PackedInt64Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedInt64Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedInt64Array, from begin (inclusive) to end (exclusive), as a new PackedInt64Array.
 
@@ -5779,25 +5779,25 @@ If either begin or end are negative, they will be relative to the end of the arr
 
 Sorts the elements of the array in ascending order.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a copy of the data converted to a PackedByteArray, where each element has been encoded as 8 bytes.
 
 The size of the new array will be int64_array.size() * 8.
 
-bool operator !=(right: PackedInt64Array) 🔗
+bool operator !=(right: PackedInt64Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedInt64Array operator +(right: PackedInt64Array) 🔗
+PackedInt64Array operator +(right: PackedInt64Array) 
 
 Returns a new PackedInt64Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedInt64Array) 🔗
+bool operator ==(right: PackedInt64Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal ints at the corresponding indices.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Returns the int at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -5877,7 +5877,7 @@ operator ==(right: PackedStringArray)
 
 operator [](index: int)
 
-PackedStringArray PackedStringArray() 🔗
+PackedStringArray PackedStringArray() 
 
 Constructs an empty PackedStringArray.
 
@@ -5889,15 +5889,15 @@ PackedStringArray PackedStringArray(from: Array)
 
 Constructs a new PackedStringArray. Optionally, you can pass in a generic Array that will be converted.
 
-bool append(value: String) 🔗
+bool append(value: String) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedStringArray) 🔗
+void append_array(array: PackedStringArray) 
 
 Appends a PackedStringArray at the end of this array.
 
-int bsearch(value: String, before: bool = true) 🔗
+int bsearch(value: String, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -5905,53 +5905,53 @@ Note: Calling bsearch() on an unsorted array results in unexpected behavior.
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: String) const 🔗
+int count(value: String) const 
 
 Returns the number of times an element is in the array.
 
-PackedStringArray duplicate() 🔗
+PackedStringArray duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: String) 🔗
+bool erase(value: String) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
-void fill(value: String) 🔗
+void fill(value: String) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: String, from: int = 0) const 🔗
+int find(value: String, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
-String get(index: int) const 🔗
+String get(index: int) const 
 
 Returns the String at the given index in the array. Returns an empty string and prints an error if the access is out of bounds. Negative indices are not supported; they will always consider the value to be out of bounds and return an empty string.
 
 This is similar to using the [] operator (array[index]), except that operator supports negative indices and causes a debugger break if out-of-bounds access is performed.
 
-bool has(value: String) const 🔗
+bool has(value: String) const 
 
 Returns true if the array contains value.
 
-int insert(at_index: int, value: String) 🔗
+int insert(at_index: int, value: String) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: String) 🔗
+bool push_back(value: String) 
 
 Appends a string element at end of the array.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -5959,17 +5959,17 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: String, from: int = -1) const 🔗
+int rfind(value: String, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
-void set(index: int, value: String) 🔗
+void set(index: int, value: String) 
 
 Changes the String at the given index.
 
 Returns the number of elements in the array.
 
-PackedStringArray slice(begin: int, end: int = 2147483647) const 🔗
+PackedStringArray slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedStringArray, from begin (inclusive) to end (exclusive), as a new PackedStringArray.
 
@@ -5979,23 +5979,23 @@ If either begin or end are negative, they will be relative to the end of the arr
 
 Sorts the elements of the array in ascending order.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a PackedByteArray with each string encoded as UTF-8. Strings are null terminated.
 
-bool operator !=(right: PackedStringArray) 🔗
+bool operator !=(right: PackedStringArray) 
 
 Returns true if contents of the arrays differ.
 
-PackedStringArray operator +(right: PackedStringArray) 🔗
+PackedStringArray operator +(right: PackedStringArray) 
 
 Returns a new PackedStringArray with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedStringArray) 🔗
+bool operator ==(right: PackedStringArray) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal Strings at the corresponding indices.
 
-String operator [](index: int) 🔗
+String operator [](index: int) 
 
 Returns the String at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -6090,7 +6090,7 @@ FillMode FILL_BOTTOM_TO_TOP = 3
 
 The progress fills from bottom to top.
 
-bool editor_preview_indeterminate 🔗
+bool editor_preview_indeterminate 
 
 void set_editor_preview_indeterminate(value: bool)
 
@@ -6102,7 +6102,7 @@ void set_fill_mode(value: int)
 
 The fill direction. See FillMode for possible values.
 
-bool indeterminate = false 🔗
+bool indeterminate = false 
 
 void set_indeterminate(value: bool)
 
@@ -6110,7 +6110,7 @@ bool is_indeterminate()
 
 When set to true, the progress bar indicates that something is happening with an animation, but does not show the fill percentage or value.
 
-bool show_percentage = true 🔗
+bool show_percentage = true 
 
 void set_show_percentage(value: bool)
 
@@ -6118,15 +6118,15 @@ bool is_percentage_shown()
 
 If true, the fill percentage is displayed on the bar.
 
-Color font_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_color = Color(0.95, 0.95, 0.95, 1) 
 
 The color of the text.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the ProgressBar.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
@@ -6136,7 +6136,7 @@ Font used to draw the fill percentage if show_percentage is true.
 
 Font size used to draw the fill percentage if show_percentage is true.
 
-StyleBox background 🔗
+StyleBox background 
 
 The style of the background.
 
@@ -6484,7 +6484,7 @@ Abstract base class for scrollbars, typically used to navigate through content t
 
 Emitted when the scrollbar is being scrolled.
 
-float custom_step = -1.0 🔗
+float custom_step = -1.0 
 
 void set_custom_step(value: float)
 
@@ -6492,43 +6492,43 @@ float get_custom_step()
 
 Overrides the step used when clicking increment and decrement buttons or when using arrow keys when the ScrollBar is focused.
 
-Texture2D decrement 🔗
+Texture2D decrement 
 
 Icon used as a button to scroll the ScrollBar left/up. Supports custom step using the custom_step property.
 
-Texture2D decrement_highlight 🔗
+Texture2D decrement_highlight 
 
 Displayed when the mouse cursor hovers over the decrement button.
 
-Texture2D decrement_pressed 🔗
+Texture2D decrement_pressed 
 
 Displayed when the decrement button is being pressed.
 
-Texture2D increment 🔗
+Texture2D increment 
 
 Icon used as a button to scroll the ScrollBar right/down. Supports custom step using the custom_step property.
 
-Texture2D increment_highlight 🔗
+Texture2D increment_highlight 
 
 Displayed when the mouse cursor hovers over the increment button.
 
-Texture2D increment_pressed 🔗
+Texture2D increment_pressed 
 
 Displayed when the increment button is being pressed.
 
 Used as texture for the grabber, the draggable element representing current scroll.
 
-StyleBox grabber_highlight 🔗
+StyleBox grabber_highlight 
 
 Used when the mouse hovers over the grabber.
 
-StyleBox grabber_pressed 🔗
+StyleBox grabber_pressed 
 
 Used when the grabber is being dragged.
 
 Used as background of this ScrollBar.
 
-StyleBox scroll_focus 🔗
+StyleBox scroll_focus 
 
 Used as background when the ScrollBar has the GUI focus.
 
@@ -6744,7 +6744,7 @@ set_dropcap(text: String, font: Font, font_size: int, dropcap_margins: Rect2 = R
 
 tab_align(tab_stops: PackedFloat32Array)
 
-HorizontalAlignment alignment = 0 🔗
+HorizontalAlignment alignment = 0 
 
 void set_alignment(value: HorizontalAlignment)
 
@@ -6752,7 +6752,7 @@ HorizontalAlignment get_alignment()
 
 Paragraph horizontal alignment.
 
-BitField[LineBreakFlag] break_flags = 3 🔗
+BitField[LineBreakFlag] break_flags = 3 
 
 void set_break_flags(value: BitField[LineBreakFlag])
 
@@ -6760,7 +6760,7 @@ BitField[LineBreakFlag] get_break_flags()
 
 Line breaking rules. For more info see TextServer.
 
-String custom_punctuation = "" 🔗
+String custom_punctuation = "" 
 
 void set_custom_punctuation(value: String)
 
@@ -6768,7 +6768,7 @@ String get_custom_punctuation()
 
 Custom punctuation character list, used for word breaking. If set to empty string, server defaults are used.
 
-Direction direction = 0 🔗
+Direction direction = 0 
 
 void set_direction(value: Direction)
 
@@ -6776,7 +6776,7 @@ Direction get_direction()
 
 Text writing direction.
 
-String ellipsis_char = "…" 🔗
+String ellipsis_char = "…" 
 
 void set_ellipsis_char(value: String)
 
@@ -6784,7 +6784,7 @@ String get_ellipsis_char()
 
 Ellipsis character used for text clipping.
 
-BitField[JustificationFlag] justification_flags = 163 🔗
+BitField[JustificationFlag] justification_flags = 163 
 
 void set_justification_flags(value: BitField[JustificationFlag])
 
@@ -6792,7 +6792,7 @@ BitField[JustificationFlag] get_justification_flags()
 
 Line fill alignment rules.
 
-float line_spacing = 0.0 🔗
+float line_spacing = 0.0 
 
 void set_line_spacing(value: float)
 
@@ -6800,7 +6800,7 @@ float get_line_spacing()
 
 Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
-int max_lines_visible = -1 🔗
+int max_lines_visible = -1 
 
 void set_max_lines_visible(value: int)
 
@@ -6808,13 +6808,13 @@ int get_max_lines_visible()
 
 Limits the lines of text shown.
 
-Orientation orientation = 0 🔗
+Orientation orientation = 0 
 
 void set_orientation(value: Orientation)
 
 Orientation get_orientation()
 
-bool preserve_control = false 🔗
+bool preserve_control = false 
 
 void set_preserve_control(value: bool)
 
@@ -6822,7 +6822,7 @@ bool get_preserve_control()
 
 If set to true text will display control characters.
 
-bool preserve_invalid = true 🔗
+bool preserve_invalid = true 
 
 void set_preserve_invalid(value: bool)
 
@@ -6830,7 +6830,7 @@ bool get_preserve_invalid()
 
 If set to true text will display invalid characters.
 
-OverrunBehavior text_overrun_behavior = 0 🔗
+OverrunBehavior text_overrun_behavior = 0 
 
 void set_text_overrun_behavior(value: OverrunBehavior)
 
@@ -6840,137 +6840,137 @@ The clipping behavior when the text exceeds the paragraph's set width.
 
 void set_width(value: float)
 
-bool add_object(key: Variant, size: Vector2, inline_align: InlineAlignment = 5, length: int = 1, baseline: float = 0.0) 🔗
+bool add_object(key: Variant, size: Vector2, inline_align: InlineAlignment = 5, length: int = 1, baseline: float = 0.0) 
 
 Adds inline object to the text buffer, key must be unique. In the text, object is represented as length object replacement characters.
 
-bool add_string(text: String, font: Font, font_size: int, language: String = "", meta: Variant = null) 🔗
+bool add_string(text: String, font: Font, font_size: int, language: String = "", meta: Variant = null) 
 
 Adds text span and font to draw it.
 
 Clears text paragraph (removes text and inline objects).
 
-void clear_dropcap() 🔗
+void clear_dropcap() 
 
-void draw(canvas: RID, pos: Vector2, color: Color = Color(1, 1, 1, 1), dc_color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw(canvas: RID, pos: Vector2, color: Color = Color(1, 1, 1, 1), dc_color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw all lines of the text and drop cap into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_dropcap(canvas: RID, pos: Vector2, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_dropcap(canvas: RID, pos: Vector2, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw drop cap into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_dropcap_outline(canvas: RID, pos: Vector2, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_dropcap_outline(canvas: RID, pos: Vector2, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw drop cap outline into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_line(canvas: RID, pos: Vector2, line: int, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_line(canvas: RID, pos: Vector2, line: int, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw single line of text into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_line_outline(canvas: RID, pos: Vector2, line: int, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_line_outline(canvas: RID, pos: Vector2, line: int, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw outline of the single line of text into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_outline(canvas: RID, pos: Vector2, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), dc_color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_outline(canvas: RID, pos: Vector2, outline_size: int = 1, color: Color = Color(1, 1, 1, 1), dc_color: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draw outlines of all lines of the text and drop cap into a canvas item at a given position, with color. pos specifies the top left corner of the bounding box. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-int get_dropcap_lines() const 🔗
+int get_dropcap_lines() const 
 
 Returns number of lines used by dropcap.
 
-RID get_dropcap_rid() const 🔗
+RID get_dropcap_rid() const 
 
 Returns drop cap text buffer RID.
 
-Vector2 get_dropcap_size() const 🔗
+Vector2 get_dropcap_size() const 
 
 Returns drop cap bounding box size.
 
-Direction get_inferred_direction() const 🔗
+Direction get_inferred_direction() const 
 
 Returns the text writing direction inferred by the BiDi algorithm.
 
-float get_line_ascent(line: int) const 🔗
+float get_line_ascent(line: int) const 
 
 Returns the text line ascent (number of pixels above the baseline for horizontal layout or to the left of baseline for vertical).
 
-int get_line_count() const 🔗
+int get_line_count() const 
 
 Returns number of lines in the paragraph.
 
-float get_line_descent(line: int) const 🔗
+float get_line_descent(line: int) const 
 
 Returns the text line descent (number of pixels below the baseline for horizontal layout or to the right of baseline for vertical).
 
-Rect2 get_line_object_rect(line: int, key: Variant) const 🔗
+Rect2 get_line_object_rect(line: int, key: Variant) const 
 
 Returns bounding rectangle of the inline object.
 
-Array get_line_objects(line: int) const 🔗
+Array get_line_objects(line: int) const 
 
 Returns array of inline objects in the line.
 
-Vector2i get_line_range(line: int) const 🔗
+Vector2i get_line_range(line: int) const 
 
 Returns character range of the line.
 
-RID get_line_rid(line: int) const 🔗
+RID get_line_rid(line: int) const 
 
 Returns TextServer line buffer RID.
 
-Vector2 get_line_size(line: int) const 🔗
+Vector2 get_line_size(line: int) const 
 
 Returns size of the bounding box of the line of text. Returned size is rounded up.
 
-float get_line_underline_position(line: int) const 🔗
+float get_line_underline_position(line: int) const 
 
 Returns pixel offset of the underline below the baseline.
 
-float get_line_underline_thickness(line: int) const 🔗
+float get_line_underline_thickness(line: int) const 
 
 Returns thickness of the underline.
 
-float get_line_width(line: int) const 🔗
+float get_line_width(line: int) const 
 
 Returns width (for horizontal layout) or height (for vertical) of the line of text.
 
-Vector2 get_non_wrapped_size() const 🔗
+Vector2 get_non_wrapped_size() const 
 
 Returns the size of the bounding box of the paragraph, without line breaks.
 
-Vector2i get_range() const 🔗
+Vector2i get_range() const 
 
 Returns the character range of the paragraph.
 
-RID get_rid() const 🔗
+RID get_rid() const 
 
 Returns TextServer full string buffer RID.
 
-Vector2 get_size() const 🔗
+Vector2 get_size() const 
 
 Returns the size of the bounding box of the paragraph.
 
-int hit_test(coords: Vector2) const 🔗
+int hit_test(coords: Vector2) const 
 
 Returns caret character offset at the specified coordinates. This function always returns a valid position.
 
-bool resize_object(key: Variant, size: Vector2, inline_align: InlineAlignment = 5, baseline: float = 0.0) 🔗
+bool resize_object(key: Variant, size: Vector2, inline_align: InlineAlignment = 5, baseline: float = 0.0) 
 
 Sets new size and alignment of embedded object.
 
-void set_bidi_override(override: Array) 🔗
+void set_bidi_override(override: Array) 
 
 Overrides BiDi for the structured text.
 
 Override ranges should cover full source text without overlaps. BiDi algorithm will be used on each range separately.
 
-bool set_dropcap(text: String, font: Font, font_size: int, dropcap_margins: Rect2 = Rect2(0, 0, 0, 0), language: String = "") 🔗
+bool set_dropcap(text: String, font: Font, font_size: int, dropcap_margins: Rect2 = Rect2(0, 0, 0, 0), language: String = "") 
 
 Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
 
-void tab_align(tab_stops: PackedFloat32Array) 🔗
+void tab_align(tab_stops: PackedFloat32Array) 
 
 Aligns paragraph to the given tab-stops.
 
@@ -7107,73 +7107,73 @@ NodeType NODE_UNKNOWN = 6
 
 An unknown node type.
 
-int get_attribute_count() const 🔗
+int get_attribute_count() const 
 
 Returns the number of attributes in the currently parsed element.
 
 Note: If this method is used while the currently parsed node is not NODE_ELEMENT or NODE_ELEMENT_END, this count will not be updated and will still reflect the last element.
 
-String get_attribute_name(idx: int) const 🔗
+String get_attribute_name(idx: int) const 
 
 Returns the name of an attribute of the currently parsed element, specified by the idx index.
 
-String get_attribute_value(idx: int) const 🔗
+String get_attribute_value(idx: int) const 
 
 Returns the value of an attribute of the currently parsed element, specified by the idx index.
 
-int get_current_line() const 🔗
+int get_current_line() const 
 
 Returns the current line in the parsed file, counting from 0.
 
-String get_named_attribute_value(name: String) const 🔗
+String get_named_attribute_value(name: String) const 
 
 Returns the value of an attribute of the currently parsed element, specified by its name. This method will raise an error if the element has no such attribute.
 
-String get_named_attribute_value_safe(name: String) const 🔗
+String get_named_attribute_value_safe(name: String) const 
 
 Returns the value of an attribute of the currently parsed element, specified by its name. This method will return an empty string if the element has no such attribute.
 
-String get_node_data() const 🔗
+String get_node_data() const 
 
 Returns the contents of a text node. This method will raise an error if the current parsed node is of any other type.
 
-String get_node_name() const 🔗
+String get_node_name() const 
 
 Returns the name of a node. This method will raise an error if the currently parsed node is a text node.
 
 Note: The content of a NODE_CDATA node and the comment string of a NODE_COMMENT node are also considered names.
 
-int get_node_offset() const 🔗
+int get_node_offset() const 
 
 Returns the byte offset of the currently parsed node since the beginning of the file or buffer. This is usually equivalent to the number of characters before the read position.
 
-NodeType get_node_type() 🔗
+NodeType get_node_type() 
 
 Returns the type of the current node. Compare with NodeType constants.
 
-bool has_attribute(name: String) const 🔗
+bool has_attribute(name: String) const 
 
 Returns true if the currently parsed element has an attribute with the name.
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the currently parsed element is empty, e.g. <element />.
 
-Error open(file: String) 🔗
+Error open(file: String) 
 
 Opens an XML file for parsing. This method returns an error code.
 
-Error open_buffer(buffer: PackedByteArray) 🔗
+Error open_buffer(buffer: PackedByteArray) 
 
 Opens an XML raw buffer for parsing. This method returns an error code.
 
 Parses the next node in the file. This method returns an error code.
 
-Error seek(position: int) 🔗
+Error seek(position: int) 
 
 Moves the buffer cursor to a certain offset (since the beginning) and reads the next node there. This method returns an error code.
 
-void skip_section() 🔗
+void skip_section() 
 
 Skips the current section. If the currently parsed node contains more inner nodes, they will be ignored and the cursor will go to the closing of the current element.
 
@@ -7246,7 +7246,7 @@ get_blend_shape(blend_shape: BlendShapeEntry) const
 
 set_blend_shape(blend_shape: BlendShapeEntry, weight: float)
 
-enum BlendShapeEntry: 🔗
+enum BlendShapeEntry: 
 
 BlendShapeEntry FT_EYE_LOOK_OUT_RIGHT = 0
 
@@ -7788,7 +7788,7 @@ BlendShapeEntry FT_MAX = 143
 
 Represents the size of the BlendShapeEntry enum.
 
-PackedFloat32Array blend_shapes = PackedFloat32Array() 🔗
+PackedFloat32Array blend_shapes = PackedFloat32Array() 
 
 void set_blend_shapes(value: PackedFloat32Array)
 
@@ -7798,11 +7798,11 @@ The array of face blend shape weights with indices corresponding to the BlendSha
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedFloat32Array for more details.
 
-float get_blend_shape(blend_shape: BlendShapeEntry) const 🔗
+float get_blend_shape(blend_shape: BlendShapeEntry) const 
 
 Returns the requested face blend shape weight.
 
-void set_blend_shape(blend_shape: BlendShapeEntry, weight: float) 🔗
+void set_blend_shape(blend_shape: BlendShapeEntry, weight: float) 
 
 Sets a face blend shape weight.
 
@@ -7850,31 +7850,31 @@ set_input(name: StringName, value: Variant)
 
 set_pose(name: StringName, transform: Transform3D, linear_velocity: Vector3, angular_velocity: Vector3, tracking_confidence: TrackingConfidence)
 
-button_pressed(name: String) 🔗
+button_pressed(name: String) 
 
 Emitted when a button on this tracker is pressed. Note that many XR runtimes allow other inputs to be mapped to buttons.
 
-button_released(name: String) 🔗
+button_released(name: String) 
 
 Emitted when a button on this tracker is released.
 
-input_float_changed(name: String, value: float) 🔗
+input_float_changed(name: String, value: float) 
 
 Emitted when a trigger or similar input on this tracker changes value.
 
-input_vector2_changed(name: String, vector: Vector2) 🔗
+input_vector2_changed(name: String, vector: Vector2) 
 
 Emitted when a thumbstick or thumbpad on this tracker moves.
 
-pose_changed(pose: XRPose) 🔗
+pose_changed(pose: XRPose) 
 
 Emitted when the state of a pose tracked by this tracker changes.
 
-pose_lost_tracking(pose: XRPose) 🔗
+pose_lost_tracking(pose: XRPose) 
 
 Emitted when a pose tracked by this tracker stops getting updated tracking data.
 
-profile_changed(role: String) 🔗
+profile_changed(role: String) 
 
 Emitted when the profile of our tracker changes.
 
@@ -7894,7 +7894,7 @@ TrackerHand TRACKER_HAND_MAX = 3
 
 Represents the size of the TrackerHand enum.
 
-TrackerHand hand = 0 🔗
+TrackerHand hand = 0 
 
 void set_tracker_hand(value: TrackerHand)
 
@@ -7902,7 +7902,7 @@ TrackerHand get_tracker_hand()
 
 Defines which hand this tracker relates to.
 
-String profile = "" 🔗
+String profile = "" 
 
 void set_tracker_profile(value: String)
 
@@ -7910,31 +7910,31 @@ String get_tracker_profile()
 
 The profile associated with this tracker, interface dependent but will indicate the type of controller being tracked.
 
-Variant get_input(name: StringName) const 🔗
+Variant get_input(name: StringName) const 
 
 Deprecated: Use through XRControllerTracker.
 
 Returns an input for this tracker. It can return a boolean, float or Vector2 value depending on whether the input is a button, trigger or thumbstick/thumbpad.
 
-XRPose get_pose(name: StringName) const 🔗
+XRPose get_pose(name: StringName) const 
 
 Returns the current XRPose state object for the bound name pose.
 
-bool has_pose(name: StringName) const 🔗
+bool has_pose(name: StringName) const 
 
 Returns true if the tracker is available and is currently tracking the bound name pose.
 
-void invalidate_pose(name: StringName) 🔗
+void invalidate_pose(name: StringName) 
 
 Marks this pose as invalid, we don't clear the last reported state but it allows users to decide if trackers need to be hidden if we lose tracking or just remain at their last known position.
 
-void set_input(name: StringName, value: Variant) 🔗
+void set_input(name: StringName, value: Variant) 
 
 Deprecated: Use through XRControllerTracker.
 
 Changes the value for the given input. This method is called by an XRInterface implementation and should not be used directly.
 
-void set_pose(name: StringName, transform: Transform3D, linear_velocity: Vector3, angular_velocity: Vector3, tracking_confidence: TrackingConfidence) 🔗
+void set_pose(name: StringName, transform: Transform3D, linear_velocity: Vector3, angular_velocity: Vector3, tracking_confidence: TrackingConfidence) 
 
 Sets the transform, linear velocity, angular velocity and tracking confidence for the given pose. This method is called by an XRInterface implementation and should not be used directly.
 
@@ -7994,27 +7994,27 @@ remove_interface(interface: XRInterface)
 
 remove_tracker(tracker: XRTracker)
 
-interface_added(interface_name: StringName) 🔗
+interface_added(interface_name: StringName) 
 
 Emitted when a new interface has been added.
 
-interface_removed(interface_name: StringName) 🔗
+interface_removed(interface_name: StringName) 
 
 Emitted when an interface is removed.
 
-reference_frame_changed() 🔗
+reference_frame_changed() 
 
 Emitted when the reference frame transform changes.
 
-tracker_added(tracker_name: StringName, type: int) 🔗
+tracker_added(tracker_name: StringName, type: int) 
 
 Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using XRAnchor3Ds for an AR solution, it is important to react to this signal to add the appropriate XRController3D or XRAnchor3D nodes related to this new tracker.
 
-tracker_removed(tracker_name: StringName, type: int) 🔗
+tracker_removed(tracker_name: StringName, type: int) 
 
 Emitted when a tracker is removed. You should remove any XRController3D or XRAnchor3D points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 
-tracker_updated(tracker_name: StringName, type: int) 🔗
+tracker_updated(tracker_name: StringName, type: int) 
 
 Emitted when an existing tracker has been updated. This can happen if the user switches controllers.
 
@@ -8070,7 +8070,7 @@ RotationMode DONT_RESET_ROTATION = 2
 
 Does not reset the orientation of the HMD, only the position of the player gets centered.
 
-bool camera_locked_to_origin = false 🔗
+bool camera_locked_to_origin = false 
 
 void set_camera_locked_to_origin(value: bool)
 
@@ -8080,7 +8080,7 @@ If set to true, the scene will be rendered as if the camera is locked to the XRO
 
 Note: This doesn't provide a very comfortable experience for users. This setting exists for doing benchmarking or automated testing, where you want to control what is rendered via code.
 
-XRInterface primary_interface 🔗
+XRInterface primary_interface 
 
 void set_primary_interface(value: XRInterface)
 
@@ -8088,7 +8088,7 @@ XRInterface get_primary_interface()
 
 The primary XRInterface currently bound to the XRServer.
 
-Transform3D world_origin = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 🔗
+Transform3D world_origin = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 
 
 void set_world_origin(value: Transform3D)
 
@@ -8098,7 +8098,7 @@ The current origin of our tracking space in the virtual world. This is used by t
 
 Note: This property is managed by the current XROrigin3D node. It is exposed for access from GDExtensions.
 
-float world_scale = 1.0 🔗
+float world_scale = 1.0 
 
 void set_world_scale(value: float)
 
@@ -8106,15 +8106,15 @@ float get_world_scale()
 
 The scale of the game world compared to the real world. By default, most AR/VR platforms assume that 1 game unit corresponds to 1 real world meter.
 
-void add_interface(interface: XRInterface) 🔗
+void add_interface(interface: XRInterface) 
 
 Registers an XRInterface object.
 
-void add_tracker(tracker: XRTracker) 🔗
+void add_tracker(tracker: XRTracker) 
 
 Registers a new XRTracker that tracks a physical object.
 
-void center_on_hmd(rotation_mode: RotationMode, keep_height: bool) 🔗
+void center_on_hmd(rotation_mode: RotationMode, keep_height: bool) 
 
 This is an important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
 
@@ -8128,47 +8128,47 @@ For this method to produce usable results, tracking information must be availabl
 
 You should call this method after a few seconds have passed. For example, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
 
-void clear_reference_frame() 🔗
+void clear_reference_frame() 
 
 Clears the reference frame that was set by previous calls to center_on_hmd().
 
-XRInterface find_interface(name: String) const 🔗
+XRInterface find_interface(name: String) const 
 
 Finds an interface by its name. For example, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
 
-Transform3D get_hmd_transform() 🔗
+Transform3D get_hmd_transform() 
 
 Returns the primary interface's transformation.
 
-XRInterface get_interface(idx: int) const 🔗
+XRInterface get_interface(idx: int) const 
 
 Returns the interface registered at the given idx index in the list of interfaces.
 
-int get_interface_count() const 🔗
+int get_interface_count() const 
 
 Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns true.
 
-Array[Dictionary] get_interfaces() const 🔗
+Array[Dictionary] get_interfaces() const 
 
 Returns a list of available interfaces the ID and name of each interface.
 
-Transform3D get_reference_frame() const 🔗
+Transform3D get_reference_frame() const 
 
 Returns the reference frame transform. Mostly used internally and exposed for GDExtension build interfaces.
 
-XRTracker get_tracker(tracker_name: StringName) const 🔗
+XRTracker get_tracker(tracker_name: StringName) const 
 
 Returns the positional tracker with the given tracker_name.
 
-Dictionary get_trackers(tracker_types: int) 🔗
+Dictionary get_trackers(tracker_types: int) 
 
 Returns a dictionary of trackers for tracker_types.
 
-void remove_interface(interface: XRInterface) 🔗
+void remove_interface(interface: XRInterface) 
 
 Removes this interface.
 
-void remove_tracker(tracker: XRTracker) 🔗
+void remove_tracker(tracker: XRTracker) 
 
 Removes this tracker.
 
@@ -8196,7 +8196,7 @@ This object is the base of all XR trackers.
 
 XR documentation index
 
-String description = "" 🔗
+String description = "" 
 
 void set_tracker_desc(value: String)
 
@@ -8204,7 +8204,7 @@ String get_tracker_desc()
 
 The description of this tracker.
 
-StringName name = &"Unknown" 🔗
+StringName name = &"Unknown" 
 
 void set_tracker_name(value: StringName)
 
@@ -8226,7 +8226,7 @@ The unique name of this tracker. The trackers that are available differ between 
 
 "/user/face_tracker" identifies the XRFaceTracker for the player's face
 
-TrackerType type = 128 🔗
+TrackerType type = 128 
 
 void set_tracker_type(value: TrackerType)
 
@@ -8255,7 +8255,7 @@ This class is used by various XR interfaces to generate VRS textures that can be
 
 make_vrs_texture(target_size: Vector2, eye_foci: PackedVector2Array)
 
-float vrs_min_radius = 20.0 🔗
+float vrs_min_radius = 20.0 
 
 void set_vrs_min_radius(value: float)
 
@@ -8263,7 +8263,7 @@ float get_vrs_min_radius()
 
 The minimum radius around the focal point where full quality is guaranteed if VRS is used as a percentage of screen size.
 
-Rect2i vrs_render_region = Rect2i(0, 0, 0, 0) 🔗
+Rect2i vrs_render_region = Rect2i(0, 0, 0, 0) 
 
 void set_vrs_render_region(value: Rect2i)
 
@@ -8271,7 +8271,7 @@ Rect2i get_vrs_render_region()
 
 The render region that the VRS texture will be scaled to when generated.
 
-float vrs_strength = 1.0 🔗
+float vrs_strength = 1.0 
 
 void set_vrs_strength(value: float)
 
@@ -8279,7 +8279,7 @@ float get_vrs_strength()
 
 The strength used to calculate the VRS density map. The greater this value, the more noticeable VRS is.
 
-RID make_vrs_texture(target_size: Vector2, eye_foci: PackedVector2Array) 🔗
+RID make_vrs_texture(target_size: Vector2, eye_foci: PackedVector2Array) 
 
 Generates the VRS texture based on a render target_size adjusted by our VRS tile size. For each eyes focal point passed in eye_foci a layer is created. Focal point should be in NDC.
 

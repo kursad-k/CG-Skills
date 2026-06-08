@@ -2798,7 +2798,7 @@ In the example above (as part of our Import Options), we imported Materials and 
 
 Well done! You've learned how to prepare meshes for import into UE5.
 
-✓ Click here if you want to learn more about the FBX content pipeline..
+ Click here if you want to learn more about the FBX content pipeline..
 
 Clean modeling improves a game's performance.
 
@@ -2926,7 +2926,7 @@ Changing Material used by your Actor
 
 We've now reached the end of the Artist Quick Start Guide. By now, you should have the skills needed to:
 
-✓ Set-up a Project ✓ Create Materials ✓ Edit Materials ✓ Apply Materials to a Static Mesh Actor
+ Set-up a Project  Create Materials  Edit Materials  Apply Materials to a Static Mesh Actor
 
 Are you ready to do some exercises on your own?
 
@@ -45375,7 +45375,7 @@ Throughout this documentation page, assume a template type T.
 
 § See the TStrongObjectPtr section below for more information.
 
-❡ Since TStrongObjectPtr cannot be marked as a UPROPERTY, it affects garbage collection everywhere (on the stack, captured in lambdas, etc.).
+ Since TStrongObjectPtr cannot be marked as a UPROPERTY, it affects garbage collection everywhere (on the stack, captured in lambdas, etc.).
 
 Below is a quick guide to determine which pointer to use for the most common use-cases. TLazyObjectPtr is omitted from the following table as it is deprecated.
 

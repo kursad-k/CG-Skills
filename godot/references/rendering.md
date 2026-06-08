@@ -146,7 +146,7 @@ exposure_shutter_speed
 
 frustum_focus_distance
 
-float auto_exposure_max_exposure_value = 10.0 🔗
+float auto_exposure_max_exposure_value = 10.0 
 
 void set_auto_exposure_max_exposure_value(value: float)
 
@@ -154,7 +154,7 @@ float get_auto_exposure_max_exposure_value()
 
 The maximum luminance (in EV100) used when calculating auto exposure. When calculating scene average luminance, color values will be clamped to at least this value. This limits the auto-exposure from exposing below a certain brightness, resulting in a cut off point where the scene will remain bright.
 
-float auto_exposure_min_exposure_value = -8.0 🔗
+float auto_exposure_min_exposure_value = -8.0 
 
 void set_auto_exposure_min_exposure_value(value: float)
 
@@ -162,7 +162,7 @@ float get_auto_exposure_min_exposure_value()
 
 The minimum luminance (in EV100) used when calculating auto exposure. When calculating scene average luminance, color values will be clamped to at least this value. This limits the auto-exposure from exposing above a certain brightness, resulting in a cut off point where the scene will remain dark.
 
-float exposure_aperture = 16.0 🔗
+float exposure_aperture = 16.0 
 
 void set_aperture(value: float)
 
@@ -170,7 +170,7 @@ Size of the aperture of the camera, measured in f-stops. An f-stop is a unitless
 
 Only available when ProjectSettings.rendering/lights_and_shadows/use_physical_light_units is enabled.
 
-float exposure_shutter_speed = 100.0 🔗
+float exposure_shutter_speed = 100.0 
 
 void set_shutter_speed(value: float)
 
@@ -180,13 +180,13 @@ Time for shutter to open and close, evaluated as 1 / shutter_speed seconds. A hi
 
 Only available when ProjectSettings.rendering/lights_and_shadows/use_physical_light_units is enabled.
 
-float frustum_far = 4000.0 🔗
+float frustum_far = 4000.0 
 
 void set_far(value: float)
 
 Override value for Camera3D.far. Used internally when calculating depth of field. When attached to a Camera3D as its Camera3D.attributes, it will override the Camera3D.far property.
 
-float frustum_focal_length = 35.0 🔗
+float frustum_focal_length = 35.0 
 
 void set_focal_length(value: float)
 
@@ -194,7 +194,7 @@ float get_focal_length()
 
 Distance between camera lens and camera aperture, measured in millimeters. Controls field of view and depth of field. A larger focal length will result in a smaller field of view and a narrower depth of field meaning fewer objects will be in focus. A smaller focal length will result in a wider field of view and a larger depth of field meaning more objects will be in focus. When attached to a Camera3D as its Camera3D.attributes, it will override the Camera3D.fov property and the Camera3D.keep_aspect property.
 
-float frustum_focus_distance = 10.0 🔗
+float frustum_focus_distance = 10.0 
 
 void set_focus_distance(value: float)
 
@@ -202,13 +202,13 @@ float get_focus_distance()
 
 Distance from camera of object that will be in focus, measured in meters. Internally this will be clamped to be at least 1 millimeter larger than frustum_focal_length.
 
-float frustum_near = 0.05 🔗
+float frustum_near = 0.05 
 
 void set_near(value: float)
 
 Override value for Camera3D.near. Used internally when calculating depth of field. When attached to a Camera3D as its Camera3D.attributes, it will override the Camera3D.near property.
 
-float get_fov() const 🔗
+float get_fov() const 
 
 Returns the vertical field of view that corresponds to the frustum_focal_length. This value is calculated internally whenever frustum_focal_length is changed.
 
@@ -297,13 +297,13 @@ FeedPosition FEED_BACK = 2
 
 Camera is mounted at the back of the device.
 
-bool feed_is_active = false 🔗
+bool feed_is_active = false 
 
 void set_active(value: bool)
 
 If true, the feed is active.
 
-Transform2D feed_transform = Transform2D(1, 0, 0, -1, 0, 1) 🔗
+Transform2D feed_transform = Transform2D(1, 0, 0, -1, 0, 1) 
 
 void set_transform(value: Transform2D)
 
@@ -313,37 +313,37 @@ The transform applied to the camera's image.
 
 Formats supported by the feed. Each entry is a Dictionary describing format parameters.
 
-bool _activate_feed() virtual 🔗
+bool _activate_feed() virtual 
 
 Called when the camera feed is activated.
 
-void _deactivate_feed() virtual 🔗
+void _deactivate_feed() virtual 
 
 Called when the camera feed is deactivated.
 
-FeedDataType get_datatype() const 🔗
+FeedDataType get_datatype() const 
 
 Returns feed image data type.
 
 Returns the unique ID for this feed.
 
-String get_name() const 🔗
+String get_name() const 
 
 Returns the camera's name.
 
-FeedPosition get_position() const 🔗
+FeedPosition get_position() const 
 
 Returns the position of camera on the device.
 
-int get_texture_tex_id(feed_image_type: FeedImage) 🔗
+int get_texture_tex_id(feed_image_type: FeedImage) 
 
 Returns the texture backend ID (usable by some external libraries that need a handle to a texture to write data).
 
-void set_external(width: int, height: int) 🔗
+void set_external(width: int, height: int) 
 
 Sets the feed as external feed provided by another library.
 
-bool set_format(index: int, parameters: Dictionary) 🔗
+bool set_format(index: int, parameters: Dictionary) 
 
 Sets the feed format parameters for the given index in the formats array. Returns true on success. By default, the YUYV encoded stream is transformed to FEED_RGB. The YUYV encoded stream output format can be changed by setting parameters's output entry to one of the following:
 
@@ -353,19 +353,19 @@ Sets the feed format parameters for the given index in the formats array. Return
 
 "copy" will result in FEED_YCBCR.
 
-void set_name(name: String) 🔗
+void set_name(name: String) 
 
 Sets the camera's name.
 
-void set_position(position: FeedPosition) 🔗
+void set_position(position: FeedPosition) 
 
 Sets the position of this camera.
 
-void set_rgb_image(rgb_image: Image) 🔗
+void set_rgb_image(rgb_image: Image) 
 
 Sets RGB image for this feed.
 
-void set_ycbcr_image(ycbcr_image: Image) 🔗
+void set_ycbcr_image(ycbcr_image: Image) 
 
 Sets YCbCr image for this feed.
 
@@ -394,7 +394,7 @@ Note: The CanvasGroup uses a custom shader to read from the backbuffer to draw i
 
 Note: Since CanvasGroup and CanvasItem.clip_children both utilize the backbuffer, children of a CanvasGroup who have their CanvasItem.clip_children set to anything other than CanvasItem.CLIP_CHILDREN_DISABLED will not function correctly.
 
-float clear_margin = 10.0 🔗
+float clear_margin = 10.0 
 
 void set_clear_margin(value: float)
 
@@ -402,7 +402,7 @@ float get_clear_margin()
 
 Sets the size of the margin used to expand the clearing rect of this CanvasGroup. This expands the area of the backbuffer that will be used by the CanvasGroup. A smaller margin will reduce the area of the backbuffer used which can increase performance, however if use_mipmaps is enabled, a small margin may result in mipmap errors at the edge of the CanvasGroup. Accordingly, this should be left as small as possible, but should be increased if artifacts appear along the edges of the canvas group.
 
-float fit_margin = 10.0 🔗
+float fit_margin = 10.0 
 
 void set_fit_margin(value: float)
 
@@ -410,7 +410,7 @@ float get_fit_margin()
 
 Sets the size of a margin used to expand the drawable rect of this CanvasGroup. The size of the CanvasGroup is determined by fitting a rect around its children then expanding that rect by fit_margin. This increases both the backbuffer area used and the area covered by the CanvasGroup both of which can reduce performance. This should be kept as small as possible and should only be expanded when an increased size is needed (e.g. for custom shader effects).
 
-bool use_mipmaps = false 🔗
+bool use_mipmaps = false 
 
 void set_use_mipmaps(value: bool)
 
@@ -496,7 +496,7 @@ LightMode LIGHT_MODE_LIGHT_ONLY = 2
 
 Render the material as if there were only light.
 
-BlendMode blend_mode = 0 🔗
+BlendMode blend_mode = 0 
 
 void set_blend_mode(value: BlendMode)
 
@@ -504,7 +504,7 @@ BlendMode get_blend_mode()
 
 The manner in which a material's rendering is applied to underlying textures.
 
-LightMode light_mode = 0 🔗
+LightMode light_mode = 0 
 
 void set_light_mode(value: LightMode)
 
@@ -512,7 +512,7 @@ LightMode get_light_mode()
 
 The manner in which material reacts to lighting.
 
-int particles_anim_h_frames 🔗
+int particles_anim_h_frames 
 
 void set_particles_anim_h_frames(value: int)
 
@@ -522,7 +522,7 @@ The number of columns in the spritesheet assigned as Texture2D for a GPUParticle
 
 Note: This property is only used and visible in the editor if particles_animation is true.
 
-bool particles_anim_loop 🔗
+bool particles_anim_loop 
 
 void set_particles_anim_loop(value: bool)
 
@@ -532,7 +532,7 @@ If true, the particles animation will loop.
 
 Note: This property is only used and visible in the editor if particles_animation is true.
 
-int particles_anim_v_frames 🔗
+int particles_anim_v_frames 
 
 void set_particles_anim_v_frames(value: int)
 
@@ -542,7 +542,7 @@ The number of rows in the spritesheet assigned as Texture2D for a GPUParticles2D
 
 Note: This property is only used and visible in the editor if particles_animation is true.
 
-bool particles_animation = false 🔗
+bool particles_animation = false 
 
 void set_particles_animation(value: bool)
 
@@ -589,7 +589,7 @@ needs_separate_specular
 
 _render_callback(effect_callback_type: int, render_data: RenderData) virtual
 
-enum EffectCallbackType: 🔗
+enum EffectCallbackType: 
 
 EffectCallbackType EFFECT_CALLBACK_TYPE_PRE_OPAQUE = 0
 
@@ -615,7 +615,7 @@ EffectCallbackType EFFECT_CALLBACK_TYPE_MAX = 5
 
 Represents the size of the EffectCallbackType enum.
 
-bool access_resolved_color 🔗
+bool access_resolved_color 
 
 void set_access_resolved_color(value: bool)
 
@@ -625,7 +625,7 @@ If true and MSAA is enabled, this will trigger a color buffer resolve before the
 
 Note: In _render_callback(), to access the resolved buffer use:
 
-bool access_resolved_depth 🔗
+bool access_resolved_depth 
 
 void set_access_resolved_depth(value: bool)
 
@@ -635,7 +635,7 @@ If true and MSAA is enabled, this will trigger a depth buffer resolve before the
 
 Note: In _render_callback(), to access the resolved buffer use:
 
-EffectCallbackType effect_callback_type 🔗
+EffectCallbackType effect_callback_type 
 
 void set_effect_callback_type(value: EffectCallbackType)
 
@@ -647,7 +647,7 @@ void set_enabled(value: bool)
 
 If true this rendering effect is applied to any viewport it is added to.
 
-bool needs_motion_vectors 🔗
+bool needs_motion_vectors 
 
 void set_needs_motion_vectors(value: bool)
 
@@ -657,7 +657,7 @@ If true this triggers motion vectors being calculated during the opaque render s
 
 Note: In _render_callback(), to access the motion vector buffer use:
 
-bool needs_normal_roughness 🔗
+bool needs_normal_roughness 
 
 void set_needs_normal_roughness(value: bool)
 
@@ -669,7 +669,7 @@ Note: In _render_callback(), to access the roughness buffer use:
 
 The raw normal and roughness buffer is stored in an optimized format, different than the one available in Spatial shaders. When sampling the buffer, a conversion function must be applied. Use this function, copied from here:
 
-bool needs_separate_specular 🔗
+bool needs_separate_specular 
 
 void set_needs_separate_specular(value: bool)
 
@@ -677,7 +677,7 @@ bool get_needs_separate_specular()
 
 If true this triggers specular data being rendered to a separate buffer and combined after effects have been applied, only applicable for the Forward+ renderer.
 
-void _render_callback(effect_callback_type: int, render_data: RenderData) virtual 🔗
+void _render_callback(effect_callback_type: int, render_data: RenderData) virtual 
 
 Implement this function with your custom rendering code. effect_callback_type should always match the effect callback type you've specified in effect_callback_type. render_data provides access to the rendering state, it is only valid during rendering and should not be stored.
 
@@ -733,7 +733,7 @@ The compositor resource stores attributes used to customize how a Viewport is re
 
 Array[CompositorEffect]
 
-Array[CompositorEffect] compositor_effects = [] 🔗
+Array[CompositorEffect] compositor_effects = [] 
 
 void set_compositor_effects(value: Array[CompositorEffect])
 
@@ -906,7 +906,7 @@ Alternatively, you can use this tool to convert a cubemap to an equirectangular 
 
 create_placeholder() const
 
-Resource create_placeholder() const 🔗
+Resource create_placeholder() const 
 
 Creates a placeholder version of this resource (PlaceholderCubemap).
 
@@ -1160,7 +1160,7 @@ Displays a camera feed in the background.
 
 Represents the size of the BGMode enum.
 
-enum AmbientSource: 🔗
+enum AmbientSource: 
 
 AmbientSource AMBIENT_SOURCE_BG = 0
 
@@ -1178,7 +1178,7 @@ AmbientSource AMBIENT_SOURCE_SKY = 3
 
 Gather ambient light from the Sky regardless of what the background is.
 
-enum ReflectionSource: 🔗
+enum ReflectionSource: 
 
 ReflectionSource REFLECTION_SOURCE_BG = 0
 
@@ -1218,7 +1218,7 @@ Uses a film-like tonemapping curve and desaturates bright values for a more real
 
 Note: tonemap_white is fixed at a value of 16.29, which makes TONE_MAPPER_AGX unsuitable for use with the Mobile rendering method.
 
-enum GlowBlendMode: 🔗
+enum GlowBlendMode: 
 
 GlowBlendMode GLOW_BLEND_MODE_ADDITIVE = 0
 
@@ -1260,7 +1260,7 @@ SDFGIYScale SDFGI_Y_SCALE_100_PERCENT = 2
 
 Use 100% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be as tall as they are wide. This is usually the best choice for highly vertical scenes. The downside is that light leaking may become more noticeable with thin floors and ceilings.
 
-float adjustment_brightness = 1.0 🔗
+float adjustment_brightness = 1.0 
 
 void set_adjustment_brightness(value: float)
 
@@ -1268,7 +1268,7 @@ float get_adjustment_brightness()
 
 The global brightness value of the rendered scene. Effective only if adjustment_enabled is true.
 
-Texture adjustment_color_correction 🔗
+Texture adjustment_color_correction 
 
 void set_adjustment_color_correction(value: Texture)
 
@@ -1276,7 +1276,7 @@ Texture get_adjustment_color_correction()
 
 The Texture2D or Texture3D lookup table (LUT) to use for the built-in post-process color grading. Can use a GradientTexture1D for a 1-dimensional LUT, or a Texture3D for a more complex LUT. Effective only if adjustment_enabled is true.
 
-float adjustment_contrast = 1.0 🔗
+float adjustment_contrast = 1.0 
 
 void set_adjustment_contrast(value: float)
 
@@ -1284,7 +1284,7 @@ float get_adjustment_contrast()
 
 The global contrast value of the rendered scene (default value is 1). Effective only if adjustment_enabled is true.
 
-bool adjustment_enabled = false 🔗
+bool adjustment_enabled = false 
 
 void set_adjustment_enabled(value: bool)
 
@@ -1292,7 +1292,7 @@ bool is_adjustment_enabled()
 
 If true, enables the adjustment_* properties provided by this resource. If false, modifications to the adjustment_* properties will have no effect on the rendered scene.
 
-float adjustment_saturation = 1.0 🔗
+float adjustment_saturation = 1.0 
 
 void set_adjustment_saturation(value: float)
 
@@ -1300,7 +1300,7 @@ float get_adjustment_saturation()
 
 The global color saturation value of the rendered scene (default value is 1). Effective only if adjustment_enabled is true.
 
-Color ambient_light_color = Color(0, 0, 0, 1) 🔗
+Color ambient_light_color = Color(0, 0, 0, 1) 
 
 void set_ambient_light_color(value: Color)
 
@@ -1308,7 +1308,7 @@ Color get_ambient_light_color()
 
 The ambient light's Color. Only effective if ambient_light_sky_contribution is lower than 1.0 (exclusive).
 
-float ambient_light_energy = 1.0 🔗
+float ambient_light_energy = 1.0 
 
 void set_ambient_light_energy(value: float)
 
@@ -1316,7 +1316,7 @@ float get_ambient_light_energy()
 
 The ambient light's energy. The higher the value, the stronger the light. Only effective if ambient_light_sky_contribution is lower than 1.0 (exclusive).
 
-float ambient_light_sky_contribution = 1.0 🔗
+float ambient_light_sky_contribution = 1.0 
 
 void set_ambient_light_sky_contribution(value: float)
 
@@ -1326,7 +1326,7 @@ Defines the amount of light that the sky brings on the scene. A value of 0.0 mea
 
 Note: ambient_light_sky_contribution is internally clamped between 0.0 and 1.0 (inclusive).
 
-AmbientSource ambient_light_source = 0 🔗
+AmbientSource ambient_light_source = 0 
 
 void set_ambient_source(value: AmbientSource)
 
@@ -1334,7 +1334,7 @@ AmbientSource get_ambient_source()
 
 The ambient light source to use for rendering materials and global illumination.
 
-int background_camera_feed_id = 1 🔗
+int background_camera_feed_id = 1 
 
 void set_camera_feed_id(value: int)
 
@@ -1342,7 +1342,7 @@ int get_camera_feed_id()
 
 The ID of the camera feed to show in the background.
 
-int background_canvas_max_layer = 0 🔗
+int background_canvas_max_layer = 0 
 
 void set_canvas_max_layer(value: int)
 
@@ -1350,13 +1350,13 @@ int get_canvas_max_layer()
 
 The maximum layer ID to display. Only effective when using the BG_CANVAS background mode.
 
-Color background_color = Color(0, 0, 0, 1) 🔗
+Color background_color = Color(0, 0, 0, 1) 
 
 void set_bg_color(value: Color)
 
 The Color displayed for clear areas of the scene. Only effective when using the BG_COLOR background mode.
 
-float background_energy_multiplier = 1.0 🔗
+float background_energy_multiplier = 1.0 
 
 void set_bg_energy_multiplier(value: float)
 
@@ -1364,7 +1364,7 @@ float get_bg_energy_multiplier()
 
 Multiplier for background energy. Increase to make background brighter, decrease to make background dimmer.
 
-float background_intensity = 30000.0 🔗
+float background_intensity = 30000.0 
 
 void set_bg_intensity(value: float)
 
@@ -1372,13 +1372,13 @@ float get_bg_intensity()
 
 Luminance of background measured in nits (candela per square meter). Only used when ProjectSettings.rendering/lights_and_shadows/use_physical_light_units is enabled. The default value is roughly equivalent to the sky at midday.
 
-BGMode background_mode = 0 🔗
+BGMode background_mode = 0 
 
 void set_background(value: BGMode)
 
 BGMode get_background()
 
-float fog_aerial_perspective = 0.0 🔗
+float fog_aerial_perspective = 0.0 
 
 void set_fog_aerial_perspective(value: float)
 
@@ -1390,7 +1390,7 @@ This is useful to simulate aerial perspective in large scenes with low density f
 
 Notice that this does not sample the Sky directly, but rather the radiance cubemap. The cubemap is sampled at a mipmap level depending on the depth of the rendered pixel; the farther away, the higher the resolution of the sampled mipmap. This results in the actual color being a blurred version of the sky, with more blur closer to the camera. The highest mipmap resolution is used at a depth of Camera3D.far.
 
-float fog_density = 0.01 🔗
+float fog_density = 0.01 
 
 void set_fog_density(value: float)
 
@@ -1402,7 +1402,7 @@ Exponential Fog Mode: Higher values result in denser fog. The fog rendering is e
 
 Depth Fog mode: The maximum intensity of the deep fog, effect will appear in the distance (relative to the camera). At 1.0 the fog will fully obscure the scene, at 0.0 the fog will not be visible.
 
-float fog_depth_begin = 10.0 🔗
+float fog_depth_begin = 10.0 
 
 void set_fog_depth_begin(value: float)
 
@@ -1410,7 +1410,7 @@ float get_fog_depth_begin()
 
 The fog's depth starting distance from the camera. Only available when fog_mode is set to FOG_MODE_DEPTH.
 
-float fog_depth_curve = 1.0 🔗
+float fog_depth_curve = 1.0 
 
 void set_fog_depth_curve(value: float)
 
@@ -1418,7 +1418,7 @@ float get_fog_depth_curve()
 
 The fog depth's intensity curve. A number of presets are available in the Inspector by right-clicking the curve. Only available when fog_mode is set to FOG_MODE_DEPTH.
 
-float fog_depth_end = 100.0 🔗
+float fog_depth_end = 100.0 
 
 void set_fog_depth_end(value: float)
 
@@ -1426,7 +1426,7 @@ float get_fog_depth_end()
 
 The fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's Camera3D.far value. Only available when fog_mode is set to FOG_MODE_DEPTH.
 
-bool fog_enabled = false 🔗
+bool fog_enabled = false 
 
 void set_fog_enabled(value: bool)
 
@@ -1434,7 +1434,7 @@ bool is_fog_enabled()
 
 If true, fog effects are enabled.
 
-float fog_height = 0.0 🔗
+float fog_height = 0.0 
 
 void set_fog_height(value: float)
 
@@ -1442,7 +1442,7 @@ float get_fog_height()
 
 The height at which the height fog effect begins.
 
-float fog_height_density = 0.0 🔗
+float fog_height_density = 0.0 
 
 void set_fog_height_density(value: float)
 
@@ -1450,13 +1450,13 @@ float get_fog_height_density()
 
 The density used to increase fog as height decreases. To make fog increase as height increases, use a negative value.
 
-Color fog_light_color = Color(0.518, 0.553, 0.608, 1) 🔗
+Color fog_light_color = Color(0.518, 0.553, 0.608, 1) 
 
 void set_fog_light_color(value: Color)
 
 Color get_fog_light_color()
 
-float fog_light_energy = 1.0 🔗
+float fog_light_energy = 1.0 
 
 void set_fog_light_energy(value: float)
 
@@ -1464,13 +1464,13 @@ float get_fog_light_energy()
 
 The fog's brightness. Higher values result in brighter fog.
 
-FogMode fog_mode = 0 🔗
+FogMode fog_mode = 0 
 
 void set_fog_mode(value: FogMode)
 
 FogMode get_fog_mode()
 
-float fog_sky_affect = 1.0 🔗
+float fog_sky_affect = 1.0 
 
 void set_fog_sky_affect(value: float)
 
@@ -1480,7 +1480,7 @@ The factor to use when affecting the sky with non-volumetric fog. 1.0 means that
 
 Note: fog_sky_affect has no visual effect if fog_aerial_perspective is 1.0.
 
-float fog_sun_scatter = 0.0 🔗
+float fog_sun_scatter = 0.0 
 
 void set_fog_sun_scatter(value: float)
 
@@ -1488,7 +1488,7 @@ float get_fog_sun_scatter()
 
 If set above 0.0, renders the scene's directional light(s) in the fog color depending on the view angle. This can be used to give the impression that the sun is "piercing" through the fog.
 
-GlowBlendMode glow_blend_mode = 2 🔗
+GlowBlendMode glow_blend_mode = 2 
 
 void set_glow_blend_mode(value: GlowBlendMode)
 
@@ -1498,7 +1498,7 @@ The glow blending mode.
 
 Note: glow_blend_mode has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_bloom = 0.0 🔗
+float glow_bloom = 0.0 
 
 void set_glow_bloom(value: float)
 
@@ -1506,7 +1506,7 @@ float get_glow_bloom()
 
 The bloom's intensity. If set to a value higher than 0, this will make glow visible in areas darker than the glow_hdr_threshold.
 
-bool glow_enabled = false 🔗
+bool glow_enabled = false 
 
 void set_glow_enabled(value: bool)
 
@@ -1518,7 +1518,7 @@ Note: When using the Mobile rendering method, glow looks different due to the lo
 
 Note: When using the Compatibility rendering method, glow uses a different implementation with some properties being unavailable and hidden from the inspector: glow_levels/*, glow_normalized, glow_strength, glow_blend_mode, glow_mix, glow_map, and glow_map_strength. This implementation is optimized to run on low-end devices and is less flexible as a result.
 
-float glow_hdr_luminance_cap = 12.0 🔗
+float glow_hdr_luminance_cap = 12.0 
 
 void set_glow_hdr_luminance_cap(value: float)
 
@@ -1526,7 +1526,7 @@ float get_glow_hdr_luminance_cap()
 
 The higher threshold of the HDR glow. Areas brighter than this threshold will be clamped for the purposes of the glow effect.
 
-float glow_hdr_scale = 2.0 🔗
+float glow_hdr_scale = 2.0 
 
 void set_glow_hdr_bleed_scale(value: float)
 
@@ -1534,7 +1534,7 @@ float get_glow_hdr_bleed_scale()
 
 The bleed scale of the HDR glow.
 
-float glow_hdr_threshold = 1.0 🔗
+float glow_hdr_threshold = 1.0 
 
 void set_glow_hdr_bleed_threshold(value: float)
 
@@ -1542,7 +1542,7 @@ float get_glow_hdr_bleed_threshold()
 
 The lower threshold of the HDR glow. When using the Mobile rendering method (which only supports a lower dynamic range up to 2.0), this may need to be below 1.0 for glow to be visible. A value of 0.9 works well in this case. This value also needs to be decreased below 1.0 when using glow in 2D, as 2D rendering is performed in SDR.
 
-float glow_intensity = 0.8 🔗
+float glow_intensity = 0.8 
 
 void set_glow_intensity(value: float)
 
@@ -1550,7 +1550,7 @@ float get_glow_intensity()
 
 The overall brightness multiplier of the glow effect. When using the Mobile rendering method (which only supports a lower dynamic range up to 2.0), this should be increased to 1.5 to compensate.
 
-float glow_levels/1 = 0.0 🔗
+float glow_levels/1 = 0.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1560,7 +1560,7 @@ The intensity of the 1st level of glow. This is the most "local" level (least bl
 
 Note: glow_levels/1 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/2 = 0.0 🔗
+float glow_levels/2 = 0.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1570,7 +1570,7 @@ The intensity of the 2nd level of glow.
 
 Note: glow_levels/2 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/3 = 1.0 🔗
+float glow_levels/3 = 1.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1580,7 +1580,7 @@ The intensity of the 3rd level of glow.
 
 Note: glow_levels/3 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/4 = 0.0 🔗
+float glow_levels/4 = 0.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1590,7 +1590,7 @@ The intensity of the 4th level of glow.
 
 Note: glow_levels/4 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/5 = 1.0 🔗
+float glow_levels/5 = 1.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1600,7 +1600,7 @@ The intensity of the 5th level of glow.
 
 Note: glow_levels/5 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/6 = 0.0 🔗
+float glow_levels/6 = 0.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1610,7 +1610,7 @@ The intensity of the 6th level of glow.
 
 Note: glow_levels/6 has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_levels/7 = 0.0 🔗
+float glow_levels/7 = 0.0 
 
 void set_glow_level(idx: int, intensity: float)
 
@@ -1630,7 +1630,7 @@ Note: The texture will be stretched to fit the screen. Therefore, it's recommend
 
 Note: glow_map has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_map_strength = 0.8 🔗
+float glow_map_strength = 0.8 
 
 void set_glow_map_strength(value: float)
 
@@ -1642,7 +1642,7 @@ Note: If the glow map has black areas, a value of 1.0 can also turn off the glow
 
 Note: glow_map_strength has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_mix = 0.05 🔗
+float glow_mix = 0.05 
 
 void set_glow_mix(value: float)
 
@@ -1650,7 +1650,7 @@ When using the GLOW_BLEND_MODE_MIX glow_blend_mode, this controls how much the s
 
 Note: glow_mix has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-bool glow_normalized = false 🔗
+bool glow_normalized = false 
 
 void set_glow_normalized(value: bool)
 
@@ -1660,7 +1660,7 @@ If true, glow levels will be normalized so that summed together their intensitie
 
 Note: glow_normalized has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-float glow_strength = 1.0 🔗
+float glow_strength = 1.0 
 
 void set_glow_strength(value: float)
 
@@ -1670,7 +1670,7 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 
 Note: glow_strength has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
-ReflectionSource reflected_light_source = 0 🔗
+ReflectionSource reflected_light_source = 0 
 
 void set_reflection_source(value: ReflectionSource)
 
@@ -1678,7 +1678,7 @@ ReflectionSource get_reflection_source()
 
 The reflected (specular) light source.
 
-float sdfgi_bounce_feedback = 0.5 🔗
+float sdfgi_bounce_feedback = 0.5 
 
 void set_sdfgi_bounce_feedback(value: float)
 
@@ -1690,7 +1690,7 @@ Note: Values greater than 0.5 can cause infinite feedback loops and should be av
 
 Note: If sdfgi_bounce_feedback is 0.0, indirect lighting will not be represented in reflections as light will only bounce one time.
 
-float sdfgi_cascade0_distance = 12.8 🔗
+float sdfgi_cascade0_distance = 12.8 
 
 void set_sdfgi_cascade0_distance(value: float)
 
@@ -1698,7 +1698,7 @@ float get_sdfgi_cascade0_distance()
 
 Note: This property is linked to sdfgi_min_cell_size and sdfgi_max_distance. Changing its value will automatically change those properties as well.
 
-int sdfgi_cascades = 4 🔗
+int sdfgi_cascades = 4 
 
 void set_sdfgi_cascades(value: int)
 
@@ -1706,7 +1706,7 @@ int get_sdfgi_cascades()
 
 The number of cascades to use for SDFGI (between 1 and 8). A higher number of cascades allows displaying SDFGI further away while preserving detail up close, at the cost of performance. When using SDFGI on small-scale levels, sdfgi_cascades can often be decreased between 1 and 4 to improve performance.
 
-bool sdfgi_enabled = false 🔗
+bool sdfgi_enabled = false 
 
 void set_sdfgi_enabled(value: bool)
 
@@ -1720,7 +1720,7 @@ Performance: SDFGI is relatively demanding on the GPU and is not suited to low-e
 
 Note: Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh.
 
-float sdfgi_energy = 1.0 🔗
+float sdfgi_energy = 1.0 
 
 void set_sdfgi_energy(value: float)
 
@@ -1728,7 +1728,7 @@ float get_sdfgi_energy()
 
 The energy multiplier to use for SDFGI. Higher values will result in brighter indirect lighting and reflections. See also sdfgi_bounce_feedback.
 
-float sdfgi_max_distance = 204.8 🔗
+float sdfgi_max_distance = 204.8 
 
 void set_sdfgi_max_distance(value: float)
 
@@ -1738,7 +1738,7 @@ The maximum distance at which SDFGI is visible. Beyond this distance, environmen
 
 Note: This property is linked to sdfgi_min_cell_size and sdfgi_cascade0_distance. Changing its value will automatically change those properties as well.
 
-float sdfgi_min_cell_size = 0.2 🔗
+float sdfgi_min_cell_size = 0.2 
 
 void set_sdfgi_min_cell_size(value: float)
 
@@ -1748,7 +1748,7 @@ The cell size to use for the closest SDFGI cascade (in 3D units). Lower values a
 
 Note: This property is linked to sdfgi_max_distance and sdfgi_cascade0_distance. Changing its value will automatically change those properties as well.
 
-float sdfgi_normal_bias = 1.1 🔗
+float sdfgi_normal_bias = 1.1 
 
 void set_sdfgi_normal_bias(value: float)
 
@@ -1756,7 +1756,7 @@ float get_sdfgi_normal_bias()
 
 The normal bias to use for SDFGI probes. Increasing this value can reduce visible streaking artifacts on sloped surfaces, at the cost of increased light leaking.
 
-float sdfgi_probe_bias = 1.1 🔗
+float sdfgi_probe_bias = 1.1 
 
 void set_sdfgi_probe_bias(value: float)
 
@@ -1764,7 +1764,7 @@ float get_sdfgi_probe_bias()
 
 The constant bias to use for SDFGI probes. Increasing this value can reduce visible streaking artifacts on sloped surfaces, at the cost of increased light leaking.
 
-bool sdfgi_read_sky_light = true 🔗
+bool sdfgi_read_sky_light = true 
 
 void set_sdfgi_read_sky_light(value: bool)
 
@@ -1772,7 +1772,7 @@ bool is_sdfgi_reading_sky_light()
 
 If true, SDFGI takes the environment lighting into account. This should be set to false for interior scenes.
 
-bool sdfgi_use_occlusion = false 🔗
+bool sdfgi_use_occlusion = false 
 
 void set_sdfgi_use_occlusion(value: bool)
 
@@ -1780,7 +1780,7 @@ bool is_sdfgi_using_occlusion()
 
 If true, SDFGI uses an occlusion detection approach to reduce light leaking. Occlusion may however introduce dark blotches in certain spots, which may be undesired in mostly outdoor scenes. sdfgi_use_occlusion has a performance impact and should only be enabled when needed.
 
-SDFGIYScale sdfgi_y_scale = 1 🔗
+SDFGIYScale sdfgi_y_scale = 1 
 
 void set_sdfgi_y_scale(value: SDFGIYScale)
 
@@ -1792,7 +1792,7 @@ void set_sky(value: Sky)
 
 The Sky resource used for this Environment.
 
-float sky_custom_fov = 0.0 🔗
+float sky_custom_fov = 0.0 
 
 void set_sky_custom_fov(value: float)
 
@@ -1800,7 +1800,7 @@ float get_sky_custom_fov()
 
 If set to a value greater than 0.0, overrides the field of view to use for sky rendering. If set to 0.0, the same FOV as the current Camera3D is used for sky rendering.
 
-Vector3 sky_rotation = Vector3(0, 0, 0) 🔗
+Vector3 sky_rotation = Vector3(0, 0, 0) 
 
 void set_sky_rotation(value: Vector3)
 
@@ -1808,7 +1808,7 @@ Vector3 get_sky_rotation()
 
 The rotation to use for sky rendering.
 
-float ssao_ao_channel_affect = 0.0 🔗
+float ssao_ao_channel_affect = 0.0 
 
 void set_ssao_ao_channel_affect(value: float)
 
@@ -1816,7 +1816,7 @@ float get_ssao_ao_channel_affect()
 
 The screen-space ambient occlusion intensity on materials that have an AO texture defined. Values higher than 0 will make the SSAO effect visible in areas darkened by AO textures.
 
-float ssao_detail = 0.5 🔗
+float ssao_detail = 0.5 
 
 void set_ssao_detail(value: float)
 
@@ -1824,7 +1824,7 @@ float get_ssao_detail()
 
 Sets the strength of the additional level of detail for the screen-space ambient occlusion effect. A high value makes the detail pass more prominent, but it may contribute to aliasing in your final image.
 
-bool ssao_enabled = false 🔗
+bool ssao_enabled = false 
 
 void set_ssao_enabled(value: bool)
 
@@ -1834,7 +1834,7 @@ If true, the screen-space ambient occlusion effect is enabled. This darkens obje
 
 Note: SSAO is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
-float ssao_horizon = 0.06 🔗
+float ssao_horizon = 0.06 
 
 void set_ssao_horizon(value: float)
 
@@ -1842,7 +1842,7 @@ float get_ssao_horizon()
 
 The threshold for considering whether a given point on a surface is occluded or not represented as an angle from the horizon mapped into the 0.0-1.0 range. A value of 1.0 results in no occlusion.
 
-float ssao_intensity = 2.0 🔗
+float ssao_intensity = 2.0 
 
 void set_ssao_intensity(value: float)
 
@@ -1850,7 +1850,7 @@ float get_ssao_intensity()
 
 The primary screen-space ambient occlusion intensity. Acts as a multiplier for the screen-space ambient occlusion effect. A higher value results in darker occlusion.
 
-float ssao_light_affect = 0.0 🔗
+float ssao_light_affect = 0.0 
 
 void set_ssao_direct_light_affect(value: float)
 
@@ -1858,7 +1858,7 @@ float get_ssao_direct_light_affect()
 
 The screen-space ambient occlusion intensity in direct light. In real life, ambient occlusion only applies to indirect light, which means its effects can't be seen in direct light. Values higher than 0 will make the SSAO effect visible in direct light.
 
-float ssao_power = 1.5 🔗
+float ssao_power = 1.5 
 
 void set_ssao_power(value: float)
 
@@ -1866,7 +1866,7 @@ float get_ssao_power()
 
 The distribution of occlusion. A higher value results in darker occlusion, similar to ssao_intensity, but with a sharper falloff.
 
-float ssao_radius = 1.0 🔗
+float ssao_radius = 1.0 
 
 void set_ssao_radius(value: float)
 
@@ -1874,7 +1874,7 @@ float get_ssao_radius()
 
 The distance at which objects can occlude each other when calculating screen-space ambient occlusion. Higher values will result in occlusion over a greater distance at the cost of performance and quality.
 
-float ssao_sharpness = 0.98 🔗
+float ssao_sharpness = 0.98 
 
 void set_ssao_sharpness(value: float)
 
@@ -1882,7 +1882,7 @@ float get_ssao_sharpness()
 
 The amount that the screen-space ambient occlusion effect is allowed to blur over the edges of objects. Setting too high will result in aliasing around the edges of objects. Setting too low will make object edges appear blurry.
 
-bool ssil_enabled = false 🔗
+bool ssil_enabled = false 
 
 void set_ssil_enabled(value: bool)
 
@@ -1892,7 +1892,7 @@ If true, the screen-space indirect lighting effect is enabled. Screen space indi
 
 Note: SSIL is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
-float ssil_intensity = 1.0 🔗
+float ssil_intensity = 1.0 
 
 void set_ssil_intensity(value: float)
 
@@ -1900,7 +1900,7 @@ float get_ssil_intensity()
 
 The brightness multiplier for the screen-space indirect lighting effect. A higher value will result in brighter light.
 
-float ssil_normal_rejection = 1.0 🔗
+float ssil_normal_rejection = 1.0 
 
 void set_ssil_normal_rejection(value: float)
 
@@ -1908,7 +1908,7 @@ float get_ssil_normal_rejection()
 
 Amount of normal rejection used when calculating screen-space indirect lighting. Normal rejection uses the normal of a given sample point to reject samples that are facing away from the current pixel. Normal rejection is necessary to avoid light leaking when only one side of an object is illuminated. However, normal rejection can be disabled if light leaking is desirable, such as when the scene mostly contains emissive objects that emit light from faces that cannot be seen from the camera.
 
-float ssil_radius = 5.0 🔗
+float ssil_radius = 5.0 
 
 void set_ssil_radius(value: float)
 
@@ -1916,7 +1916,7 @@ float get_ssil_radius()
 
 The distance that bounced lighting can travel when using the screen space indirect lighting effect. A larger value will result in light bouncing further in a scene, but may result in under-sampling artifacts which look like long spikes surrounding light sources.
 
-float ssil_sharpness = 0.98 🔗
+float ssil_sharpness = 0.98 
 
 void set_ssil_sharpness(value: float)
 
@@ -1924,7 +1924,7 @@ float get_ssil_sharpness()
 
 The amount that the screen-space indirect lighting effect is allowed to blur over the edges of objects. Setting too high will result in aliasing around the edges of objects. Setting too low will make object edges appear blurry.
 
-float ssr_depth_tolerance = 0.2 🔗
+float ssr_depth_tolerance = 0.2 
 
 void set_ssr_depth_tolerance(value: float)
 
@@ -1932,7 +1932,7 @@ float get_ssr_depth_tolerance()
 
 The depth tolerance for screen-space reflections.
 
-bool ssr_enabled = false 🔗
+bool ssr_enabled = false 
 
 void set_ssr_enabled(value: bool)
 
@@ -1944,7 +1944,7 @@ Note: SSR is only supported in the Forward+ rendering method, not Mobile or Comp
 
 Note: SSR is not supported on viewports that have a transparent background (where Viewport.transparent_bg is true).
 
-float ssr_fade_in = 0.15 🔗
+float ssr_fade_in = 0.15 
 
 void set_ssr_fade_in(value: float)
 
@@ -1952,7 +1952,7 @@ float get_ssr_fade_in()
 
 The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection. Only positive values are valid (negative values will be clamped to 0.0).
 
-float ssr_fade_out = 2.0 🔗
+float ssr_fade_out = 2.0 
 
 void set_ssr_fade_out(value: float)
 
@@ -1960,7 +1960,7 @@ float get_ssr_fade_out()
 
 The fade-out distance for screen-space reflections. Affects the area from the screen-space reflection to the "global" reflection. Only positive values are valid (negative values will be clamped to 0.0).
 
-int ssr_max_steps = 64 🔗
+int ssr_max_steps = 64 
 
 void set_ssr_max_steps(value: int)
 
@@ -1968,7 +1968,7 @@ int get_ssr_max_steps()
 
 The maximum number of steps for screen-space reflections. Higher values are slower.
 
-float tonemap_exposure = 1.0 🔗
+float tonemap_exposure = 1.0 
 
 void set_tonemap_exposure(value: float)
 
@@ -1978,7 +1978,7 @@ Adjusts the brightness of values before they are provided to the tonemapper. Hig
 
 Note: Values provided to the tonemapper will also be multiplied by 2.0 and 1.8 for TONE_MAPPER_FILMIC and TONE_MAPPER_ACES respectively to produce a similar apparent brightness as TONE_MAPPER_LINEAR.
 
-ToneMapper tonemap_mode = 0 🔗
+ToneMapper tonemap_mode = 0 
 
 void set_tonemapper(value: ToneMapper)
 
@@ -1986,7 +1986,7 @@ ToneMapper get_tonemapper()
 
 The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on an LDR display. (Godot doesn't support rendering on HDR displays yet.)
 
-float tonemap_white = 1.0 🔗
+float tonemap_white = 1.0 
 
 void set_tonemap_white(value: float)
 
@@ -1996,7 +1996,7 @@ The white reference value for tonemapping, which indicates where bright white is
 
 Note: tonemap_white is ignored when using TONE_MAPPER_LINEAR or TONE_MAPPER_AGX.
 
-Color volumetric_fog_albedo = Color(1, 1, 1, 1) 🔗
+Color volumetric_fog_albedo = Color(1, 1, 1, 1) 
 
 void set_volumetric_fog_albedo(value: Color)
 
@@ -2004,7 +2004,7 @@ Color get_volumetric_fog_albedo()
 
 The Color of the volumetric fog when interacting with lights. Mist and fog have an albedo close to Color(1, 1, 1, 1) while smoke has a darker albedo.
 
-float volumetric_fog_ambient_inject = 0.0 🔗
+float volumetric_fog_ambient_inject = 0.0 
 
 void set_volumetric_fog_ambient_inject(value: float)
 
@@ -2014,7 +2014,7 @@ Scales the strength of ambient light used in the volumetric fog. A value of 0.0 
 
 Note: This has no visible effect if volumetric_fog_density is 0.0 or if volumetric_fog_albedo is a fully black color.
 
-float volumetric_fog_anisotropy = 0.2 🔗
+float volumetric_fog_anisotropy = 0.2 
 
 void set_volumetric_fog_anisotropy(value: float)
 
@@ -2022,7 +2022,7 @@ float get_volumetric_fog_anisotropy()
 
 The direction of scattered light as it goes through the volumetric fog. A value close to 1.0 means almost all light is scattered forward. A value close to 0.0 means light is scattered equally in all directions. A value close to -1.0 means light is scattered mostly backward. Fog and mist scatter light slightly forward, while smoke scatters light equally in all directions.
 
-float volumetric_fog_density = 0.05 🔗
+float volumetric_fog_density = 0.05 
 
 void set_volumetric_fog_density(value: float)
 
@@ -2034,7 +2034,7 @@ A value of 0.0 disables global volumetric fog while allowing FogVolumes to displ
 
 To make volumetric fog work as a volumetric lighting solution, set volumetric_fog_density to the lowest non-zero value (0.0001) then increase lights' Light3D.light_volumetric_fog_energy to values between 10000 and 100000 to compensate for the very low density.
 
-float volumetric_fog_detail_spread = 2.0 🔗
+float volumetric_fog_detail_spread = 2.0 
 
 void set_volumetric_fog_detail_spread(value: float)
 
@@ -2042,7 +2042,7 @@ float get_volumetric_fog_detail_spread()
 
 The distribution of size down the length of the froxel buffer. A higher value compresses the froxels closer to the camera and places more detail closer to the camera.
 
-Color volumetric_fog_emission = Color(0, 0, 0, 1) 🔗
+Color volumetric_fog_emission = Color(0, 0, 0, 1) 
 
 void set_volumetric_fog_emission(value: Color)
 
@@ -2050,7 +2050,7 @@ Color get_volumetric_fog_emission()
 
 The emitted light from the volumetric fog. Even with emission, volumetric fog will not cast light onto other surfaces. Emission is useful to establish an ambient color. As the volumetric fog effect uses single-scattering only, fog tends to need a little bit of emission to soften the harsh shadows.
 
-float volumetric_fog_emission_energy = 1.0 🔗
+float volumetric_fog_emission_energy = 1.0 
 
 void set_volumetric_fog_emission_energy(value: float)
 
@@ -2058,7 +2058,7 @@ float get_volumetric_fog_emission_energy()
 
 The brightness of the emitted light from the volumetric fog.
 
-bool volumetric_fog_enabled = false 🔗
+bool volumetric_fog_enabled = false 
 
 void set_volumetric_fog_enabled(value: bool)
 
@@ -2068,7 +2068,7 @@ Enables the volumetric fog effect. Volumetric fog uses a screen-aligned froxel b
 
 Note: Volumetric fog is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
-float volumetric_fog_gi_inject = 1.0 🔗
+float volumetric_fog_gi_inject = 1.0 
 
 void set_volumetric_fog_gi_inject(value: float)
 
@@ -2080,7 +2080,7 @@ Note: This has no visible effect if volumetric_fog_density is 0.0 or if volumetr
 
 Note: Only VoxelGI and SDFGI (sdfgi_enabled) are taken into account when using volumetric_fog_gi_inject. Global illumination from LightmapGI, ReflectionProbe and SSIL (see ssil_enabled) will be ignored by volumetric fog.
 
-float volumetric_fog_length = 64.0 🔗
+float volumetric_fog_length = 64.0 
 
 void set_volumetric_fog_length(value: float)
 
@@ -2088,7 +2088,7 @@ float get_volumetric_fog_length()
 
 The distance over which the volumetric fog is computed. Increase to compute fog over a greater range, decrease to add more detail when a long range is not needed. For best quality fog, keep this as low as possible. See also ProjectSettings.rendering/environment/volumetric_fog/volume_depth.
 
-float volumetric_fog_sky_affect = 1.0 🔗
+float volumetric_fog_sky_affect = 1.0 
 
 void set_volumetric_fog_sky_affect(value: float)
 
@@ -2098,7 +2098,7 @@ The factor to use when affecting the sky with volumetric fog. 1.0 means that vol
 
 Note: volumetric_fog_sky_affect also affects FogVolumes, even if volumetric_fog_density is 0.0. If you notice FogVolumes are disappearing when looking towards the sky, set volumetric_fog_sky_affect to 1.0.
 
-float volumetric_fog_temporal_reprojection_amount = 0.9 🔗
+float volumetric_fog_temporal_reprojection_amount = 0.9 
 
 void set_volumetric_fog_temporal_reprojection_amount(value: float)
 
@@ -2106,7 +2106,7 @@ float get_volumetric_fog_temporal_reprojection_amount()
 
 The amount by which to blend the last frame with the current frame. A higher number results in smoother volumetric fog, but makes "ghosting" much worse. A lower value reduces ghosting but can result in the per-frame temporal jitter becoming visible.
 
-bool volumetric_fog_temporal_reprojection_enabled = true 🔗
+bool volumetric_fog_temporal_reprojection_enabled = true 
 
 void set_volumetric_fog_temporal_reprojection_enabled(value: bool)
 
@@ -2114,11 +2114,11 @@ bool is_volumetric_fog_temporal_reprojection_enabled()
 
 Enables temporal reprojection in the volumetric fog. Temporal reprojection blends the current frame's volumetric fog with the last frame's volumetric fog to smooth out jagged edges. The performance cost is minimal; however, it leads to moving FogVolumes and Light3Ds "ghosting" and leaving a trail behind them. When temporal reprojection is enabled, try to avoid moving FogVolumes or Light3Ds too fast. Short-lived dynamic lighting effects should have Light3D.light_volumetric_fog_energy set to 0.0 to avoid ghosting.
 
-float get_glow_level(idx: int) const 🔗
+float get_glow_level(idx: int) const 
 
 Returns the intensity of the glow level idx.
 
-void set_glow_level(idx: int, intensity: float) 🔗
+void set_glow_level(idx: int, intensity: float) 
 
 Sets the intensity of the glow level idx. A value above 0.0 enables the level. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
 
@@ -2253,13 +2253,13 @@ A Material resource that can be used by FogVolumes to draw volumetric effects.
 
 If you need more advanced effects, use a custom fog shader.
 
-Color albedo = Color(1, 1, 1, 1) 🔗
+Color albedo = Color(1, 1, 1, 1) 
 
 void set_albedo(value: Color)
 
 The single-scattering Color of the FogVolume. Internally, albedo is converted into single-scattering, which is additively blended with other FogVolumes and the Environment.volumetric_fog_albedo.
 
-float density = 1.0 🔗
+float density = 1.0 
 
 void set_density(value: float)
 
@@ -2267,7 +2267,7 @@ The density of the FogVolume. Denser objects are more opaque, but may suffer fro
 
 Note: Due to limited precision, density values between -0.001 and 0.001 (exclusive) act like 0.0. This does not apply to Environment.volumetric_fog_density.
 
-Texture3D density_texture 🔗
+Texture3D density_texture 
 
 void set_density_texture(value: Texture3D)
 
@@ -2275,7 +2275,7 @@ Texture3D get_density_texture()
 
 The 3D texture that is used to scale the density of the FogVolume. This can be used to vary fog density within the FogVolume with any kind of static pattern. For animated effects, consider using a custom fog shader.
 
-float edge_fade = 0.1 🔗
+float edge_fade = 0.1 
 
 void set_edge_fade(value: float)
 
@@ -2283,13 +2283,13 @@ float get_edge_fade()
 
 The hardness of the edges of the FogVolume. A higher value will result in softer edges, while a lower value will result in harder edges.
 
-Color emission = Color(0, 0, 0, 1) 🔗
+Color emission = Color(0, 0, 0, 1) 
 
 void set_emission(value: Color)
 
 The Color of the light emitted by the FogVolume. Emitted light will not cast light or shadows on other objects, but can be useful for modulating the Color of the FogVolume independently from light sources.
 
-float height_falloff = 0.0 🔗
+float height_falloff = 0.0 
 
 void set_height_falloff(value: float)
 
@@ -2331,7 +2331,7 @@ Material get_material()
 
 The Material used by the FogVolume. Can be either a built-in FogMaterial or a custom ShaderMaterial.
 
-FogVolumeShape shape = 3 🔗
+FogVolumeShape shape = 3 
 
 void set_shape(value: FogVolumeShape)
 
@@ -2339,7 +2339,7 @@ FogVolumeShape get_shape()
 
 The shape of the FogVolume. This can be set to either RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID, RenderingServer.FOG_VOLUME_SHAPE_CONE, RenderingServer.FOG_VOLUME_SHAPE_CYLINDER, RenderingServer.FOG_VOLUME_SHAPE_BOX or RenderingServer.FOG_VOLUME_SHAPE_WORLD.
 
-Vector3 size = Vector3(2, 2, 2) 🔗
+Vector3 size = Vector3(2, 2, 2) 
 
 void set_size(value: Vector3)
 
@@ -2558,11 +2558,11 @@ create_placeholder() const
 
 inspect_native_shader_code()
 
-RENDER_PRIORITY_MAX = 127 🔗
+RENDER_PRIORITY_MAX = 127 
 
 Maximum value for the render_priority parameter.
 
-RENDER_PRIORITY_MIN = -128 🔗
+RENDER_PRIORITY_MIN = -128 
 
 Minimum value for the render_priority parameter.
 
@@ -2576,7 +2576,7 @@ Note: next_pass materials are not necessarily drawn immediately after the source
 
 Note: This only applies to StandardMaterial3Ds and ShaderMaterials with type "Spatial".
 
-int render_priority 🔗
+int render_priority 
 
 void set_render_priority(value: int)
 
@@ -2588,27 +2588,27 @@ Note: This only applies to StandardMaterial3Ds and ShaderMaterials with type "Sp
 
 Note: This will not impact how transparent objects are sorted relative to opaque objects or how dynamic meshes will be sorted relative to other opaque meshes. This is because all transparent objects are drawn after all opaque objects and all dynamic opaque meshes are drawn before other opaque meshes.
 
-bool _can_do_next_pass() virtual const 🔗
+bool _can_do_next_pass() virtual const 
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if next_pass should be shown in the editor or not.
 
-bool _can_use_render_priority() virtual const 🔗
+bool _can_use_render_priority() virtual const 
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if render_priority should be shown in the editor or not.
 
-Mode _get_shader_mode() virtual required const 🔗
+Mode _get_shader_mode() virtual required const 
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools.
 
-RID _get_shader_rid() virtual required const 🔗
+RID _get_shader_rid() virtual required const 
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools. Used to access the RID of the Material's Shader.
 
-Resource create_placeholder() const 🔗
+Resource create_placeholder() const 
 
 Creates a placeholder version of this resource (PlaceholderMaterial).
 
-void inspect_native_shader_code() 🔗
+void inspect_native_shader_code() 
 
 Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code. See also Shader.inspect_native_shader_code().
 
@@ -2865,7 +2865,7 @@ An OpenXR composition layer that is rendered as an internal slice of a cylinder.
 
 An OpenXR composition layer that allows rendering a SubViewport on an internal slice of a cylinder.
 
-float aspect_ratio = 1.0 🔗
+float aspect_ratio = 1.0 
 
 void set_aspect_ratio(value: float)
 
@@ -2873,7 +2873,7 @@ float get_aspect_ratio()
 
 The aspect ratio of the slice. Used to set the height relative to the width.
 
-float central_angle = 1.5707964 🔗
+float central_angle = 1.5707964 
 
 void set_central_angle(value: float)
 
@@ -2881,7 +2881,7 @@ float get_central_angle()
 
 The central angle of the cylinder. Used to set the width.
 
-int fallback_segments = 10 🔗
+int fallback_segments = 10 
 
 void set_fallback_segments(value: int)
 
@@ -2916,7 +2916,7 @@ An OpenXR composition layer that is rendered as a quad.
 
 An OpenXR composition layer that allows rendering a SubViewport on a quad.
 
-Vector2 quad_size = Vector2(1, 1) 🔗
+Vector2 quad_size = Vector2(1, 1) 
 
 void set_quad_size(value: Vector2)
 
@@ -3050,7 +3050,7 @@ Swizzle SWIZZLE_ONE = 5
 
 Maps a color channel to the value of one.
 
-bool alpha_blend = false 🔗
+bool alpha_blend = false 
 
 void set_alpha_blend(value: bool)
 
@@ -3060,7 +3060,7 @@ Enables the blending the layer using its alpha channel.
 
 Can be combined with Viewport.transparent_bg to give the layer a transparent background.
 
-Vector2i android_surface_size = Vector2i(1024, 1024) 🔗
+Vector2i android_surface_size = Vector2i(1024, 1024) 
 
 void set_android_surface_size(value: Vector2i)
 
@@ -3068,7 +3068,7 @@ Vector2i get_android_surface_size()
 
 The size of the Android surface to create if use_android_surface is enabled.
 
-bool enable_hole_punch = false 🔗
+bool enable_hole_punch = false 
 
 void set_enable_hole_punch(value: bool)
 
@@ -3078,7 +3078,7 @@ Enables a technique called "hole punching", which allows putting the composition
 
 This can be used to create the illusion that the composition layer exists in the same 3D space as everything rendered by Godot, allowing objects to appear to pass both behind or in front of the composition layer.
 
-SubViewport layer_viewport 🔗
+SubViewport layer_viewport 
 
 void set_layer_viewport(value: SubViewport)
 
@@ -3092,7 +3092,7 @@ The sort order for this composition layer. Higher numbers will be shown in front
 
 Note: This will have no effect if a fallback mesh is being used.
 
-Swizzle swapchain_state_alpha_swizzle = 3 🔗
+Swizzle swapchain_state_alpha_swizzle = 3 
 
 void set_alpha_swizzle(value: Swizzle)
 
@@ -3102,7 +3102,7 @@ The swizzle value for the alpha channel of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Swizzle swapchain_state_blue_swizzle = 2 🔗
+Swizzle swapchain_state_blue_swizzle = 2 
 
 void set_blue_swizzle(value: Swizzle)
 
@@ -3112,7 +3112,7 @@ The swizzle value for the blue channel of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Color swapchain_state_border_color = Color(0, 0, 0, 0) 🔗
+Color swapchain_state_border_color = Color(0, 0, 0, 0) 
 
 void set_border_color(value: Color)
 
@@ -3122,7 +3122,7 @@ The border color of the swapchain state that is used when the wrap mode clamps t
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Swizzle swapchain_state_green_swizzle = 1 🔗
+Swizzle swapchain_state_green_swizzle = 1 
 
 void set_green_swizzle(value: Swizzle)
 
@@ -3132,7 +3132,7 @@ The swizzle value for the green channel of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Wrap swapchain_state_horizontal_wrap = 0 🔗
+Wrap swapchain_state_horizontal_wrap = 0 
 
 void set_horizontal_wrap(value: Wrap)
 
@@ -3142,7 +3142,7 @@ The horizontal wrap mode of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Filter swapchain_state_mag_filter = 1 🔗
+Filter swapchain_state_mag_filter = 1 
 
 void set_mag_filter(value: Filter)
 
@@ -3152,7 +3152,7 @@ The magnification filter of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-float swapchain_state_max_anisotropy = 1.0 🔗
+float swapchain_state_max_anisotropy = 1.0 
 
 void set_max_anisotropy(value: float)
 
@@ -3162,7 +3162,7 @@ The max anisotropy of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Filter swapchain_state_min_filter = 1 🔗
+Filter swapchain_state_min_filter = 1 
 
 void set_min_filter(value: Filter)
 
@@ -3172,7 +3172,7 @@ The minification filter of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-MipmapMode swapchain_state_mipmap_mode = 2 🔗
+MipmapMode swapchain_state_mipmap_mode = 2 
 
 void set_mipmap_mode(value: MipmapMode)
 
@@ -3182,7 +3182,7 @@ The mipmap mode of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Swizzle swapchain_state_red_swizzle = 0 🔗
+Swizzle swapchain_state_red_swizzle = 0 
 
 void set_red_swizzle(value: Swizzle)
 
@@ -3192,7 +3192,7 @@ The swizzle value for the red channel of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-Wrap swapchain_state_vertical_wrap = 0 🔗
+Wrap swapchain_state_vertical_wrap = 0 
 
 void set_vertical_wrap(value: Wrap)
 
@@ -3202,7 +3202,7 @@ The vertical wrap mode of the swapchain state.
 
 Note: This property only has an effect on devices that support the OpenXR XR_FB_swapchain_update_state OpenGLES/Vulkan extensions.
 
-bool use_android_surface = false 🔗
+bool use_android_surface = false 
 
 void set_use_android_surface(value: bool)
 
@@ -3214,19 +3214,19 @@ See get_android_surface() for information about how to get the surface so that y
 
 Note: This will only work in Android builds.
 
-JavaObject get_android_surface() 🔗
+JavaObject get_android_surface() 
 
 Returns a JavaObject representing an android.view.Surface if use_android_surface is enabled and OpenXR has created the surface. Otherwise, this will return null.
 
 Note: The surface can only be created during an active OpenXR session. So, if use_android_surface is enabled outside of an OpenXR session, it won't be created until a new session fully starts.
 
-Vector2 intersects_ray(origin: Vector3, direction: Vector3) const 🔗
+Vector2 intersects_ray(origin: Vector3, direction: Vector3) const 
 
 Returns UV coordinates where the given ray intersects with the composition layer. origin and direction must be in global space.
 
 Returns Vector2(-1.0, -1.0) if the ray doesn't intersect.
 
-bool is_natively_supported() const 🔗
+bool is_natively_supported() const 
 
 Returns true if the OpenXR runtime natively supports this composition layer type.
 
@@ -3257,7 +3257,7 @@ Using an HDR panorama is strongly recommended for accurate, high-quality reflect
 
 You can use this tool to convert a cubemap to an equirectangular sky map.
 
-float energy_multiplier = 1.0 🔗
+float energy_multiplier = 1.0 
 
 void set_energy_multiplier(value: float)
 
@@ -3394,7 +3394,7 @@ set_param_texture(param: Parameter, texture: Texture2D)
 
 set_particle_flag(particle_flag: ParticleFlags, enable: bool)
 
-emission_shape_changed() 🔗
+emission_shape_changed() 
 
 Emitted when this material's emission shape is changed in any way. This includes changes to emission_shape, emission_shape_scale, or emission_sphere_radius, and any other property that affects the emission shape's offset, size, scale, or orientation.
 
@@ -3476,7 +3476,7 @@ Parameter PARAM_TURB_INFLUENCE_OVER_LIFE = 12
 
 Use with set_param_texture() to set the turbulence influence over the particles life time.
 
-enum ParticleFlags: 🔗
+enum ParticleFlags: 
 
 ParticleFlags PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY = 0
 
@@ -3498,7 +3498,7 @@ ParticleFlags PARTICLE_FLAG_MAX = 4
 
 Represents the size of the ParticleFlags enum.
 
-enum EmissionShape: 🔗
+enum EmissionShape: 
 
 EmissionShape EMISSION_SHAPE_POINT = 0
 
@@ -3532,7 +3532,7 @@ EmissionShape EMISSION_SHAPE_MAX = 7
 
 Represents the size of the EmissionShape enum.
 
-enum SubEmitterMode: 🔗
+enum SubEmitterMode: 
 
 SubEmitterMode SUB_EMITTER_DISABLED = 0
 
@@ -3558,7 +3558,7 @@ SubEmitterMode SUB_EMITTER_MAX = 5
 
 Represents the size of the SubEmitterMode enum.
 
-enum CollisionMode: 🔗
+enum CollisionMode: 
 
 CollisionMode COLLISION_DISABLED = 0
 
@@ -3576,7 +3576,7 @@ CollisionMode COLLISION_MAX = 3
 
 Represents the size of the CollisionMode enum.
 
-Texture2D alpha_curve 🔗
+Texture2D alpha_curve 
 
 void set_alpha_curve(value: Texture2D)
 
@@ -3586,7 +3586,7 @@ The alpha value of each particle's color will be multiplied by this CurveTexture
 
 Note: alpha_curve multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, alpha_curve will have no visible effect.
 
-Texture2D angle_curve 🔗
+Texture2D angle_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3594,7 +3594,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's rotation will be animated along this CurveTexture.
 
-float angle_max = 0.0 🔗
+float angle_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3604,7 +3604,7 @@ Maximum initial rotation applied to each particle, in degrees.
 
 Only applied when particle_flag_disable_z or particle_flag_rotate_y are true or the BaseMaterial3D being used to draw the particle is using BaseMaterial3D.BILLBOARD_PARTICLES.
 
-float angle_min = 0.0 🔗
+float angle_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3612,7 +3612,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of angle_max.
 
-Texture2D angular_velocity_curve 🔗
+Texture2D angular_velocity_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3620,7 +3620,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's angular velocity (rotation speed) will vary along this CurveTexture over its lifetime.
 
-float angular_velocity_max = 0.0 🔗
+float angular_velocity_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3630,7 +3630,7 @@ Maximum initial angular velocity (rotation speed) applied to each particle in de
 
 Only applied when particle_flag_disable_z or particle_flag_rotate_y are true or the BaseMaterial3D being used to draw the particle is using BaseMaterial3D.BILLBOARD_PARTICLES.
 
-float angular_velocity_min = 0.0 🔗
+float angular_velocity_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3638,7 +3638,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of angular_velocity_max.
 
-Texture2D anim_offset_curve 🔗
+Texture2D anim_offset_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3646,7 +3646,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's animation offset will vary along this CurveTexture.
 
-float anim_offset_max = 0.0 🔗
+float anim_offset_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3654,7 +3654,7 @@ float get_param_max(param: Parameter) const
 
 Maximum animation offset that corresponds to frame index in the texture. 0 is the first frame, 1 is the last one. See CanvasItemMaterial.particles_animation.
 
-float anim_offset_min = 0.0 🔗
+float anim_offset_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3662,7 +3662,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of anim_offset_max.
 
-Texture2D anim_speed_curve 🔗
+Texture2D anim_speed_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3670,7 +3670,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's animation speed will vary along this CurveTexture.
 
-float anim_speed_max = 0.0 🔗
+float anim_speed_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3680,7 +3680,7 @@ Maximum particle animation speed. Animation speed of 1 means that the particles 
 
 With animation speed greater than 1, remember to enable CanvasItemMaterial.particles_anim_loop property if you want the animation to repeat.
 
-float anim_speed_min = 0.0 🔗
+float anim_speed_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3688,7 +3688,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of anim_speed_max.
 
-bool attractor_interaction_enabled = true 🔗
+bool attractor_interaction_enabled = true 
 
 void set_attractor_interaction_enabled(value: bool)
 
@@ -3696,7 +3696,7 @@ bool is_attractor_interaction_enabled()
 
 If true, interaction with particle attractors is enabled. In 3D, attraction only occurs within the area defined by the GPUParticles3D node's GPUParticles3D.visibility_aabb.
 
-float collision_bounce 🔗
+float collision_bounce 
 
 void set_collision_bounce(value: float)
 
@@ -3704,7 +3704,7 @@ float get_collision_bounce()
 
 The particles' bounciness. Values range from 0 (no bounce) to 1 (full bounciness). Only effective if collision_mode is COLLISION_RIGID.
 
-float collision_friction 🔗
+float collision_friction 
 
 void set_collision_friction(value: float)
 
@@ -3712,7 +3712,7 @@ float get_collision_friction()
 
 The particles' friction. Values range from 0 (frictionless) to 1 (maximum friction). Only effective if collision_mode is COLLISION_RIGID.
 
-CollisionMode collision_mode = 0 🔗
+CollisionMode collision_mode = 0 
 
 void set_collision_mode(value: CollisionMode)
 
@@ -3724,7 +3724,7 @@ Note: 3D Particles can only collide with GPUParticlesCollision3D nodes, not Phys
 
 Note: 2D Particles can only collide with LightOccluder2D nodes, not PhysicsBody2D nodes.
 
-bool collision_use_scale = false 🔗
+bool collision_use_scale = false 
 
 void set_collision_use_scale(value: bool)
 
@@ -3732,7 +3732,7 @@ bool is_collision_using_scale()
 
 If true, GPUParticles3D.collision_base_size is multiplied by the particle's effective scale (see scale_min, scale_max, scale_curve, and scale_over_velocity_curve).
 
-Color color = Color(1, 1, 1, 1) 🔗
+Color color = Color(1, 1, 1, 1) 
 
 void set_color(value: Color)
 
@@ -3740,7 +3740,7 @@ Each particle's initial color. If the GPUParticles2D's texture is defined, it wi
 
 Note: color multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, color will have no visible effect.
 
-Texture2D color_initial_ramp 🔗
+Texture2D color_initial_ramp 
 
 void set_color_initial_ramp(value: Texture2D)
 
@@ -3750,7 +3750,7 @@ Each particle's initial color will vary along this GradientTexture1D (multiplied
 
 Note: color_initial_ramp multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, color_initial_ramp will have no visible effect.
 
-Texture2D color_ramp 🔗
+Texture2D color_ramp 
 
 void set_color_ramp(value: Texture2D)
 
@@ -3760,7 +3760,7 @@ Each particle's color will vary along this GradientTexture1D over its lifetime (
 
 Note: color_ramp multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, color_ramp will have no visible effect.
 
-Texture2D damping_curve 🔗
+Texture2D damping_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3768,7 +3768,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Damping will vary along this CurveTexture.
 
-float damping_max = 0.0 🔗
+float damping_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3776,7 +3776,7 @@ float get_param_max(param: Parameter) const
 
 The maximum rate at which particles lose velocity. For example value of 100 means that the particle will go from 100 velocity to 0 in 1 second.
 
-float damping_min = 0.0 🔗
+float damping_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3784,7 +3784,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of damping_max.
 
-Vector3 direction = Vector3(1, 0, 0) 🔗
+Vector3 direction = Vector3(1, 0, 0) 
 
 void set_direction(value: Vector3)
 
@@ -3792,7 +3792,7 @@ Vector3 get_direction()
 
 Unit vector specifying the particles' emission direction.
 
-Texture2D directional_velocity_curve 🔗
+Texture2D directional_velocity_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3802,7 +3802,7 @@ A curve that specifies the velocity along each of the axes of the particle syste
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float directional_velocity_max 🔗
+float directional_velocity_max 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3812,7 +3812,7 @@ Maximum directional velocity value, which is multiplied by directional_velocity_
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float directional_velocity_min 🔗
+float directional_velocity_min 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3822,7 +3822,7 @@ Minimum directional velocity value, which is multiplied by directional_velocity_
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-Vector3 emission_box_extents 🔗
+Vector3 emission_box_extents 
 
 void set_emission_box_extents(value: Vector3)
 
@@ -3832,7 +3832,7 @@ The box's extents if emission_shape is set to EMISSION_SHAPE_BOX.
 
 Note: emission_box_extents starts from the center point and applies the X, Y, and Z values in both directions. The size is twice the area of the extents.
 
-Texture2D emission_color_texture 🔗
+Texture2D emission_color_texture 
 
 void set_emission_color_texture(value: Texture2D)
 
@@ -3842,7 +3842,7 @@ Particle color will be modulated by color determined by sampling this texture at
 
 Note: emission_color_texture multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, emission_color_texture will have no visible effect.
 
-Texture2D emission_curve 🔗
+Texture2D emission_curve 
 
 void set_emission_curve(value: Texture2D)
 
@@ -3852,7 +3852,7 @@ Each particle's color will be multiplied by this CurveTexture over its lifetime.
 
 Note: emission_curve multiplies the particle mesh's vertex colors. To have a visible effect on a BaseMaterial3D, BaseMaterial3D.vertex_color_use_as_albedo must be true. For a ShaderMaterial, ALBEDO *= COLOR.rgb; must be inserted in the shader's fragment() function. Otherwise, emission_curve will have no visible effect.
 
-Texture2D emission_normal_texture 🔗
+Texture2D emission_normal_texture 
 
 void set_emission_normal_texture(value: Texture2D)
 
@@ -3860,7 +3860,7 @@ Texture2D get_emission_normal_texture()
 
 Particle velocity and rotation will be set by sampling this texture at the same point as the emission_point_texture. Used only in EMISSION_SHAPE_DIRECTED_POINTS. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
-int emission_point_count 🔗
+int emission_point_count 
 
 void set_emission_point_count(value: int)
 
@@ -3868,7 +3868,7 @@ int get_emission_point_count()
 
 The number of emission points if emission_shape is set to EMISSION_SHAPE_POINTS or EMISSION_SHAPE_DIRECTED_POINTS.
 
-Texture2D emission_point_texture 🔗
+Texture2D emission_point_texture 
 
 void set_emission_point_texture(value: Texture2D)
 
@@ -3876,7 +3876,7 @@ Texture2D get_emission_point_texture()
 
 Particles will be emitted at positions determined by sampling this texture at a random position. Used with EMISSION_SHAPE_POINTS and EMISSION_SHAPE_DIRECTED_POINTS. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.
 
-Vector3 emission_ring_axis 🔗
+Vector3 emission_ring_axis 
 
 void set_emission_ring_axis(value: Vector3)
 
@@ -3884,7 +3884,7 @@ Vector3 get_emission_ring_axis()
 
 The axis of the ring when using the emitter EMISSION_SHAPE_RING.
 
-float emission_ring_cone_angle 🔗
+float emission_ring_cone_angle 
 
 void set_emission_ring_cone_angle(value: float)
 
@@ -3894,7 +3894,7 @@ The angle of the cone when using the emitter EMISSION_SHAPE_RING. The default an
 
 Note: Depending on emission_ring_height, the angle may be clamped if the ring's end is reached to form a perfect cone.
 
-float emission_ring_height 🔗
+float emission_ring_height 
 
 void set_emission_ring_height(value: float)
 
@@ -3902,7 +3902,7 @@ float get_emission_ring_height()
 
 The height of the ring when using the emitter EMISSION_SHAPE_RING.
 
-float emission_ring_inner_radius 🔗
+float emission_ring_inner_radius 
 
 void set_emission_ring_inner_radius(value: float)
 
@@ -3910,7 +3910,7 @@ float get_emission_ring_inner_radius()
 
 The inner radius of the ring when using the emitter EMISSION_SHAPE_RING.
 
-float emission_ring_radius 🔗
+float emission_ring_radius 
 
 void set_emission_ring_radius(value: float)
 
@@ -3918,7 +3918,7 @@ float get_emission_ring_radius()
 
 The radius of the ring when using the emitter EMISSION_SHAPE_RING.
 
-EmissionShape emission_shape = 0 🔗
+EmissionShape emission_shape = 0 
 
 void set_emission_shape(value: EmissionShape)
 
@@ -3926,7 +3926,7 @@ EmissionShape get_emission_shape()
 
 Particles will be emitted inside this region.
 
-Vector3 emission_shape_offset = Vector3(0, 0, 0) 🔗
+Vector3 emission_shape_offset = Vector3(0, 0, 0) 
 
 void set_emission_shape_offset(value: Vector3)
 
@@ -3934,7 +3934,7 @@ Vector3 get_emission_shape_offset()
 
 The offset for the emission_shape, in local space.
 
-Vector3 emission_shape_scale = Vector3(1, 1, 1) 🔗
+Vector3 emission_shape_scale = Vector3(1, 1, 1) 
 
 void set_emission_shape_scale(value: Vector3)
 
@@ -3942,7 +3942,7 @@ Vector3 get_emission_shape_scale()
 
 The scale of the emission_shape, in local space.
 
-float emission_sphere_radius 🔗
+float emission_sphere_radius 
 
 void set_emission_sphere_radius(value: float)
 
@@ -3950,13 +3950,13 @@ float get_emission_sphere_radius()
 
 The sphere's radius if emission_shape is set to EMISSION_SHAPE_SPHERE.
 
-float flatness = 0.0 🔗
+float flatness = 0.0 
 
 void set_flatness(value: float)
 
 Amount of spread along the Y axis.
 
-Vector3 gravity = Vector3(0, -9.8, 0) 🔗
+Vector3 gravity = Vector3(0, -9.8, 0) 
 
 void set_gravity(value: Vector3)
 
@@ -3964,7 +3964,7 @@ Vector3 get_gravity()
 
 Gravity applied to every particle.
 
-Texture2D hue_variation_curve 🔗
+Texture2D hue_variation_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -3972,7 +3972,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's hue will vary along this CurveTexture.
 
-float hue_variation_max = 0.0 🔗
+float hue_variation_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -3980,7 +3980,7 @@ float get_param_max(param: Parameter) const
 
 Maximum initial hue variation applied to each particle. It will shift the particle color's hue.
 
-float hue_variation_min = 0.0 🔗
+float hue_variation_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -3988,7 +3988,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of hue_variation_max.
 
-float inherit_velocity_ratio = 0.0 🔗
+float inherit_velocity_ratio = 0.0 
 
 void set_inherit_velocity_ratio(value: float)
 
@@ -3996,7 +3996,7 @@ float get_inherit_velocity_ratio()
 
 Percentage of the velocity of the respective GPUParticles2D or GPUParticles3D inherited by each particle when spawning.
 
-float initial_velocity_max = 0.0 🔗
+float initial_velocity_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4004,7 +4004,7 @@ float get_param_max(param: Parameter) const
 
 Maximum initial velocity magnitude for each particle. Direction comes from direction and spread.
 
-float initial_velocity_min = 0.0 🔗
+float initial_velocity_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4012,7 +4012,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of initial_velocity_max.
 
-float lifetime_randomness = 0.0 🔗
+float lifetime_randomness = 0.0 
 
 void set_lifetime_randomness(value: float)
 
@@ -4020,7 +4020,7 @@ float get_lifetime_randomness()
 
 Particle lifetime randomness ratio. The equation for the lifetime of a particle is lifetime * (1.0 - randf() * lifetime_randomness). For example, a lifetime_randomness of 0.4 scales the lifetime between 0.6 to 1.0 of its original value.
 
-Texture2D linear_accel_curve 🔗
+Texture2D linear_accel_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4028,7 +4028,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's linear acceleration will vary along this CurveTexture.
 
-float linear_accel_max = 0.0 🔗
+float linear_accel_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4036,7 +4036,7 @@ float get_param_max(param: Parameter) const
 
 Maximum linear acceleration applied to each particle in the direction of motion.
 
-float linear_accel_min = 0.0 🔗
+float linear_accel_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4044,7 +4044,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of linear_accel_max.
 
-Texture2D orbit_velocity_curve 🔗
+Texture2D orbit_velocity_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4056,7 +4056,7 @@ Note: For 3D orbital velocity, use a CurveXYZTexture.
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float orbit_velocity_max = 0.0 🔗
+float orbit_velocity_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4066,7 +4066,7 @@ Maximum orbital velocity applied to each particle. Makes the particles circle ar
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float orbit_velocity_min = 0.0 🔗
+float orbit_velocity_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4076,7 +4076,7 @@ Minimum equivalent of orbit_velocity_max.
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-bool particle_flag_align_y = false 🔗
+bool particle_flag_align_y = false 
 
 void set_particle_flag(particle_flag: ParticleFlags, enable: bool)
 
@@ -4084,7 +4084,7 @@ bool get_particle_flag(particle_flag: ParticleFlags) const
 
 Align Y axis of particle with the direction of its velocity.
 
-bool particle_flag_damping_as_friction = false 🔗
+bool particle_flag_damping_as_friction = false 
 
 void set_particle_flag(particle_flag: ParticleFlags, enable: bool)
 
@@ -4092,7 +4092,7 @@ bool get_particle_flag(particle_flag: ParticleFlags) const
 
 Changes the behavior of the damping properties from a linear deceleration to a deceleration based on speed percentage.
 
-bool particle_flag_disable_z = false 🔗
+bool particle_flag_disable_z = false 
 
 void set_particle_flag(particle_flag: ParticleFlags, enable: bool)
 
@@ -4100,7 +4100,7 @@ bool get_particle_flag(particle_flag: ParticleFlags) const
 
 If true, particles will not move on the z axis.
 
-bool particle_flag_rotate_y = false 🔗
+bool particle_flag_rotate_y = false 
 
 void set_particle_flag(particle_flag: ParticleFlags, enable: bool)
 
@@ -4108,7 +4108,7 @@ bool get_particle_flag(particle_flag: ParticleFlags) const
 
 If true, particles rotate around Y axis by angle_min.
 
-Texture2D radial_accel_curve 🔗
+Texture2D radial_accel_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4116,7 +4116,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's radial acceleration will vary along this CurveTexture.
 
-float radial_accel_max = 0.0 🔗
+float radial_accel_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4124,7 +4124,7 @@ float get_param_max(param: Parameter) const
 
 Maximum radial acceleration applied to each particle. Makes particle accelerate away from the origin or towards it if negative.
 
-float radial_accel_min = 0.0 🔗
+float radial_accel_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4132,7 +4132,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of radial_accel_max.
 
-Texture2D radial_velocity_curve 🔗
+Texture2D radial_velocity_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4142,7 +4142,7 @@ A CurveTexture that defines the velocity over the particle's lifetime away (or t
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float radial_velocity_max = 0.0 🔗
+float radial_velocity_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4152,7 +4152,7 @@ Maximum radial velocity applied to each particle. Makes particles move away from
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-float radial_velocity_min = 0.0 🔗
+float radial_velocity_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4162,7 +4162,7 @@ Minimum radial velocity applied to each particle. Makes particles move away from
 
 Note: Animated velocities will not be affected by damping, use velocity_limit_curve instead.
 
-Texture2D scale_curve 🔗
+Texture2D scale_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4170,7 +4170,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's scale will vary along this CurveTexture over its lifetime. If a CurveXYZTexture is supplied instead, the scale will be separated per-axis.
 
-float scale_max = 1.0 🔗
+float scale_max = 1.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4178,7 +4178,7 @@ float get_param_max(param: Parameter) const
 
 Maximum initial scale applied to each particle.
 
-float scale_min = 1.0 🔗
+float scale_min = 1.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4186,7 +4186,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of scale_max.
 
-Texture2D scale_over_velocity_curve 🔗
+Texture2D scale_over_velocity_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4194,7 +4194,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Either a CurveTexture or a CurveXYZTexture that scales each particle based on its velocity.
 
-float scale_over_velocity_max = 0.0 🔗
+float scale_over_velocity_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4204,7 +4204,7 @@ Maximum velocity value reference for scale_over_velocity_curve.
 
 scale_over_velocity_curve will be interpolated between scale_over_velocity_min and scale_over_velocity_max.
 
-float scale_over_velocity_min = 0.0 🔗
+float scale_over_velocity_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4214,13 +4214,13 @@ Minimum velocity value reference for scale_over_velocity_curve.
 
 scale_over_velocity_curve will be interpolated between scale_over_velocity_min and scale_over_velocity_max.
 
-float spread = 45.0 🔗
+float spread = 45.0 
 
 void set_spread(value: float)
 
 Each particle's initial direction range from +spread to -spread degrees.
 
-int sub_emitter_amount_at_collision 🔗
+int sub_emitter_amount_at_collision 
 
 void set_sub_emitter_amount_at_collision(value: int)
 
@@ -4230,7 +4230,7 @@ The amount of particles to spawn from the subemitter node when a collision occur
 
 Note: This value shouldn't exceed GPUParticles2D.amount or GPUParticles3D.amount defined on the subemitter node (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
-int sub_emitter_amount_at_end 🔗
+int sub_emitter_amount_at_end 
 
 void set_sub_emitter_amount_at_end(value: int)
 
@@ -4240,7 +4240,7 @@ The amount of particles to spawn from the subemitter node when the particle expi
 
 Note: This value shouldn't exceed GPUParticles2D.amount or GPUParticles3D.amount defined on the subemitter node (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
-int sub_emitter_amount_at_start 🔗
+int sub_emitter_amount_at_start 
 
 void set_sub_emitter_amount_at_start(value: int)
 
@@ -4250,7 +4250,7 @@ The amount of particles to spawn from the subemitter node when the particle spaw
 
 Note: This value shouldn't exceed GPUParticles2D.amount or GPUParticles3D.amount defined on the subemitter node (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
-float sub_emitter_frequency 🔗
+float sub_emitter_frequency 
 
 void set_sub_emitter_frequency(value: float)
 
@@ -4260,7 +4260,7 @@ The frequency at which particles should be emitted from the subemitter node. One
 
 Note: This value shouldn't exceed GPUParticles2D.amount or GPUParticles3D.amount defined on the subemitter node (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
-bool sub_emitter_keep_velocity = false 🔗
+bool sub_emitter_keep_velocity = false 
 
 void set_sub_emitter_keep_velocity(value: bool)
 
@@ -4268,7 +4268,7 @@ bool get_sub_emitter_keep_velocity()
 
 If true, the subemitter inherits the parent particle's velocity when it spawns.
 
-SubEmitterMode sub_emitter_mode = 0 🔗
+SubEmitterMode sub_emitter_mode = 0 
 
 void set_sub_emitter_mode(value: SubEmitterMode)
 
@@ -4276,7 +4276,7 @@ SubEmitterMode get_sub_emitter_mode()
 
 The particle subemitter mode (see GPUParticles2D.sub_emitter and GPUParticles3D.sub_emitter).
 
-Texture2D tangential_accel_curve 🔗
+Texture2D tangential_accel_curve 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4284,7 +4284,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's tangential acceleration will vary along this CurveTexture.
 
-float tangential_accel_max = 0.0 🔗
+float tangential_accel_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4292,7 +4292,7 @@ float get_param_max(param: Parameter) const
 
 Maximum tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
-float tangential_accel_min = 0.0 🔗
+float tangential_accel_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4300,7 +4300,7 @@ float get_param_min(param: Parameter) const
 
 Minimum equivalent of tangential_accel_max.
 
-bool turbulence_enabled = false 🔗
+bool turbulence_enabled = false 
 
 void set_turbulence_enabled(value: bool)
 
@@ -4310,7 +4310,7 @@ If true, enables turbulence for the particle system. Turbulence can be used to v
 
 Note: Enabling turbulence has a high performance cost on the GPU. Only enable turbulence on a few particle systems at once at most, and consider disabling it when targeting mobile/web platforms.
 
-float turbulence_influence_max = 0.1 🔗
+float turbulence_influence_max = 0.1 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4320,7 +4320,7 @@ Maximum turbulence influence on each particle.
 
 The actual amount of turbulence influence on each particle is calculated as a random value between turbulence_influence_min and turbulence_influence_max and multiplied by the amount of turbulence influence from turbulence_influence_over_life.
 
-float turbulence_influence_min = 0.1 🔗
+float turbulence_influence_min = 0.1 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4330,7 +4330,7 @@ Minimum turbulence influence on each particle.
 
 The actual amount of turbulence influence on each particle is calculated as a random value between turbulence_influence_min and turbulence_influence_max and multiplied by the amount of turbulence influence from turbulence_influence_over_life.
 
-Texture2D turbulence_influence_over_life 🔗
+Texture2D turbulence_influence_over_life 
 
 void set_param_texture(param: Parameter, texture: Texture2D)
 
@@ -4338,7 +4338,7 @@ Texture2D get_param_texture(param: Parameter) const
 
 Each particle's amount of turbulence will be influenced along this CurveTexture over its life time.
 
-float turbulence_initial_displacement_max = 0.0 🔗
+float turbulence_initial_displacement_max = 0.0 
 
 void set_param_max(param: Parameter, value: float)
 
@@ -4348,7 +4348,7 @@ Maximum displacement of each particle's spawn position by the turbulence.
 
 The actual amount of displacement will be a factor of the underlying turbulence multiplied by a random value between turbulence_initial_displacement_min and turbulence_initial_displacement_max.
 
-float turbulence_initial_displacement_min = 0.0 🔗
+float turbulence_initial_displacement_min = 0.0 
 
 void set_param_min(param: Parameter, value: float)
 
@@ -4358,7 +4358,7 @@ Minimum displacement of each particle's spawn position by the turbulence.
 
 The actual amount of displacement will be a factor of the underlying turbulence multiplied by a random value between turbulence_initial_displacement_min and turbulence_initial_displacement_max.
 
-float turbulence_noise_scale = 9.0 🔗
+float turbulence_noise_scale = 9.0 
 
 void set_turbulence_noise_scale(value: float)
 
@@ -4368,7 +4368,7 @@ This value controls the overall scale/frequency of the turbulence noise pattern.
 
 A small scale will result in smaller features with more detail while a high scale will result in smoother noise with larger features.
 
-Vector3 turbulence_noise_speed = Vector3(0, 0, 0) 🔗
+Vector3 turbulence_noise_speed = Vector3(0, 0, 0) 
 
 void set_turbulence_noise_speed(value: Vector3)
 
@@ -4378,7 +4378,7 @@ A scrolling velocity for the turbulence field. This sets a directional trend for
 
 The default value of Vector3(0, 0, 0) turns off the scrolling.
 
-float turbulence_noise_speed_random = 0.2 🔗
+float turbulence_noise_speed_random = 0.2 
 
 void set_turbulence_noise_speed_random(value: float)
 
@@ -4388,7 +4388,7 @@ The in-place rate of change of the turbulence field. This defines how quickly th
 
 A value of 0.0 will result in a fixed pattern.
 
-float turbulence_noise_strength = 1.0 🔗
+float turbulence_noise_strength = 1.0 
 
 void set_turbulence_noise_strength(value: float)
 
@@ -4396,7 +4396,7 @@ float get_turbulence_noise_strength()
 
 The turbulence noise strength. Increasing this will result in a stronger, more contrasting, flow pattern.
 
-Texture2D velocity_limit_curve 🔗
+Texture2D velocity_limit_curve 
 
 void set_velocity_limit_curve(value: Texture2D)
 
@@ -4404,7 +4404,7 @@ Texture2D get_velocity_limit_curve()
 
 A CurveTexture that defines the maximum velocity of a particle during its lifetime.
 
-Vector3 velocity_pivot = Vector3(0, 0, 0) 🔗
+Vector3 velocity_pivot = Vector3(0, 0, 0) 
 
 void set_velocity_pivot(value: Vector3)
 
@@ -4412,47 +4412,47 @@ Vector3 get_velocity_pivot()
 
 A pivot point used to calculate radial and orbital velocity of particles.
 
-Vector2 get_param(param: Parameter) const 🔗
+Vector2 get_param(param: Parameter) const 
 
 Returns the minimum and maximum values of the given param as a vector.
 
 The x component of the returned vector corresponds to minimum and the y component corresponds to maximum.
 
-float get_param_max(param: Parameter) const 🔗
+float get_param_max(param: Parameter) const 
 
 Returns the maximum value range for the given parameter.
 
-float get_param_min(param: Parameter) const 🔗
+float get_param_min(param: Parameter) const 
 
 Returns the minimum value range for the given parameter.
 
-Texture2D get_param_texture(param: Parameter) const 🔗
+Texture2D get_param_texture(param: Parameter) const 
 
 Returns the Texture2D used by the specified parameter.
 
-bool get_particle_flag(particle_flag: ParticleFlags) const 🔗
+bool get_particle_flag(particle_flag: ParticleFlags) const 
 
 Returns true if the specified particle flag is enabled.
 
-void set_param(param: Parameter, value: Vector2) 🔗
+void set_param(param: Parameter, value: Vector2) 
 
 Sets the minimum and maximum values of the given param.
 
 The x component of the argument vector corresponds to minimum and the y component corresponds to maximum.
 
-void set_param_max(param: Parameter, value: float) 🔗
+void set_param_max(param: Parameter, value: float) 
 
 Sets the maximum value range for the given parameter.
 
-void set_param_min(param: Parameter, value: float) 🔗
+void set_param_min(param: Parameter, value: float) 
 
 Sets the minimum value range for the given parameter.
 
-void set_param_texture(param: Parameter, texture: Texture2D) 🔗
+void set_param_texture(param: Parameter, texture: Texture2D) 
 
 Sets the Texture2D for the specified Parameter.
 
-void set_particle_flag(particle_flag: ParticleFlags, enable: bool) 🔗
+void set_particle_flag(particle_flag: ParticleFlags, enable: bool) 
 
 Sets the particle_flag to enable.
 
@@ -4485,7 +4485,7 @@ Color(0.69, 0.729, 0.812, 1)
 
 Color(0.3, 0.405, 0.6, 1)
 
-float energy_multiplier = 1.0 🔗
+float energy_multiplier = 1.0 
 
 void set_energy_multiplier(value: float)
 
@@ -4493,7 +4493,7 @@ float get_energy_multiplier()
 
 The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
-Color ground_color = Color(0.1, 0.07, 0.034, 1) 🔗
+Color ground_color = Color(0.1, 0.07, 0.034, 1) 
 
 void set_ground_color(value: Color)
 
@@ -4501,7 +4501,7 @@ Color get_ground_color()
 
 Modulates the Color on the bottom half of the sky to represent the ground.
 
-float mie_coefficient = 0.005 🔗
+float mie_coefficient = 0.005 
 
 void set_mie_coefficient(value: float)
 
@@ -4509,7 +4509,7 @@ float get_mie_coefficient()
 
 Controls the strength of Mie scattering for the sky. Mie scattering results from light colliding with larger particles (like water). On earth, Mie scattering results in a whitish color around the sun and horizon.
 
-Color mie_color = Color(0.69, 0.729, 0.812, 1) 🔗
+Color mie_color = Color(0.69, 0.729, 0.812, 1) 
 
 void set_mie_color(value: Color)
 
@@ -4517,7 +4517,7 @@ Color get_mie_color()
 
 Controls the Color of the Mie scattering effect. While not physically accurate, this allows for the creation of alien-looking planets.
 
-float mie_eccentricity = 0.8 🔗
+float mie_eccentricity = 0.8 
 
 void set_mie_eccentricity(value: float)
 
@@ -4525,7 +4525,7 @@ float get_mie_eccentricity()
 
 Controls the direction of the Mie scattering. A value of 1 means that when light hits a particle it's passing through straight forward. A value of -1 means that all light is scatter backwards.
 
-Texture2D night_sky 🔗
+Texture2D night_sky 
 
 void set_night_sky(value: Texture2D)
 
@@ -4533,7 +4533,7 @@ Texture2D get_night_sky()
 
 Texture2D for the night sky. This is added to the sky, so if it is bright enough, it may be visible during the day.
 
-float rayleigh_coefficient = 2.0 🔗
+float rayleigh_coefficient = 2.0 
 
 void set_rayleigh_coefficient(value: float)
 
@@ -4541,7 +4541,7 @@ float get_rayleigh_coefficient()
 
 Controls the strength of the Rayleigh scattering. Rayleigh scattering results from light colliding with small particles. It is responsible for the blue color of the sky.
 
-Color rayleigh_color = Color(0.3, 0.405, 0.6, 1) 🔗
+Color rayleigh_color = Color(0.3, 0.405, 0.6, 1) 
 
 void set_rayleigh_color(value: Color)
 
@@ -4549,7 +4549,7 @@ Color get_rayleigh_color()
 
 Controls the Color of the Rayleigh scattering. While not physically accurate, this allows for the creation of alien-looking planets. For example, setting this to a red Color results in a Mars-looking atmosphere with a corresponding blue sunset.
 
-float sun_disk_scale = 1.0 🔗
+float sun_disk_scale = 1.0 
 
 void set_sun_disk_scale(value: float)
 
@@ -4557,7 +4557,7 @@ float get_sun_disk_scale()
 
 Sets the size of the sun disk. Default value is based on Sol's perceived size from Earth.
 
-float turbidity = 10.0 🔗
+float turbidity = 10.0 
 
 void set_turbidity(value: float)
 
@@ -4565,7 +4565,7 @@ float get_turbidity()
 
 Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atmosphere, while a low turbidity results in a clearer atmosphere.
 
-bool use_debanding = true 🔗
+bool use_debanding = true 
 
 void set_use_debanding(value: bool)
 
@@ -4633,7 +4633,7 @@ Color(0.6463, 0.6558, 0.6708, 1)
 
 Color(0.385, 0.454, 0.55, 1)
 
-float energy_multiplier = 1.0 🔗
+float energy_multiplier = 1.0 
 
 void set_energy_multiplier(value: float)
 
@@ -4641,7 +4641,7 @@ float get_energy_multiplier()
 
 The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
-Color ground_bottom_color = Color(0.2, 0.169, 0.133, 1) 🔗
+Color ground_bottom_color = Color(0.2, 0.169, 0.133, 1) 
 
 void set_ground_bottom_color(value: Color)
 
@@ -4649,7 +4649,7 @@ Color get_ground_bottom_color()
 
 Color of the ground at the bottom. Blends with ground_horizon_color.
 
-float ground_curve = 0.02 🔗
+float ground_curve = 0.02 
 
 void set_ground_curve(value: float)
 
@@ -4657,7 +4657,7 @@ float get_ground_curve()
 
 How quickly the ground_horizon_color fades into the ground_bottom_color.
 
-float ground_energy_multiplier = 1.0 🔗
+float ground_energy_multiplier = 1.0 
 
 void set_ground_energy_multiplier(value: float)
 
@@ -4665,7 +4665,7 @@ float get_ground_energy_multiplier()
 
 Multiplier for ground color. A higher value will make the ground brighter.
 
-Color ground_horizon_color = Color(0.6463, 0.6558, 0.6708, 1) 🔗
+Color ground_horizon_color = Color(0.6463, 0.6558, 0.6708, 1) 
 
 void set_ground_horizon_color(value: Color)
 
@@ -4673,7 +4673,7 @@ Color get_ground_horizon_color()
 
 Color of the ground at the horizon. Blends with ground_bottom_color.
 
-Texture2D sky_cover 🔗
+Texture2D sky_cover 
 
 void set_sky_cover(value: Texture2D)
 
@@ -4681,7 +4681,7 @@ Texture2D get_sky_cover()
 
 The sky cover texture to use. This texture must use an equirectangular projection (similar to PanoramaSkyMaterial). The texture's colors will be added to the existing sky color, and will be multiplied by sky_energy_multiplier and sky_cover_modulate. This is mainly suited to displaying stars at night, but it can also be used to display clouds at day or night (with a non-physically-accurate look).
 
-Color sky_cover_modulate = Color(1, 1, 1, 1) 🔗
+Color sky_cover_modulate = Color(1, 1, 1, 1) 
 
 void set_sky_cover_modulate(value: Color)
 
@@ -4689,7 +4689,7 @@ Color get_sky_cover_modulate()
 
 The tint to apply to the sky_cover texture. This can be used to change the sky cover's colors or opacity independently of the sky energy, which is useful for day/night or weather transitions. Only effective if a texture is defined in sky_cover.
 
-float sky_curve = 0.15 🔗
+float sky_curve = 0.15 
 
 void set_sky_curve(value: float)
 
@@ -4697,7 +4697,7 @@ float get_sky_curve()
 
 How quickly the sky_horizon_color fades into the sky_top_color.
 
-float sky_energy_multiplier = 1.0 🔗
+float sky_energy_multiplier = 1.0 
 
 void set_sky_energy_multiplier(value: float)
 
@@ -4705,7 +4705,7 @@ float get_sky_energy_multiplier()
 
 Multiplier for sky color. A higher value will make the sky brighter.
 
-Color sky_horizon_color = Color(0.6463, 0.6558, 0.6708, 1) 🔗
+Color sky_horizon_color = Color(0.6463, 0.6558, 0.6708, 1) 
 
 void set_sky_horizon_color(value: Color)
 
@@ -4713,7 +4713,7 @@ Color get_sky_horizon_color()
 
 Color of the sky at the horizon. Blends with sky_top_color.
 
-Color sky_top_color = Color(0.385, 0.454, 0.55, 1) 🔗
+Color sky_top_color = Color(0.385, 0.454, 0.55, 1) 
 
 void set_sky_top_color(value: Color)
 
@@ -4721,7 +4721,7 @@ Color get_sky_top_color()
 
 Color of the sky at the top. Blends with sky_horizon_color.
 
-float sun_angle_max = 30.0 🔗
+float sun_angle_max = 30.0 
 
 void set_sun_angle_max(value: float)
 
@@ -4729,7 +4729,7 @@ float get_sun_angle_max()
 
 Distance from center of sun where it fades out completely.
 
-float sun_curve = 0.15 🔗
+float sun_curve = 0.15 
 
 void set_sun_curve(value: float)
 
@@ -4737,7 +4737,7 @@ float get_sun_curve()
 
 How quickly the sun fades away between the edge of the sun disk and sun_angle_max.
 
-bool use_debanding = true 🔗
+bool use_debanding = true 
 
 void set_use_debanding(value: bool)
 
@@ -4768,7 +4768,7 @@ A specialization constant is a way to create additional variants of shaders with
 
 This object is used by RenderingDevice.
 
-int constant_id = 0 🔗
+int constant_id = 0 
 
 void set_constant_id(value: int)
 
@@ -4811,7 +4811,7 @@ get_version_list() const
 
 set_bytecode(bytecode: RDShaderSPIRV, version: StringName = &"")
 
-String base_error = "" 🔗
+String base_error = "" 
 
 void set_base_error(value: String)
 
@@ -4819,15 +4819,15 @@ String get_base_error()
 
 The base compilation error message, which indicates errors not related to a specific shader stage if non-empty. If empty, shader compilation is not necessarily successful (check RDShaderSPIRV's error message members).
 
-RDShaderSPIRV get_spirv(version: StringName = &"") const 🔗
+RDShaderSPIRV get_spirv(version: StringName = &"") const 
 
 Returns the SPIR-V intermediate representation for the specified shader version.
 
-Array[StringName] get_version_list() const 🔗
+Array[StringName] get_version_list() const 
 
 Returns the list of compiled versions for this shader.
 
-void set_bytecode(bytecode: RDShaderSPIRV, version: StringName = &"") 🔗
+void set_bytecode(bytecode: RDShaderSPIRV, version: StringName = &"") 
 
 Sets the SPIR-V bytecode that will be compiled for the specified version.
 
@@ -4864,7 +4864,7 @@ get_stage_source(stage: ShaderStage) const
 
 set_stage_source(stage: ShaderStage, source: String)
 
-ShaderLanguage language = 0 🔗
+ShaderLanguage language = 0 
 
 void set_language(value: ShaderLanguage)
 
@@ -4872,7 +4872,7 @@ ShaderLanguage get_language()
 
 The language the shader is written in.
 
-String source_compute = "" 🔗
+String source_compute = "" 
 
 void set_stage_source(stage: ShaderStage, source: String)
 
@@ -4880,7 +4880,7 @@ String get_stage_source(stage: ShaderStage) const
 
 Source code for the shader's compute stage.
 
-String source_fragment = "" 🔗
+String source_fragment = "" 
 
 void set_stage_source(stage: ShaderStage, source: String)
 
@@ -4888,7 +4888,7 @@ String get_stage_source(stage: ShaderStage) const
 
 Source code for the shader's fragment stage.
 
-String source_tesselation_control = "" 🔗
+String source_tesselation_control = "" 
 
 void set_stage_source(stage: ShaderStage, source: String)
 
@@ -4896,7 +4896,7 @@ String get_stage_source(stage: ShaderStage) const
 
 Source code for the shader's tessellation control stage.
 
-String source_tesselation_evaluation = "" 🔗
+String source_tesselation_evaluation = "" 
 
 void set_stage_source(stage: ShaderStage, source: String)
 
@@ -4904,7 +4904,7 @@ String get_stage_source(stage: ShaderStage) const
 
 Source code for the shader's tessellation evaluation stage.
 
-String source_vertex = "" 🔗
+String source_vertex = "" 
 
 void set_stage_source(stage: ShaderStage, source: String)
 
@@ -4912,11 +4912,11 @@ String get_stage_source(stage: ShaderStage) const
 
 Source code for the shader's vertex stage.
 
-String get_stage_source(stage: ShaderStage) const 🔗
+String get_stage_source(stage: ShaderStage) const 
 
 Returns source code for the specified shader stage. Equivalent to getting one of source_compute, source_fragment, source_tesselation_control, source_tesselation_evaluation or source_vertex.
 
-void set_stage_source(stage: ShaderStage, source: String) 🔗
+void set_stage_source(stage: ShaderStage, source: String) 
 
 Sets source code for the specified shader stage. Equivalent to setting one of source_compute, source_fragment, source_tesselation_control, source_tesselation_evaluation or source_vertex.
 
@@ -4967,7 +4967,7 @@ set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
 set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
-PackedByteArray bytecode_compute = PackedByteArray() 🔗
+PackedByteArray bytecode_compute = PackedByteArray() 
 
 void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
@@ -4977,7 +4977,7 @@ The SPIR-V bytecode for the compute shader stage.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-PackedByteArray bytecode_fragment = PackedByteArray() 🔗
+PackedByteArray bytecode_fragment = PackedByteArray() 
 
 void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
@@ -4987,7 +4987,7 @@ The SPIR-V bytecode for the fragment shader stage.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-PackedByteArray bytecode_tesselation_control = PackedByteArray() 🔗
+PackedByteArray bytecode_tesselation_control = PackedByteArray() 
 
 void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
@@ -4997,7 +4997,7 @@ The SPIR-V bytecode for the tessellation control shader stage.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-PackedByteArray bytecode_tesselation_evaluation = PackedByteArray() 🔗
+PackedByteArray bytecode_tesselation_evaluation = PackedByteArray() 
 
 void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
@@ -5007,7 +5007,7 @@ The SPIR-V bytecode for the tessellation evaluation shader stage.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-PackedByteArray bytecode_vertex = PackedByteArray() 🔗
+PackedByteArray bytecode_vertex = PackedByteArray() 
 
 void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray)
 
@@ -5017,7 +5017,7 @@ The SPIR-V bytecode for the vertex shader stage.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-String compile_error_compute = "" 🔗
+String compile_error_compute = "" 
 
 void set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
@@ -5025,7 +5025,7 @@ String get_stage_compile_error(stage: ShaderStage) const
 
 The compilation error message for the compute shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
-String compile_error_fragment = "" 🔗
+String compile_error_fragment = "" 
 
 void set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
@@ -5033,7 +5033,7 @@ String get_stage_compile_error(stage: ShaderStage) const
 
 The compilation error message for the fragment shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
-String compile_error_tesselation_control = "" 🔗
+String compile_error_tesselation_control = "" 
 
 void set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
@@ -5041,7 +5041,7 @@ String get_stage_compile_error(stage: ShaderStage) const
 
 The compilation error message for the tessellation control shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
-String compile_error_tesselation_evaluation = "" 🔗
+String compile_error_tesselation_evaluation = "" 
 
 void set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
@@ -5049,7 +5049,7 @@ String get_stage_compile_error(stage: ShaderStage) const
 
 The compilation error message for the tessellation evaluation shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
-String compile_error_vertex = "" 🔗
+String compile_error_vertex = "" 
 
 void set_stage_compile_error(stage: ShaderStage, compile_error: String)
 
@@ -5057,19 +5057,19 @@ String get_stage_compile_error(stage: ShaderStage) const
 
 The compilation error message for the vertex shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
-PackedByteArray get_stage_bytecode(stage: ShaderStage) const 🔗
+PackedByteArray get_stage_bytecode(stage: ShaderStage) const 
 
 Equivalent to getting one of bytecode_compute, bytecode_fragment, bytecode_tesselation_control, bytecode_tesselation_evaluation, bytecode_vertex.
 
-String get_stage_compile_error(stage: ShaderStage) const 🔗
+String get_stage_compile_error(stage: ShaderStage) const 
 
 Returns the compilation error message for the given shader stage. Equivalent to getting one of compile_error_compute, compile_error_fragment, compile_error_tesselation_control, compile_error_tesselation_evaluation, compile_error_vertex.
 
-void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray) 🔗
+void set_stage_bytecode(stage: ShaderStage, bytecode: PackedByteArray) 
 
 Sets the SPIR-V bytecode for the given shader stage. Equivalent to setting one of bytecode_compute, bytecode_fragment, bytecode_tesselation_control, bytecode_tesselation_evaluation, bytecode_vertex.
 
-void set_stage_compile_error(stage: ShaderStage, compile_error: String) 🔗
+void set_stage_compile_error(stage: ShaderStage, compile_error: String) 
 
 Sets the compilation error message for the given shader stage to compile_error. Equivalent to setting one of compile_error_compute, compile_error_fragment, compile_error_tesselation_control, compile_error_tesselation_evaluation, compile_error_vertex.
 
@@ -5100,7 +5100,7 @@ void set_binding(value: int)
 
 The uniform's binding.
 
-UniformType uniform_type = 3 🔗
+UniformType uniform_type = 3 
 
 void set_uniform_type(value: UniformType)
 
@@ -5108,13 +5108,13 @@ UniformType get_uniform_type()
 
 The uniform's data type.
 
-void add_id(id: RID) 🔗
+void add_id(id: RID) 
 
 Binds the given id to the uniform. The data associated with the id is then used when the uniform is passed to a shader.
 
 Unbinds all ids currently bound to the uniform.
 
-Array[RID] get_ids() const 🔗
+Array[RID] get_ids() const 
 
 Returns an array of all ids currently bound to the uniform.
 
@@ -5139,7 +5139,7 @@ Vertex attribute (used by RenderingDevice).
 
 This object is used by RenderingDevice.
 
-DataFormat format = 232 🔗
+DataFormat format = 232 
 
 void set_format(value: DataFormat)
 
@@ -5147,7 +5147,7 @@ DataFormat get_format()
 
 The way that this attribute's data is interpreted when sent to a shader.
 
-VertexFrequency frequency = 0 🔗
+VertexFrequency frequency = 0 
 
 void set_frequency(value: VertexFrequency)
 
@@ -5338,7 +5338,7 @@ AmbientMode AMBIENT_COLOR = 2
 
 Apply custom ambient lighting inside the ReflectionProbe's box defined by its size. See ambient_color and ambient_color_energy.
 
-Color ambient_color = Color(0, 0, 0, 1) 🔗
+Color ambient_color = Color(0, 0, 0, 1) 
 
 void set_ambient_color(value: Color)
 
@@ -5346,7 +5346,7 @@ Color get_ambient_color()
 
 The custom ambient color to use within the ReflectionProbe's box defined by its size. Only effective if ambient_mode is AMBIENT_COLOR.
 
-float ambient_color_energy = 1.0 🔗
+float ambient_color_energy = 1.0 
 
 void set_ambient_color_energy(value: float)
 
@@ -5354,7 +5354,7 @@ float get_ambient_color_energy()
 
 The custom ambient color energy to use within the ReflectionProbe's box defined by its size. Only effective if ambient_mode is AMBIENT_COLOR.
 
-AmbientMode ambient_mode = 1 🔗
+AmbientMode ambient_mode = 1 
 
 void set_ambient_mode(value: AmbientMode)
 
@@ -5362,7 +5362,7 @@ AmbientMode get_ambient_mode()
 
 The ambient color to use within the ReflectionProbe's box defined by its size. The ambient color will smoothly blend with other ReflectionProbes and the rest of the scene (outside the ReflectionProbe's box defined by its size).
 
-float blend_distance = 1.0 🔗
+float blend_distance = 1.0 
 
 void set_blend_distance(value: float)
 
@@ -5370,7 +5370,7 @@ float get_blend_distance()
 
 Defines the distance in meters over which a probe blends into the scene.
 
-bool box_projection = false 🔗
+bool box_projection = false 
 
 void set_enable_box_projection(value: bool)
 
@@ -5380,7 +5380,7 @@ If true, enables box projection. This makes reflections look more correct in rec
 
 Note: To better fit rectangle-shaped rooms that are not aligned to the grid, you can rotate the ReflectionProbe node.
 
-int cull_mask = 1048575 🔗
+int cull_mask = 1048575 
 
 void set_cull_mask(value: int)
 
@@ -5388,7 +5388,7 @@ Sets the cull mask which determines what objects are drawn by this probe. Every 
 
 This can also be used to prevent an object from reflecting upon itself (for instance, a ReflectionProbe centered on a vehicle).
 
-bool enable_shadows = false 🔗
+bool enable_shadows = false 
 
 void set_enable_shadows(value: bool)
 
@@ -5396,7 +5396,7 @@ bool are_shadows_enabled()
 
 If true, computes shadows in the reflection probe. This makes the reflection probe slower to render; you may want to disable this if using the UPDATE_ALWAYS update_mode.
 
-float intensity = 1.0 🔗
+float intensity = 1.0 
 
 void set_intensity(value: float)
 
@@ -5404,7 +5404,7 @@ float get_intensity()
 
 Defines the reflection intensity. Intensity modulates the strength of the reflection.
 
-bool interior = false 🔗
+bool interior = false 
 
 void set_as_interior(value: bool)
 
@@ -5412,7 +5412,7 @@ bool is_set_as_interior()
 
 If true, reflections will ignore sky contribution.
 
-float max_distance = 0.0 🔗
+float max_distance = 0.0 
 
 void set_max_distance(value: float)
 
@@ -5422,7 +5422,7 @@ The maximum distance away from the ReflectionProbe an object can be before it is
 
 Note: The maximum reflection distance is always at least equal to the probe's extents. This means that decreasing max_distance will not always cull objects from reflections, especially if the reflection probe's box defined by its size is already large.
 
-float mesh_lod_threshold = 1.0 🔗
+float mesh_lod_threshold = 1.0 
 
 void set_mesh_lod_threshold(value: float)
 
@@ -5432,7 +5432,7 @@ The automatic LOD bias to use for meshes rendered within the ReflectionProbe (th
 
 Note: mesh_lod_threshold does not affect GeometryInstance3D visibility ranges (also known as "manual" LOD or hierarchical LOD).
 
-Vector3 origin_offset = Vector3(0, 0, 0) 🔗
+Vector3 origin_offset = Vector3(0, 0, 0) 
 
 void set_origin_offset(value: Vector3)
 
@@ -5440,7 +5440,7 @@ Vector3 get_origin_offset()
 
 Sets the origin offset to be used when this ReflectionProbe is in box_projection mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the number of objects that "get in the way" of the reflection.
 
-int reflection_mask = 1048575 🔗
+int reflection_mask = 1048575 
 
 void set_reflection_mask(value: int)
 
@@ -5448,7 +5448,7 @@ int get_reflection_mask()
 
 Sets the reflection mask which determines what objects have reflections applied from this probe. Every VisualInstance3D with a layer included in this reflection mask will have reflections applied from this probe. See also cull_mask, which can be used to exclude objects from appearing in the reflection while still making them affected by the ReflectionProbe.
 
-Vector3 size = Vector3(20, 20, 20) 🔗
+Vector3 size = Vector3(20, 20, 20) 
 
 void set_size(value: Vector3)
 
@@ -5456,7 +5456,7 @@ The size of the reflection probe. The larger the size, the more space covered by
 
 Note: To better fit areas that are not aligned to the grid, you can rotate the ReflectionProbe node.
 
-UpdateMode update_mode = 0 🔗
+UpdateMode update_mode = 0 
 
 void set_update_mode(value: UpdateMode)
 
@@ -5495,19 +5495,19 @@ get_render_scene_buffers() const
 
 get_render_scene_data() const
 
-RID get_camera_attributes() const 🔗
+RID get_camera_attributes() const 
 
 Returns the RID of the camera attributes object in the RenderingServer being used to render this viewport.
 
-RID get_environment() const 🔗
+RID get_environment() const 
 
 Returns the RID of the environment object in the RenderingServer being used to render this viewport.
 
-RenderSceneBuffers get_render_scene_buffers() const 🔗
+RenderSceneBuffers get_render_scene_buffers() const 
 
 Returns the RenderSceneBuffers object managing the scene buffers for rendering this viewport.
 
-RenderSceneData get_render_scene_data() const 🔗
+RenderSceneData get_render_scene_data() const 
 
 Returns the RenderSceneData object managing this frames scene data.
 
@@ -5787,7 +5787,7 @@ DeviceType DEVICE_TYPE_MAX = 5
 
 Represents the size of the DeviceType enum.
 
-enum DriverResource: 🔗
+enum DriverResource: 
 
 DriverResource DRIVER_RESOURCE_LOGICAL_DEVICE = 0
 
@@ -6897,7 +6897,7 @@ TextureType TEXTURE_TYPE_MAX = 7
 
 Represents the size of the TextureType enum.
 
-enum TextureSamples: 🔗
+enum TextureSamples: 
 
 TextureSamples TEXTURE_SAMPLES_1 = 0
 
@@ -6931,7 +6931,7 @@ TextureSamples TEXTURE_SAMPLES_MAX = 7
 
 Represents the size of the TextureSamples enum.
 
-flags TextureUsageBits: 🔗
+flags TextureUsageBits: 
 
 TextureUsageBits TEXTURE_USAGE_SAMPLING_BIT = 1
 
@@ -6973,7 +6973,7 @@ TextureUsageBits TEXTURE_USAGE_INPUT_ATTACHMENT_BIT = 512
 
 Texture can be used as a input attachment in a framebuffer.
 
-enum TextureSwizzle: 🔗
+enum TextureSwizzle: 
 
 TextureSwizzle TEXTURE_SWIZZLE_IDENTITY = 0
 
@@ -7007,7 +7007,7 @@ TextureSwizzle TEXTURE_SWIZZLE_MAX = 7
 
 Represents the size of the TextureSwizzle enum.
 
-enum TextureSliceType: 🔗
+enum TextureSliceType: 
 
 TextureSliceType TEXTURE_SLICE_2D = 0
 
@@ -7021,7 +7021,7 @@ TextureSliceType TEXTURE_SLICE_3D = 2
 
 3-dimensional texture slice.
 
-enum SamplerFilter: 🔗
+enum SamplerFilter: 
 
 SamplerFilter SAMPLER_FILTER_NEAREST = 0
 
@@ -7031,7 +7031,7 @@ SamplerFilter SAMPLER_FILTER_LINEAR = 1
 
 Bilinear sampler filtering. Sampling at higher resolutions than the source will result in a blurry look.
 
-enum SamplerRepeatMode: 🔗
+enum SamplerRepeatMode: 
 
 SamplerRepeatMode SAMPLER_REPEAT_MODE_REPEAT = 0
 
@@ -7057,7 +7057,7 @@ SamplerRepeatMode SAMPLER_REPEAT_MODE_MAX = 5
 
 Represents the size of the SamplerRepeatMode enum.
 
-enum SamplerBorderColor: 🔗
+enum SamplerBorderColor: 
 
 SamplerBorderColor SAMPLER_BORDER_COLOR_FLOAT_TRANSPARENT_BLACK = 0
 
@@ -7087,7 +7087,7 @@ SamplerBorderColor SAMPLER_BORDER_COLOR_MAX = 6
 
 Represents the size of the SamplerBorderColor enum.
 
-enum VertexFrequency: 🔗
+enum VertexFrequency: 
 
 VertexFrequency VERTEX_FREQUENCY_VERTEX = 0
 
@@ -7097,7 +7097,7 @@ VertexFrequency VERTEX_FREQUENCY_INSTANCE = 1
 
 Vertex attribute addressing is a function of the instance index. This is used to specify the rate at which vertex attributes are pulled from buffers.
 
-enum IndexBufferFormat: 🔗
+enum IndexBufferFormat: 
 
 IndexBufferFormat INDEX_BUFFER_FORMAT_UINT16 = 0
 
@@ -7107,13 +7107,13 @@ IndexBufferFormat INDEX_BUFFER_FORMAT_UINT32 = 1
 
 Index buffer in 32-bit unsigned integer format. This limits the maximum index that can be specified to 4294967295.
 
-flags StorageBufferUsage: 🔗
+flags StorageBufferUsage: 
 
 StorageBufferUsage STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT = 1
 
 There is currently no description for this enum. Please help us by contributing one!
 
-flags BufferCreationBits: 🔗
+flags BufferCreationBits: 
 
 BufferCreationBits BUFFER_CREATION_DEVICE_ADDRESS_BIT = 1
 
@@ -7161,7 +7161,7 @@ UniformType UNIFORM_TYPE_MAX = 10
 
 Represents the size of the UniformType enum.
 
-enum RenderPrimitive: 🔗
+enum RenderPrimitive: 
 
 RenderPrimitive RENDER_PRIMITIVE_POINTS = 0
 
@@ -7221,7 +7221,7 @@ RenderPrimitive RENDER_PRIMITIVE_MAX = 11
 
 Represents the size of the RenderPrimitive enum.
 
-enum PolygonCullMode: 🔗
+enum PolygonCullMode: 
 
 PolygonCullMode POLYGON_CULL_DISABLED = 0
 
@@ -7235,7 +7235,7 @@ PolygonCullMode POLYGON_CULL_BACK = 2
 
 Use polygon backface culling (faces pointing away from the camera are hidden).
 
-enum PolygonFrontFace: 🔗
+enum PolygonFrontFace: 
 
 PolygonFrontFace POLYGON_FRONT_FACE_CLOCKWISE = 0
 
@@ -7245,7 +7245,7 @@ PolygonFrontFace POLYGON_FRONT_FACE_COUNTER_CLOCKWISE = 1
 
 Counter-clockwise winding order to determine which face of a polygon is its front face.
 
-enum StencilOperation: 🔗
+enum StencilOperation: 
 
 StencilOperation STENCIL_OP_KEEP = 0
 
@@ -7283,7 +7283,7 @@ StencilOperation STENCIL_OP_MAX = 8
 
 Represents the size of the StencilOperation enum.
 
-enum CompareOperator: 🔗
+enum CompareOperator: 
 
 CompareOperator COMPARE_OP_NEVER = 0
 
@@ -7319,7 +7319,7 @@ CompareOperator COMPARE_OP_MAX = 8
 
 Represents the size of the CompareOperator enum.
 
-enum LogicOperation: 🔗
+enum LogicOperation: 
 
 LogicOperation LOGIC_OP_CLEAR = 0
 
@@ -7465,7 +7465,7 @@ BlendFactor BLEND_FACTOR_MAX = 19
 
 Represents the size of the BlendFactor enum.
 
-enum BlendOperation: 🔗
+enum BlendOperation: 
 
 BlendOperation BLEND_OP_ADD = 0
 
@@ -7491,7 +7491,7 @@ BlendOperation BLEND_OP_MAX = 5
 
 Represents the size of the BlendOperation enum.
 
-flags PipelineDynamicStateFlags: 🔗
+flags PipelineDynamicStateFlags: 
 
 PipelineDynamicStateFlags DYNAMIC_STATE_LINE_WIDTH = 1
 
@@ -7521,7 +7521,7 @@ PipelineDynamicStateFlags DYNAMIC_STATE_STENCIL_REFERENCE = 64
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum InitialAction: 🔗
+enum InitialAction: 
 
 InitialAction INITIAL_ACTION_LOAD = 0
 
@@ -7637,7 +7637,7 @@ ShaderStage SHADER_STAGE_COMPUTE_BIT = 16
 
 Compute shader stage bit (see also SHADER_STAGE_COMPUTE).
 
-enum ShaderLanguage: 🔗
+enum ShaderLanguage: 
 
 ShaderLanguage SHADER_LANGUAGE_GLSL = 0
 
@@ -7647,7 +7647,7 @@ ShaderLanguage SHADER_LANGUAGE_HLSL = 1
 
 Microsoft's High-Level Shading Language (used natively by Direct3D, but can also be used in Vulkan).
 
-enum PipelineSpecializationConstantType: 🔗
+enum PipelineSpecializationConstantType: 
 
 PipelineSpecializationConstantType PIPELINE_SPECIALIZATION_CONSTANT_TYPE_BOOL = 0
 
@@ -7849,7 +7849,7 @@ MemoryType MEMORY_TOTAL = 2
 
 Total memory taken. This is greater than the sum of MEMORY_TEXTURES and MEMORY_BUFFERS, as it also includes miscellaneous memory usage.
 
-enum BreadcrumbMarker: 🔗
+enum BreadcrumbMarker: 
 
 BreadcrumbMarker NONE = 0
 
@@ -8013,17 +8013,17 @@ Ignore the previous contents of all attachments.
 
 Returned by functions that return an ID if a value is invalid.
 
-INVALID_FORMAT_ID = -1 🔗
+INVALID_FORMAT_ID = -1 
 
 Returned by functions that return a format ID if a value is invalid.
 
-void barrier(from: BitField[BarrierMask] = 32767, to: BitField[BarrierMask] = 32767) 🔗
+void barrier(from: BitField[BarrierMask] = 32767, to: BitField[BarrierMask] = 32767) 
 
 Deprecated: Barriers are automatically inserted by RenderingDevice.
 
 This method does nothing.
 
-Error buffer_clear(buffer: RID, offset: int, size_bytes: int) 🔗
+Error buffer_clear(buffer: RID, offset: int, size_bytes: int) 
 
 Clears the contents of the buffer, clearing size_bytes bytes, starting at offset.
 
@@ -8035,7 +8035,7 @@ a draw list is currently active (created by draw_list_begin())
 
 a compute list is currently active (created by compute_list_begin())
 
-Error buffer_copy(src_buffer: RID, dst_buffer: RID, src_offset: int, dst_offset: int, size: int) 🔗
+Error buffer_copy(src_buffer: RID, dst_buffer: RID, src_offset: int, dst_offset: int, size: int) 
 
 Copies size bytes from the src_buffer at src_offset into dst_buffer at dst_offset.
 
@@ -8045,13 +8045,13 @@ a draw list is currently active (created by draw_list_begin())
 
 a compute list is currently active (created by compute_list_begin())
 
-PackedByteArray buffer_get_data(buffer: RID, offset_bytes: int = 0, size_bytes: int = 0) 🔗
+PackedByteArray buffer_get_data(buffer: RID, offset_bytes: int = 0, size_bytes: int = 0) 
 
 Returns a copy of the data of the specified buffer, optionally offset_bytes and size_bytes can be set to copy only a portion of the buffer.
 
 Note: This method will block the GPU from working until the data is retrieved. Refer to buffer_get_data_async() for an alternative that returns the data in more performant way.
 
-Error buffer_get_data_async(buffer: RID, callback: Callable, offset_bytes: int = 0, size_bytes: int = 0) 🔗
+Error buffer_get_data_async(buffer: RID, callback: Callable, offset_bytes: int = 0, size_bytes: int = 0) 
 
 Asynchronous version of buffer_get_data(). RenderingDevice will call callback in a certain amount of frames with the data the buffer had at the time of the request.
 
@@ -8059,13 +8059,13 @@ Note: At the moment, the delay corresponds to the amount of frames specified by 
 
 Note: Downloading large buffers can have a prohibitive cost for real-time even when using the asynchronous method due to hardware bandwidth limitations. When dealing with large resources, you can adjust settings such as ProjectSettings.rendering/rendering_device/staging_buffer/block_size_kb to improve the transfer speed at the cost of extra memory.
 
-int buffer_get_device_address(buffer: RID) 🔗
+int buffer_get_device_address(buffer: RID) 
 
 Returns the address of the given buffer which can be passed to shaders in any way to access underlying data. Buffer must have been created with this feature enabled.
 
 Note: You must check that the GPU supports this functionality by calling has_feature() with SUPPORTS_BUFFER_DEVICE_ADDRESS as a parameter.
 
-Error buffer_update(buffer: RID, offset: int, size_bytes: int, data: PackedByteArray) 🔗
+Error buffer_update(buffer: RID, offset: int, size_bytes: int, data: PackedByteArray) 
 
 Updates a region of size_bytes bytes, starting at offset, in the buffer, with the specified data.
 
@@ -8075,15 +8075,15 @@ a draw list is currently active (created by draw_list_begin())
 
 a compute list is currently active (created by compute_list_begin())
 
-void capture_timestamp(name: String) 🔗
+void capture_timestamp(name: String) 
 
 Creates a timestamp marker with the specified name. This is used for performance reporting with the get_captured_timestamp_cpu_time(), get_captured_timestamp_gpu_time() and get_captured_timestamp_name() methods.
 
-void compute_list_add_barrier(compute_list: int) 🔗
+void compute_list_add_barrier(compute_list: int) 
 
 Raises a Vulkan compute barrier in the specified compute_list.
 
-int compute_list_begin() 🔗
+int compute_list_begin() 
 
 Starts a list of compute commands created with the compute_* methods. The returned value should be passed to other compute_list_* functions.
 
@@ -8091,61 +8091,61 @@ Multiple compute lists cannot be created at the same time; you must finish the p
 
 A simple compute operation might look like this (code is not a complete example):
 
-void compute_list_bind_compute_pipeline(compute_list: int, compute_pipeline: RID) 🔗
+void compute_list_bind_compute_pipeline(compute_list: int, compute_pipeline: RID) 
 
 Tells the GPU what compute pipeline to use when processing the compute list. If the shader has changed since the last time this function was called, Godot will unbind all descriptor sets and will re-bind them inside compute_list_dispatch().
 
-void compute_list_bind_uniform_set(compute_list: int, uniform_set: RID, set_index: int) 🔗
+void compute_list_bind_uniform_set(compute_list: int, uniform_set: RID, set_index: int) 
 
 Binds the uniform_set to this compute_list. Godot ensures that all textures in the uniform set have the correct Vulkan access masks. If Godot had to change access masks of textures, it will raise a Vulkan image memory barrier.
 
-void compute_list_dispatch(compute_list: int, x_groups: int, y_groups: int, z_groups: int) 🔗
+void compute_list_dispatch(compute_list: int, x_groups: int, y_groups: int, z_groups: int) 
 
 Submits the compute list for processing on the GPU. This is the compute equivalent to draw_list_draw().
 
-void compute_list_dispatch_indirect(compute_list: int, buffer: RID, offset: int) 🔗
+void compute_list_dispatch_indirect(compute_list: int, buffer: RID, offset: int) 
 
 Submits the compute list for processing on the GPU with the given group counts stored in the buffer at offset. Buffer must have been created with STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT flag.
 
-void compute_list_end() 🔗
+void compute_list_end() 
 
 Finishes a list of compute commands created with the compute_* methods.
 
-void compute_list_set_push_constant(compute_list: int, buffer: PackedByteArray, size_bytes: int) 🔗
+void compute_list_set_push_constant(compute_list: int, buffer: PackedByteArray, size_bytes: int) 
 
 Sets the push constant data to buffer for the specified compute_list. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in size_bytes (this can be obtained by calling the PackedByteArray.size() method on the passed buffer).
 
-RID compute_pipeline_create(shader: RID, specialization_constants: Array[RDPipelineSpecializationConstant] = []) 🔗
+RID compute_pipeline_create(shader: RID, specialization_constants: Array[RDPipelineSpecializationConstant] = []) 
 
 Creates a new compute pipeline. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-bool compute_pipeline_is_valid(compute_pipeline: RID) 🔗
+bool compute_pipeline_is_valid(compute_pipeline: RID) 
 
 Returns true if the compute pipeline specified by the compute_pipeline RID is valid, false otherwise.
 
-RenderingDevice create_local_device() 🔗
+RenderingDevice create_local_device() 
 
 Create a new local RenderingDevice. This is most useful for performing compute operations on the GPU independently from the rest of the engine.
 
-void draw_command_begin_label(name: String, color: Color) 🔗
+void draw_command_begin_label(name: String, color: Color) 
 
 Create a command buffer debug label region that can be displayed in third-party tools such as RenderDoc. All regions must be ended with a draw_command_end_label() call. When viewed from the linear series of submissions to a single queue, calls to draw_command_begin_label() and draw_command_end_label() must be matched and balanced.
 
 The VK_EXT_DEBUG_UTILS_EXTENSION_NAME Vulkan extension must be available and enabled for command buffer debug label region to work. See also draw_command_end_label().
 
-void draw_command_end_label() 🔗
+void draw_command_end_label() 
 
 Ends the command buffer debug label region started by a draw_command_begin_label() call.
 
-void draw_command_insert_label(name: String, color: Color) 🔗
+void draw_command_insert_label(name: String, color: Color) 
 
 Deprecated: Inserting labels no longer applies due to command reordering.
 
 This method does nothing.
 
-int draw_list_begin(framebuffer: RID, draw_flags: BitField[DrawFlags] = 0, clear_color_values: PackedColorArray = PackedColorArray(), clear_depth_value: float = 1.0, clear_stencil_value: int = 0, region: Rect2 = Rect2(0, 0, 0, 0), breadcrumb: int = 0) 🔗
+int draw_list_begin(framebuffer: RID, draw_flags: BitField[DrawFlags] = 0, clear_color_values: PackedColorArray = PackedColorArray(), clear_depth_value: float = 1.0, clear_stencil_value: int = 0, region: Rect2 = Rect2(0, 0, 0, 0), breadcrumb: int = 0) 
 
 Starts a list of raster drawing commands created with the draw_* methods. The returned value should be passed to other draw_list_* functions.
 
@@ -8159,155 +8159,155 @@ The breadcrumb parameter can be an arbitrary 32-bit integer that is useful to di
 
 It does not affect rendering behavior and can be set to 0. It is recommended to use BreadcrumbMarker enumerations for consistency but it's not required. It is also possible to use bitwise operations to add extra data. e.g.
 
-int draw_list_begin_for_screen(screen: int = 0, clear_color: Color = Color(0, 0, 0, 1)) 🔗
+int draw_list_begin_for_screen(screen: int = 0, clear_color: Color = Color(0, 0, 0, 1)) 
 
 High-level variant of draw_list_begin(), with the parameters automatically being adjusted for drawing onto the window specified by the screen ID.
 
 Note: Cannot be used with local RenderingDevices, as these don't have a screen. If called on a local RenderingDevice, draw_list_begin_for_screen() returns INVALID_ID.
 
-PackedInt64Array draw_list_begin_split(framebuffer: RID, splits: int, initial_color_action: InitialAction, final_color_action: FinalAction, initial_depth_action: InitialAction, final_depth_action: FinalAction, clear_color_values: PackedColorArray = PackedColorArray(), clear_depth: float = 1.0, clear_stencil: int = 0, region: Rect2 = Rect2(0, 0, 0, 0), storage_textures: Array[RID] = []) 🔗
+PackedInt64Array draw_list_begin_split(framebuffer: RID, splits: int, initial_color_action: InitialAction, final_color_action: FinalAction, initial_depth_action: InitialAction, final_depth_action: FinalAction, clear_color_values: PackedColorArray = PackedColorArray(), clear_depth: float = 1.0, clear_stencil: int = 0, region: Rect2 = Rect2(0, 0, 0, 0), storage_textures: Array[RID] = []) 
 
 Deprecated: Split draw lists are used automatically by RenderingDevice.
 
 This method does nothing and always returns an empty PackedInt64Array.
 
-void draw_list_bind_index_array(draw_list: int, index_array: RID) 🔗
+void draw_list_bind_index_array(draw_list: int, index_array: RID) 
 
 Binds index_array to the specified draw_list.
 
-void draw_list_bind_render_pipeline(draw_list: int, render_pipeline: RID) 🔗
+void draw_list_bind_render_pipeline(draw_list: int, render_pipeline: RID) 
 
 Binds render_pipeline to the specified draw_list.
 
-void draw_list_bind_uniform_set(draw_list: int, uniform_set: RID, set_index: int) 🔗
+void draw_list_bind_uniform_set(draw_list: int, uniform_set: RID, set_index: int) 
 
 Binds uniform_set to the specified draw_list. A set_index must also be specified, which is an identifier starting from 0 that must match the one expected by the draw list.
 
-void draw_list_bind_vertex_array(draw_list: int, vertex_array: RID) 🔗
+void draw_list_bind_vertex_array(draw_list: int, vertex_array: RID) 
 
 Binds vertex_array to the specified draw_list.
 
-void draw_list_disable_scissor(draw_list: int) 🔗
+void draw_list_disable_scissor(draw_list: int) 
 
 Removes and disables the scissor rectangle for the specified draw_list. See also draw_list_enable_scissor().
 
-void draw_list_draw(draw_list: int, use_indices: bool, instances: int, procedural_vertex_count: int = 0) 🔗
+void draw_list_draw(draw_list: int, use_indices: bool, instances: int, procedural_vertex_count: int = 0) 
 
 Submits draw_list for rendering on the GPU. This is the raster equivalent to compute_list_dispatch().
 
-void draw_list_draw_indirect(draw_list: int, use_indices: bool, buffer: RID, offset: int = 0, draw_count: int = 1, stride: int = 0) 🔗
+void draw_list_draw_indirect(draw_list: int, use_indices: bool, buffer: RID, offset: int = 0, draw_count: int = 1, stride: int = 0) 
 
 Submits draw_list for rendering on the GPU with the given parameters stored in the buffer at offset. Parameters being integers: vertex count, instance count, first vertex, first instance. And when using indices: index count, instance count, first index, vertex offset, first instance. Buffer must have been created with STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT flag.
 
-void draw_list_enable_scissor(draw_list: int, rect: Rect2 = Rect2(0, 0, 0, 0)) 🔗
+void draw_list_enable_scissor(draw_list: int, rect: Rect2 = Rect2(0, 0, 0, 0)) 
 
 Creates a scissor rectangle and enables it for the specified draw_list. Scissor rectangles are used for clipping by discarding fragments that fall outside a specified rectangular portion of the screen. See also draw_list_disable_scissor().
 
 Note: The specified rect is automatically intersected with the screen's dimensions, which means it cannot exceed the screen's dimensions.
 
-void draw_list_end() 🔗
+void draw_list_end() 
 
 Finishes a list of raster drawing commands created with the draw_* methods.
 
-void draw_list_set_blend_constants(draw_list: int, color: Color) 🔗
+void draw_list_set_blend_constants(draw_list: int, color: Color) 
 
 Sets blend constants for the specified draw_list to color. Blend constants are used only if the graphics pipeline is created with DYNAMIC_STATE_BLEND_CONSTANTS flag set.
 
-void draw_list_set_push_constant(draw_list: int, buffer: PackedByteArray, size_bytes: int) 🔗
+void draw_list_set_push_constant(draw_list: int, buffer: PackedByteArray, size_bytes: int) 
 
 Sets the push constant data to buffer for the specified draw_list. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in size_bytes (this can be obtained by calling the PackedByteArray.size() method on the passed buffer).
 
-int draw_list_switch_to_next_pass() 🔗
+int draw_list_switch_to_next_pass() 
 
 Switches to the next draw pass.
 
-PackedInt64Array draw_list_switch_to_next_pass_split(splits: int) 🔗
+PackedInt64Array draw_list_switch_to_next_pass_split(splits: int) 
 
 Deprecated: Split draw lists are used automatically by RenderingDevice.
 
 This method does nothing and always returns an empty PackedInt64Array.
 
-RID framebuffer_create(textures: Array[RID], validate_with_format: int = -1, view_count: int = 1) 🔗
+RID framebuffer_create(textures: Array[RID], validate_with_format: int = -1, view_count: int = 1) 
 
 Creates a new framebuffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-RID framebuffer_create_empty(size: Vector2i, samples: TextureSamples = 0, validate_with_format: int = -1) 🔗
+RID framebuffer_create_empty(size: Vector2i, samples: TextureSamples = 0, validate_with_format: int = -1) 
 
 Creates a new empty framebuffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-RID framebuffer_create_multipass(textures: Array[RID], passes: Array[RDFramebufferPass], validate_with_format: int = -1, view_count: int = 1) 🔗
+RID framebuffer_create_multipass(textures: Array[RID], passes: Array[RDFramebufferPass], validate_with_format: int = -1, view_count: int = 1) 
 
 Creates a new multipass framebuffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-int framebuffer_format_create(attachments: Array[RDAttachmentFormat], view_count: int = 1) 🔗
+int framebuffer_format_create(attachments: Array[RDAttachmentFormat], view_count: int = 1) 
 
 Creates a new framebuffer format with the specified attachments and view_count. Returns the new framebuffer's unique framebuffer format ID.
 
 If view_count is greater than or equal to 2, enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
 
-int framebuffer_format_create_empty(samples: TextureSamples = 0) 🔗
+int framebuffer_format_create_empty(samples: TextureSamples = 0) 
 
 Creates a new empty framebuffer format with the specified number of samples and returns its ID.
 
-int framebuffer_format_create_multipass(attachments: Array[RDAttachmentFormat], passes: Array[RDFramebufferPass], view_count: int = 1) 🔗
+int framebuffer_format_create_multipass(attachments: Array[RDAttachmentFormat], passes: Array[RDFramebufferPass], view_count: int = 1) 
 
 Creates a multipass framebuffer format with the specified attachments, passes and view_count and returns its ID. If view_count is greater than or equal to 2, enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
 
-TextureSamples framebuffer_format_get_texture_samples(format: int, render_pass: int = 0) 🔗
+TextureSamples framebuffer_format_get_texture_samples(format: int, render_pass: int = 0) 
 
 Returns the number of texture samples used for the given framebuffer format ID (returned by framebuffer_get_format()).
 
-int framebuffer_get_format(framebuffer: RID) 🔗
+int framebuffer_get_format(framebuffer: RID) 
 
 Returns the format ID of the framebuffer specified by the framebuffer RID. This ID is guaranteed to be unique for the same formats and does not need to be freed.
 
-bool framebuffer_is_valid(framebuffer: RID) const 🔗
+bool framebuffer_is_valid(framebuffer: RID) const 
 
 Returns true if the framebuffer specified by the framebuffer RID is valid, false otherwise.
 
-void free_rid(rid: RID) 🔗
+void free_rid(rid: RID) 
 
 Tries to free an object in the RenderingDevice. To avoid memory leaks, this should be called after using an object as memory management does not occur automatically when using RenderingDevice directly.
 
-void full_barrier() 🔗
+void full_barrier() 
 
 Deprecated: Barriers are automatically inserted by RenderingDevice.
 
 This method does nothing.
 
-int get_captured_timestamp_cpu_time(index: int) const 🔗
+int get_captured_timestamp_cpu_time(index: int) const 
 
 Returns the timestamp in CPU time for the rendering step specified by index (in microseconds since the engine started). See also get_captured_timestamp_gpu_time() and capture_timestamp().
 
-int get_captured_timestamp_gpu_time(index: int) const 🔗
+int get_captured_timestamp_gpu_time(index: int) const 
 
 Returns the timestamp in GPU time for the rendering step specified by index (in microseconds since the engine started). See also get_captured_timestamp_cpu_time() and capture_timestamp().
 
-String get_captured_timestamp_name(index: int) const 🔗
+String get_captured_timestamp_name(index: int) const 
 
 Returns the timestamp's name for the rendering step specified by index. See also capture_timestamp().
 
-int get_captured_timestamps_count() const 🔗
+int get_captured_timestamps_count() const 
 
 Returns the total number of timestamps (rendering steps) available for profiling.
 
-int get_captured_timestamps_frame() const 🔗
+int get_captured_timestamps_frame() const 
 
 Returns the index of the last frame rendered that has rendering timestamps available for querying.
 
-int get_device_allocation_count() const 🔗
+int get_device_allocation_count() const 
 
 Returns how many allocations the GPU has performed for internal driver structures.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-int get_device_allocs_by_object_type(type: int) const 🔗
+int get_device_allocs_by_object_type(type: int) const 
 
 Same as get_device_allocation_count() but filtered for a given object type.
 
@@ -8315,7 +8315,7 @@ The type argument must be in range [0; get_tracked_object_type_count - 1]. If ge
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-int get_device_memory_by_object_type(type: int) const 🔗
+int get_device_memory_by_object_type(type: int) const 
 
 Same as get_device_total_memory() but filtered for a given object type.
 
@@ -8323,31 +8323,31 @@ The type argument must be in range [0; get_tracked_object_type_count - 1]. If ge
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-String get_device_name() const 🔗
+String get_device_name() const 
 
 Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equivalent to RenderingServer.get_video_adapter_name(). See also get_device_vendor_name().
 
-String get_device_pipeline_cache_uuid() const 🔗
+String get_device_pipeline_cache_uuid() const 
 
 Returns the universally unique identifier for the pipeline cache. This is used to cache shader files on disk, which avoids shader recompilations on subsequent engine runs. This UUID varies depending on the graphics card model, but also the driver version. Therefore, updating graphics drivers will invalidate the shader cache.
 
-int get_device_total_memory() const 🔗
+int get_device_total_memory() const 
 
 Returns how much bytes the GPU is using.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-String get_device_vendor_name() const 🔗
+String get_device_vendor_name() const 
 
 Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent to RenderingServer.get_video_adapter_vendor(). See also get_device_name().
 
-int get_driver_allocation_count() const 🔗
+int get_driver_allocation_count() const 
 
 Returns how many allocations the GPU driver has performed for internal driver structures.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-int get_driver_allocs_by_object_type(type: int) const 🔗
+int get_driver_allocs_by_object_type(type: int) const 
 
 Same as get_driver_allocation_count() but filtered for a given object type.
 
@@ -8355,7 +8355,7 @@ The type argument must be in range [0; get_tracked_object_type_count - 1]. If ge
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-String get_driver_and_device_memory_report() const 🔗
+String get_driver_and_device_memory_report() const 
 
 Returns string report in CSV format using the following methods:
 
@@ -8381,7 +8381,7 @@ get_device_allocs_by_object_type()
 
 This is only used by Vulkan in debug builds. Godot must also be started with the --extra-gpu-memory-tracking command line argument.
 
-int get_driver_memory_by_object_type(type: int) const 🔗
+int get_driver_memory_by_object_type(type: int) const 
 
 Same as get_driver_total_memory() but filtered for a given object type.
 
@@ -8389,29 +8389,29 @@ The type argument must be in range [0; get_tracked_object_type_count - 1]. If ge
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-int get_driver_resource(resource: DriverResource, rid: RID, index: int) 🔗
+int get_driver_resource(resource: DriverResource, rid: RID, index: int) 
 
 Returns the unique identifier of the driver resource for the specified rid. Some driver resource types ignore the specified rid. index is always ignored but must be specified anyway.
 
-int get_driver_total_memory() const 🔗
+int get_driver_total_memory() const 
 
 Returns how much bytes the GPU driver is using for internal driver structures.
 
 This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
-int get_frame_delay() const 🔗
+int get_frame_delay() const 
 
 Returns the frame count kept by the graphics API. Higher values result in higher input lag, but with more consistent throughput. For the main RenderingDevice, frames are cycled (usually 3 with triple-buffered V-Sync enabled). However, local RenderingDevices only have 1 frame.
 
-int get_memory_usage(type: MemoryType) const 🔗
+int get_memory_usage(type: MemoryType) const 
 
 Returns the memory usage in bytes corresponding to the given type. When using Vulkan, these statistics are calculated by Vulkan Memory Allocator.
 
-String get_perf_report() const 🔗
+String get_perf_report() const 
 
 Returns a string with a performance report from the past frame. Updates every frame.
 
-String get_tracked_object_name(type_index: int) const 🔗
+String get_tracked_object_name(type_index: int) const 
 
 Returns the name of the type of object for the given type_index. This value must be in range [0; get_tracked_object_type_count - 1]. If get_tracked_object_type_count() is 0, then type argument is ignored and always returns the same string.
 
@@ -8421,73 +8421,73 @@ Thus if e.g. get_tracked_object_name(5) returns "COMMAND_POOL", then get_device_
 
 This is only used by Vulkan in debug builds. Godot must also be started with the --extra-gpu-memory-tracking command line argument.
 
-int get_tracked_object_type_count() const 🔗
+int get_tracked_object_type_count() const 
 
 Returns how many types of trackable objects there are.
 
 This is only used by Vulkan in debug builds. Godot must also be started with the --extra-gpu-memory-tracking command line argument.
 
-bool has_feature(feature: Features) const 🔗
+bool has_feature(feature: Features) const 
 
 Returns true if the feature is supported by the GPU.
 
-RID index_array_create(index_buffer: RID, index_offset: int, index_count: int) 🔗
+RID index_array_create(index_buffer: RID, index_offset: int, index_count: int) 
 
 Creates a new index array. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-RID index_buffer_create(size_indices: int, format: IndexBufferFormat, data: PackedByteArray = PackedByteArray(), use_restart_indices: bool = false, creation_bits: BitField[BufferCreationBits] = 0) 🔗
+RID index_buffer_create(size_indices: int, format: IndexBufferFormat, data: PackedByteArray = PackedByteArray(), use_restart_indices: bool = false, creation_bits: BitField[BufferCreationBits] = 0) 
 
 Creates a new index buffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-int limit_get(limit: Limit) const 🔗
+int limit_get(limit: Limit) const 
 
 Returns the value of the specified limit. This limit varies depending on the current graphics hardware (and sometimes the driver version). If the given limit is exceeded, rendering errors will occur.
 
 Limits for various graphics hardware can be found in the Vulkan Hardware Database.
 
-RID render_pipeline_create(shader: RID, framebuffer_format: int, vertex_format: int, primitive: RenderPrimitive, rasterization_state: RDPipelineRasterizationState, multisample_state: RDPipelineMultisampleState, stencil_state: RDPipelineDepthStencilState, color_blend_state: RDPipelineColorBlendState, dynamic_state_flags: BitField[PipelineDynamicStateFlags] = 0, for_render_pass: int = 0, specialization_constants: Array[RDPipelineSpecializationConstant] = []) 🔗
+RID render_pipeline_create(shader: RID, framebuffer_format: int, vertex_format: int, primitive: RenderPrimitive, rasterization_state: RDPipelineRasterizationState, multisample_state: RDPipelineMultisampleState, stencil_state: RDPipelineDepthStencilState, color_blend_state: RDPipelineColorBlendState, dynamic_state_flags: BitField[PipelineDynamicStateFlags] = 0, for_render_pass: int = 0, specialization_constants: Array[RDPipelineSpecializationConstant] = []) 
 
 Creates a new render pipeline. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-bool render_pipeline_is_valid(render_pipeline: RID) 🔗
+bool render_pipeline_is_valid(render_pipeline: RID) 
 
 Returns true if the render pipeline specified by the render_pipeline RID is valid, false otherwise.
 
-RID sampler_create(state: RDSamplerState) 🔗
+RID sampler_create(state: RDSamplerState) 
 
 Creates a new sampler. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-bool sampler_is_format_supported_for_filter(format: DataFormat, sampler_filter: SamplerFilter) const 🔗
+bool sampler_is_format_supported_for_filter(format: DataFormat, sampler_filter: SamplerFilter) const 
 
 Returns true if implementation supports using a texture of format with the given sampler_filter.
 
-int screen_get_framebuffer_format(screen: int = 0) const 🔗
+int screen_get_framebuffer_format(screen: int = 0) const 
 
 Returns the framebuffer format of the given screen.
 
 Note: Only the main RenderingDevice returned by RenderingServer.get_rendering_device() has a format. If called on a local RenderingDevice, this method prints an error and returns INVALID_ID.
 
-int screen_get_height(screen: int = 0) const 🔗
+int screen_get_height(screen: int = 0) const 
 
 Returns the window height matching the graphics API context for the given window ID (in pixels). Despite the parameter being named screen, this returns the window size. See also screen_get_width().
 
 Note: Only the main RenderingDevice returned by RenderingServer.get_rendering_device() has a height. If called on a local RenderingDevice, this method prints an error and returns INVALID_ID.
 
-int screen_get_width(screen: int = 0) const 🔗
+int screen_get_width(screen: int = 0) const 
 
 Returns the window width matching the graphics API context for the given window ID (in pixels). Despite the parameter being named screen, this returns the window size. See also screen_get_height().
 
 Note: Only the main RenderingDevice returned by RenderingServer.get_rendering_device() has a width. If called on a local RenderingDevice, this method prints an error and returns INVALID_ID.
 
-void set_resource_name(id: RID, name: String) 🔗
+void set_resource_name(id: RID, name: String) 
 
 Sets the resource name for id to name. This is used for debugging with third-party tools such as RenderDoc.
 
@@ -8495,39 +8495,39 @@ The following types of resources can be named: texture, sampler, vertex buffer, 
 
 Note: Resource names are only set when the engine runs in verbose mode (OS.is_stdout_verbose() = true), or when using an engine build compiled with the dev_mode=yes SCons option. The graphics driver must also support the VK_EXT_DEBUG_UTILS_EXTENSION_NAME Vulkan extension for named resources to work.
 
-PackedByteArray shader_compile_binary_from_spirv(spirv_data: RDShaderSPIRV, name: String = "") 🔗
+PackedByteArray shader_compile_binary_from_spirv(spirv_data: RDShaderSPIRV, name: String = "") 
 
 Compiles a binary shader from spirv_data and returns the compiled binary data as a PackedByteArray. This compiled shader is specific to the GPU model and driver version used; it will not work on different GPU models or even different driver versions. See also shader_compile_spirv_from_source().
 
 name is an optional human-readable name that can be given to the compiled shader for organizational purposes.
 
-RDShaderSPIRV shader_compile_spirv_from_source(shader_source: RDShaderSource, allow_cache: bool = true) 🔗
+RDShaderSPIRV shader_compile_spirv_from_source(shader_source: RDShaderSource, allow_cache: bool = true) 
 
 Compiles a SPIR-V from the shader source code in shader_source and returns the SPIR-V as an RDShaderSPIRV. This intermediate language shader is portable across different GPU models and driver versions, but cannot be run directly by GPUs until compiled into a binary shader using shader_compile_binary_from_spirv().
 
 If allow_cache is true, make use of the shader cache generated by Godot. This avoids a potentially lengthy shader compilation step if the shader is already in cache. If allow_cache is false, Godot's shader cache is ignored and the shader will always be recompiled.
 
-RID shader_create_from_bytecode(binary_data: PackedByteArray, placeholder_rid: RID = RID()) 🔗
+RID shader_create_from_bytecode(binary_data: PackedByteArray, placeholder_rid: RID = RID()) 
 
 Creates a new shader instance from a binary compiled shader. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method. See also shader_compile_binary_from_spirv() and shader_create_from_spirv().
 
-RID shader_create_from_spirv(spirv_data: RDShaderSPIRV, name: String = "") 🔗
+RID shader_create_from_spirv(spirv_data: RDShaderSPIRV, name: String = "") 
 
 Creates a new shader instance from SPIR-V intermediate code. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method. See also shader_compile_spirv_from_source() and shader_create_from_bytecode().
 
-RID shader_create_placeholder() 🔗
+RID shader_create_placeholder() 
 
 Create a placeholder RID by allocating an RID without initializing it for use in shader_create_from_bytecode(). This allows you to create an RID for a shader and pass it around, but defer compiling the shader to a later time.
 
-int shader_get_vertex_input_attribute_mask(shader: RID) 🔗
+int shader_get_vertex_input_attribute_mask(shader: RID) 
 
 Returns the internal vertex input mask. Internally, the vertex input mask is an unsigned integer consisting of the locations (specified in GLSL via. layout(location = ...)) of the input variables (specified in GLSL by the in keyword).
 
-RID storage_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), usage: BitField[StorageBufferUsage] = 0, creation_bits: BitField[BufferCreationBits] = 0) 🔗
+RID storage_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), usage: BitField[StorageBufferUsage] = 0, creation_bits: BitField[BufferCreationBits] = 0) 
 
 Creates a storage buffer with the specified data and usage. It can be accessed with the RID that is returned.
 
@@ -8543,19 +8543,19 @@ Note: Only available in local RenderingDevices.
 
 Note: sync() can only be called after a submit().
 
-RID texture_buffer_create(size_bytes: int, format: DataFormat, data: PackedByteArray = PackedByteArray()) 🔗
+RID texture_buffer_create(size_bytes: int, format: DataFormat, data: PackedByteArray = PackedByteArray()) 
 
 Creates a new texture buffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-Error texture_clear(texture: RID, color: Color, base_mipmap: int, mipmap_count: int, base_layer: int, layer_count: int) 🔗
+Error texture_clear(texture: RID, color: Color, base_mipmap: int, mipmap_count: int, base_layer: int, layer_count: int) 
 
 Clears the specified texture by replacing all of its pixels with the specified color. base_mipmap and mipmap_count determine which mipmaps of the texture are affected by this clear operation, while base_layer and layer_count determine which layers of a 3D texture (or texture array) are affected by this clear operation. For 2D textures (which only have one layer by design), base_layer must be 0 and layer_count must be 1.
 
 Note: texture can't be cleared while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to FINAL_ACTION_CONTINUE) to clear this texture.
 
-Error texture_copy(from_texture: RID, to_texture: RID, from_pos: Vector3, to_pos: Vector3, size: Vector3, src_mipmap: int, dst_mipmap: int, src_layer: int, dst_layer: int) 🔗
+Error texture_copy(from_texture: RID, to_texture: RID, from_pos: Vector3, to_pos: Vector3, size: Vector3, src_mipmap: int, dst_mipmap: int, src_layer: int, dst_layer: int) 
 
 Copies the from_texture to to_texture with the specified from_pos, to_pos and size coordinates. The Z axis of the from_pos, to_pos and size must be 0 for 2-dimensional textures. Source and destination mipmaps/layers must also be specified, with these parameters being 0 for textures without mipmaps or single-layer textures. Returns @GlobalScope.OK if the texture copy was successful or @GlobalScope.ERR_INVALID_PARAMETER otherwise.
 
@@ -8569,7 +8569,7 @@ Note: to_texture requires the TEXTURE_USAGE_CAN_COPY_TO_BIT to be retrieved.
 
 Note: from_texture and to_texture must be of the same type (color or depth).
 
-RID texture_create(format: RDTextureFormat, view: RDTextureView, data: Array[PackedByteArray] = []) 🔗
+RID texture_create(format: RDTextureFormat, view: RDTextureView, data: Array[PackedByteArray] = []) 
 
 Creates a new texture. It can be accessed with the RID that is returned.
 
@@ -8579,15 +8579,15 @@ Note: data takes an Array of PackedByteArrays. For TEXTURE_TYPE_1D, TEXTURE_TYPE
 
 Note: Not to be confused with RenderingServer.texture_2d_create(), which creates the Godot-specific Texture2D resource as opposed to the graphics API's own texture type.
 
-RID texture_create_from_extension(type: TextureType, format: DataFormat, samples: TextureSamples, usage_flags: BitField[TextureUsageBits], image: int, width: int, height: int, depth: int, layers: int, mipmaps: int = 1) 🔗
+RID texture_create_from_extension(type: TextureType, format: DataFormat, samples: TextureSamples, usage_flags: BitField[TextureUsageBits], image: int, width: int, height: int, depth: int, layers: int, mipmaps: int = 1) 
 
 Returns an RID for an existing image (VkImage) with the given type, format, samples, usage_flags, width, height, depth, layers, and mipmaps. This can be used to allow Godot to render onto foreign images.
 
-RID texture_create_shared(view: RDTextureView, with_texture: RID) 🔗
+RID texture_create_shared(view: RDTextureView, with_texture: RID) 
 
 Creates a shared texture using the specified view and the texture information from with_texture.
 
-RID texture_create_shared_from_slice(view: RDTextureView, with_texture: RID, layer: int, mipmap: int, mipmaps: int = 1, slice_type: TextureSliceType = 0) 🔗
+RID texture_create_shared_from_slice(view: RDTextureView, with_texture: RID, layer: int, mipmap: int, mipmaps: int = 1, slice_type: TextureSliceType = 0) 
 
 Creates a shared texture using the specified view and the texture information from with_texture's layer and mipmap. The number of included mipmaps from the original texture can be controlled using the mipmaps parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use texture_create_shared().
 
@@ -8595,7 +8595,7 @@ For 2D textures (which only have one layer), layer must be 0.
 
 Note: Layer slicing is only supported for 2D texture arrays, not 3D textures or cubemaps.
 
-PackedByteArray texture_get_data(texture: RID, layer: int) 🔗
+PackedByteArray texture_get_data(texture: RID, layer: int) 
 
 Returns the texture data for the specified layer as raw binary data. For 2D textures (which only have one layer), layer must be 0.
 
@@ -8605,7 +8605,7 @@ Note: texture requires the TEXTURE_USAGE_CAN_COPY_FROM_BIT to be retrieved. Othe
 
 Note: This method will block the GPU from working until the data is retrieved. Refer to texture_get_data_async() for an alternative that returns the data in more performant way.
 
-Error texture_get_data_async(texture: RID, layer: int, callback: Callable) 🔗
+Error texture_get_data_async(texture: RID, layer: int, callback: Callable) 
 
 Asynchronous version of texture_get_data(). RenderingDevice will call callback in a certain amount of frames with the data the texture had at the time of the request.
 
@@ -8613,11 +8613,11 @@ Note: At the moment, the delay corresponds to the amount of frames specified by 
 
 Note: Downloading large textures can have a prohibitive cost for real-time even when using the asynchronous method due to hardware bandwidth limitations. When dealing with large resources, you can adjust settings such as ProjectSettings.rendering/rendering_device/staging_buffer/texture_download_region_size_px and ProjectSettings.rendering/rendering_device/staging_buffer/block_size_kb to improve the transfer speed at the cost of extra memory.
 
-RDTextureFormat texture_get_format(texture: RID) 🔗
+RDTextureFormat texture_get_format(texture: RID) 
 
 Returns the data format used to create this texture.
 
-int texture_get_native_handle(texture: RID) 🔗
+int texture_get_native_handle(texture: RID) 
 
 Deprecated: Use get_driver_resource() with DRIVER_RESOURCE_TEXTURE instead.
 
@@ -8625,23 +8625,23 @@ Returns the internal graphics handle for this texture object. For use when commu
 
 Note: This function returns a uint64_t which internally maps to a GLuint (OpenGL) or VkImage (Vulkan).
 
-bool texture_is_discardable(texture: RID) 🔗
+bool texture_is_discardable(texture: RID) 
 
 Returns true if the texture is discardable, false otherwise. See RDTextureFormat or texture_set_discardable().
 
-bool texture_is_format_supported_for_usage(format: DataFormat, usage_flags: BitField[TextureUsageBits]) const 🔗
+bool texture_is_format_supported_for_usage(format: DataFormat, usage_flags: BitField[TextureUsageBits]) const 
 
 Returns true if the specified format is supported for the given usage_flags, false otherwise.
 
-bool texture_is_shared(texture: RID) 🔗
+bool texture_is_shared(texture: RID) 
 
 Returns true if the texture is shared, false otherwise. See RDTextureView.
 
-bool texture_is_valid(texture: RID) 🔗
+bool texture_is_valid(texture: RID) 
 
 Returns true if the texture is valid, false otherwise.
 
-Error texture_resolve_multisample(from_texture: RID, to_texture: RID) 🔗
+Error texture_resolve_multisample(from_texture: RID, to_texture: RID) 
 
 Resolves the from_texture texture onto to_texture with multisample antialiasing enabled. This must be used when rendering a framebuffer for MSAA to work. Returns @GlobalScope.OK if successful, @GlobalScope.ERR_INVALID_PARAMETER otherwise.
 
@@ -8659,7 +8659,7 @@ Note: to_texture texture requires the TEXTURE_USAGE_CAN_COPY_TO_BIT to be retrie
 
 Note: to_texture texture must not be multisampled and must also be 2D (or a slice of a 3D/cubemap texture).
 
-void texture_set_discardable(texture: RID, discardable: bool) 🔗
+void texture_set_discardable(texture: RID, discardable: bool) 
 
 Updates the discardable property of texture.
 
@@ -8667,7 +8667,7 @@ If a texture is discardable, its contents do not need to be preserved between fr
 
 This information is used by RenderingDevice to figure out if a texture's contents can be discarded, eliminating unnecessary writes to memory and boosting performance.
 
-Error texture_update(texture: RID, layer: int, data: PackedByteArray) 🔗
+Error texture_update(texture: RID, layer: int, data: PackedByteArray) 
 
 Updates texture data with new data, replacing the previous data in place. The updated texture data must have the same dimensions and format. For 2D textures (which only have one layer), layer must be 0. Returns @GlobalScope.OK if the update was successful, @GlobalScope.ERR_INVALID_PARAMETER otherwise.
 
@@ -8677,33 +8677,33 @@ Note: The existing texture can't be updated while a draw list that uses it as pa
 
 Note: The existing texture requires the TEXTURE_USAGE_CAN_UPDATE_BIT to be updatable.
 
-RID uniform_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), creation_bits: BitField[BufferCreationBits] = 0) 🔗
+RID uniform_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), creation_bits: BitField[BufferCreationBits] = 0) 
 
 Creates a new uniform buffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-RID uniform_set_create(uniforms: Array[RDUniform], shader: RID, shader_set: int) 🔗
+RID uniform_set_create(uniforms: Array[RDUniform], shader: RID, shader_set: int) 
 
 Creates a new uniform set. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-bool uniform_set_is_valid(uniform_set: RID) 🔗
+bool uniform_set_is_valid(uniform_set: RID) 
 
 Checks if the uniform_set is valid, i.e. is owned.
 
-RID vertex_array_create(vertex_count: int, vertex_format: int, src_buffers: Array[RID], offsets: PackedInt64Array = PackedInt64Array()) 🔗
+RID vertex_array_create(vertex_count: int, vertex_format: int, src_buffers: Array[RID], offsets: PackedInt64Array = PackedInt64Array()) 
 
 Creates a vertex array based on the specified buffers. Optionally, offsets (in bytes) may be defined for each buffer.
 
-RID vertex_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), creation_bits: BitField[BufferCreationBits] = 0) 🔗
+RID vertex_buffer_create(size_bytes: int, data: PackedByteArray = PackedByteArray(), creation_bits: BitField[BufferCreationBits] = 0) 
 
 Creates a new vertex buffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's free_rid() method.
 
-int vertex_format_create(vertex_descriptions: Array[RDVertexAttribute]) 🔗
+int vertex_format_create(vertex_descriptions: Array[RDVertexAttribute]) 
 
 Creates a new vertex format with the specified vertex_descriptions. Returns a unique vertex format ID corresponding to the newly created vertex format.
 
@@ -9799,7 +9799,7 @@ TextureType TEXTURE_TYPE_LAYERED = 1
 
 TextureType TEXTURE_TYPE_3D = 2
 
-enum TextureLayeredType: 🔗
+enum TextureLayeredType: 
 
 TextureLayeredType TEXTURE_LAYERED_2D_ARRAY = 0
 
@@ -9917,7 +9917,7 @@ ArrayType ARRAY_MAX = 13
 
 Represents the size of the ArrayType enum.
 
-enum ArrayCustomFormat: 🔗
+enum ArrayCustomFormat: 
 
 ArrayCustomFormat ARRAY_CUSTOM_RGBA8_UNORM = 0
 
@@ -10087,7 +10087,7 @@ ArrayFormat ARRAY_FLAG_FORMAT_VERSION_MASK = 255
 
 Flag used to isolate the bits used for mesh version after using ARRAY_FLAG_FORMAT_VERSION_SHIFT to shift them into place.
 
-enum PrimitiveType: 🔗
+enum PrimitiveType: 
 
 PrimitiveType PRIMITIVE_POINTS = 0
 
@@ -10113,7 +10113,7 @@ PrimitiveType PRIMITIVE_MAX = 5
 
 Represents the size of the PrimitiveType enum.
 
-enum BlendShapeMode: 🔗
+enum BlendShapeMode: 
 
 BlendShapeMode BLEND_SHAPE_MODE_NORMALIZED = 0
 
@@ -10123,7 +10123,7 @@ BlendShapeMode BLEND_SHAPE_MODE_RELATIVE = 1
 
 Blend shapes are relative to base weight.
 
-enum MultimeshTransformFormat: 🔗
+enum MultimeshTransformFormat: 
 
 MultimeshTransformFormat MULTIMESH_TRANSFORM_2D = 0
 
@@ -10133,7 +10133,7 @@ MultimeshTransformFormat MULTIMESH_TRANSFORM_3D = 1
 
 Use Transform3D to store MultiMesh transform.
 
-enum MultimeshPhysicsInterpolationQuality: 🔗
+enum MultimeshPhysicsInterpolationQuality: 
 
 MultimeshPhysicsInterpolationQuality MULTIMESH_INTERP_QUALITY_FAST = 0
 
@@ -10143,7 +10143,7 @@ MultimeshPhysicsInterpolationQuality MULTIMESH_INTERP_QUALITY_HIGH = 1
 
 MultiMesh physics interpolation favors quality over speed.
 
-enum LightProjectorFilter: 🔗
+enum LightProjectorFilter: 
 
 LightProjectorFilter LIGHT_PROJECTOR_FILTER_NEAREST = 0
 
@@ -10267,7 +10267,7 @@ LightParam LIGHT_PARAM_MAX = 21
 
 Represents the size of the LightParam enum.
 
-enum LightBakeMode: 🔗
+enum LightBakeMode: 
 
 LightBakeMode LIGHT_BAKE_DISABLED = 0
 
@@ -10281,7 +10281,7 @@ LightBakeMode LIGHT_BAKE_DYNAMIC = 2
 
 Light is taken into account in dynamic baking (VoxelGI and SDFGI (Environment.sdfgi_enabled) only). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to LIGHT_BAKE_STATIC. This has a greater performance cost compared to LIGHT_BAKE_STATIC. When using SDFGI, the update speed of dynamic lights is affected by ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights.
 
-enum LightOmniShadowMode: 🔗
+enum LightOmniShadowMode: 
 
 LightOmniShadowMode LIGHT_OMNI_SHADOW_DUAL_PARABOLOID = 0
 
@@ -10291,7 +10291,7 @@ LightOmniShadowMode LIGHT_OMNI_SHADOW_CUBE = 1
 
 Use a cubemap shadow map for omni lights. Slower but better quality than dual paraboloid.
 
-enum LightDirectionalShadowMode: 🔗
+enum LightDirectionalShadowMode: 
 
 LightDirectionalShadowMode LIGHT_DIRECTIONAL_SHADOW_ORTHOGONAL = 0
 
@@ -10305,7 +10305,7 @@ LightDirectionalShadowMode LIGHT_DIRECTIONAL_SHADOW_PARALLEL_4_SPLITS = 2
 
 Use 4 splits for shadow projection when using directional light.
 
-enum LightDirectionalSkyMode: 🔗
+enum LightDirectionalSkyMode: 
 
 LightDirectionalSkyMode LIGHT_DIRECTIONAL_SKY_MODE_LIGHT_AND_SKY = 0
 
@@ -10319,7 +10319,7 @@ LightDirectionalSkyMode LIGHT_DIRECTIONAL_SKY_MODE_SKY_ONLY = 2
 
 Only use DirectionalLight3D in sky rendering.
 
-enum ShadowQuality: 🔗
+enum ShadowQuality: 
 
 ShadowQuality SHADOW_QUALITY_HARD = 0
 
@@ -10351,7 +10351,7 @@ ShadowQuality SHADOW_QUALITY_MAX = 6
 
 Represents the size of the ShadowQuality enum.
 
-enum ReflectionProbeUpdateMode: 🔗
+enum ReflectionProbeUpdateMode: 
 
 ReflectionProbeUpdateMode REFLECTION_PROBE_UPDATE_ONCE = 0
 
@@ -10361,7 +10361,7 @@ ReflectionProbeUpdateMode REFLECTION_PROBE_UPDATE_ALWAYS = 1
 
 Reflection probe will update each frame. This mode is necessary to capture moving objects.
 
-enum ReflectionProbeAmbientMode: 🔗
+enum ReflectionProbeAmbientMode: 
 
 ReflectionProbeAmbientMode REFLECTION_PROBE_AMBIENT_DISABLED = 0
 
@@ -10419,7 +10419,7 @@ DecalFilter DECAL_FILTER_LINEAR_MIPMAPS_ANISOTROPIC = 5
 
 Linear filter for decals (use for non-pixel art decals). Anisotropic mipmaps are used for rendering, which means decals at a distance will look smooth and sharp when viewed from oblique angles. This looks better compared to isotropic mipmaps, but is slower. The level of anisotropic filtering is defined by ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level.
 
-enum VoxelGIQuality: 🔗
+enum VoxelGIQuality: 
 
 VoxelGIQuality VOXEL_GI_QUALITY_LOW = 0
 
@@ -10429,13 +10429,13 @@ VoxelGIQuality VOXEL_GI_QUALITY_HIGH = 1
 
 High VoxelGI rendering quality using 6 cones.
 
-enum ParticlesMode: 🔗
+enum ParticlesMode: 
 
 ParticlesMode PARTICLES_MODE_2D = 0
 
 ParticlesMode PARTICLES_MODE_3D = 1
 
-enum ParticlesTransformAlign: 🔗
+enum ParticlesTransformAlign: 
 
 ParticlesTransformAlign PARTICLES_TRANSFORM_ALIGN_DISABLED = 0
 
@@ -10453,7 +10453,7 @@ ParticlesTransformAlign PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY = 3
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum ParticlesDrawOrder: 🔗
+enum ParticlesDrawOrder: 
 
 ParticlesDrawOrder PARTICLES_DRAW_ORDER_INDEX = 0
 
@@ -10471,7 +10471,7 @@ ParticlesDrawOrder PARTICLES_DRAW_ORDER_VIEW_DEPTH = 3
 
 Sort particles based on their distance to the camera.
 
-enum ParticlesCollisionType: 🔗
+enum ParticlesCollisionType: 
 
 ParticlesCollisionType PARTICLES_COLLISION_TYPE_SPHERE_ATTRACT = 0
 
@@ -10501,7 +10501,7 @@ ParticlesCollisionType PARTICLES_COLLISION_TYPE_HEIGHTFIELD_COLLIDE = 6
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum ParticlesCollisionHeightfieldResolution: 🔗
+enum ParticlesCollisionHeightfieldResolution: 
 
 ParticlesCollisionHeightfieldResolution PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_256 = 0
 
@@ -10531,7 +10531,7 @@ ParticlesCollisionHeightfieldResolution PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTI
 
 Represents the size of the ParticlesCollisionHeightfieldResolution enum.
 
-enum FogVolumeShape: 🔗
+enum FogVolumeShape: 
 
 FogVolumeShape FOG_VOLUME_SHAPE_ELLIPSOID = 0
 
@@ -10557,7 +10557,7 @@ FogVolumeShape FOG_VOLUME_SHAPE_MAX = 5
 
 Represents the size of the FogVolumeShape enum.
 
-enum ViewportScaling3DMode: 🔗
+enum ViewportScaling3DMode: 
 
 ViewportScaling3DMode VIEWPORT_SCALING_3D_MODE_BILINEAR = 0
 
@@ -10587,7 +10587,7 @@ ViewportScaling3DMode VIEWPORT_SCALING_3D_MODE_MAX = 5
 
 Represents the size of the ViewportScaling3DMode enum.
 
-enum ViewportUpdateMode: 🔗
+enum ViewportUpdateMode: 
 
 ViewportUpdateMode VIEWPORT_UPDATE_DISABLED = 0
 
@@ -10609,7 +10609,7 @@ ViewportUpdateMode VIEWPORT_UPDATE_ALWAYS = 4
 
 Always update the viewport's render target.
 
-enum ViewportClearMode: 🔗
+enum ViewportClearMode: 
 
 ViewportClearMode VIEWPORT_CLEAR_ALWAYS = 0
 
@@ -10623,7 +10623,7 @@ ViewportClearMode VIEWPORT_CLEAR_ONLY_NEXT_FRAME = 2
 
 Clear the viewport's render target on the next frame, then switch to VIEWPORT_CLEAR_NEVER.
 
-enum ViewportEnvironmentMode: 🔗
+enum ViewportEnvironmentMode: 
 
 ViewportEnvironmentMode VIEWPORT_ENVIRONMENT_DISABLED = 0
 
@@ -10641,7 +10641,7 @@ ViewportEnvironmentMode VIEWPORT_ENVIRONMENT_MAX = 3
 
 Represents the size of the ViewportEnvironmentMode enum.
 
-enum ViewportSDFOversize: 🔗
+enum ViewportSDFOversize: 
 
 ViewportSDFOversize VIEWPORT_SDF_OVERSIZE_100_PERCENT = 0
 
@@ -10663,7 +10663,7 @@ ViewportSDFOversize VIEWPORT_SDF_OVERSIZE_MAX = 4
 
 Represents the size of the ViewportSDFOversize enum.
 
-enum ViewportSDFScale: 🔗
+enum ViewportSDFScale: 
 
 ViewportSDFScale VIEWPORT_SDF_SCALE_100_PERCENT = 0
 
@@ -10701,7 +10701,7 @@ ViewportMSAA VIEWPORT_MSAA_MAX = 4
 
 Represents the size of the ViewportMSAA enum.
 
-enum ViewportAnisotropicFiltering: 🔗
+enum ViewportAnisotropicFiltering: 
 
 ViewportAnisotropicFiltering VIEWPORT_ANISOTROPY_DISABLED = 0
 
@@ -10727,7 +10727,7 @@ ViewportAnisotropicFiltering VIEWPORT_ANISOTROPY_MAX = 5
 
 Represents the size of the ViewportAnisotropicFiltering enum.
 
-enum ViewportScreenSpaceAA: 🔗
+enum ViewportScreenSpaceAA: 
 
 ViewportScreenSpaceAA VIEWPORT_SCREEN_SPACE_AA_DISABLED = 0
 
@@ -10745,7 +10745,7 @@ ViewportScreenSpaceAA VIEWPORT_SCREEN_SPACE_AA_MAX = 3
 
 Represents the size of the ViewportScreenSpaceAA enum.
 
-enum ViewportOcclusionCullingBuildQuality: 🔗
+enum ViewportOcclusionCullingBuildQuality: 
 
 ViewportOcclusionCullingBuildQuality VIEWPORT_OCCLUSION_BUILD_QUALITY_LOW = 0
 
@@ -10759,7 +10759,7 @@ ViewportOcclusionCullingBuildQuality VIEWPORT_OCCLUSION_BUILD_QUALITY_HIGH = 2
 
 High occlusion culling BVH build quality (as defined by Embree). Results in the highest CPU usage, but most effective culling.
 
-enum ViewportRenderInfo: 🔗
+enum ViewportRenderInfo: 
 
 ViewportRenderInfo VIEWPORT_RENDER_INFO_OBJECTS_IN_FRAME = 0
 
@@ -10777,7 +10777,7 @@ ViewportRenderInfo VIEWPORT_RENDER_INFO_MAX = 3
 
 Represents the size of the ViewportRenderInfo enum.
 
-enum ViewportRenderInfoType: 🔗
+enum ViewportRenderInfoType: 
 
 ViewportRenderInfoType VIEWPORT_RENDER_INFO_TYPE_VISIBLE = 0
 
@@ -10795,7 +10795,7 @@ ViewportRenderInfoType VIEWPORT_RENDER_INFO_TYPE_MAX = 3
 
 Represents the size of the ViewportRenderInfoType enum.
 
-enum ViewportDebugDraw: 🔗
+enum ViewportDebugDraw: 
 
 ViewportDebugDraw VIEWPORT_DEBUG_DRAW_DISABLED = 0
 
@@ -10953,7 +10953,7 @@ Internal buffer is drawn instead of regular scene so you can see the per-pixel o
 
 Note: Only supported when using the Forward+ or Mobile rendering methods.
 
-enum ViewportVRSMode: 🔗
+enum ViewportVRSMode: 
 
 ViewportVRSMode VIEWPORT_VRS_DISABLED = 0
 
@@ -10971,7 +10971,7 @@ ViewportVRSMode VIEWPORT_VRS_MAX = 3
 
 Represents the size of the ViewportVRSMode enum.
 
-enum ViewportVRSUpdateMode: 🔗
+enum ViewportVRSUpdateMode: 
 
 ViewportVRSUpdateMode VIEWPORT_VRS_UPDATE_DISABLED = 0
 
@@ -11007,7 +11007,7 @@ Uses the fast filtering algorithm to process the radiance map. In general this r
 
 Note: The fast filtering algorithm is limited to 256×256 cubemaps, so sky_set_radiance_size() must be set to 256. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
-enum CompositorEffectFlags: 🔗
+enum CompositorEffectFlags: 
 
 CompositorEffectFlags COMPOSITOR_EFFECT_FLAG_ACCESS_RESOLVED_COLOR = 1
 
@@ -11029,7 +11029,7 @@ CompositorEffectFlags COMPOSITOR_EFFECT_FLAG_NEEDS_SEPARATE_SPECULAR = 16
 
 The rendering effect requires specular data to be separated out (Forward+ only).
 
-enum CompositorEffectCallbackType: 🔗
+enum CompositorEffectCallbackType: 
 
 CompositorEffectCallbackType COMPOSITOR_EFFECT_CALLBACK_TYPE_PRE_OPAQUE = 0
 
@@ -11055,7 +11055,7 @@ CompositorEffectCallbackType COMPOSITOR_EFFECT_CALLBACK_TYPE_ANY = -1
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum EnvironmentBG: 🔗
+enum EnvironmentBG: 
 
 EnvironmentBG ENV_BG_CLEAR_COLOR = 0
 
@@ -11085,7 +11085,7 @@ EnvironmentBG ENV_BG_MAX = 6
 
 Represents the size of the EnvironmentBG enum.
 
-enum EnvironmentAmbientSource: 🔗
+enum EnvironmentAmbientSource: 
 
 EnvironmentAmbientSource ENV_AMBIENT_SOURCE_BG = 0
 
@@ -11103,7 +11103,7 @@ EnvironmentAmbientSource ENV_AMBIENT_SOURCE_SKY = 3
 
 Gather ambient light from the Sky regardless of what the background is.
 
-enum EnvironmentReflectionSource: 🔗
+enum EnvironmentReflectionSource: 
 
 EnvironmentReflectionSource ENV_REFLECTION_SOURCE_BG = 0
 
@@ -11115,7 +11115,7 @@ EnvironmentReflectionSource ENV_REFLECTION_SOURCE_SKY = 2
 
 Use the Sky for reflections regardless of what the background is.
 
-enum EnvironmentGlowBlendMode: 🔗
+enum EnvironmentGlowBlendMode: 
 
 EnvironmentGlowBlendMode ENV_GLOW_BLEND_MODE_ADDITIVE = 0
 
@@ -11137,7 +11137,7 @@ EnvironmentGlowBlendMode ENV_GLOW_BLEND_MODE_MIX = 4
 
 Mixes the glow with the underlying color to avoid increasing brightness as much while still maintaining a glow effect.
 
-enum EnvironmentFogMode: 🔗
+enum EnvironmentFogMode: 
 
 EnvironmentFogMode ENV_FOG_MODE_EXPONENTIAL = 0
 
@@ -11147,7 +11147,7 @@ EnvironmentFogMode ENV_FOG_MODE_DEPTH = 1
 
 Use a simple fog model defined by start and end positions and a custom curve. While not physically accurate, this model can be useful when you need more artistic control.
 
-enum EnvironmentToneMapper: 🔗
+enum EnvironmentToneMapper: 
 
 EnvironmentToneMapper ENV_TONE_MAPPER_LINEAR = 0
 
@@ -11175,7 +11175,7 @@ Uses a film-like tonemapping curve and desaturates bright values for a more real
 
 Note: Environment.tonemap_white is fixed at a value of 16.29, which makes ENV_TONE_MAPPER_AGX unsuitable for use with the Mobile rendering method.
 
-enum EnvironmentSSRRoughnessQuality: 🔗
+enum EnvironmentSSRRoughnessQuality: 
 
 EnvironmentSSRRoughnessQuality ENV_SSR_ROUGHNESS_QUALITY_DISABLED = 0
 
@@ -11193,7 +11193,7 @@ EnvironmentSSRRoughnessQuality ENV_SSR_ROUGHNESS_QUALITY_HIGH = 3
 
 High quality of roughness filter for screen-space reflections. This is the slowest option.
 
-enum EnvironmentSSAOQuality: 🔗
+enum EnvironmentSSAOQuality: 
 
 EnvironmentSSAOQuality ENV_SSAO_QUALITY_VERY_LOW = 0
 
@@ -11215,7 +11215,7 @@ EnvironmentSSAOQuality ENV_SSAO_QUALITY_ULTRA = 4
 
 Highest quality screen-space ambient occlusion. Uses the adaptive target setting which can be dynamically adjusted to smoothly balance performance and visual quality.
 
-enum EnvironmentSSILQuality: 🔗
+enum EnvironmentSSILQuality: 
 
 EnvironmentSSILQuality ENV_SSIL_QUALITY_VERY_LOW = 0
 
@@ -11237,7 +11237,7 @@ EnvironmentSSILQuality ENV_SSIL_QUALITY_ULTRA = 4
 
 Highest quality screen-space indirect lighting. Uses the adaptive target setting which can be dynamically adjusted to smoothly balance performance and visual quality.
 
-enum EnvironmentSDFGIYScale: 🔗
+enum EnvironmentSDFGIYScale: 
 
 EnvironmentSDFGIYScale ENV_SDFGI_Y_SCALE_50_PERCENT = 0
 
@@ -11251,7 +11251,7 @@ EnvironmentSDFGIYScale ENV_SDFGI_Y_SCALE_100_PERCENT = 2
 
 Use 100% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be as tall as they are wide. This is usually the best choice for highly vertical scenes. The downside is that light leaking may become more noticeable with thin floors and ceilings.
 
-enum EnvironmentSDFGIRayCount: 🔗
+enum EnvironmentSDFGIRayCount: 
 
 EnvironmentSDFGIRayCount ENV_SDFGI_RAY_COUNT_4 = 0
 
@@ -11285,7 +11285,7 @@ EnvironmentSDFGIRayCount ENV_SDFGI_RAY_COUNT_MAX = 7
 
 Represents the size of the EnvironmentSDFGIRayCount enum.
 
-enum EnvironmentSDFGIFramesToConverge: 🔗
+enum EnvironmentSDFGIFramesToConverge: 
 
 EnvironmentSDFGIFramesToConverge ENV_SDFGI_CONVERGE_IN_5_FRAMES = 0
 
@@ -11315,7 +11315,7 @@ EnvironmentSDFGIFramesToConverge ENV_SDFGI_CONVERGE_MAX = 6
 
 Represents the size of the EnvironmentSDFGIFramesToConverge enum.
 
-enum EnvironmentSDFGIFramesToUpdateLight: 🔗
+enum EnvironmentSDFGIFramesToUpdateLight: 
 
 EnvironmentSDFGIFramesToUpdateLight ENV_SDFGI_UPDATE_LIGHT_IN_1_FRAME = 0
 
@@ -11341,7 +11341,7 @@ EnvironmentSDFGIFramesToUpdateLight ENV_SDFGI_UPDATE_LIGHT_MAX = 5
 
 Represents the size of the EnvironmentSDFGIFramesToUpdateLight enum.
 
-enum SubSurfaceScatteringQuality: 🔗
+enum SubSurfaceScatteringQuality: 
 
 SubSurfaceScatteringQuality SUB_SURFACE_SCATTERING_QUALITY_DISABLED = 0
 
@@ -11359,7 +11359,7 @@ SubSurfaceScatteringQuality SUB_SURFACE_SCATTERING_QUALITY_HIGH = 3
 
 High subsurface scattering quality. This has the highest GPU requirements.
 
-enum DOFBokehShape: 🔗
+enum DOFBokehShape: 
 
 DOFBokehShape DOF_BOKEH_BOX = 0
 
@@ -11373,7 +11373,7 @@ DOFBokehShape DOF_BOKEH_CIRCLE = 2
 
 Calculates DOF blur using a circle shaped filter. Best quality and most realistic, but slowest. Use only for areas where a lot of performance can be dedicated to post-processing (e.g. cutscenes).
 
-enum DOFBlurQuality: 🔗
+enum DOFBlurQuality: 
 
 DOFBlurQuality DOF_BLUR_QUALITY_VERY_LOW = 0
 
@@ -11451,7 +11451,7 @@ InstanceType INSTANCE_GEOMETRY_MASK = 14
 
 A combination of the flags of geometry instances (mesh, multimesh, immediate and particles).
 
-enum InstanceFlags: 🔗
+enum InstanceFlags: 
 
 InstanceFlags INSTANCE_FLAG_USE_BAKED_LIGHT = 0
 
@@ -11473,7 +11473,7 @@ InstanceFlags INSTANCE_FLAG_MAX = 4
 
 Represents the size of the InstanceFlags enum.
 
-enum ShadowCastingSetting: 🔗
+enum ShadowCastingSetting: 
 
 ShadowCastingSetting SHADOW_CASTING_SETTING_OFF = 0
 
@@ -11491,7 +11491,7 @@ ShadowCastingSetting SHADOW_CASTING_SETTING_SHADOWS_ONLY = 3
 
 Only render the shadows from the object. The object itself will not be drawn.
 
-enum VisibilityRangeFadeMode: 🔗
+enum VisibilityRangeFadeMode: 
 
 VisibilityRangeFadeMode VISIBILITY_RANGE_FADE_DISABLED = 0
 
@@ -11521,7 +11521,7 @@ BakeChannels BAKE_CHANNEL_EMISSION = 3
 
 Index of Image in array of Images returned by bake_render_uv2(). Image uses Image.FORMAT_RGBAH and contains emission color in the .rgb channels and nothing in the .a channel.
 
-enum CanvasTextureChannel: 🔗
+enum CanvasTextureChannel: 
 
 CanvasTextureChannel CANVAS_TEXTURE_CHANNEL_DIFFUSE = 0
 
@@ -11535,7 +11535,7 @@ CanvasTextureChannel CANVAS_TEXTURE_CHANNEL_SPECULAR = 2
 
 Specular map canvas texture (CanvasTexture.specular_texture).
 
-enum NinePatchAxisMode: 🔗
+enum NinePatchAxisMode: 
 
 NinePatchAxisMode NINE_PATCH_STRETCH = 0
 
@@ -11549,7 +11549,7 @@ NinePatchAxisMode NINE_PATCH_TILE_FIT = 2
 
 The nine patch gets filled with tiles where needed and stretches them a bit if needed.
 
-enum CanvasItemTextureFilter: 🔗
+enum CanvasItemTextureFilter: 
 
 CanvasItemTextureFilter CANVAS_ITEM_TEXTURE_FILTER_DEFAULT = 0
 
@@ -11591,7 +11591,7 @@ CanvasItemTextureFilter CANVAS_ITEM_TEXTURE_FILTER_MAX = 7
 
 Max value for CanvasItemTextureFilter enum.
 
-enum CanvasItemTextureRepeat: 🔗
+enum CanvasItemTextureRepeat: 
 
 CanvasItemTextureRepeat CANVAS_ITEM_TEXTURE_REPEAT_DEFAULT = 0
 
@@ -11613,7 +11613,7 @@ CanvasItemTextureRepeat CANVAS_ITEM_TEXTURE_REPEAT_MAX = 4
 
 Max value for CanvasItemTextureRepeat enum.
 
-enum CanvasGroupMode: 🔗
+enum CanvasGroupMode: 
 
 CanvasGroupMode CANVAS_GROUP_MODE_DISABLED = 0
 
@@ -11631,7 +11631,7 @@ CanvasGroupMode CANVAS_GROUP_MODE_TRANSPARENT = 3
 
 There is currently no description for this enum. Please help us by contributing one!
 
-enum CanvasLightMode: 🔗
+enum CanvasLightMode: 
 
 CanvasLightMode CANVAS_LIGHT_MODE_POINT = 0
 
@@ -11641,7 +11641,7 @@ CanvasLightMode CANVAS_LIGHT_MODE_DIRECTIONAL = 1
 
 2D directional (sun/moon) light (see DirectionalLight2D).
 
-enum CanvasLightBlendMode: 🔗
+enum CanvasLightBlendMode: 
 
 CanvasLightBlendMode CANVAS_LIGHT_BLEND_MODE_ADD = 0
 
@@ -11655,7 +11655,7 @@ CanvasLightBlendMode CANVAS_LIGHT_BLEND_MODE_MIX = 2
 
 The light adds color depending on transparency.
 
-enum CanvasLightShadowFilter: 🔗
+enum CanvasLightShadowFilter: 
 
 CanvasLightShadowFilter CANVAS_LIGHT_FILTER_NONE = 0
 
@@ -11673,7 +11673,7 @@ CanvasLightShadowFilter CANVAS_LIGHT_FILTER_MAX = 3
 
 Max value of the CanvasLightShadowFilter enum.
 
-enum CanvasOccluderPolygonCullMode: 🔗
+enum CanvasOccluderPolygonCullMode: 
 
 CanvasOccluderPolygonCullMode CANVAS_OCCLUDER_POLYGON_CULL_DISABLED = 0
 
@@ -11687,7 +11687,7 @@ CanvasOccluderPolygonCullMode CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE = 2
 
 Culling of the canvas occluder is counterclockwise.
 
-enum GlobalShaderParameterType: 🔗
+enum GlobalShaderParameterType: 
 
 GlobalShaderParameterType GLOBAL_VAR_TYPE_BOOL = 0
 
@@ -11809,7 +11809,7 @@ GlobalShaderParameterType GLOBAL_VAR_TYPE_MAX = 29
 
 Represents the size of the GlobalShaderParameterType enum.
 
-enum RenderingInfo: 🔗
+enum RenderingInfo: 
 
 RenderingInfo RENDERING_INFO_TOTAL_OBJECTS_IN_FRAME = 0
 
@@ -11855,7 +11855,7 @@ RenderingInfo RENDERING_INFO_PIPELINE_COMPILATIONS_SPECIALIZATION = 10
 
 Number of pipeline compilations that were triggered to optimize the current scene. These compilations are done in the background and should not cause any stutters whatsoever.
 
-enum PipelineSource: 🔗
+enum PipelineSource: 
 
 PipelineSource PIPELINE_SOURCE_CANVAS = 0
 
@@ -11889,77 +11889,77 @@ Features FEATURE_MULTITHREADED = 1
 
 Deprecated: This constant has not been used since Godot 3.0.
 
-NO_INDEX_ARRAY = -1 🔗
+NO_INDEX_ARRAY = -1 
 
 Marks an error that shows that the index array is empty.
 
-ARRAY_WEIGHTS_SIZE = 4 🔗
+ARRAY_WEIGHTS_SIZE = 4 
 
 Number of weights/bones per vertex.
 
-CANVAS_ITEM_Z_MIN = -4096 🔗
+CANVAS_ITEM_Z_MIN = -4096 
 
 The minimum Z-layer for canvas items.
 
-CANVAS_ITEM_Z_MAX = 4096 🔗
+CANVAS_ITEM_Z_MAX = 4096 
 
 The maximum Z-layer for canvas items.
 
-CANVAS_LAYER_MIN = -2147483648 🔗
+CANVAS_LAYER_MIN = -2147483648 
 
 The minimum canvas layer.
 
-CANVAS_LAYER_MAX = 2147483647 🔗
+CANVAS_LAYER_MAX = 2147483647 
 
 The maximum canvas layer.
 
-MAX_GLOW_LEVELS = 7 🔗
+MAX_GLOW_LEVELS = 7 
 
 The maximum number of glow levels that can be used with the glow post-processing effect.
 
 Deprecated: This constant is not used by the engine.
 
-MAX_2D_DIRECTIONAL_LIGHTS = 8 🔗
+MAX_2D_DIRECTIONAL_LIGHTS = 8 
 
 The maximum number of directional lights that can be rendered at a given time in 2D.
 
-MAX_MESH_SURFACES = 256 🔗
+MAX_MESH_SURFACES = 256 
 
 The maximum number of surfaces a mesh can have.
 
-MATERIAL_RENDER_PRIORITY_MIN = -128 🔗
+MATERIAL_RENDER_PRIORITY_MIN = -128 
 
 The minimum renderpriority of all materials.
 
-MATERIAL_RENDER_PRIORITY_MAX = 127 🔗
+MATERIAL_RENDER_PRIORITY_MAX = 127 
 
 The maximum renderpriority of all materials.
 
-ARRAY_CUSTOM_COUNT = 4 🔗
+ARRAY_CUSTOM_COUNT = 4 
 
 The number of custom data arrays available (ARRAY_CUSTOM0, ARRAY_CUSTOM1, ARRAY_CUSTOM2, ARRAY_CUSTOM3).
 
-PARTICLES_EMIT_FLAG_POSITION = 1 🔗
+PARTICLES_EMIT_FLAG_POSITION = 1 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-PARTICLES_EMIT_FLAG_ROTATION_SCALE = 2 🔗
+PARTICLES_EMIT_FLAG_ROTATION_SCALE = 2 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-PARTICLES_EMIT_FLAG_VELOCITY = 4 🔗
+PARTICLES_EMIT_FLAG_VELOCITY = 4 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-PARTICLES_EMIT_FLAG_COLOR = 8 🔗
+PARTICLES_EMIT_FLAG_COLOR = 8 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-PARTICLES_EMIT_FLAG_CUSTOM = 16 🔗
+PARTICLES_EMIT_FLAG_CUSTOM = 16 
 
 There is currently no description for this constant. Please help us by contributing one!
 
-bool render_loop_enabled 🔗
+bool render_loop_enabled 
 
 void set_render_loop_enabled(value: bool)
 
@@ -11967,15 +11967,15 @@ bool is_render_loop_enabled()
 
 If false, disables rendering completely, but the engine logic is still being processed. You can call force_draw() to draw a frame even with rendering disabled.
 
-Array[Image] bake_render_uv2(base: RID, material_overrides: Array[RID], image_size: Vector2i) 🔗
+Array[Image] bake_render_uv2(base: RID, material_overrides: Array[RID], image_size: Vector2i) 
 
 Bakes the material data of the Mesh passed in the base parameter with optional material_overrides to a set of Images of size image_size. Returns an array of Images containing material properties as specified in BakeChannels.
 
-void call_on_render_thread(callable: Callable) 🔗
+void call_on_render_thread(callable: Callable) 
 
 As the RenderingServer actual logic may run on a separate thread, accessing its internals from the main (or any other) thread will result in errors. To make it easier to run code that can safely access the rendering internals (such as RenderingDevice and similar RD classes), push a callable via this function so it will be executed on the render thread.
 
-RID camera_attributes_create() 🔗
+RID camera_attributes_create() 
 
 Creates a camera attributes object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all camera_attributes_ RenderingServer functions.
 
@@ -11983,23 +11983,23 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is CameraAttributes.
 
-void camera_attributes_set_auto_exposure(camera_attributes: RID, enable: bool, min_sensitivity: float, max_sensitivity: float, speed: float, scale: float) 🔗
+void camera_attributes_set_auto_exposure(camera_attributes: RID, enable: bool, min_sensitivity: float, max_sensitivity: float, speed: float, scale: float) 
 
 Sets the parameters to use with the auto-exposure effect. These parameters take on the same meaning as their counterparts in CameraAttributes and CameraAttributesPractical.
 
-void camera_attributes_set_dof_blur(camera_attributes: RID, far_enable: bool, far_distance: float, far_transition: float, near_enable: bool, near_distance: float, near_transition: float, amount: float) 🔗
+void camera_attributes_set_dof_blur(camera_attributes: RID, far_enable: bool, far_distance: float, far_transition: float, near_enable: bool, near_distance: float, near_transition: float, amount: float) 
 
 Sets the parameters to use with the DOF blur effect. These parameters take on the same meaning as their counterparts in CameraAttributesPractical.
 
-void camera_attributes_set_dof_blur_bokeh_shape(shape: DOFBokehShape) 🔗
+void camera_attributes_set_dof_blur_bokeh_shape(shape: DOFBokehShape) 
 
 Sets the shape of the DOF bokeh pattern to shape. Different shapes may be used to achieve artistic effect, or to meet performance targets.
 
-void camera_attributes_set_dof_blur_quality(quality: DOFBlurQuality, use_jitter: bool) 🔗
+void camera_attributes_set_dof_blur_quality(quality: DOFBlurQuality, use_jitter: bool) 
 
 Sets the quality level of the DOF blur effect to quality. use_jitter can be used to jitter samples taken during the blur pass to hide artifacts at the cost of looking more fuzzy.
 
-void camera_attributes_set_exposure(camera_attributes: RID, multiplier: float, normalization: float) 🔗
+void camera_attributes_set_exposure(camera_attributes: RID, multiplier: float, normalization: float) 
 
 Sets the exposure values that will be used by the renderers. The normalization amount is used to bake a given Exposure Value (EV) into rendering calculations to reduce the dynamic range of the scene.
 
@@ -12007,7 +12007,7 @@ The normalization factor can be calculated from exposure value (EV100) as follow
 
 The exposure value can be calculated from aperture (in f-stops), shutter speed (in seconds), and sensitivity (in ISO) as follows:
 
-RID camera_create() 🔗
+RID camera_create() 
 
 Creates a 3D camera and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all camera_* RenderingServer functions.
 
@@ -12015,43 +12015,43 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is Camera3D.
 
-void camera_set_camera_attributes(camera: RID, effects: RID) 🔗
+void camera_set_camera_attributes(camera: RID, effects: RID) 
 
 Sets the camera_attributes created with camera_attributes_create() to the given camera.
 
-void camera_set_compositor(camera: RID, compositor: RID) 🔗
+void camera_set_compositor(camera: RID, compositor: RID) 
 
 Sets the compositor used by this camera. Equivalent to Camera3D.compositor.
 
-void camera_set_cull_mask(camera: RID, layers: int) 🔗
+void camera_set_cull_mask(camera: RID, layers: int) 
 
 Sets the cull mask associated with this camera. The cull mask describes which 3D layers are rendered by this camera. Equivalent to Camera3D.cull_mask.
 
-void camera_set_environment(camera: RID, env: RID) 🔗
+void camera_set_environment(camera: RID, env: RID) 
 
 Sets the environment used by this camera. Equivalent to Camera3D.environment.
 
-void camera_set_frustum(camera: RID, size: float, offset: Vector2, z_near: float, z_far: float) 🔗
+void camera_set_frustum(camera: RID, size: float, offset: Vector2, z_near: float, z_far: float) 
 
 Sets camera to use frustum projection. This mode allows adjusting the offset argument to create "tilted frustum" effects.
 
-void camera_set_orthogonal(camera: RID, size: float, z_near: float, z_far: float) 🔗
+void camera_set_orthogonal(camera: RID, size: float, z_near: float, z_far: float) 
 
 Sets camera to use orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.
 
-void camera_set_perspective(camera: RID, fovy_degrees: float, z_near: float, z_far: float) 🔗
+void camera_set_perspective(camera: RID, fovy_degrees: float, z_near: float, z_far: float) 
 
 Sets camera to use perspective projection. Objects on the screen becomes smaller when they are far away.
 
-void camera_set_transform(camera: RID, transform: Transform3D) 🔗
+void camera_set_transform(camera: RID, transform: Transform3D) 
 
 Sets Transform3D of camera.
 
-void camera_set_use_vertical_aspect(camera: RID, enable: bool) 🔗
+void camera_set_use_vertical_aspect(camera: RID, enable: bool) 
 
 If true, preserves the horizontal aspect ratio which is equivalent to Camera3D.KEEP_WIDTH. If false, preserves the vertical aspect ratio which is equivalent to Camera3D.KEEP_HEIGHT.
 
-RID canvas_create() 🔗
+RID canvas_create() 
 
 Creates a canvas and returns the assigned RID. It can be accessed with the RID that is returned. This RID will be used in all canvas_* RenderingServer functions.
 
@@ -12059,95 +12059,95 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Canvas has no Resource or Node equivalent.
 
-void canvas_item_add_animation_slice(item: RID, animation_length: float, slice_begin: float, slice_end: float, offset: float = 0.0) 🔗
+void canvas_item_add_animation_slice(item: RID, animation_length: float, slice_begin: float, slice_end: float, offset: float = 0.0) 
 
 Subsequent drawing commands will be ignored unless they fall within the specified animation slice. This is a faster way to implement animations that loop on background rather than redrawing constantly.
 
-void canvas_item_add_circle(item: RID, pos: Vector2, radius: float, color: Color, antialiased: bool = false) 🔗
+void canvas_item_add_circle(item: RID, pos: Vector2, radius: float, color: Color, antialiased: bool = false) 
 
 Draws a circle on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_circle().
 
-void canvas_item_add_clip_ignore(item: RID, ignore: bool) 🔗
+void canvas_item_add_clip_ignore(item: RID, ignore: bool) 
 
 If ignore is true, ignore clipping on items drawn with this canvas item until this is called again with ignore set to false.
 
-void canvas_item_add_lcd_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color) 🔗
+void canvas_item_add_lcd_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color) 
 
 See also CanvasItem.draw_lcd_texture_rect_region().
 
-void canvas_item_add_line(item: RID, from: Vector2, to: Vector2, color: Color, width: float = -1.0, antialiased: bool = false) 🔗
+void canvas_item_add_line(item: RID, from: Vector2, to: Vector2, color: Color, width: float = -1.0, antialiased: bool = false) 
 
 Draws a line on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_line().
 
-void canvas_item_add_mesh(item: RID, mesh: RID, transform: Transform2D = Transform2D(1, 0, 0, 1, 0, 0), modulate: Color = Color(1, 1, 1, 1), texture: RID = RID()) 🔗
+void canvas_item_add_mesh(item: RID, mesh: RID, transform: Transform2D = Transform2D(1, 0, 0, 1, 0, 0), modulate: Color = Color(1, 1, 1, 1), texture: RID = RID()) 
 
 Draws a mesh created with mesh_create() with given transform, modulate color, and texture. This is used internally by MeshInstance2D.
 
-void canvas_item_add_msdf_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), outline_size: int = 0, px_range: float = 1.0, scale: float = 1.0) 🔗
+void canvas_item_add_msdf_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), outline_size: int = 0, px_range: float = 1.0, scale: float = 1.0) 
 
 See also CanvasItem.draw_msdf_texture_rect_region().
 
-void canvas_item_add_multiline(item: RID, points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 🔗
+void canvas_item_add_multiline(item: RID, points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 
 
 Draws a 2D multiline on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_multiline() and CanvasItem.draw_multiline_colors().
 
-void canvas_item_add_multimesh(item: RID, mesh: RID, texture: RID = RID()) 🔗
+void canvas_item_add_multimesh(item: RID, mesh: RID, texture: RID = RID()) 
 
 Draws a 2D MultiMesh on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_multimesh().
 
-void canvas_item_add_nine_patch(item: RID, rect: Rect2, source: Rect2, texture: RID, topleft: Vector2, bottomright: Vector2, x_axis_mode: NinePatchAxisMode = 0, y_axis_mode: NinePatchAxisMode = 0, draw_center: bool = true, modulate: Color = Color(1, 1, 1, 1)) 🔗
+void canvas_item_add_nine_patch(item: RID, rect: Rect2, source: Rect2, texture: RID, topleft: Vector2, bottomright: Vector2, x_axis_mode: NinePatchAxisMode = 0, y_axis_mode: NinePatchAxisMode = 0, draw_center: bool = true, modulate: Color = Color(1, 1, 1, 1)) 
 
 Draws a nine-patch rectangle on the CanvasItem pointed to by the item RID.
 
-void canvas_item_add_particles(item: RID, particles: RID, texture: RID) 🔗
+void canvas_item_add_particles(item: RID, particles: RID, texture: RID) 
 
 Draws particles on the CanvasItem pointed to by the item RID.
 
-void canvas_item_add_polygon(item: RID, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), texture: RID = RID()) 🔗
+void canvas_item_add_polygon(item: RID, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), texture: RID = RID()) 
 
 Draws a 2D polygon on the CanvasItem pointed to by the item RID. If you need more flexibility (such as being able to use bones), use canvas_item_add_triangle_array() instead. See also CanvasItem.draw_polygon().
 
 Note: If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with Geometry2D.triangulate_polygon() and using CanvasItem.draw_mesh(), CanvasItem.draw_multimesh(), or canvas_item_add_triangle_array().
 
-void canvas_item_add_polyline(item: RID, points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 🔗
+void canvas_item_add_polyline(item: RID, points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 
 
 Draws a 2D polyline on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_polyline() and CanvasItem.draw_polyline_colors().
 
-void canvas_item_add_primitive(item: RID, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array, texture: RID) 🔗
+void canvas_item_add_primitive(item: RID, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array, texture: RID) 
 
 Draws a 2D primitive on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_primitive().
 
-void canvas_item_add_rect(item: RID, rect: Rect2, color: Color, antialiased: bool = false) 🔗
+void canvas_item_add_rect(item: RID, rect: Rect2, color: Color, antialiased: bool = false) 
 
 Draws a rectangle on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_rect().
 
-void canvas_item_add_set_transform(item: RID, transform: Transform2D) 🔗
+void canvas_item_add_set_transform(item: RID, transform: Transform2D) 
 
 Sets a Transform2D that will be used to transform subsequent canvas item commands.
 
-void canvas_item_add_texture_rect(item: RID, rect: Rect2, texture: RID, tile: bool = false, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false) 🔗
+void canvas_item_add_texture_rect(item: RID, rect: Rect2, texture: RID, tile: bool = false, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false) 
 
 Draws a 2D textured rectangle on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_texture_rect() and Texture2D.draw_rect().
 
-void canvas_item_add_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false, clip_uv: bool = true) 🔗
+void canvas_item_add_texture_rect_region(item: RID, rect: Rect2, texture: RID, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false, clip_uv: bool = true) 
 
 Draws the specified region of a 2D textured rectangle on the CanvasItem pointed to by the item RID. See also CanvasItem.draw_texture_rect_region() and Texture2D.draw_rect_region().
 
-void canvas_item_add_triangle_array(item: RID, indices: PackedInt32Array, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), bones: PackedInt32Array = PackedInt32Array(), weights: PackedFloat32Array = PackedFloat32Array(), texture: RID = RID(), count: int = -1) 🔗
+void canvas_item_add_triangle_array(item: RID, indices: PackedInt32Array, points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), bones: PackedInt32Array = PackedInt32Array(), weights: PackedFloat32Array = PackedFloat32Array(), texture: RID = RID(), count: int = -1) 
 
 Draws a triangle array on the CanvasItem pointed to by the item RID. This is internally used by Line2D and StyleBoxFlat for rendering. canvas_item_add_triangle_array() is highly flexible, but more complex to use than canvas_item_add_polygon().
 
 Note: If count is set to a non-negative value, only the first count * 3 indices (corresponding to count triangles) will be drawn. Otherwise, all indices are drawn.
 
-void canvas_item_attach_skeleton(item: RID, skeleton: RID) 🔗
+void canvas_item_attach_skeleton(item: RID, skeleton: RID) 
 
 Attaches a skeleton to the CanvasItem. Removes the previous skeleton.
 
-void canvas_item_clear(item: RID) 🔗
+void canvas_item_clear(item: RID) 
 
 Clears the CanvasItem and removes all commands in it.
 
-RID canvas_item_create() 🔗
+RID canvas_item_create() 
 
 Creates a new CanvasItem instance and returns its RID. It can be accessed with the RID that is returned. This RID will be used in all canvas_item_* RenderingServer functions.
 
@@ -12155,139 +12155,139 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is CanvasItem.
 
-Variant canvas_item_get_instance_shader_parameter(instance: RID, parameter: StringName) const 🔗
+Variant canvas_item_get_instance_shader_parameter(instance: RID, parameter: StringName) const 
 
 Returns the value of the per-instance shader uniform from the specified canvas item instance. Equivalent to CanvasItem.get_instance_shader_parameter().
 
-Variant canvas_item_get_instance_shader_parameter_default_value(instance: RID, parameter: StringName) const 🔗
+Variant canvas_item_get_instance_shader_parameter_default_value(instance: RID, parameter: StringName) const 
 
 Returns the default value of the per-instance shader uniform from the specified canvas item instance. Equivalent to CanvasItem.get_instance_shader_parameter().
 
-Array[Dictionary] canvas_item_get_instance_shader_parameter_list(instance: RID) const 🔗
+Array[Dictionary] canvas_item_get_instance_shader_parameter_list(instance: RID) const 
 
 Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified canvas item instance.
 
 The returned dictionary is in PropertyInfo format, with the keys name, class_name, type, hint, hint_string, and usage.
 
-void canvas_item_reset_physics_interpolation(item: RID) 🔗
+void canvas_item_reset_physics_interpolation(item: RID) 
 
 Prevents physics interpolation for the current physics tick.
 
 This is useful when moving a canvas item to a new location, to give an instantaneous change rather than interpolation from the previous location.
 
-void canvas_item_set_canvas_group_mode(item: RID, mode: CanvasGroupMode, clear_margin: float = 5.0, fit_empty: bool = false, fit_margin: float = 0.0, blur_mipmaps: bool = false) 🔗
+void canvas_item_set_canvas_group_mode(item: RID, mode: CanvasGroupMode, clear_margin: float = 5.0, fit_empty: bool = false, fit_margin: float = 0.0, blur_mipmaps: bool = false) 
 
 Sets the canvas group mode used during 2D rendering for the canvas item specified by the item RID. For faster but more limited clipping, use canvas_item_set_clip() instead.
 
 Note: The equivalent node functionality is found in CanvasGroup and CanvasItem.clip_children.
 
-void canvas_item_set_clip(item: RID, clip: bool) 🔗
+void canvas_item_set_clip(item: RID, clip: bool) 
 
 If clip is true, makes the canvas item specified by the item RID not draw anything outside of its rect's coordinates. This clipping is fast, but works only with axis-aligned rectangles. This means that rotation is ignored by the clipping rectangle. For more advanced clipping shapes, use canvas_item_set_canvas_group_mode() instead.
 
 Note: The equivalent node functionality is found in Label.clip_text, RichTextLabel (always enabled) and more.
 
-void canvas_item_set_copy_to_backbuffer(item: RID, enabled: bool, rect: Rect2) 🔗
+void canvas_item_set_copy_to_backbuffer(item: RID, enabled: bool, rect: Rect2) 
 
 Sets the CanvasItem to copy a rect to the backbuffer.
 
-void canvas_item_set_custom_rect(item: RID, use_custom_rect: bool, rect: Rect2 = Rect2(0, 0, 0, 0)) 🔗
+void canvas_item_set_custom_rect(item: RID, use_custom_rect: bool, rect: Rect2 = Rect2(0, 0, 0, 0)) 
 
 If use_custom_rect is true, sets the custom visibility rectangle (used for culling) to rect for the canvas item specified by item. Setting a custom visibility rect can reduce CPU load when drawing lots of 2D instances. If use_custom_rect is false, automatically computes a visibility rectangle based on the canvas item's draw commands.
 
-void canvas_item_set_default_texture_filter(item: RID, filter: CanvasItemTextureFilter) 🔗
+void canvas_item_set_default_texture_filter(item: RID, filter: CanvasItemTextureFilter) 
 
 Sets the default texture filter mode for the canvas item specified by the item RID. Equivalent to CanvasItem.texture_filter.
 
-void canvas_item_set_default_texture_repeat(item: RID, repeat: CanvasItemTextureRepeat) 🔗
+void canvas_item_set_default_texture_repeat(item: RID, repeat: CanvasItemTextureRepeat) 
 
 Sets the default texture repeat mode for the canvas item specified by the item RID. Equivalent to CanvasItem.texture_repeat.
 
-void canvas_item_set_distance_field_mode(item: RID, enabled: bool) 🔗
+void canvas_item_set_distance_field_mode(item: RID, enabled: bool) 
 
 If enabled is true, enables multichannel signed distance field rendering mode for the canvas item specified by the item RID. This is meant to be used for font rendering, or with specially generated images using msdfgen.
 
-void canvas_item_set_draw_behind_parent(item: RID, enabled: bool) 🔗
+void canvas_item_set_draw_behind_parent(item: RID, enabled: bool) 
 
 If enabled is true, draws the canvas item specified by the item RID behind its parent. Equivalent to CanvasItem.show_behind_parent.
 
-void canvas_item_set_draw_index(item: RID, index: int) 🔗
+void canvas_item_set_draw_index(item: RID, index: int) 
 
 Sets the index for the CanvasItem.
 
-void canvas_item_set_instance_shader_parameter(instance: RID, parameter: StringName, value: Variant) 🔗
+void canvas_item_set_instance_shader_parameter(instance: RID, parameter: StringName, value: Variant) 
 
 Sets the per-instance shader uniform on the specified canvas item instance. Equivalent to CanvasItem.set_instance_shader_parameter().
 
-void canvas_item_set_interpolated(item: RID, interpolated: bool) 🔗
+void canvas_item_set_interpolated(item: RID, interpolated: bool) 
 
 If interpolated is true, turns on physics interpolation for the canvas item.
 
-void canvas_item_set_light_mask(item: RID, mask: int) 🔗
+void canvas_item_set_light_mask(item: RID, mask: int) 
 
 Sets the light mask for the canvas item specified by the item RID. Equivalent to CanvasItem.light_mask.
 
-void canvas_item_set_material(item: RID, material: RID) 🔗
+void canvas_item_set_material(item: RID, material: RID) 
 
 Sets a new material to the canvas item specified by the item RID. Equivalent to CanvasItem.material.
 
-void canvas_item_set_modulate(item: RID, color: Color) 🔗
+void canvas_item_set_modulate(item: RID, color: Color) 
 
 Multiplies the color of the canvas item specified by the item RID, while affecting its children. See also canvas_item_set_self_modulate(). Equivalent to CanvasItem.modulate.
 
-void canvas_item_set_parent(item: RID, parent: RID) 🔗
+void canvas_item_set_parent(item: RID, parent: RID) 
 
 Sets a parent CanvasItem to the CanvasItem. The item will inherit transform, modulation and visibility from its parent, like CanvasItem nodes in the scene tree.
 
-void canvas_item_set_self_modulate(item: RID, color: Color) 🔗
+void canvas_item_set_self_modulate(item: RID, color: Color) 
 
 Multiplies the color of the canvas item specified by the item RID, without affecting its children. See also canvas_item_set_modulate(). Equivalent to CanvasItem.self_modulate.
 
-void canvas_item_set_sort_children_by_y(item: RID, enabled: bool) 🔗
+void canvas_item_set_sort_children_by_y(item: RID, enabled: bool) 
 
 If enabled is true, child nodes with the lowest Y position are drawn before those with a higher Y position. Y-sorting only affects children that inherit from the canvas item specified by the item RID, not the canvas item itself. Equivalent to CanvasItem.y_sort_enabled.
 
-void canvas_item_set_transform(item: RID, transform: Transform2D) 🔗
+void canvas_item_set_transform(item: RID, transform: Transform2D) 
 
 Sets the transform of the canvas item specified by the item RID. This affects where and how the item will be drawn. Child canvas items' transforms are multiplied by their parent's transform. Equivalent to Node2D.transform.
 
-void canvas_item_set_use_parent_material(item: RID, enabled: bool) 🔗
+void canvas_item_set_use_parent_material(item: RID, enabled: bool) 
 
 Sets if the CanvasItem uses its parent's material.
 
-void canvas_item_set_visibility_layer(item: RID, visibility_layer: int) 🔗
+void canvas_item_set_visibility_layer(item: RID, visibility_layer: int) 
 
 Sets the rendering visibility layer associated with this CanvasItem. Only Viewport nodes with a matching rendering mask will render this CanvasItem.
 
-void canvas_item_set_visibility_notifier(item: RID, enable: bool, area: Rect2, enter_callable: Callable, exit_callable: Callable) 🔗
+void canvas_item_set_visibility_notifier(item: RID, enable: bool, area: Rect2, enter_callable: Callable, exit_callable: Callable) 
 
 Sets the given CanvasItem as visibility notifier. area defines the area of detecting visibility. enter_callable is called when the CanvasItem enters the screen, exit_callable is called when the CanvasItem exits the screen. If enable is false, the item will no longer function as notifier.
 
 This method can be used to manually mimic VisibleOnScreenNotifier2D.
 
-void canvas_item_set_visible(item: RID, visible: bool) 🔗
+void canvas_item_set_visible(item: RID, visible: bool) 
 
 Sets the visibility of the CanvasItem.
 
-void canvas_item_set_z_as_relative_to_parent(item: RID, enabled: bool) 🔗
+void canvas_item_set_z_as_relative_to_parent(item: RID, enabled: bool) 
 
 If this is enabled, the Z index of the parent will be added to the children's Z index.
 
-void canvas_item_set_z_index(item: RID, z_index: int) 🔗
+void canvas_item_set_z_index(item: RID, z_index: int) 
 
 Sets the CanvasItem's Z index, i.e. its draw order (lower indexes are drawn first).
 
-void canvas_item_transform_physics_interpolation(item: RID, transform: Transform2D) 🔗
+void canvas_item_transform_physics_interpolation(item: RID, transform: Transform2D) 
 
 Transforms both the current and previous stored transform for a canvas item.
 
 This allows transforming a canvas item without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
-void canvas_light_attach_to_canvas(light: RID, canvas: RID) 🔗
+void canvas_light_attach_to_canvas(light: RID, canvas: RID) 
 
 Attaches the canvas light to the canvas. Removes it from its previous canvas.
 
-RID canvas_light_create() 🔗
+RID canvas_light_create() 
 
 Creates a canvas light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all canvas_light_* RenderingServer functions.
 
@@ -12295,11 +12295,11 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is Light2D.
 
-void canvas_light_occluder_attach_to_canvas(occluder: RID, canvas: RID) 🔗
+void canvas_light_occluder_attach_to_canvas(occluder: RID, canvas: RID) 
 
 Attaches a light occluder to the canvas. Removes it from its previous canvas.
 
-RID canvas_light_occluder_create() 🔗
+RID canvas_light_occluder_create() 
 
 Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all canvas_light_occluder_* RenderingServer functions.
 
@@ -12307,131 +12307,131 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is LightOccluder2D.
 
-void canvas_light_occluder_reset_physics_interpolation(occluder: RID) 🔗
+void canvas_light_occluder_reset_physics_interpolation(occluder: RID) 
 
 Prevents physics interpolation for the current physics tick.
 
 This is useful when moving an occluder to a new location, to give an instantaneous change rather than interpolation from the previous location.
 
-void canvas_light_occluder_set_as_sdf_collision(occluder: RID, enable: bool) 🔗
+void canvas_light_occluder_set_as_sdf_collision(occluder: RID, enable: bool) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void canvas_light_occluder_set_enabled(occluder: RID, enabled: bool) 🔗
+void canvas_light_occluder_set_enabled(occluder: RID, enabled: bool) 
 
 Enables or disables light occluder.
 
-void canvas_light_occluder_set_interpolated(occluder: RID, interpolated: bool) 🔗
+void canvas_light_occluder_set_interpolated(occluder: RID, interpolated: bool) 
 
 If interpolated is true, turns on physics interpolation for the light occluder.
 
-void canvas_light_occluder_set_light_mask(occluder: RID, mask: int) 🔗
+void canvas_light_occluder_set_light_mask(occluder: RID, mask: int) 
 
 The light mask. See LightOccluder2D for more information on light masks.
 
-void canvas_light_occluder_set_polygon(occluder: RID, polygon: RID) 🔗
+void canvas_light_occluder_set_polygon(occluder: RID, polygon: RID) 
 
 Sets a light occluder's polygon.
 
-void canvas_light_occluder_set_transform(occluder: RID, transform: Transform2D) 🔗
+void canvas_light_occluder_set_transform(occluder: RID, transform: Transform2D) 
 
 Sets a light occluder's Transform2D.
 
-void canvas_light_occluder_transform_physics_interpolation(occluder: RID, transform: Transform2D) 🔗
+void canvas_light_occluder_transform_physics_interpolation(occluder: RID, transform: Transform2D) 
 
 Transforms both the current and previous stored transform for a light occluder.
 
 This allows transforming an occluder without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
-void canvas_light_reset_physics_interpolation(light: RID) 🔗
+void canvas_light_reset_physics_interpolation(light: RID) 
 
 Prevents physics interpolation for the current physics tick.
 
 This is useful when moving a canvas item to a new location, to give an instantaneous change rather than interpolation from the previous location.
 
-void canvas_light_set_blend_mode(light: RID, mode: CanvasLightBlendMode) 🔗
+void canvas_light_set_blend_mode(light: RID, mode: CanvasLightBlendMode) 
 
 Sets the blend mode for the given canvas light to mode. Equivalent to Light2D.blend_mode.
 
-void canvas_light_set_color(light: RID, color: Color) 🔗
+void canvas_light_set_color(light: RID, color: Color) 
 
 Sets the color for a light.
 
-void canvas_light_set_enabled(light: RID, enabled: bool) 🔗
+void canvas_light_set_enabled(light: RID, enabled: bool) 
 
 Enables or disables a canvas light.
 
-void canvas_light_set_energy(light: RID, energy: float) 🔗
+void canvas_light_set_energy(light: RID, energy: float) 
 
 Sets a canvas light's energy.
 
-void canvas_light_set_height(light: RID, height: float) 🔗
+void canvas_light_set_height(light: RID, height: float) 
 
 Sets a canvas light's height.
 
-void canvas_light_set_interpolated(light: RID, interpolated: bool) 🔗
+void canvas_light_set_interpolated(light: RID, interpolated: bool) 
 
 If interpolated is true, turns on physics interpolation for the canvas light.
 
-void canvas_light_set_item_cull_mask(light: RID, mask: int) 🔗
+void canvas_light_set_item_cull_mask(light: RID, mask: int) 
 
 The light mask. See LightOccluder2D for more information on light masks.
 
-void canvas_light_set_item_shadow_cull_mask(light: RID, mask: int) 🔗
+void canvas_light_set_item_shadow_cull_mask(light: RID, mask: int) 
 
 The binary mask used to determine which layers this canvas light's shadows affects. See LightOccluder2D for more information on light masks.
 
-void canvas_light_set_layer_range(light: RID, min_layer: int, max_layer: int) 🔗
+void canvas_light_set_layer_range(light: RID, min_layer: int, max_layer: int) 
 
 The layer range that gets rendered with this light.
 
-void canvas_light_set_mode(light: RID, mode: CanvasLightMode) 🔗
+void canvas_light_set_mode(light: RID, mode: CanvasLightMode) 
 
 Sets the mode of the canvas light.
 
-void canvas_light_set_shadow_color(light: RID, color: Color) 🔗
+void canvas_light_set_shadow_color(light: RID, color: Color) 
 
 Sets the color of the canvas light's shadow.
 
-void canvas_light_set_shadow_enabled(light: RID, enabled: bool) 🔗
+void canvas_light_set_shadow_enabled(light: RID, enabled: bool) 
 
 Enables or disables the canvas light's shadow.
 
-void canvas_light_set_shadow_filter(light: RID, filter: CanvasLightShadowFilter) 🔗
+void canvas_light_set_shadow_filter(light: RID, filter: CanvasLightShadowFilter) 
 
 Sets the canvas light's shadow's filter.
 
-void canvas_light_set_shadow_smooth(light: RID, smooth: float) 🔗
+void canvas_light_set_shadow_smooth(light: RID, smooth: float) 
 
 Smoothens the shadow. The lower, the smoother.
 
-void canvas_light_set_texture(light: RID, texture: RID) 🔗
+void canvas_light_set_texture(light: RID, texture: RID) 
 
 Sets the texture to be used by a PointLight2D. Equivalent to PointLight2D.texture.
 
-void canvas_light_set_texture_offset(light: RID, offset: Vector2) 🔗
+void canvas_light_set_texture_offset(light: RID, offset: Vector2) 
 
 Sets the offset of a PointLight2D's texture. Equivalent to PointLight2D.offset.
 
-void canvas_light_set_texture_scale(light: RID, scale: float) 🔗
+void canvas_light_set_texture_scale(light: RID, scale: float) 
 
 Sets the scale factor of a PointLight2D's texture. Equivalent to PointLight2D.texture_scale.
 
-void canvas_light_set_transform(light: RID, transform: Transform2D) 🔗
+void canvas_light_set_transform(light: RID, transform: Transform2D) 
 
 Sets the canvas light's Transform2D.
 
-void canvas_light_set_z_range(light: RID, min_z: int, max_z: int) 🔗
+void canvas_light_set_z_range(light: RID, min_z: int, max_z: int) 
 
 Sets the Z range of objects that will be affected by this light. Equivalent to Light2D.range_z_min and Light2D.range_z_max.
 
-void canvas_light_transform_physics_interpolation(light: RID, transform: Transform2D) 🔗
+void canvas_light_transform_physics_interpolation(light: RID, transform: Transform2D) 
 
 Transforms both the current and previous stored transform for a canvas light.
 
 This allows transforming a light without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
-RID canvas_occluder_polygon_create() 🔗
+RID canvas_occluder_polygon_create() 
 
 Creates a new light occluder polygon and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all canvas_occluder_polygon_* RenderingServer functions.
 
@@ -12439,37 +12439,37 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is OccluderPolygon2D.
 
-void canvas_occluder_polygon_set_cull_mode(occluder_polygon: RID, mode: CanvasOccluderPolygonCullMode) 🔗
+void canvas_occluder_polygon_set_cull_mode(occluder_polygon: RID, mode: CanvasOccluderPolygonCullMode) 
 
 Sets an occluder polygon's cull mode.
 
-void canvas_occluder_polygon_set_shape(occluder_polygon: RID, shape: PackedVector2Array, closed: bool) 🔗
+void canvas_occluder_polygon_set_shape(occluder_polygon: RID, shape: PackedVector2Array, closed: bool) 
 
 Sets the shape of the occluder polygon.
 
-void canvas_set_disable_scale(disable: bool) 🔗
+void canvas_set_disable_scale(disable: bool) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void canvas_set_item_mirroring(canvas: RID, item: RID, mirroring: Vector2) 🔗
+void canvas_set_item_mirroring(canvas: RID, item: RID, mirroring: Vector2) 
 
 A copy of the canvas item will be drawn with a local offset of the mirroring.
 
 Note: This is equivalent to calling canvas_set_item_repeat() like canvas_set_item_repeat(item, mirroring, 1), with an additional check ensuring canvas is a parent of item.
 
-void canvas_set_item_repeat(item: RID, repeat_size: Vector2, repeat_times: int) 🔗
+void canvas_set_item_repeat(item: RID, repeat_size: Vector2, repeat_times: int) 
 
 A copy of the canvas item will be drawn with a local offset of the repeat_size by the number of times of the repeat_times. As the repeat_times increases, the copies will spread away from the origin texture.
 
-void canvas_set_modulate(canvas: RID, color: Color) 🔗
+void canvas_set_modulate(canvas: RID, color: Color) 
 
 Modulates all colors in the given canvas.
 
-void canvas_set_shadow_texture_size(size: int) 🔗
+void canvas_set_shadow_texture_size(size: int) 
 
 Sets the ProjectSettings.rendering/2d/shadow_atlas/size to use for Light2D shadow rendering (in pixels). The value is rounded up to the nearest power of 2.
 
-RID canvas_texture_create() 🔗
+RID canvas_texture_create() 
 
 Creates a canvas texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all canvas_texture_* RenderingServer functions.
 
@@ -12477,57 +12477,57 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is CanvasTexture and is only meant to be used in 2D rendering, not 3D.
 
-void canvas_texture_set_channel(canvas_texture: RID, channel: CanvasTextureChannel, texture: RID) 🔗
+void canvas_texture_set_channel(canvas_texture: RID, channel: CanvasTextureChannel, texture: RID) 
 
 Sets the channel's texture for the canvas texture specified by the canvas_texture RID. Equivalent to CanvasTexture.diffuse_texture, CanvasTexture.normal_texture and CanvasTexture.specular_texture.
 
-void canvas_texture_set_shading_parameters(canvas_texture: RID, base_color: Color, shininess: float) 🔗
+void canvas_texture_set_shading_parameters(canvas_texture: RID, base_color: Color, shininess: float) 
 
 Sets the base_color and shininess to use for the canvas texture specified by the canvas_texture RID. Equivalent to CanvasTexture.specular_color and CanvasTexture.specular_shininess.
 
-void canvas_texture_set_texture_filter(canvas_texture: RID, filter: CanvasItemTextureFilter) 🔗
+void canvas_texture_set_texture_filter(canvas_texture: RID, filter: CanvasItemTextureFilter) 
 
 Sets the texture filter mode to use for the canvas texture specified by the canvas_texture RID.
 
-void canvas_texture_set_texture_repeat(canvas_texture: RID, repeat: CanvasItemTextureRepeat) 🔗
+void canvas_texture_set_texture_repeat(canvas_texture: RID, repeat: CanvasItemTextureRepeat) 
 
 Sets the texture repeat mode to use for the canvas texture specified by the canvas_texture RID.
 
-RID compositor_create() 🔗
+RID compositor_create() 
 
 Creates a new compositor and adds it to the RenderingServer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's free_rid() method.
 
-RID compositor_effect_create() 🔗
+RID compositor_effect_create() 
 
 Creates a new rendering effect and adds it to the RenderingServer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's free_rid() method.
 
-void compositor_effect_set_callback(effect: RID, callback_type: CompositorEffectCallbackType, callback: Callable) 🔗
+void compositor_effect_set_callback(effect: RID, callback_type: CompositorEffectCallbackType, callback: Callable) 
 
 Sets the callback type (callback_type) and callback method(callback) for this rendering effect.
 
-void compositor_effect_set_enabled(effect: RID, enabled: bool) 🔗
+void compositor_effect_set_enabled(effect: RID, enabled: bool) 
 
 Enables/disables this rendering effect.
 
-void compositor_effect_set_flag(effect: RID, flag: CompositorEffectFlags, set: bool) 🔗
+void compositor_effect_set_flag(effect: RID, flag: CompositorEffectFlags, set: bool) 
 
 Sets the flag (flag) for this rendering effect to true or false (set).
 
-void compositor_set_compositor_effects(compositor: RID, effects: Array[RID]) 🔗
+void compositor_set_compositor_effects(compositor: RID, effects: Array[RID]) 
 
 Sets the compositor effects for the specified compositor RID. effects should be an array containing RIDs created with compositor_effect_create().
 
-RenderingDevice create_local_rendering_device() const 🔗
+RenderingDevice create_local_rendering_device() const 
 
 Creates a RenderingDevice that can be used to do draw and compute operations on a separate thread. Cannot draw to the screen nor share data with the global RenderingDevice.
 
 Note: When using the OpenGL rendering driver or when running in headless mode, this function always returns null.
 
-Rect2 debug_canvas_item_get_rect(item: RID) 🔗
+Rect2 debug_canvas_item_get_rect(item: RID) 
 
 Returns the bounding rectangle for a canvas item in local space, as calculated by the renderer. This bound is used internally for culling.
 
@@ -12541,47 +12541,47 @@ To place in a scene, attach this decal to an instance using instance_set_base() 
 
 Note: The equivalent node is Decal.
 
-void decal_set_albedo_mix(decal: RID, albedo_mix: float) 🔗
+void decal_set_albedo_mix(decal: RID, albedo_mix: float) 
 
 Sets the albedo_mix in the decal specified by the decal RID. Equivalent to Decal.albedo_mix.
 
-void decal_set_cull_mask(decal: RID, mask: int) 🔗
+void decal_set_cull_mask(decal: RID, mask: int) 
 
 Sets the cull mask in the decal specified by the decal RID. Equivalent to Decal.cull_mask.
 
-void decal_set_distance_fade(decal: RID, enabled: bool, begin: float, length: float) 🔗
+void decal_set_distance_fade(decal: RID, enabled: bool, begin: float, length: float) 
 
 Sets the distance fade parameters in the decal specified by the decal RID. Equivalent to Decal.distance_fade_enabled, Decal.distance_fade_begin and Decal.distance_fade_length.
 
-void decal_set_emission_energy(decal: RID, energy: float) 🔗
+void decal_set_emission_energy(decal: RID, energy: float) 
 
 Sets the emission energy in the decal specified by the decal RID. Equivalent to Decal.emission_energy.
 
-void decal_set_fade(decal: RID, above: float, below: float) 🔗
+void decal_set_fade(decal: RID, above: float, below: float) 
 
 Sets the upper fade (above) and lower fade (below) in the decal specified by the decal RID. Equivalent to Decal.upper_fade and Decal.lower_fade.
 
-void decal_set_modulate(decal: RID, color: Color) 🔗
+void decal_set_modulate(decal: RID, color: Color) 
 
 Sets the color multiplier in the decal specified by the decal RID to color. Equivalent to Decal.modulate.
 
-void decal_set_normal_fade(decal: RID, fade: float) 🔗
+void decal_set_normal_fade(decal: RID, fade: float) 
 
 Sets the normal fade in the decal specified by the decal RID. Equivalent to Decal.normal_fade.
 
-void decal_set_size(decal: RID, size: Vector3) 🔗
+void decal_set_size(decal: RID, size: Vector3) 
 
 Sets the size of the decal specified by the decal RID. Equivalent to Decal.size.
 
-void decal_set_texture(decal: RID, type: DecalTexture, texture: RID) 🔗
+void decal_set_texture(decal: RID, type: DecalTexture, texture: RID) 
 
 Sets the texture in the given texture type slot for the specified decal. Equivalent to Decal.set_texture().
 
-void decals_set_filter(filter: DecalFilter) 🔗
+void decals_set_filter(filter: DecalFilter) 
 
 Sets the texture filter mode to use when rendering decals. This parameter is global and cannot be set on a per-decal basis.
 
-RID directional_light_create() 🔗
+RID directional_light_create() 
 
 Creates a directional light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most light_* RenderingServer functions.
 
@@ -12591,15 +12591,15 @@ To place in a scene, attach this directional light to an instance using instance
 
 Note: The equivalent node is DirectionalLight3D.
 
-void directional_shadow_atlas_set_size(size: int, is_16bits: bool) 🔗
+void directional_shadow_atlas_set_size(size: int, is_16bits: bool) 
 
 Sets the size of the directional light shadows in 3D. See also ProjectSettings.rendering/lights_and_shadows/directional_shadow/size. This parameter is global and cannot be set on a per-viewport basis.
 
-void directional_soft_shadow_filter_set_quality(quality: ShadowQuality) 🔗
+void directional_soft_shadow_filter_set_quality(quality: ShadowQuality) 
 
 Sets the filter quality for directional light shadows in 3D. See also ProjectSettings.rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality. This parameter is global and cannot be set on a per-viewport basis.
 
-Image environment_bake_panorama(environment: RID, bake_irradiance: bool, size: Vector2i) 🔗
+Image environment_bake_panorama(environment: RID, bake_irradiance: bool, size: Vector2i) 
 
 Generates and returns an Image containing the radiance map for the specified environment RID's sky. This supports built-in sky material and custom sky shaders. If bake_irradiance is true, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also sky_bake_panorama().
 
@@ -12607,7 +12607,7 @@ Note: The image is saved in linear color space without any tonemapping performed
 
 Note: size should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than Sky.radiance_size, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
-RID environment_create() 🔗
+RID environment_create() 
 
 Creates an environment and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all environment_* RenderingServer functions.
 
@@ -12615,117 +12615,117 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is Environment.
 
-void environment_glow_set_use_bicubic_upscale(enable: bool) 🔗
+void environment_glow_set_use_bicubic_upscale(enable: bool) 
 
 If enable is true, enables bicubic upscaling for glow which improves quality at the cost of performance. Equivalent to ProjectSettings.rendering/environment/glow/upscale_mode.
 
 Note: This setting is only effective when using the Forward+ or Mobile rendering methods, as Compatibility uses a different glow implementation.
 
-void environment_set_adjustment(env: RID, enable: bool, brightness: float, contrast: float, saturation: float, use_1d_color_correction: bool, color_correction: RID) 🔗
+void environment_set_adjustment(env: RID, enable: bool, brightness: float, contrast: float, saturation: float, use_1d_color_correction: bool, color_correction: RID) 
 
 Sets the values to be used with the "adjustments" post-process effect. See Environment for more details.
 
-void environment_set_ambient_light(env: RID, color: Color, ambient: EnvironmentAmbientSource = 0, energy: float = 1.0, sky_contribution: float = 0.0, reflection_source: EnvironmentReflectionSource = 0) 🔗
+void environment_set_ambient_light(env: RID, color: Color, ambient: EnvironmentAmbientSource = 0, energy: float = 1.0, sky_contribution: float = 0.0, reflection_source: EnvironmentReflectionSource = 0) 
 
 Sets the values to be used for ambient light rendering. See Environment for more details.
 
-void environment_set_background(env: RID, bg: EnvironmentBG) 🔗
+void environment_set_background(env: RID, bg: EnvironmentBG) 
 
 Sets the environment's background mode. Equivalent to Environment.background_mode.
 
-void environment_set_bg_color(env: RID, color: Color) 🔗
+void environment_set_bg_color(env: RID, color: Color) 
 
 Color displayed for clear areas of the scene. Only effective if using the ENV_BG_COLOR background mode.
 
-void environment_set_bg_energy(env: RID, multiplier: float, exposure_value: float) 🔗
+void environment_set_bg_energy(env: RID, multiplier: float, exposure_value: float) 
 
 Sets the intensity of the background color.
 
-void environment_set_camera_id(env: RID, id: int) 🔗
+void environment_set_camera_id(env: RID, id: int) 
 
 Sets the camera ID to be used as environment background.
 
-void environment_set_canvas_max_layer(env: RID, max_layer: int) 🔗
+void environment_set_canvas_max_layer(env: RID, max_layer: int) 
 
 Sets the maximum layer to use if using Canvas background mode.
 
-void environment_set_fog(env: RID, enable: bool, light_color: Color, light_energy: float, sun_scatter: float, density: float, height: float, height_density: float, aerial_perspective: float, sky_affect: float, fog_mode: EnvironmentFogMode = 0) 🔗
+void environment_set_fog(env: RID, enable: bool, light_color: Color, light_energy: float, sun_scatter: float, density: float, height: float, height_density: float, aerial_perspective: float, sky_affect: float, fog_mode: EnvironmentFogMode = 0) 
 
 Configures fog for the specified environment RID. See fog_* properties in Environment for more information.
 
-void environment_set_fog_depth(env: RID, curve: float, begin: float, end: float) 🔗
+void environment_set_fog_depth(env: RID, curve: float, begin: float, end: float) 
 
 Configures fog depth for the specified environment RID. Only has an effect when the fog mode of the environment is ENV_FOG_MODE_DEPTH. See fog_depth_* properties in Environment for more information.
 
-void environment_set_glow(env: RID, enable: bool, levels: PackedFloat32Array, intensity: float, strength: float, mix: float, bloom_threshold: float, blend_mode: EnvironmentGlowBlendMode, hdr_bleed_threshold: float, hdr_bleed_scale: float, hdr_luminance_cap: float, glow_map_strength: float, glow_map: RID) 🔗
+void environment_set_glow(env: RID, enable: bool, levels: PackedFloat32Array, intensity: float, strength: float, mix: float, bloom_threshold: float, blend_mode: EnvironmentGlowBlendMode, hdr_bleed_threshold: float, hdr_bleed_scale: float, hdr_luminance_cap: float, glow_map_strength: float, glow_map: RID) 
 
 Configures glow for the specified environment RID. See glow_* properties in Environment for more information.
 
-void environment_set_sdfgi(env: RID, enable: bool, cascades: int, min_cell_size: float, y_scale: EnvironmentSDFGIYScale, use_occlusion: bool, bounce_feedback: float, read_sky: bool, energy: float, normal_bias: float, probe_bias: float) 🔗
+void environment_set_sdfgi(env: RID, enable: bool, cascades: int, min_cell_size: float, y_scale: EnvironmentSDFGIYScale, use_occlusion: bool, bounce_feedback: float, read_sky: bool, energy: float, normal_bias: float, probe_bias: float) 
 
 Configures signed distance field global illumination for the specified environment RID. See sdfgi_* properties in Environment for more information.
 
-void environment_set_sdfgi_frames_to_converge(frames: EnvironmentSDFGIFramesToConverge) 🔗
+void environment_set_sdfgi_frames_to_converge(frames: EnvironmentSDFGIFramesToConverge) 
 
 Sets the number of frames to use for converging signed distance field global illumination. Equivalent to ProjectSettings.rendering/global_illumination/sdfgi/frames_to_converge.
 
-void environment_set_sdfgi_frames_to_update_light(frames: EnvironmentSDFGIFramesToUpdateLight) 🔗
+void environment_set_sdfgi_frames_to_update_light(frames: EnvironmentSDFGIFramesToUpdateLight) 
 
 Sets the update speed for dynamic lights' indirect lighting when computing signed distance field global illumination. Equivalent to ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights.
 
-void environment_set_sdfgi_ray_count(ray_count: EnvironmentSDFGIRayCount) 🔗
+void environment_set_sdfgi_ray_count(ray_count: EnvironmentSDFGIRayCount) 
 
 Sets the number of rays to throw per frame when computing signed distance field global illumination. Equivalent to ProjectSettings.rendering/global_illumination/sdfgi/probe_ray_count.
 
-void environment_set_sky(env: RID, sky: RID) 🔗
+void environment_set_sky(env: RID, sky: RID) 
 
 Sets the Sky to be used as the environment's background when using BGMode sky. Equivalent to Environment.sky.
 
-void environment_set_sky_custom_fov(env: RID, scale: float) 🔗
+void environment_set_sky_custom_fov(env: RID, scale: float) 
 
 Sets a custom field of view for the background Sky. Equivalent to Environment.sky_custom_fov.
 
-void environment_set_sky_orientation(env: RID, orientation: Basis) 🔗
+void environment_set_sky_orientation(env: RID, orientation: Basis) 
 
 Sets the rotation of the background Sky expressed as a Basis. Equivalent to Environment.sky_rotation, where the rotation vector is used to construct the Basis.
 
-void environment_set_ssao(env: RID, enable: bool, radius: float, intensity: float, power: float, detail: float, horizon: float, sharpness: float, light_affect: float, ao_channel_affect: float) 🔗
+void environment_set_ssao(env: RID, enable: bool, radius: float, intensity: float, power: float, detail: float, horizon: float, sharpness: float, light_affect: float, ao_channel_affect: float) 
 
 Sets the variables to be used with the screen-space ambient occlusion (SSAO) post-process effect. See Environment for more details.
 
-void environment_set_ssao_quality(quality: EnvironmentSSAOQuality, half_size: bool, adaptive_target: float, blur_passes: int, fadeout_from: float, fadeout_to: float) 🔗
+void environment_set_ssao_quality(quality: EnvironmentSSAOQuality, half_size: bool, adaptive_target: float, blur_passes: int, fadeout_from: float, fadeout_to: float) 
 
 Sets the quality level of the screen-space ambient occlusion (SSAO) post-process effect. See Environment for more details.
 
-void environment_set_ssil_quality(quality: EnvironmentSSILQuality, half_size: bool, adaptive_target: float, blur_passes: int, fadeout_from: float, fadeout_to: float) 🔗
+void environment_set_ssil_quality(quality: EnvironmentSSILQuality, half_size: bool, adaptive_target: float, blur_passes: int, fadeout_from: float, fadeout_to: float) 
 
 Sets the quality level of the screen-space indirect lighting (SSIL) post-process effect. See Environment for more details.
 
-void environment_set_ssr(env: RID, enable: bool, max_steps: int, fade_in: float, fade_out: float, depth_tolerance: float) 🔗
+void environment_set_ssr(env: RID, enable: bool, max_steps: int, fade_in: float, fade_out: float, depth_tolerance: float) 
 
 Sets the variables to be used with the screen-space reflections (SSR) post-process effect. See Environment for more details.
 
-void environment_set_ssr_roughness_quality(quality: EnvironmentSSRRoughnessQuality) 🔗
+void environment_set_ssr_roughness_quality(quality: EnvironmentSSRRoughnessQuality) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void environment_set_tonemap(env: RID, tone_mapper: EnvironmentToneMapper, exposure: float, white: float) 🔗
+void environment_set_tonemap(env: RID, tone_mapper: EnvironmentToneMapper, exposure: float, white: float) 
 
 Sets the variables to be used with the "tonemap" post-process effect. See Environment for more details.
 
-void environment_set_volumetric_fog(env: RID, enable: bool, density: float, albedo: Color, emission: Color, emission_energy: float, anisotropy: float, length: float, p_detail_spread: float, gi_inject: float, temporal_reprojection: bool, temporal_reprojection_amount: float, ambient_inject: float, sky_affect: float) 🔗
+void environment_set_volumetric_fog(env: RID, enable: bool, density: float, albedo: Color, emission: Color, emission_energy: float, anisotropy: float, length: float, p_detail_spread: float, gi_inject: float, temporal_reprojection: bool, temporal_reprojection_amount: float, ambient_inject: float, sky_affect: float) 
 
 Sets the variables to be used with the volumetric fog post-process effect. See Environment for more details.
 
-void environment_set_volumetric_fog_filter_active(active: bool) 🔗
+void environment_set_volumetric_fog_filter_active(active: bool) 
 
 Enables filtering of the volumetric fog scattering buffer. This results in much smoother volumes with very few under-sampling artifacts.
 
-void environment_set_volumetric_fog_volume_size(size: int, depth: int) 🔗
+void environment_set_volumetric_fog_volume_size(size: int, depth: int) 
 
 Sets the resolution of the volumetric fog's froxel buffer. size is modified by the screen's aspect ratio and then used to set the width and height of the buffer. While depth is directly used to set the depth of the buffer.
 
-RID fog_volume_create() 🔗
+RID fog_volume_create() 
 
 Creates a new fog volume and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all fog_volume_* RenderingServer functions.
 
@@ -12733,29 +12733,29 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is FogVolume.
 
-void fog_volume_set_material(fog_volume: RID, material: RID) 🔗
+void fog_volume_set_material(fog_volume: RID, material: RID) 
 
 Sets the Material of the fog volume. Can be either a FogMaterial or a custom ShaderMaterial.
 
-void fog_volume_set_shape(fog_volume: RID, shape: FogVolumeShape) 🔗
+void fog_volume_set_shape(fog_volume: RID, shape: FogVolumeShape) 
 
 Sets the shape of the fog volume to either FOG_VOLUME_SHAPE_ELLIPSOID, FOG_VOLUME_SHAPE_CONE, FOG_VOLUME_SHAPE_CYLINDER, FOG_VOLUME_SHAPE_BOX or FOG_VOLUME_SHAPE_WORLD.
 
-void fog_volume_set_size(fog_volume: RID, size: Vector3) 🔗
+void fog_volume_set_size(fog_volume: RID, size: Vector3) 
 
 Sets the size of the fog volume when shape is FOG_VOLUME_SHAPE_ELLIPSOID, FOG_VOLUME_SHAPE_CONE, FOG_VOLUME_SHAPE_CYLINDER or FOG_VOLUME_SHAPE_BOX.
 
-void force_draw(swap_buffers: bool = true, frame_step: float = 0.0) 🔗
+void force_draw(swap_buffers: bool = true, frame_step: float = 0.0) 
 
 Forces redrawing of all viewports at once. Must be called from the main thread.
 
 Forces a synchronization between the CPU and GPU, which may be required in certain cases. Only call this when needed, as CPU-GPU synchronization has a performance cost.
 
-void free_rid(rid: RID) 🔗
+void free_rid(rid: RID) 
 
 Tries to free an object in the RenderingServer. To avoid memory leaks, this should be called after using an object as memory management does not occur automatically when using RenderingServer directly.
 
-String get_current_rendering_driver_name() const 🔗
+String get_current_rendering_driver_name() const 
 
 Returns the name of the current rendering driver. This can be vulkan, d3d12, metal, opengl3, opengl3_es, or opengl3_angle. See also get_current_rendering_method().
 
@@ -12765,27 +12765,27 @@ When ProjectSettings.rendering/renderer/rendering_method is gl_compatibility, th
 
 The rendering driver is also determined by the --rendering-driver command line argument that overrides this project setting, or an automatic fallback that is applied depending on the hardware.
 
-String get_current_rendering_method() const 🔗
+String get_current_rendering_method() const 
 
 Returns the name of the current rendering method. This can be forward_plus, mobile, or gl_compatibility. See also get_current_rendering_driver_name().
 
 The rendering method is determined by ProjectSettings.rendering/renderer/rendering_method, the --rendering-method command line argument that overrides this project setting, or an automatic fallback that is applied depending on the hardware.
 
-Color get_default_clear_color() 🔗
+Color get_default_clear_color() 
 
 Returns the default clear color which is used when a specific clear color has not been selected. See also set_default_clear_color().
 
-float get_frame_setup_time_cpu() const 🔗
+float get_frame_setup_time_cpu() const 
 
 Returns the time taken to setup rendering on the CPU in milliseconds. This value is shared across all viewports and does not require viewport_set_measure_render_time() to be enabled on a viewport to be queried. See also viewport_get_measured_render_time_cpu().
 
-RenderingDevice get_rendering_device() const 🔗
+RenderingDevice get_rendering_device() const 
 
 Returns the global RenderingDevice.
 
 Note: When using the OpenGL rendering driver or when running in headless mode, this function always returns null.
 
-int get_rendering_info(info: RenderingInfo) 🔗
+int get_rendering_info(info: RenderingInfo) 
 
 Returns a statistic about the rendering engine which can be used for performance profiling. See also viewport_get_render_info(), which returns information specific to a viewport.
 
@@ -12793,27 +12793,27 @@ Note: Only 3D rendering is currently taken into account by some of these values,
 
 Note: Rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, get_rendering_info() returns 0. To print rendering information in _ready() successfully, use the following:
 
-Array[Dictionary] get_shader_parameter_list(shader: RID) const 🔗
+Array[Dictionary] get_shader_parameter_list(shader: RID) const 
 
 Returns the parameters of a shader.
 
-RID get_test_cube() 🔗
+RID get_test_cube() 
 
 Returns the RID of the test cube. This mesh will be created and returned on the first call to get_test_cube(), then it will be cached for subsequent calls. See also make_sphere_mesh().
 
-RID get_test_texture() 🔗
+RID get_test_texture() 
 
 Returns the RID of a 256×256 texture with a testing pattern on it (in Image.FORMAT_RGB8 format). This texture will be created and returned on the first call to get_test_texture(), then it will be cached for subsequent calls. See also get_white_texture().
 
 Example: Get the test texture and apply it to a Sprite2D node:
 
-String get_video_adapter_api_version() const 🔗
+String get_video_adapter_api_version() const 
 
 Returns the version of the graphics video adapter currently in use (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version. See also OS.get_video_adapter_driver_info().
 
 Note: When running a headless or server binary, this function returns an empty string.
 
-String get_video_adapter_name() const 🔗
+String get_video_adapter_name() const 
 
 Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2").
 
@@ -12821,87 +12821,87 @@ Note: When running a headless or server binary, this function returns an empty s
 
 Note: On the web platform, some browsers such as Firefox may report a different, fixed GPU name such as "GeForce GTX 980" (regardless of the user's actual GPU model). This is done to make fingerprinting more difficult.
 
-DeviceType get_video_adapter_type() const 🔗
+DeviceType get_video_adapter_type() const 
 
 Returns the type of the video adapter. Since dedicated graphics cards from a given generation will usually be significantly faster than integrated graphics made in the same generation, the device type can be used as a basis for automatic graphics settings adjustment. However, this is not always true, so make sure to provide users with a way to manually override graphics settings.
 
 Note: When using the OpenGL rendering driver or when running in headless mode, this function always returns RenderingDevice.DEVICE_TYPE_OTHER.
 
-String get_video_adapter_vendor() const 🔗
+String get_video_adapter_vendor() const 
 
 Returns the vendor of the video adapter (e.g. "NVIDIA Corporation").
 
 Note: When running a headless or server binary, this function returns an empty string.
 
-RID get_white_texture() 🔗
+RID get_white_texture() 
 
 Returns the ID of a 4×4 white texture (in Image.FORMAT_RGB8 format). This texture will be created and returned on the first call to get_white_texture(), then it will be cached for subsequent calls. See also get_test_texture().
 
 Example: Get the white texture and apply it to a Sprite2D node:
 
-void gi_set_use_half_resolution(half_resolution: bool) 🔗
+void gi_set_use_half_resolution(half_resolution: bool) 
 
 If half_resolution is true, renders VoxelGI and SDFGI (Environment.sdfgi_enabled) buffers at halved resolution on each axis (e.g. 960×540 when the viewport size is 1920×1080). This improves performance significantly when VoxelGI or SDFGI is enabled, at the cost of artifacts that may be visible on polygon edges. The loss in quality becomes less noticeable as the viewport resolution increases. LightmapGI rendering is not affected by this setting. Equivalent to ProjectSettings.rendering/global_illumination/gi/use_half_resolution.
 
-void global_shader_parameter_add(name: StringName, type: GlobalShaderParameterType, default_value: Variant) 🔗
+void global_shader_parameter_add(name: StringName, type: GlobalShaderParameterType, default_value: Variant) 
 
 Creates a new global shader uniform.
 
 Note: Global shader parameter names are case-sensitive.
 
-Variant global_shader_parameter_get(name: StringName) const 🔗
+Variant global_shader_parameter_get(name: StringName) const 
 
 Returns the value of the global shader uniform specified by name.
 
 Note: global_shader_parameter_get() has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
-Array[StringName] global_shader_parameter_get_list() const 🔗
+Array[StringName] global_shader_parameter_get_list() const 
 
 Returns the list of global shader uniform names.
 
 Note: global_shader_parameter_get() has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
-GlobalShaderParameterType global_shader_parameter_get_type(name: StringName) const 🔗
+GlobalShaderParameterType global_shader_parameter_get_type(name: StringName) const 
 
 Returns the type associated to the global shader uniform specified by name.
 
 Note: global_shader_parameter_get() has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
-void global_shader_parameter_remove(name: StringName) 🔗
+void global_shader_parameter_remove(name: StringName) 
 
 Removes the global shader uniform specified by name.
 
-void global_shader_parameter_set(name: StringName, value: Variant) 🔗
+void global_shader_parameter_set(name: StringName, value: Variant) 
 
 Sets the global shader uniform name to value.
 
-void global_shader_parameter_set_override(name: StringName, value: Variant) 🔗
+void global_shader_parameter_set_override(name: StringName, value: Variant) 
 
 Overrides the global shader uniform name with value. Equivalent to the ShaderGlobalsOverride node.
 
-bool has_changed() const 🔗
+bool has_changed() const 
 
 Returns true if changes have been made to the RenderingServer's data. force_draw() is usually called if this happens.
 
-bool has_feature(feature: Features) const 🔗
+bool has_feature(feature: Features) const 
 
 Deprecated: This method has not been used since Godot 3.0.
 
 This method does nothing and always returns false.
 
-bool has_os_feature(feature: String) const 🔗
+bool has_os_feature(feature: String) const 
 
 Returns true if the OS supports a certain feature. Features might be s3tc, etc, and etc2.
 
-void instance_attach_object_instance_id(instance: RID, id: int) 🔗
+void instance_attach_object_instance_id(instance: RID, id: int) 
 
 Attaches a unique Object ID to instance. Object ID must be attached to instance for proper culling with instances_cull_aabb(), instances_cull_convex(), and instances_cull_ray().
 
-void instance_attach_skeleton(instance: RID, skeleton: RID) 🔗
+void instance_attach_skeleton(instance: RID, skeleton: RID) 
 
 Attaches a skeleton to an instance. Removes the previous skeleton from the instance.
 
-RID instance_create() 🔗
+RID instance_create() 
 
 Creates a visual instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all instance_* RenderingServer functions.
 
@@ -12911,55 +12911,55 @@ An instance is a way of placing a 3D object in the scenario. Objects like partic
 
 Note: The equivalent node is VisualInstance3D.
 
-RID instance_create2(base: RID, scenario: RID) 🔗
+RID instance_create2(base: RID, scenario: RID) 
 
 Creates a visual instance, adds it to the RenderingServer, and sets both base and scenario. It can be accessed with the RID that is returned. This RID will be used in all instance_* RenderingServer functions.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's free_rid() method. This is a shorthand for using instance_create() and setting the base and scenario manually.
 
-Variant instance_geometry_get_shader_parameter(instance: RID, parameter: StringName) const 🔗
+Variant instance_geometry_get_shader_parameter(instance: RID, parameter: StringName) const 
 
 Returns the value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to GeometryInstance3D.get_instance_shader_parameter().
 
 Note: Per-instance shader parameter names are case-sensitive.
 
-Variant instance_geometry_get_shader_parameter_default_value(instance: RID, parameter: StringName) const 🔗
+Variant instance_geometry_get_shader_parameter_default_value(instance: RID, parameter: StringName) const 
 
 Returns the default value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to GeometryInstance3D.get_instance_shader_parameter().
 
-Array[Dictionary] instance_geometry_get_shader_parameter_list(instance: RID) const 🔗
+Array[Dictionary] instance_geometry_get_shader_parameter_list(instance: RID) const 
 
 Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified 3D geometry instance. The returned dictionary is in PropertyInfo format, with the keys name, class_name, type, hint, hint_string and usage. Equivalent to GeometryInstance3D.get_instance_shader_parameter().
 
-void instance_geometry_set_cast_shadows_setting(instance: RID, shadow_casting_setting: ShadowCastingSetting) 🔗
+void instance_geometry_set_cast_shadows_setting(instance: RID, shadow_casting_setting: ShadowCastingSetting) 
 
 Sets the shadow casting setting. Equivalent to GeometryInstance3D.cast_shadow.
 
-void instance_geometry_set_flag(instance: RID, flag: InstanceFlags, enabled: bool) 🔗
+void instance_geometry_set_flag(instance: RID, flag: InstanceFlags, enabled: bool) 
 
 Sets the flag for a given instance to enabled.
 
-void instance_geometry_set_lightmap(instance: RID, lightmap: RID, lightmap_uv_scale: Rect2, lightmap_slice: int) 🔗
+void instance_geometry_set_lightmap(instance: RID, lightmap: RID, lightmap_uv_scale: Rect2, lightmap_slice: int) 
 
 Sets the lightmap GI instance to use for the specified 3D geometry instance. The lightmap UV scale for the specified instance (equivalent to GeometryInstance3D.gi_lightmap_scale) and lightmap atlas slice must also be specified.
 
-void instance_geometry_set_lod_bias(instance: RID, lod_bias: float) 🔗
+void instance_geometry_set_lod_bias(instance: RID, lod_bias: float) 
 
 Sets the level of detail bias to use when rendering the specified 3D geometry instance. Higher values result in higher detail from further away. Equivalent to GeometryInstance3D.lod_bias.
 
-void instance_geometry_set_material_overlay(instance: RID, material: RID) 🔗
+void instance_geometry_set_material_overlay(instance: RID, material: RID) 
 
 Sets a material that will be rendered for all surfaces on top of active materials for the mesh associated with this instance. Equivalent to GeometryInstance3D.material_overlay.
 
-void instance_geometry_set_material_override(instance: RID, material: RID) 🔗
+void instance_geometry_set_material_override(instance: RID, material: RID) 
 
 Sets a material that will override the material for all surfaces on the mesh associated with this instance. Equivalent to GeometryInstance3D.material_override.
 
-void instance_geometry_set_shader_parameter(instance: RID, parameter: StringName, value: Variant) 🔗
+void instance_geometry_set_shader_parameter(instance: RID, parameter: StringName, value: Variant) 
 
 Sets the per-instance shader uniform on the specified 3D geometry instance. Equivalent to GeometryInstance3D.set_instance_shader_parameter().
 
-void instance_geometry_set_transparency(instance: RID, transparency: float) 🔗
+void instance_geometry_set_transparency(instance: RID, transparency: float) 
 
 Sets the transparency for the given geometry instance. Equivalent to GeometryInstance3D.transparency.
 
@@ -12969,149 +12969,149 @@ In spatial shaders, 1.0 - transparency is set as the default value of the ALPHA 
 
 Note: transparency is clamped between 0.0 and 1.0, so this property cannot be used to make transparent materials more opaque than they originally are.
 
-void instance_geometry_set_visibility_range(instance: RID, min: float, max: float, min_margin: float, max_margin: float, fade_mode: VisibilityRangeFadeMode) 🔗
+void instance_geometry_set_visibility_range(instance: RID, min: float, max: float, min_margin: float, max_margin: float, fade_mode: VisibilityRangeFadeMode) 
 
 Sets the visibility range values for the given geometry instance. Equivalent to GeometryInstance3D.visibility_range_begin and related properties.
 
-void instance_set_base(instance: RID, base: RID) 🔗
+void instance_set_base(instance: RID, base: RID) 
 
 Sets the base of the instance. A base can be any of the 3D objects that are created in the RenderingServer that can be displayed. For example, any of the light types, mesh, multimesh, particle system, reflection probe, decal, lightmap, voxel GI and visibility notifiers are all types that can be set as the base of an instance in order to be displayed in the scenario.
 
-void instance_set_blend_shape_weight(instance: RID, shape: int, weight: float) 🔗
+void instance_set_blend_shape_weight(instance: RID, shape: int, weight: float) 
 
 Sets the weight for a given blend shape associated with this instance.
 
-void instance_set_custom_aabb(instance: RID, aabb: AABB) 🔗
+void instance_set_custom_aabb(instance: RID, aabb: AABB) 
 
 Sets a custom AABB to use when culling objects from the view frustum. Equivalent to setting GeometryInstance3D.custom_aabb.
 
-void instance_set_extra_visibility_margin(instance: RID, margin: float) 🔗
+void instance_set_extra_visibility_margin(instance: RID, margin: float) 
 
 Sets a margin to increase the size of the AABB when culling objects from the view frustum. This allows you to avoid culling objects that fall outside the view frustum. Equivalent to GeometryInstance3D.extra_cull_margin.
 
-void instance_set_ignore_culling(instance: RID, enabled: bool) 🔗
+void instance_set_ignore_culling(instance: RID, enabled: bool) 
 
 If true, ignores both frustum and occlusion culling on the specified 3D geometry instance. This is not the same as GeometryInstance3D.ignore_occlusion_culling, which only ignores occlusion culling and leaves frustum culling intact.
 
-void instance_set_layer_mask(instance: RID, mask: int) 🔗
+void instance_set_layer_mask(instance: RID, mask: int) 
 
 Sets the render layers that this instance will be drawn to. Equivalent to VisualInstance3D.layers.
 
-void instance_set_pivot_data(instance: RID, sorting_offset: float, use_aabb_center: bool) 🔗
+void instance_set_pivot_data(instance: RID, sorting_offset: float, use_aabb_center: bool) 
 
 Sets the sorting offset and switches between using the bounding box or instance origin for depth sorting.
 
-void instance_set_scenario(instance: RID, scenario: RID) 🔗
+void instance_set_scenario(instance: RID, scenario: RID) 
 
 Sets the scenario that the instance is in. The scenario is the 3D world that the objects will be displayed in.
 
-void instance_set_surface_override_material(instance: RID, surface: int, material: RID) 🔗
+void instance_set_surface_override_material(instance: RID, surface: int, material: RID) 
 
 Sets the override material of a specific surface. Equivalent to MeshInstance3D.set_surface_override_material().
 
-void instance_set_transform(instance: RID, transform: Transform3D) 🔗
+void instance_set_transform(instance: RID, transform: Transform3D) 
 
 Sets the world space transform of the instance. Equivalent to Node3D.global_transform.
 
-void instance_set_visibility_parent(instance: RID, parent: RID) 🔗
+void instance_set_visibility_parent(instance: RID, parent: RID) 
 
 Sets the visibility parent for the given instance. Equivalent to Node3D.visibility_parent.
 
-void instance_set_visible(instance: RID, visible: bool) 🔗
+void instance_set_visible(instance: RID, visible: bool) 
 
 Sets whether an instance is drawn or not. Equivalent to Node3D.visible.
 
-void instance_teleport(instance: RID) 🔗
+void instance_teleport(instance: RID) 
 
 Resets motion vectors and other interpolated values. Use this after teleporting a mesh from one position to another to avoid ghosting artifacts.
 
-PackedInt64Array instances_cull_aabb(aabb: AABB, scenario: RID = RID()) const 🔗
+PackedInt64Array instances_cull_aabb(aabb: AABB, scenario: RID = RID()) const 
 
 Returns an array of object IDs intersecting with the provided AABB. Only 3D nodes that inherit from VisualInstance3D are considered, such as MeshInstance3D or DirectionalLight3D. Use @GlobalScope.instance_from_id() to obtain the actual nodes. A scenario RID must be provided, which is available in the World3D you want to query. This forces an update for all resources queued to update.
 
 Warning: This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
-PackedInt64Array instances_cull_convex(convex: Array[Plane], scenario: RID = RID()) const 🔗
+PackedInt64Array instances_cull_convex(convex: Array[Plane], scenario: RID = RID()) const 
 
 Returns an array of object IDs intersecting with the provided convex shape. Only 3D nodes that inherit from VisualInstance3D are considered, such as MeshInstance3D or DirectionalLight3D. Use @GlobalScope.instance_from_id() to obtain the actual nodes. A scenario RID must be provided, which is available in the World3D you want to query. This forces an update for all resources queued to update.
 
 Warning: This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
-PackedInt64Array instances_cull_ray(from: Vector3, to: Vector3, scenario: RID = RID()) const 🔗
+PackedInt64Array instances_cull_ray(from: Vector3, to: Vector3, scenario: RID = RID()) const 
 
 Returns an array of object IDs intersecting with the provided 3D ray. Only 3D nodes that inherit from VisualInstance3D are considered, such as MeshInstance3D or DirectionalLight3D. Use @GlobalScope.instance_from_id() to obtain the actual nodes. A scenario RID must be provided, which is available in the World3D you want to query. This forces an update for all resources queued to update.
 
 Warning: This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
-bool is_on_render_thread() 🔗
+bool is_on_render_thread() 
 
 Returns true if our code is currently executing on the rendering thread.
 
-void light_directional_set_blend_splits(light: RID, enable: bool) 🔗
+void light_directional_set_blend_splits(light: RID, enable: bool) 
 
 If true, this directional light will blend between shadow map splits resulting in a smoother transition between them. Equivalent to DirectionalLight3D.directional_shadow_blend_splits.
 
-void light_directional_set_shadow_mode(light: RID, mode: LightDirectionalShadowMode) 🔗
+void light_directional_set_shadow_mode(light: RID, mode: LightDirectionalShadowMode) 
 
 Sets the shadow mode for this directional light. Equivalent to DirectionalLight3D.directional_shadow_mode.
 
-void light_directional_set_sky_mode(light: RID, mode: LightDirectionalSkyMode) 🔗
+void light_directional_set_sky_mode(light: RID, mode: LightDirectionalSkyMode) 
 
 If true, this light will not be used for anything except sky shaders. Use this for lights that impact your sky shader that you may want to hide from affecting the rest of the scene. For example, you may want to enable this when the sun in your sky shader falls below the horizon.
 
-void light_omni_set_shadow_mode(light: RID, mode: LightOmniShadowMode) 🔗
+void light_omni_set_shadow_mode(light: RID, mode: LightOmniShadowMode) 
 
 Sets whether to use a dual paraboloid or a cubemap for the shadow map. Dual paraboloid is faster but may suffer from artifacts. Equivalent to OmniLight3D.omni_shadow_mode.
 
-void light_projectors_set_filter(filter: LightProjectorFilter) 🔗
+void light_projectors_set_filter(filter: LightProjectorFilter) 
 
 Sets the texture filter mode to use when rendering light projectors. This parameter is global and cannot be set on a per-light basis.
 
-void light_set_bake_mode(light: RID, bake_mode: LightBakeMode) 🔗
+void light_set_bake_mode(light: RID, bake_mode: LightBakeMode) 
 
 Sets the bake mode to use for the specified 3D light. Equivalent to Light3D.light_bake_mode.
 
-void light_set_color(light: RID, color: Color) 🔗
+void light_set_color(light: RID, color: Color) 
 
 Sets the color of the light. Equivalent to Light3D.light_color.
 
-void light_set_cull_mask(light: RID, mask: int) 🔗
+void light_set_cull_mask(light: RID, mask: int) 
 
 Sets the cull mask for this 3D light. Lights only affect objects in the selected layers. Equivalent to Light3D.light_cull_mask.
 
-void light_set_distance_fade(decal: RID, enabled: bool, begin: float, shadow: float, length: float) 🔗
+void light_set_distance_fade(decal: RID, enabled: bool, begin: float, shadow: float, length: float) 
 
 Sets the distance fade for this 3D light. This acts as a form of level of detail (LOD) and can be used to improve performance. Equivalent to Light3D.distance_fade_enabled, Light3D.distance_fade_begin, Light3D.distance_fade_shadow, and Light3D.distance_fade_length.
 
-void light_set_max_sdfgi_cascade(light: RID, cascade: int) 🔗
+void light_set_max_sdfgi_cascade(light: RID, cascade: int) 
 
 Sets the maximum SDFGI cascade in which the 3D light's indirect lighting is rendered. Higher values allow the light to be rendered in SDFGI further away from the camera.
 
-void light_set_negative(light: RID, enable: bool) 🔗
+void light_set_negative(light: RID, enable: bool) 
 
 If true, the 3D light will subtract light instead of adding light. Equivalent to Light3D.light_negative.
 
-void light_set_param(light: RID, param: LightParam, value: float) 🔗
+void light_set_param(light: RID, param: LightParam, value: float) 
 
 Sets the specified 3D light parameter. Equivalent to Light3D.set_param().
 
-void light_set_projector(light: RID, texture: RID) 🔗
+void light_set_projector(light: RID, texture: RID) 
 
 Sets the projector texture to use for the specified 3D light. Equivalent to Light3D.light_projector.
 
-void light_set_reverse_cull_face_mode(light: RID, enabled: bool) 🔗
+void light_set_reverse_cull_face_mode(light: RID, enabled: bool) 
 
 If true, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with instance_geometry_set_cast_shadows_setting(). Equivalent to Light3D.shadow_reverse_cull_face.
 
-void light_set_shadow(light: RID, enabled: bool) 🔗
+void light_set_shadow(light: RID, enabled: bool) 
 
 If true, light will cast shadows. Equivalent to Light3D.shadow_enabled.
 
-void light_set_shadow_caster_mask(light: RID, mask: int) 🔗
+void light_set_shadow_caster_mask(light: RID, mask: int) 
 
 Sets the shadow caster mask for this 3D light. Shadows will only be cast using objects in the selected layers. Equivalent to Light3D.shadow_caster_mask.
 
-RID lightmap_create() 🔗
+RID lightmap_create() 
 
 Creates a new lightmap global illumination instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all lightmap_* RenderingServer functions.
 
@@ -13119,55 +13119,55 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is LightmapGI.
 
-PackedInt32Array lightmap_get_probe_capture_bsp_tree(lightmap: RID) const 🔗
+PackedInt32Array lightmap_get_probe_capture_bsp_tree(lightmap: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedVector3Array lightmap_get_probe_capture_points(lightmap: RID) const 🔗
+PackedVector3Array lightmap_get_probe_capture_points(lightmap: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedColorArray lightmap_get_probe_capture_sh(lightmap: RID) const 🔗
+PackedColorArray lightmap_get_probe_capture_sh(lightmap: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedInt32Array lightmap_get_probe_capture_tetrahedra(lightmap: RID) const 🔗
+PackedInt32Array lightmap_get_probe_capture_tetrahedra(lightmap: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void lightmap_set_baked_exposure_normalization(lightmap: RID, baked_exposure: float) 🔗
+void lightmap_set_baked_exposure_normalization(lightmap: RID, baked_exposure: float) 
 
 Used to inform the renderer what exposure normalization value was used while baking the lightmap. This value will be used and modulated at run time to ensure that the lightmap maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see camera_attributes_set_exposure().
 
-void lightmap_set_probe_bounds(lightmap: RID, bounds: AABB) 🔗
+void lightmap_set_probe_bounds(lightmap: RID, bounds: AABB) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void lightmap_set_probe_capture_data(lightmap: RID, points: PackedVector3Array, point_sh: PackedColorArray, tetrahedra: PackedInt32Array, bsp_tree: PackedInt32Array) 🔗
+void lightmap_set_probe_capture_data(lightmap: RID, points: PackedVector3Array, point_sh: PackedColorArray, tetrahedra: PackedInt32Array, bsp_tree: PackedInt32Array) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void lightmap_set_probe_capture_update_speed(speed: float) 🔗
+void lightmap_set_probe_capture_update_speed(speed: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void lightmap_set_probe_interior(lightmap: RID, interior: bool) 🔗
+void lightmap_set_probe_interior(lightmap: RID, interior: bool) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void lightmap_set_textures(lightmap: RID, light: RID, uses_sh: bool) 🔗
+void lightmap_set_textures(lightmap: RID, light: RID, uses_sh: bool) 
 
 Set the textures on the given lightmap GI instance to the texture array pointed to by the light RID. If the lightmap texture was baked with LightmapGI.directional set to true, then uses_sh must also be true.
 
-void lightmaps_set_bicubic_filter(enable: bool) 🔗
+void lightmaps_set_bicubic_filter(enable: bool) 
 
 Toggles whether a bicubic filter should be used when lightmaps are sampled. This smoothens their appearance at a performance cost.
 
-RID make_sphere_mesh(latitudes: int, longitudes: int, radius: float) 🔗
+RID make_sphere_mesh(latitudes: int, longitudes: int, radius: float) 
 
 Returns a mesh of a sphere with the given number of horizontal subdivisions, vertical subdivisions and radius. See also get_test_cube().
 
-RID material_create() 🔗
+RID material_create() 
 
 Creates an empty material and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all material_* RenderingServer functions.
 
@@ -13175,35 +13175,35 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is Material.
 
-Variant material_get_param(material: RID, parameter: StringName) const 🔗
+Variant material_get_param(material: RID, parameter: StringName) const 
 
 Returns the value of a certain material's parameter.
 
-void material_set_next_pass(material: RID, next_material: RID) 🔗
+void material_set_next_pass(material: RID, next_material: RID) 
 
 Sets an object's next material.
 
-void material_set_param(material: RID, parameter: StringName, value: Variant) 🔗
+void material_set_param(material: RID, parameter: StringName, value: Variant) 
 
 Sets a material's parameter.
 
-void material_set_render_priority(material: RID, priority: int) 🔗
+void material_set_render_priority(material: RID, priority: int) 
 
 Sets a material's render priority.
 
-void material_set_shader(shader_material: RID, shader: RID) 🔗
+void material_set_shader(shader_material: RID, shader: RID) 
 
 Sets a shader material's shader.
 
-void mesh_add_surface(mesh: RID, surface: Dictionary) 🔗
+void mesh_add_surface(mesh: RID, surface: Dictionary) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void mesh_add_surface_from_arrays(mesh: RID, primitive: PrimitiveType, arrays: Array, blend_shapes: Array = [], lods: Dictionary = {}, compress_format: BitField[ArrayFormat] = 0) 🔗
+void mesh_add_surface_from_arrays(mesh: RID, primitive: PrimitiveType, arrays: Array, blend_shapes: Array = [], lods: Dictionary = {}, compress_format: BitField[ArrayFormat] = 0) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void mesh_clear(mesh: RID) 🔗
+void mesh_clear(mesh: RID) 
 
 Removes all surfaces from a mesh.
 
@@ -13215,107 +13215,107 @@ To place in a scene, attach this mesh to an instance using instance_set_base() u
 
 Note: The equivalent resource is Mesh.
 
-RID mesh_create_from_surfaces(surfaces: Array[Dictionary], blend_shape_count: int = 0) 🔗
+RID mesh_create_from_surfaces(surfaces: Array[Dictionary], blend_shape_count: int = 0) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int mesh_get_blend_shape_count(mesh: RID) const 🔗
+int mesh_get_blend_shape_count(mesh: RID) const 
 
 Returns a mesh's blend shape count.
 
-BlendShapeMode mesh_get_blend_shape_mode(mesh: RID) const 🔗
+BlendShapeMode mesh_get_blend_shape_mode(mesh: RID) const 
 
 Returns a mesh's blend shape mode.
 
-AABB mesh_get_custom_aabb(mesh: RID) const 🔗
+AABB mesh_get_custom_aabb(mesh: RID) const 
 
 Returns a mesh's custom aabb.
 
-Dictionary mesh_get_surface(mesh: RID, surface: int) 🔗
+Dictionary mesh_get_surface(mesh: RID, surface: int) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int mesh_get_surface_count(mesh: RID) const 🔗
+int mesh_get_surface_count(mesh: RID) const 
 
 Returns a mesh's number of surfaces.
 
-void mesh_set_blend_shape_mode(mesh: RID, mode: BlendShapeMode) 🔗
+void mesh_set_blend_shape_mode(mesh: RID, mode: BlendShapeMode) 
 
 Sets a mesh's blend shape mode.
 
-void mesh_set_custom_aabb(mesh: RID, aabb: AABB) 🔗
+void mesh_set_custom_aabb(mesh: RID, aabb: AABB) 
 
 Sets a mesh's custom aabb.
 
-void mesh_set_shadow_mesh(mesh: RID, shadow_mesh: RID) 🔗
+void mesh_set_shadow_mesh(mesh: RID, shadow_mesh: RID) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Array mesh_surface_get_arrays(mesh: RID, surface: int) const 🔗
+Array mesh_surface_get_arrays(mesh: RID, surface: int) const 
 
 Returns a mesh's surface's buffer arrays.
 
-Array[Array] mesh_surface_get_blend_shape_arrays(mesh: RID, surface: int) const 🔗
+Array[Array] mesh_surface_get_blend_shape_arrays(mesh: RID, surface: int) const 
 
 Returns a mesh's surface's arrays for blend shapes.
 
-int mesh_surface_get_format_attribute_stride(format: BitField[ArrayFormat], vertex_count: int) const 🔗
+int mesh_surface_get_format_attribute_stride(format: BitField[ArrayFormat], vertex_count: int) const 
 
 Returns the stride of the attribute buffer for a mesh with given format.
 
-int mesh_surface_get_format_index_stride(format: BitField[ArrayFormat], vertex_count: int) const 🔗
+int mesh_surface_get_format_index_stride(format: BitField[ArrayFormat], vertex_count: int) const 
 
 Returns the stride of the index buffer for a mesh with the given format.
 
-int mesh_surface_get_format_normal_tangent_stride(format: BitField[ArrayFormat], vertex_count: int) const 🔗
+int mesh_surface_get_format_normal_tangent_stride(format: BitField[ArrayFormat], vertex_count: int) const 
 
 Returns the stride of the combined normals and tangents for a mesh with given format. Note importantly that, while normals and tangents are in the vertex buffer with vertices, they are only interleaved with each other and so have a different stride than vertex positions.
 
-int mesh_surface_get_format_offset(format: BitField[ArrayFormat], vertex_count: int, array_index: int) const 🔗
+int mesh_surface_get_format_offset(format: BitField[ArrayFormat], vertex_count: int, array_index: int) const 
 
 Returns the offset of a given attribute by array_index in the start of its respective buffer.
 
-int mesh_surface_get_format_skin_stride(format: BitField[ArrayFormat], vertex_count: int) const 🔗
+int mesh_surface_get_format_skin_stride(format: BitField[ArrayFormat], vertex_count: int) const 
 
 Returns the stride of the skin buffer for a mesh with given format.
 
-int mesh_surface_get_format_vertex_stride(format: BitField[ArrayFormat], vertex_count: int) const 🔗
+int mesh_surface_get_format_vertex_stride(format: BitField[ArrayFormat], vertex_count: int) const 
 
 Returns the stride of the vertex positions for a mesh with given format. Note importantly that vertex positions are stored consecutively and are not interleaved with the other attributes in the vertex buffer (normals and tangents).
 
-RID mesh_surface_get_material(mesh: RID, surface: int) const 🔗
+RID mesh_surface_get_material(mesh: RID, surface: int) const 
 
 Returns a mesh's surface's material.
 
-void mesh_surface_remove(mesh: RID, surface: int) 🔗
+void mesh_surface_remove(mesh: RID, surface: int) 
 
 Removes the surface at the given index from the Mesh, shifting surfaces with higher index down by one.
 
-void mesh_surface_set_material(mesh: RID, surface: int, material: RID) 🔗
+void mesh_surface_set_material(mesh: RID, surface: int, material: RID) 
 
 Sets a mesh's surface's material.
 
-void mesh_surface_update_attribute_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 🔗
+void mesh_surface_update_attribute_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void mesh_surface_update_index_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 🔗
+void mesh_surface_update_index_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 
 
 Updates the index buffer of the mesh surface with the given data. The expected data are 16 or 32-bit unsigned integers, which can be determined with mesh_surface_get_format_index_stride().
 
-void mesh_surface_update_skin_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 🔗
+void mesh_surface_update_skin_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void mesh_surface_update_vertex_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 🔗
+void mesh_surface_update_vertex_region(mesh: RID, surface: int, offset: int, data: PackedByteArray) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void multimesh_allocate_data(multimesh: RID, instances: int, transform_format: MultimeshTransformFormat, color_format: bool = false, custom_data_format: bool = false, use_indirect: bool = false) 🔗
+void multimesh_allocate_data(multimesh: RID, instances: int, transform_format: MultimeshTransformFormat, color_format: bool = false, custom_data_format: bool = false, use_indirect: bool = false) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-RID multimesh_create() 🔗
+RID multimesh_create() 
 
 Creates a new multimesh on the RenderingServer and returns an RID handle. This RID will be used in all multimesh_* RenderingServer functions.
 
@@ -13325,21 +13325,21 @@ To place in a scene, attach this multimesh to an instance using instance_set_bas
 
 Note: The equivalent resource is MultiMesh.
 
-AABB multimesh_get_aabb(multimesh: RID) const 🔗
+AABB multimesh_get_aabb(multimesh: RID) const 
 
 Calculates and returns the axis-aligned bounding box that encloses all instances within the multimesh.
 
-PackedFloat32Array multimesh_get_buffer(multimesh: RID) const 🔗
+PackedFloat32Array multimesh_get_buffer(multimesh: RID) const 
 
 Returns the MultiMesh data (such as instance transforms, colors, etc.). See multimesh_set_buffer() for details on the returned data.
 
 Note: If the buffer is in the engine's internal cache, it will have to be fetched from GPU memory and possibly decompressed. This means multimesh_get_buffer() is potentially a slow operation and should be avoided whenever possible.
 
-RID multimesh_get_buffer_rd_rid(multimesh: RID) const 🔗
+RID multimesh_get_buffer_rd_rid(multimesh: RID) const 
 
 Returns the RenderingDevice RID handle of the MultiMesh, which can be used as any other buffer on the Rendering Device.
 
-RID multimesh_get_command_buffer_rd_rid(multimesh: RID) const 🔗
+RID multimesh_get_command_buffer_rd_rid(multimesh: RID) const 
 
 Returns the RenderingDevice RID handle of the MultiMesh command buffer. This RID is only valid if use_indirect is set to true when allocating data through multimesh_allocate_data(). It can be used to directly modify the instance count via buffer.
 
@@ -13347,61 +13347,61 @@ The data structure is dependent on both how many surfaces the mesh contains and 
 
 Each of the values in the buffer correspond to these options:
 
-AABB multimesh_get_custom_aabb(multimesh: RID) const 🔗
+AABB multimesh_get_custom_aabb(multimesh: RID) const 
 
 Returns the custom AABB defined for this MultiMesh resource.
 
-int multimesh_get_instance_count(multimesh: RID) const 🔗
+int multimesh_get_instance_count(multimesh: RID) const 
 
 Returns the number of instances allocated for this multimesh.
 
-RID multimesh_get_mesh(multimesh: RID) const 🔗
+RID multimesh_get_mesh(multimesh: RID) const 
 
 Returns the RID of the mesh that will be used in drawing this multimesh.
 
-int multimesh_get_visible_instances(multimesh: RID) const 🔗
+int multimesh_get_visible_instances(multimesh: RID) const 
 
 Returns the number of visible instances for this multimesh.
 
-Color multimesh_instance_get_color(multimesh: RID, index: int) const 🔗
+Color multimesh_instance_get_color(multimesh: RID, index: int) const 
 
 Returns the color by which the specified instance will be modulated.
 
-Color multimesh_instance_get_custom_data(multimesh: RID, index: int) const 🔗
+Color multimesh_instance_get_custom_data(multimesh: RID, index: int) const 
 
 Returns the custom data associated with the specified instance.
 
-Transform3D multimesh_instance_get_transform(multimesh: RID, index: int) const 🔗
+Transform3D multimesh_instance_get_transform(multimesh: RID, index: int) const 
 
 Returns the Transform3D of the specified instance.
 
-Transform2D multimesh_instance_get_transform_2d(multimesh: RID, index: int) const 🔗
+Transform2D multimesh_instance_get_transform_2d(multimesh: RID, index: int) const 
 
 Returns the Transform2D of the specified instance. For use when the multimesh is set to use 2D transforms.
 
-void multimesh_instance_reset_physics_interpolation(multimesh: RID, index: int) 🔗
+void multimesh_instance_reset_physics_interpolation(multimesh: RID, index: int) 
 
 Prevents physics interpolation for the specified instance during the current physics tick.
 
 This is useful when moving an instance to a new location, to give an instantaneous change rather than interpolation from the previous location.
 
-void multimesh_instance_set_color(multimesh: RID, index: int, color: Color) 🔗
+void multimesh_instance_set_color(multimesh: RID, index: int, color: Color) 
 
 Sets the color by which this instance will be modulated. Equivalent to MultiMesh.set_instance_color().
 
-void multimesh_instance_set_custom_data(multimesh: RID, index: int, custom_data: Color) 🔗
+void multimesh_instance_set_custom_data(multimesh: RID, index: int, custom_data: Color) 
 
 Sets the custom data for this instance. Custom data is passed as a Color, but is interpreted as a vec4 in the shader. Equivalent to MultiMesh.set_instance_custom_data().
 
-void multimesh_instance_set_transform(multimesh: RID, index: int, transform: Transform3D) 🔗
+void multimesh_instance_set_transform(multimesh: RID, index: int, transform: Transform3D) 
 
 Sets the Transform3D for this instance. Equivalent to MultiMesh.set_instance_transform().
 
-void multimesh_instance_set_transform_2d(multimesh: RID, index: int, transform: Transform2D) 🔗
+void multimesh_instance_set_transform_2d(multimesh: RID, index: int, transform: Transform2D) 
 
 Sets the Transform2D for this instance. For use when multimesh is used in 2D. Equivalent to MultiMesh.set_instance_transform_2d().
 
-void multimesh_set_buffer(multimesh: RID, buffer: PackedFloat32Array) 🔗
+void multimesh_set_buffer(multimesh: RID, buffer: PackedFloat32Array) 
 
 Set the entire data to use for drawing the multimesh at once to buffer (such as instance transforms and colors). buffer's size must match the number of instances multiplied by the per-instance data size (which depends on the enabled MultiMesh fields). Otherwise, an error message is printed and nothing is rendered. See also multimesh_get_buffer().
 
@@ -13413,35 +13413,35 @@ For Transform2D the float-order is: (x.x, y.x, padding_float, origin.x, x.y, y.y
 
 For Transform3D the float-order is: (basis.x.x, basis.y.x, basis.z.x, origin.x, basis.x.y, basis.y.y, basis.z.y, origin.y, basis.x.z, basis.y.z, basis.z.z, origin.z).
 
-void multimesh_set_buffer_interpolated(multimesh: RID, buffer: PackedFloat32Array, buffer_previous: PackedFloat32Array) 🔗
+void multimesh_set_buffer_interpolated(multimesh: RID, buffer: PackedFloat32Array, buffer_previous: PackedFloat32Array) 
 
 Alternative version of multimesh_set_buffer() for use with physics interpolation.
 
 Takes both an array of current data and an array of data for the previous physics tick.
 
-void multimesh_set_custom_aabb(multimesh: RID, aabb: AABB) 🔗
+void multimesh_set_custom_aabb(multimesh: RID, aabb: AABB) 
 
 Sets the custom AABB for this MultiMesh resource.
 
-void multimesh_set_mesh(multimesh: RID, mesh: RID) 🔗
+void multimesh_set_mesh(multimesh: RID, mesh: RID) 
 
 Sets the mesh to be drawn by the multimesh. Equivalent to MultiMesh.mesh.
 
-void multimesh_set_physics_interpolated(multimesh: RID, interpolated: bool) 🔗
+void multimesh_set_physics_interpolated(multimesh: RID, interpolated: bool) 
 
 Turns on and off physics interpolation for this MultiMesh resource.
 
-void multimesh_set_physics_interpolation_quality(multimesh: RID, quality: MultimeshPhysicsInterpolationQuality) 🔗
+void multimesh_set_physics_interpolation_quality(multimesh: RID, quality: MultimeshPhysicsInterpolationQuality) 
 
 Sets the physics interpolation quality for the MultiMesh.
 
 A value of MULTIMESH_INTERP_QUALITY_FAST gives fast but low quality interpolation, a value of MULTIMESH_INTERP_QUALITY_HIGH gives slower but higher quality interpolation.
 
-void multimesh_set_visible_instances(multimesh: RID, visible: int) 🔗
+void multimesh_set_visible_instances(multimesh: RID, visible: int) 
 
 Sets the number of instances visible at a given time. If -1, all instances that have been allocated are drawn. Equivalent to MultiMesh.visible_instance_count.
 
-RID occluder_create() 🔗
+RID occluder_create() 
 
 Creates an occluder instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all occluder_* RenderingServer functions.
 
@@ -13449,11 +13449,11 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is Occluder3D (not to be confused with the OccluderInstance3D node).
 
-void occluder_set_mesh(occluder: RID, vertices: PackedVector3Array, indices: PackedInt32Array) 🔗
+void occluder_set_mesh(occluder: RID, vertices: PackedVector3Array, indices: PackedInt32Array) 
 
 Sets the mesh data for the given occluder RID, which controls the shape of the occlusion culling that will be performed.
 
-RID omni_light_create() 🔗
+RID omni_light_create() 
 
 Creates a new omni light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most light_* RenderingServer functions.
 
@@ -13463,57 +13463,57 @@ To place in a scene, attach this omni light to an instance using instance_set_ba
 
 Note: The equivalent node is OmniLight3D.
 
-RID particles_collision_create() 🔗
+RID particles_collision_create() 
 
 Creates a new 3D GPU particle collision or attractor and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most particles_collision_* RenderingServer functions.
 
 Note: The equivalent nodes are GPUParticlesCollision3D and GPUParticlesAttractor3D.
 
-void particles_collision_height_field_update(particles_collision: RID) 🔗
+void particles_collision_height_field_update(particles_collision: RID) 
 
 Requests an update for the 3D GPU particle collision heightfield. This may be automatically called by the 3D GPU particle collision heightfield depending on its GPUParticlesCollisionHeightField3D.update_mode.
 
-void particles_collision_set_attractor_attenuation(particles_collision: RID, curve: float) 🔗
+void particles_collision_set_attractor_attenuation(particles_collision: RID, curve: float) 
 
 Sets the attenuation curve for the 3D GPU particles attractor specified by the particles_collision RID. Only used for attractors, not colliders. Equivalent to GPUParticlesAttractor3D.attenuation.
 
-void particles_collision_set_attractor_directionality(particles_collision: RID, amount: float) 🔗
+void particles_collision_set_attractor_directionality(particles_collision: RID, amount: float) 
 
 Sets the directionality amount for the 3D GPU particles attractor specified by the particles_collision RID. Only used for attractors, not colliders. Equivalent to GPUParticlesAttractor3D.directionality.
 
-void particles_collision_set_attractor_strength(particles_collision: RID, strength: float) 🔗
+void particles_collision_set_attractor_strength(particles_collision: RID, strength: float) 
 
 Sets the strength for the 3D GPU particles attractor specified by the particles_collision RID. Only used for attractors, not colliders. Equivalent to GPUParticlesAttractor3D.strength.
 
-void particles_collision_set_box_extents(particles_collision: RID, extents: Vector3) 🔗
+void particles_collision_set_box_extents(particles_collision: RID, extents: Vector3) 
 
 Sets the extents for the 3D GPU particles collision by the particles_collision RID. Equivalent to GPUParticlesCollisionBox3D.size, GPUParticlesCollisionSDF3D.size, GPUParticlesCollisionHeightField3D.size, GPUParticlesAttractorBox3D.size or GPUParticlesAttractorVectorField3D.size depending on the particles_collision type.
 
-void particles_collision_set_collision_type(particles_collision: RID, type: ParticlesCollisionType) 🔗
+void particles_collision_set_collision_type(particles_collision: RID, type: ParticlesCollisionType) 
 
 Sets the collision or attractor shape type for the 3D GPU particles collision or attractor specified by the particles_collision RID.
 
-void particles_collision_set_cull_mask(particles_collision: RID, mask: int) 🔗
+void particles_collision_set_cull_mask(particles_collision: RID, mask: int) 
 
 Sets the cull mask for the 3D GPU particles collision or attractor specified by the particles_collision RID. Equivalent to GPUParticlesCollision3D.cull_mask or GPUParticlesAttractor3D.cull_mask depending on the particles_collision type.
 
-void particles_collision_set_field_texture(particles_collision: RID, texture: RID) 🔗
+void particles_collision_set_field_texture(particles_collision: RID, texture: RID) 
 
 Sets the signed distance field texture for the 3D GPU particles collision specified by the particles_collision RID. Equivalent to GPUParticlesCollisionSDF3D.texture or GPUParticlesAttractorVectorField3D.texture depending on the particles_collision type.
 
-void particles_collision_set_height_field_mask(particles_collision: RID, mask: int) 🔗
+void particles_collision_set_height_field_mask(particles_collision: RID, mask: int) 
 
 Sets the heightfield mask for the 3D GPU particles heightfield collision specified by the particles_collision RID. Equivalent to GPUParticlesCollisionHeightField3D.heightfield_mask.
 
-void particles_collision_set_height_field_resolution(particles_collision: RID, resolution: ParticlesCollisionHeightfieldResolution) 🔗
+void particles_collision_set_height_field_resolution(particles_collision: RID, resolution: ParticlesCollisionHeightfieldResolution) 
 
 Sets the heightmap resolution for the 3D GPU particles heightfield collision specified by the particles_collision RID. Equivalent to GPUParticlesCollisionHeightField3D.resolution.
 
-void particles_collision_set_sphere_radius(particles_collision: RID, radius: float) 🔗
+void particles_collision_set_sphere_radius(particles_collision: RID, radius: float) 
 
 Sets the radius for the 3D GPU particles sphere collision or attractor specified by the particles_collision RID. Equivalent to GPUParticlesCollisionSphere3D.radius or GPUParticlesAttractorSphere3D.radius depending on the particles_collision type.
 
-RID particles_create() 🔗
+RID particles_create() 
 
 Creates a GPU-based particle system and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all particles_* RenderingServer functions.
 
@@ -13525,149 +13525,149 @@ Note: The equivalent nodes are GPUParticles2D and GPUParticles3D.
 
 Note: All particles_* methods only apply to GPU-based particles, not CPU-based particles. CPUParticles2D and CPUParticles3D do not have equivalent RenderingServer functions available, as these use MultiMeshInstance2D and MultiMeshInstance3D under the hood (see multimesh_* methods).
 
-void particles_emit(particles: RID, transform: Transform3D, velocity: Vector3, color: Color, custom: Color, emit_flags: int) 🔗
+void particles_emit(particles: RID, transform: Transform3D, velocity: Vector3, color: Color, custom: Color, emit_flags: int) 
 
 Manually emits particles from the particles instance.
 
-AABB particles_get_current_aabb(particles: RID) 🔗
+AABB particles_get_current_aabb(particles: RID) 
 
 Calculates and returns the axis-aligned bounding box that contains all the particles. Equivalent to GPUParticles3D.capture_aabb().
 
-bool particles_get_emitting(particles: RID) 🔗
+bool particles_get_emitting(particles: RID) 
 
 Returns true if particles are currently set to emitting.
 
-bool particles_is_inactive(particles: RID) 🔗
+bool particles_is_inactive(particles: RID) 
 
 Returns true if particles are not emitting and particles are set to inactive.
 
-void particles_request_process(particles: RID) 🔗
+void particles_request_process(particles: RID) 
 
 Add particle system to list of particle systems that need to be updated. Update will take place on the next frame, or on the next call to instances_cull_aabb(), instances_cull_convex(), or instances_cull_ray().
 
-void particles_request_process_time(particles: RID, time: float) 🔗
+void particles_request_process_time(particles: RID, time: float) 
 
 Requests particles to process for extra process time during a single frame.
 
-void particles_restart(particles: RID) 🔗
+void particles_restart(particles: RID) 
 
 Reset the particles on the next update. Equivalent to GPUParticles3D.restart().
 
-void particles_set_amount(particles: RID, amount: int) 🔗
+void particles_set_amount(particles: RID, amount: int) 
 
 Sets the number of particles to be drawn and allocates the memory for them. Equivalent to GPUParticles3D.amount.
 
-void particles_set_amount_ratio(particles: RID, ratio: float) 🔗
+void particles_set_amount_ratio(particles: RID, ratio: float) 
 
 Sets the amount ratio for particles to be emitted. Equivalent to GPUParticles3D.amount_ratio.
 
-void particles_set_collision_base_size(particles: RID, size: float) 🔗
+void particles_set_collision_base_size(particles: RID, size: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void particles_set_custom_aabb(particles: RID, aabb: AABB) 🔗
+void particles_set_custom_aabb(particles: RID, aabb: AABB) 
 
 Sets a custom axis-aligned bounding box for the particle system. Equivalent to GPUParticles3D.visibility_aabb.
 
-void particles_set_draw_order(particles: RID, order: ParticlesDrawOrder) 🔗
+void particles_set_draw_order(particles: RID, order: ParticlesDrawOrder) 
 
 Sets the draw order of the particles. Equivalent to GPUParticles3D.draw_order.
 
-void particles_set_draw_pass_mesh(particles: RID, pass: int, mesh: RID) 🔗
+void particles_set_draw_pass_mesh(particles: RID, pass: int, mesh: RID) 
 
 Sets the mesh to be used for the specified draw pass. Equivalent to GPUParticles3D.draw_pass_1, GPUParticles3D.draw_pass_2, GPUParticles3D.draw_pass_3, and GPUParticles3D.draw_pass_4.
 
-void particles_set_draw_passes(particles: RID, count: int) 🔗
+void particles_set_draw_passes(particles: RID, count: int) 
 
 Sets the number of draw passes to use. Equivalent to GPUParticles3D.draw_passes.
 
-void particles_set_emission_transform(particles: RID, transform: Transform3D) 🔗
+void particles_set_emission_transform(particles: RID, transform: Transform3D) 
 
 Sets the Transform3D that will be used by the particles when they first emit.
 
-void particles_set_emitter_velocity(particles: RID, velocity: Vector3) 🔗
+void particles_set_emitter_velocity(particles: RID, velocity: Vector3) 
 
 Sets the velocity of a particle node, that will be used by ParticleProcessMaterial.inherit_velocity_ratio.
 
-void particles_set_emitting(particles: RID, emitting: bool) 🔗
+void particles_set_emitting(particles: RID, emitting: bool) 
 
 If true, particles will emit over time. Setting to false does not reset the particles, but only stops their emission. Equivalent to GPUParticles3D.emitting.
 
-void particles_set_explosiveness_ratio(particles: RID, ratio: float) 🔗
+void particles_set_explosiveness_ratio(particles: RID, ratio: float) 
 
 Sets the explosiveness ratio. Equivalent to GPUParticles3D.explosiveness.
 
-void particles_set_fixed_fps(particles: RID, fps: int) 🔗
+void particles_set_fixed_fps(particles: RID, fps: int) 
 
 Sets the frame rate that the particle system rendering will be fixed to. Equivalent to GPUParticles3D.fixed_fps.
 
-void particles_set_fractional_delta(particles: RID, enable: bool) 🔗
+void particles_set_fractional_delta(particles: RID, enable: bool) 
 
 If true, uses fractional delta which smooths the movement of the particles. Equivalent to GPUParticles3D.fract_delta.
 
-void particles_set_interp_to_end(particles: RID, factor: float) 🔗
+void particles_set_interp_to_end(particles: RID, factor: float) 
 
 Sets the value that informs a ParticleProcessMaterial to rush all particles towards the end of their lifetime.
 
-void particles_set_interpolate(particles: RID, enable: bool) 🔗
+void particles_set_interpolate(particles: RID, enable: bool) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void particles_set_lifetime(particles: RID, lifetime: float) 🔗
+void particles_set_lifetime(particles: RID, lifetime: float) 
 
 Sets the lifetime of each particle in the system. Equivalent to GPUParticles3D.lifetime.
 
-void particles_set_mode(particles: RID, mode: ParticlesMode) 🔗
+void particles_set_mode(particles: RID, mode: ParticlesMode) 
 
 Sets whether the GPU particles specified by the particles RID should be rendered in 2D or 3D according to mode.
 
-void particles_set_one_shot(particles: RID, one_shot: bool) 🔗
+void particles_set_one_shot(particles: RID, one_shot: bool) 
 
 If true, particles will emit once and then stop. Equivalent to GPUParticles3D.one_shot.
 
-void particles_set_pre_process_time(particles: RID, time: float) 🔗
+void particles_set_pre_process_time(particles: RID, time: float) 
 
 Sets the preprocess time for the particles' animation. This lets you delay starting an animation until after the particles have begun emitting. Equivalent to GPUParticles3D.preprocess.
 
-void particles_set_process_material(particles: RID, material: RID) 🔗
+void particles_set_process_material(particles: RID, material: RID) 
 
 Sets the material for processing the particles.
 
 Note: This is not the material used to draw the materials. Equivalent to GPUParticles3D.process_material.
 
-void particles_set_randomness_ratio(particles: RID, ratio: float) 🔗
+void particles_set_randomness_ratio(particles: RID, ratio: float) 
 
 Sets the emission randomness ratio. This randomizes the emission of particles within their phase. Equivalent to GPUParticles3D.randomness.
 
-void particles_set_speed_scale(particles: RID, scale: float) 🔗
+void particles_set_speed_scale(particles: RID, scale: float) 
 
 Sets the speed scale of the particle system. Equivalent to GPUParticles3D.speed_scale.
 
-void particles_set_subemitter(particles: RID, subemitter_particles: RID) 🔗
+void particles_set_subemitter(particles: RID, subemitter_particles: RID) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void particles_set_trail_bind_poses(particles: RID, bind_poses: Array[Transform3D]) 🔗
+void particles_set_trail_bind_poses(particles: RID, bind_poses: Array[Transform3D]) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void particles_set_trails(particles: RID, enable: bool, length_sec: float) 🔗
+void particles_set_trails(particles: RID, enable: bool, length_sec: float) 
 
 If enable is true, enables trails for the particles with the specified length_sec in seconds. Equivalent to GPUParticles3D.trail_enabled and GPUParticles3D.trail_lifetime.
 
-void particles_set_transform_align(particles: RID, align: ParticlesTransformAlign) 🔗
+void particles_set_transform_align(particles: RID, align: ParticlesTransformAlign) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void particles_set_use_local_coordinates(particles: RID, enable: bool) 🔗
+void particles_set_use_local_coordinates(particles: RID, enable: bool) 
 
 If true, particles use local coordinates. If false they use global coordinates. Equivalent to GPUParticles3D.local_coords.
 
-void positional_soft_shadow_filter_set_quality(quality: ShadowQuality) 🔗
+void positional_soft_shadow_filter_set_quality(quality: ShadowQuality) 
 
 Sets the filter quality for omni and spot light shadows in 3D. See also ProjectSettings.rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality. This parameter is global and cannot be set on a per-viewport basis.
 
-RID reflection_probe_create() 🔗
+RID reflection_probe_create() 
 
 Creates a reflection probe and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all reflection_probe_* RenderingServer functions.
 
@@ -13677,75 +13677,75 @@ To place in a scene, attach this reflection probe to an instance using instance_
 
 Note: The equivalent node is ReflectionProbe.
 
-void reflection_probe_set_ambient_color(probe: RID, color: Color) 🔗
+void reflection_probe_set_ambient_color(probe: RID, color: Color) 
 
 Sets the reflection probe's custom ambient light color. Equivalent to ReflectionProbe.ambient_color.
 
-void reflection_probe_set_ambient_energy(probe: RID, energy: float) 🔗
+void reflection_probe_set_ambient_energy(probe: RID, energy: float) 
 
 Sets the reflection probe's custom ambient light energy. Equivalent to ReflectionProbe.ambient_color_energy.
 
-void reflection_probe_set_ambient_mode(probe: RID, mode: ReflectionProbeAmbientMode) 🔗
+void reflection_probe_set_ambient_mode(probe: RID, mode: ReflectionProbeAmbientMode) 
 
 Sets the reflection probe's ambient light mode. Equivalent to ReflectionProbe.ambient_mode.
 
-void reflection_probe_set_as_interior(probe: RID, enable: bool) 🔗
+void reflection_probe_set_as_interior(probe: RID, enable: bool) 
 
 If true, reflections will ignore sky contribution. Equivalent to ReflectionProbe.interior.
 
-void reflection_probe_set_blend_distance(probe: RID, blend_distance: float) 🔗
+void reflection_probe_set_blend_distance(probe: RID, blend_distance: float) 
 
 Sets the distance in meters over which a probe blends into the scene.
 
-void reflection_probe_set_cull_mask(probe: RID, layers: int) 🔗
+void reflection_probe_set_cull_mask(probe: RID, layers: int) 
 
 Sets the render cull mask for this reflection probe. Only instances with a matching layer will be reflected by this probe. Equivalent to ReflectionProbe.cull_mask.
 
-void reflection_probe_set_enable_box_projection(probe: RID, enable: bool) 🔗
+void reflection_probe_set_enable_box_projection(probe: RID, enable: bool) 
 
 If true, uses box projection. This can make reflections look more correct in certain situations. Equivalent to ReflectionProbe.box_projection.
 
-void reflection_probe_set_enable_shadows(probe: RID, enable: bool) 🔗
+void reflection_probe_set_enable_shadows(probe: RID, enable: bool) 
 
 If true, computes shadows in the reflection probe. This makes the reflection much slower to compute. Equivalent to ReflectionProbe.enable_shadows.
 
-void reflection_probe_set_intensity(probe: RID, intensity: float) 🔗
+void reflection_probe_set_intensity(probe: RID, intensity: float) 
 
 Sets the intensity of the reflection probe. Intensity modulates the strength of the reflection. Equivalent to ReflectionProbe.intensity.
 
-void reflection_probe_set_max_distance(probe: RID, distance: float) 🔗
+void reflection_probe_set_max_distance(probe: RID, distance: float) 
 
 Sets the max distance away from the probe an object can be before it is culled. Equivalent to ReflectionProbe.max_distance.
 
-void reflection_probe_set_mesh_lod_threshold(probe: RID, pixels: float) 🔗
+void reflection_probe_set_mesh_lod_threshold(probe: RID, pixels: float) 
 
 Sets the mesh level of detail to use in the reflection probe rendering. Higher values will use less detailed versions of meshes that have LOD variations generated, which can improve performance. Equivalent to ReflectionProbe.mesh_lod_threshold.
 
-void reflection_probe_set_origin_offset(probe: RID, offset: Vector3) 🔗
+void reflection_probe_set_origin_offset(probe: RID, offset: Vector3) 
 
 Sets the origin offset to be used when this reflection probe is in box project mode. Equivalent to ReflectionProbe.origin_offset.
 
-void reflection_probe_set_reflection_mask(probe: RID, layers: int) 🔗
+void reflection_probe_set_reflection_mask(probe: RID, layers: int) 
 
 Sets the render reflection mask for this reflection probe. Only instances with a matching layer will have reflections applied from this probe. Equivalent to ReflectionProbe.reflection_mask.
 
-void reflection_probe_set_resolution(probe: RID, resolution: int) 🔗
+void reflection_probe_set_resolution(probe: RID, resolution: int) 
 
 Sets the resolution to use when rendering the specified reflection probe. The resolution is specified for each cubemap face: for instance, specifying 512 will allocate 6 faces of 512×512 each (plus mipmaps for roughness levels).
 
-void reflection_probe_set_size(probe: RID, size: Vector3) 🔗
+void reflection_probe_set_size(probe: RID, size: Vector3) 
 
 Sets the size of the area that the reflection probe will capture. Equivalent to ReflectionProbe.size.
 
-void reflection_probe_set_update_mode(probe: RID, mode: ReflectionProbeUpdateMode) 🔗
+void reflection_probe_set_update_mode(probe: RID, mode: ReflectionProbeUpdateMode) 
 
 Sets how often the reflection probe updates. Can either be once or every frame.
 
-void request_frame_drawn_callback(callable: Callable) 🔗
+void request_frame_drawn_callback(callable: Callable) 
 
 Schedules a callback to the given callable after a frame has been drawn.
 
-RID scenario_create() 🔗
+RID scenario_create() 
 
 Creates a scenario and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all scenario_* RenderingServer functions.
 
@@ -13753,41 +13753,41 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 The scenario is the 3D world that all the visual instances exist in.
 
-void scenario_set_camera_attributes(scenario: RID, effects: RID) 🔗
+void scenario_set_camera_attributes(scenario: RID, effects: RID) 
 
 Sets the camera attributes (effects) that will be used with this scenario. See also CameraAttributes.
 
-void scenario_set_compositor(scenario: RID, compositor: RID) 🔗
+void scenario_set_compositor(scenario: RID, compositor: RID) 
 
 Sets the compositor (compositor) that will be used with this scenario. See also Compositor.
 
-void scenario_set_environment(scenario: RID, environment: RID) 🔗
+void scenario_set_environment(scenario: RID, environment: RID) 
 
 Sets the environment that will be used with this scenario. See also Environment.
 
-void scenario_set_fallback_environment(scenario: RID, environment: RID) 🔗
+void scenario_set_fallback_environment(scenario: RID, environment: RID) 
 
 Sets the fallback environment to be used by this scenario. The fallback environment is used if no environment is set. Internally, this is used by the editor to provide a default environment.
 
-void screen_space_roughness_limiter_set_active(enable: bool, amount: float, limit: float) 🔗
+void screen_space_roughness_limiter_set_active(enable: bool, amount: float, limit: float) 
 
 Sets the screen-space roughness limiter parameters, such as whether it should be enabled and its thresholds. Equivalent to ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/enabled, ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/amount and ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/limit.
 
-void set_boot_image(image: Image, color: Color, scale: bool, use_filter: bool = true) 🔗
+void set_boot_image(image: Image, color: Color, scale: bool, use_filter: bool = true) 
 
 Sets a boot image. The color defines the background color. If scale is true, the image will be scaled to fit the screen size. If use_filter is true, the image will be scaled with linear interpolation. If use_filter is false, the image will be scaled with nearest-neighbor interpolation.
 
-void set_debug_generate_wireframes(generate: bool) 🔗
+void set_debug_generate_wireframes(generate: bool) 
 
 If generate is true, generates debug wireframes for all meshes that are loaded when using the Compatibility renderer. By default, the engine does not generate debug wireframes at runtime, since they slow down loading of assets and take up VRAM.
 
 Note: You must call this method before loading any meshes when using the Compatibility renderer, otherwise wireframes will not be used.
 
-void set_default_clear_color(color: Color) 🔗
+void set_default_clear_color(color: Color) 
 
 Sets the default clear color which is used when a specific clear color has not been selected. See also get_default_clear_color().
 
-RID shader_create() 🔗
+RID shader_create() 
 
 Creates an empty shader and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all shader_* RenderingServer functions.
 
@@ -13795,69 +13795,69 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is Shader.
 
-String shader_get_code(shader: RID) const 🔗
+String shader_get_code(shader: RID) const 
 
 Returns a shader's source code as a string.
 
-RID shader_get_default_texture_parameter(shader: RID, name: StringName, index: int = 0) const 🔗
+RID shader_get_default_texture_parameter(shader: RID, name: StringName, index: int = 0) const 
 
 Returns a default texture from a shader searched by name.
 
 Note: If the sampler array is used use index to access the specified texture.
 
-Variant shader_get_parameter_default(shader: RID, name: StringName) const 🔗
+Variant shader_get_parameter_default(shader: RID, name: StringName) const 
 
 Returns the default value for the specified shader uniform. This is usually the value written in the shader source code.
 
-void shader_set_code(shader: RID, code: String) 🔗
+void shader_set_code(shader: RID, code: String) 
 
 Sets the shader's source code (which triggers recompilation after being changed).
 
-void shader_set_default_texture_parameter(shader: RID, name: StringName, texture: RID, index: int = 0) 🔗
+void shader_set_default_texture_parameter(shader: RID, name: StringName, texture: RID, index: int = 0) 
 
 Sets a shader's default texture. Overwrites the texture given by name.
 
 Note: If the sampler array is used use index to access the specified texture.
 
-void shader_set_path_hint(shader: RID, path: String) 🔗
+void shader_set_path_hint(shader: RID, path: String) 
 
 Sets the path hint for the specified shader. This should generally match the Shader resource's Resource.resource_path.
 
-void skeleton_allocate_data(skeleton: RID, bones: int, is_2d_skeleton: bool = false) 🔗
+void skeleton_allocate_data(skeleton: RID, bones: int, is_2d_skeleton: bool = false) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Transform3D skeleton_bone_get_transform(skeleton: RID, bone: int) const 🔗
+Transform3D skeleton_bone_get_transform(skeleton: RID, bone: int) const 
 
 Returns the Transform3D set for a specific bone of this skeleton.
 
-Transform2D skeleton_bone_get_transform_2d(skeleton: RID, bone: int) const 🔗
+Transform2D skeleton_bone_get_transform_2d(skeleton: RID, bone: int) const 
 
 Returns the Transform2D set for a specific bone of this skeleton.
 
-void skeleton_bone_set_transform(skeleton: RID, bone: int, transform: Transform3D) 🔗
+void skeleton_bone_set_transform(skeleton: RID, bone: int, transform: Transform3D) 
 
 Sets the Transform3D for a specific bone of this skeleton.
 
-void skeleton_bone_set_transform_2d(skeleton: RID, bone: int, transform: Transform2D) 🔗
+void skeleton_bone_set_transform_2d(skeleton: RID, bone: int, transform: Transform2D) 
 
 Sets the Transform2D for a specific bone of this skeleton.
 
-RID skeleton_create() 🔗
+RID skeleton_create() 
 
 Creates a skeleton and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all skeleton_* RenderingServer functions.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's free_rid() method.
 
-int skeleton_get_bone_count(skeleton: RID) const 🔗
+int skeleton_get_bone_count(skeleton: RID) const 
 
 Returns the number of bones allocated for this skeleton.
 
-void skeleton_set_base_transform_2d(skeleton: RID, base_transform: Transform2D) 🔗
+void skeleton_set_base_transform_2d(skeleton: RID, base_transform: Transform2D) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Image sky_bake_panorama(sky: RID, energy: float, bake_irradiance: bool, size: Vector2i) 🔗
+Image sky_bake_panorama(sky: RID, energy: float, bake_irradiance: bool, size: Vector2i) 
 
 Generates and returns an Image containing the radiance map for the specified sky RID. This supports built-in sky material and custom sky shaders. If bake_irradiance is true, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also environment_bake_panorama().
 
@@ -13869,19 +13869,19 @@ Creates an empty sky and adds it to the RenderingServer. It can be accessed with
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's free_rid() method.
 
-void sky_set_material(sky: RID, material: RID) 🔗
+void sky_set_material(sky: RID, material: RID) 
 
 Sets the material that the sky uses to render the background, ambient and reflection maps.
 
-void sky_set_mode(sky: RID, mode: SkyMode) 🔗
+void sky_set_mode(sky: RID, mode: SkyMode) 
 
 Sets the process mode of the sky specified by the sky RID. Equivalent to Sky.process_mode.
 
-void sky_set_radiance_size(sky: RID, radiance_size: int) 🔗
+void sky_set_radiance_size(sky: RID, radiance_size: int) 
 
 Sets the radiance_size of the sky specified by the sky RID (in pixels). Equivalent to Sky.radiance_size.
 
-RID spot_light_create() 🔗
+RID spot_light_create() 
 
 Creates a spot light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most light_* RenderingServer functions.
 
@@ -13889,15 +13889,15 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 To place in a scene, attach this spot light to an instance using instance_set_base() using the returned RID.
 
-void sub_surface_scattering_set_quality(quality: SubSurfaceScatteringQuality) 🔗
+void sub_surface_scattering_set_quality(quality: SubSurfaceScatteringQuality) 
 
 Sets ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality to use when rendering materials that have subsurface scattering enabled.
 
-void sub_surface_scattering_set_scale(scale: float, depth_scale: float) 🔗
+void sub_surface_scattering_set_scale(scale: float, depth_scale: float) 
 
 Sets the ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_scale and ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale to use when rendering materials that have subsurface scattering enabled.
 
-RID texture_2d_create(image: Image) 🔗
+RID texture_2d_create(image: Image) 
 
 Creates a 2-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all texture_2d_* RenderingServer functions.
 
@@ -13907,17 +13907,17 @@ Note: The equivalent resource is Texture2D.
 
 Note: Not to be confused with RenderingDevice.texture_create(), which creates the graphics API's own texture type as opposed to the Godot-specific Texture2D resource.
 
-Image texture_2d_get(texture: RID) const 🔗
+Image texture_2d_get(texture: RID) const 
 
 Returns an Image instance from the given texture RID.
 
 Example: Get the test texture from get_test_texture() and apply it to a Sprite2D node:
 
-Image texture_2d_layer_get(texture: RID, layer: int) const 🔗
+Image texture_2d_layer_get(texture: RID, layer: int) const 
 
 Returns an Image instance from the given texture RID and layer.
 
-RID texture_2d_layered_create(layers: Array[Image], layered_type: TextureLayeredType) 🔗
+RID texture_2d_layered_create(layers: Array[Image], layered_type: TextureLayeredType) 
 
 Creates a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all texture_2d_layered_* RenderingServer functions.
 
@@ -13925,13 +13925,13 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is TextureLayered.
 
-RID texture_2d_layered_placeholder_create(layered_type: TextureLayeredType) 🔗
+RID texture_2d_layered_placeholder_create(layered_type: TextureLayeredType) 
 
 Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all texture_2d_layered_* RenderingServer functions, although it does nothing when used. See also texture_2d_placeholder_create().
 
 Note: The equivalent resource is PlaceholderTextureLayered.
 
-RID texture_2d_placeholder_create() 🔗
+RID texture_2d_placeholder_create() 
 
 Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all texture_2d_layered_* RenderingServer functions, although it does nothing when used. See also texture_2d_layered_placeholder_create().
 
@@ -13939,21 +13939,21 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is PlaceholderTexture2D.
 
-void texture_2d_update(texture: RID, image: Image, layer: int) 🔗
+void texture_2d_update(texture: RID, image: Image, layer: int) 
 
 Updates the texture specified by the texture RID with the data in image. A layer must also be specified, which should be 0 when updating a single-layer texture (Texture2D).
 
 Note: The image must have the same width, height and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height or format, use texture_replace() instead.
 
-RID texture_3d_create(format: Format, width: int, height: int, depth: int, mipmaps: bool, data: Array[Image]) 🔗
+RID texture_3d_create(format: Format, width: int, height: int, depth: int, mipmaps: bool, data: Array[Image]) 
 
 Note: The equivalent resource is Texture3D.
 
-Array[Image] texture_3d_get(texture: RID) const 🔗
+Array[Image] texture_3d_get(texture: RID) const 
 
 Returns 3D texture data as an array of Images for the specified texture RID.
 
-RID texture_3d_placeholder_create() 🔗
+RID texture_3d_placeholder_create() 
 
 Creates a placeholder for a 3-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all texture_3d_* RenderingServer functions, although it does nothing when used.
 
@@ -13961,77 +13961,77 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent resource is PlaceholderTexture3D.
 
-void texture_3d_update(texture: RID, data: Array[Image]) 🔗
+void texture_3d_update(texture: RID, data: Array[Image]) 
 
 Updates the texture specified by the texture RID's data with the data in data. All the texture's layers must be replaced at once.
 
 Note: The texture must have the same width, height, depth and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height, depth or format, use texture_replace() instead.
 
-RID texture_create_from_native_handle(type: TextureType, format: Format, native_handle: int, width: int, height: int, depth: int, layers: int = 1, layered_type: TextureLayeredType = 0) 🔗
+RID texture_create_from_native_handle(type: TextureType, format: Format, native_handle: int, width: int, height: int, depth: int, layers: int = 1, layered_type: TextureLayeredType = 0) 
 
 Creates a texture based on a native handle that was created outside of Godot's renderer.
 
 Note: If using only the rendering device renderer, it's recommend to use RenderingDevice.texture_create_from_extension() together with texture_rd_create(), rather than this method. It will give you much more control over the texture's format and usage.
 
-Format texture_get_format(texture: RID) const 🔗
+Format texture_get_format(texture: RID) const 
 
 Returns the format for the texture.
 
-int texture_get_native_handle(texture: RID, srgb: bool = false) const 🔗
+int texture_get_native_handle(texture: RID, srgb: bool = false) const 
 
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
 Note: This function returns a uint64_t which internally maps to a GLuint (OpenGL) or VkImage (Vulkan).
 
-String texture_get_path(texture: RID) const 🔗
+String texture_get_path(texture: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-RID texture_get_rd_texture(texture: RID, srgb: bool = false) const 🔗
+RID texture_get_rd_texture(texture: RID, srgb: bool = false) const 
 
 Returns a texture RID that can be used with RenderingDevice.
 
-RID texture_proxy_create(base: RID) 🔗
+RID texture_proxy_create(base: RID) 
 
 Deprecated: ProxyTexture was removed in Godot 4.
 
 This method does nothing and always returns an invalid RID.
 
-void texture_proxy_update(texture: RID, proxy_to: RID) 🔗
+void texture_proxy_update(texture: RID, proxy_to: RID) 
 
 Deprecated: ProxyTexture was removed in Godot 4.
 
 This method does nothing.
 
-RID texture_rd_create(rd_texture: RID, layer_type: TextureLayeredType = 0) 🔗
+RID texture_rd_create(rd_texture: RID, layer_type: TextureLayeredType = 0) 
 
 Creates a new texture object based on a texture created directly on the RenderingDevice. If the texture contains layers, layer_type is used to define the layer type.
 
-void texture_replace(texture: RID, by_texture: RID) 🔗
+void texture_replace(texture: RID, by_texture: RID) 
 
 Replaces texture's texture data by the texture specified by the by_texture RID, without changing texture's RID.
 
-void texture_set_force_redraw_if_visible(texture: RID, enable: bool) 🔗
+void texture_set_force_redraw_if_visible(texture: RID, enable: bool) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void texture_set_path(texture: RID, path: String) 🔗
+void texture_set_path(texture: RID, path: String) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void texture_set_size_override(texture: RID, width: int, height: int) 🔗
+void texture_set_size_override(texture: RID, width: int, height: int) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void viewport_attach_camera(viewport: RID, camera: RID) 🔗
+void viewport_attach_camera(viewport: RID, camera: RID) 
 
 Sets a viewport's camera.
 
-void viewport_attach_canvas(viewport: RID, canvas: RID) 🔗
+void viewport_attach_canvas(viewport: RID, canvas: RID) 
 
 Sets a viewport's canvas.
 
-void viewport_attach_to_screen(viewport: RID, rect: Rect2 = Rect2(0, 0, 0, 0), screen: int = 0) 🔗
+void viewport_attach_to_screen(viewport: RID, rect: Rect2 = Rect2(0, 0, 0, 0), screen: int = 0) 
 
 Copies the viewport to a region of the screen specified by rect. If viewport_set_render_direct_to_screen() is true, then the viewport does not use a framebuffer and the contents of the viewport are rendered directly to screen. However, note that the root viewport is drawn last, therefore it will draw over the screen. Accordingly, you must set the root viewport to an area that does not cover the area that you have attached this viewport to.
 
@@ -14039,7 +14039,7 @@ For example, you can set the root viewport to not render at all with the followi
 
 Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see viewport_set_render_direct_to_screen().
 
-RID viewport_create() 🔗
+RID viewport_create() 
 
 Creates an empty viewport and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all viewport_* RenderingServer functions.
 
@@ -14047,13 +14047,13 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is Viewport.
 
-float viewport_get_measured_render_time_cpu(viewport: RID) const 🔗
+float viewport_get_measured_render_time_cpu(viewport: RID) const 
 
 Returns the CPU time taken to render the last frame in milliseconds. This only includes time spent in rendering-related operations; scripts' _process functions and other engine subsystems are not included in this readout. To get a complete readout of CPU time spent to render the scene, sum the render times of all viewports that are drawn every frame plus get_frame_setup_time_cpu(). Unlike Engine.get_frames_per_second(), this method will accurately reflect CPU utilization even if framerate is capped via V-Sync or Engine.max_fps. See also viewport_get_measured_render_time_gpu().
 
 Note: Requires measurements to be enabled on the specified viewport using viewport_set_measure_render_time(). Otherwise, this method returns 0.0.
 
-float viewport_get_measured_render_time_gpu(viewport: RID) const 🔗
+float viewport_get_measured_render_time_gpu(viewport: RID) const 
 
 Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike Engine.get_frames_per_second(), this method accurately reflects GPU utilization even if framerate is capped via V-Sync or Engine.max_fps. See also viewport_get_measured_render_time_cpu().
 
@@ -14061,7 +14061,7 @@ Note: Requires measurements to be enabled on the specified viewport using viewpo
 
 Note: When GPU utilization is low enough during a certain period of time, GPUs will decrease their power state (which in turn decreases core and memory clock speeds). This can cause the reported GPU time to increase if GPU utilization is kept low enough by a framerate cap (compared to what it would be at the GPU's highest power state). Keep this in mind when benchmarking using viewport_get_measured_render_time_gpu(). This behavior can be overridden in the graphics driver settings at the cost of higher power usage.
 
-int viewport_get_render_info(viewport: RID, type: ViewportRenderInfoType, info: ViewportRenderInfo) 🔗
+int viewport_get_render_info(viewport: RID, type: ViewportRenderInfoType, info: ViewportRenderInfo) 
 
 Returns a statistic about the rendering engine which can be used for performance profiling. This is separated into render pass types, each of them having the same infos you can query (different passes will return different values).
 
@@ -14069,29 +14069,29 @@ See also get_rendering_info(), which returns global information across all viewp
 
 Note: Viewport rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, viewport_get_render_info() returns 0. To print rendering information in _ready() successfully, use the following:
 
-RID viewport_get_render_target(viewport: RID) const 🔗
+RID viewport_get_render_target(viewport: RID) const 
 
 Returns the render target for the viewport.
 
-RID viewport_get_texture(viewport: RID) const 🔗
+RID viewport_get_texture(viewport: RID) const 
 
 Returns the viewport's last rendered frame.
 
-ViewportUpdateMode viewport_get_update_mode(viewport: RID) const 🔗
+ViewportUpdateMode viewport_get_update_mode(viewport: RID) const 
 
 Returns the viewport's update mode.
 
 Warning: Calling this from any thread other than the rendering thread will be detrimental to performance.
 
-void viewport_remove_canvas(viewport: RID, canvas: RID) 🔗
+void viewport_remove_canvas(viewport: RID, canvas: RID) 
 
 Detaches a viewport from a canvas.
 
-void viewport_set_active(viewport: RID, active: bool) 🔗
+void viewport_set_active(viewport: RID, active: bool) 
 
 If true, sets the viewport active, else sets it inactive.
 
-void viewport_set_anisotropic_filtering_level(viewport: RID, anisotropic_filtering_level: ViewportAnisotropicFiltering) 🔗
+void viewport_set_anisotropic_filtering_level(viewport: RID, anisotropic_filtering_level: ViewportAnisotropicFiltering) 
 
 Sets the maximum number of samples to take when using anisotropic filtering on textures (as a power of two). A higher sample count will result in sharper textures at oblique angles, but is more expensive to compute. A value of 0 forcibly disables anisotropic filtering, even on materials where it is enabled.
 
@@ -14101,11 +14101,11 @@ Note: In 3D, for this setting to have an effect, set BaseMaterial3D.texture_filt
 
 Note: In 2D, for this setting to have an effect, set CanvasItem.texture_filter to CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC or CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC on the CanvasItem node displaying the texture (or in CanvasTexture). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
 
-void viewport_set_canvas_cull_mask(viewport: RID, canvas_cull_mask: int) 🔗
+void viewport_set_canvas_cull_mask(viewport: RID, canvas_cull_mask: int) 
 
 Sets the rendering mask associated with this Viewport. Only CanvasItem nodes with a matching rendering visibility layer will be rendered by this Viewport.
 
-void viewport_set_canvas_stacking(viewport: RID, canvas: RID, layer: int, sublayer: int) 🔗
+void viewport_set_canvas_stacking(viewport: RID, canvas: RID, layer: int, sublayer: int) 
 
 Sets the stacking order for a viewport's canvas.
 
@@ -14113,137 +14113,137 @@ layer is the actual canvas layer, while sublayer specifies the stacking order of
 
 Note: layer should be between CANVAS_LAYER_MIN and CANVAS_LAYER_MAX (inclusive). Any other value will wrap around.
 
-void viewport_set_canvas_transform(viewport: RID, canvas: RID, offset: Transform2D) 🔗
+void viewport_set_canvas_transform(viewport: RID, canvas: RID, offset: Transform2D) 
 
 Sets the transformation of a viewport's canvas.
 
-void viewport_set_clear_mode(viewport: RID, clear_mode: ViewportClearMode) 🔗
+void viewport_set_clear_mode(viewport: RID, clear_mode: ViewportClearMode) 
 
 Sets the clear mode of a viewport.
 
-void viewport_set_debug_draw(viewport: RID, draw: ViewportDebugDraw) 🔗
+void viewport_set_debug_draw(viewport: RID, draw: ViewportDebugDraw) 
 
 Sets the debug draw mode of a viewport.
 
-void viewport_set_default_canvas_item_texture_filter(viewport: RID, filter: CanvasItemTextureFilter) 🔗
+void viewport_set_default_canvas_item_texture_filter(viewport: RID, filter: CanvasItemTextureFilter) 
 
 Sets the default texture filtering mode for the specified viewport RID.
 
-void viewport_set_default_canvas_item_texture_repeat(viewport: RID, repeat: CanvasItemTextureRepeat) 🔗
+void viewport_set_default_canvas_item_texture_repeat(viewport: RID, repeat: CanvasItemTextureRepeat) 
 
 Sets the default texture repeat mode for the specified viewport RID.
 
-void viewport_set_disable_2d(viewport: RID, disable: bool) 🔗
+void viewport_set_disable_2d(viewport: RID, disable: bool) 
 
 If true, the viewport's canvas (i.e. 2D and GUI elements) is not rendered.
 
-void viewport_set_disable_3d(viewport: RID, disable: bool) 🔗
+void viewport_set_disable_3d(viewport: RID, disable: bool) 
 
 If true, the viewport's 3D elements are not rendered.
 
-void viewport_set_environment_mode(viewport: RID, mode: ViewportEnvironmentMode) 🔗
+void viewport_set_environment_mode(viewport: RID, mode: ViewportEnvironmentMode) 
 
 Sets the viewport's environment mode which allows enabling or disabling rendering of 3D environment over 2D canvas. When disabled, 2D will not be affected by the environment. When enabled, 2D will be affected by the environment if the environment background mode is ENV_BG_CANVAS. The default behavior is to inherit the setting from the viewport's parent. If the topmost parent is also set to VIEWPORT_ENVIRONMENT_INHERIT, then the behavior will be the same as if it was set to VIEWPORT_ENVIRONMENT_ENABLED.
 
-void viewport_set_fsr_sharpness(viewport: RID, sharpness: float) 🔗
+void viewport_set_fsr_sharpness(viewport: RID, sharpness: float) 
 
 Determines how sharp the upscaled image will be when using the FSR upscaling mode. Sharpness halves with every whole number. Values go from 0.0 (sharpest) to 2.0. Values above 2.0 won't make a visible difference.
 
-void viewport_set_global_canvas_transform(viewport: RID, transform: Transform2D) 🔗
+void viewport_set_global_canvas_transform(viewport: RID, transform: Transform2D) 
 
 Sets the viewport's global transformation matrix.
 
-void viewport_set_measure_render_time(viewport: RID, enable: bool) 🔗
+void viewport_set_measure_render_time(viewport: RID, enable: bool) 
 
 Sets the measurement for the given viewport RID (obtained using Viewport.get_viewport_rid()). Once enabled, viewport_get_measured_render_time_cpu() and viewport_get_measured_render_time_gpu() will return values greater than 0.0 when queried with the given viewport.
 
-void viewport_set_msaa_2d(viewport: RID, msaa: ViewportMSAA) 🔗
+void viewport_set_msaa_2d(viewport: RID, msaa: ViewportMSAA) 
 
 Sets the multisample antialiasing mode for 2D/Canvas on the specified viewport RID. Equivalent to ProjectSettings.rendering/anti_aliasing/quality/msaa_2d or Viewport.msaa_2d.
 
-void viewport_set_msaa_3d(viewport: RID, msaa: ViewportMSAA) 🔗
+void viewport_set_msaa_3d(viewport: RID, msaa: ViewportMSAA) 
 
 Sets the multisample antialiasing mode for 3D on the specified viewport RID. Equivalent to ProjectSettings.rendering/anti_aliasing/quality/msaa_3d or Viewport.msaa_3d.
 
-void viewport_set_occlusion_culling_build_quality(quality: ViewportOcclusionCullingBuildQuality) 🔗
+void viewport_set_occlusion_culling_build_quality(quality: ViewportOcclusionCullingBuildQuality) 
 
 Sets the ProjectSettings.rendering/occlusion_culling/bvh_build_quality to use for occlusion culling. This parameter is global and cannot be set on a per-viewport basis.
 
-void viewport_set_occlusion_rays_per_thread(rays_per_thread: int) 🔗
+void viewport_set_occlusion_rays_per_thread(rays_per_thread: int) 
 
 Sets the ProjectSettings.rendering/occlusion_culling/occlusion_rays_per_thread to use for occlusion culling. This parameter is global and cannot be set on a per-viewport basis.
 
-void viewport_set_parent_viewport(viewport: RID, parent_viewport: RID) 🔗
+void viewport_set_parent_viewport(viewport: RID, parent_viewport: RID) 
 
 Sets the viewport's parent to the viewport specified by the parent_viewport RID.
 
-void viewport_set_positional_shadow_atlas_quadrant_subdivision(viewport: RID, quadrant: int, subdivision: int) 🔗
+void viewport_set_positional_shadow_atlas_quadrant_subdivision(viewport: RID, quadrant: int, subdivision: int) 
 
 Sets the number of subdivisions to use in the specified shadow atlas quadrant for omni and spot shadows. See also Viewport.set_positional_shadow_atlas_quadrant_subdiv().
 
-void viewport_set_positional_shadow_atlas_size(viewport: RID, size: int, use_16_bits: bool = false) 🔗
+void viewport_set_positional_shadow_atlas_size(viewport: RID, size: int, use_16_bits: bool = false) 
 
 Sets the size of the shadow atlas's images (used for omni and spot lights) on the viewport specified by the viewport RID. The value is rounded up to the nearest power of 2. If use_16_bits is true, use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
 Note: If this is set to 0, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 
-void viewport_set_render_direct_to_screen(viewport: RID, enabled: bool) 🔗
+void viewport_set_render_direct_to_screen(viewport: RID, enabled: bool) 
 
 If true, render the contents of the viewport directly to screen. This allows a low-level optimization where you can skip drawing a viewport to the root viewport. While this optimization can result in a significant increase in speed (especially on older devices), it comes at a cost of usability. When this is enabled, you cannot read from the viewport or from the screen_texture. You also lose the benefit of certain window settings, such as the various stretch modes. Another consequence to be aware of is that in 2D the rendering happens in window coordinates, so if you have a viewport that is double the size of the window, and you set this, then only the portion that fits within the window will be drawn, no automatic scaling is possible, even if your game scene is significantly larger than the window size.
 
-void viewport_set_scaling_3d_mode(viewport: RID, scaling_3d_mode: ViewportScaling3DMode) 🔗
+void viewport_set_scaling_3d_mode(viewport: RID, scaling_3d_mode: ViewportScaling3DMode) 
 
 Sets the 3D resolution scaling mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
 
-void viewport_set_scaling_3d_scale(viewport: RID, scale: float) 🔗
+void viewport_set_scaling_3d_scale(viewport: RID, scale: float) 
 
 Scales the 3D render buffer based on the viewport size uses an image filter specified in ViewportScaling3DMode to scale the output image to the full viewport size. Values lower than 1.0 can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than 1.0 are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also ViewportMSAA for multi-sample antialiasing, which is significantly cheaper but only smoothens the edges of polygons.
 
 When using FSR upscaling, AMD recommends exposing the following values as preset options to users "Ultra Quality: 0.77", "Quality: 0.67", "Balanced: 0.59", "Performance: 0.5" instead of exposing the entire scale.
 
-void viewport_set_scenario(viewport: RID, scenario: RID) 🔗
+void viewport_set_scenario(viewport: RID, scenario: RID) 
 
 Sets a viewport's scenario. The scenario contains information about environment information, reflection atlas, etc.
 
-void viewport_set_screen_space_aa(viewport: RID, mode: ViewportScreenSpaceAA) 🔗
+void viewport_set_screen_space_aa(viewport: RID, mode: ViewportScreenSpaceAA) 
 
 Sets the viewport's screen-space antialiasing mode. Equivalent to ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa or Viewport.screen_space_aa.
 
-void viewport_set_sdf_oversize_and_scale(viewport: RID, oversize: ViewportSDFOversize, scale: ViewportSDFScale) 🔗
+void viewport_set_sdf_oversize_and_scale(viewport: RID, oversize: ViewportSDFOversize, scale: ViewportSDFScale) 
 
 Sets the viewport's 2D signed distance field ProjectSettings.rendering/2d/sdf/oversize and ProjectSettings.rendering/2d/sdf/scale. This is used when sampling the signed distance field in CanvasItem shaders as well as GPUParticles2D collision. This is not used by SDFGI in 3D rendering.
 
-void viewport_set_size(viewport: RID, width: int, height: int) 🔗
+void viewport_set_size(viewport: RID, width: int, height: int) 
 
 Sets the viewport's width and height in pixels.
 
-void viewport_set_snap_2d_transforms_to_pixel(viewport: RID, enabled: bool) 🔗
+void viewport_set_snap_2d_transforms_to_pixel(viewport: RID, enabled: bool) 
 
 If true, canvas item transforms (i.e. origin position) are snapped to the nearest pixel when rendering. This can lead to a crisper appearance at the cost of less smooth movement, especially when Camera2D smoothing is enabled. Equivalent to ProjectSettings.rendering/2d/snap/snap_2d_transforms_to_pixel.
 
-void viewport_set_snap_2d_vertices_to_pixel(viewport: RID, enabled: bool) 🔗
+void viewport_set_snap_2d_vertices_to_pixel(viewport: RID, enabled: bool) 
 
 If true, canvas item vertices (i.e. polygon points) are snapped to the nearest pixel when rendering. This can lead to a crisper appearance at the cost of less smooth movement, especially when Camera2D smoothing is enabled. Equivalent to ProjectSettings.rendering/2d/snap/snap_2d_vertices_to_pixel.
 
-void viewport_set_texture_mipmap_bias(viewport: RID, mipmap_bias: float) 🔗
+void viewport_set_texture_mipmap_bias(viewport: RID, mipmap_bias: float) 
 
 Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close). To get sharper textures at a distance without introducing too much graininess, set this between -0.75 and 0.0. Enabling temporal antialiasing (ProjectSettings.rendering/anti_aliasing/quality/use_taa) can help reduce the graininess visible when using negative mipmap bias.
 
 Note: When the 3D scaling mode is set to FSR 1.0, this value is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is -log2(1.0 / scale) + mipmap_bias.
 
-void viewport_set_transparent_background(viewport: RID, enabled: bool) 🔗
+void viewport_set_transparent_background(viewport: RID, enabled: bool) 
 
 If true, the viewport renders its background as transparent.
 
-void viewport_set_update_mode(viewport: RID, update_mode: ViewportUpdateMode) 🔗
+void viewport_set_update_mode(viewport: RID, update_mode: ViewportUpdateMode) 
 
 Sets when the viewport should be updated.
 
-void viewport_set_use_debanding(viewport: RID, enable: bool) 🔗
+void viewport_set_use_debanding(viewport: RID, enable: bool) 
 
 Equivalent to Viewport.use_debanding. See also ProjectSettings.rendering/anti_aliasing/quality/use_debanding.
 
-void viewport_set_use_hdr_2d(viewport: RID, enabled: bool) 🔗
+void viewport_set_use_hdr_2d(viewport: RID, enabled: bool) 
 
 If true, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ or Compatibility renderer, this will be an RGBA16 framebuffer. When using the Mobile renderer, it will be an RGB10_A2 framebuffer.
 
@@ -14251,33 +14251,33 @@ Additionally, 2D rendering will take place in linear color space and will be con
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the 0-1 range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as Viewport.use_hdr_2d.
 
-void viewport_set_use_occlusion_culling(viewport: RID, enable: bool) 🔗
+void viewport_set_use_occlusion_culling(viewport: RID, enable: bool) 
 
 If true, enables occlusion culling on the specified viewport. Equivalent to ProjectSettings.rendering/occlusion_culling/use_occlusion_culling.
 
-void viewport_set_use_taa(viewport: RID, enable: bool) 🔗
+void viewport_set_use_taa(viewport: RID, enable: bool) 
 
 If true, use temporal antialiasing. Equivalent to ProjectSettings.rendering/anti_aliasing/quality/use_taa or Viewport.use_taa.
 
-void viewport_set_use_xr(viewport: RID, use_xr: bool) 🔗
+void viewport_set_use_xr(viewport: RID, use_xr: bool) 
 
 If true, the viewport uses augmented or virtual reality technologies. See XRInterface.
 
-void viewport_set_vrs_mode(viewport: RID, mode: ViewportVRSMode) 🔗
+void viewport_set_vrs_mode(viewport: RID, mode: ViewportVRSMode) 
 
 Sets the Variable Rate Shading (VRS) mode for the viewport. If the GPU does not support VRS, this property is ignored. Equivalent to ProjectSettings.rendering/vrs/mode.
 
-void viewport_set_vrs_texture(viewport: RID, texture: RID) 🔗
+void viewport_set_vrs_texture(viewport: RID, texture: RID) 
 
 The texture to use when the VRS mode is set to VIEWPORT_VRS_TEXTURE. Equivalent to ProjectSettings.rendering/vrs/texture.
 
-void viewport_set_vrs_update_mode(viewport: RID, mode: ViewportVRSUpdateMode) 🔗
+void viewport_set_vrs_update_mode(viewport: RID, mode: ViewportVRSUpdateMode) 
 
 Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requires the input texture to be converted to the format usable by the VRS method supported by the hardware. The update mode defines how often this happens. If the GPU does not support VRS, or VRS is not enabled, this property is ignored.
 
 If set to VIEWPORT_VRS_UPDATE_ONCE, the input texture is copied once and the mode is changed to VIEWPORT_VRS_UPDATE_DISABLED.
 
-RID visibility_notifier_create() 🔗
+RID visibility_notifier_create() 
 
 Creates a new 3D visibility notifier object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all visibility_notifier_* RenderingServer functions.
 
@@ -14287,19 +14287,19 @@ To place in a scene, attach this notifier to an instance using instance_set_base
 
 Note: The equivalent node is VisibleOnScreenNotifier3D.
 
-void visibility_notifier_set_aabb(notifier: RID, aabb: AABB) 🔗
+void visibility_notifier_set_aabb(notifier: RID, aabb: AABB) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void visibility_notifier_set_callbacks(notifier: RID, enter_callable: Callable, exit_callable: Callable) 🔗
+void visibility_notifier_set_callbacks(notifier: RID, enter_callable: Callable, exit_callable: Callable) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void voxel_gi_allocate_data(voxel_gi: RID, to_cell_xform: Transform3D, aabb: AABB, octree_size: Vector3i, octree_cells: PackedByteArray, data_cells: PackedByteArray, distance_field: PackedByteArray, level_counts: PackedInt32Array) 🔗
+void voxel_gi_allocate_data(voxel_gi: RID, to_cell_xform: Transform3D, aabb: AABB, octree_size: Vector3i, octree_cells: PackedByteArray, data_cells: PackedByteArray, distance_field: PackedByteArray, level_counts: PackedInt32Array) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-RID voxel_gi_create() 🔗
+RID voxel_gi_create() 
 
 Creates a new voxel-based global illumination object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all voxel_gi_* RenderingServer functions.
 
@@ -14307,63 +14307,63 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 Note: The equivalent node is VoxelGI.
 
-PackedByteArray voxel_gi_get_data_cells(voxel_gi: RID) const 🔗
+PackedByteArray voxel_gi_get_data_cells(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedByteArray voxel_gi_get_distance_field(voxel_gi: RID) const 🔗
+PackedByteArray voxel_gi_get_distance_field(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedInt32Array voxel_gi_get_level_counts(voxel_gi: RID) const 🔗
+PackedInt32Array voxel_gi_get_level_counts(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-PackedByteArray voxel_gi_get_octree_cells(voxel_gi: RID) const 🔗
+PackedByteArray voxel_gi_get_octree_cells(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Vector3i voxel_gi_get_octree_size(voxel_gi: RID) const 🔗
+Vector3i voxel_gi_get_octree_size(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Transform3D voxel_gi_get_to_cell_xform(voxel_gi: RID) const 🔗
+Transform3D voxel_gi_get_to_cell_xform(voxel_gi: RID) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void voxel_gi_set_baked_exposure_normalization(voxel_gi: RID, baked_exposure: float) 🔗
+void voxel_gi_set_baked_exposure_normalization(voxel_gi: RID, baked_exposure: float) 
 
 Used to inform the renderer what exposure normalization value was used while baking the voxel gi. This value will be used and modulated at run time to ensure that the voxel gi maintains a consistent level of exposure even if the scene-wide exposure normalization is changed at run time. For more information see camera_attributes_set_exposure().
 
-void voxel_gi_set_bias(voxel_gi: RID, bias: float) 🔗
+void voxel_gi_set_bias(voxel_gi: RID, bias: float) 
 
 Sets the VoxelGIData.bias value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_dynamic_range(voxel_gi: RID, range: float) 🔗
+void voxel_gi_set_dynamic_range(voxel_gi: RID, range: float) 
 
 Sets the VoxelGIData.dynamic_range value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_energy(voxel_gi: RID, energy: float) 🔗
+void voxel_gi_set_energy(voxel_gi: RID, energy: float) 
 
 Sets the VoxelGIData.energy value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_interior(voxel_gi: RID, enable: bool) 🔗
+void voxel_gi_set_interior(voxel_gi: RID, enable: bool) 
 
 Sets the VoxelGIData.interior value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_normal_bias(voxel_gi: RID, bias: float) 🔗
+void voxel_gi_set_normal_bias(voxel_gi: RID, bias: float) 
 
 Sets the VoxelGIData.normal_bias value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_propagation(voxel_gi: RID, amount: float) 🔗
+void voxel_gi_set_propagation(voxel_gi: RID, amount: float) 
 
 Sets the VoxelGIData.propagation value to use on the specified voxel_gi's RID.
 
-void voxel_gi_set_quality(quality: VoxelGIQuality) 🔗
+void voxel_gi_set_quality(quality: VoxelGIQuality) 
 
 Sets the ProjectSettings.rendering/global_illumination/voxel_gi/quality value to use when rendering. This parameter is global and cannot be set on a per-VoxelGI basis.
 
-void voxel_gi_set_use_two_bounces(voxel_gi: RID, enable: bool) 🔗
+void voxel_gi_set_use_two_bounces(voxel_gi: RID, enable: bool) 
 
 Sets the VoxelGIData.use_two_bounces value to use on the specified voxel_gi's RID.
 
@@ -14489,121 +14489,121 @@ get_view_count() const
 
 has_texture(context: StringName, name: StringName) const
 
-void clear_context(context: StringName) 🔗
+void clear_context(context: StringName) 
 
 Frees all buffers related to this context.
 
-RID create_texture(context: StringName, name: StringName, data_format: DataFormat, usage_bits: int, texture_samples: TextureSamples, size: Vector2i, layers: int, mipmaps: int, unique: bool, discardable: bool) 🔗
+RID create_texture(context: StringName, name: StringName, data_format: DataFormat, usage_bits: int, texture_samples: TextureSamples, size: Vector2i, layers: int, mipmaps: int, unique: bool, discardable: bool) 
 
 Create a new texture with the given definition and cache this under the given name. Will return the existing texture if it already exists.
 
-RID create_texture_from_format(context: StringName, name: StringName, format: RDTextureFormat, view: RDTextureView, unique: bool) 🔗
+RID create_texture_from_format(context: StringName, name: StringName, format: RDTextureFormat, view: RDTextureView, unique: bool) 
 
 Create a new texture using the given format and view and cache this under the given name. Will return the existing texture if it already exists.
 
-RID create_texture_view(context: StringName, name: StringName, view_name: StringName, view: RDTextureView) 🔗
+RID create_texture_view(context: StringName, name: StringName, view_name: StringName, view: RDTextureView) 
 
 Create a new texture view for an existing texture and cache this under the given view_name. Will return the existing texture view if it already exists. Will error if the source texture doesn't exist.
 
-RID get_color_layer(layer: int, msaa: bool = false) 🔗
+RID get_color_layer(layer: int, msaa: bool = false) 
 
 Returns the specified layer from the color texture we are rendering 3D content to.
 
 If msaa is true and MSAA is enabled, this returns the MSAA variant of the buffer.
 
-RID get_color_texture(msaa: bool = false) 🔗
+RID get_color_texture(msaa: bool = false) 
 
 Returns the color texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
 If msaa is true and MSAA is enabled, this returns the MSAA variant of the buffer.
 
-RID get_depth_layer(layer: int, msaa: bool = false) 🔗
+RID get_depth_layer(layer: int, msaa: bool = false) 
 
 Returns the specified layer from the depth texture we are rendering 3D content to.
 
 If msaa is true and MSAA is enabled, this returns the MSAA variant of the buffer.
 
-RID get_depth_texture(msaa: bool = false) 🔗
+RID get_depth_texture(msaa: bool = false) 
 
 Returns the depth texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
 If msaa is true and MSAA is enabled, this returns the MSAA variant of the buffer.
 
-float get_fsr_sharpness() const 🔗
+float get_fsr_sharpness() const 
 
 Returns the FSR sharpness value used while rendering the 3D content (if get_scaling_3d_mode() is an FSR mode).
 
-Vector2i get_internal_size() const 🔗
+Vector2i get_internal_size() const 
 
 Returns the internal size of the render buffer (size before upscaling) with which textures are created by default.
 
-ViewportMSAA get_msaa_3d() const 🔗
+ViewportMSAA get_msaa_3d() const 
 
 Returns the applied 3D MSAA mode for this viewport.
 
-RID get_render_target() const 🔗
+RID get_render_target() const 
 
 Returns the render target associated with this buffers object.
 
-ViewportScaling3DMode get_scaling_3d_mode() const 🔗
+ViewportScaling3DMode get_scaling_3d_mode() const 
 
 Returns the scaling mode used for upscaling.
 
-ViewportScreenSpaceAA get_screen_space_aa() const 🔗
+ViewportScreenSpaceAA get_screen_space_aa() const 
 
 Returns the screen-space antialiasing method applied.
 
-Vector2i get_target_size() const 🔗
+Vector2i get_target_size() const 
 
 Returns the target size of the render buffer (size after upscaling).
 
-RID get_texture(context: StringName, name: StringName) const 🔗
+RID get_texture(context: StringName, name: StringName) const 
 
 Returns a cached texture with this name.
 
-RDTextureFormat get_texture_format(context: StringName, name: StringName) const 🔗
+RDTextureFormat get_texture_format(context: StringName, name: StringName) const 
 
 Returns the texture format information with which a cached texture was created.
 
-TextureSamples get_texture_samples() const 🔗
+TextureSamples get_texture_samples() const 
 
 Returns the number of MSAA samples used.
 
-RID get_texture_slice(context: StringName, name: StringName, layer: int, mipmap: int, layers: int, mipmaps: int) 🔗
+RID get_texture_slice(context: StringName, name: StringName, layer: int, mipmap: int, layers: int, mipmaps: int) 
 
 Returns a specific slice (layer or mipmap) for a cached texture.
 
-Vector2i get_texture_slice_size(context: StringName, name: StringName, mipmap: int) 🔗
+Vector2i get_texture_slice_size(context: StringName, name: StringName, mipmap: int) 
 
 Returns the texture size of a given slice of a cached texture.
 
-RID get_texture_slice_view(context: StringName, name: StringName, layer: int, mipmap: int, layers: int, mipmaps: int, view: RDTextureView) 🔗
+RID get_texture_slice_view(context: StringName, name: StringName, layer: int, mipmap: int, layers: int, mipmaps: int, view: RDTextureView) 
 
 Returns a specific view of a slice (layer or mipmap) for a cached texture.
 
-bool get_use_debanding() const 🔗
+bool get_use_debanding() const 
 
 Returns true if debanding is enabled.
 
-bool get_use_taa() const 🔗
+bool get_use_taa() const 
 
 Returns true if TAA is enabled.
 
-RID get_velocity_layer(layer: int, msaa: bool = false) 🔗
+RID get_velocity_layer(layer: int, msaa: bool = false) 
 
 Returns the specified layer from the velocity texture we are rendering 3D content to.
 
-RID get_velocity_texture(msaa: bool = false) 🔗
+RID get_velocity_texture(msaa: bool = false) 
 
 Returns the velocity texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
 If msaa is true and MSAA is enabled, this returns the MSAA variant of the buffer.
 
-int get_view_count() const 🔗
+int get_view_count() const 
 
 Returns the view count for the associated viewport.
 
-bool has_texture(context: StringName, name: StringName) const 🔗
+bool has_texture(context: StringName, name: StringName) const 
 
 Returns true if a cached texture exists for this name.
 
@@ -14634,7 +14634,7 @@ Note: This is an internal rendering server object, do not instantiate this from 
 
 configure(config: RenderSceneBuffersConfiguration)
 
-void configure(config: RenderSceneBuffersConfiguration) 🔗
+void configure(config: RenderSceneBuffersConfiguration) 
 
 This method is called by the rendering server when the associated viewport's configuration is changed. It will discard the old buffers and recreate the internal buffers used.
 
@@ -14694,31 +14694,31 @@ get_view_eye_offset(view: int) const
 
 get_view_projection(view: int) const
 
-Projection get_cam_projection() const 🔗
+Projection get_cam_projection() const 
 
 Returns the camera projection used to render this frame.
 
 Note: If more than one view is rendered, this will return a combined projection.
 
-Transform3D get_cam_transform() const 🔗
+Transform3D get_cam_transform() const 
 
 Returns the camera transform used to render this frame.
 
 Note: If more than one view is rendered, this will return a centered transform.
 
-RID get_uniform_buffer() const 🔗
+RID get_uniform_buffer() const 
 
 Return the RID of the uniform buffer containing the scene data as a UBO.
 
-int get_view_count() const 🔗
+int get_view_count() const 
 
 Returns the number of views being rendered.
 
-Vector3 get_view_eye_offset(view: int) const 🔗
+Vector3 get_view_eye_offset(view: int) const 
 
 Returns the eye offset per view used to render this frame. This is the offset between our camera transform and the eye transform.
 
-Projection get_view_projection(view: int) const 🔗
+Projection get_view_projection(view: int) const 
 
 Returns the view projection per view used to render this frame.
 
@@ -14756,7 +14756,7 @@ compress/lossy_quality
 
 compress/rdo_quality_loss
 
-int compress/channel_pack = 0 🔗
+int compress/channel_pack = 0 
 
 Controls how color channels should be used in the imported texture.
 
@@ -14766,7 +14766,7 @@ Optimized:, allows the RG color format to be used if the texture does not use th
 
 Normal Map (RG Channels): This forces all layers from the texture to be imported with the RG color format, with only the red and green channels preserved. RGTC (Red-Green Texture Compression) compression is able to preserve its detail much better, while using the same amount of memory as a standard RGBA VRAM-compressed texture. This only has an effect on textures with the VRAM Compressed or Basis Universal compression modes. This mode is only available in layered textures (Cubemap, CubemapArray, Texture2DArray and Texture3D).
 
-int compress/hdr_compression = 1 🔗
+int compress/hdr_compression = 1 
 
 Controls how VRAM compression should be performed for HDR images.
 
@@ -14778,7 +14778,7 @@ Always: Force VRAM compression even for HDR textures with an alpha channel. To p
 
 Note: Only effective on Radiance HDR (.hdr) and OpenEXR (.exr) images.
 
-bool compress/high_quality = false 🔗
+bool compress/high_quality = false 
 
 If true, uses BPTC compression on desktop platforms and ASTC compression on mobile platforms. When using BPTC, BC7 is used for SDR textures and BC6H is used for HDR textures.
 
@@ -14786,11 +14786,11 @@ If false, uses the faster but lower-quality S3TC compression on desktop platform
 
 BPTC and ASTC support VRAM compression for HDR textures, but S3TC and ETC2 do not (see compress/hdr_compression).
 
-float compress/lossy_quality = 0.7 🔗
+float compress/lossy_quality = 0.7 
 
 The quality to use when using the Lossy compression mode. Higher values result in better quality, at the cost of larger file sizes. Lossy quality does not affect memory usage of the imported texture, only its file size on disk.
 
-int compress/mode = 1 🔗
+int compress/mode = 1 
 
 The compression mode to use. Each compression mode provides a different tradeoff:
 
@@ -14806,7 +14806,7 @@ Basis Universal: Reduced quality, low memory usage, lowest size on disk, slow im
 
 See Compress mode in the manual for more details.
 
-float compress/rdo_quality_loss = 0.0 🔗
+float compress/rdo_quality_loss = 0.0 
 
 If greater than or equal to 0.01, enables Rate-Distortion Optimization (RDO) to reduce file size. Higher values result in smaller file sizes but lower quality.
 
@@ -14814,11 +14814,11 @@ Note: Enabling RDO makes encoding times significantly longer, especially when th
 
 See also ProjectSettings.rendering/textures/basis_universal/rdo_dict_size and ProjectSettings.rendering/textures/basis_universal/zstd_supercompression_level if you want to reduce the file size further.
 
-int compress/uastc_level = 0 🔗
+int compress/uastc_level = 0 
 
 The UASTC encoding level. Higher values result in better quality but make encoding times longer.
 
-bool mipmaps/generate = true 🔗
+bool mipmaps/generate = true 
 
 If true, smaller versions of the texture are generated on import. For example, a 64×64 texture will generate 6 mipmaps (32×32, 16×16, 8×8, 4×4, 2×2, 1×1). This has several benefits:
 
@@ -14830,11 +14830,11 @@ The downside of mipmaps is that they increase memory usage by roughly 33% (for T
 
 It's recommended to enable mipmaps in 3D. However, in 2D, this should only be enabled if your project visibly benefits from having mipmaps enabled. If the camera never zooms out significantly, there won't be a benefit to enabling mipmaps but memory usage will increase.
 
-int mipmaps/limit = -1 🔗
+int mipmaps/limit = -1 
 
 Unimplemented. This currently has no effect when changed.
 
-int slices/arrangement = 1 🔗
+int slices/arrangement = 1 
 
 Controls how the cubemap's texture is internally laid out. When using high-resolution cubemaps, 2×3 and 3×2 are less prone to exceeding hardware texture size limits compared to 1×6 and 6×1.
 
@@ -15029,15 +15029,15 @@ has_built_in_include_file(filename: String) static
 
 list_built_in_include_files() static
 
-String get_built_in_include_file(filename: String) static 🔗
+String get_built_in_include_file(filename: String) static 
 
 Returns the code for the built-in shader fragment. You can also access this in your shader code through #include "filename".
 
-bool has_built_in_include_file(filename: String) static 🔗
+bool has_built_in_include_file(filename: String) static 
 
 Returns true if an include file with this name exists.
 
-PackedStringArray list_built_in_include_files() static 🔗
+PackedStringArray list_built_in_include_files() static 
 
 Returns a list of built-in include files that are currently registered.
 
@@ -15105,11 +15105,11 @@ void set_shader(value: Shader)
 
 The Shader program used to render this material.
 
-Variant get_shader_parameter(param: StringName) const 🔗
+Variant get_shader_parameter(param: StringName) const 
 
 Returns the current value set for this material of a uniform in the shader.
 
-void set_shader_parameter(param: StringName, value: Variant) 🔗
+void set_shader_parameter(param: StringName, value: Variant) 
 
 Changes the value set for this material of a uniform in the shader.
 
@@ -15176,7 +15176,7 @@ void set_code(value: String)
 
 Returns the shader's code as the user has written it, not the full generated code used internally.
 
-Texture get_default_texture_parameter(name: StringName, index: int = 0) const 🔗
+Texture get_default_texture_parameter(name: StringName, index: int = 0) const 
 
 Returns the texture that is set as default for the specified parameter.
 
@@ -15184,21 +15184,21 @@ Note: name must match the name of the uniform in the code exactly.
 
 Note: If the sampler array is used use index to access the specified texture.
 
-Mode get_mode() const 🔗
+Mode get_mode() const 
 
 Returns the shader mode for the shader.
 
-Array get_shader_uniform_list(get_groups: bool = false) 🔗
+Array get_shader_uniform_list(get_groups: bool = false) 
 
 Returns the list of shader uniforms that can be assigned to a ShaderMaterial, for use with ShaderMaterial.set_shader_parameter() and ShaderMaterial.get_shader_parameter(). The parameters returned are contained in dictionaries in a similar format to the ones returned by Object.get_property_list().
 
 If argument get_groups is true, parameter grouping hints are also included in the list.
 
-void inspect_native_shader_code() 🔗
+void inspect_native_shader_code() 
 
 Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code. See also Material.inspect_native_shader_code().
 
-void set_default_texture_parameter(name: StringName, texture: Texture, index: int = 0) 🔗
+void set_default_texture_parameter(name: StringName, texture: Texture, index: int = 0) 
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the ShaderMaterial.
 
@@ -15497,7 +15497,7 @@ Uses the fast filtering algorithm to process the radiance map. In general this r
 
 Note: The fast filtering algorithm is limited to 256×256 cubemaps, so radiance_size must be set to RADIANCE_SIZE_256. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
-ProcessMode process_mode = 0 🔗
+ProcessMode process_mode = 0 
 
 void set_process_mode(value: ProcessMode)
 
@@ -15505,7 +15505,7 @@ ProcessMode get_process_mode()
 
 The method for generating the radiance map from the sky. The radiance map is a cubemap with increasingly blurry versions of the sky corresponding to different levels of roughness. Radiance maps can be expensive to calculate.
 
-RadianceSize radiance_size = 3 🔗
+RadianceSize radiance_size = 3 
 
 void set_radiance_size(value: RadianceSize)
 
@@ -15515,7 +15515,7 @@ The Sky's radiance map size. The higher the radiance map size, the more detailed
 
 Note: Some hardware will have trouble with higher radiance sizes, especially RADIANCE_SIZE_512 and above. Only use such high values on high-end hardware.
 
-Material sky_material 🔗
+Material sky_material 
 
 void set_material(value: Material)
 
@@ -15932,7 +15932,7 @@ Uniform set cache manager for Rendering Device based renderers. Provides a way t
 
 get_cache(shader: RID, set: int, uniforms: Array[RDUniform]) static
 
-RID get_cache(shader: RID, set: int, uniforms: Array[RDUniform]) static 🔗
+RID get_cache(shader: RID, set: int, uniforms: Array[RDUniform]) static 
 
 Creates/returns a cached uniform set based on the provided uniforms for a given shader.
 
@@ -16535,7 +16535,7 @@ update_mouse_cursor_state()
 
 warp_mouse(position: Vector2)
 
-gui_focus_changed(node: Control) 🔗
+gui_focus_changed(node: Control) 
 
 Emitted when a Control node grabs keyboard focus.
 
@@ -16543,7 +16543,7 @@ Note: A Control node losing focus doesn't cause this signal to be emitted.
 
 Emitted when the size of the viewport is changed, whether by resizing of window, or some other means.
 
-enum PositionalShadowAtlasQuadrantSubdiv: 🔗
+enum PositionalShadowAtlasQuadrantSubdiv: 
 
 PositionalShadowAtlasQuadrantSubdiv SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED = 0
 
@@ -16577,7 +16577,7 @@ PositionalShadowAtlasQuadrantSubdiv SHADOW_ATLAS_QUADRANT_SUBDIV_MAX = 7
 
 Represents the size of the PositionalShadowAtlasQuadrantSubdiv enum.
 
-enum Scaling3DMode: 🔗
+enum Scaling3DMode: 
 
 Scaling3DMode SCALING_3D_MODE_BILINEAR = 0
 
@@ -16631,7 +16631,7 @@ Use 8× Multisample Antialiasing. This has a very high performance cost. The dif
 
 Represents the size of the MSAA enum.
 
-enum AnisotropicFiltering: 🔗
+enum AnisotropicFiltering: 
 
 AnisotropicFiltering ANISOTROPY_DISABLED = 0
 
@@ -16657,7 +16657,7 @@ AnisotropicFiltering ANISOTROPY_MAX = 5
 
 Represents the size of the AnisotropicFiltering enum.
 
-enum ScreenSpaceAA: 🔗
+enum ScreenSpaceAA: 
 
 ScreenSpaceAA SCREEN_SPACE_AA_DISABLED = 0
 
@@ -16691,7 +16691,7 @@ RenderInfo RENDER_INFO_MAX = 3
 
 Represents the size of the RenderInfo enum.
 
-enum RenderInfoType: 🔗
+enum RenderInfoType: 
 
 RenderInfoType RENDER_INFO_TYPE_VISIBLE = 0
 
@@ -16867,7 +16867,7 @@ Draws the internal resolution buffer of the scene in linear colorspace before to
 
 Note: Only supported when using the Forward+ or Mobile rendering methods.
 
-enum DefaultCanvasItemTextureFilter: 🔗
+enum DefaultCanvasItemTextureFilter: 
 
 DefaultCanvasItemTextureFilter DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST = 0
 
@@ -16893,7 +16893,7 @@ DefaultCanvasItemTextureFilter DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX = 4
 
 Represents the size of the DefaultCanvasItemTextureFilter enum.
 
-enum DefaultCanvasItemTextureRepeat: 🔗
+enum DefaultCanvasItemTextureRepeat: 
 
 DefaultCanvasItemTextureRepeat DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_DISABLED = 0
 
@@ -16959,7 +16959,7 @@ Variable Rate Shading's texture is supplied by the primary XRInterface.
 
 Represents the size of the VRSMode enum.
 
-enum VRSUpdateMode: 🔗
+enum VRSUpdateMode: 
 
 VRSUpdateMode VRS_UPDATE_DISABLED = 0
 
@@ -16977,7 +16977,7 @@ VRSUpdateMode VRS_UPDATE_MAX = 3
 
 Represents the size of the VRSUpdateMode enum.
 
-AnisotropicFiltering anisotropic_filtering_level = 2 🔗
+AnisotropicFiltering anisotropic_filtering_level = 2 
 
 void set_anisotropic_filtering_level(value: AnisotropicFiltering)
 
@@ -16991,7 +16991,7 @@ Note: In 3D, for this setting to have an effect, set BaseMaterial3D.texture_filt
 
 Note: In 2D, for this setting to have an effect, set CanvasItem.texture_filter to CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC or CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC on the CanvasItem node displaying the texture (or in CanvasTexture). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
 
-bool audio_listener_enable_2d = false 🔗
+bool audio_listener_enable_2d = false 
 
 void set_as_audio_listener_2d(value: bool)
 
@@ -16999,7 +16999,7 @@ bool is_audio_listener_2d()
 
 If true, the viewport will process 2D audio streams.
 
-bool audio_listener_enable_3d = false 🔗
+bool audio_listener_enable_3d = false 
 
 void set_as_audio_listener_3d(value: bool)
 
@@ -17007,7 +17007,7 @@ bool is_audio_listener_3d()
 
 If true, the viewport will process 3D audio streams.
 
-int canvas_cull_mask = 4294967295 🔗
+int canvas_cull_mask = 4294967295 
 
 void set_canvas_cull_mask(value: int)
 
@@ -17015,7 +17015,7 @@ int get_canvas_cull_mask()
 
 The rendering layers in which this Viewport renders CanvasItem nodes.
 
-DefaultCanvasItemTextureFilter canvas_item_default_texture_filter = 1 🔗
+DefaultCanvasItemTextureFilter canvas_item_default_texture_filter = 1 
 
 void set_default_canvas_item_texture_filter(value: DefaultCanvasItemTextureFilter)
 
@@ -17023,7 +17023,7 @@ DefaultCanvasItemTextureFilter get_default_canvas_item_texture_filter()
 
 Sets the default filter mode used by CanvasItems in this Viewport.
 
-DefaultCanvasItemTextureRepeat canvas_item_default_texture_repeat = 0 🔗
+DefaultCanvasItemTextureRepeat canvas_item_default_texture_repeat = 0 
 
 void set_default_canvas_item_texture_repeat(value: DefaultCanvasItemTextureRepeat)
 
@@ -17031,7 +17031,7 @@ DefaultCanvasItemTextureRepeat get_default_canvas_item_texture_repeat()
 
 Sets the default repeat mode used by CanvasItems in this Viewport.
 
-Transform2D canvas_transform 🔗
+Transform2D canvas_transform 
 
 void set_canvas_transform(value: Transform2D)
 
@@ -17039,7 +17039,7 @@ Transform2D get_canvas_transform()
 
 The canvas transform of the viewport, useful for changing the on-screen positions of all child CanvasItems. This is relative to the global canvas transform of the viewport.
 
-DebugDraw debug_draw = 0 🔗
+DebugDraw debug_draw = 0 
 
 void set_debug_draw(value: DebugDraw)
 
@@ -17047,7 +17047,7 @@ DebugDraw get_debug_draw()
 
 The overlay mode for test rendered geometry in debug purposes.
 
-bool disable_3d = false 🔗
+bool disable_3d = false 
 
 void set_disable_3d(value: bool)
 
@@ -17055,7 +17055,7 @@ bool is_3d_disabled()
 
 Disable 3D rendering (but keep 2D rendering).
 
-float fsr_sharpness = 0.2 🔗
+float fsr_sharpness = 0.2 
 
 void set_fsr_sharpness(value: float)
 
@@ -17065,7 +17065,7 @@ Determines how sharp the upscaled image will be when using the FSR upscaling mod
 
 To control this property on the root viewport, set the ProjectSettings.rendering/scaling_3d/fsr_sharpness project setting.
 
-Transform2D global_canvas_transform 🔗
+Transform2D global_canvas_transform 
 
 void set_global_canvas_transform(value: Transform2D)
 
@@ -17073,7 +17073,7 @@ Transform2D get_global_canvas_transform()
 
 The global canvas transform of the viewport. The canvas transform is relative to this.
 
-bool gui_disable_input = false 🔗
+bool gui_disable_input = false 
 
 void set_disable_input(value: bool)
 
@@ -17081,7 +17081,7 @@ bool is_input_disabled()
 
 If true, the viewport will not receive input events.
 
-bool gui_embed_subwindows = false 🔗
+bool gui_embed_subwindows = false 
 
 void set_embedding_subwindows(value: bool)
 
@@ -17089,7 +17089,7 @@ bool is_embedding_subwindows()
 
 If true, sub-windows (popups and dialogs) will be embedded inside application window as control-like nodes. If false, they will appear as separate windows handled by the operating system.
 
-bool gui_snap_controls_to_pixels = true 🔗
+bool gui_snap_controls_to_pixels = true 
 
 void set_snap_controls_to_pixels(value: bool)
 
@@ -17097,7 +17097,7 @@ bool is_snap_controls_to_pixels_enabled()
 
 If true, the GUI controls on the viewport will lay pixel perfectly.
 
-bool handle_input_locally = true 🔗
+bool handle_input_locally = true 
 
 void set_handle_input_locally(value: bool)
 
@@ -17109,7 +17109,7 @@ A SubViewportContainer will automatically set this property to false for the Vie
 
 See also set_input_as_handled() and is_input_handled().
 
-float mesh_lod_threshold = 1.0 🔗
+float mesh_lod_threshold = 1.0 
 
 void set_mesh_lod_threshold(value: float)
 
@@ -17133,7 +17133,7 @@ The multisample antialiasing mode for 3D rendering. A higher number results in s
 
 See also ProjectSettings.rendering/anti_aliasing/quality/msaa_3d and RenderingServer.viewport_set_msaa_3d().
 
-bool oversampling = true 🔗
+bool oversampling = true 
 
 void set_use_oversampling(value: bool)
 
@@ -17141,7 +17141,7 @@ bool is_using_oversampling()
 
 If true and one of the following conditions are true: SubViewport.size_2d_override_stretch and SubViewport.size_2d_override are set, Window.content_scale_factor is set and scaling is enabled, oversampling_override is set, font and DPITexture oversampling are enabled.
 
-float oversampling_override = 0.0 🔗
+float oversampling_override = 0.0 
 
 void set_oversampling_override(value: float)
 
@@ -17149,7 +17149,7 @@ float get_oversampling_override()
 
 If greater than zero, this value is used as the font oversampling factor, otherwise oversampling is equal to viewport scale.
 
-bool own_world_3d = false 🔗
+bool own_world_3d = false 
 
 void set_use_own_world_3d(value: bool)
 
@@ -17157,7 +17157,7 @@ bool is_using_own_world_3d()
 
 If true, the viewport will use a unique copy of the World3D defined in world_3d.
 
-bool physics_object_picking = false 🔗
+bool physics_object_picking = false 
 
 void set_physics_object_picking(value: bool)
 
@@ -17167,7 +17167,7 @@ If true, the objects rendered by viewport become subjects of mouse picking proce
 
 Note: The number of simultaneously pickable objects is limited to 64 and they are selected in a non-deterministic order, which can be different in each picking process.
 
-bool physics_object_picking_first_only = false 🔗
+bool physics_object_picking_first_only = false 
 
 void set_physics_object_picking_first_only(value: bool)
 
@@ -17179,7 +17179,7 @@ If false, an input_event signal will be sent to all physics objects in the mouse
 
 This applies to 2D CanvasItem object picking only.
 
-bool physics_object_picking_sort = false 🔗
+bool physics_object_picking_sort = false 
 
 void set_physics_object_picking_sort(value: bool)
 
@@ -17191,7 +17191,7 @@ Note: This setting is disabled by default because of its potential expensive com
 
 Note: Sorting happens after selecting the pickable objects. Because of the limitation of 64 simultaneously pickable objects, it is not guaranteed that the object with the highest CanvasItem.z_index receives the picking event.
 
-bool positional_shadow_atlas_16_bits = true 🔗
+bool positional_shadow_atlas_16_bits = true 
 
 void set_positional_shadow_atlas_16_bits(value: bool)
 
@@ -17199,7 +17199,7 @@ bool get_positional_shadow_atlas_16_bits()
 
 Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
-PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_0 = 2 🔗
+PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_0 = 2 
 
 void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv)
 
@@ -17207,7 +17207,7 @@ PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(
 
 The subdivision amount of the first quadrant on the shadow atlas.
 
-PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_1 = 2 🔗
+PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_1 = 2 
 
 void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv)
 
@@ -17215,7 +17215,7 @@ PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(
 
 The subdivision amount of the second quadrant on the shadow atlas.
 
-PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_2 = 3 🔗
+PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_2 = 3 
 
 void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv)
 
@@ -17223,7 +17223,7 @@ PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(
 
 The subdivision amount of the third quadrant on the shadow atlas.
 
-PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_3 = 4 🔗
+PositionalShadowAtlasQuadrantSubdiv positional_shadow_atlas_quad_3 = 4 
 
 void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv)
 
@@ -17231,7 +17231,7 @@ PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(
 
 The subdivision amount of the fourth quadrant on the shadow atlas.
 
-int positional_shadow_atlas_size = 2048 🔗
+int positional_shadow_atlas_size = 2048 
 
 void set_positional_shadow_atlas_size(value: int)
 
@@ -17241,7 +17241,7 @@ The shadow atlas' resolution (used for omni and spot lights). The value is round
 
 Note: If this is set to 0, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 
-Scaling3DMode scaling_3d_mode = 0 🔗
+Scaling3DMode scaling_3d_mode = 0 
 
 void set_scaling_3d_mode(value: Scaling3DMode)
 
@@ -17251,7 +17251,7 @@ Sets scaling 3D mode. Bilinear scaling renders at different resolution to either
 
 To control this property on the root viewport, set the ProjectSettings.rendering/scaling_3d/mode project setting.
 
-float scaling_3d_scale = 1.0 🔗
+float scaling_3d_scale = 1.0 
 
 void set_scaling_3d_scale(value: float)
 
@@ -17263,7 +17263,7 @@ When using FSR upscaling, AMD recommends exposing the following values as preset
 
 To control this property on the root viewport, set the ProjectSettings.rendering/scaling_3d/scale project setting.
 
-ScreenSpaceAA screen_space_aa = 0 🔗
+ScreenSpaceAA screen_space_aa = 0 
 
 void set_screen_space_aa(value: ScreenSpaceAA)
 
@@ -17273,7 +17273,7 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 
 See also ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa and RenderingServer.viewport_set_screen_space_aa().
 
-SDFOversize sdf_oversize = 1 🔗
+SDFOversize sdf_oversize = 1 
 
 void set_sdf_oversize(value: SDFOversize)
 
@@ -17283,7 +17283,7 @@ Controls how much of the original viewport's size should be covered by the 2D si
 
 The percentage is added on each axis and on both sides. For example, with the default SDF_OVERSIZE_120_PERCENT, the signed distance field will cover 20% of the viewport's size outside the viewport on each side (top, right, bottom, left).
 
-SDFScale sdf_scale = 1 🔗
+SDFScale sdf_scale = 1 
 
 void set_sdf_scale(value: SDFScale)
 
@@ -17291,7 +17291,7 @@ SDFScale get_sdf_scale()
 
 The resolution scale to use for the 2D signed distance field. Higher values lead to a more precise and more stable signed distance field as the camera moves, at the cost of performance.
 
-bool snap_2d_transforms_to_pixel = false 🔗
+bool snap_2d_transforms_to_pixel = false 
 
 void set_snap_2d_transforms_to_pixel(value: bool)
 
@@ -17299,7 +17299,7 @@ bool is_snap_2d_transforms_to_pixel_enabled()
 
 If true, CanvasItem nodes will internally snap to full pixels. Their position can still be sub-pixel, but the decimals will not have effect. This can lead to a crisper appearance at the cost of less smooth movement, especially when Camera2D smoothing is enabled.
 
-bool snap_2d_vertices_to_pixel = false 🔗
+bool snap_2d_vertices_to_pixel = false 
 
 void set_snap_2d_vertices_to_pixel(value: bool)
 
@@ -17307,7 +17307,7 @@ bool is_snap_2d_vertices_to_pixel_enabled()
 
 If true, vertices of CanvasItem nodes will snap to full pixels. Only affects the final vertex positions, not the transforms. This can lead to a crisper appearance at the cost of less smooth movement, especially when Camera2D smoothing is enabled.
 
-float texture_mipmap_bias = 0.0 🔗
+float texture_mipmap_bias = 0.0 
 
 void set_texture_mipmap_bias(value: float)
 
@@ -17321,7 +17321,7 @@ Note: If scaling_3d_scale is lower than 1.0 (exclusive), texture_mipmap_bias is 
 
 To control this property on the root viewport, set the ProjectSettings.rendering/textures/default_filters/texture_mipmap_bias project setting.
 
-bool transparent_bg = false 🔗
+bool transparent_bg = false 
 
 void set_transparent_background(value: bool)
 
@@ -17331,7 +17331,7 @@ If true, the viewport should render its background as transparent.
 
 Note: Due to technical limitations, certain rendering features are disabled when a viewport has a transparent background. This currently applies to screen-space reflections, subsurface scattering, and depth of field.
 
-bool use_debanding = false 🔗
+bool use_debanding = false 
 
 void set_use_debanding(value: bool)
 
@@ -17343,7 +17343,7 @@ In some cases, debanding may introduce a slightly noticeable dithering pattern. 
 
 See also ProjectSettings.rendering/anti_aliasing/quality/use_debanding and RenderingServer.viewport_set_use_debanding().
 
-bool use_hdr_2d = false 🔗
+bool use_hdr_2d = false 
 
 void set_use_hdr_2d(value: bool)
 
@@ -17355,7 +17355,7 @@ Additionally, 2D rendering will take place in linear color space and will be con
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the 0-1 range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
-bool use_occlusion_culling = false 🔗
+bool use_occlusion_culling = false 
 
 void set_use_occlusion_culling(value: bool)
 
@@ -17367,7 +17367,7 @@ Note: Enabling occlusion culling has a cost on the CPU. Only enable occlusion cu
 
 Note: Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with module_raycast_enabled=yes.
 
-bool use_taa = false 🔗
+bool use_taa = false 
 
 void set_use_taa(value: bool)
 
@@ -17377,13 +17377,13 @@ Note: The implementation is not complete yet, some visual instances such as part
 
 See also ProjectSettings.rendering/anti_aliasing/quality/use_taa and RenderingServer.viewport_set_use_taa().
 
-bool use_xr = false 🔗
+bool use_xr = false 
 
 void set_use_xr(value: bool)
 
 If true, the viewport will use the primary XR interface to render XR output. When applicable this can result in a stereoscopic image and the resulting render being output to a headset.
 
-VRSMode vrs_mode = 0 🔗
+VRSMode vrs_mode = 0 
 
 void set_vrs_mode(value: VRSMode)
 
@@ -17391,7 +17391,7 @@ VRSMode get_vrs_mode()
 
 The Variable Rate Shading (VRS) mode that is used for this viewport. Note, if hardware does not support VRS this property is ignored.
 
-Texture2D vrs_texture 🔗
+Texture2D vrs_texture 
 
 void set_vrs_texture(value: Texture2D)
 
@@ -17401,7 +17401,7 @@ Texture to use when vrs_mode is set to VRS_TEXTURE.
 
 The texture must use a lossless compression format so that colors can be matched precisely. The following VRS densities are mapped to various colors, with brighter colors representing a lower level of shading precision:
 
-VRSUpdateMode vrs_update_mode = 1 🔗
+VRSUpdateMode vrs_update_mode = 1 
 
 void set_vrs_update_mode(value: VRSUpdateMode)
 
@@ -17421,71 +17421,71 @@ World3D get_world_3d()
 
 The custom World3D which can be used as 3D environment source.
 
-World2D find_world_2d() const 🔗
+World2D find_world_2d() const 
 
 Returns the first valid World2D for this viewport, searching the world_2d property of itself and any Viewport ancestor.
 
-World3D find_world_3d() const 🔗
+World3D find_world_3d() const 
 
 Returns the first valid World3D for this viewport, searching the world_3d property of itself and any Viewport ancestor.
 
-AudioListener2D get_audio_listener_2d() const 🔗
+AudioListener2D get_audio_listener_2d() const 
 
 Returns the currently active 2D audio listener. Returns null if there are no active 2D audio listeners, in which case the active 2D camera will be treated as listener.
 
-AudioListener3D get_audio_listener_3d() const 🔗
+AudioListener3D get_audio_listener_3d() const 
 
 Returns the currently active 3D audio listener. Returns null if there are no active 3D audio listeners, in which case the active 3D camera will be treated as listener.
 
-Camera2D get_camera_2d() const 🔗
+Camera2D get_camera_2d() const 
 
 Returns the currently active 2D camera. Returns null if there are no active cameras.
 
-Camera3D get_camera_3d() const 🔗
+Camera3D get_camera_3d() const 
 
 Returns the currently active 3D camera.
 
-bool get_canvas_cull_mask_bit(layer: int) const 🔗
+bool get_canvas_cull_mask_bit(layer: int) const 
 
 Returns an individual bit on the rendering layer mask.
 
-Array[Window] get_embedded_subwindows() const 🔗
+Array[Window] get_embedded_subwindows() const 
 
 Returns a list of the visible embedded Windows inside the viewport.
 
 Note: Windows inside other viewports will not be listed.
 
-Transform2D get_final_transform() const 🔗
+Transform2D get_final_transform() const 
 
 Returns the transform from the viewport's coordinate system to the embedder's coordinate system.
 
-Vector2 get_mouse_position() const 🔗
+Vector2 get_mouse_position() const 
 
 Returns the mouse's position in this Viewport using the coordinate system of this Viewport.
 
-float get_oversampling() const 🔗
+float get_oversampling() const 
 
 Returns viewport oversampling factor.
 
-PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(quadrant: int) const 🔗
+PositionalShadowAtlasQuadrantSubdiv get_positional_shadow_atlas_quadrant_subdiv(quadrant: int) const 
 
 Returns the positional shadow atlas quadrant subdivision of the specified quadrant.
 
-int get_render_info(type: RenderInfoType, info: RenderInfo) 🔗
+int get_render_info(type: RenderInfoType, info: RenderInfo) 
 
 Returns rendering statistics of the given type.
 
-Transform2D get_screen_transform() const 🔗
+Transform2D get_screen_transform() const 
 
 Returns the transform from the Viewport's coordinates to the screen coordinates of the containing window manager window.
 
-Transform2D get_stretch_transform() const 🔗
+Transform2D get_stretch_transform() const 
 
 Returns the automatically computed 2D stretch transform, taking the Viewport's stretch settings into account. The final value is multiplied by Window.content_scale_factor, but only for the root viewport. If this method is called on a SubViewport (e.g., in a scene tree with SubViewportContainer and SubViewport), the scale factor of the root window will not be applied. Using Transform2D.get_scale() on the returned value, this can be used to compensate for scaling when zooming a Camera2D node, or to scale down a TextureRect to be pixel-perfect regardless of the automatically computed scale factor.
 
 Note: Due to how pixel scaling works, the returned transform's X and Y scale may differ slightly, even when Window.content_scale_aspect is set to a mode that preserves the pixels' aspect ratio. If Window.content_scale_aspect is Window.CONTENT_SCALE_ASPECT_IGNORE, the X and Y scale may differ significantly.
 
-ViewportTexture get_texture() const 🔗
+ViewportTexture get_texture() const 
 
 Returns the viewport's texture.
 
@@ -17493,55 +17493,55 @@ Note: When trying to store the current texture (e.g. in a file), it might be com
 
 Note: When use_hdr_2d is true the returned texture will be an HDR image encoded in linear space.
 
-RID get_viewport_rid() const 🔗
+RID get_viewport_rid() const 
 
 Returns the viewport's RID from the RenderingServer.
 
-Rect2 get_visible_rect() const 🔗
+Rect2 get_visible_rect() const 
 
 Returns the visible rectangle in global screen coordinates.
 
-void gui_cancel_drag() 🔗
+void gui_cancel_drag() 
 
 Cancels the drag operation that was previously started through Control._get_drag_data() or forced with Control.force_drag().
 
-Variant gui_get_drag_data() const 🔗
+Variant gui_get_drag_data() const 
 
 Returns the drag data from the GUI, that was previously returned by Control._get_drag_data().
 
-String gui_get_drag_description() const 🔗
+String gui_get_drag_description() const 
 
 Returns the drag data human-readable description.
 
-Control gui_get_focus_owner() const 🔗
+Control gui_get_focus_owner() const 
 
 Returns the currently focused Control within this viewport. If no Control is focused, returns null.
 
-Control gui_get_hovered_control() const 🔗
+Control gui_get_hovered_control() const 
 
 Returns the Control that the mouse is currently hovering over in this viewport. If no Control has the cursor, returns null.
 
 Typically the leaf Control node or deepest level of the subtree which claims hover. This is very useful when used together with Node.is_ancestor_of() to find if the mouse is within a control tree.
 
-bool gui_is_drag_successful() const 🔗
+bool gui_is_drag_successful() const 
 
 Returns true if the drag operation is successful.
 
-bool gui_is_dragging() const 🔗
+bool gui_is_dragging() const 
 
 Returns true if a drag operation is currently ongoing and where the drop action could happen in this viewport.
 
 Alternative to Node.NOTIFICATION_DRAG_BEGIN and Node.NOTIFICATION_DRAG_END when you prefer polling the value.
 
-void gui_release_focus() 🔗
+void gui_release_focus() 
 
 Removes the focus from the currently focused Control within this viewport. If no Control has the focus, does nothing.
 
-void gui_set_drag_description(description: String) 🔗
+void gui_set_drag_description(description: String) 
 
 Sets the drag data human-readable description.
 
-bool is_input_handled() const 🔗
+bool is_input_handled() const 
 
 Returns whether the current InputEvent has been handled. Input events are not handled until set_input_as_handled() has been called during the lifetime of an InputEvent.
 
@@ -17549,19 +17549,19 @@ This is usually done as part of input handling methods like Node._input(), Contr
 
 If handle_input_locally is set to false, this method will try finding the first parent viewport that is set to handle input locally, and return its value for is_input_handled() instead.
 
-void notify_mouse_entered() 🔗
+void notify_mouse_entered() 
 
 Inform the Viewport that the mouse has entered its area. Use this function before sending an InputEventMouseButton or InputEventMouseMotion to the Viewport with push_input(). See also notify_mouse_exited().
 
 Note: In most cases, it is not necessary to call this function because SubViewport nodes that are children of SubViewportContainer are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in TextureRect or with an Area3D that forwards input events.
 
-void notify_mouse_exited() 🔗
+void notify_mouse_exited() 
 
 Inform the Viewport that the mouse has left its area. Use this function when the node that displays the viewport notices the mouse has left the area of the displayed viewport. See also notify_mouse_entered().
 
 Note: In most cases, it is not necessary to call this function because SubViewport nodes that are children of SubViewportContainer are notified automatically. This is only necessary when interacting with viewports in non-default ways, for example as textures in TextureRect or with an Area3D that forwards input events.
 
-void push_input(event: InputEvent, in_local_coords: bool = false) 🔗
+void push_input(event: InputEvent, in_local_coords: bool = false) 
 
 Triggers the given event in this Viewport. This can be used to pass an InputEvent between viewports, or to locally apply inputs that were sent over the network or saved to a file.
 
@@ -17583,11 +17583,11 @@ If an earlier method marks the input as handled via set_input_as_handled(), any 
 
 If none of the methods handle the event and physics_object_picking is true, the event is used for physics object picking.
 
-void push_text_input(text: String) 🔗
+void push_text_input(text: String) 
 
 Helper method which calls the set_text() method on the currently focused Control, provided that it is defined (e.g. if the focused Control is Button or LineEdit).
 
-void push_unhandled_input(event: InputEvent, in_local_coords: bool = false) 🔗
+void push_unhandled_input(event: InputEvent, in_local_coords: bool = false) 
 
 Deprecated: Use push_input() instead.
 
@@ -17609,25 +17609,25 @@ If none of the methods handle the event and physics_object_picking is true, the 
 
 Note: This method doesn't propagate input events to embedded Windows or SubViewports.
 
-void set_canvas_cull_mask_bit(layer: int, enable: bool) 🔗
+void set_canvas_cull_mask_bit(layer: int, enable: bool) 
 
 Set/clear individual bits on the rendering layer mask. This simplifies editing this Viewport's layers.
 
-void set_input_as_handled() 🔗
+void set_input_as_handled() 
 
 Stops the input from propagating further down the SceneTree.
 
 Note: This does not affect the methods in Input, only the way events are propagated.
 
-void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv) 🔗
+void set_positional_shadow_atlas_quadrant_subdiv(quadrant: int, subdiv: PositionalShadowAtlasQuadrantSubdiv) 
 
 Sets the number of subdivisions to use in the specified quadrant. A higher number of subdivisions allows you to have more shadows in the scene at once, but reduces the quality of the shadows. A good practice is to have quadrants with a varying number of subdivisions and to have as few subdivisions as possible.
 
-void update_mouse_cursor_state() 🔗
+void update_mouse_cursor_state() 
 
 Force instantly updating the display based on the current mouse cursor position. This includes updating the mouse cursor shape and sending necessary Control.mouse_entered, CollisionObject2D.mouse_entered, CollisionObject3D.mouse_entered and Window.mouse_entered signals and their respective mouse_exited counterparts.
 
-void warp_mouse(position: Vector2) 🔗
+void warp_mouse(position: Vector2) 
 
 Moves the mouse pointer to the specified position in this Viewport using the coordinate system of this Viewport.
 
@@ -17688,7 +17688,7 @@ A node that controls how the object faces the camera to be used within the visua
 
 The output port of this node needs to be connected to Model View Matrix port of VisualShaderNodeOutput.
 
-enum BillboardType: 🔗
+enum BillboardType: 
 
 BillboardType BILLBOARD_TYPE_DISABLED = 0
 
@@ -17710,7 +17710,7 @@ BillboardType BILLBOARD_TYPE_MAX = 4
 
 Represents the size of the BillboardType enum.
 
-BillboardType billboard_type = 1 🔗
+BillboardType billboard_type = 1 
 
 void set_billboard_type(value: BillboardType)
 
@@ -17718,7 +17718,7 @@ BillboardType get_billboard_type()
 
 Controls how the object faces the camera.
 
-bool keep_scale = false 🔗
+bool keep_scale = false 
 
 void set_keep_scale_enabled(value: bool)
 
@@ -17749,7 +17749,7 @@ Has only one output port and no inputs.
 
 Translated to bool in the shader language.
 
-bool constant = false 🔗
+bool constant = false 
 
 void set_constant(value: bool)
 
@@ -17778,7 +17778,7 @@ Translated to uniform bool in the shader language.
 
 default_value_enabled
 
-bool default_value = false 🔗
+bool default_value = false 
 
 void set_default_value(value: bool)
 
@@ -17786,7 +17786,7 @@ bool get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -17863,7 +17863,7 @@ Has two output ports representing RGB and alpha channels of Color.
 
 Translated to vec3 rgb and float alpha in the shader language.
 
-Color constant = Color(1, 1, 1, 1) 🔗
+Color constant = Color(1, 1, 1, 1) 
 
 void set_constant(value: Color)
 
@@ -17923,7 +17923,7 @@ Function FUNC_MAX = 6
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -18022,7 +18022,7 @@ Produce a hard light effect with the following formula:
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -18075,7 +18075,7 @@ Translated to uniform vec4 in the shader language.
 
 default_value_enabled
 
-Color default_value = Color(1, 1, 1, 1) 🔗
+Color default_value = Color(1, 1, 1, 1) 
 
 void set_default_value(value: Color)
 
@@ -18083,7 +18083,7 @@ Color get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -18114,7 +18114,7 @@ Only exists for compatibility. Use VisualShaderNodeFrame as a replacement.
 
 This node was replaced by VisualShaderNodeFrame and only exists to preserve compatibility. In the VisualShader editor it behaves exactly like VisualShaderNodeFrame.
 
-String description = "" 🔗
+String description = "" 
 
 void set_description(value: String)
 
@@ -18144,7 +18144,7 @@ A comparison function for common types within the visual shader graph.
 
 Compares a and b of type by function. Returns a boolean scalar. Translates to if instruction in shader code.
 
-enum ComparisonType: 🔗
+enum ComparisonType: 
 
 ComparisonType CTYPE_SCALAR = 0
 
@@ -18212,7 +18212,7 @@ Condition COND_MAX = 2
 
 Represents the size of the Condition enum.
 
-Condition condition = 0 🔗
+Condition condition = 0 
 
 void set_condition(value: Condition)
 
@@ -18220,7 +18220,7 @@ Condition get_condition()
 
 Extra condition which is applied if type is set to CTYPE_VECTOR_3D.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -18228,7 +18228,7 @@ Function get_function()
 
 A comparison function.
 
-ComparisonType type = 0 🔗
+ComparisonType type = 0 
 
 void set_comparison_type(value: ComparisonType)
 
@@ -18326,7 +18326,7 @@ TextureType TYPE_MAX = 3
 
 Represents the size of the TextureType enum.
 
-TextureLayered cube_map 🔗
+TextureLayered cube_map 
 
 void set_cube_map(value: TextureLayered)
 
@@ -18338,7 +18338,7 @@ void set_source(value: Source)
 
 Defines which source should be used for the sampling.
 
-TextureType texture_type = 0 🔗
+TextureType texture_type = 0 
 
 void set_texture_type(value: TextureType)
 
@@ -18367,7 +18367,7 @@ Performs a CurveTexture lookup within the visual shader graph.
 
 Comes with a built-in editor for texture's curves.
 
-CurveTexture texture 🔗
+CurveTexture texture 
 
 void set_texture(value: CurveTexture)
 
@@ -18394,7 +18394,7 @@ Performs a CurveXYZTexture lookup within the visual shader graph.
 
 Comes with a built-in editor for texture's curves.
 
-CurveXYZTexture texture 🔗
+CurveXYZTexture texture 
 
 void set_texture(value: CurveXYZTexture)
 
@@ -18470,13 +18470,13 @@ _is_highend() virtual const
 
 get_option_index(option: int) const
 
-String _get_category() virtual const 🔗
+String _get_category() virtual const 
 
 Override this method to define the path to the associated custom node in the Visual Shader Editor's members dialog. The path may look like "MyGame/MyFunctions/Noise".
 
 Defining this method is optional. If not overridden, the node will be filed under the "Addons" category.
 
-String _get_code(input_vars: Array[String], output_vars: Array[String], mode: Mode, type: Type) virtual const 🔗
+String _get_code(input_vars: Array[String], output_vars: Array[String], mode: Mode, type: Type) virtual const 
 
 Override this method to define the actual shader code of the associated custom node. The shader code should be returned as a string, which can have multiple lines (the """ multiline string construct can be used for convenience).
 
@@ -18488,19 +18488,19 @@ You can customize the generated code based on the shader mode and/or type.
 
 Defining this method is required.
 
-int _get_default_input_port(type: PortType) virtual const 🔗
+int _get_default_input_port(type: PortType) virtual const 
 
 Override this method to define the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
 Defining this method is optional. If not overridden, the connection will be created to the first valid port.
 
-String _get_description() virtual const 🔗
+String _get_description() virtual const 
 
 Override this method to define the description of the associated custom node in the Visual Shader Editor's members dialog.
 
 Defining this method is optional.
 
-String _get_func_code(mode: Mode, type: Type) virtual const 🔗
+String _get_func_code(mode: Mode, type: Type) virtual const 
 
 Override this method to add a shader code to the beginning of each shader function (once). The shader code should be returned as a string, which can have multiple lines (the """ multiline string construct can be used for convenience).
 
@@ -18510,7 +18510,7 @@ You can customize the generated code based on the shader mode and/or type.
 
 Defining this method is optional.
 
-String _get_global_code(mode: Mode) virtual const 🔗
+String _get_global_code(mode: Mode) virtual const 
 
 Override this method to add shader code on top of the global shader, to define your own standard library of reusable methods, varyings, constants, uniforms, etc. The shader code should be returned as a string, which can have multiple lines (the """ multiline string construct can be used for convenience).
 
@@ -18520,97 +18520,97 @@ You can customize the generated code based on the shader mode.
 
 Defining this method is optional.
 
-int _get_input_port_count() virtual const 🔗
+int _get_input_port_count() virtual const 
 
 Override this method to define the number of input ports of the associated custom node.
 
 Defining this method is required. If not overridden, the node has no input ports.
 
-Variant _get_input_port_default_value(port: int) virtual const 🔗
+Variant _get_input_port_default_value(port: int) virtual const 
 
 Override this method to define the default value for the specified input port. Prefer use this over VisualShaderNode.set_input_port_default_value().
 
 Defining this method is required. If not overridden, the node has no default values for their input ports.
 
-String _get_input_port_name(port: int) virtual const 🔗
+String _get_input_port_name(port: int) virtual const 
 
 Override this method to define the names of input ports of the associated custom node. The names are used both for the input slots in the editor and as identifiers in the shader code, and are passed in the input_vars array in _get_code().
 
 Defining this method is optional, but recommended. If not overridden, input ports are named as "in" + str(port).
 
-PortType _get_input_port_type(port: int) virtual const 🔗
+PortType _get_input_port_type(port: int) virtual const 
 
 Override this method to define the returned type of each input port of the associated custom node.
 
 Defining this method is optional, but recommended. If not overridden, input ports will return the VisualShaderNode.PORT_TYPE_SCALAR type.
 
-String _get_name() virtual const 🔗
+String _get_name() virtual const 
 
 Override this method to define the name of the associated custom node in the Visual Shader Editor's members dialog and graph.
 
 Defining this method is optional, but recommended. If not overridden, the node will be named as "Unnamed".
 
-int _get_output_port_count() virtual const 🔗
+int _get_output_port_count() virtual const 
 
 Override this method to define the number of output ports of the associated custom node.
 
 Defining this method is required. If not overridden, the node has no output ports.
 
-String _get_output_port_name(port: int) virtual const 🔗
+String _get_output_port_name(port: int) virtual const 
 
 Override this method to define the names of output ports of the associated custom node. The names are used both for the output slots in the editor and as identifiers in the shader code, and are passed in the output_vars array in _get_code().
 
 Defining this method is optional, but recommended. If not overridden, output ports are named as "out" + str(port).
 
-PortType _get_output_port_type(port: int) virtual const 🔗
+PortType _get_output_port_type(port: int) virtual const 
 
 Override this method to define the returned type of each output port of the associated custom node.
 
 Defining this method is optional, but recommended. If not overridden, output ports will return the VisualShaderNode.PORT_TYPE_SCALAR type.
 
-int _get_property_count() virtual const 🔗
+int _get_property_count() virtual const 
 
 Override this method to define the number of the properties.
 
 Defining this method is optional.
 
-int _get_property_default_index(index: int) virtual const 🔗
+int _get_property_default_index(index: int) virtual const 
 
 Override this method to define the default index of the property of the associated custom node.
 
 Defining this method is optional.
 
-String _get_property_name(index: int) virtual const 🔗
+String _get_property_name(index: int) virtual const 
 
 Override this method to define the names of the property of the associated custom node.
 
 Defining this method is optional.
 
-PackedStringArray _get_property_options(index: int) virtual const 🔗
+PackedStringArray _get_property_options(index: int) virtual const 
 
 Override this method to define the options inside the drop-down list property of the associated custom node.
 
 Defining this method is optional.
 
-PortType _get_return_icon_type() virtual const 🔗
+PortType _get_return_icon_type() virtual const 
 
 Override this method to define the return icon of the associated custom node in the Visual Shader Editor's members dialog.
 
 Defining this method is optional. If not overridden, no return icon is shown.
 
-bool _is_available(mode: Mode, type: Type) virtual const 🔗
+bool _is_available(mode: Mode, type: Type) virtual const 
 
 Override this method to prevent the node to be visible in the member dialog for the certain mode and/or type.
 
 Defining this method is optional. If not overridden, it's true.
 
-bool _is_highend() virtual const 🔗
+bool _is_highend() virtual const 
 
 Override this method to enable high-end mark in the Visual Shader Editor's members dialog.
 
 Defining this method is optional. If not overridden, it's false.
 
-int get_option_index(option: int) const 🔗
+int get_option_index(option: int) const 
 
 Returns the selected index of the drop-down list option within a graph. You may use this function to define the specific behavior in the _get_code() or _get_global_code().
 
@@ -18687,7 +18687,7 @@ Precision PRECISION_MAX = 3
 
 Represents the size of the Precision enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -18699,7 +18699,7 @@ void set_op_type(value: OpType)
 
 A type of operands and returned value.
 
-Precision precision = 0 🔗
+Precision precision = 0 
 
 void set_precision(value: Precision)
 
@@ -18789,7 +18789,7 @@ Custom Godot Shading Language expression, with a custom number of input and outp
 
 The provided code is directly injected into the graph's matching shader function (vertex, fragment, or light), so it cannot be used to declare functions, varyings, uniforms, or global constants. See VisualShaderNodeGlobalExpression for such global definitions.
 
-String expression = "" 🔗
+String expression = "" 
 
 void set_expression(value: String)
 
@@ -18837,7 +18837,7 @@ A scalar floating-point constant to be used within the visual shader graph.
 
 Translated to float in the shader language.
 
-float constant = 0.0 🔗
+float constant = 0.0 
 
 void set_constant(value: float)
 
@@ -18997,7 +18997,7 @@ Function FUNC_MAX = 32
 
 Represents the size of the Function enum.
 
-Function function = 13 🔗
+Function function = 13 
 
 void set_function(value: Function)
 
@@ -19053,7 +19053,7 @@ Operator OP_ENUM_SIZE = 10
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -19093,7 +19093,7 @@ A range hint for scalar value with step, which limits possible input values betw
 
 Represents the size of the Hint enum.
 
-float default_value = 0.0 🔗
+float default_value = 0.0 
 
 void set_default_value(value: float)
 
@@ -19101,7 +19101,7 @@ float get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -19160,7 +19160,7 @@ add_attached_node(node: int)
 
 remove_attached_node(node: int)
 
-PackedInt32Array attached_nodes = PackedInt32Array() 🔗
+PackedInt32Array attached_nodes = PackedInt32Array() 
 
 void set_attached_nodes(value: PackedInt32Array)
 
@@ -19170,7 +19170,7 @@ The list of nodes attached to the frame.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedInt32Array for more details.
 
-bool autoshrink = true 🔗
+bool autoshrink = true 
 
 void set_autoshrink_enabled(value: bool)
 
@@ -19178,7 +19178,7 @@ bool is_autoshrink_enabled()
 
 If true, the frame will automatically resize to enclose all attached nodes.
 
-Color tint_color = Color(0.3, 0.3, 0.3, 0.75) 🔗
+Color tint_color = Color(0.3, 0.3, 0.3, 0.75) 
 
 void set_tint_color(value: Color)
 
@@ -19186,7 +19186,7 @@ Color get_tint_color()
 
 The color of the frame when tint_color_enabled is true.
 
-bool tint_color_enabled = false 🔗
+bool tint_color_enabled = false 
 
 void set_tint_color_enabled(value: bool)
 
@@ -19194,17 +19194,17 @@ bool is_tint_color_enabled()
 
 If true, the frame will be tinted with the color specified in tint_color.
 
-String title = "Title" 🔗
+String title = "Title" 
 
 void set_title(value: String)
 
 The title of the node.
 
-void add_attached_node(node: int) 🔗
+void add_attached_node(node: int) 
 
 Adds a node to the list of nodes attached to the frame. Should not be called directly, use the VisualShader.attach_node_to_frame() method instead.
 
-void remove_attached_node(node: int) 🔗
+void remove_attached_node(node: int) 
 
 Removes a node from the list of nodes attached to the frame. Should not be called directly, use the VisualShader.detach_node_from_frame() method instead.
 
@@ -19303,87 +19303,87 @@ set_output_port_type(id: int, type: int)
 
 set_outputs(outputs: String)
 
-void add_input_port(id: int, type: int, name: String) 🔗
+void add_input_port(id: int, type: int, name: String) 
 
 Adds an input port with the specified type (see PortType) and name.
 
-void add_output_port(id: int, type: int, name: String) 🔗
+void add_output_port(id: int, type: int, name: String) 
 
 Adds an output port with the specified type (see PortType) and name.
 
-void clear_input_ports() 🔗
+void clear_input_ports() 
 
 Removes all previously specified input ports.
 
-void clear_output_ports() 🔗
+void clear_output_ports() 
 
 Removes all previously specified output ports.
 
-int get_free_input_port_id() const 🔗
+int get_free_input_port_id() const 
 
 Returns a free input port ID which can be used in add_input_port().
 
-int get_free_output_port_id() const 🔗
+int get_free_output_port_id() const 
 
 Returns a free output port ID which can be used in add_output_port().
 
-int get_input_port_count() const 🔗
+int get_input_port_count() const 
 
 Returns the number of input ports in use. Alternative for get_free_input_port_id().
 
-String get_inputs() const 🔗
+String get_inputs() const 
 
 Returns a String description of the input ports as a colon-separated list using the format id,type,name; (see add_input_port()).
 
-int get_output_port_count() const 🔗
+int get_output_port_count() const 
 
 Returns the number of output ports in use. Alternative for get_free_output_port_id().
 
-String get_outputs() const 🔗
+String get_outputs() const 
 
 Returns a String description of the output ports as a colon-separated list using the format id,type,name; (see add_output_port()).
 
-bool has_input_port(id: int) const 🔗
+bool has_input_port(id: int) const 
 
 Returns true if the specified input port exists.
 
-bool has_output_port(id: int) const 🔗
+bool has_output_port(id: int) const 
 
 Returns true if the specified output port exists.
 
-bool is_valid_port_name(name: String) const 🔗
+bool is_valid_port_name(name: String) const 
 
 Returns true if the specified port name does not override an existed port name and is valid within the shader.
 
-void remove_input_port(id: int) 🔗
+void remove_input_port(id: int) 
 
 Removes the specified input port.
 
-void remove_output_port(id: int) 🔗
+void remove_output_port(id: int) 
 
 Removes the specified output port.
 
-void set_input_port_name(id: int, name: String) 🔗
+void set_input_port_name(id: int, name: String) 
 
 Renames the specified input port.
 
-void set_input_port_type(id: int, type: int) 🔗
+void set_input_port_type(id: int, type: int) 
 
 Sets the specified input port's type (see PortType).
 
-void set_inputs(inputs: String) 🔗
+void set_inputs(inputs: String) 
 
 Defines all input ports using a String formatted as a colon-separated list: id,type,name; (see add_input_port()).
 
-void set_output_port_name(id: int, name: String) 🔗
+void set_output_port_name(id: int, name: String) 
 
 Renames the specified output port.
 
-void set_output_port_type(id: int, type: int) 🔗
+void set_output_port_type(id: int, type: int) 
 
 Sets the specified output port's type (see PortType).
 
-void set_outputs(outputs: String) 🔗
+void set_outputs(outputs: String) 
 
 Defines all output ports using a String formatted as a colon-separated list: id,type,name; (see add_output_port()).
 
@@ -19441,11 +19441,11 @@ Shading reference index
 
 get_input_real_name() const
 
-input_type_changed() 🔗
+input_type_changed() 
 
 Emitted when input is changed via input_name.
 
-String input_name = "[None]" 🔗
+String input_name = "[None]" 
 
 void set_input_name(value: String)
 
@@ -19453,7 +19453,7 @@ String get_input_name()
 
 One of the several input constants in lower-case style like: "vertex" (VERTEX) or "point_size" (POINT_SIZE).
 
-String get_input_real_name() const 🔗
+String get_input_real_name() const 
 
 Returns a translated name of the current constant in the Godot Shader Language. E.g. "ALBEDO" if the input_name equal to "albedo".
 
@@ -19524,7 +19524,7 @@ Function FUNC_MAX = 4
 
 Represents the size of the Function enum.
 
-Function function = 2 🔗
+Function function = 2 
 
 void set_function(value: Function)
 
@@ -19592,7 +19592,7 @@ Operator OP_ENUM_SIZE = 12
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -19636,7 +19636,7 @@ The parameter uses an enum to associate preset values to names in the editor.
 
 Represents the size of the Hint enum.
 
-int default_value = 0 🔗
+int default_value = 0 
 
 void set_default_value(value: int)
 
@@ -19644,7 +19644,7 @@ int get_default_value()
 
 Default value of this parameter, which will be used if not set externally. default_value_enabled must be enabled; defaults to 0 otherwise.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -19652,7 +19652,7 @@ bool is_default_value_enabled()
 
 If true, the node will have a custom default value.
 
-PackedStringArray enum_names = PackedStringArray() 🔗
+PackedStringArray enum_names = PackedStringArray() 
 
 void set_enum_names(value: PackedStringArray)
 
@@ -19712,7 +19712,7 @@ Function FUNC_MAX = 2
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -19892,7 +19892,7 @@ A reference to an existing VisualShaderNodeParameter.
 
 Creating a reference to a VisualShaderNodeParameter allows you to reuse this parameter in different shaders or shader stages easily.
 
-String parameter_name = "[None]" 🔗
+String parameter_name = "[None]" 
 
 void set_parameter_name(value: String)
 
@@ -19940,7 +19940,7 @@ Qualifier QUAL_MAX = 3
 
 Represents the size of the Qualifier enum.
 
-String parameter_name = "" 🔗
+String parameter_name = "" 
 
 void set_parameter_name(value: String)
 
@@ -19948,7 +19948,7 @@ String get_parameter_name()
 
 Name of the parameter, by which it can be accessed through the ShaderMaterial properties.
 
-Qualifier qualifier = 0 🔗
+Qualifier qualifier = 0 
 
 void set_qualifier(value: Qualifier)
 
@@ -20053,7 +20053,7 @@ A base class for particle emitters.
 
 Particle emitter nodes can be used in "start" step of particle shaders and they define the starting position of the particles. Connect them to the Position output port.
 
-bool mode_2d = false 🔗
+bool mode_2d = false 
 
 void set_mode_2d(value: bool)
 
@@ -20101,7 +20101,7 @@ EmitFlags EMIT_FLAG_CUSTOM = 16
 
 If enabled, the particle starts with the CUSTOM data defined by this node.
 
-EmitFlags flags = 31 🔗
+EmitFlags flags = 31 
 
 void set_flags(value: EmitFlags)
 
@@ -20130,7 +20130,7 @@ A visual shader helper node for multiplying position and rotation of particles.
 
 This node helps to multiply a position input vector by rotation using specific axis. Intended to work with emitters.
 
-bool degrees_mode = true 🔗
+bool degrees_mode = true 
 
 void set_degrees_mode(value: bool)
 
@@ -20348,7 +20348,7 @@ Automatically adapts its port type to the type of the incoming connection and en
 
 get_port_type() const
 
-PortType get_port_type() const 🔗
+PortType get_port_type() const 
 
 Returns the port type of the reroute node.
 
@@ -20375,7 +20375,7 @@ Base class for resizable nodes in a visual shader graph.
 
 Resizable nodes have a handle that allows the user to adjust their size as needed.
 
-Vector2 size = Vector2(0, 0) 🔗
+Vector2 size = Vector2(0, 0) 
 
 void set_size(value: Vector2)
 
@@ -20479,7 +20479,7 @@ ColorDefault COLOR_DEFAULT_MAX = 3
 
 Represents the size of the ColorDefault enum.
 
-enum TextureFilter: 🔗
+enum TextureFilter: 
 
 TextureFilter FILTER_DEFAULT = 0
 
@@ -20521,7 +20521,7 @@ TextureFilter FILTER_MAX = 7
 
 Represents the size of the TextureFilter enum.
 
-enum TextureRepeat: 🔗
+enum TextureRepeat: 
 
 TextureRepeat REPEAT_DEFAULT = 0
 
@@ -20539,7 +20539,7 @@ TextureRepeat REPEAT_MAX = 3
 
 Represents the size of the TextureRepeat enum.
 
-enum TextureSource: 🔗
+enum TextureSource: 
 
 TextureSource SOURCE_NONE = 0
 
@@ -20561,7 +20561,7 @@ TextureSource SOURCE_MAX = 4
 
 Represents the size of the TextureSource enum.
 
-ColorDefault color_default = 0 🔗
+ColorDefault color_default = 0 
 
 void set_color_default(value: ColorDefault)
 
@@ -20569,7 +20569,7 @@ ColorDefault get_color_default()
 
 Sets the default color if no texture is assigned to the uniform.
 
-TextureFilter texture_filter = 0 🔗
+TextureFilter texture_filter = 0 
 
 void set_texture_filter(value: TextureFilter)
 
@@ -20577,7 +20577,7 @@ TextureFilter get_texture_filter()
 
 Sets the texture filtering mode.
 
-TextureRepeat texture_repeat = 0 🔗
+TextureRepeat texture_repeat = 0 
 
 void set_texture_repeat(value: TextureRepeat)
 
@@ -20585,7 +20585,7 @@ TextureRepeat get_texture_repeat()
 
 Sets the texture repeating mode.
 
-TextureSource texture_source = 0 🔗
+TextureSource texture_source = 0 
 
 void set_texture_source(value: TextureSource)
 
@@ -20593,7 +20593,7 @@ TextureSource get_texture_source()
 
 Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture.
 
-TextureType texture_type = 0 🔗
+TextureType texture_type = 0 
 
 void set_texture_type(value: TextureType)
 
@@ -20723,7 +20723,7 @@ Texture2D get_texture()
 
 The source texture, if needed for the selected source.
 
-TextureType texture_type = 0 🔗
+TextureType texture_type = 0 
 
 void set_texture_type(value: TextureType)
 
@@ -20773,7 +20773,7 @@ A constant Transform3D, which can be used as an input node.
 
 Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-Transform3D constant = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 🔗
+Transform3D constant = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 
 
 void set_constant(value: Transform3D)
 
@@ -20834,7 +20834,7 @@ Function FUNC_MAX = 2
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -20894,7 +20894,7 @@ Divides the transform b by the transform a.
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -20927,7 +20927,7 @@ Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 default_value_enabled
 
-Transform3D default_value = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 🔗
+Transform3D default_value = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) 
 
 void set_default_value(value: Transform3D)
 
@@ -20935,7 +20935,7 @@ Transform3D get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -20979,7 +20979,7 @@ Multiplies vector b by the transform a, skipping the last row and column of the 
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -21021,7 +21021,7 @@ Function FUNC_MAX = 2
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -21109,7 +21109,7 @@ A visual shader node that represents a "varying" shader value.
 
 Varying values are shader variables that can be passed between shader functions, e.g. from Vertex shader to Fragment shader.
 
-String varying_name = "[None]" 🔗
+String varying_name = "[None]" 
 
 void set_varying_name(value: String)
 
@@ -21117,7 +21117,7 @@ String get_varying_name()
 
 Name of the variable. Must be unique.
 
-VaryingType varying_type = 0 🔗
+VaryingType varying_type = 0 
 
 void set_varying_type(value: VaryingType)
 
@@ -21146,7 +21146,7 @@ A Vector2 constant to be used within the visual shader graph.
 
 A constant Vector2, which can be used as an input node.
 
-Vector2 constant = Vector2(0, 0) 🔗
+Vector2 constant = Vector2(0, 0) 
 
 void set_constant(value: Vector2)
 
@@ -21177,7 +21177,7 @@ Translated to uniform vec2 in the shader language.
 
 default_value_enabled
 
-Vector2 default_value = Vector2(0, 0) 🔗
+Vector2 default_value = Vector2(0, 0) 
 
 void set_default_value(value: Vector2)
 
@@ -21185,7 +21185,7 @@ Vector2 get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -21214,7 +21214,7 @@ A Vector3 constant to be used within the visual shader graph.
 
 A constant Vector3, which can be used as an input node.
 
-Vector3 constant = Vector3(0, 0, 0) 🔗
+Vector3 constant = Vector3(0, 0, 0) 
 
 void set_constant(value: Vector3)
 
@@ -21245,7 +21245,7 @@ Translated to uniform vec3 in the shader language.
 
 default_value_enabled
 
-Vector3 default_value = Vector3(0, 0, 0) 🔗
+Vector3 default_value = Vector3(0, 0, 0) 
 
 void set_default_value(value: Vector3)
 
@@ -21253,7 +21253,7 @@ Vector3 get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -21284,7 +21284,7 @@ A constant 4D vector, which can be used as an input node.
 
 Quaternion(0, 0, 0, 1)
 
-Quaternion constant = Quaternion(0, 0, 0, 1) 🔗
+Quaternion constant = Quaternion(0, 0, 0, 1) 
 
 void set_constant(value: Quaternion)
 
@@ -21315,7 +21315,7 @@ Translated to uniform vec4 in the shader language.
 
 default_value_enabled
 
-Vector4 default_value = Vector4(0, 0, 0, 0) 🔗
+Vector4 default_value = Vector4(0, 0, 0, 0) 
 
 void set_default_value(value: Vector4)
 
@@ -21323,7 +21323,7 @@ Vector4 get_default_value()
 
 A default value to be assigned within the shader.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -21576,7 +21576,7 @@ Function FUNC_MAX = 33
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -21659,7 +21659,7 @@ Operator OP_ENUM_SIZE = 12
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -21790,13 +21790,13 @@ PortType PORT_TYPE_MAX = 9
 
 Represents the size of the PortType enum.
 
-int linked_parent_graph_frame = -1 🔗
+int linked_parent_graph_frame = -1 
 
 void set_frame(value: int)
 
 Represents the index of the frame this node is linked to. If set to -1 the node is not linked to any frame.
 
-int output_port_for_preview = -1 🔗
+int output_port_for_preview = -1 
 
 void set_output_port_for_preview(value: int)
 
@@ -21804,31 +21804,31 @@ int get_output_port_for_preview()
 
 Sets the output port index which will be showed for preview. If set to -1 no port will be open for preview.
 
-void clear_default_input_values() 🔗
+void clear_default_input_values() 
 
 Clears the default input ports value.
 
-int get_default_input_port(type: PortType) const 🔗
+int get_default_input_port(type: PortType) const 
 
 Returns the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
-Array get_default_input_values() const 🔗
+Array get_default_input_values() const 
 
 Returns an Array containing default values for all of the input ports of the node in the form [index0, value0, index1, value1, ...].
 
-Variant get_input_port_default_value(port: int) const 🔗
+Variant get_input_port_default_value(port: int) const 
 
 Returns the default value of the input port.
 
-void remove_input_port_default_value(port: int) 🔗
+void remove_input_port_default_value(port: int) 
 
 Removes the default value of the input port.
 
-void set_default_input_values(values: Array) 🔗
+void set_default_input_values(values: Array) 
 
 Sets the default input ports values using an Array of the form [index0, value0, index1, value1, ...]. For example: [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)].
 
-void set_input_port_default_value(port: int, value: Variant, prev_value: Variant = null) 🔗
+void set_input_port_default_value(port: int, value: Variant, prev_value: Variant = null) 
 
 Sets the default value for the selected input port.
 
@@ -21864,7 +21864,7 @@ Environment and post-processing
 
 Third Person Shooter (TPS) Demo
 
-CameraAttributes camera_attributes 🔗
+CameraAttributes camera_attributes 
 
 void set_camera_attributes(value: CameraAttributes)
 
@@ -21872,7 +21872,7 @@ CameraAttributes get_camera_attributes()
 
 The default CameraAttributes resource to use if none set on the Camera3D.
 
-Compositor compositor 🔗
+Compositor compositor 
 
 void set_compositor(value: Compositor)
 
@@ -21880,7 +21880,7 @@ Compositor get_compositor()
 
 The default Compositor resource to use if none set on the Camera3D.
 
-Environment environment 🔗
+Environment environment 
 
 void set_environment(value: Environment)
 

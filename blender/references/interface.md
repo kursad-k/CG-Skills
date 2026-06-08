@@ -654,9 +654,9 @@ A list of terms and definitions used in Blender and this manual.
 
 A list of terms linked to the Glossary.
 
-Help write Blender’s future! ✏️ Contribute to the Blender Manual and share your knowledge with creators worldwide. No matter your expertise, your contributions can make Blender easier to learn and use for everyone. Join the team and start documenting Blender today!
+Help write Blender’s future! ️ Contribute to the Blender Manual and share your knowledge with creators worldwide. No matter your expertise, your contributions can make Blender easier to learn and use for everyone. Join the team and start documenting Blender today!
 
-Help bring Blender to the world! 🌍 Join the translation effort to make the Blender accessible in more languages.
+Help bring Blender to the world!  Join the translation effort to make the Blender accessible in more languages.
 
 Translate Blender’s UI
 

@@ -41,7 +41,7 @@ Adds an amplifying audio effect to an audio bus.
 
 Increases or decreases the volume being routed through the audio bus.
 
-float volume_db = 0.0 🔗
+float volume_db = 0.0 
 
 void set_volume_db(value: float)
 
@@ -49,7 +49,7 @@ float get_volume_db()
 
 Amount of amplification in decibels. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24.
 
-float volume_linear 🔗
+float volume_linear 
 
 void set_volume_linear(value: float)
 
@@ -139,7 +139,7 @@ get_frames_available() const
 
 get_pushed_frames() const
 
-float buffer_length = 0.1 🔗
+float buffer_length = 0.1 
 
 void set_buffer_length(value: float)
 
@@ -147,17 +147,17 @@ float get_buffer_length()
 
 Length of the internal ring buffer, in seconds. Setting the buffer length will have no effect if already initialized.
 
-bool can_get_buffer(frames: int) const 🔗
+bool can_get_buffer(frames: int) const 
 
 Returns true if at least frames audio frames are available to read in the internal ring buffer.
 
-void clear_buffer() 🔗
+void clear_buffer() 
 
 Clears the internal ring buffer.
 
 Note: Calling this during a capture can cause the loss of samples which causes popping in the playback.
 
-PackedVector2Array get_buffer(frames: int) 🔗
+PackedVector2Array get_buffer(frames: int) 
 
 Gets the next frames audio samples from the internal ring buffer.
 
@@ -165,19 +165,19 @@ Returns a PackedVector2Array containing exactly frames audio samples if availabl
 
 The samples are signed floating-point PCM between -1 and 1. You will have to scale them if you want to use them as 8 or 16-bit integer samples. (v = 0x7fff * samples[0].x)
 
-int get_buffer_length_frames() const 🔗
+int get_buffer_length_frames() const 
 
 Returns the total size of the internal ring buffer in frames.
 
-int get_discarded_frames() const 🔗
+int get_discarded_frames() const 
 
 Returns the number of audio frames discarded from the audio bus due to full buffer.
 
-int get_frames_available() const 🔗
+int get_frames_available() const 
 
 Returns the number of frames available to read using get_buffer().
 
-int get_pushed_frames() const 🔗
+int get_pushed_frames() const 
 
 Returns the number of audio frames inserted from the audio bus.
 
@@ -233,7 +233,7 @@ void set_dry(value: float)
 
 The effect's raw signal.
 
-float voice/1/cutoff_hz = 8000.0 🔗
+float voice/1/cutoff_hz = 8000.0 
 
 void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float)
 
@@ -241,7 +241,7 @@ float get_voice_cutoff_hz(voice_idx: int) const
 
 The voice's cutoff frequency.
 
-float voice/1/delay_ms = 15.0 🔗
+float voice/1/delay_ms = 15.0 
 
 void set_voice_delay_ms(voice_idx: int, delay_ms: float)
 
@@ -249,7 +249,7 @@ float get_voice_delay_ms(voice_idx: int) const
 
 The voice's signal delay.
 
-float voice/1/depth_ms = 2.0 🔗
+float voice/1/depth_ms = 2.0 
 
 void set_voice_depth_ms(voice_idx: int, depth_ms: float)
 
@@ -257,13 +257,13 @@ float get_voice_depth_ms(voice_idx: int) const
 
 The voice filter's depth.
 
-float voice/1/level_db = 0.0 🔗
+float voice/1/level_db = 0.0 
 
 void set_voice_level_db(voice_idx: int, level_db: float)
 
 float get_voice_level_db(voice_idx: int) const
 
-float voice/1/pan = -0.5 🔗
+float voice/1/pan = -0.5 
 
 void set_voice_pan(voice_idx: int, pan: float)
 
@@ -271,7 +271,7 @@ float get_voice_pan(voice_idx: int) const
 
 The voice's pan level.
 
-float voice/1/rate_hz = 0.8 🔗
+float voice/1/rate_hz = 0.8 
 
 void set_voice_rate_hz(voice_idx: int, rate_hz: float)
 
@@ -279,7 +279,7 @@ float get_voice_rate_hz(voice_idx: int) const
 
 The voice's filter rate.
 
-float voice/2/cutoff_hz = 8000.0 🔗
+float voice/2/cutoff_hz = 8000.0 
 
 void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float)
 
@@ -287,7 +287,7 @@ float get_voice_cutoff_hz(voice_idx: int) const
 
 The voice's cutoff frequency.
 
-float voice/2/delay_ms = 20.0 🔗
+float voice/2/delay_ms = 20.0 
 
 void set_voice_delay_ms(voice_idx: int, delay_ms: float)
 
@@ -295,7 +295,7 @@ float get_voice_delay_ms(voice_idx: int) const
 
 The voice's signal delay.
 
-float voice/2/depth_ms = 3.0 🔗
+float voice/2/depth_ms = 3.0 
 
 void set_voice_depth_ms(voice_idx: int, depth_ms: float)
 
@@ -303,13 +303,13 @@ float get_voice_depth_ms(voice_idx: int) const
 
 The voice filter's depth.
 
-float voice/2/level_db = 0.0 🔗
+float voice/2/level_db = 0.0 
 
 void set_voice_level_db(voice_idx: int, level_db: float)
 
 float get_voice_level_db(voice_idx: int) const
 
-float voice/2/pan = 0.5 🔗
+float voice/2/pan = 0.5 
 
 void set_voice_pan(voice_idx: int, pan: float)
 
@@ -317,7 +317,7 @@ float get_voice_pan(voice_idx: int) const
 
 The voice's pan level.
 
-float voice/2/rate_hz = 1.2 🔗
+float voice/2/rate_hz = 1.2 
 
 void set_voice_rate_hz(voice_idx: int, rate_hz: float)
 
@@ -325,7 +325,7 @@ float get_voice_rate_hz(voice_idx: int) const
 
 The voice's filter rate.
 
-float voice/3/cutoff_hz 🔗
+float voice/3/cutoff_hz 
 
 void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float)
 
@@ -333,7 +333,7 @@ float get_voice_cutoff_hz(voice_idx: int) const
 
 The voice's cutoff frequency.
 
-float voice/3/delay_ms 🔗
+float voice/3/delay_ms 
 
 void set_voice_delay_ms(voice_idx: int, delay_ms: float)
 
@@ -341,7 +341,7 @@ float get_voice_delay_ms(voice_idx: int) const
 
 The voice's signal delay.
 
-float voice/3/depth_ms 🔗
+float voice/3/depth_ms 
 
 void set_voice_depth_ms(voice_idx: int, depth_ms: float)
 
@@ -349,51 +349,7 @@ float get_voice_depth_ms(voice_idx: int) const
 
 The voice filter's depth.
 
-float voice/3/level_db 🔗
-
-void set_voice_level_db(voice_idx: int, level_db: float)
-
-float get_voice_level_db(voice_idx: int) const
-
-void set_voice_pan(voice_idx: int, pan: float)
-
-float get_voice_pan(voice_idx: int) const
-
-The voice's pan level.
-
-float voice/3/rate_hz 🔗
-
-void set_voice_rate_hz(voice_idx: int, rate_hz: float)
-
-float get_voice_rate_hz(voice_idx: int) const
-
-The voice's filter rate.
-
-float voice/4/cutoff_hz 🔗
-
-void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float)
-
-float get_voice_cutoff_hz(voice_idx: int) const
-
-The voice's cutoff frequency.
-
-float voice/4/delay_ms 🔗
-
-void set_voice_delay_ms(voice_idx: int, delay_ms: float)
-
-float get_voice_delay_ms(voice_idx: int) const
-
-The voice's signal delay.
-
-float voice/4/depth_ms 🔗
-
-void set_voice_depth_ms(voice_idx: int, depth_ms: float)
-
-float get_voice_depth_ms(voice_idx: int) const
-
-The voice filter's depth.
-
-float voice/4/level_db 🔗
+float voice/3/level_db 
 
 void set_voice_level_db(voice_idx: int, level_db: float)
 
@@ -405,7 +361,7 @@ float get_voice_pan(voice_idx: int) const
 
 The voice's pan level.
 
-float voice/4/rate_hz 🔗
+float voice/3/rate_hz 
 
 void set_voice_rate_hz(voice_idx: int, rate_hz: float)
 
@@ -413,7 +369,51 @@ float get_voice_rate_hz(voice_idx: int) const
 
 The voice's filter rate.
 
-int voice_count = 2 🔗
+float voice/4/cutoff_hz 
+
+void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float)
+
+float get_voice_cutoff_hz(voice_idx: int) const
+
+The voice's cutoff frequency.
+
+float voice/4/delay_ms 
+
+void set_voice_delay_ms(voice_idx: int, delay_ms: float)
+
+float get_voice_delay_ms(voice_idx: int) const
+
+The voice's signal delay.
+
+float voice/4/depth_ms 
+
+void set_voice_depth_ms(voice_idx: int, depth_ms: float)
+
+float get_voice_depth_ms(voice_idx: int) const
+
+The voice filter's depth.
+
+float voice/4/level_db 
+
+void set_voice_level_db(voice_idx: int, level_db: float)
+
+float get_voice_level_db(voice_idx: int) const
+
+void set_voice_pan(voice_idx: int, pan: float)
+
+float get_voice_pan(voice_idx: int) const
+
+The voice's pan level.
+
+float voice/4/rate_hz 
+
+void set_voice_rate_hz(voice_idx: int, rate_hz: float)
+
+float get_voice_rate_hz(voice_idx: int) const
+
+The voice's filter rate.
+
+int voice_count = 2 
 
 void set_voice_count(value: int)
 
@@ -425,51 +425,51 @@ void set_wet(value: float)
 
 The effect's processed signal.
 
-float get_voice_cutoff_hz(voice_idx: int) const 🔗
+float get_voice_cutoff_hz(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-float get_voice_delay_ms(voice_idx: int) const 🔗
+float get_voice_delay_ms(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-float get_voice_depth_ms(voice_idx: int) const 🔗
+float get_voice_depth_ms(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-float get_voice_level_db(voice_idx: int) const 🔗
+float get_voice_level_db(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-float get_voice_pan(voice_idx: int) const 🔗
+float get_voice_pan(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-float get_voice_rate_hz(voice_idx: int) const 🔗
+float get_voice_rate_hz(voice_idx: int) const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float) 🔗
+void set_voice_cutoff_hz(voice_idx: int, cutoff_hz: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_delay_ms(voice_idx: int, delay_ms: float) 🔗
+void set_voice_delay_ms(voice_idx: int, delay_ms: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_depth_ms(voice_idx: int, depth_ms: float) 🔗
+void set_voice_depth_ms(voice_idx: int, depth_ms: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_level_db(voice_idx: int, level_db: float) 🔗
+void set_voice_level_db(voice_idx: int, level_db: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_pan(voice_idx: int, pan: float) 🔗
+void set_voice_pan(voice_idx: int, pan: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_voice_rate_hz(voice_idx: int, rate_hz: float) 🔗
+void set_voice_rate_hz(voice_idx: int, rate_hz: float) 
 
 There is currently no description for this method. Please help us by contributing one!
 
@@ -507,7 +507,7 @@ Sidechained. This can reduce the sound level sidechained with another audio bus 
 
 Accentuates transients by using a wider attack, making effects sound more punchy.
 
-float attack_us = 20.0 🔗
+float attack_us = 20.0 
 
 void set_attack_us(value: float)
 
@@ -527,7 +527,7 @@ void set_ratio(value: float)
 
 Amount of compression applied to the audio once it passes the threshold level. The higher the ratio, the more the loud parts of the audio will be compressed. Value can range from 1 to 48.
 
-float release_ms = 250.0 🔗
+float release_ms = 250.0 
 
 void set_release_ms(value: float)
 
@@ -535,7 +535,7 @@ float get_release_ms()
 
 Compressor's delay time to stop reducing the signal after the signal level falls below the threshold, in milliseconds. Value can range from 20 to 2000.
 
-StringName sidechain = &"" 🔗
+StringName sidechain = &"" 
 
 void set_sidechain(value: StringName)
 
@@ -543,7 +543,7 @@ StringName get_sidechain()
 
 Reduce the sound level using another audio bus for threshold detection.
 
-float threshold = 0.0 🔗
+float threshold = 0.0 
 
 void set_threshold(value: float)
 
@@ -579,7 +579,7 @@ void set_dry(value: float)
 
 Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1.
 
-bool feedback_active = false 🔗
+bool feedback_active = false 
 
 void set_feedback_active(value: bool)
 
@@ -587,7 +587,7 @@ bool is_feedback_active()
 
 If true, feedback is enabled.
 
-float feedback_delay_ms = 340.0 🔗
+float feedback_delay_ms = 340.0 
 
 void set_feedback_delay_ms(value: float)
 
@@ -595,7 +595,7 @@ float get_feedback_delay_ms()
 
 Feedback delay time in milliseconds.
 
-float feedback_level_db = -6.0 🔗
+float feedback_level_db = -6.0 
 
 void set_feedback_level_db(value: float)
 
@@ -603,7 +603,7 @@ float get_feedback_level_db()
 
 Sound level for feedback.
 
-float feedback_lowpass = 16000.0 🔗
+float feedback_lowpass = 16000.0 
 
 void set_feedback_lowpass(value: float)
 
@@ -611,7 +611,7 @@ float get_feedback_lowpass()
 
 Low-pass filter for feedback, in Hz. Frequencies below this value are filtered out of the source signal.
 
-bool tap1_active = true 🔗
+bool tap1_active = true 
 
 void set_tap1_active(value: bool)
 
@@ -619,7 +619,7 @@ bool is_tap1_active()
 
 If true, the first tap will be enabled.
 
-float tap1_delay_ms = 250.0 🔗
+float tap1_delay_ms = 250.0 
 
 void set_tap1_delay_ms(value: float)
 
@@ -627,7 +627,7 @@ float get_tap1_delay_ms()
 
 First tap delay time in milliseconds.
 
-float tap1_level_db = -6.0 🔗
+float tap1_level_db = -6.0 
 
 void set_tap1_level_db(value: float)
 
@@ -635,13 +635,13 @@ float get_tap1_level_db()
 
 Sound level for the first tap.
 
-float tap1_pan = 0.2 🔗
+float tap1_pan = 0.2 
 
 void set_tap1_pan(value: float)
 
 Pan position for the first tap. Value can range from -1 (fully left) to 1 (fully right).
 
-bool tap2_active = true 🔗
+bool tap2_active = true 
 
 void set_tap2_active(value: bool)
 
@@ -649,7 +649,7 @@ bool is_tap2_active()
 
 If true, the second tap will be enabled.
 
-float tap2_delay_ms = 500.0 🔗
+float tap2_delay_ms = 500.0 
 
 void set_tap2_delay_ms(value: float)
 
@@ -657,7 +657,7 @@ float get_tap2_delay_ms()
 
 Second tap delay time in milliseconds.
 
-float tap2_level_db = -12.0 🔗
+float tap2_level_db = -12.0 
 
 void set_tap2_level_db(value: float)
 
@@ -665,7 +665,7 @@ float get_tap2_level_db()
 
 Sound level for the second tap.
 
-float tap2_pan = -0.4 🔗
+float tap2_pan = -0.4 
 
 void set_tap2_pan(value: float)
 
@@ -716,7 +716,7 @@ void set_drive(value: float)
 
 Distortion power. Value can range from 0 to 1.
 
-float keep_hf_hz = 16000.0 🔗
+float keep_hf_hz = 16000.0 
 
 void set_keep_hf_hz(value: float)
 
@@ -726,7 +726,7 @@ High-pass filter, in Hz. Frequencies higher than this value will not be affected
 
 void set_mode(value: Mode)
 
-float post_gain = 0.0 🔗
+float post_gain = 0.0 
 
 void set_post_gain(value: float)
 
@@ -734,7 +734,7 @@ float get_post_gain()
 
 Increases or decreases the volume after the effect, in decibels. Value can range from -80 to 24.
 
-float pre_gain = 0.0 🔗
+float pre_gain = 0.0 
 
 void set_pre_gain(value: float)
 
@@ -838,15 +838,15 @@ get_band_gain_db(band_idx: int) const
 
 set_band_gain_db(band_idx: int, volume_db: float)
 
-int get_band_count() const 🔗
+int get_band_count() const 
 
 Returns the number of bands of the equalizer.
 
-float get_band_gain_db(band_idx: int) const 🔗
+float get_band_gain_db(band_idx: int) const 
 
 Returns the band's gain at the specified index, in dB.
 
-void set_band_gain_db(band_idx: int, volume_db: float) 🔗
+void set_band_gain_db(band_idx: int, volume_db: float) 
 
 Sets band's gain at the specified index, in dB.
 
@@ -891,7 +891,7 @@ FilterDB FILTER_24DB = 3
 
 Cutting off at 24dB per octave.
 
-float cutoff_hz = 2000.0 🔗
+float cutoff_hz = 2000.0 
 
 void set_cutoff(value: float)
 
@@ -905,7 +905,7 @@ void set_gain(value: float)
 
 Gain amount of the frequencies after the filter.
 
-float resonance = 0.5 🔗
+float resonance = 0.5 
 
 void set_resonance(value: float)
 
@@ -935,7 +935,7 @@ Adds a hard limiter audio effect to an Audio bus.
 
 A limiter is an effect designed to disallow sound from going over a given dB threshold. Hard limiters predict volume peaks, and will smoothly apply gain reduction when a peak crosses the ceiling threshold to prevent clipping and distortion. It preserves the waveform and prevents it from crossing the ceiling threshold. Adding one in the Master bus is recommended as a safety measure to prevent sudden volume peaks from occurring, and to prevent distortion caused by clipping.
 
-float ceiling_db = -0.3 🔗
+float ceiling_db = -0.3 
 
 void set_ceiling_db(value: float)
 
@@ -945,7 +945,7 @@ The waveform's maximum allowed value, in decibels. This value can range from -24
 
 The default value of -0.3 prevents potential inter-sample peaks (ISP) from crossing over 0 dB, which can cause slight distortion on some older hardware.
 
-float pre_gain_db = 0.0 🔗
+float pre_gain_db = 0.0 
 
 void set_pre_gain_db(value: float)
 
@@ -953,7 +953,7 @@ float get_pre_gain_db()
 
 Gain to apply before limiting, in decibels.
 
-float release = 0.1 🔗
+float release = 0.1 
 
 void set_release(value: float)
 
@@ -1027,13 +1027,13 @@ _process(src_buffer: const void*, dst_buffer: AudioFrame*, frame_count: int) vir
 
 _process_silence() virtual const
 
-void _process(src_buffer: const void*, dst_buffer: AudioFrame*, frame_count: int) virtual required 🔗
+void _process(src_buffer: const void*, dst_buffer: AudioFrame*, frame_count: int) virtual required 
 
 Called by the AudioServer to process this effect. When _process_silence() is not overridden or it returns false, this method is called only when the bus is active.
 
 Note: It is not useful to override this method in GDScript or C#. Only GDExtension can take advantage of it.
 
-bool _process_silence() virtual const 🔗
+bool _process_silence() virtual const 
 
 Override this method to customize the processing behavior of this effect instance.
 
@@ -1065,7 +1065,7 @@ A limiter is similar to a compressor, but it's less flexible and designed to dis
 
 Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 
-float ceiling_db = -0.1 🔗
+float ceiling_db = -0.1 
 
 void set_ceiling_db(value: float)
 
@@ -1073,7 +1073,7 @@ float get_ceiling_db()
 
 The waveform's maximum allowed value, in decibels. Value can range from -20 to -0.1.
 
-float soft_clip_db = 2.0 🔗
+float soft_clip_db = 2.0 
 
 void set_soft_clip_db(value: float)
 
@@ -1081,7 +1081,7 @@ float get_soft_clip_db()
 
 Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 
-float soft_clip_ratio = 10.0 🔗
+float soft_clip_ratio = 10.0 
 
 void set_soft_clip_ratio(value: float)
 
@@ -1089,7 +1089,7 @@ float get_soft_clip_ratio()
 
 There is currently no description for this property. Please help us by contributing one!
 
-float threshold_db = 0.0 🔗
+float threshold_db = 0.0 
 
 void set_threshold_db(value: float)
 
@@ -1211,13 +1211,13 @@ void set_depth(value: float)
 
 Determines how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4.0.
 
-float feedback = 0.7 🔗
+float feedback = 0.7 
 
 void set_feedback(value: float)
 
 Output percent of modified sound. Value can range from 0.1 to 0.9.
 
-float range_max_hz = 1600.0 🔗
+float range_max_hz = 1600.0 
 
 void set_range_max_hz(value: float)
 
@@ -1225,7 +1225,7 @@ float get_range_max_hz()
 
 Determines the maximum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
 
-float range_min_hz = 440.0 🔗
+float range_min_hz = 440.0 
 
 void set_range_min_hz(value: float)
 
@@ -1233,7 +1233,7 @@ float get_range_min_hz()
 
 Determines the minimum frequency affected by the LFO modulations, in Hz. Value can range from 10 to 10000.
 
-float rate_hz = 0.5 🔗
+float rate_hz = 0.5 
 
 void set_rate_hz(value: float)
 
@@ -1288,7 +1288,7 @@ FFTSize FFT_SIZE_MAX = 5
 
 Represents the size of the FFTSize enum.
 
-FFTSize fft_size = 3 🔗
+FFTSize fft_size = 3 
 
 void set_fft_size(value: FFTSize)
 
@@ -1296,7 +1296,7 @@ FFTSize get_fft_size()
 
 The size of the Fast Fourier transform buffer. Higher values smooth out the effect over time, but have greater latency. The effects of this higher latency are especially noticeable on sounds that have sudden amplitude changes.
 
-int oversampling = 4 🔗
+int oversampling = 4 
 
 void set_oversampling(value: int)
 
@@ -1304,7 +1304,7 @@ int get_oversampling()
 
 The oversampling factor to use. Higher values result in better quality, but are more demanding on the CPU and may cause audio cracking if the CPU can't keep up.
 
-float pitch_scale = 1.0 🔗
+float pitch_scale = 1.0 
 
 void set_pitch_scale(value: float)
 
@@ -1356,15 +1356,15 @@ void set_format(value: Format)
 
 Specifies the format in which the sample will be recorded.
 
-AudioStreamWAV get_recording() const 🔗
+AudioStreamWAV get_recording() const 
 
 Returns the recorded sample.
 
-bool is_recording_active() const 🔗
+bool is_recording_active() const 
 
 Returns whether the recording is active or not.
 
-void set_recording_active(record: bool) 🔗
+void set_recording_active(record: bool) 
 
 If true, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 
@@ -1392,7 +1392,7 @@ Simulates the sound of acoustic environments such as rooms, concert halls, caver
 
 Third Person Shooter (TPS) Demo
 
-float damping = 0.5 🔗
+float damping = 0.5 
 
 void set_damping(value: float)
 
@@ -1406,7 +1406,7 @@ void set_hpf(value: float)
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
 
-float predelay_feedback = 0.4 🔗
+float predelay_feedback = 0.4 
 
 void set_predelay_feedback(value: float)
 
@@ -1414,7 +1414,7 @@ float get_predelay_feedback()
 
 Output percent of predelay. Value can range from 0 to 1.
 
-float predelay_msec = 150.0 🔗
+float predelay_msec = 150.0 
 
 void set_predelay_msec(value: float)
 
@@ -1422,7 +1422,7 @@ float get_predelay_msec()
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
 
-float room_size = 0.8 🔗
+float room_size = 0.8 
 
 void set_room_size(value: float)
 
@@ -1467,7 +1467,7 @@ Audio Spectrum Visualizer Demo
 
 get_magnitude_for_frequency_range(from_hz: float, to_hz: float, mode: MagnitudeMode = 1) const
 
-enum MagnitudeMode: 🔗
+enum MagnitudeMode: 
 
 MagnitudeMode MAGNITUDE_AVERAGE = 0
 
@@ -1477,7 +1477,7 @@ MagnitudeMode MAGNITUDE_MAX = 1
 
 Use the maximum value of the frequency range as magnitude.
 
-Vector2 get_magnitude_for_frequency_range(from_hz: float, to_hz: float, mode: MagnitudeMode = 1) const 🔗
+Vector2 get_magnitude_for_frequency_range(from_hz: float, to_hz: float, mode: MagnitudeMode = 1) const 
 
 Returns the magnitude of the frequencies from from_hz to to_hz in linear energy as a Vector2. The x component of the return value represents the left stereo channel, and y represents the right channel.
 
@@ -1536,7 +1536,7 @@ FFTSize FFT_SIZE_MAX = 5
 
 Represents the size of the FFTSize enum.
 
-float buffer_length = 2.0 🔗
+float buffer_length = 2.0 
 
 void set_buffer_length(value: float)
 
@@ -1544,7 +1544,7 @@ float get_buffer_length()
 
 The length of the buffer to keep (in seconds). Higher values keep data around for longer, but require more memory.
 
-FFTSize fft_size = 2 🔗
+FFTSize fft_size = 2 
 
 void set_fft_size(value: FFTSize)
 
@@ -1552,7 +1552,7 @@ FFTSize get_fft_size()
 
 The size of the Fast Fourier transform buffer. Higher values smooth out the spectrum analysis over time, but have greater latency. The effects of this higher latency are especially noticeable with sudden amplitude changes.
 
-float tap_back_pos = 0.01 🔗
+float tap_back_pos = 0.01 
 
 void set_tap_back_pos(value: float)
 
@@ -1582,7 +1582,7 @@ An audio effect that can be used to adjust the intensity of stereo panning.
 
 An audio effect that can be used to adjust the intensity of stereo panning.
 
-float pan_pullout = 1.0 🔗
+float pan_pullout = 1.0 
 
 void set_pan_pullout(value: float)
 
@@ -1590,13 +1590,13 @@ float get_pan_pullout()
 
 Amplifies the difference between stereo channels, increasing or decreasing existing panning. A value of 0.0 will downmix stereo to mono. Does not affect a mono signal.
 
-float surround = 0.0 🔗
+float surround = 0.0 
 
 void set_surround(value: float)
 
 Widens sound stage through phase shifting in conjunction with time_pullout_ms. Just pans sound to the left channel if time_pullout_ms is 0.
 
-float time_pullout_ms = 0.0 🔗
+float time_pullout_ms = 0.0 
 
 void set_time_pullout(value: float)
 
@@ -1634,7 +1634,7 @@ Audio Microphone Record Demo
 
 _instantiate() virtual required
 
-AudioEffectInstance _instantiate() virtual required 🔗
+AudioEffectInstance _instantiate() virtual required 
 
 Override this method to customize the AudioEffectInstance created when this effect is applied on a bus in the editor's Audio panel, or through AudioServer.add_bus_effect().
 
@@ -1811,11 +1811,11 @@ set_enable_tagging_used_audio_streams(enable: bool)
 
 swap_bus_effects(bus_idx: int, effect_idx: int, by_effect_idx: int)
 
-bus_layout_changed() 🔗
+bus_layout_changed() 
 
 Emitted when an audio bus is added, deleted, or moved.
 
-bus_renamed(bus_index: int, old_name: StringName, new_name: StringName) 🔗
+bus_renamed(bus_index: int, old_name: StringName, new_name: StringName) 
 
 Emitted when the audio bus at bus_index is renamed from old_name to new_name.
 
@@ -1867,7 +1867,7 @@ void set_bus_count(value: int)
 
 Number of available audio buses.
 
-String input_device = "Default" 🔗
+String input_device = "Default" 
 
 void set_input_device(value: String)
 
@@ -1877,7 +1877,7 @@ Name of the current device for audio input (see get_input_device_list()). On sys
 
 Note: ProjectSettings.audio/driver/enable_input must be true for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
-String output_device = "Default" 🔗
+String output_device = "Default" 
 
 void set_output_device(value: String)
 
@@ -1885,7 +1885,7 @@ String get_output_device()
 
 Name of the current device for audio output (see get_output_device_list()). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value "Default" will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to "Default".
 
-float playback_speed_scale = 1.0 🔗
+float playback_speed_scale = 1.0 
 
 void set_playback_speed_scale(value: float)
 
@@ -1893,121 +1893,121 @@ float get_playback_speed_scale()
 
 Scales the rate at which audio is played (i.e. setting it to 0.5 will make the audio be played at half its speed). See also Engine.time_scale to affect the general simulation speed, which is independent from playback_speed_scale.
 
-void add_bus(at_position: int = -1) 🔗
+void add_bus(at_position: int = -1) 
 
 Adds a bus at at_position.
 
-void add_bus_effect(bus_idx: int, effect: AudioEffect, at_position: int = -1) 🔗
+void add_bus_effect(bus_idx: int, effect: AudioEffect, at_position: int = -1) 
 
 Adds an AudioEffect effect to the bus bus_idx at at_position.
 
-AudioBusLayout generate_bus_layout() const 🔗
+AudioBusLayout generate_bus_layout() const 
 
 Generates an AudioBusLayout using the available buses and effects.
 
-int get_bus_channels(bus_idx: int) const 🔗
+int get_bus_channels(bus_idx: int) const 
 
 Returns the number of channels of the bus at index bus_idx.
 
-AudioEffect get_bus_effect(bus_idx: int, effect_idx: int) 🔗
+AudioEffect get_bus_effect(bus_idx: int, effect_idx: int) 
 
 Returns the AudioEffect at position effect_idx in bus bus_idx.
 
-int get_bus_effect_count(bus_idx: int) 🔗
+int get_bus_effect_count(bus_idx: int) 
 
 Returns the number of effects on the bus at bus_idx.
 
-AudioEffectInstance get_bus_effect_instance(bus_idx: int, effect_idx: int, channel: int = 0) 🔗
+AudioEffectInstance get_bus_effect_instance(bus_idx: int, effect_idx: int, channel: int = 0) 
 
 Returns the AudioEffectInstance assigned to the given bus and effect indices (and optionally channel).
 
-int get_bus_index(bus_name: StringName) const 🔗
+int get_bus_index(bus_name: StringName) const 
 
 Returns the index of the bus with the name bus_name. Returns -1 if no bus with the specified name exist.
 
-String get_bus_name(bus_idx: int) const 🔗
+String get_bus_name(bus_idx: int) const 
 
 Returns the name of the bus with the index bus_idx.
 
-float get_bus_peak_volume_left_db(bus_idx: int, channel: int) const 🔗
+float get_bus_peak_volume_left_db(bus_idx: int, channel: int) const 
 
 Returns the peak volume of the left speaker at bus index bus_idx and channel index channel.
 
-float get_bus_peak_volume_right_db(bus_idx: int, channel: int) const 🔗
+float get_bus_peak_volume_right_db(bus_idx: int, channel: int) const 
 
 Returns the peak volume of the right speaker at bus index bus_idx and channel index channel.
 
-StringName get_bus_send(bus_idx: int) const 🔗
+StringName get_bus_send(bus_idx: int) const 
 
 Returns the name of the bus that the bus at index bus_idx sends to.
 
-float get_bus_volume_db(bus_idx: int) const 🔗
+float get_bus_volume_db(bus_idx: int) const 
 
 Returns the volume of the bus at index bus_idx in dB.
 
-float get_bus_volume_linear(bus_idx: int) const 🔗
+float get_bus_volume_linear(bus_idx: int) const 
 
 Returns the volume of the bus at index bus_idx as a linear value.
 
 Note: The returned value is equivalent to the result of @GlobalScope.db_to_linear() on the result of get_bus_volume_db().
 
-String get_driver_name() const 🔗
+String get_driver_name() const 
 
 Returns the name of the current audio driver. The default usually depends on the operating system, but may be overridden via the --audio-driver command line argument. --headless also automatically sets the audio driver to Dummy. See also ProjectSettings.audio/driver/driver.
 
-PackedStringArray get_input_device_list() 🔗
+PackedStringArray get_input_device_list() 
 
 Returns the names of all audio input devices detected on the system.
 
 Note: ProjectSettings.audio/driver/enable_input must be true for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
-float get_input_mix_rate() const 🔗
+float get_input_mix_rate() const 
 
 Returns the sample rate at the input of the AudioServer.
 
-float get_mix_rate() const 🔗
+float get_mix_rate() const 
 
 Returns the sample rate at the output of the AudioServer.
 
-PackedStringArray get_output_device_list() 🔗
+PackedStringArray get_output_device_list() 
 
 Returns the names of all audio output devices detected on the system.
 
-float get_output_latency() const 🔗
+float get_output_latency() const 
 
 Returns the audio driver's effective output latency. This is based on ProjectSettings.audio/driver/output_latency, but the exact returned value will differ depending on the operating system and audio driver.
 
 Note: This can be expensive; it is not recommended to call get_output_latency() every frame.
 
-SpeakerMode get_speaker_mode() const 🔗
+SpeakerMode get_speaker_mode() const 
 
 Returns the speaker configuration.
 
-float get_time_since_last_mix() const 🔗
+float get_time_since_last_mix() const 
 
 Returns the relative time since the last mix occurred.
 
-float get_time_to_next_mix() const 🔗
+float get_time_to_next_mix() const 
 
 Returns the relative time until the next mix occurs.
 
-bool is_bus_bypassing_effects(bus_idx: int) const 🔗
+bool is_bus_bypassing_effects(bus_idx: int) const 
 
 If true, the bus at index bus_idx is bypassing effects.
 
-bool is_bus_effect_enabled(bus_idx: int, effect_idx: int) const 🔗
+bool is_bus_effect_enabled(bus_idx: int, effect_idx: int) const 
 
 If true, the effect at index effect_idx on the bus at index bus_idx is enabled.
 
-bool is_bus_mute(bus_idx: int) const 🔗
+bool is_bus_mute(bus_idx: int) const 
 
 If true, the bus at index bus_idx is muted.
 
-bool is_bus_solo(bus_idx: int) const 🔗
+bool is_bus_solo(bus_idx: int) const 
 
 If true, the bus at index bus_idx is in solo mode.
 
-bool is_stream_registered_as_sample(stream: AudioStream) 🔗
+bool is_stream_registered_as_sample(stream: AudioStream) 
 
 Experimental: This method may be changed or removed in future versions.
 
@@ -2019,11 +2019,11 @@ Locks the audio driver's main loop.
 
 Note: Remember to unlock it afterwards.
 
-void move_bus(index: int, to_index: int) 🔗
+void move_bus(index: int, to_index: int) 
 
 Moves the bus from index index to index to_index.
 
-void register_stream_as_sample(stream: AudioStream) 🔗
+void register_stream_as_sample(stream: AudioStream) 
 
 Experimental: This method may be changed or removed in future versions.
 
@@ -2031,59 +2031,59 @@ Forces the registration of a stream as a sample.
 
 Note: Lag spikes may occur when calling this method, especially on single-threaded builds. It is suggested to call this method while loading assets, where the lag spike could be masked, instead of registering the sample right before it needs to be played.
 
-void remove_bus(index: int) 🔗
+void remove_bus(index: int) 
 
 Removes the bus at index index.
 
-void remove_bus_effect(bus_idx: int, effect_idx: int) 🔗
+void remove_bus_effect(bus_idx: int, effect_idx: int) 
 
 Removes the effect at index effect_idx from the bus at index bus_idx.
 
-void set_bus_bypass_effects(bus_idx: int, enable: bool) 🔗
+void set_bus_bypass_effects(bus_idx: int, enable: bool) 
 
 If true, the bus at index bus_idx is bypassing effects.
 
-void set_bus_effect_enabled(bus_idx: int, effect_idx: int, enabled: bool) 🔗
+void set_bus_effect_enabled(bus_idx: int, effect_idx: int, enabled: bool) 
 
 If true, the effect at index effect_idx on the bus at index bus_idx is enabled.
 
-void set_bus_layout(bus_layout: AudioBusLayout) 🔗
+void set_bus_layout(bus_layout: AudioBusLayout) 
 
 Overwrites the currently used AudioBusLayout.
 
-void set_bus_mute(bus_idx: int, enable: bool) 🔗
+void set_bus_mute(bus_idx: int, enable: bool) 
 
 If true, the bus at index bus_idx is muted.
 
-void set_bus_name(bus_idx: int, name: String) 🔗
+void set_bus_name(bus_idx: int, name: String) 
 
 Sets the name of the bus at index bus_idx to name.
 
-void set_bus_send(bus_idx: int, send: StringName) 🔗
+void set_bus_send(bus_idx: int, send: StringName) 
 
 Connects the output of the bus at bus_idx to the bus named send.
 
-void set_bus_solo(bus_idx: int, enable: bool) 🔗
+void set_bus_solo(bus_idx: int, enable: bool) 
 
 If true, the bus at index bus_idx is in solo mode.
 
-void set_bus_volume_db(bus_idx: int, volume_db: float) 🔗
+void set_bus_volume_db(bus_idx: int, volume_db: float) 
 
 Sets the volume in decibels of the bus at index bus_idx to volume_db.
 
-void set_bus_volume_linear(bus_idx: int, volume_linear: float) 🔗
+void set_bus_volume_linear(bus_idx: int, volume_linear: float) 
 
 Sets the volume as a linear value of the bus at index bus_idx to volume_linear.
 
 Note: Using this method is equivalent to calling set_bus_volume_db() with the result of @GlobalScope.linear_to_db() on a value.
 
-void set_enable_tagging_used_audio_streams(enable: bool) 🔗
+void set_enable_tagging_used_audio_streams(enable: bool) 
 
 If set to true, all instances of AudioStreamPlayback will call AudioStreamPlayback._tag_used_streams() every mix step.
 
 Note: This is enabled by default in the editor, as it is used by editor plugins for the audio stream previews.
 
-void swap_bus_effects(bus_idx: int, effect_idx: int, by_effect_idx: int) 🔗
+void swap_bus_effects(bus_idx: int, effect_idx: int, by_effect_idx: int) 
 
 Swaps the position of two effects in bus bus_idx.
 
@@ -2121,27 +2121,27 @@ push_buffer(frames: PackedVector2Array)
 
 push_frame(frame: Vector2)
 
-bool can_push_buffer(amount: int) const 🔗
+bool can_push_buffer(amount: int) const 
 
 Returns true if a buffer of the size amount can be pushed to the audio sample data buffer without overflowing it, false otherwise.
 
-void clear_buffer() 🔗
+void clear_buffer() 
 
 Clears the audio sample data buffer.
 
-int get_frames_available() const 🔗
+int get_frames_available() const 
 
 Returns the number of frames that can be pushed to the audio sample data buffer without overflowing it. If the result is 0, the buffer is full.
 
-int get_skips() const 🔗
+int get_skips() const 
 
 Returns the number of times the playback skipped due to a buffer underrun in the audio sample data. This value is reset at the start of the playback.
 
-bool push_buffer(frames: PackedVector2Array) 🔗
+bool push_buffer(frames: PackedVector2Array) 
 
 Pushes several audio data frames to the buffer. This is usually more efficient than push_frame() in C# and compiled languages via GDExtension, but push_buffer() may be less efficient in GDScript.
 
-bool push_frame(frame: Vector2) 🔗
+bool push_frame(frame: Vector2) 
 
 Pushes a single audio data frame to the buffer. This is usually less efficient than push_buffer() in C# and compiled languages via GDExtension, but push_frame() may be more efficient in GDScript.
 
@@ -2178,7 +2178,7 @@ Note: Due to performance constraints, this class is best used from C# or from a 
 
 AudioStreamGeneratorMixRate
 
-enum AudioStreamGeneratorMixRate: 🔗
+enum AudioStreamGeneratorMixRate: 
 
 AudioStreamGeneratorMixRate MIX_RATE_OUTPUT = 0
 
@@ -2196,7 +2196,7 @@ AudioStreamGeneratorMixRate MIX_RATE_MAX = 3
 
 Maximum value for the mixing rate mode enum.
 
-float buffer_length = 0.5 🔗
+float buffer_length = 0.5 
 
 void set_buffer_length(value: float)
 
@@ -2204,7 +2204,7 @@ float get_buffer_length()
 
 The length of the buffer to generate (in seconds). Lower values result in less latency, but require the script to generate audio data faster, resulting in increased CPU usage and more risk for audio cracking if the CPU can't keep up.
 
-float mix_rate = 44100.0 🔗
+float mix_rate = 44100.0 
 
 void set_mix_rate(value: float)
 
@@ -2218,7 +2218,7 @@ Note: AudioStreamGenerator is not automatically resampling input data, to produc
 
 Note: If you are using AudioEffectCapture as the source of your data, set mix_rate_mode to MIX_RATE_INPUT or MIX_RATE_OUTPUT to automatically match current AudioServer mixing rate.
 
-AudioStreamGeneratorMixRate mix_rate_mode = 2 🔗
+AudioStreamGeneratorMixRate mix_rate_mode = 2 
 
 void set_mix_rate_mode(value: AudioStreamGeneratorMixRate)
 
@@ -2347,7 +2347,7 @@ set_clip_name(clip_index: int, name: StringName)
 
 set_clip_stream(clip_index: int, stream: AudioStream)
 
-enum TransitionFromTime: 🔗
+enum TransitionFromTime: 
 
 TransitionFromTime TRANSITION_FROM_TIME_IMMEDIATE = 0
 
@@ -2365,7 +2365,7 @@ TransitionFromTime TRANSITION_FROM_TIME_END = 3
 
 Transition when the current clip finished playing.
 
-enum TransitionToTime: 🔗
+enum TransitionToTime: 
 
 TransitionToTime TRANSITION_TO_TIME_SAME_POSITION = 0
 
@@ -2393,7 +2393,7 @@ FadeMode FADE_AUTOMATIC = 4
 
 Use automatic fade logic depending on the transition from/to. It is recommended to use this by default.
 
-enum AutoAdvanceMode: 🔗
+enum AutoAdvanceMode: 
 
 AutoAdvanceMode AUTO_ADVANCE_DISABLED = 0
 
@@ -2413,7 +2413,7 @@ void set_clip_count(value: int)
 
 Amount of clips contained in this interactive player.
 
-int initial_clip = 0 🔗
+int initial_clip = 0 
 
 void set_initial_clip(value: int)
 
@@ -2421,7 +2421,7 @@ int get_initial_clip()
 
 Index of the initial clip, which will be played first when this stream is played.
 
-void add_transition(from_clip: int, to_clip: int, from_time: TransitionFromTime, to_time: TransitionToTime, fade_mode: FadeMode, fade_beats: float, use_filler_clip: bool = false, filler_clip: int = -1, hold_previous: bool = false) 🔗
+void add_transition(from_clip: int, to_clip: int, from_time: TransitionFromTime, to_time: TransitionToTime, fade_mode: FadeMode, fade_beats: float, use_filler_clip: bool = false, filler_clip: int = -1, hold_previous: bool = false) 
 
 Add a transition between two clips. Provide the indices of the source and destination clips, or use the CLIP_ANY constant to indicate that transition happens to/from any clip to this one.
 
@@ -2439,75 +2439,75 @@ Add a transition between two clips. Provide the indices of the source and destin
 
 * If hold_previous is used, then this clip will be remembered. This can be used together with AUTO_ADVANCE_RETURN_TO_HOLD to return to this clip after another is done playing.
 
-void erase_transition(from_clip: int, to_clip: int) 🔗
+void erase_transition(from_clip: int, to_clip: int) 
 
 Erase a transition by providing from_clip and to_clip clip indices. CLIP_ANY can be used for either argument or both.
 
-AutoAdvanceMode get_clip_auto_advance(clip_index: int) const 🔗
+AutoAdvanceMode get_clip_auto_advance(clip_index: int) const 
 
 Return whether a clip has auto-advance enabled. See set_clip_auto_advance().
 
-int get_clip_auto_advance_next_clip(clip_index: int) const 🔗
+int get_clip_auto_advance_next_clip(clip_index: int) const 
 
 Return the clip towards which the clip referenced by clip_index will auto-advance to.
 
-StringName get_clip_name(clip_index: int) const 🔗
+StringName get_clip_name(clip_index: int) const 
 
 Return the name of a clip.
 
-AudioStream get_clip_stream(clip_index: int) const 🔗
+AudioStream get_clip_stream(clip_index: int) const 
 
 Return the AudioStream associated with a clip.
 
-float get_transition_fade_beats(from_clip: int, to_clip: int) const 🔗
+float get_transition_fade_beats(from_clip: int, to_clip: int) const 
 
 Return the time (in beats) for a transition (see add_transition()).
 
-FadeMode get_transition_fade_mode(from_clip: int, to_clip: int) const 🔗
+FadeMode get_transition_fade_mode(from_clip: int, to_clip: int) const 
 
 Return the mode for a transition (see add_transition()).
 
-int get_transition_filler_clip(from_clip: int, to_clip: int) const 🔗
+int get_transition_filler_clip(from_clip: int, to_clip: int) const 
 
 Return the filler clip for a transition (see add_transition()).
 
-TransitionFromTime get_transition_from_time(from_clip: int, to_clip: int) const 🔗
+TransitionFromTime get_transition_from_time(from_clip: int, to_clip: int) const 
 
 Return the source time position for a transition (see add_transition()).
 
-PackedInt32Array get_transition_list() const 🔗
+PackedInt32Array get_transition_list() const 
 
 Return the list of transitions (from, to interleaved).
 
-TransitionToTime get_transition_to_time(from_clip: int, to_clip: int) const 🔗
+TransitionToTime get_transition_to_time(from_clip: int, to_clip: int) const 
 
 Return the destination time position for a transition (see add_transition()).
 
-bool has_transition(from_clip: int, to_clip: int) const 🔗
+bool has_transition(from_clip: int, to_clip: int) const 
 
 Returns true if a given transition exists (was added via add_transition()).
 
-bool is_transition_holding_previous(from_clip: int, to_clip: int) const 🔗
+bool is_transition_holding_previous(from_clip: int, to_clip: int) const 
 
 Return whether a transition uses the hold previous functionality (see add_transition()).
 
-bool is_transition_using_filler_clip(from_clip: int, to_clip: int) const 🔗
+bool is_transition_using_filler_clip(from_clip: int, to_clip: int) const 
 
 Return whether a transition uses the filler clip functionality (see add_transition()).
 
-void set_clip_auto_advance(clip_index: int, mode: AutoAdvanceMode) 🔗
+void set_clip_auto_advance(clip_index: int, mode: AutoAdvanceMode) 
 
 Set whether a clip will auto-advance by changing the auto-advance mode.
 
-void set_clip_auto_advance_next_clip(clip_index: int, auto_advance_next_clip: int) 🔗
+void set_clip_auto_advance_next_clip(clip_index: int, auto_advance_next_clip: int) 
 
 Set the index of the next clip towards which this clip will auto advance to when finished. If the clip being played loops, then auto-advance will be ignored.
 
-void set_clip_name(clip_index: int, name: StringName) 🔗
+void set_clip_name(clip_index: int, name: StringName) 
 
 Set the name of the current clip (for easier identification).
 
-void set_clip_stream(clip_index: int, stream: AudioStream) 🔗
+void set_clip_stream(clip_index: int, stream: AudioStream) 
 
 Set the AudioStream associated with the current clip.
 
@@ -2578,7 +2578,7 @@ void set_bpm(value: float)
 
 There is currently no description for this property. Please help us by contributing one!
 
-PackedByteArray data = PackedByteArray() 🔗
+PackedByteArray data = PackedByteArray() 
 
 void set_data(value: PackedByteArray)
 
@@ -2594,7 +2594,7 @@ void set_loop(value: bool)
 
 If true, the stream will automatically loop when it reaches the end.
 
-float loop_offset = 0.0 🔗
+float loop_offset = 0.0 
 
 void set_loop_offset(value: float)
 
@@ -2602,11 +2602,11 @@ float get_loop_offset()
 
 Time in seconds at which the stream starts after being looped.
 
-AudioStreamMP3 load_from_buffer(stream_data: PackedByteArray) static 🔗
+AudioStreamMP3 load_from_buffer(stream_data: PackedByteArray) static 
 
 Creates a new AudioStreamMP3 instance from the given buffer. The buffer must contain MP3 data.
 
-AudioStreamMP3 load_from_file(path: String) static 🔗
+AudioStreamMP3 load_from_file(path: String) static 
 
 Creates a new AudioStreamMP3 instance from the given file path. The file must be in MP3 format.
 
@@ -2678,7 +2678,7 @@ void set_loop(value: bool)
 
 If true, the audio will play again from the specified loop_offset once it is done playing. Useful for ambient sounds and background music.
 
-float loop_offset = 0.0 🔗
+float loop_offset = 0.0 
 
 void set_loop_offset(value: float)
 
@@ -2686,7 +2686,7 @@ float get_loop_offset()
 
 Time in seconds at which the stream starts after being looped.
 
-OggPacketSequence packet_sequence 🔗
+OggPacketSequence packet_sequence 
 
 void set_packet_sequence(value: OggPacketSequence)
 
@@ -2694,7 +2694,7 @@ OggPacketSequence get_packet_sequence()
 
 Contains the raw Ogg data for this stream.
 
-Dictionary tags = {} 🔗
+Dictionary tags = {} 
 
 void set_tags(value: Dictionary)
 
@@ -2706,11 +2706,11 @@ Commonly used tags include title, artist, album, tracknumber, and date (date doe
 
 Note: No tag is guaranteed to be present in every file, so make sure to account for the keys not always existing.
 
-AudioStreamOggVorbis load_from_buffer(stream_data: PackedByteArray) static 🔗
+AudioStreamOggVorbis load_from_buffer(stream_data: PackedByteArray) static 
 
 Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer must contain Ogg Vorbis data.
 
-AudioStreamOggVorbis load_from_file(path: String) static 🔗
+AudioStreamOggVorbis load_from_file(path: String) static 
 
 Creates a new AudioStreamOggVorbis instance from the given file path. The file must be in Ogg Vorbis format.
 
@@ -2741,17 +2741,17 @@ switch_to_clip(clip_index: int)
 
 switch_to_clip_by_name(clip_name: StringName)
 
-int get_current_clip_index() const 🔗
+int get_current_clip_index() const 
 
 Return the index of the currently playing clip. You can use this to get the name of the currently playing clip with AudioStreamInteractive.get_clip_name().
 
 Example: Get the currently playing clip name from inside an AudioStreamPlayer node.
 
-void switch_to_clip(clip_index: int) 🔗
+void switch_to_clip(clip_index: int) 
 
 Switch to a clip (by index).
 
-void switch_to_clip_by_name(clip_name: StringName) 🔗
+void switch_to_clip_by_name(clip_name: StringName) 
 
 Switch to a clip (by name).
 
@@ -2828,11 +2828,11 @@ stop_stream(stream: int)
 
 Returned by play_stream() in case it could not allocate a stream for playback.
 
-bool is_stream_playing(stream: int) const 🔗
+bool is_stream_playing(stream: int) const 
 
 Returns true if the stream associated with the given integer ID is still playing. Check play_stream() for information on when this ID becomes invalid.
 
-int play_stream(stream: AudioStream, from_offset: float = 0, volume_db: float = 0, pitch_scale: float = 1.0, playback_type: PlaybackType = 0, bus: StringName = &"Master") 🔗
+int play_stream(stream: AudioStream, from_offset: float = 0, volume_db: float = 0, pitch_scale: float = 1.0, playback_type: PlaybackType = 0, bus: StringName = &"Master") 
 
 Play an AudioStream at a given offset, volume, pitch scale, playback type, and bus. Playback starts immediately.
 
@@ -2842,15 +2842,15 @@ This ID becomes invalid when the stream ends (if it does not loop), when the Aud
 
 This function returns INVALID_ID if the amount of streams currently playing equals AudioStreamPolyphonic.polyphony. If you need a higher amount of maximum polyphony, raise this value.
 
-void set_stream_pitch_scale(stream: int, pitch_scale: float) 🔗
+void set_stream_pitch_scale(stream: int, pitch_scale: float) 
 
 Change the stream pitch scale. The stream argument is an integer ID returned by play_stream().
 
-void set_stream_volume(stream: int, volume_db: float) 🔗
+void set_stream_volume(stream: int, volume_db: float) 
 
 Change the stream volume (in db). The stream argument is an integer ID returned by play_stream().
 
-void stop_stream(stream: int) 🔗
+void stop_stream(stream: int) 
 
 Stop a stream. The stream argument is an integer ID returned by play_stream(), which becomes invalid after calling this function.
 
@@ -2878,15 +2878,15 @@ _get_stream_sampling_rate() virtual required const
 
 _mix_resampled(dst_buffer: AudioFrame*, frame_count: int) virtual required
 
-float _get_stream_sampling_rate() virtual required const 🔗
+float _get_stream_sampling_rate() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _mix_resampled(dst_buffer: AudioFrame*, frame_count: int) virtual required 🔗
+int _mix_resampled(dst_buffer: AudioFrame*, frame_count: int) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void begin_resample() 🔗
+void begin_resample() 
 
 There is currently no description for this method. Please help us by contributing one!
 
@@ -2962,67 +2962,67 @@ set_sample_playback(playback_sample: AudioSamplePlayback)
 
 start(from_pos: float = 0.0)
 
-int _get_loop_count() virtual const 🔗
+int _get_loop_count() virtual const 
 
 Overridable method. Should return how many times this audio stream has looped. Most built-in playbacks always return 0.
 
-Variant _get_parameter(name: StringName) virtual const 🔗
+Variant _get_parameter(name: StringName) virtual const 
 
 Return the current value of a playback parameter by name (see AudioStream._get_parameter_list()).
 
-float _get_playback_position() virtual const 🔗
+float _get_playback_position() virtual const 
 
 Overridable method. Should return the current progress along the audio stream, in seconds.
 
-bool _is_playing() virtual const 🔗
+bool _is_playing() virtual const 
 
 Overridable method. Should return true if this playback is active and playing its audio stream.
 
-int _mix(buffer: AudioFrame*, rate_scale: float, frames: int) virtual required 🔗
+int _mix(buffer: AudioFrame*, rate_scale: float, frames: int) virtual required 
 
 Override this method to customize how the audio stream is mixed. This method is called even if the playback is not active.
 
 Note: It is not useful to override this method in GDScript or C#. Only GDExtension can take advantage of it.
 
-void _seek(position: float) virtual 🔗
+void _seek(position: float) virtual 
 
 Override this method to customize what happens when seeking this audio stream at the given position, such as by calling AudioStreamPlayer.seek().
 
-void _set_parameter(name: StringName, value: Variant) virtual 🔗
+void _set_parameter(name: StringName, value: Variant) virtual 
 
 Set the current value of a playback parameter by name (see AudioStream._get_parameter_list()).
 
-void _start(from_pos: float) virtual 🔗
+void _start(from_pos: float) virtual 
 
 Override this method to customize what happens when the playback starts at the given position, such as by calling AudioStreamPlayer.play().
 
-void _stop() virtual 🔗
+void _stop() virtual 
 
 Override this method to customize what happens when the playback is stopped, such as by calling AudioStreamPlayer.stop().
 
-void _tag_used_streams() virtual 🔗
+void _tag_used_streams() virtual 
 
 Overridable method. Called whenever the audio stream is mixed if the playback is active and AudioServer.set_enable_tagging_used_audio_streams() has been set to true. Editor plugins may use this method to "tag" the current position along the audio stream and display it in a preview.
 
-int get_loop_count() const 🔗
+int get_loop_count() const 
 
 Returns the number of times the stream has looped.
 
-float get_playback_position() const 🔗
+float get_playback_position() const 
 
 Returns the current position in the stream, in seconds.
 
-AudioSamplePlayback get_sample_playback() const 🔗
+AudioSamplePlayback get_sample_playback() const 
 
 Experimental: This method may be changed or removed in future versions.
 
 Returns the AudioSamplePlayback associated with this AudioStreamPlayback for playing back the audio sample of this stream.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if the stream is playing.
 
-PackedVector2Array mix_audio(rate_scale: float, frames: int) 🔗
+PackedVector2Array mix_audio(rate_scale: float, frames: int) 
 
 Mixes up to frames of audio from the stream from the current position, at a rate of rate_scale, advancing the stream.
 
@@ -3030,17 +3030,17 @@ Returns a PackedVector2Array where each element holds the left and right channel
 
 Note: Can return fewer frames than requested, make sure to use the size of the return value.
 
-void seek(time: float = 0.0) 🔗
+void seek(time: float = 0.0) 
 
 Seeks the stream at the given time, in seconds.
 
-void set_sample_playback(playback_sample: AudioSamplePlayback) 🔗
+void set_sample_playback(playback_sample: AudioSamplePlayback) 
 
 Experimental: This method may be changed or removed in future versions.
 
 Associates AudioSamplePlayback to this AudioStreamPlayback for playing back the audio sample of this stream.
 
-void start(from_pos: float = 0.0) 🔗
+void start(from_pos: float = 0.0) 
 
 Starts the stream from the given from_pos, in seconds.
 
@@ -3106,7 +3106,7 @@ MixTarget MIX_TARGET_CENTER = 2
 
 The audio will be played on the second channel, which is usually the center.
 
-bool autoplay = false 🔗
+bool autoplay = false 
 
 void set_autoplay(value: bool)
 
@@ -3114,7 +3114,7 @@ bool is_autoplay_enabled()
 
 If true, this node calls play() when entering the tree.
 
-StringName bus = &"Master" 🔗
+StringName bus = &"Master" 
 
 void set_bus(value: StringName)
 
@@ -3122,7 +3122,7 @@ The target bus name. All sounds from this node will be playing on this bus.
 
 Note: At runtime, if no bus with the given name exists, all sounds will fall back on "Master". See also AudioServer.get_bus_name().
 
-int max_polyphony = 1 🔗
+int max_polyphony = 1 
 
 void set_max_polyphony(value: int)
 
@@ -3130,7 +3130,7 @@ int get_max_polyphony()
 
 The maximum number of sounds this node can play at the same time. Calling play() after this value is reached will cut off the oldest sounds.
 
-MixTarget mix_target = 0 🔗
+MixTarget mix_target = 0 
 
 void set_mix_target(value: MixTarget)
 
@@ -3138,7 +3138,7 @@ MixTarget get_mix_target()
 
 The mix target channels. Has no effect when two speakers or less are detected (see SpeakerMode).
 
-float pitch_scale = 1.0 🔗
+float pitch_scale = 1.0 
 
 void set_pitch_scale(value: float)
 
@@ -3146,7 +3146,7 @@ float get_pitch_scale()
 
 The audio's pitch and tempo, as a multiplier of the stream's sample rate. A value of 2.0 doubles the audio's pitch, while a value of 0.5 halves the pitch.
 
-PlaybackType playback_type = 0 🔗
+PlaybackType playback_type = 0 
 
 void set_playback_type(value: PlaybackType)
 
@@ -3156,7 +3156,7 @@ Experimental: This property may be changed or removed in future versions.
 
 The playback type of the stream player. If set other than to the default value, it will force that playback type.
 
-bool playing = false 🔗
+bool playing = false 
 
 void set_playing(value: bool)
 
@@ -3168,7 +3168,7 @@ AudioStream get_stream()
 
 The AudioStream resource to be played. Setting this property stops all currently playing sounds. If left empty, the AudioStreamPlayer does not work.
 
-bool stream_paused = false 🔗
+bool stream_paused = false 
 
 void set_stream_paused(value: bool)
 
@@ -3178,7 +3178,7 @@ If true, the sounds are paused. Setting stream_paused to false resumes all sound
 
 Note: This property is automatically changed when exiting or entering the tree, or this node is paused (see Node.process_mode).
 
-float volume_db = 0.0 🔗
+float volume_db = 0.0 
 
 void set_volume_db(value: float)
 
@@ -3188,7 +3188,7 @@ Volume of sound, in decibels. This is an offset of the stream's volume.
 
 Note: To convert between decibel and linear energy (like most volume sliders do), use volume_linear, or @GlobalScope.db_to_linear() and @GlobalScope.linear_to_db().
 
-float volume_linear 🔗
+float volume_linear 
 
 void set_volume_linear(value: float)
 
@@ -3198,7 +3198,7 @@ Volume of sound, as a linear value.
 
 Note: This member modifies volume_db for convenience. The returned value is equivalent to the result of @GlobalScope.db_to_linear() on volume_db. Setting this member is equivalent to setting volume_db to the result of @GlobalScope.linear_to_db() on a value.
 
-float get_playback_position() 🔗
+float get_playback_position() 
 
 Returns the position in the AudioStream of the latest sound, in seconds. Returns 0.0 if no sounds are playing.
 
@@ -3206,19 +3206,19 @@ Note: The position is not always accurate, as the AudioServer does not mix audio
 
 Note: This method always returns 0.0 if the stream is an AudioStreamInteractive, since it can have multiple clips playing at once.
 
-AudioStreamPlayback get_stream_playback() 🔗
+AudioStreamPlayback get_stream_playback() 
 
 Returns the latest AudioStreamPlayback of this node, usually the most recently created by play(). If no sounds are playing, this method fails and returns an empty playback.
 
-bool has_stream_playback() 🔗
+bool has_stream_playback() 
 
 Returns true if any sound is active, even if stream_paused is set to true. See also playing and get_stream_playback().
 
-void play(from_position: float = 0.0) 🔗
+void play(from_position: float = 0.0) 
 
 Plays a sound from the beginning, or the given from_position in seconds.
 
-void seek(to_position: float) 🔗
+void seek(to_position: float) 
 
 Restarts all sounds to be played from the given to_position, in seconds. Does nothing if no sounds are playing.
 
@@ -3251,7 +3251,7 @@ set_list_stream(stream_index: int, audio_stream: AudioStream)
 
 Maximum amount of streams supported in the playlist.
 
-float fade_time = 0.3 🔗
+float fade_time = 0.3 
 
 void set_fade_time(value: float)
 
@@ -3263,13 +3263,13 @@ void set_loop(value: bool)
 
 If true, the playlist will loop, otherwise the playlist will end when the last stream is finished.
 
-bool shuffle = false 🔗
+bool shuffle = false 
 
 void set_shuffle(value: bool)
 
 If true, the playlist will shuffle each time playback starts and each time it loops.
 
-int stream_count = 0 🔗
+int stream_count = 0 
 
 void set_stream_count(value: int)
 
@@ -3277,15 +3277,15 @@ int get_stream_count()
 
 Amount of streams in the playlist.
 
-float get_bpm() const 🔗
+float get_bpm() const 
 
 Returns the BPM of the playlist, which can vary depending on the clip being played.
 
-AudioStream get_list_stream(stream_index: int) const 🔗
+AudioStream get_list_stream(stream_index: int) const 
 
 Returns the stream at playback position index.
 
-void set_list_stream(stream_index: int, audio_stream: AudioStream) 🔗
+void set_list_stream(stream_index: int, audio_stream: AudioStream) 
 
 Sets the stream at playback position index.
 
@@ -3368,7 +3368,7 @@ PlaybackMode PLAYBACK_SEQUENTIAL = 2
 
 Play streams in the order they appear in the stream pool. If only 1 sound is present in the pool, the same sound will always play.
 
-PlaybackMode playback_mode = 0 🔗
+PlaybackMode playback_mode = 0 
 
 void set_playback_mode(value: PlaybackMode)
 
@@ -3376,7 +3376,7 @@ PlaybackMode get_playback_mode()
 
 Controls how this AudioStreamRandomizer picks which AudioStream to play next.
 
-float random_pitch = 1.0 🔗
+float random_pitch = 1.0 
 
 void set_random_pitch(value: float)
 
@@ -3384,7 +3384,7 @@ float get_random_pitch()
 
 The intensity of random pitch variation. A value of 1 means no variation.
 
-float random_volume_offset_db = 0.0 🔗
+float random_volume_offset_db = 0.0 
 
 void set_random_volume_offset_db(value: float)
 
@@ -3392,7 +3392,7 @@ float get_random_volume_offset_db()
 
 The intensity of random volume variation. A value of 0 means no variation.
 
-int streams_count = 0 🔗
+int streams_count = 0 
 
 void set_streams_count(value: int)
 
@@ -3400,31 +3400,31 @@ int get_streams_count()
 
 The number of streams in the stream pool.
 
-void add_stream(index: int, stream: AudioStream, weight: float = 1.0) 🔗
+void add_stream(index: int, stream: AudioStream, weight: float = 1.0) 
 
 Insert a stream at the specified index. If the index is less than zero, the insertion occurs at the end of the underlying pool.
 
-AudioStream get_stream(index: int) const 🔗
+AudioStream get_stream(index: int) const 
 
 Returns the stream at the specified index.
 
-float get_stream_probability_weight(index: int) const 🔗
+float get_stream_probability_weight(index: int) const 
 
 Returns the probability weight associated with the stream at the given index.
 
-void move_stream(index_from: int, index_to: int) 🔗
+void move_stream(index_from: int, index_to: int) 
 
 Move a stream from one index to another.
 
-void remove_stream(index: int) 🔗
+void remove_stream(index: int) 
 
 Remove the stream at the specified index.
 
-void set_stream(index: int, stream: AudioStream) 🔗
+void set_stream(index: int, stream: AudioStream) 
 
 Set the AudioStream at the specified index.
 
-void set_stream_probability_weight(index: int, weight: float) 🔗
+void set_stream_probability_weight(index: int, weight: float) 
 
 Set the probability weight of the stream at the specified index. The higher this value, the more likely that the randomizer will choose this stream during random playback modes.
 
@@ -3462,7 +3462,7 @@ set_sync_stream_volume(stream_index: int, volume_db: float)
 
 Maximum amount of streams that can be synchronized.
 
-int stream_count = 0 🔗
+int stream_count = 0 
 
 void set_stream_count(value: int)
 
@@ -3470,19 +3470,19 @@ int get_stream_count()
 
 Set the total amount of streams that will be played back synchronized.
 
-AudioStream get_sync_stream(stream_index: int) const 🔗
+AudioStream get_sync_stream(stream_index: int) const 
 
 Get one of the synchronized streams, by index.
 
-float get_sync_stream_volume(stream_index: int) const 🔗
+float get_sync_stream_volume(stream_index: int) const 
 
 Get the volume of one of the synchronized streams, by index.
 
-void set_sync_stream(stream_index: int, audio_stream: AudioStream) 🔗
+void set_sync_stream(stream_index: int, audio_stream: AudioStream) 
 
 Set one of the synchronized streams, by index.
 
-void set_sync_stream_volume(stream_index: int, volume_db: float) 🔗
+void set_sync_stream_volume(stream_index: int, volume_db: float) 
 
 Set the volume of one of the synchronized streams, by index.
 
@@ -3551,7 +3551,7 @@ LoopMode LOOP_BACKWARD = 3
 
 Audio loops the data between loop_begin and loop_end, playing backward only.
 
-PackedByteArray data = PackedByteArray() 🔗
+PackedByteArray data = PackedByteArray() 
 
 void set_data(value: PackedByteArray)
 
@@ -3575,13 +3575,13 @@ void set_loop_end(value: int)
 
 The loop end point (in number of samples, relative to the beginning of the stream).
 
-LoopMode loop_mode = 0 🔗
+LoopMode loop_mode = 0 
 
 void set_loop_mode(value: LoopMode)
 
 LoopMode get_loop_mode()
 
-int mix_rate = 44100 🔗
+int mix_rate = 44100 
 
 void set_mix_rate(value: int)
 
@@ -3591,13 +3591,13 @@ In games, common sample rates in use are 11025, 16000, 22050, 32000, 44100, and 
 
 According to the Nyquist-Shannon sampling theorem, there is no quality difference to human hearing when going past 40,000 Hz (since most humans can only hear up to ~20,000 Hz, often less). If you are using lower-pitched sounds such as voices, lower sample rates such as 32000 or 22050 may be usable with no loss in quality.
 
-bool stereo = false 🔗
+bool stereo = false 
 
 void set_stereo(value: bool)
 
 If true, audio is stereo.
 
-Dictionary tags = {} 🔗
+Dictionary tags = {} 
 
 void set_tags(value: Dictionary)
 
@@ -3611,13 +3611,13 @@ Note: No tag is guaranteed to be present in every file, so make sure to account 
 
 Note: Only WAV files using a LIST chunk with an identifier of INFO to encode the tags are currently supported.
 
-AudioStreamWAV load_from_buffer(stream_data: PackedByteArray, options: Dictionary = {}) static 🔗
+AudioStreamWAV load_from_buffer(stream_data: PackedByteArray, options: Dictionary = {}) static 
 
 Creates a new AudioStreamWAV instance from the given buffer. The buffer must contain WAV data.
 
 The keys and values of options match the properties of ResourceImporterWAV. The usage of options is identical to load_from_file().
 
-AudioStreamWAV load_from_file(path: String, options: Dictionary = {}) static 🔗
+AudioStreamWAV load_from_file(path: String, options: Dictionary = {}) static 
 
 Creates a new AudioStreamWAV instance from the given file path. The file must be in WAV format.
 
@@ -3625,7 +3625,7 @@ The keys and values of options match the properties of ResourceImporterWAV.
 
 Example: Load the first file dropped as a WAV and play it:
 
-Error save_to_wav(path: String) 🔗
+Error save_to_wav(path: String) 
 
 Saves the AudioStreamWAV as a WAV file to path. Samples with IMA ADPCM or Quite OK Audio formats can't be saved.
 
@@ -3708,81 +3708,81 @@ is_meta_stream() const
 
 is_monophonic() const
 
-parameter_list_changed() 🔗
+parameter_list_changed() 
 
 Signal to be emitted to notify when the parameter list changed.
 
-int _get_bar_beats() virtual const 🔗
+int _get_bar_beats() virtual const 
 
 Override this method to return the bar beats of this stream.
 
-int _get_beat_count() virtual const 🔗
+int _get_beat_count() virtual const 
 
 Overridable method. Should return the total number of beats of this audio stream. Used by the engine to determine the position of every beat.
 
 Ideally, the returned value should be based off the stream's sample rate (AudioStreamWAV.mix_rate, for example).
 
-float _get_bpm() virtual const 🔗
+float _get_bpm() virtual const 
 
 Overridable method. Should return the tempo of this audio stream, in beats per minute (BPM). Used by the engine to determine the position of every beat.
 
 Ideally, the returned value should be based off the stream's sample rate (AudioStreamWAV.mix_rate, for example).
 
-float _get_length() virtual const 🔗
+float _get_length() virtual const 
 
 Override this method to customize the returned value of get_length(). Should return the length of this audio stream, in seconds.
 
-Array[Dictionary] _get_parameter_list() virtual const 🔗
+Array[Dictionary] _get_parameter_list() virtual const 
 
 Return the controllable parameters of this stream. This array contains dictionaries with a property info description format (see Object.get_property_list()). Additionally, the default value for this parameter must be added tho each dictionary in "default_value" field.
 
-String _get_stream_name() virtual const 🔗
+String _get_stream_name() virtual const 
 
 Override this method to customize the name assigned to this audio stream. Unused by the engine.
 
-Dictionary _get_tags() virtual const 🔗
+Dictionary _get_tags() virtual const 
 
 Override this method to customize the tags for this audio stream. Should return a Dictionary of strings with the tag as the key and its content as the value.
 
 Commonly used tags include title, artist, album, tracknumber, and date.
 
-bool _has_loop() virtual const 🔗
+bool _has_loop() virtual const 
 
 Override this method to return true if this stream has a loop.
 
-AudioStreamPlayback _instantiate_playback() virtual const 🔗
+AudioStreamPlayback _instantiate_playback() virtual const 
 
 Override this method to customize the returned value of instantiate_playback(). Should return a new AudioStreamPlayback created when the stream is played (such as by an AudioStreamPlayer).
 
-bool _is_monophonic() virtual const 🔗
+bool _is_monophonic() virtual const 
 
 Override this method to customize the returned value of is_monophonic(). Should return true if this audio stream only supports one channel.
 
-bool can_be_sampled() const 🔗
+bool can_be_sampled() const 
 
 Experimental: This method may be changed or removed in future versions.
 
 Returns if the current AudioStream can be used as a sample. Only static streams can be sampled.
 
-AudioSample generate_sample() const 🔗
+AudioSample generate_sample() const 
 
 Experimental: This method may be changed or removed in future versions.
 
 Generates an AudioSample based on the current stream.
 
-float get_length() const 🔗
+float get_length() const 
 
 Returns the length of the audio stream in seconds. If this stream is an AudioStreamRandomizer, returns the length of the last played stream. If this stream has an indefinite length (such as for AudioStreamGenerator and AudioStreamMicrophone), returns 0.0.
 
-AudioStreamPlayback instantiate_playback() 🔗
+AudioStreamPlayback instantiate_playback() 
 
 Returns a newly created AudioStreamPlayback intended to play this audio stream. Useful for when you want to extend _instantiate_playback() but call instantiate_playback() from an internally held AudioStream subresource. An example of this can be found in the source code for AudioStreamRandomPitch::instantiate_playback.
 
-bool is_meta_stream() const 🔗
+bool is_meta_stream() const 
 
 Returns true if the stream is a collection of other streams, false otherwise.
 
-bool is_monophonic() const 🔗
+bool is_monophonic() const 
 
 Returns true if this audio stream only supports one channel (monophony), or false if the audio stream supports two or more channels (polyphony).
 
@@ -4333,7 +4333,7 @@ If enabled, the audio will begin playing at the beginning after playback ends by
 
 Note: In AudioStreamPlayer, the AudioStreamPlayer.finished signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 
-float loop_offset = 0 🔗
+float loop_offset = 0 
 
 Determines where audio will start to loop after playback reaches the end of the audio. This can be used to only loop a part of the audio file, which is useful for some ambient sounds or music. The value is determined in seconds relative to the beginning of the audio. A value of 0.0 will loop the entire audio file.
 
@@ -4391,7 +4391,7 @@ If enabled, the audio will begin playing at the beginning after playback ends by
 
 Note: In AudioStreamPlayer, the AudioStreamPlayer.finished signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 
-float loop_offset = 0 🔗
+float loop_offset = 0 
 
 Determines where audio will start to loop after playback reaches the end of the audio. This can be used to only loop a part of the audio file, which is useful for some ambient sounds or music. The value is determined in seconds relative to the beginning of the audio. A value of 0.0 will loop the entire audio file.
 
@@ -4399,13 +4399,13 @@ Only has an effect if loop is true.
 
 A more convenient editor for loop_offset is provided in the Advanced Import Settings dialog, as it lets you preview your changes without having to reimport the audio.
 
-AudioStreamOggVorbis load_from_buffer(stream_data: PackedByteArray) static 🔗
+AudioStreamOggVorbis load_from_buffer(stream_data: PackedByteArray) static 
 
 Deprecated: Use AudioStreamOggVorbis.load_from_buffer() instead.
 
 Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer must contain Ogg Vorbis data.
 
-AudioStreamOggVorbis load_from_file(path: String) static 🔗
+AudioStreamOggVorbis load_from_file(path: String) static 
 
 Deprecated: Use AudioStreamOggVorbis.load_from_file() instead.
 
@@ -4437,7 +4437,7 @@ By default, Godot imports WAV files using the lossy Quite OK Audio compression. 
 
 Importing audio samples
 
-int compress/mode = 2 🔗
+int compress/mode = 2 
 
 The compression mode to use on import.
 
@@ -4447,15 +4447,15 @@ IMA ADPCM: Applies fast, lossy compression during import, noticeably decreasing 
 
 `Quite OK Audio <https://qoaformat.org/>`__: Also applies lossy compression on import, having a slightly higher CPU cost compared to IMA ADPCM, but much higher quality and the lowest memory usage.
 
-int edit/loop_begin = 0 🔗
+int edit/loop_begin = 0 
 
 The begin loop point to use when edit/loop_mode is Forward, Ping-Pong, or Backward. This is set in samples after the beginning of the audio file.
 
-int edit/loop_end = -1 🔗
+int edit/loop_end = -1 
 
 The end loop point to use when edit/loop_mode is Forward, Ping-Pong, or Backward. This is set in samples after the beginning of the audio file. A value of -1 uses the end of the audio file as the end loop point.
 
-int edit/loop_mode = 0 🔗
+int edit/loop_mode = 0 
 
 Controls how audio should loop.
 
@@ -4471,31 +4471,31 @@ Backward: Plays the audio backwards from edit/loop_end to edit/loop_begin, then 
 
 Note: In AudioStreamPlayer, the AudioStreamPlayer.finished signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 
-bool edit/normalize = false 🔗
+bool edit/normalize = false 
 
 If true, normalize the audio volume so that its peak volume is equal to 0 dB. When enabled, normalization will make audio sound louder depending on its original peak volume.
 
-bool edit/trim = false 🔗
+bool edit/trim = false 
 
 If true, automatically trim the beginning and end of the audio if it's lower than -50 dB after normalization (see edit/normalize). This prevents having files with silence at the beginning or end, which increases their size unnecessarily and adds latency to the moment they are played back. A fade-in/fade-out period of 500 samples is also used during trimming to avoid audible pops.
 
-bool force/8_bit = false 🔗
+bool force/8_bit = false 
 
 If true, forces the imported audio to use 8-bit quantization if the source file is 16-bit or higher.
 
 Enabling this is generally not recommended, as 8-bit quantization decreases audio quality significantly. If you need smaller file sizes, consider using Ogg Vorbis or MP3 audio instead.
 
-bool force/max_rate = false 🔗
+bool force/max_rate = false 
 
 If set to a value greater than 0, forces the audio's sample rate to be reduced to a value lower than or equal to the value specified in force/max_rate_hz.
 
 This can decrease file size noticeably on certain sounds, without impacting quality depending on the actual sound's contents. See Best practices for more information.
 
-float force/max_rate_hz = 44100 🔗
+float force/max_rate_hz = 44100 
 
 The frequency to limit the imported audio sample to (in Hz). Only effective if force/max_rate is true.
 
-bool force/mono = false 🔗
+bool force/mono = false 
 
 If true, forces the imported audio to be mono if the source file is stereo. This decreases the file size by 50% by merging the two channels into one.
 
@@ -4782,59 +4782,59 @@ _update(delta: float) virtual required
 
 mix_audio(num_frames: int, buffer: PackedFloat32Array = PackedFloat32Array(), offset: int = 0)
 
-int _get_channels() virtual const 🔗
+int _get_channels() virtual const 
 
 Returns the number of audio channels.
 
-float _get_length() virtual const 🔗
+float _get_length() virtual const 
 
 Returns the video duration in seconds, if known, or 0 if unknown.
 
-int _get_mix_rate() virtual const 🔗
+int _get_mix_rate() virtual const 
 
 Returns the audio sample rate used for mixing.
 
-float _get_playback_position() virtual const 🔗
+float _get_playback_position() virtual const 
 
 Return the current playback timestamp. Called in response to the VideoStreamPlayer.stream_position getter.
 
-Texture2D _get_texture() virtual const 🔗
+Texture2D _get_texture() virtual const 
 
 Allocates a Texture2D in which decoded video frames will be drawn.
 
-bool _is_paused() virtual const 🔗
+bool _is_paused() virtual const 
 
 Returns the paused status, as set by _set_paused().
 
-bool _is_playing() virtual const 🔗
+bool _is_playing() virtual const 
 
 Returns the playback state, as determined by calls to _play() and _stop().
 
-void _play() virtual 🔗
+void _play() virtual 
 
 Called in response to VideoStreamPlayer.autoplay or VideoStreamPlayer.play(). Note that manual playback may also invoke _stop() multiple times before this method is called. _is_playing() should return true once playing.
 
-void _seek(time: float) virtual 🔗
+void _seek(time: float) virtual 
 
 Seeks to time seconds. Called in response to the VideoStreamPlayer.stream_position setter.
 
-void _set_audio_track(idx: int) virtual 🔗
+void _set_audio_track(idx: int) virtual 
 
 Select the audio track idx. Called when playback starts, and in response to the VideoStreamPlayer.audio_track setter.
 
-void _set_paused(paused: bool) virtual 🔗
+void _set_paused(paused: bool) virtual 
 
 Set the paused status of video playback. _is_paused() must return paused. Called in response to the VideoStreamPlayer.paused setter.
 
-void _stop() virtual 🔗
+void _stop() virtual 
 
 Stops playback. May be called multiple times before _play(), or in response to VideoStreamPlayer.stop(). _is_playing() should return false once stopped.
 
-void _update(delta: float) virtual required 🔗
+void _update(delta: float) virtual required 
 
 Ticks video playback for delta seconds. Called every frame as long as both _is_paused() and _is_playing() return true.
 
-int mix_audio(num_frames: int, buffer: PackedFloat32Array = PackedFloat32Array(), offset: int = 0) 🔗
+int mix_audio(num_frames: int, buffer: PackedFloat32Array = PackedFloat32Array(), offset: int = 0) 
 
 Render num_frames audio frames (of _get_channels() floats each) from buffer, starting from index offset in the array. Returns the number of audio frames rendered, or -1 on error.
 
@@ -4875,7 +4875,7 @@ get_video_texture() const
 
 Emitted when playback is finished.
 
-int audio_track = 0 🔗
+int audio_track = 0 
 
 void set_audio_track(value: int)
 
@@ -4883,13 +4883,13 @@ int get_audio_track()
 
 The embedded audio track to play.
 
-bool autoplay = false 🔗
+bool autoplay = false 
 
 void set_autoplay(value: bool)
 
 If true, playback starts when the scene loads.
 
-int buffering_msec = 500 🔗
+int buffering_msec = 500 
 
 void set_buffering_msec(value: int)
 
@@ -4897,13 +4897,13 @@ int get_buffering_msec()
 
 Amount of time in milliseconds to store in buffer while playing.
 
-StringName bus = &"Master" 🔗
+StringName bus = &"Master" 
 
 void set_bus(value: StringName)
 
 Audio bus to use for sound playback.
 
-bool expand = false 🔗
+bool expand = false 
 
 void set_expand(value: bool)
 
@@ -4913,13 +4913,13 @@ void set_loop(value: bool)
 
 If true, the video restarts when it reaches its end.
 
-bool paused = false 🔗
+bool paused = false 
 
 void set_paused(value: bool)
 
 If true, the video is paused.
 
-float speed_scale = 1.0 🔗
+float speed_scale = 1.0 
 
 void set_speed_scale(value: float)
 
@@ -4933,7 +4933,7 @@ VideoStream get_stream()
 
 The assigned video stream. See description for supported formats.
 
-float stream_position 🔗
+float stream_position 
 
 void set_stream_position(value: float)
 
@@ -4945,25 +4945,25 @@ void set_volume(value: float)
 
 Audio volume as a linear value.
 
-float volume_db = 0.0 🔗
+float volume_db = 0.0 
 
 void set_volume_db(value: float)
 
 float get_volume_db()
 
-float get_stream_length() const 🔗
+float get_stream_length() const 
 
 The length of the current stream, in seconds.
 
-String get_stream_name() const 🔗
+String get_stream_name() const 
 
 Returns the video stream's name, or "<No Stream>" if no video stream is assigned.
 
-Texture2D get_video_texture() const 🔗
+Texture2D get_video_texture() const 
 
 Returns the current frame as a Texture2D.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if the video is playing.
 

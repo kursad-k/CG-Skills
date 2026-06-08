@@ -93,7 +93,7 @@ The width and height of child controls is automatically adjusted to make their b
 
 When the bounding rectangle of child controls exceed the container's size and Control.clip_contents is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
 
-enum AlignmentMode: 🔗
+enum AlignmentMode: 
 
 AlignmentMode ALIGNMENT_BEGIN = 0
 
@@ -107,7 +107,7 @@ AlignmentMode ALIGNMENT_END = 2
 
 Aligns child controls with the end (right or bottom) of the container.
 
-AlignmentMode alignment_horizontal = 1 🔗
+AlignmentMode alignment_horizontal = 1 
 
 void set_alignment_horizontal(value: AlignmentMode)
 
@@ -115,7 +115,7 @@ AlignmentMode get_alignment_horizontal()
 
 Specifies the horizontal relative position of child controls.
 
-AlignmentMode alignment_vertical = 1 🔗
+AlignmentMode alignment_vertical = 1 
 
 void set_alignment_vertical(value: AlignmentMode)
 
@@ -127,7 +127,7 @@ void set_ratio(value: float)
 
 The aspect ratio to enforce on child controls. This is the width divided by the height. The ratio depends on the stretch_mode.
 
-StretchMode stretch_mode = 2 🔗
+StretchMode stretch_mode = 2 
 
 void set_stretch_mode(value: StretchMode)
 
@@ -180,7 +180,7 @@ Emitted when the button is toggled or pressed. This is on button_down if action_
 
 If you need to know the button's pressed state (and toggle_mode is active), use toggled instead.
 
-toggled(toggled_on: bool) 🔗
+toggled(toggled_on: bool) 
 
 Emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the toggled_on argument.
 
@@ -212,7 +212,7 @@ ActionMode ACTION_MODE_BUTTON_RELEASE = 1
 
 Require a press and a subsequent release before considering the button clicked.
 
-ActionMode action_mode = 1 🔗
+ActionMode action_mode = 1 
 
 void set_action_mode(value: ActionMode)
 
@@ -220,7 +220,7 @@ ActionMode get_action_mode()
 
 Determines when the button is considered clicked.
 
-ButtonGroup button_group 🔗
+ButtonGroup button_group 
 
 void set_button_group(value: ButtonGroup)
 
@@ -230,7 +230,7 @@ The ButtonGroup associated with the button. Not to be confused with node groups.
 
 Note: The button will be configured as a radio button if a ButtonGroup is assigned to it.
 
-BitField[MouseButtonMask] button_mask = 1 🔗
+BitField[MouseButtonMask] button_mask = 1 
 
 void set_button_mask(value: BitField[MouseButtonMask])
 
@@ -240,7 +240,7 @@ Binary mask to choose which mouse buttons this button will respond to.
 
 To allow both left-click and right-click, use MOUSE_BUTTON_MASK_LEFT | MOUSE_BUTTON_MASK_RIGHT.
 
-bool button_pressed = false 🔗
+bool button_pressed = false 
 
 void set_pressed(value: bool)
 
@@ -248,7 +248,7 @@ If true, the button's state is pressed. Means the button is pressed down or togg
 
 Note: Changing the value of button_pressed will result in toggled to be emitted. If you want to change the pressed state without emitting that signal, use set_pressed_no_signal().
 
-bool disabled = false 🔗
+bool disabled = false 
 
 void set_disabled(value: bool)
 
@@ -256,7 +256,7 @@ If true, the button is in disabled state and can't be clicked or toggled.
 
 Note: If the button is disabled while held down, button_up will be emitted.
 
-bool keep_pressed_outside = false 🔗
+bool keep_pressed_outside = false 
 
 void set_keep_pressed_outside(value: bool)
 
@@ -272,7 +272,7 @@ Shortcut get_shortcut()
 
 Shortcut associated to the button.
 
-bool shortcut_feedback = true 🔗
+bool shortcut_feedback = true 
 
 void set_shortcut_feedback(value: bool)
 
@@ -280,7 +280,7 @@ bool is_shortcut_feedback()
 
 If true, the button will highlight for a short amount of time when its shortcut is activated. If false and toggle_mode is false, the shortcut will activate without any visual feedback.
 
-bool shortcut_in_tooltip = true 🔗
+bool shortcut_in_tooltip = true 
 
 void set_shortcut_in_tooltip(value: bool)
 
@@ -290,7 +290,7 @@ If true, the button will add information about its shortcut in the tooltip.
 
 Note: This property does nothing when the tooltip control is customized using Control._make_custom_tooltip().
 
-bool toggle_mode = false 🔗
+bool toggle_mode = false 
 
 void set_toggle_mode(value: bool)
 
@@ -298,23 +298,23 @@ bool is_toggle_mode()
 
 If true, the button is in toggle mode. Makes the button flip state between pressed and unpressed each time its area is clicked.
 
-void _pressed() virtual 🔗
+void _pressed() virtual 
 
 Called when the button is pressed. If you need to know the button's pressed state (and toggle_mode is active), use _toggled() instead.
 
-void _toggled(toggled_on: bool) virtual 🔗
+void _toggled(toggled_on: bool) virtual 
 
 Called when the button is toggled (only if toggle_mode is active).
 
-DrawMode get_draw_mode() const 🔗
+DrawMode get_draw_mode() const 
 
 Returns the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DrawMode enum.
 
-bool is_hovered() const 🔗
+bool is_hovered() const 
 
 Returns true if the mouse has entered the button and has not left it yet.
 
-void set_pressed_no_signal(pressed: bool) 🔗
+void set_pressed_no_signal(pressed: bool) 
 
 Changes the button_pressed state of the button, without emitting toggled. Use when you just want to change the state of the button without sending the pressed event (e.g. when initializing scene). Only works if toggle_mode is true.
 
@@ -710,7 +710,7 @@ A container that arranges its child controls horizontally or vertically, rearran
 
 add_spacer(begin: bool)
 
-enum AlignmentMode: 🔗
+enum AlignmentMode: 
 
 AlignmentMode ALIGNMENT_BEGIN = 0
 
@@ -724,7 +724,7 @@ AlignmentMode ALIGNMENT_END = 2
 
 The child controls will be arranged at the end of the container, i.e. bottom if orientation is vertical, right if orientation is horizontal (left for RTL layout).
 
-AlignmentMode alignment = 0 🔗
+AlignmentMode alignment = 0 
 
 void set_alignment(value: AlignmentMode)
 
@@ -732,7 +732,7 @@ AlignmentMode get_alignment()
 
 The alignment of the container's children (must be one of ALIGNMENT_BEGIN, ALIGNMENT_CENTER, or ALIGNMENT_END).
 
-bool vertical = false 🔗
+bool vertical = false 
 
 void set_vertical(value: bool)
 
@@ -740,7 +740,7 @@ If true, the BoxContainer will arrange its children vertically, rather than hori
 
 Can't be changed when using HBoxContainer and VBoxContainer.
 
-Control add_spacer(begin: bool) 🔗
+Control add_spacer(begin: bool) 
 
 Adds a Control node to the box as a spacer. If begin is true, it will insert the Control node in front of all other children.
 
@@ -830,7 +830,7 @@ Arc hyperbolic cosine.
 
 Arc hyperbolic tangent.
 
-vec_type radians(vec_type degrees) 🔗
+vec_type radians(vec_type degrees) 
 
 Component-wise Function.
 
@@ -842,7 +842,7 @@ The input degrees converted to radians.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/radians.xhtml
 
-vec_type degrees(vec_type radians) 🔗
+vec_type degrees(vec_type radians) 
 
 Component-wise Function.
 
@@ -854,7 +854,7 @@ The input radians converted to degrees.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/degrees.xhtml
 
-vec_type sin(vec_type angle) 🔗
+vec_type sin(vec_type angle) 
 
 Component-wise Function.
 
@@ -864,7 +864,7 @@ The quantity, in radians, of which to return the sine.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sin.xhtml
 
-vec_type cos(vec_type angle) 🔗
+vec_type cos(vec_type angle) 
 
 Component-wise Function.
 
@@ -874,7 +874,7 @@ The quantity, in radians, of which to return the cosine.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cos.xhtml
 
-vec_type tan(vec_type angle) 🔗
+vec_type tan(vec_type angle) 
 
 Component-wise Function.
 
@@ -886,7 +886,7 @@ The tangent of angle.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tan.xhtml
 
-vec_type asin(vec_type x) 🔗
+vec_type asin(vec_type x) 
 
 Component-wise Function.
 
@@ -898,7 +898,7 @@ The angle whose trigonometric sine is x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asin.xhtml
 
-vec_type acos(vec_type x) 🔗
+vec_type acos(vec_type x) 
 
 Component-wise Function.
 
@@ -912,7 +912,7 @@ The angle whose trigonometric cosine is x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
-vec_type atan(vec_type y_over_x) 🔗
+vec_type atan(vec_type y_over_x) 
 
 Component-wise Function.
 
@@ -926,7 +926,7 @@ The trigonometric arc-tangent of y_over_x and is in the range [-PI/2, PI/2].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
-vec_type atan(vec_type y, vec_type x) 🔗
+vec_type atan(vec_type y, vec_type x) 
 
 Component-wise Function.
 
@@ -942,7 +942,7 @@ The trigonometric arc tangent of y/x and is in the range [-PI, PI].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
-vec_type sinh(vec_type x) 🔗
+vec_type sinh(vec_type x) 
 
 Component-wise Function.
 
@@ -954,7 +954,7 @@ The hyperbolic sine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sinh.xhtml
 
-vec_type cosh(vec_type x) 🔗
+vec_type cosh(vec_type x) 
 
 Component-wise Function.
 
@@ -966,7 +966,7 @@ The hyperbolic cosine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cosh.xhtml
 
-vec_type tanh(vec_type x) 🔗
+vec_type tanh(vec_type x) 
 
 Component-wise Function.
 
@@ -978,7 +978,7 @@ The hyperbolic tangent of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tanh.xhtml
 
-vec_type asinh(vec_type x) 🔗
+vec_type asinh(vec_type x) 
 
 Component-wise Function.
 
@@ -990,7 +990,7 @@ The arc hyperbolic sine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asinh.xhtml
 
-vec_type acosh(vec_type x) 🔗
+vec_type acosh(vec_type x) 
 
 Component-wise Function.
 
@@ -1002,7 +1002,7 @@ The arc hyperbolic cosine of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acosh.xhtml
 
-vec_type atanh(vec_type x) 🔗
+vec_type atanh(vec_type x) 
 
 Component-wise Function.
 
@@ -1082,7 +1082,7 @@ uintBitsToFloat(vec_uint_type x)
 
 uint to float bit copying, no conversion.
 
-vec_type pow(vec_type x, vec_type y) 🔗
+vec_type pow(vec_type x, vec_type y) 
 
 Component-wise Function.
 
@@ -1098,7 +1098,7 @@ The value of x raised to the y power.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
 
-vec_type exp(vec_type x) 🔗
+vec_type exp(vec_type x) 
 
 Component-wise Function.
 
@@ -1112,7 +1112,7 @@ The natural exponentiation of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
 
-vec_type exp2(vec_type x) 🔗
+vec_type exp2(vec_type x) 
 
 Component-wise Function.
 
@@ -1126,7 +1126,7 @@ The value of the power to which 2 will be raised.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
-vec_type log(vec_type x) 🔗
+vec_type log(vec_type x) 
 
 Component-wise Function.
 
@@ -1138,7 +1138,7 @@ The natural logarithm of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log.xhtml
 
-vec_type log2(vec_type x) 🔗
+vec_type log2(vec_type x) 
 
 Component-wise Function.
 
@@ -1150,7 +1150,7 @@ The base-2 logarithm of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
 
-vec_type sqrt(vec_type x) 🔗
+vec_type sqrt(vec_type x) 
 
 Component-wise Function.
 
@@ -1162,7 +1162,7 @@ The square root of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sqrt.xhtml
 
-vec_type inversesqrt(vec_type x) 🔗
+vec_type inversesqrt(vec_type x) 
 
 Component-wise Function.
 
@@ -1174,9 +1174,9 @@ The inverse of the square root of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inversesqrt.xhtml
 
-vec_type abs(vec_type x) 🔗
+vec_type abs(vec_type x) 
 
-vec_int_type abs(vec_int_type x) 🔗
+vec_int_type abs(vec_int_type x) 
 
 Component-wise Function.
 
@@ -1188,9 +1188,9 @@ The absolute value of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
 
-vec_type sign(vec_type x) 🔗
+vec_type sign(vec_type x) 
 
-vec_int_type sign(vec_int_type x) 🔗
+vec_int_type sign(vec_int_type x) 
 
 Component-wise Function.
 
@@ -1200,7 +1200,7 @@ The value from which to extract the sign.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
-vec_type floor(vec_type x) 🔗
+vec_type floor(vec_type x) 
 
 Component-wise Function.
 
@@ -1210,7 +1210,7 @@ The nearest integer that is less than or equal to x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml
 
-vec_type round(vec_type x) 🔗
+vec_type round(vec_type x) 
 
 Component-wise Function.
 
@@ -1220,7 +1220,7 @@ Rounding of values with a fractional part of 0.5 is implementation-dependent. Th
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/round.xhtml
 
-vec_type roundEven(vec_type x) 🔗
+vec_type roundEven(vec_type x) 
 
 Component-wise Function.
 
@@ -1228,7 +1228,7 @@ Rounds x to the nearest integer. A value with a fractional part of 0.5 will alwa
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/roundEven.xhtml
 
-vec_type trunc(vec_type x) 🔗
+vec_type trunc(vec_type x) 
 
 Component-wise Function.
 
@@ -1238,7 +1238,7 @@ The value to evaluate.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/trunc.xhtml
 
-vec_type ceil(vec_type x) 🔗
+vec_type ceil(vec_type x) 
 
 Component-wise Function.
 
@@ -1250,7 +1250,7 @@ The ceiling-ed value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ceil.xhtml
 
-vec_type fract(vec_type x) 🔗
+vec_type fract(vec_type x) 
 
 Component-wise Function.
 
@@ -1264,9 +1264,9 @@ The fractional part of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fract.xhtml
 
-vec_type mod(vec_type x, vec_type y) 🔗
+vec_type mod(vec_type x, vec_type y) 
 
-vec_type mod(vec_type x, float y) 🔗
+vec_type mod(vec_type x, float y) 
 
 Component-wise Function.
 
@@ -1280,7 +1280,7 @@ The value of x modulo y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
 
-vec_type modf(vec_type x, out vec_type i) 🔗
+vec_type modf(vec_type x, out vec_type i) 
 
 Component-wise Function.
 
@@ -1296,17 +1296,17 @@ The fractional part of the number.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/modf.xhtml
 
-vec_type min(vec_type a, vec_type b) 🔗
+vec_type min(vec_type a, vec_type b) 
 
-vec_type min(vec_type a, float b) 🔗
+vec_type min(vec_type a, float b) 
 
-vec_int_type min(vec_int_type a, vec_int_type b) 🔗
+vec_int_type min(vec_int_type a, vec_int_type b) 
 
-vec_int_type min(vec_int_type a, int b) 🔗
+vec_int_type min(vec_int_type a, int b) 
 
-vec_uint_type min(vec_uint_type a, vec_uint_type b) 🔗
+vec_uint_type min(vec_uint_type a, vec_uint_type b) 
 
-vec_uint_type min(vec_uint_type a, uint b) 🔗
+vec_uint_type min(vec_uint_type a, uint b) 
 
 Component-wise Function.
 
@@ -1320,17 +1320,17 @@ The second value to compare.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
-vec_type max(vec_type a, vec_type b) 🔗
+vec_type max(vec_type a, vec_type b) 
 
-vec_type max(vec_type a, float b) 🔗
+vec_type max(vec_type a, float b) 
 
-vec_uint_type max(vec_uint_type a, vec_uint_type b) 🔗
+vec_uint_type max(vec_uint_type a, vec_uint_type b) 
 
-vec_uint_type max(vec_uint_type a, uint b) 🔗
+vec_uint_type max(vec_uint_type a, uint b) 
 
-vec_int_type max(vec_int_type a, vec_int_type b) 🔗
+vec_int_type max(vec_int_type a, vec_int_type b) 
 
-vec_int_type max(vec_int_type a, int b) 🔗
+vec_int_type max(vec_int_type a, int b) 
 
 Component-wise Function.
 
@@ -1344,17 +1344,17 @@ The second value to compare.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
-vec_type clamp(vec_type x, vec_type minVal, vec_type maxVal) 🔗
+vec_type clamp(vec_type x, vec_type minVal, vec_type maxVal) 
 
-vec_type clamp(vec_type x, float minVal, float maxVal) 🔗
+vec_type clamp(vec_type x, float minVal, float maxVal) 
 
-vec_int_type clamp(vec_int_type x, vec_int_type minVal, vec_int_type maxVal) 🔗
+vec_int_type clamp(vec_int_type x, vec_int_type minVal, vec_int_type maxVal) 
 
-vec_int_type clamp(vec_int_type x, int minVal, int maxVal) 🔗
+vec_int_type clamp(vec_int_type x, int minVal, int maxVal) 
 
-vec_uint_type clamp(vec_uint_type x, vec_uint_type minVal, vec_uint_type maxVal) 🔗
+vec_uint_type clamp(vec_uint_type x, vec_uint_type minVal, vec_uint_type maxVal) 
 
-vec_uint_type clamp(vec_uint_type x, uint minVal, uint maxVal) 🔗
+vec_uint_type clamp(vec_uint_type x, uint minVal, uint maxVal) 
 
 Component-wise Function.
 
@@ -1370,9 +1370,9 @@ The upper end of the range into which to constrain x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
-vec_type mix(vec_type a, vec_type b, vec_type c) 🔗
+vec_type mix(vec_type a, vec_type b, vec_type c) 
 
-vec_type mix(vec_type a, vec_type b, float c) 🔗
+vec_type mix(vec_type a, vec_type b, float c) 
 
 Component-wise Function.
 
@@ -1392,7 +1392,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
-vec_type mix(vec_type a, vec_type b, vec_bool_type c) 🔗
+vec_type mix(vec_type a, vec_type b, vec_bool_type c) 
 
 Selects either value a or value b based on the value of c. For a component of c that is false, the corresponding component of a is returned. For a component of c that is true, the corresponding component of b is returned. Components of a and b that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
@@ -1408,7 +1408,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
-vec_type fma(vec_type a, vec_type b, vec_type c) 🔗
+vec_type fma(vec_type a, vec_type b, vec_type c) 
 
 Component-wise Function.
 
@@ -1432,9 +1432,9 @@ The value of a * b + c.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fma.xhtml
 
-vec_type step(vec_type a, vec_type b) 🔗
+vec_type step(vec_type a, vec_type b) 
 
-vec_type step(float a, vec_type b) 🔗
+vec_type step(float a, vec_type b) 
 
 Component-wise Function.
 
@@ -1448,9 +1448,9 @@ The value to be used to generate the step function.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
 
-vec_type smoothstep(vec_type a, vec_type b, vec_type c) 🔗
+vec_type smoothstep(vec_type a, vec_type b, vec_type c) 
 
-vec_type smoothstep(float a, float b, vec_type c) 🔗
+vec_type smoothstep(float a, float b, vec_type c) 
 
 Component-wise Function.
 
@@ -1470,7 +1470,7 @@ The interpolated value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
 
-vec_bool_type isnan(vec_type x) 🔗
+vec_bool_type isnan(vec_type x) 
 
 Component-wise Function.
 
@@ -1480,7 +1480,7 @@ The value to test for NaN.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isnan.xhtml
 
-vec_bool_type isinf(vec_type x) 🔗
+vec_bool_type isinf(vec_type x) 
 
 Component-wise Function.
 
@@ -1490,7 +1490,7 @@ The value to test for infinity.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isinf.xhtml
 
-vec_int_type floatBitsToInt(vec_type x) 🔗
+vec_int_type floatBitsToInt(vec_type x) 
 
 Component-wise Function.
 
@@ -1504,7 +1504,7 @@ The floating-point encoding of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
-vec_uint_type floatBitsToUint(vec_type x) 🔗
+vec_uint_type floatBitsToUint(vec_type x) 
 
 Component-wise Function.
 
@@ -1518,7 +1518,7 @@ The floating-point encoding of x.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
-vec_type intBitsToFloat(vec_int_type x) 🔗
+vec_type intBitsToFloat(vec_int_type x) 
 
 Component-wise Function.
 
@@ -1534,7 +1534,7 @@ A floating-point value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
-vec_type uintBitsToFloat(vec_uint_type x) 🔗
+vec_type uintBitsToFloat(vec_uint_type x) 
 
 Component-wise Function.
 
@@ -1582,7 +1582,7 @@ transpose(mat_type m)
 
 determinant(mat_type m)
 
-float length(vec_type x) 🔗
+float length(vec_type x) 
 
 Returns the length of the vector. ie. sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])
 
@@ -1590,7 +1590,7 @@ The length of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/length.xhtml
 
-float distance(vec_type a, vec_type b) 🔗
+float distance(vec_type a, vec_type b) 
 
 Returns the distance between the two points a and b.
 
@@ -1598,13 +1598,13 @@ The scalar distance between the points
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/distance.xhtml
 
-float dot(vec_type a, vec_type b) 🔗
+float dot(vec_type a, vec_type b) 
 
 Returns the dot product of two vectors, a and b. i.e., a.x * b.x + a.y * b.y + ...
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dot.xhtml
 
-vec3 cross(vec3 a, vec3 b) 🔗
+vec3 cross(vec3 a, vec3 b) 
 
 Returns the cross product of two vectors. i.e.:
 
@@ -1612,7 +1612,7 @@ The cross product of a and b.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cross.xhtml
 
-vec_type normalize(vec_type x) 🔗
+vec_type normalize(vec_type x) 
 
 Returns a vector with the same direction as x but with length 1.0.
 
@@ -1622,7 +1622,7 @@ The normalized vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/normalize.xhtml
 
-vec3 reflect(vec3 I, vec3 N) 🔗
+vec3 reflect(vec3 I, vec3 N) 
 
 Calculate the reflection direction for an incident vector.
 
@@ -1634,7 +1634,7 @@ The reflection vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml
 
-vec3 refract(vec3 I, vec3 N, float eta) 🔗
+vec3 refract(vec3 I, vec3 N, float eta) 
 
 Calculate the refraction direction for an incident vector.
 
@@ -1648,7 +1648,7 @@ The refraction vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/refract.xhtml
 
-vec_type faceforward(vec_type N, vec_type I, vec_type Nref) 🔗
+vec_type faceforward(vec_type N, vec_type I, vec_type Nref) 
 
 Returns a vector pointing in the same direction as another.
 
@@ -1660,7 +1660,7 @@ The reference vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/faceforward.xhtml
 
-mat_type matrixCompMult(mat_type x, mat_type y) 🔗
+mat_type matrixCompMult(mat_type x, mat_type y) 
 
 Perform a component-wise multiplication of two matrices.
 
@@ -1674,7 +1674,7 @@ The resultant matrix.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/matrixCompMult.xhtml
 
-mat_type outerProduct(vec_type column, vec_type row) 🔗
+mat_type outerProduct(vec_type column, vec_type row) 
 
 Calculate the outer product of a pair of vectors.
 
@@ -1688,7 +1688,7 @@ The outer product matrix.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/outerProduct.xhtml
 
-mat_type transpose(mat_type m) 🔗
+mat_type transpose(mat_type m) 
 
 Calculate the transpose of a matrix.
 
@@ -1698,7 +1698,7 @@ A new matrix that is the transpose of the input matrix m.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/transpose.xhtml
 
-float determinant(mat_type m) 🔗
+float determinant(mat_type m) 
 
 Calculate the determinant of a matrix.
 
@@ -1706,7 +1706,7 @@ The determinant of the input matrix m.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/determinant.xhtml
 
-mat_type inverse(mat_type m) 🔗
+mat_type inverse(mat_type m) 
 
 Calculate the inverse of a matrix.
 
@@ -1748,7 +1748,7 @@ true if all components are true, false otherwise.
 
 Invert boolean vector.
 
-vec_bool_type lessThan(vec_type x, vec_type y) 🔗
+vec_bool_type lessThan(vec_type x, vec_type y) 
 
 Performs a component-wise less-than comparison of two vectors.
 
@@ -1760,7 +1760,7 @@ A boolean vector in which each element i is computed as x[i] < y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
 
-vec_bool_type greaterThan(vec_type x, vec_type y) 🔗
+vec_bool_type greaterThan(vec_type x, vec_type y) 
 
 Performs a component-wise greater-than comparison of two vectors.
 
@@ -1772,7 +1772,7 @@ A boolean vector in which each element i is computed as x[i] > y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
 
-vec_bool_type lessThanEqual(vec_type x, vec_type y) 🔗
+vec_bool_type lessThanEqual(vec_type x, vec_type y) 
 
 Performs a component-wise less-than-or-equal comparison of two vectors.
 
@@ -1784,7 +1784,7 @@ A boolean vector in which each element i is computed as x[i] <= y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
 
-vec_bool_type greaterThanEqual(vec_type x, vec_type y) 🔗
+vec_bool_type greaterThanEqual(vec_type x, vec_type y) 
 
 Performs a component-wise greater-than-or-equal comparison of two vectors.
 
@@ -1796,7 +1796,7 @@ A boolean vector in which each element i is computed as x[i] >= y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
 
-vec_bool_type equal(vec_type x, vec_type y) 🔗
+vec_bool_type equal(vec_type x, vec_type y) 
 
 Performs a component-wise equal-to comparison of two vectors.
 
@@ -1808,7 +1808,7 @@ A boolean vector in which each element i is computed as x[i] == y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
 
-vec_bool_type notEqual(vec_type x, vec_type y) 🔗
+vec_bool_type notEqual(vec_type x, vec_type y) 
 
 Performs a component-wise not-equal-to comparison of two vectors.
 
@@ -1820,7 +1820,7 @@ A boolean vector in which each element i is computed as x[i] != y[i].
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
 
-bool any(vec_bool_type x) 🔗
+bool any(vec_bool_type x) 
 
 Returns true if any element of a boolean vector is true, false otherwise.
 
@@ -1832,7 +1832,7 @@ True if any element of x is true and false otherwise.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
 
-bool all(vec_bool_type x) 🔗
+bool all(vec_bool_type x) 
 
 Returns true if all elements of a boolean vector are true, false otherwise.
 
@@ -1844,7 +1844,7 @@ true if all elements of x are true and false otherwise.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
 
-vec_bool_type not(vec_bool_type x) 🔗
+vec_bool_type not(vec_bool_type x) 
 
 Logically invert a boolean vector.
 
@@ -1914,15 +1914,15 @@ Sum of absolute derivative in x and y.
 
 Not available when using the Compatibility renderer.
 
-ivec2 textureSize(gsampler2D s, int lod) 🔗
+ivec2 textureSize(gsampler2D s, int lod) 
 
-ivec2 textureSize(samplerCube s, int lod) 🔗
+ivec2 textureSize(samplerCube s, int lod) 
 
-ivec2 textureSize(samplerCubeArray s, int lod) 🔗
+ivec2 textureSize(samplerCubeArray s, int lod) 
 
-ivec3 textureSize(gsampler2DArray s, int lod) 🔗
+ivec3 textureSize(gsampler2DArray s, int lod) 
 
-ivec3 textureSize(gsampler3D s, int lod) 🔗
+ivec3 textureSize(gsampler3D s, int lod) 
 
 Retrieves the dimensions of a level of a texture.
 
@@ -1938,13 +1938,13 @@ The dimensions of level lod (if present) of the texture bound to sampler.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
-vec2 textureQueryLod(gsampler2D s, vec2 p) 🔗
+vec2 textureQueryLod(gsampler2D s, vec2 p) 
 
-vec2 textureQueryLod(gsampler2DArray s, vec2 p) 🔗
+vec2 textureQueryLod(gsampler2DArray s, vec2 p) 
 
-vec2 textureQueryLod(gsampler3D s, vec3 p) 🔗
+vec2 textureQueryLod(gsampler3D s, vec3 p) 
 
-vec2 textureQueryLod(samplerCube s, vec3 p) 🔗
+vec2 textureQueryLod(samplerCube s, vec3 p) 
 
 Available only in the fragment shader.
 
@@ -1960,13 +1960,13 @@ The texture coordinates at which the level-of-detail will be queried.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
-int textureQueryLevels(gsampler2D s) 🔗
+int textureQueryLevels(gsampler2D s) 
 
-int textureQueryLevels(gsampler2DArray s) 🔗
+int textureQueryLevels(gsampler2DArray s) 
 
-int textureQueryLevels(gsampler3D s) 🔗
+int textureQueryLevels(gsampler3D s) 
 
-int textureQueryLevels(samplerCube s) 🔗
+int textureQueryLevels(samplerCube s) 
 
 Compute the number of accessible mipmap levels of a texture.
 
@@ -1978,17 +1978,17 @@ The number of accessible mipmap levels in the texture, or 0.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
-gvec4_type texture(gsampler2D s, vec2 p [, float bias] ) 🔗
+gvec4_type texture(gsampler2D s, vec2 p [, float bias] ) 
 
-gvec4_type texture(gsampler2DArray s, vec3 p [, float bias] ) 🔗
+gvec4_type texture(gsampler2DArray s, vec3 p [, float bias] ) 
 
-gvec4_type texture(gsampler3D s, vec3 p [, float bias] ) 🔗
+gvec4_type texture(gsampler3D s, vec3 p [, float bias] ) 
 
-vec4 texture(samplerCube s, vec3 p [, float bias] ) 🔗
+vec4 texture(samplerCube s, vec3 p [, float bias] ) 
 
-vec4 texture(samplerCubeArray s, vec4 p [, float bias] ) 🔗
+vec4 texture(samplerCubeArray s, vec4 p [, float bias] ) 
 
-vec4 texture(samplerExternalOES s, vec2 p [, float bias] ) 🔗
+vec4 texture(samplerExternalOES s, vec2 p [, float bias] ) 
 
 Retrieves texels from a texture.
 
@@ -2006,11 +2006,11 @@ An optional bias to be applied during level-of-detail computation.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
-gvec4_type textureProj(gsampler2D s, vec3 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler2D s, vec3 p [, float bias] ) 
 
-gvec4_type textureProj(gsampler2D s, vec4 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler2D s, vec4 p [, float bias] ) 
 
-gvec4_type textureProj(gsampler3D s, vec4 p [, float bias] ) 🔗
+gvec4_type textureProj(gsampler3D s, vec4 p [, float bias] ) 
 
 Perform a texture lookup with projection.
 
@@ -2024,15 +2024,15 @@ Optional bias to be applied during level-of-detail computation.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
-gvec4_type textureLod(gsampler2D s, vec2 p, float lod) 🔗
+gvec4_type textureLod(gsampler2D s, vec2 p, float lod) 
 
-gvec4_type textureLod(gsampler2DArray s, vec3 p, float lod) 🔗
+gvec4_type textureLod(gsampler2DArray s, vec3 p, float lod) 
 
-gvec4_type textureLod(gsampler3D s, vec3 p, float lod) 🔗
+gvec4_type textureLod(gsampler3D s, vec3 p, float lod) 
 
-vec4 textureLod(samplerCube s, vec3 p, float lod) 🔗
+vec4 textureLod(samplerCube s, vec3 p, float lod) 
 
-vec4 textureLod(samplerCubeArray s, vec4 p, float lod) 🔗
+vec4 textureLod(samplerCubeArray s, vec4 p, float lod) 
 
 Performs a texture lookup at coordinate p from the texture bound to sampler with an explicit level-of-detail as specified in lod. lod specifies λbase and sets the partial derivatives as follows:
 
@@ -2044,11 +2044,11 @@ The explicit level-of-detail.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
-gvec4_type textureProjLod(gsampler2D s, vec3 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler2D s, vec3 p, float lod) 
 
-gvec4_type textureProjLod(gsampler2D s, vec4 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler2D s, vec4 p, float lod) 
 
-gvec4_type textureProjLod(gsampler3D s, vec4 p, float lod) 🔗
+gvec4_type textureProjLod(gsampler3D s, vec4 p, float lod) 
 
 Performs a texture lookup with projection from an explicitly specified level-of-detail.
 
@@ -2062,15 +2062,15 @@ The explicit level-of-detail from which to fetch texels.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
 
-gvec4_type textureGrad(gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureGrad(gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureGrad(gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureGrad(gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-vec4 textureGrad(samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) 🔗
+vec4 textureGrad(samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) 
 
-vec4 textureGrad(samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) 🔗
+vec4 textureGrad(samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) 
 
 δs/δx=δp/δx for a 1D texture, δp.s/δx otherwise
 
@@ -2096,11 +2096,11 @@ The partial derivative of P with respect to window y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
-gvec4_type textureProjGrad(gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureProjGrad(gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy) 
 
-gvec4_type textureProjGrad(gsampler3D s, vec4 p, vec3 dPdx, vec3 dPdy) 🔗
+gvec4_type textureProjGrad(gsampler3D s, vec4 p, vec3 dPdx, vec3 dPdy) 
 
 Perform a texture lookup with projection and explicit gradients.
 
@@ -2116,11 +2116,11 @@ The partial derivative of p with respect to window y.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
-gvec4_type texelFetch(gsampler2D s, ivec2 p, int lod) 🔗
+gvec4_type texelFetch(gsampler2D s, ivec2 p, int lod) 
 
-gvec4_type texelFetch(gsampler2DArray s, ivec3 p, int lod) 🔗
+gvec4_type texelFetch(gsampler2DArray s, ivec3 p, int lod) 
 
-gvec4_type texelFetch(gsampler3D s, ivec3 p, int lod) 🔗
+gvec4_type texelFetch(gsampler3D s, ivec3 p, int lod) 
 
 Performs a lookup of a single texel from texture coordinate p in the texture bound to sampler.
 
@@ -2132,11 +2132,11 @@ Specifies the level-of-detail within the texture from which the texel will be fe
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
-gvec4_type textureGather(gsampler2D s, vec2 p [, int comps] ) 🔗
+gvec4_type textureGather(gsampler2D s, vec2 p [, int comps] ) 
 
-gvec4_type textureGather(gsampler2DArray s, vec3 p [, int comps] ) 🔗
+gvec4_type textureGather(gsampler2DArray s, vec3 p [, int comps] ) 
 
-vec4 textureGather(samplerCube s, vec3 p [, int comps] ) 🔗
+vec4 textureGather(samplerCube s, vec3 p [, int comps] ) 
 
 Gathers four texels from a texture.
 
@@ -2148,7 +2148,7 @@ optional the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) th
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
-vec_type dFdx(vec_type p) 🔗
+vec_type dFdx(vec_type p) 
 
 Available only in the fragment shader.
 
@@ -2166,7 +2166,7 @@ The partial derivative of p.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdxCoarse(vec_type p) 🔗
+vec_type dFdxCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2184,7 +2184,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdxFine(vec_type p) 🔗
+vec_type dFdxFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2202,7 +2202,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdy(vec_type p) 🔗
+vec_type dFdy(vec_type p) 
 
 Available only in the fragment shader.
 
@@ -2220,7 +2220,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdyCoarse(vec_type p) 🔗
+vec_type dFdyCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2238,7 +2238,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type dFdyFine(vec_type p) 🔗
+vec_type dFdyFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2256,7 +2256,7 @@ The partial derivative of p.
 
 https://registry.khronos.org/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
-vec_type fwidth(vec_type p) 🔗
+vec_type fwidth(vec_type p) 
 
 Returns the sum of the absolute value of derivatives in x and y.
 
@@ -2270,7 +2270,7 @@ The partial derivative.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
-vec_type fwidthCoarse(vec_type p) 🔗
+vec_type fwidthCoarse(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2286,7 +2286,7 @@ The partial derivative.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
-vec_type fwidthFine(vec_type p) 🔗
+vec_type fwidthFine(vec_type p) 
 
 Available only in the fragment shader. Not available when using the Compatibility renderer.
 
@@ -2314,7 +2314,7 @@ Convert four normalized (range 0..1) 32-bit floats into 8-bit unsigned ints and 
 
 Convert four signed normalized (range -1..1) 32-bit floats into 8-bit signed ints and pack them.
 
-uint packHalf2x16(vec2 v) 🔗
+uint packHalf2x16(vec2 v) 
 
 Converts two 32-bit floating-point quantities to 16-bit floating-point quantities and packs them into a single 32-bit integer.
 
@@ -2324,7 +2324,7 @@ A vector of two 32-bit floating-point values that are to be converted to 16-bit 
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packHalf2x16.xhtml
 
-vec2 unpackHalf2x16(uint v) 🔗
+vec2 unpackHalf2x16(uint v) 
 
 Inverse of packHalf2x16.
 
@@ -2336,7 +2336,7 @@ Two unpacked floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
 
-uint packUnorm2x16(vec2 v) 🔗
+uint packUnorm2x16(vec2 v) 
 
 Pack floating-point values into an unsigned integer.
 
@@ -2352,7 +2352,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec2 unpackUnorm2x16(uint v) 🔗
+vec2 unpackUnorm2x16(uint v) 
 
 Unpack floating-point values from an unsigned integer.
 
@@ -2366,7 +2366,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packSnorm2x16(vec2 v) 🔗
+uint packSnorm2x16(vec2 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -2382,7 +2382,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec2 unpackSnorm2x16(uint v) 🔗
+vec2 unpackSnorm2x16(uint v) 
 
 Unpacks floating-point values from an unsigned integer.
 
@@ -2398,7 +2398,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packUnorm4x8(vec4 v) 🔗
+uint packUnorm4x8(vec4 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -2414,7 +2414,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec4 unpackUnorm4x8(uint v) 🔗
+vec4 unpackUnorm4x8(uint v) 
 
 Unpacks floating-point values from an unsigned integer.
 
@@ -2428,7 +2428,7 @@ An unsigned integer containing packed floating-point values.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
-uint packSnorm4x8(vec4 v) 🔗
+uint packSnorm4x8(vec4 v) 
 
 Packs floating-point values into an unsigned integer.
 
@@ -2444,7 +2444,7 @@ Unsigned 32 bit integer containing the packed encoding of the vector.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
-vec4 unpackSnorm4x8(uint v) 🔗
+vec4 unpackSnorm4x8(uint v) 
 
 Unpack floating-point values from an unsigned integer.
 
@@ -2490,7 +2490,7 @@ frexp(vec_type x, out vec_int_type exp)
 
 Splits a floating-point number (x) into significand integral components
 
-vec_int_type bitfieldExtract(vec_int_type value, int offset, int bits) 🔗
+vec_int_type bitfieldExtract(vec_int_type value, int offset, int bits) 
 
 Extracts a subset of the bits of value and returns it in the least significant bits of the result. The range of bits extracted is [offset, offset + bits - 1].
 
@@ -2514,7 +2514,7 @@ Integer with the requested bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
-vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 🔗
+vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 
 
 Component-wise Function.
 
@@ -2540,9 +2540,9 @@ Integer with the requested bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
-vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 🔗
+vec_uint_type bitfieldExtract(vec_uint_type value, int offset, int bits) 
 
-vec_uint_type bitfieldInsert(vec_uint_type base, vec_uint_type insert, int offset, int bits) 🔗
+vec_uint_type bitfieldInsert(vec_uint_type base, vec_uint_type insert, int offset, int bits) 
 
 Component-wise Function.
 
@@ -2570,9 +2570,9 @@ base with inserted bits.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
 
-vec_int_type bitfieldReverse(vec_int_type value) 🔗
+vec_int_type bitfieldReverse(vec_int_type value) 
 
-vec_uint_type bitfieldReverse(vec_uint_type value) 🔗
+vec_uint_type bitfieldReverse(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -2586,9 +2586,9 @@ value but with its bits reversed.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
 
-vec_int_type bitCount(vec_int_type value) 🔗
+vec_int_type bitCount(vec_int_type value) 
 
-vec_uint_type bitCount(vec_uint_type value) 🔗
+vec_uint_type bitCount(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -2600,9 +2600,9 @@ The number of bits that are set to 1 in the binary representation of value.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
 
-vec_int_type findLSB(vec_int_type value) 🔗
+vec_int_type findLSB(vec_int_type value) 
 
-vec_uint_type findLSB(vec_uint_type value) 🔗
+vec_uint_type findLSB(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -2616,9 +2616,9 @@ The bit number of the least significant bit that is set to 1 in the binary repre
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
 
-vec_int_type findMSB(vec_int_type value) 🔗
+vec_int_type findMSB(vec_int_type value) 
 
-vec_uint_type findMSB(vec_uint_type value) 🔗
+vec_uint_type findMSB(vec_uint_type value) 
 
 Component-wise Function.
 
@@ -2636,7 +2636,7 @@ The bit number of the most significant bit that is set to 1 in the binary repres
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
 
-void imulExtended(vec_int_type x, vec_int_type y, out vec_int_type msb, out vec_int_type lsb) 🔗
+void imulExtended(vec_int_type x, vec_int_type y, out vec_int_type msb, out vec_int_type lsb) 
 
 Component-wise Function.
 
@@ -2654,7 +2654,7 @@ The variable to receive the least significant word of the product.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
-void umulExtended(vec_uint_type x, vec_uint_type y, out vec_uint_type msb, out vec_uint_type lsb) 🔗
+void umulExtended(vec_uint_type x, vec_uint_type y, out vec_uint_type msb, out vec_uint_type lsb) 
 
 Component-wise Function.
 
@@ -2672,7 +2672,7 @@ The variable to receive the least significant word of the product.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
-vec_uint_type uaddCarry(vec_uint_type x, vec_uint_type y, out vec_uint_type carry) 🔗
+vec_uint_type uaddCarry(vec_uint_type x, vec_uint_type y, out vec_uint_type carry) 
 
 Component-wise Function.
 
@@ -2684,7 +2684,7 @@ adds two 32-bit unsigned integer variables (scalars or vectors) and generates a 
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uaddCarry.xhtml
 
-vec_uint_type usubBorrow(vec_uint_type x, vec_uint_type y, out vec_uint_type borrow) 🔗
+vec_uint_type usubBorrow(vec_uint_type x, vec_uint_type y, out vec_uint_type borrow) 
 
 Component-wise Function.
 
@@ -2696,7 +2696,7 @@ The difference of x and y if non-negative, or 232 plus that difference otherwise
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/usubBorrow.xhtml
 
-vec_type ldexp(vec_type x, out vec_int_type exp) 🔗
+vec_type ldexp(vec_type x, out vec_int_type exp) 
 
 Component-wise Function.
 
@@ -2710,7 +2710,7 @@ The value to be used as a source of exponent.
 
 https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ldexp.xhtml
 
-vec_type frexp(vec_type x, out vec_int_type exp) 🔗
+vec_type frexp(vec_type x, out vec_int_type exp) 
 
 Component-wise Function.
 
@@ -2795,11 +2795,11 @@ resource_local_to_scene
 
 true (overrides Resource)
 
-pressed(button: BaseButton) 🔗
+pressed(button: BaseButton) 
 
 Emitted when one of the buttons of the group is pressed.
 
-bool allow_unpress = false 🔗
+bool allow_unpress = false 
 
 void set_allow_unpress(value: bool)
 
@@ -2807,11 +2807,11 @@ bool is_allow_unpress()
 
 If true, it is possible to unpress all buttons in this ButtonGroup.
 
-Array[BaseButton] get_buttons() 🔗
+Array[BaseButton] get_buttons() 
 
 Returns an Array of Buttons who have this as their ButtonGroup (see BaseButton.button_group).
 
-BaseButton get_pressed_button() 🔗
+BaseButton get_pressed_button() 
 
 Returns the current pressed button.
 
@@ -2873,7 +2873,7 @@ align_to_largest_stylebox
 
 hover_pressed_mirrored
 
-HorizontalAlignment alignment = 1 🔗
+HorizontalAlignment alignment = 1 
 
 void set_text_alignment(value: HorizontalAlignment)
 
@@ -2881,7 +2881,7 @@ HorizontalAlignment get_text_alignment()
 
 Text alignment policy for the button's text.
 
-AutowrapMode autowrap_mode = 0 🔗
+AutowrapMode autowrap_mode = 0 
 
 void set_autowrap_mode(value: AutowrapMode)
 
@@ -2889,7 +2889,7 @@ AutowrapMode get_autowrap_mode()
 
 If set to something other than TextServer.AUTOWRAP_OFF, the text gets wrapped inside the node's bounding rectangle.
 
-BitField[LineBreakFlag] autowrap_trim_flags = 128 🔗
+BitField[LineBreakFlag] autowrap_trim_flags = 128 
 
 void set_autowrap_trim_flags(value: BitField[LineBreakFlag])
 
@@ -2897,13 +2897,13 @@ BitField[LineBreakFlag] get_autowrap_trim_flags()
 
 Autowrap space trimming flags. See TextServer.BREAK_TRIM_START_EDGE_SPACES and TextServer.BREAK_TRIM_END_EDGE_SPACES for more info.
 
-bool clip_text = false 🔗
+bool clip_text = false 
 
 void set_clip_text(value: bool)
 
 If true, text that is too large to fit the button is clipped horizontally. If false, the button will always be wide enough to hold the text. The text is not vertically clipped, and the button's height is not affected by this property.
 
-bool expand_icon = false 🔗
+bool expand_icon = false 
 
 void set_expand_icon(value: bool)
 
@@ -2923,7 +2923,7 @@ Button's icon, if text is present the icon will be placed before the text.
 
 To edit margin and spacing of the icon, use h_separation theme property and content_margin_* properties of the used StyleBoxes.
 
-HorizontalAlignment icon_alignment = 0 🔗
+HorizontalAlignment icon_alignment = 0 
 
 void set_icon_alignment(value: HorizontalAlignment)
 
@@ -2931,7 +2931,7 @@ HorizontalAlignment get_icon_alignment()
 
 Specifies if the icon should be aligned horizontally to the left, right, or center of a button. Uses the same HorizontalAlignment constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -2943,7 +2943,7 @@ void set_text(value: String)
 
 The button's text that will be displayed inside the button's area.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -2951,7 +2951,7 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-OverrunBehavior text_overrun_behavior = 0 🔗
+OverrunBehavior text_overrun_behavior = 0 
 
 void set_text_overrun_behavior(value: OverrunBehavior)
 
@@ -2959,7 +2959,7 @@ OverrunBehavior get_text_overrun_behavior()
 
 Sets the clipping behavior when the text exceeds the node's bounding rectangle.
 
-VerticalAlignment vertical_icon_alignment = 1 🔗
+VerticalAlignment vertical_icon_alignment = 1 
 
 void set_vertical_icon_alignment(value: VerticalAlignment)
 
@@ -2967,75 +2967,75 @@ VerticalAlignment get_vertical_icon_alignment()
 
 Specifies if the icon should be aligned vertically to the top, bottom, or center of a button. Uses the same VerticalAlignment constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
 Default text Color of the Button.
 
-Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Text Color used when the Button is disabled.
 
-Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the Button is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
 
-Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the Button is being hovered.
 
-Color font_hover_pressed_color = Color(1, 1, 1, 1) 🔗
+Color font_hover_pressed_color = Color(1, 1, 1, 1) 
 
 Text Color used when the Button is being hovered and pressed.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the Button.
 
-Color font_pressed_color = Color(1, 1, 1, 1) 🔗
+Color font_pressed_color = Color(1, 1, 1, 1) 
 
 Text Color used when the Button is being pressed.
 
-Color icon_disabled_color = Color(1, 1, 1, 0.4) 🔗
+Color icon_disabled_color = Color(1, 1, 1, 0.4) 
 
 Icon modulate Color used when the Button is disabled.
 
-Color icon_focus_color = Color(1, 1, 1, 1) 🔗
+Color icon_focus_color = Color(1, 1, 1, 1) 
 
 Icon modulate Color used when the Button is focused. Only replaces the normal modulate color of the button. Disabled, hovered, and pressed states take precedence over this color.
 
-Color icon_hover_color = Color(1, 1, 1, 1) 🔗
+Color icon_hover_color = Color(1, 1, 1, 1) 
 
 Icon modulate Color used when the Button is being hovered.
 
-Color icon_hover_pressed_color = Color(1, 1, 1, 1) 🔗
+Color icon_hover_pressed_color = Color(1, 1, 1, 1) 
 
 Icon modulate Color used when the Button is being hovered and pressed.
 
-Color icon_normal_color = Color(1, 1, 1, 1) 🔗
+Color icon_normal_color = Color(1, 1, 1, 1) 
 
 Default icon modulate Color of the Button.
 
-Color icon_pressed_color = Color(1, 1, 1, 1) 🔗
+Color icon_pressed_color = Color(1, 1, 1, 1) 
 
 Icon modulate Color used when the Button is being pressed.
 
-int align_to_largest_stylebox = 0 🔗
+int align_to_largest_stylebox = 0 
 
 This constant acts as a boolean. If true, the minimum size of the button and text/icon alignment is always based on the largest stylebox margins, otherwise it's based on the current button state stylebox margins.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal space between Button's icon and text. Negative values will be treated as 0 when used.
 
-int icon_max_width = 0 🔗
+int icon_max_width = 0 
 
 The maximum allowed width of the Button's icon. This limit is applied on top of the default size of the icon, or its expanded size if expand_icon is true. The height is adjusted according to the icon's ratio. If the button has additional icons (e.g. CheckBox), they will also be limited.
 
-int line_spacing = 0 🔗
+int line_spacing = 0 
 
 Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
@@ -3049,7 +3049,7 @@ Default icon for the Button. Appears only if icon is not assigned.
 
 StyleBox used when the Button is disabled.
 
-StyleBox disabled_mirrored 🔗
+StyleBox disabled_mirrored 
 
 StyleBox used when the Button is disabled (for right-to-left layouts).
 
@@ -3057,27 +3057,27 @@ StyleBox used when the Button is focused. The focus StyleBox is displayed over t
 
 StyleBox used when the Button is being hovered.
 
-StyleBox hover_mirrored 🔗
+StyleBox hover_mirrored 
 
 StyleBox used when the Button is being hovered (for right-to-left layouts).
 
-StyleBox hover_pressed 🔗
+StyleBox hover_pressed 
 
 StyleBox used when the Button is being pressed and hovered at the same time.
 
-StyleBox hover_pressed_mirrored 🔗
+StyleBox hover_pressed_mirrored 
 
 StyleBox used when the Button is being pressed and hovered at the same time (for right-to-left layouts).
 
 Default StyleBox for the Button.
 
-StyleBox normal_mirrored 🔗
+StyleBox normal_mirrored 
 
 Default StyleBox for the Button (for right-to-left layouts).
 
 StyleBox used when the Button is being pressed.
 
-StyleBox pressed_mirrored 🔗
+StyleBox pressed_mirrored 
 
 StyleBox used when the Button is being pressed (for right-to-left layouts).
 
@@ -3261,17 +3261,17 @@ Note: Deferred connections do not allow drawing through the draw_* methods.
 
 Emitted when this node becomes hidden, i.e. it's no longer visible in the tree (see is_visible_in_tree()).
 
-item_rect_changed() 🔗
+item_rect_changed() 
 
 Emitted when the CanvasItem's boundaries (position or size) change, or when an action took place that may have affected these boundaries (e.g. changing Sprite2D.texture).
 
-visibility_changed() 🔗
+visibility_changed() 
 
 Emitted when the CanvasItem's visibility changes, either because its own visible property changed or because its visibility in the tree changed (see is_visible_in_tree()).
 
 This signal is emitted after the related NOTIFICATION_VISIBILITY_CHANGED notification.
 
-enum TextureFilter: 🔗
+enum TextureFilter: 
 
 TextureFilter TEXTURE_FILTER_PARENT_NODE = 0
 
@@ -3313,7 +3313,7 @@ TextureFilter TEXTURE_FILTER_MAX = 7
 
 Represents the size of the TextureFilter enum.
 
-enum TextureRepeat: 🔗
+enum TextureRepeat: 
 
 TextureRepeat TEXTURE_REPEAT_PARENT_NODE = 0
 
@@ -3335,7 +3335,7 @@ TextureRepeat TEXTURE_REPEAT_MAX = 4
 
 Represents the size of the TextureRepeat enum.
 
-enum ClipChildrenMode: 🔗
+enum ClipChildrenMode: 
 
 ClipChildrenMode CLIP_CHILDREN_DISABLED = 0
 
@@ -3353,41 +3353,41 @@ ClipChildrenMode CLIP_CHILDREN_MAX = 3
 
 Represents the size of the ClipChildrenMode enum.
 
-NOTIFICATION_TRANSFORM_CHANGED = 2000 🔗
+NOTIFICATION_TRANSFORM_CHANGED = 2000 
 
 Notification received when this node's global transform changes, if is_transform_notification_enabled() is true. See also set_notify_transform() and get_transform().
 
 Note: Many canvas items such as Camera2D or CollisionObject2D automatically enable this in order to function correctly.
 
-NOTIFICATION_LOCAL_TRANSFORM_CHANGED = 35 🔗
+NOTIFICATION_LOCAL_TRANSFORM_CHANGED = 35 
 
 Notification received when this node's transform changes, if is_local_transform_notification_enabled() is true. This is not received when a parent Node2D's transform changes. See also set_notify_local_transform().
 
 Note: Many canvas items such as Camera2D or CollisionShape2D automatically enable this in order to function correctly.
 
-NOTIFICATION_DRAW = 30 🔗
+NOTIFICATION_DRAW = 30 
 
 The CanvasItem is requested to draw (see _draw()).
 
-NOTIFICATION_VISIBILITY_CHANGED = 31 🔗
+NOTIFICATION_VISIBILITY_CHANGED = 31 
 
 Notification received when this node's visibility changes (see visible and is_visible_in_tree()).
 
 This notification is received before the related visibility_changed signal.
 
-NOTIFICATION_ENTER_CANVAS = 32 🔗
+NOTIFICATION_ENTER_CANVAS = 32 
 
 The CanvasItem has entered the canvas.
 
-NOTIFICATION_EXIT_CANVAS = 33 🔗
+NOTIFICATION_EXIT_CANVAS = 33 
 
 The CanvasItem has exited the canvas.
 
-NOTIFICATION_WORLD_2D_CHANGED = 36 🔗
+NOTIFICATION_WORLD_2D_CHANGED = 36 
 
 Notification received when this CanvasItem is registered to a new World2D (see get_world_2d()).
 
-ClipChildrenMode clip_children = 0 🔗
+ClipChildrenMode clip_children = 0 
 
 void set_clip_children_mode(value: ClipChildrenMode)
 
@@ -3407,13 +3407,13 @@ Material get_material()
 
 The material applied to this CanvasItem.
 
-Color modulate = Color(1, 1, 1, 1) 🔗
+Color modulate = Color(1, 1, 1, 1) 
 
 void set_modulate(value: Color)
 
 The color applied to this CanvasItem. This property does affect child CanvasItems, unlike self_modulate which only affects the node itself.
 
-Color self_modulate = Color(1, 1, 1, 1) 🔗
+Color self_modulate = Color(1, 1, 1, 1) 
 
 void set_self_modulate(value: Color)
 
@@ -3423,7 +3423,7 @@ The color applied to this CanvasItem. This property does not affect child Canvas
 
 Note: Internal children are also not affected by this property (see the include_internal parameter in Node.add_child()). For built-in nodes this includes sliders in ColorPicker, and the tab bar in TabContainer.
 
-bool show_behind_parent = false 🔗
+bool show_behind_parent = false 
 
 void set_draw_behind_parent(value: bool)
 
@@ -3431,7 +3431,7 @@ bool is_draw_behind_parent_enabled()
 
 If true, this node draws behind its parent.
 
-TextureFilter texture_filter = 0 🔗
+TextureFilter texture_filter = 0 
 
 void set_texture_filter(value: TextureFilter)
 
@@ -3439,7 +3439,7 @@ TextureFilter get_texture_filter()
 
 The filtering mode used to render this CanvasItem's texture(s).
 
-TextureRepeat texture_repeat = 0 🔗
+TextureRepeat texture_repeat = 0 
 
 void set_texture_repeat(value: TextureRepeat)
 
@@ -3449,7 +3449,7 @@ The repeating mode used to render this CanvasItem's texture(s). It affects what 
 
 Note: TextureRect is not affected by texture_repeat, as it uses its own texture repeating implementation.
 
-bool top_level = false 🔗
+bool top_level = false 
 
 void set_as_top_level(value: bool)
 
@@ -3457,7 +3457,7 @@ bool is_set_as_top_level()
 
 If true, this CanvasItem will not inherit its transform from parent CanvasItems. Its draw order will also be changed to make it draw on top of other CanvasItems that do not have top_level set to true. The CanvasItem will effectively act as if it was placed as a child of a bare Node.
 
-bool use_parent_material = false 🔗
+bool use_parent_material = false 
 
 void set_use_parent_material(value: bool)
 
@@ -3465,7 +3465,7 @@ bool get_use_parent_material()
 
 If true, the parent CanvasItem's material is used as this node's material.
 
-int visibility_layer = 1 🔗
+int visibility_layer = 1 
 
 void set_visibility_layer(value: int)
 
@@ -3473,7 +3473,7 @@ int get_visibility_layer()
 
 The rendering layer in which this CanvasItem is rendered by Viewport nodes. A Viewport will render a CanvasItem if it and all its parents share a layer with the Viewport's canvas cull mask.
 
-bool visible = true 🔗
+bool visible = true 
 
 void set_visible(value: bool)
 
@@ -3481,7 +3481,7 @@ If true, this CanvasItem may be drawn. Whether this CanvasItem is actually drawn
 
 Note: For controls that inherit Popup, the correct way to make them visible is to call one of the multiple popup*() functions instead.
 
-bool y_sort_enabled = false 🔗
+bool y_sort_enabled = false 
 
 void set_y_sort_enabled(value: bool)
 
@@ -3493,7 +3493,7 @@ With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B')
 
 Nodes sort relative to each other only if they are on the same z_index.
 
-bool z_as_relative = true 🔗
+bool z_as_relative = true 
 
 void set_z_as_relative(value: bool)
 
@@ -3507,17 +3507,17 @@ The order in which this node is drawn. A node with a higher Z index will display
 
 Note: The Z index does not affect the order in which CanvasItem nodes are processed or the way input events are handled. This is especially important to keep in mind for Control nodes.
 
-void _draw() virtual 🔗
+void _draw() virtual 
 
 Called when CanvasItem has been requested to redraw (after queue_redraw() is called, either manually or by the engine).
 
 Corresponds to the NOTIFICATION_DRAW notification in Object._notification().
 
-void draw_animation_slice(animation_length: float, slice_begin: float, slice_end: float, offset: float = 0.0) 🔗
+void draw_animation_slice(animation_length: float, slice_begin: float, slice_end: float, offset: float = 0.0) 
 
 Subsequent drawing commands will be ignored unless they fall within the specified animation slice. This is a faster way to implement animations that loop on background rather than redrawing constantly.
 
-void draw_arc(center: Vector2, radius: float, start_angle: float, end_angle: float, point_count: int, color: Color, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_arc(center: Vector2, radius: float, start_angle: float, end_angle: float, point_count: int, color: Color, width: float = -1.0, antialiased: bool = false) 
 
 Draws an unfilled arc between the given angles with a uniform color and width and optional antialiasing (supported only for positive width). The larger the value of point_count, the smoother the curve. center is defined in local space. See also draw_circle().
 
@@ -3525,15 +3525,15 @@ If width is negative, it will be ignored and the arc will be drawn using Renderi
 
 The arc is drawn from start_angle towards the value of end_angle so in clockwise direction if start_angle < end_angle and counter-clockwise otherwise. Passing the same angles but in reversed order will produce the same arc. If absolute difference of start_angle and end_angle is greater than @GDScript.TAU radians, then a full circle arc is drawn (i.e. arc will not overlap itself).
 
-void draw_char(font: Font, pos: Vector2, char: String, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_char(font: Font, pos: Vector2, char: String, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draws a string first character using a custom font. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used. pos is defined in local space.
 
-void draw_char_outline(font: Font, pos: Vector2, char: String, font_size: int = 16, size: int = -1, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 🔗
+void draw_char_outline(font: Font, pos: Vector2, char: String, font_size: int = 16, size: int = -1, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) const 
 
 Draws a string first character outline using a custom font. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used. pos is defined in local space.
 
-void draw_circle(position: Vector2, radius: float, color: Color, filled: bool = true, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_circle(position: Vector2, radius: float, color: Color, filled: bool = true, width: float = -1.0, antialiased: bool = false) 
 
 Draws a circle, with position defined in local space. See also draw_arc(), draw_polyline(), and draw_polygon().
 
@@ -3545,13 +3545,13 @@ If antialiased is true, half transparent "feathers" will be attached to the boun
 
 Note: width is only effective if filled is false.
 
-void draw_colored_polygon(points: PackedVector2Array, color: Color, uvs: PackedVector2Array = PackedVector2Array(), texture: Texture2D = null) 🔗
+void draw_colored_polygon(points: PackedVector2Array, color: Color, uvs: PackedVector2Array = PackedVector2Array(), texture: Texture2D = null) 
 
 Draws a colored polygon of any number of points, convex or concave. The points in the points array are defined in local space. Unlike draw_polygon(), a single color must be specified for the whole polygon.
 
 Note: If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with Geometry2D.triangulate_polygon() and using draw_mesh(), draw_multimesh(), or RenderingServer.canvas_item_add_triangle_array().
 
-void draw_dashed_line(from: Vector2, to: Vector2, color: Color, width: float = -1.0, dash: float = 2.0, aligned: bool = true, antialiased: bool = false) 🔗
+void draw_dashed_line(from: Vector2, to: Vector2, color: Color, width: float = -1.0, dash: float = 2.0, aligned: bool = true, antialiased: bool = false) 
 
 Draws a dashed line from a 2D point to another, with a given color and width. The from and to positions are defined in local space. See also draw_line(), draw_multiline(), and draw_polyline().
 
@@ -3563,27 +3563,27 @@ If antialiased is true, half transparent "feathers" will be attached to the boun
 
 Note: antialiased is only effective if width is greater than 0.0.
 
-void draw_end_animation() 🔗
+void draw_end_animation() 
 
 After submitting all animations slices via draw_animation_slice(), this function can be used to revert drawing to its default state (all subsequent drawing commands will be visible). If you don't care about this particular use case, usage of this function after submitting the slices is not required.
 
-void draw_lcd_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1)) 🔗
+void draw_lcd_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1)) 
 
 Draws a textured rectangle region of the font texture with LCD subpixel anti-aliasing at a given position, optionally modulated by a color. The rect is defined in local space.
 
 Texture is drawn using the following blend operation, blend mode of the CanvasItemMaterial is ignored:
 
-void draw_line(from: Vector2, to: Vector2, color: Color, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_line(from: Vector2, to: Vector2, color: Color, width: float = -1.0, antialiased: bool = false) 
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. The from and to positions are defined in local space. See also draw_dashed_line(), draw_multiline(), and draw_polyline().
 
 If width is negative, then a two-point primitive will be drawn instead of a four-point one. This means that when the CanvasItem is scaled, the line will remain thin. If this behavior is not desired, then pass a positive width like 1.0.
 
-void draw_mesh(mesh: Mesh, texture: Texture2D, transform: Transform2D = Transform2D(1, 0, 0, 1, 0, 0), modulate: Color = Color(1, 1, 1, 1)) 🔗
+void draw_mesh(mesh: Mesh, texture: Texture2D, transform: Transform2D = Transform2D(1, 0, 0, 1, 0, 0), modulate: Color = Color(1, 1, 1, 1)) 
 
 Draws a Mesh in 2D, using the provided texture. See MeshInstance2D for related documentation. The transform is defined in local space.
 
-void draw_msdf_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), outline: float = 0.0, pixel_range: float = 4.0, scale: float = 1.0) 🔗
+void draw_msdf_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), outline: float = 0.0, pixel_range: float = 4.0, scale: float = 1.0) 
 
 Draws a textured rectangle region of the multichannel signed distance field texture at a given position, optionally modulated by a color. The rect is defined in local space. See FontFile.multichannel_signed_distance_field for more information and caveats about MSDF font rendering.
 
@@ -3591,7 +3591,7 @@ If outline is positive, each alpha channel value of pixel in region is set to ma
 
 Value of the pixel_range should the same that was used during distance field texture generation.
 
-void draw_multiline(points: PackedVector2Array, color: Color, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_multiline(points: PackedVector2Array, color: Color, width: float = -1.0, antialiased: bool = false) 
 
 Draws multiple disconnected lines with a uniform width and color. Each line is defined by two consecutive points from points array in local space, i.e. i-th segment consists of points[2 * i], points[2 * i + 1] endpoints. When drawing large amounts of lines, this is faster than using individual draw_line() calls. To draw interconnected lines, use draw_polyline() instead.
 
@@ -3599,7 +3599,7 @@ If width is negative, then two-point primitives will be drawn instead of a four-
 
 Note: antialiased is only effective if width is greater than 0.0.
 
-void draw_multiline_colors(points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_multiline_colors(points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 
 
 Draws multiple disconnected lines with a uniform width and segment-by-segment coloring. Each segment is defined by two consecutive points from points array in local space and a corresponding color from colors array, i.e. i-th segment consists of points[2 * i], points[2 * i + 1] endpoints and has colors[i] color. When drawing large amounts of lines, this is faster than using individual draw_line() calls. To draw interconnected lines, use draw_polyline_colors() instead.
 
@@ -3607,41 +3607,41 @@ If width is negative, then two-point primitives will be drawn instead of a four-
 
 Note: antialiased is only effective if width is greater than 0.0.
 
-void draw_multiline_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, modulate: Color = Color(1, 1, 1, 1), brk_flags: BitField[LineBreakFlag] = 3, justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 🔗
+void draw_multiline_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, modulate: Color = Color(1, 1, 1, 1), brk_flags: BitField[LineBreakFlag] = 3, justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 
 
 Breaks text into lines and draws it using the specified font at the pos in local space (top-left corner). The text will have its color multiplied by modulate. If width is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_multiline_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, size: int = 1, modulate: Color = Color(1, 1, 1, 1), brk_flags: BitField[LineBreakFlag] = 3, justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 🔗
+void draw_multiline_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, size: int = 1, modulate: Color = Color(1, 1, 1, 1), brk_flags: BitField[LineBreakFlag] = 3, justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 
 
 Breaks text to the lines and draws text outline using the specified font at the pos in local space (top-left corner). The text will have its color multiplied by modulate. If width is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_multimesh(multimesh: MultiMesh, texture: Texture2D) 🔗
+void draw_multimesh(multimesh: MultiMesh, texture: Texture2D) 
 
 Draws a MultiMesh in 2D with the provided texture. See MultiMeshInstance2D for related documentation.
 
-void draw_polygon(points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), texture: Texture2D = null) 🔗
+void draw_polygon(points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array = PackedVector2Array(), texture: Texture2D = null) 
 
 Draws a solid polygon of any number of points, convex or concave. Unlike draw_colored_polygon(), each point's color can be changed individually. The points array is defined in local space. See also draw_polyline() and draw_polyline_colors(). If you need more flexibility (such as being able to use bones), use RenderingServer.canvas_item_add_triangle_array() instead.
 
 Note: If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with Geometry2D.triangulate_polygon() and using draw_mesh(), draw_multimesh(), or RenderingServer.canvas_item_add_triangle_array().
 
-void draw_polyline(points: PackedVector2Array, color: Color, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_polyline(points: PackedVector2Array, color: Color, width: float = -1.0, antialiased: bool = false) 
 
 Draws interconnected line segments with a uniform color and width and optional antialiasing (supported only for positive width). The points array is defined in local space. When drawing large amounts of lines, this is faster than using individual draw_line() calls. To draw disconnected lines, use draw_multiline() instead. See also draw_polygon().
 
 If width is negative, it will be ignored and the polyline will be drawn using RenderingServer.PRIMITIVE_LINE_STRIP. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive width like 1.0.
 
-void draw_polyline_colors(points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_polyline_colors(points: PackedVector2Array, colors: PackedColorArray, width: float = -1.0, antialiased: bool = false) 
 
 Draws interconnected line segments with a uniform width, point-by-point coloring, and optional antialiasing (supported only for positive width). Colors assigned to line points match by index between points and colors, i.e. each line segment is filled with a gradient between the colors of the endpoints. The points array is defined in local space. When drawing large amounts of lines, this is faster than using individual draw_line() calls. To draw disconnected lines, use draw_multiline_colors() instead. See also draw_polygon().
 
 If width is negative, it will be ignored and the polyline will be drawn using RenderingServer.PRIMITIVE_LINE_STRIP. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive width like 1.0.
 
-void draw_primitive(points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array, texture: Texture2D = null) 🔗
+void draw_primitive(points: PackedVector2Array, colors: PackedColorArray, uvs: PackedVector2Array, texture: Texture2D = null) 
 
 Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. The points array is defined in local space. See also draw_line(), draw_polyline(), draw_polygon(), and draw_rect().
 
-void draw_rect(rect: Rect2, color: Color, filled: bool = true, width: float = -1.0, antialiased: bool = false) 🔗
+void draw_rect(rect: Rect2, color: Color, filled: bool = true, width: float = -1.0, antialiased: bool = false) 
 
 Draws a rectangle. If filled is true, the rectangle will be filled with the color specified. If filled is false, the rectangle will be drawn as a stroke with the color and width specified. The rect is specified in local space. See also draw_texture_rect().
 
@@ -3653,17 +3653,17 @@ Note: width is only effective if filled is false.
 
 Note: Unfilled rectangles drawn with a negative width may not display perfectly. For example, corners may be missing or brighter due to overlapping lines (for a translucent color).
 
-void draw_set_transform(position: Vector2, rotation: float = 0.0, scale: Vector2 = Vector2(1, 1)) 🔗
+void draw_set_transform(position: Vector2, rotation: float = 0.0, scale: Vector2 = Vector2(1, 1)) 
 
 Sets a custom local transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
 Note: FontFile.oversampling does not take scale into account. This means that scaling up/down will cause bitmap fonts and rasterized (non-MSDF) dynamic fonts to appear blurry or pixelated. To ensure text remains crisp regardless of scale, you can enable MSDF font rendering by enabling ProjectSettings.gui/theme/default_font_multichannel_signed_distance_field (applies to the default project font only), or enabling Multichannel Signed Distance Field in the import options of a DynamicFont for custom fonts. On system fonts, SystemFont.multichannel_signed_distance_field can be enabled in the inspector.
 
-void draw_set_transform_matrix(xform: Transform2D) 🔗
+void draw_set_transform_matrix(xform: Transform2D) 
 
 Sets a custom local transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
-void draw_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 🔗
+void draw_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 
 
 Draws text using the specified font at the pos in local space (bottom-left corner using the baseline of the font). The text will have its color multiplied by modulate. If width is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
@@ -3671,93 +3671,93 @@ Example: Draw "Hello world", using the project's default font:
 
 See also Font.draw_string().
 
-void draw_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, size: int = 1, modulate: Color = Color(1, 1, 1, 1), justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 🔗
+void draw_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, size: int = 1, modulate: Color = Color(1, 1, 1, 1), justification_flags: BitField[JustificationFlag] = 3, direction: Direction = 0, orientation: Orientation = 0, oversampling: float = 0.0) const 
 
 Draws text outline using the specified font at the pos in local space (bottom-left corner using the baseline of the font). The text will have its color multiplied by modulate. If width is greater than or equal to 0, the text will be clipped if it exceeds the specified width. If oversampling is greater than zero, it is used as font oversampling factor, otherwise viewport oversampling settings are used.
 
-void draw_style_box(style_box: StyleBox, rect: Rect2) 🔗
+void draw_style_box(style_box: StyleBox, rect: Rect2) 
 
 Draws a styled rectangle. The rect is defined in local space.
 
-void draw_texture(texture: Texture2D, position: Vector2, modulate: Color = Color(1, 1, 1, 1)) 🔗
+void draw_texture(texture: Texture2D, position: Vector2, modulate: Color = Color(1, 1, 1, 1)) 
 
 Draws a texture at a given position. The position is defined in local space.
 
-void draw_texture_rect(texture: Texture2D, rect: Rect2, tile: bool, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false) 🔗
+void draw_texture_rect(texture: Texture2D, rect: Rect2, tile: bool, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false) 
 
 Draws a textured rectangle at a given position, optionally modulated by a color. The rect is defined in local space. If transpose is true, the texture will have its X and Y coordinates swapped. See also draw_rect() and draw_texture_rect_region().
 
-void draw_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false, clip_uv: bool = true) 🔗
+void draw_texture_rect_region(texture: Texture2D, rect: Rect2, src_rect: Rect2, modulate: Color = Color(1, 1, 1, 1), transpose: bool = false, clip_uv: bool = true) 
 
 Draws a textured rectangle from a texture's region (specified by src_rect) at a given position in local space, optionally modulated by a color. If transpose is true, the texture will have its X and Y coordinates swapped. See also draw_texture_rect().
 
-void force_update_transform() 🔗
+void force_update_transform() 
 
 Forces the node's transform to update. Fails if the node is not inside the tree. See also get_transform().
 
 Note: For performance reasons, transform changes are usually accumulated and applied once at the end of the frame. The update propagates through CanvasItem children, as well. Therefore, use this method only when you need an up-to-date transform (such as during physics operations).
 
-RID get_canvas() const 🔗
+RID get_canvas() const 
 
 Returns the RID of the World2D canvas where this node is registered to, used by the RenderingServer.
 
-RID get_canvas_item() const 🔗
+RID get_canvas_item() const 
 
 Returns the internal canvas item RID used by the RenderingServer for this node.
 
-CanvasLayer get_canvas_layer_node() const 🔗
+CanvasLayer get_canvas_layer_node() const 
 
 Returns the CanvasLayer that contains this node, or null if the node is not in any CanvasLayer.
 
-Transform2D get_canvas_transform() const 🔗
+Transform2D get_canvas_transform() const 
 
 Returns the transform of this node, converted from its registered canvas's coordinate system to its viewport's coordinate system. See also Node.get_viewport().
 
-Vector2 get_global_mouse_position() const 🔗
+Vector2 get_global_mouse_position() const 
 
 Returns mouse cursor's global position relative to the CanvasLayer that contains this node.
 
 Note: For screen-space coordinates (e.g. when using a non-embedded Popup), you can use DisplayServer.mouse_get_position().
 
-Transform2D get_global_transform() const 🔗
+Transform2D get_global_transform() const 
 
 Returns the global transform matrix of this item, i.e. the combined transform up to the topmost CanvasItem node. The topmost item is a CanvasItem that either has no parent, has non-CanvasItem parent or it has top_level enabled.
 
-Transform2D get_global_transform_with_canvas() const 🔗
+Transform2D get_global_transform_with_canvas() const 
 
 Returns the transform from the local coordinate system of this CanvasItem to the Viewports coordinate system.
 
-Variant get_instance_shader_parameter(name: StringName) const 🔗
+Variant get_instance_shader_parameter(name: StringName) const 
 
 Get the value of a shader parameter as set on this instance.
 
-Vector2 get_local_mouse_position() const 🔗
+Vector2 get_local_mouse_position() const 
 
 Returns the mouse's position in this CanvasItem using the local coordinate system of this CanvasItem.
 
-Transform2D get_screen_transform() const 🔗
+Transform2D get_screen_transform() const 
 
 Returns the transform of this CanvasItem in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
 Equals to get_global_transform() if the window is embedded (see Viewport.gui_embed_subwindows).
 
-Transform2D get_transform() const 🔗
+Transform2D get_transform() const 
 
 Returns the transform matrix of this CanvasItem.
 
-Rect2 get_viewport_rect() const 🔗
+Rect2 get_viewport_rect() const 
 
 Returns this node's viewport boundaries as a Rect2. See also Node.get_viewport().
 
-Transform2D get_viewport_transform() const 🔗
+Transform2D get_viewport_transform() const 
 
 Returns the transform of this node, converted from its registered canvas's coordinate system to its viewport embedder's coordinate system. See also Viewport.get_final_transform() and Node.get_viewport().
 
-bool get_visibility_layer_bit(layer: int) const 🔗
+bool get_visibility_layer_bit(layer: int) const 
 
 Returns true if the layer at the given index is set in visibility_layer.
 
-World2D get_world_2d() const 🔗
+World2D get_world_2d() const 
 
 Returns the World2D this node is registered to.
 
@@ -3765,15 +3765,15 @@ Usually, this is the same as this node's viewport (see Node.get_viewport() and V
 
 Hide the CanvasItem if it's currently visible. This is equivalent to setting visible to false.
 
-bool is_local_transform_notification_enabled() const 🔗
+bool is_local_transform_notification_enabled() const 
 
 Returns true if the node receives NOTIFICATION_LOCAL_TRANSFORM_CHANGED whenever its local transform changes. This is enabled with set_notify_local_transform().
 
-bool is_transform_notification_enabled() const 🔗
+bool is_transform_notification_enabled() const 
 
 Returns true if the node receives NOTIFICATION_TRANSFORM_CHANGED whenever its global transform changes. This is enabled with set_notify_transform().
 
-bool is_visible_in_tree() const 🔗
+bool is_visible_in_tree() const 
 
 Returns true if the node is present in the SceneTree, its visible property is true and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see _draw()).
 
@@ -3781,25 +3781,25 @@ Visibility is checked only in parent nodes that inherit from CanvasItem, CanvasL
 
 Note: This method does not take visibility_layer into account, so even if this method returns true, the node might end up not being rendered.
 
-Vector2 make_canvas_position_local(viewport_point: Vector2) const 🔗
+Vector2 make_canvas_position_local(viewport_point: Vector2) const 
 
 Transforms viewport_point from the viewport's coordinates to this node's local coordinates.
 
 For the opposite operation, use get_global_transform_with_canvas().
 
-InputEvent make_input_local(event: InputEvent) const 🔗
+InputEvent make_input_local(event: InputEvent) const 
 
 Returns a copy of the given event with its coordinates converted from global space to this CanvasItem's local space. If not possible, returns the same InputEvent unchanged.
 
-void move_to_front() 🔗
+void move_to_front() 
 
 Moves this node below its siblings, usually causing the node to draw on top of its siblings. Does nothing if this node does not have a parent. See also Node.move_child().
 
-void queue_redraw() 🔗
+void queue_redraw() 
 
 Queues the CanvasItem to redraw. During idle time, if CanvasItem is visible, NOTIFICATION_DRAW is sent and _draw() is called. This only occurs once per frame, even if this method has been called multiple times.
 
-void set_instance_shader_parameter(name: StringName, value: Variant) 🔗
+void set_instance_shader_parameter(name: StringName, value: Variant) 
 
 Set the value of a shader uniform for this instance only (per-instance uniform). See also ShaderMaterial.set_shader_parameter() to assign a uniform on all instances using the same ShaderMaterial.
 
@@ -3807,19 +3807,19 @@ Note: For a shader uniform to be assignable on a per-instance basis, it must be 
 
 Note: name is case-sensitive and must match the name of the uniform in the code exactly (not the capitalized name in the inspector).
 
-void set_notify_local_transform(enable: bool) 🔗
+void set_notify_local_transform(enable: bool) 
 
 If true, the node will receive NOTIFICATION_LOCAL_TRANSFORM_CHANGED whenever its local transform changes.
 
 Note: Many canvas items such as Bone2D or CollisionShape2D automatically enable this in order to function correctly.
 
-void set_notify_transform(enable: bool) 🔗
+void set_notify_transform(enable: bool) 
 
 If true, the node will receive NOTIFICATION_TRANSFORM_CHANGED whenever global transform changes.
 
 Note: Many canvas items such as Camera2D or Light2D automatically enable this in order to function correctly.
 
-void set_visibility_layer_bit(layer: int, enabled: bool) 🔗
+void set_visibility_layer_bit(layer: int, enabled: bool) 
 
 Set/clear individual bits on the rendering visibility layer. This simplifies editing this CanvasItem's visibility layer.
 
@@ -3884,7 +3884,7 @@ A container that keeps child controls in its center.
 
 CenterContainer is a container that keeps all of its child controls in its center at their minimum size.
 
-bool use_top_left = false 🔗
+bool use_top_left = false 
 
 void set_use_top_left(value: bool)
 
@@ -3918,13 +3918,13 @@ BBCode in RichTextLabel
 
 Transform2D(1, 0, 0, 1, 0, 0)
 
-Color color = Color(0, 0, 0, 1) 🔗
+Color color = Color(0, 0, 0, 1) 
 
 void set_color(value: Color)
 
 The color the character will be drawn with.
 
-float elapsed_time = 0.0 🔗
+float elapsed_time = 0.0 
 
 void set_elapsed_time(value: float)
 
@@ -3934,7 +3934,7 @@ The time elapsed since the RichTextLabel was added to the scene tree (in seconds
 
 Note: Time still passes while the RichTextLabel is hidden.
 
-Dictionary env = {} 🔗
+Dictionary env = {} 
 
 void set_environment(value: Dictionary)
 
@@ -3950,7 +3950,7 @@ TextServer RID of the font used to render glyph, this value can be used with Tex
 
 Note: Read-only. Setting this property won't affect drawing.
 
-int glyph_count = 0 🔗
+int glyph_count = 0 
 
 void set_glyph_count(value: int)
 
@@ -3960,7 +3960,7 @@ Number of glyphs in the grapheme cluster. This value is set in the first glyph o
 
 Note: Read-only. Setting this property won't affect drawing.
 
-int glyph_flags = 0 🔗
+int glyph_flags = 0 
 
 void set_glyph_flags(value: int)
 
@@ -3970,7 +3970,7 @@ Glyph flags. See GraphemeFlag for more info.
 
 Note: Read-only. Setting this property won't affect drawing.
 
-int glyph_index = 0 🔗
+int glyph_index = 0 
 
 void set_glyph_index(value: int)
 
@@ -3978,13 +3978,13 @@ int get_glyph_index()
 
 Glyph index specific to the font. If you want to replace this glyph, use TextServer.font_get_glyph_index() with font to get a new glyph index for a single character.
 
-Vector2 offset = Vector2(0, 0) 🔗
+Vector2 offset = Vector2(0, 0) 
 
 void set_offset(value: Vector2)
 
 The position offset the character will be drawn with (in pixels).
 
-bool outline = false 🔗
+bool outline = false 
 
 void set_outline(value: bool)
 
@@ -3992,7 +3992,7 @@ If true, FX transform is called for outline drawing.
 
 Note: Read-only. Setting this property won't affect drawing.
 
-Vector2i range = Vector2i(0, 0) 🔗
+Vector2i range = Vector2i(0, 0) 
 
 void set_range(value: Vector2i)
 
@@ -4000,7 +4000,7 @@ Absolute character range in the string, corresponding to the glyph.
 
 Note: Read-only. Setting this property won't affect drawing.
 
-int relative_index = 0 🔗
+int relative_index = 0 
 
 void set_relative_index(value: int)
 
@@ -4010,7 +4010,7 @@ The character offset of the glyph, relative to the current RichTextEffect custom
 
 Note: Read-only. Setting this property won't affect drawing.
 
-Transform2D transform = Transform2D(1, 0, 0, 1, 0, 0) 🔗
+Transform2D transform = Transform2D(1, 0, 0, 1, 0, 0) 
 
 void set_transform(value: Transform2D)
 
@@ -4018,7 +4018,7 @@ Transform2D get_transform()
 
 The current transform of the current glyph. It can be overridden (for example, by driving the position and rotation from a curve). You can also alter the existing value to apply transforms on top of other effects.
 
-bool visible = true 🔗
+bool visible = true 
 
 void set_visibility(value: bool)
 
@@ -4067,45 +4067,45 @@ radio_checked_disabled
 
 radio_unchecked_disabled
 
-Color checkbox_checked_color = Color(1, 1, 1, 1) 🔗
+Color checkbox_checked_color = Color(1, 1, 1, 1) 
 
 The color of the checked icon when the checkbox is pressed.
 
-Color checkbox_unchecked_color = Color(1, 1, 1, 1) 🔗
+Color checkbox_unchecked_color = Color(1, 1, 1, 1) 
 
 The color of the unchecked icon when the checkbox is not pressed.
 
-int check_v_offset = 0 🔗
+int check_v_offset = 0 
 
 The vertical offset used when rendering the check icons (in pixels).
 
 The check icon to display when the CheckBox is checked.
 
-Texture2D checked_disabled 🔗
+Texture2D checked_disabled 
 
 The check icon to display when the CheckBox is checked and is disabled.
 
-Texture2D radio_checked 🔗
+Texture2D radio_checked 
 
 The check icon to display when the CheckBox is configured as a radio button and is checked.
 
-Texture2D radio_checked_disabled 🔗
+Texture2D radio_checked_disabled 
 
 The check icon to display when the CheckBox is configured as a radio button, is disabled, and is unchecked.
 
-Texture2D radio_unchecked 🔗
+Texture2D radio_unchecked 
 
 The check icon to display when the CheckBox is configured as a radio button and is unchecked.
 
-Texture2D radio_unchecked_disabled 🔗
+Texture2D radio_unchecked_disabled 
 
 The check icon to display when the CheckBox is configured as a radio button, is disabled, and is unchecked.
 
-Texture2D unchecked 🔗
+Texture2D unchecked 
 
 The check icon to display when the CheckBox is unchecked.
 
-Texture2D unchecked_disabled 🔗
+Texture2D unchecked_disabled 
 
 The check icon to display when the CheckBox is unchecked and is disabled.
 
@@ -4141,45 +4141,45 @@ checked_disabled_mirrored
 
 unchecked_disabled_mirrored
 
-Color button_checked_color = Color(1, 1, 1, 1) 🔗
+Color button_checked_color = Color(1, 1, 1, 1) 
 
 The color of the checked icon when the checkbox is pressed.
 
-Color button_unchecked_color = Color(1, 1, 1, 1) 🔗
+Color button_unchecked_color = Color(1, 1, 1, 1) 
 
 The color of the unchecked icon when the checkbox is not pressed.
 
-int check_v_offset = 0 🔗
+int check_v_offset = 0 
 
 The vertical offset used when rendering the toggle icons (in pixels).
 
 The icon to display when the CheckButton is checked (for left-to-right layouts).
 
-Texture2D checked_disabled 🔗
+Texture2D checked_disabled 
 
 The icon to display when the CheckButton is checked and disabled (for left-to-right layouts).
 
-Texture2D checked_disabled_mirrored 🔗
+Texture2D checked_disabled_mirrored 
 
 The icon to display when the CheckButton is checked and disabled (for right-to-left layouts).
 
-Texture2D checked_mirrored 🔗
+Texture2D checked_mirrored 
 
 The icon to display when the CheckButton is checked (for right-to-left layouts).
 
-Texture2D unchecked 🔗
+Texture2D unchecked 
 
 The icon to display when the CheckButton is unchecked (for left-to-right layouts).
 
-Texture2D unchecked_disabled 🔗
+Texture2D unchecked_disabled 
 
 The icon to display when the CheckButton is unchecked and disabled (for left-to-right layouts).
 
-Texture2D unchecked_disabled_mirrored 🔗
+Texture2D unchecked_disabled_mirrored 
 
 The icon to display when the CheckButton is unchecked and disabled (for right-to-left layouts).
 
-Texture2D unchecked_mirrored 🔗
+Texture2D unchecked_mirrored 
 
 The icon to display when the CheckButton is unchecked (for right-to-left layouts).
 
@@ -4204,7 +4204,7 @@ A resource class for managing a palette of colors, which can be loaded and saved
 
 The ColorPalette resource is designed to store and manage a collection of colors. This resource is useful in scenarios where a predefined set of colors is required, such as for creating themes, designing user interfaces, or managing game assets. The built-in ColorPicker control can also make use of ColorPalette without additional code.
 
-PackedColorArray colors = PackedColorArray() 🔗
+PackedColorArray colors = PackedColorArray() 
 
 void set_colors(value: PackedColorArray)
 
@@ -4248,7 +4248,7 @@ GUI Drag And Drop Demo
 
 true (overrides BaseButton)
 
-color_changed(color: Color) 🔗
+color_changed(color: Color) 
 
 Emitted when the color changes.
 
@@ -4256,7 +4256,7 @@ Emitted when the ColorPicker is created (the button is pressed for the first tim
 
 Emitted when the ColorPicker is closed.
 
-Color color = Color(0, 0, 0, 1) 🔗
+Color color = Color(0, 0, 0, 1) 
 
 void set_pick_color(value: Color)
 
@@ -4264,7 +4264,7 @@ Color get_pick_color()
 
 The currently selected color.
 
-bool edit_alpha = true 🔗
+bool edit_alpha = true 
 
 void set_edit_alpha(value: bool)
 
@@ -4272,7 +4272,7 @@ bool is_editing_alpha()
 
 If true, the alpha channel in the displayed ColorPicker will be visible.
 
-bool edit_intensity = true 🔗
+bool edit_intensity = true 
 
 void set_edit_intensity(value: bool)
 
@@ -4280,13 +4280,13 @@ bool is_editing_intensity()
 
 If true, the intensity slider in the displayed ColorPicker will be visible.
 
-ColorPicker get_picker() 🔗
+ColorPicker get_picker() 
 
 Returns the ColorPicker that this node toggles.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-PopupPanel get_popup() 🔗
+PopupPanel get_popup() 
 
 Returns the control's PopupPanel which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
@@ -4342,19 +4342,19 @@ center_slider_grabbers
 
 picker_focus_rectangle
 
-color_changed(color: Color) 🔗
+color_changed(color: Color) 
 
 Emitted when the color is changed.
 
-preset_added(color: Color) 🔗
+preset_added(color: Color) 
 
 Emitted when a preset is added.
 
-preset_removed(color: Color) 🔗
+preset_removed(color: Color) 
 
 Emitted when a preset is removed.
 
-enum ColorModeType: 🔗
+enum ColorModeType: 
 
 ColorModeType MODE_RGB = 0
 
@@ -4380,7 +4380,7 @@ OKHSL is a new color space similar to HSL but that better match perception by le
 
 Okhsv and Okhsl color spaces
 
-enum PickerShapeType: 🔗
+enum PickerShapeType: 
 
 PickerShapeType SHAPE_HSV_RECTANGLE = 0
 
@@ -4410,7 +4410,7 @@ PickerShapeType SHAPE_OK_HL_RECTANGLE = 6
 
 OKHSL Color Model rectangle with constant saturation.
 
-bool can_add_swatches = true 🔗
+bool can_add_swatches = true 
 
 void set_can_add_swatches(value: bool)
 
@@ -4418,7 +4418,7 @@ bool are_swatches_enabled()
 
 If true, it's possible to add presets under Swatches. If false, the button to add presets is disabled.
 
-Color color = Color(1, 1, 1, 1) 🔗
+Color color = Color(1, 1, 1, 1) 
 
 void set_pick_color(value: Color)
 
@@ -4426,7 +4426,7 @@ Color get_pick_color()
 
 The currently selected color.
 
-ColorModeType color_mode = 0 🔗
+ColorModeType color_mode = 0 
 
 void set_color_mode(value: ColorModeType)
 
@@ -4434,7 +4434,7 @@ ColorModeType get_color_mode()
 
 The currently selected color mode.
 
-bool color_modes_visible = true 🔗
+bool color_modes_visible = true 
 
 void set_modes_visible(value: bool)
 
@@ -4442,7 +4442,7 @@ bool are_modes_visible()
 
 If true, the color mode buttons are visible.
 
-bool deferred_mode = false 🔗
+bool deferred_mode = false 
 
 void set_deferred_mode(value: bool)
 
@@ -4450,7 +4450,7 @@ bool is_deferred_mode()
 
 If true, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
-bool edit_alpha = true 🔗
+bool edit_alpha = true 
 
 void set_edit_alpha(value: bool)
 
@@ -4458,7 +4458,7 @@ bool is_editing_alpha()
 
 If true, shows an alpha channel slider (opacity).
 
-bool edit_intensity = true 🔗
+bool edit_intensity = true 
 
 void set_edit_intensity(value: bool)
 
@@ -4466,7 +4466,7 @@ bool is_editing_intensity()
 
 If true, shows an intensity slider. The intensity is applied as follows: multiply the color by 2 ** intensity in linear RGB space, and then convert it back to sRGB.
 
-bool hex_visible = true 🔗
+bool hex_visible = true 
 
 void set_hex_visible(value: bool)
 
@@ -4474,7 +4474,7 @@ bool is_hex_visible()
 
 If true, the hex color code input field is visible.
 
-PickerShapeType picker_shape = 0 🔗
+PickerShapeType picker_shape = 0 
 
 void set_picker_shape(value: PickerShapeType)
 
@@ -4482,7 +4482,7 @@ PickerShapeType get_picker_shape()
 
 The shape of the color space view.
 
-bool presets_visible = true 🔗
+bool presets_visible = true 
 
 void set_presets_visible(value: bool)
 
@@ -4490,7 +4490,7 @@ bool are_presets_visible()
 
 If true, the Swatches and Recent Colors presets are visible.
 
-bool sampler_visible = true 🔗
+bool sampler_visible = true 
 
 void set_sampler_visible(value: bool)
 
@@ -4498,7 +4498,7 @@ bool is_sampler_visible()
 
 If true, the color sampler and color preview are visible.
 
-bool sliders_visible = true 🔗
+bool sliders_visible = true 
 
 void set_sliders_visible(value: bool)
 
@@ -4506,129 +4506,129 @@ bool are_sliders_visible()
 
 If true, the color sliders are visible.
 
-void add_preset(color: Color) 🔗
+void add_preset(color: Color) 
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
 
 Note: The presets list is only for this color picker.
 
-void add_recent_preset(color: Color) 🔗
+void add_recent_preset(color: Color) 
 
 Adds the given color to a list of color recent presets so that it can be picked later. Recent presets are the colors that were picked recently, a new preset is automatically created and added to recent presets when you pick a new color.
 
 Note: The recent presets list is only for this color picker.
 
-void erase_preset(color: Color) 🔗
+void erase_preset(color: Color) 
 
 Removes the given color from the list of color presets of this color picker.
 
-void erase_recent_preset(color: Color) 🔗
+void erase_recent_preset(color: Color) 
 
 Removes the given color from the list of color recent presets of this color picker.
 
-PackedColorArray get_presets() const 🔗
+PackedColorArray get_presets() const 
 
 Returns the list of colors in the presets of the color picker.
 
-PackedColorArray get_recent_presets() const 🔗
+PackedColorArray get_recent_presets() const 
 
 Returns the list of colors in the recent presets of the color picker.
 
-Color focused_not_editing_cursor_color = Color(1, 1, 1, 0.275) 🔗
+Color focused_not_editing_cursor_color = Color(1, 1, 1, 0.275) 
 
 Color of rectangle or circle drawn when a picker shape part is focused but not editable via keyboard or joypad. Displayed over the picker shape, so a partially transparent color should be used to ensure the picker shape remains visible.
 
-int center_slider_grabbers = 1 🔗
+int center_slider_grabbers = 1 
 
 Overrides the Slider.center_grabber theme property of the sliders.
 
 The width of the hue selection slider.
 
-int label_width = 10 🔗
+int label_width = 10 
 
 The minimum width of the color labels next to sliders.
 
 The margin around the ColorPicker.
 
-int sv_height = 256 🔗
+int sv_height = 256 
 
 The height of the saturation-value selection box.
 
 The width of the saturation-value selection box.
 
-Texture2D add_preset 🔗
+Texture2D add_preset 
 
 The icon for the "Add Preset" button.
 
-Texture2D bar_arrow 🔗
+Texture2D bar_arrow 
 
 The texture for the arrow grabber.
 
-Texture2D color_hue 🔗
+Texture2D color_hue 
 
 Custom texture for the hue selection slider on the right.
 
-Texture2D color_script 🔗
+Texture2D color_script 
 
 The icon for the button that switches color text to hexadecimal.
 
-Texture2D expanded_arrow 🔗
+Texture2D expanded_arrow 
 
 The icon for color preset drop down menu when expanded.
 
-Texture2D folded_arrow 🔗
+Texture2D folded_arrow 
 
 The icon for color preset drop down menu when folded.
 
-Texture2D menu_option 🔗
+Texture2D menu_option 
 
 The icon for color preset option menu.
 
-Texture2D overbright_indicator 🔗
+Texture2D overbright_indicator 
 
 The indicator used to signalize that the color value is outside the 0-1 range.
 
-Texture2D picker_cursor 🔗
+Texture2D picker_cursor 
 
 The image displayed over the color box/circle (depending on the picker_shape), marking the currently selected color.
 
-Texture2D picker_cursor_bg 🔗
+Texture2D picker_cursor_bg 
 
 The fill image displayed behind the picker cursor.
 
-Texture2D sample_bg 🔗
+Texture2D sample_bg 
 
 Background panel for the color preview box (visible when the color is translucent).
 
-Texture2D sample_revert 🔗
+Texture2D sample_revert 
 
 The icon for the revert button (visible on the middle of the "old" color when it differs from the currently selected color). This icon is modulated with a dark color if the "old" color is bright enough, so the icon should be bright to ensure visibility in both scenarios.
 
-Texture2D screen_picker 🔗
+Texture2D screen_picker 
 
 The icon for the screen color picker button.
 
-Texture2D shape_circle 🔗
+Texture2D shape_circle 
 
 The icon for circular picker shapes.
 
-Texture2D shape_rect 🔗
+Texture2D shape_rect 
 
 The icon for rectangular picker shapes.
 
-Texture2D shape_rect_wheel 🔗
+Texture2D shape_rect_wheel 
 
 The icon for rectangular wheel picker shapes.
 
-StyleBox picker_focus_circle 🔗
+StyleBox picker_focus_circle 
 
 The StyleBox used when the circle-shaped part of the picker is focused. Displayed over the picker shape, so a partially transparent StyleBox should be used to ensure the picker shape remains visible. A StyleBox that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a StyleBoxEmpty resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-StyleBox picker_focus_rectangle 🔗
+StyleBox picker_focus_rectangle 
 
 The StyleBox used when the rectangle-shaped part of the picker is focused. Displayed over the picker shape, so a partially transparent StyleBox should be used to ensure the picker shape remains visible. A StyleBox that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a StyleBoxEmpty resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-StyleBox sample_focus 🔗
+StyleBox sample_focus 
 
 The StyleBox used for the old color sample part when it is focused. Displayed over the sample, so a partially transparent StyleBox should be used to ensure the picker shape remains visible. A StyleBox that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a StyleBoxEmpty resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
@@ -4667,33 +4667,33 @@ _get_allowed_size_flags_vertical() virtual const
 
 fit_child_in_rect(child: Control, rect: Rect2)
 
-pre_sort_children() 🔗
+pre_sort_children() 
 
 Emitted when children are going to be sorted.
 
 Emitted when sorting the children is needed.
 
-NOTIFICATION_PRE_SORT_CHILDREN = 50 🔗
+NOTIFICATION_PRE_SORT_CHILDREN = 50 
 
 Notification just before children are going to be sorted, in case there's something to process beforehand.
 
-NOTIFICATION_SORT_CHILDREN = 51 🔗
+NOTIFICATION_SORT_CHILDREN = 51 
 
 Notification for when sorting the children, it must be obeyed immediately.
 
-PackedInt32Array _get_allowed_size_flags_horizontal() virtual const 🔗
+PackedInt32Array _get_allowed_size_flags_horizontal() virtual const 
 
 Implement to return a list of allowed horizontal SizeFlags for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
 Note: Having no size flags is equal to having Control.SIZE_SHRINK_BEGIN. As such, this value is always implicitly allowed.
 
-PackedInt32Array _get_allowed_size_flags_vertical() virtual const 🔗
+PackedInt32Array _get_allowed_size_flags_vertical() virtual const 
 
 Implement to return a list of allowed vertical SizeFlags for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
 Note: Having no size flags is equal to having Control.SIZE_SHRINK_BEGIN. As such, this value is always implicitly allowed.
 
-void fit_child_in_rect(child: Control, rect: Rect2) 🔗
+void fit_child_in_rect(child: Control, rect: Rect2) 
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
@@ -5121,11 +5121,11 @@ Emitted when the node gains focus.
 
 Emitted when the node loses focus.
 
-gui_input(event: InputEvent) 🔗
+gui_input(event: InputEvent) 
 
 Emitted when the node receives an InputEvent.
 
-minimum_size_changed() 🔗
+minimum_size_changed() 
 
 Emitted when the node's minimum size changes.
 
@@ -5141,7 +5141,7 @@ Note: If you want to check whether the mouse truly left the area, ignoring any t
 
 Emitted when the control changes size.
 
-size_flags_changed() 🔗
+size_flags_changed() 
 
 Emitted when one of the size flags changes. See size_flags_horizontal and size_flags_vertical.
 
@@ -5163,7 +5163,7 @@ FocusMode FOCUS_ACCESSIBILITY = 3
 
 The node can grab focus only when screen reader is active. Use with focus_mode.
 
-enum FocusBehaviorRecursive: 🔗
+enum FocusBehaviorRecursive: 
 
 FocusBehaviorRecursive FOCUS_BEHAVIOR_INHERITED = 0
 
@@ -5177,7 +5177,7 @@ FocusBehaviorRecursive FOCUS_BEHAVIOR_ENABLED = 2
 
 Allows the control to be focused, depending on the focus_mode. This can be used to ignore the parent's focus_behavior_recursive. get_focus_mode_with_override() will return the focus_mode.
 
-enum MouseBehaviorRecursive: 🔗
+enum MouseBehaviorRecursive: 
 
 MouseBehaviorRecursive MOUSE_BEHAVIOR_INHERITED = 0
 
@@ -5323,7 +5323,7 @@ LayoutPreset PRESET_FULL_RECT = 15
 
 Snap all 4 anchors to the respective corners of the parent control. Set all 4 offsets to 0 after you applied this preset and the Control will fit its parent control. Use with set_anchors_preset().
 
-enum LayoutPresetMode: 🔗
+enum LayoutPresetMode: 
 
 LayoutPresetMode PRESET_MODE_MINSIZE = 0
 
@@ -5383,7 +5383,7 @@ The control will not receive any mouse movement input events nor mouse button in
 
 Note: If the control has received mouse_entered but not mouse_exited, changing the mouse_filter to MOUSE_FILTER_IGNORE will cause mouse_exited to be emitted.
 
-enum GrowDirection: 🔗
+enum GrowDirection: 
 
 GrowDirection GROW_DIRECTION_BEGIN = 0
 
@@ -5405,7 +5405,7 @@ Anchor ANCHOR_END = 1
 
 Snaps one of the 4 anchor's sides to the end of the node's Rect, in the bottom right. Use it with one of the anchor_* member variables, like anchor_left. To change all 4 anchors at once, use set_anchors_preset().
 
-enum LayoutDirection: 🔗
+enum LayoutDirection: 
 
 LayoutDirection LAYOUT_DIRECTION_INHERITED = 0
 
@@ -5435,7 +5435,7 @@ LayoutDirection LAYOUT_DIRECTION_LOCALE = 1
 
 Deprecated: Use LAYOUT_DIRECTION_APPLICATION_LOCALE instead.
 
-enum TextDirection: 🔗
+enum TextDirection: 
 
 TextDirection TEXT_DIRECTION_INHERITED = 3
 
@@ -5453,11 +5453,11 @@ TextDirection TEXT_DIRECTION_RTL = 2
 
 Right-to-left text writing direction.
 
-NOTIFICATION_RESIZED = 40 🔗
+NOTIFICATION_RESIZED = 40 
 
 Sent when the node changes size. Use size to get the new size.
 
-NOTIFICATION_MOUSE_ENTER = 41 🔗
+NOTIFICATION_MOUSE_ENTER = 41 
 
 Sent when the mouse cursor enters the control's (or any child control's) visible area, that is not occluded behind other Controls or Windows, provided its mouse_filter lets the event reach it and regardless if it's currently focused or not.
 
@@ -5465,7 +5465,7 @@ Note: CanvasItem.z_index doesn't affect which Control receives the notification.
 
 See also NOTIFICATION_MOUSE_ENTER_SELF.
 
-NOTIFICATION_MOUSE_EXIT = 42 🔗
+NOTIFICATION_MOUSE_EXIT = 42 
 
 Sent when the mouse cursor leaves the control's (and all child control's) visible area, that is not occluded behind other Controls or Windows, provided its mouse_filter lets the event reach it and regardless if it's currently focused or not.
 
@@ -5473,7 +5473,7 @@ Note: CanvasItem.z_index doesn't affect which Control receives the notification.
 
 See also NOTIFICATION_MOUSE_EXIT_SELF.
 
-NOTIFICATION_MOUSE_ENTER_SELF = 60 🔗
+NOTIFICATION_MOUSE_ENTER_SELF = 60 
 
 Experimental: The reason this notification is sent may change in the future.
 
@@ -5483,7 +5483,7 @@ Note: CanvasItem.z_index doesn't affect which Control receives the notification.
 
 See also NOTIFICATION_MOUSE_ENTER.
 
-NOTIFICATION_MOUSE_EXIT_SELF = 61 🔗
+NOTIFICATION_MOUSE_EXIT_SELF = 61 
 
 Experimental: The reason this notification is sent may change in the future.
 
@@ -5493,15 +5493,15 @@ Note: CanvasItem.z_index doesn't affect which Control receives the notification.
 
 See also NOTIFICATION_MOUSE_EXIT.
 
-NOTIFICATION_FOCUS_ENTER = 43 🔗
+NOTIFICATION_FOCUS_ENTER = 43 
 
 Sent when the node grabs focus.
 
-NOTIFICATION_FOCUS_EXIT = 44 🔗
+NOTIFICATION_FOCUS_EXIT = 44 
 
 Sent when the node loses focus.
 
-NOTIFICATION_THEME_CHANGED = 45 🔗
+NOTIFICATION_THEME_CHANGED = 45 
 
 Sent when the node needs to refresh its theme items. This happens in one of the following cases:
 
@@ -5517,23 +5517,23 @@ Note: As an optimization, this notification won't be sent from changes that occu
 
 Note: This notification is received alongside Node.NOTIFICATION_ENTER_TREE, so if you are instantiating a scene, the child nodes will not be initialized yet. You can use it to setup theming for this node, child nodes created from script, or if you want to access child nodes added in the editor, make sure the node is ready using Node.is_node_ready().
 
-NOTIFICATION_SCROLL_BEGIN = 47 🔗
+NOTIFICATION_SCROLL_BEGIN = 47 
 
 Sent when this node is inside a ScrollContainer which has begun being scrolled when dragging the scrollable area with a touch event. This notification is not sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
 Note: This signal is only emitted on Android or iOS, or on desktop/web platforms when ProjectSettings.input_devices/pointing/emulate_touch_from_mouse is enabled.
 
-NOTIFICATION_SCROLL_END = 48 🔗
+NOTIFICATION_SCROLL_END = 48 
 
 Sent when this node is inside a ScrollContainer which has stopped being scrolled when dragging the scrollable area with a touch event. This notification is not sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
 Note: This signal is only emitted on Android or iOS, or on desktop/web platforms when ProjectSettings.input_devices/pointing/emulate_touch_from_mouse is enabled.
 
-NOTIFICATION_LAYOUT_DIRECTION_CHANGED = 49 🔗
+NOTIFICATION_LAYOUT_DIRECTION_CHANGED = 49 
 
 Sent when the control layout direction is changed from LTR or RTL or vice versa. This notification is propagated to child Control nodes as result of a change to layout_direction.
 
-Array[NodePath] accessibility_controls_nodes = [] 🔗
+Array[NodePath] accessibility_controls_nodes = [] 
 
 void set_accessibility_controls_nodes(value: Array[NodePath])
 
@@ -5541,7 +5541,7 @@ Array[NodePath] get_accessibility_controls_nodes()
 
 The paths to the nodes which are controlled by this node.
 
-Array[NodePath] accessibility_described_by_nodes = [] 🔗
+Array[NodePath] accessibility_described_by_nodes = [] 
 
 void set_accessibility_described_by_nodes(value: Array[NodePath])
 
@@ -5549,7 +5549,7 @@ Array[NodePath] get_accessibility_described_by_nodes()
 
 The paths to the nodes which are describing this node.
 
-String accessibility_description = "" 🔗
+String accessibility_description = "" 
 
 void set_accessibility_description(value: String)
 
@@ -5557,7 +5557,7 @@ String get_accessibility_description()
 
 The human-readable node description that is reported to assistive apps.
 
-Array[NodePath] accessibility_flow_to_nodes = [] 🔗
+Array[NodePath] accessibility_flow_to_nodes = [] 
 
 void set_accessibility_flow_to_nodes(value: Array[NodePath])
 
@@ -5565,7 +5565,7 @@ Array[NodePath] get_accessibility_flow_to_nodes()
 
 The paths to the nodes which this node flows into.
 
-Array[NodePath] accessibility_labeled_by_nodes = [] 🔗
+Array[NodePath] accessibility_labeled_by_nodes = [] 
 
 void set_accessibility_labeled_by_nodes(value: Array[NodePath])
 
@@ -5573,7 +5573,7 @@ Array[NodePath] get_accessibility_labeled_by_nodes()
 
 The paths to the nodes which label this node.
 
-AccessibilityLiveMode accessibility_live = 0 🔗
+AccessibilityLiveMode accessibility_live = 0 
 
 void set_accessibility_live(value: AccessibilityLiveMode)
 
@@ -5581,7 +5581,7 @@ AccessibilityLiveMode get_accessibility_live()
 
 The mode with which a live region updates. A live region is a Node that is updated as a result of an external event when the user's focus may be elsewhere.
 
-String accessibility_name = "" 🔗
+String accessibility_name = "" 
 
 void set_accessibility_name(value: String)
 
@@ -5589,31 +5589,31 @@ String get_accessibility_name()
 
 The human-readable node name that is reported to assistive apps.
 
-float anchor_bottom = 0.0 🔗
+float anchor_bottom = 0.0 
 
 float get_anchor(side: Side) const
 
 Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom offset updates when the node moves or changes size. You can use one of the Anchor constants for convenience.
 
-float anchor_left = 0.0 🔗
+float anchor_left = 0.0 
 
 float get_anchor(side: Side) const
 
 Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left offset updates when the node moves or changes size. You can use one of the Anchor constants for convenience.
 
-float anchor_right = 0.0 🔗
+float anchor_right = 0.0 
 
 float get_anchor(side: Side) const
 
 Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right offset updates when the node moves or changes size. You can use one of the Anchor constants for convenience.
 
-float anchor_top = 0.0 🔗
+float anchor_top = 0.0 
 
 float get_anchor(side: Side) const
 
 Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top offset updates when the node moves or changes size. You can use one of the Anchor constants for convenience.
 
-bool auto_translate 🔗
+bool auto_translate 
 
 void set_auto_translate(value: bool)
 
@@ -5623,7 +5623,7 @@ Deprecated: Use Node.auto_translate_mode and Node.can_auto_translate() instead.
 
 Toggles if any text should automatically change to its translated version depending on the current locale.
 
-bool clip_contents = false 🔗
+bool clip_contents = false 
 
 void set_clip_contents(value: bool)
 
@@ -5631,7 +5631,7 @@ bool is_clipping_contents()
 
 Enables whether rendering of CanvasItem based children should be clipped to this control's rectangle. If true, parts of a child which would be visibly outside of this control's rectangle will not be rendered and won't receive input.
 
-Vector2 custom_minimum_size = Vector2(0, 0) 🔗
+Vector2 custom_minimum_size = Vector2(0, 0) 
 
 void set_custom_minimum_size(value: Vector2)
 
@@ -5639,7 +5639,7 @@ Vector2 get_custom_minimum_size()
 
 The minimum size of the node's bounding rectangle. If you set it to a value greater than (0, 0), the node's bounding rectangle will always have at least this size. Note that Control nodes have their internal minimum size returned by get_minimum_size(). It depends on the control's contents, like text, textures, or style boxes. The actual minimum size is the maximum value of this property and the internal minimum size (see get_combined_minimum_size()).
 
-FocusBehaviorRecursive focus_behavior_recursive = 0 🔗
+FocusBehaviorRecursive focus_behavior_recursive = 0 
 
 void set_focus_behavior_recursive(value: FocusBehaviorRecursive)
 
@@ -5647,7 +5647,7 @@ FocusBehaviorRecursive get_focus_behavior_recursive()
 
 Determines which controls can be focused together with focus_mode. See get_focus_mode_with_override(). Since the default behavior is FOCUS_BEHAVIOR_INHERITED, this can be used to prevent all children controls from getting focused.
 
-FocusMode focus_mode = 0 🔗
+FocusMode focus_mode = 0 
 
 void set_focus_mode(value: FocusMode)
 
@@ -5655,7 +5655,7 @@ FocusMode get_focus_mode()
 
 Determines which controls can be focused. Only one control can be focused at a time, and the focused control will receive keyboard, gamepad, and mouse events in _gui_input(). Use get_focus_mode_with_override() to determine if a control can grab focus, since focus_behavior_recursive also affects it. See also grab_focus().
 
-NodePath focus_neighbor_bottom = NodePath("") 🔗
+NodePath focus_neighbor_bottom = NodePath("") 
 
 void set_focus_neighbor(side: Side, neighbor: NodePath)
 
@@ -5663,7 +5663,7 @@ NodePath get_focus_neighbor(side: Side) const
 
 Tells Godot which node it should give focus to if the user presses the down arrow on the keyboard or down on a gamepad by default. You can change the key by editing the ProjectSettings.input/ui_down input action. The node must be a Control. If this property is not set, Godot will give focus to the closest Control to the bottom of this one.
 
-NodePath focus_neighbor_left = NodePath("") 🔗
+NodePath focus_neighbor_left = NodePath("") 
 
 void set_focus_neighbor(side: Side, neighbor: NodePath)
 
@@ -5671,7 +5671,7 @@ NodePath get_focus_neighbor(side: Side) const
 
 Tells Godot which node it should give focus to if the user presses the left arrow on the keyboard or left on a gamepad by default. You can change the key by editing the ProjectSettings.input/ui_left input action. The node must be a Control. If this property is not set, Godot will give focus to the closest Control to the left of this one.
 
-NodePath focus_neighbor_right = NodePath("") 🔗
+NodePath focus_neighbor_right = NodePath("") 
 
 void set_focus_neighbor(side: Side, neighbor: NodePath)
 
@@ -5679,7 +5679,7 @@ NodePath get_focus_neighbor(side: Side) const
 
 Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the ProjectSettings.input/ui_right input action. The node must be a Control. If this property is not set, Godot will give focus to the closest Control to the right of this one.
 
-NodePath focus_neighbor_top = NodePath("") 🔗
+NodePath focus_neighbor_top = NodePath("") 
 
 void set_focus_neighbor(side: Side, neighbor: NodePath)
 
@@ -5687,7 +5687,7 @@ NodePath get_focus_neighbor(side: Side) const
 
 Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the ProjectSettings.input/ui_up input action. The node must be a Control. If this property is not set, Godot will give focus to the closest Control to the top of this one.
 
-NodePath focus_next = NodePath("") 🔗
+NodePath focus_next = NodePath("") 
 
 void set_focus_next(value: NodePath)
 
@@ -5697,7 +5697,7 @@ Tells Godot which node it should give focus to if the user presses Tab on a keyb
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
-NodePath focus_previous = NodePath("") 🔗
+NodePath focus_previous = NodePath("") 
 
 void set_focus_previous(value: NodePath)
 
@@ -5707,13 +5707,13 @@ Tells Godot which node it should give focus to if the user presses Shift + Tab o
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
-Vector2 global_position 🔗
+Vector2 global_position 
 
 Vector2 get_global_position()
 
 The node's global position, relative to the world (usually to the CanvasLayer).
 
-GrowDirection grow_horizontal = 1 🔗
+GrowDirection grow_horizontal = 1 
 
 void set_h_grow_direction(value: GrowDirection)
 
@@ -5721,7 +5721,7 @@ GrowDirection get_h_grow_direction()
 
 Controls the direction on the horizontal axis in which the control should grow if its horizontal minimum size is changed to be greater than its current size, as the control always has to be at least the minimum size.
 
-GrowDirection grow_vertical = 1 🔗
+GrowDirection grow_vertical = 1 
 
 void set_v_grow_direction(value: GrowDirection)
 
@@ -5729,7 +5729,7 @@ GrowDirection get_v_grow_direction()
 
 Controls the direction on the vertical axis in which the control should grow if its vertical minimum size is changed to be greater than its current size, as the control always has to be at least the minimum size.
 
-LayoutDirection layout_direction = 0 🔗
+LayoutDirection layout_direction = 0 
 
 void set_layout_direction(value: LayoutDirection)
 
@@ -5737,7 +5737,7 @@ LayoutDirection get_layout_direction()
 
 Controls layout direction and text writing direction. Right-to-left layouts are necessary for certain languages (e.g. Arabic and Hebrew). See also is_layout_rtl().
 
-bool localize_numeral_system = true 🔗
+bool localize_numeral_system = true 
 
 void set_localize_numeral_system(value: bool)
 
@@ -5747,7 +5747,7 @@ If true, automatically converts code line numbers, list indices, SpinBox and Pro
 
 Note: Numbers within the text are not automatically converted, it can be done manually, using TextServer.format_number().
 
-MouseBehaviorRecursive mouse_behavior_recursive = 0 🔗
+MouseBehaviorRecursive mouse_behavior_recursive = 0 
 
 void set_mouse_behavior_recursive(value: MouseBehaviorRecursive)
 
@@ -5755,7 +5755,7 @@ MouseBehaviorRecursive get_mouse_behavior_recursive()
 
 Determines which controls can receive mouse input together with mouse_filter. See get_mouse_filter_with_override(). Since the default behavior is MOUSE_BEHAVIOR_INHERITED, this can be used to prevent all children controls from receiving mouse input.
 
-CursorShape mouse_default_cursor_shape = 0 🔗
+CursorShape mouse_default_cursor_shape = 0 
 
 void set_default_cursor_shape(value: CursorShape)
 
@@ -5765,7 +5765,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 
 Note: On Linux, shapes may vary depending on the cursor theme of the system.
 
-MouseFilter mouse_filter = 0 🔗
+MouseFilter mouse_filter = 0 
 
 void set_mouse_filter(value: MouseFilter)
 
@@ -5773,7 +5773,7 @@ MouseFilter get_mouse_filter()
 
 Determines which controls will be able to receive mouse button input events through _gui_input() and the mouse_entered, and mouse_exited signals. Also determines how these events should be propagated. See the constants to learn what each does. Use get_mouse_filter_with_override() to determine if a control can receive mouse input, since mouse_behavior_recursive also affects it.
 
-bool mouse_force_pass_scroll_events = true 🔗
+bool mouse_force_pass_scroll_events = true 
 
 void set_force_pass_scroll_events(value: bool)
 
@@ -5785,7 +5785,7 @@ You should disable it on the root of your UI if you do not want scroll events to
 
 Note: Because this property defaults to true, this allows nested scrollable containers to work out of the box.
 
-float offset_bottom = 0.0 🔗
+float offset_bottom = 0.0 
 
 void set_offset(side: Side, offset: float)
 
@@ -5795,7 +5795,7 @@ Distance between the node's bottom edge and its parent control, based on anchor_
 
 Offsets are often controlled by one or multiple parent Container nodes, so you should not modify them manually if your node is a direct child of a Container. Offsets update automatically when you move or resize the node.
 
-float offset_left = 0.0 🔗
+float offset_left = 0.0 
 
 void set_offset(side: Side, offset: float)
 
@@ -5805,7 +5805,7 @@ Distance between the node's left edge and its parent control, based on anchor_le
 
 Offsets are often controlled by one or multiple parent Container nodes, so you should not modify them manually if your node is a direct child of a Container. Offsets update automatically when you move or resize the node.
 
-float offset_right = 0.0 🔗
+float offset_right = 0.0 
 
 void set_offset(side: Side, offset: float)
 
@@ -5815,7 +5815,7 @@ Distance between the node's right edge and its parent control, based on anchor_r
 
 Offsets are often controlled by one or multiple parent Container nodes, so you should not modify them manually if your node is a direct child of a Container. Offsets update automatically when you move or resize the node.
 
-float offset_top = 0.0 🔗
+float offset_top = 0.0 
 
 void set_offset(side: Side, offset: float)
 
@@ -5825,7 +5825,7 @@ Distance between the node's top edge and its parent control, based on anchor_top
 
 Offsets are often controlled by one or multiple parent Container nodes, so you should not modify them manually if your node is a direct child of a Container. Offsets update automatically when you move or resize the node.
 
-Vector2 pivot_offset = Vector2(0, 0) 🔗
+Vector2 pivot_offset = Vector2(0, 0) 
 
 void set_pivot_offset(value: Vector2)
 
@@ -5833,13 +5833,13 @@ Vector2 get_pivot_offset()
 
 By default, the node's pivot is its top-left corner. When you change its rotation or scale, it will rotate or scale around this pivot. Set this property to size / 2 to pivot around the Control's center.
 
-Vector2 position = Vector2(0, 0) 🔗
+Vector2 position = Vector2(0, 0) 
 
 Vector2 get_position()
 
 The node's position, relative to its containing node. It corresponds to the rectangle's top-left corner. The property is not affected by pivot_offset.
 
-float rotation = 0.0 🔗
+float rotation = 0.0 
 
 void set_rotation(value: float)
 
@@ -5847,7 +5847,7 @@ The node's rotation around its pivot, in radians. See pivot_offset to change the
 
 Note: This property is edited in the inspector in degrees. If you want to use degrees in a script, use rotation_degrees.
 
-float rotation_degrees 🔗
+float rotation_degrees 
 
 void set_rotation_degrees(value: float)
 
@@ -5855,7 +5855,7 @@ float get_rotation_degrees()
 
 Helper property to access rotation in degrees instead of radians.
 
-Vector2 scale = Vector2(1, 1) 🔗
+Vector2 scale = Vector2(1, 1) 
 
 void set_scale(value: Vector2)
 
@@ -5867,7 +5867,7 @@ Note: FontFile.oversampling does not take Control scale into account. This means
 
 Note: If the Control node is a child of a Container node, the scale will be reset to Vector2(1, 1) when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using await get_tree().process_frame then set its scale property.
 
-Node shortcut_context 🔗
+Node shortcut_context 
 
 void set_shortcut_context(value: Node)
 
@@ -5875,11 +5875,11 @@ Node get_shortcut_context()
 
 The Node which must be a parent of the focused Control for the shortcut to be activated. If null, the shortcut can be activated when any control is focused (a global shortcut). This allows shortcuts to be accepted only when the user has a certain area of the GUI focused.
 
-Vector2 size = Vector2(0, 0) 🔗
+Vector2 size = Vector2(0, 0) 
 
 The size of the node's bounding rectangle, in the node's coordinate system. Container nodes update this property automatically.
 
-BitField[SizeFlags] size_flags_horizontal = 1 🔗
+BitField[SizeFlags] size_flags_horizontal = 1 
 
 void set_h_size_flags(value: BitField[SizeFlags])
 
@@ -5887,7 +5887,7 @@ BitField[SizeFlags] get_h_size_flags()
 
 Tells the parent Container nodes how they should resize and place the node on the X axis. Use a combination of the SizeFlags constants to change the flags. See the constants to learn what each does.
 
-float size_flags_stretch_ratio = 1.0 🔗
+float size_flags_stretch_ratio = 1.0 
 
 void set_stretch_ratio(value: float)
 
@@ -5895,7 +5895,7 @@ float get_stretch_ratio()
 
 If the node and at least one of its neighbors uses the SIZE_EXPAND size flag, the parent Container will let it take more or less space depending on this property. If this node has a stretch ratio of 2 and its neighbor a ratio of 1, this node will take two thirds of the available space.
 
-BitField[SizeFlags] size_flags_vertical = 1 🔗
+BitField[SizeFlags] size_flags_vertical = 1 
 
 void set_v_size_flags(value: BitField[SizeFlags])
 
@@ -5909,7 +5909,7 @@ The Theme resource this node and all its Control and Window children use. If a c
 
 Note: Window styles will have no effect unless the window is embedded.
 
-StringName theme_type_variation = &"" 🔗
+StringName theme_type_variation = &"" 
 
 void set_theme_type_variation(value: StringName)
 
@@ -5923,7 +5923,7 @@ Note: To look up Control's own items use various get_theme_* methods without spe
 
 Note: Theme items are looked for in the tree order, from branch to root, where each Control node is checked for its theme property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
 
-AutoTranslateMode tooltip_auto_translate_mode = 0 🔗
+AutoTranslateMode tooltip_auto_translate_mode = 0 
 
 void set_tooltip_auto_translate_mode(value: AutoTranslateMode)
 
@@ -5933,7 +5933,7 @@ Defines if tooltip text should automatically change to its translated version de
 
 Note: Tooltips customized using _make_custom_tooltip() do not use this auto translate mode automatically.
 
-String tooltip_text = "" 🔗
+String tooltip_text = "" 
 
 void set_tooltip_text(value: String)
 
@@ -5945,11 +5945,11 @@ This string is the default return value of get_tooltip(). Override _get_tooltip(
 
 The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding _make_custom_tooltip(). The default tooltip includes a PopupPanel and Label whose theme properties can be customized using Theme methods with the "TooltipPanel" and "TooltipLabel" respectively. For example:
 
-String _accessibility_get_contextual_info() virtual const 🔗
+String _accessibility_get_contextual_info() virtual const 
 
 Return the description of the keyboard shortcuts and other contextual help for this control.
 
-bool _can_drop_data(at_position: Vector2, data: Variant) virtual const 🔗
+bool _can_drop_data(at_position: Vector2, data: Variant) virtual const 
 
 Godot calls this method to test if data from a control's _get_drag_data() can be dropped at at_position. at_position is local to this control.
 
@@ -5957,17 +5957,17 @@ This method should only be used to test the data. Process the data in _drop_data
 
 Note: If the drag was initiated by a keyboard shortcut or accessibility_drag(), at_position is set to Vector2.INF, and the currently selected item/text position should be used as the drop position.
 
-void _drop_data(at_position: Vector2, data: Variant) virtual 🔗
+void _drop_data(at_position: Vector2, data: Variant) virtual 
 
 Godot calls this method to pass you the data from a control's _get_drag_data() result. Godot first calls _can_drop_data() to test if data is allowed to drop at at_position where at_position is local to this control.
 
 Note: If the drag was initiated by a keyboard shortcut or accessibility_drag(), at_position is set to Vector2.INF, and the currently selected item/text position should be used as the drop position.
 
-String _get_accessibility_container_name(node: Node) virtual const 🔗
+String _get_accessibility_container_name(node: Node) virtual const 
 
 Override this method to return a human-readable description of the position of the child node in the custom container, added to the accessibility_name.
 
-Variant _get_drag_data(at_position: Vector2) virtual 🔗
+Variant _get_drag_data(at_position: Vector2) virtual 
 
 Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns null if there is no data to drag. Controls that want to receive drop data should implement _can_drop_data() and _drop_data(). at_position is local to this control. Drag may be forced with force_drag().
 
@@ -5975,7 +5975,7 @@ A preview that will follow the mouse that should represent the data can be set w
 
 Note: If the drag was initiated by a keyboard shortcut or accessibility_drag(), at_position is set to Vector2.INF, and the currently selected item/text position should be used as the drag position.
 
-Vector2 _get_minimum_size() virtual const 🔗
+Vector2 _get_minimum_size() virtual const 
 
 Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to custom_minimum_size for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
 
@@ -5983,13 +5983,13 @@ If not overridden, defaults to Vector2.ZERO.
 
 Note: This method will not be called when the script is attached to a Control node that already overrides its minimum size (e.g. Label, Button, PanelContainer etc.). It can only be used with most basic GUI nodes, like Control, Container, Panel etc.
 
-String _get_tooltip(at_position: Vector2) virtual const 🔗
+String _get_tooltip(at_position: Vector2) virtual const 
 
 Virtual method to be implemented by the user. Returns the tooltip text for the position at_position in control's local coordinates, which will typically appear when the cursor is resting over this control. See get_tooltip().
 
 Note: If this method returns an empty String and _make_custom_tooltip() is not overridden, no tooltip is displayed.
 
-void _gui_input(event: InputEvent) virtual 🔗
+void _gui_input(event: InputEvent) virtual 
 
 Virtual method to be implemented by the user. Override this method to handle and accept inputs on UI elements. See also accept_event().
 
@@ -6009,7 +6009,7 @@ the event's position is outside the control (see _has_point()).
 
 Note: The event's position is relative to this control's origin.
 
-bool _has_point(point: Vector2) virtual const 🔗
+bool _has_point(point: Vector2) virtual const 
 
 Virtual method to be implemented by the user. Returns whether the given point is inside this control.
 
@@ -6017,7 +6017,7 @@ If not overridden, default behavior is checking if the point is within control's
 
 Note: If you want to check if a point is inside the control, you can use Rect2(Vector2.ZERO, size).has_point(point).
 
-Object _make_custom_tooltip(for_text: String) virtual const 🔗
+Object _make_custom_tooltip(for_text: String) virtual const 
 
 Virtual method to be implemented by the user. Returns a Control node that should be used as a tooltip instead of the default one. for_text is the return value of get_tooltip().
 
@@ -6035,27 +6035,27 @@ Example: Use a constructed node as a tooltip:
 
 Example: Usa a scene instance as a tooltip:
 
-Array[Vector3i] _structured_text_parser(args: Array, text: String) virtual const 🔗
+Array[Vector3i] _structured_text_parser(args: Array, text: String) virtual const 
 
 User defined BiDi algorithm override function.
 
 Returns an Array of Vector3i text ranges and text base directions, in the left-to-right order. Ranges should cover full source text without overlaps. BiDi algorithm will be used on each range separately.
 
-void accept_event() 🔗
+void accept_event() 
 
 Marks an input event as handled. Once you accept an input event, it stops propagating, even to nodes listening to Node._unhandled_input() or Node._unhandled_key_input().
 
 Note: This does not affect the methods in Input, only the way events are propagated.
 
-void accessibility_drag() 🔗
+void accessibility_drag() 
 
 Starts drag-and-drop operation without using a mouse.
 
-void accessibility_drop() 🔗
+void accessibility_drop() 
 
 Ends drag-and-drop operation without using a mouse.
 
-void add_theme_color_override(name: StringName, color: Color) 🔗
+void add_theme_color_override(name: StringName, color: Color) 
 
 Creates a local override for a theme Color with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_color_override().
 
@@ -6063,31 +6063,31 @@ See also get_theme_color().
 
 Example: Override a Label's color and reset it later:
 
-void add_theme_constant_override(name: StringName, constant: int) 🔗
+void add_theme_constant_override(name: StringName, constant: int) 
 
 Creates a local override for a theme constant with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_constant_override().
 
 See also get_theme_constant().
 
-void add_theme_font_override(name: StringName, font: Font) 🔗
+void add_theme_font_override(name: StringName, font: Font) 
 
 Creates a local override for a theme Font with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_font_override().
 
 See also get_theme_font().
 
-void add_theme_font_size_override(name: StringName, font_size: int) 🔗
+void add_theme_font_size_override(name: StringName, font_size: int) 
 
 Creates a local override for a theme font size with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_font_size_override().
 
 See also get_theme_font_size().
 
-void add_theme_icon_override(name: StringName, texture: Texture2D) 🔗
+void add_theme_icon_override(name: StringName, texture: Texture2D) 
 
 Creates a local override for a theme icon with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_icon_override().
 
 See also get_theme_icon().
 
-void add_theme_stylebox_override(name: StringName, stylebox: StyleBox) 🔗
+void add_theme_stylebox_override(name: StringName, stylebox: StyleBox) 
 
 Creates a local override for a theme StyleBox with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_stylebox_override().
 
@@ -6095,65 +6095,65 @@ See also get_theme_stylebox().
 
 Example: Modify a property in a StyleBox by duplicating it:
 
-void begin_bulk_theme_override() 🔗
+void begin_bulk_theme_override() 
 
 Prevents *_theme_*_override methods from emitting NOTIFICATION_THEME_CHANGED until end_bulk_theme_override() is called.
 
-void end_bulk_theme_override() 🔗
+void end_bulk_theme_override() 
 
 Ends a bulk theme override update. See begin_bulk_theme_override().
 
-Control find_next_valid_focus() const 🔗
+Control find_next_valid_focus() const 
 
 Finds the next (below in the tree) Control that can receive the focus.
 
-Control find_prev_valid_focus() const 🔗
+Control find_prev_valid_focus() const 
 
 Finds the previous (above in the tree) Control that can receive the focus.
 
-Control find_valid_focus_neighbor(side: Side) const 🔗
+Control find_valid_focus_neighbor(side: Side) const 
 
 Finds the next Control that can receive the focus on the specified Side.
 
 Note: This is different from get_focus_neighbor(), which returns the path of a specified focus neighbor.
 
-void force_drag(data: Variant, preview: Control) 🔗
+void force_drag(data: Variant, preview: Control) 
 
 Forces drag and bypasses _get_drag_data() and set_drag_preview() by passing data and preview. Drag will start even if the mouse is neither over nor pressed on this control.
 
 The methods _can_drop_data() and _drop_data() must be implemented on controls that want to receive drop data.
 
-float get_anchor(side: Side) const 🔗
+float get_anchor(side: Side) const 
 
 Returns the anchor for the specified Side. A getter method for anchor_bottom, anchor_left, anchor_right and anchor_top.
 
-Vector2 get_begin() const 🔗
+Vector2 get_begin() const 
 
 Returns offset_left and offset_top. See also position.
 
-Vector2 get_combined_minimum_size() const 🔗
+Vector2 get_combined_minimum_size() const 
 
 Returns combined minimum size from custom_minimum_size and get_minimum_size().
 
-CursorShape get_cursor_shape(position: Vector2 = Vector2(0, 0)) const 🔗
+CursorShape get_cursor_shape(position: Vector2 = Vector2(0, 0)) const 
 
 Returns the mouse cursor shape for this control when hovered over position in local coordinates. For most controls, this is the same as mouse_default_cursor_shape, but some built-in controls implement more complex logic.
 
-Vector2 get_end() const 🔗
+Vector2 get_end() const 
 
 Returns offset_right and offset_bottom.
 
-FocusMode get_focus_mode_with_override() const 🔗
+FocusMode get_focus_mode_with_override() const 
 
 Returns the focus_mode, but takes the focus_behavior_recursive into account. If focus_behavior_recursive is set to FOCUS_BEHAVIOR_DISABLED, or it is set to FOCUS_BEHAVIOR_INHERITED and its ancestor is set to FOCUS_BEHAVIOR_DISABLED, then this returns FOCUS_NONE.
 
-NodePath get_focus_neighbor(side: Side) const 🔗
+NodePath get_focus_neighbor(side: Side) const 
 
 Returns the focus neighbor for the specified Side. A getter method for focus_neighbor_bottom, focus_neighbor_left, focus_neighbor_right and focus_neighbor_top.
 
 Note: To find the next Control on the specific Side, even if a neighbor is not assigned, use find_valid_focus_neighbor().
 
-Rect2 get_global_rect() const 🔗
+Rect2 get_global_rect() const 
 
 Returns the position and size of the control relative to the containing canvas. See global_position and size.
 
@@ -6161,27 +6161,27 @@ Note: If the node itself or any parent CanvasItem between the node and the canva
 
 Note: Setting Viewport.gui_snap_controls_to_pixels to true can lead to rounding inaccuracies between the displayed control and the returned Rect2.
 
-Vector2 get_minimum_size() const 🔗
+Vector2 get_minimum_size() const 
 
 Returns the minimum size for this control. See custom_minimum_size.
 
-MouseFilter get_mouse_filter_with_override() const 🔗
+MouseFilter get_mouse_filter_with_override() const 
 
 Returns the mouse_filter, but takes the mouse_behavior_recursive into account. If mouse_behavior_recursive is set to MOUSE_BEHAVIOR_DISABLED, or it is set to MOUSE_BEHAVIOR_INHERITED and its ancestor is set to MOUSE_BEHAVIOR_DISABLED, then this returns MOUSE_FILTER_IGNORE.
 
-float get_offset(offset: Side) const 🔗
+float get_offset(offset: Side) const 
 
 Returns the offset for the specified Side. A getter method for offset_bottom, offset_left, offset_right and offset_top.
 
-Vector2 get_parent_area_size() const 🔗
+Vector2 get_parent_area_size() const 
 
 Returns the width/height occupied in the parent control.
 
-Control get_parent_control() const 🔗
+Control get_parent_control() const 
 
 Returns the parent control node.
 
-Rect2 get_rect() const 🔗
+Rect2 get_rect() const 
 
 Returns the position and size of the control in the coordinate system of the containing node. See position, scale and size.
 
@@ -6189,7 +6189,7 @@ Note: If rotation is not the default rotation, the resulting size is not meaning
 
 Note: Setting Viewport.gui_snap_controls_to_pixels to true can lead to rounding inaccuracies between the displayed control and the returned Rect2.
 
-Vector2 get_screen_position() const 🔗
+Vector2 get_screen_position() const 
 
 Returns the position of this Control in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
@@ -6197,61 +6197,61 @@ Equals to global_position if the window is embedded (see Viewport.gui_embed_subw
 
 Example: Show a popup at the mouse position:
 
-Color get_theme_color(name: StringName, theme_type: StringName = &"") const 🔗
+Color get_theme_color(name: StringName, theme_type: StringName = &"") const 
 
 Returns a Color from the first matching Theme in the tree if that Theme has a color item with the specified name and theme_type. If theme_type is omitted the class name of the current control is used as the type, or theme_type_variation if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance. If the type is a variation its base types are checked, in order of dependency, then the control's class name and its parent classes are checked.
 
 For the current control its local overrides are considered first (see add_theme_color_override()), then its assigned theme. After the current control, each parent control and its assigned theme are considered; controls without a theme assigned are skipped. If no matching Theme is found in the tree, the custom project Theme (see ProjectSettings.gui/theme/custom) and the default Theme are used (see ThemeDB).
 
-int get_theme_constant(name: StringName, theme_type: StringName = &"") const 🔗
+int get_theme_constant(name: StringName, theme_type: StringName = &"") const 
 
 Returns a constant from the first matching Theme in the tree if that Theme has a constant item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-float get_theme_default_base_scale() const 🔗
+float get_theme_default_base_scale() const 
 
 Returns the default base scale value from the first matching Theme in the tree if that Theme has a valid Theme.default_base_scale value.
 
 See get_theme_color() for details.
 
-Font get_theme_default_font() const 🔗
+Font get_theme_default_font() const 
 
 Returns the default font from the first matching Theme in the tree if that Theme has a valid Theme.default_font value.
 
 See get_theme_color() for details.
 
-int get_theme_default_font_size() const 🔗
+int get_theme_default_font_size() const 
 
 Returns the default font size value from the first matching Theme in the tree if that Theme has a valid Theme.default_font_size value.
 
 See get_theme_color() for details.
 
-Font get_theme_font(name: StringName, theme_type: StringName = &"") const 🔗
+Font get_theme_font(name: StringName, theme_type: StringName = &"") const 
 
 Returns a Font from the first matching Theme in the tree if that Theme has a font item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-int get_theme_font_size(name: StringName, theme_type: StringName = &"") const 🔗
+int get_theme_font_size(name: StringName, theme_type: StringName = &"") const 
 
 Returns a font size from the first matching Theme in the tree if that Theme has a font size item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-Texture2D get_theme_icon(name: StringName, theme_type: StringName = &"") const 🔗
+Texture2D get_theme_icon(name: StringName, theme_type: StringName = &"") const 
 
 Returns an icon from the first matching Theme in the tree if that Theme has an icon item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-StyleBox get_theme_stylebox(name: StringName, theme_type: StringName = &"") const 🔗
+StyleBox get_theme_stylebox(name: StringName, theme_type: StringName = &"") const 
 
 Returns a StyleBox from the first matching Theme in the tree if that Theme has a stylebox item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-String get_tooltip(at_position: Vector2 = Vector2(0, 0)) const 🔗
+String get_tooltip(at_position: Vector2 = Vector2(0, 0)) const 
 
 Returns the tooltip text for the position at_position in control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns tooltip_text.
 
@@ -6259,7 +6259,7 @@ This method can be overridden to customize its behavior. See _get_tooltip().
 
 Note: If this method returns an empty String and _make_custom_tooltip() is not overridden, no tooltip is displayed.
 
-void grab_click_focus() 🔗
+void grab_click_focus() 
 
 Creates an InputEventMouseButton that attempts to click the control. If the event is received, the control gains focus.
 
@@ -6267,123 +6267,123 @@ Steal the focus from another control and become the focused control (see focus_m
 
 Note: Using this method together with Callable.call_deferred() makes it more reliable, especially when called inside Node._ready().
 
-bool has_focus() const 🔗
+bool has_focus() const 
 
 Returns true if this is the current focused control. See focus_mode.
 
-bool has_theme_color(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_color(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a color item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_color_override(name: StringName) const 🔗
+bool has_theme_color_override(name: StringName) const 
 
 Returns true if there is a local override for a theme Color with the specified name in this Control node.
 
 See add_theme_color_override().
 
-bool has_theme_constant(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_constant(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a constant item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_constant_override(name: StringName) const 🔗
+bool has_theme_constant_override(name: StringName) const 
 
 Returns true if there is a local override for a theme constant with the specified name in this Control node.
 
 See add_theme_constant_override().
 
-bool has_theme_font(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_font(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a font item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_font_override(name: StringName) const 🔗
+bool has_theme_font_override(name: StringName) const 
 
 Returns true if there is a local override for a theme Font with the specified name in this Control node.
 
 See add_theme_font_override().
 
-bool has_theme_font_size(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_font_size(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a font size item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_font_size_override(name: StringName) const 🔗
+bool has_theme_font_size_override(name: StringName) const 
 
 Returns true if there is a local override for a theme font size with the specified name in this Control node.
 
 See add_theme_font_size_override().
 
-bool has_theme_icon(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_icon(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has an icon item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_icon_override(name: StringName) const 🔗
+bool has_theme_icon_override(name: StringName) const 
 
 Returns true if there is a local override for a theme icon with the specified name in this Control node.
 
 See add_theme_icon_override().
 
-bool has_theme_stylebox(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_stylebox(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a stylebox item with the specified name and theme_type.
 
 See get_theme_color() for details.
 
-bool has_theme_stylebox_override(name: StringName) const 🔗
+bool has_theme_stylebox_override(name: StringName) const 
 
 Returns true if there is a local override for a theme StyleBox with the specified name in this Control node.
 
 See add_theme_stylebox_override().
 
-bool is_drag_successful() const 🔗
+bool is_drag_successful() const 
 
 Returns true if a drag operation is successful. Alternative to Viewport.gui_is_drag_successful().
 
 Best used with Node.NOTIFICATION_DRAG_END.
 
-bool is_layout_rtl() const 🔗
+bool is_layout_rtl() const 
 
 Returns true if the layout is right-to-left. See also layout_direction.
 
-void release_focus() 🔗
+void release_focus() 
 
 Give up the focus. No other control will be able to receive input.
 
-void remove_theme_color_override(name: StringName) 🔗
+void remove_theme_color_override(name: StringName) 
 
 Removes a local override for a theme Color with the specified name previously added by add_theme_color_override() or via the Inspector dock.
 
-void remove_theme_constant_override(name: StringName) 🔗
+void remove_theme_constant_override(name: StringName) 
 
 Removes a local override for a theme constant with the specified name previously added by add_theme_constant_override() or via the Inspector dock.
 
-void remove_theme_font_override(name: StringName) 🔗
+void remove_theme_font_override(name: StringName) 
 
 Removes a local override for a theme Font with the specified name previously added by add_theme_font_override() or via the Inspector dock.
 
-void remove_theme_font_size_override(name: StringName) 🔗
+void remove_theme_font_size_override(name: StringName) 
 
 Removes a local override for a theme font size with the specified name previously added by add_theme_font_size_override() or via the Inspector dock.
 
-void remove_theme_icon_override(name: StringName) 🔗
+void remove_theme_icon_override(name: StringName) 
 
 Removes a local override for a theme icon with the specified name previously added by add_theme_icon_override() or via the Inspector dock.
 
-void remove_theme_stylebox_override(name: StringName) 🔗
+void remove_theme_stylebox_override(name: StringName) 
 
 Removes a local override for a theme StyleBox with the specified name previously added by add_theme_stylebox_override() or via the Inspector dock.
 
 Resets the size to get_combined_minimum_size(). This is equivalent to calling set_size(Vector2()) (or any size below the minimum).
 
-void set_anchor(side: Side, anchor: float, keep_offset: bool = false, push_opposite_anchor: bool = true) 🔗
+void set_anchor(side: Side, anchor: float, keep_offset: bool = false, push_opposite_anchor: bool = true) 
 
 Sets the anchor for the specified Side to anchor. A setter method for anchor_bottom, anchor_left, anchor_right and anchor_top.
 
@@ -6391,25 +6391,25 @@ If keep_offset is true, offsets aren't updated after this operation.
 
 If push_opposite_anchor is true and the opposite anchor overlaps this anchor, the opposite one will have its value overridden. For example, when setting left anchor to 1 and the right anchor has value of 0.5, the right anchor will also get value of 1. If push_opposite_anchor was false, the left anchor would get value 0.5.
 
-void set_anchor_and_offset(side: Side, anchor: float, offset: float, push_opposite_anchor: bool = false) 🔗
+void set_anchor_and_offset(side: Side, anchor: float, offset: float, push_opposite_anchor: bool = false) 
 
 Works the same as set_anchor(), but instead of keep_offset argument and automatic update of offset, it allows to set the offset yourself (see set_offset()).
 
-void set_anchors_and_offsets_preset(preset: LayoutPreset, resize_mode: LayoutPresetMode = 0, margin: int = 0) 🔗
+void set_anchors_and_offsets_preset(preset: LayoutPreset, resize_mode: LayoutPresetMode = 0, margin: int = 0) 
 
 Sets both anchor preset and offset preset. See set_anchors_preset() and set_offsets_preset().
 
-void set_anchors_preset(preset: LayoutPreset, keep_offsets: bool = false) 🔗
+void set_anchors_preset(preset: LayoutPreset, keep_offsets: bool = false) 
 
 Sets the anchors to a preset from LayoutPreset enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
 If keep_offsets is true, control's position will also be updated.
 
-void set_begin(position: Vector2) 🔗
+void set_begin(position: Vector2) 
 
 Sets offset_left and offset_top at the same time. Equivalent of changing position.
 
-void set_drag_forwarding(drag_func: Callable, can_drop_func: Callable, drop_func: Callable) 🔗
+void set_drag_forwarding(drag_func: Callable, can_drop_func: Callable, drop_func: Callable) 
 
 Sets the given callables to be used instead of the control's own drag-and-drop virtual methods. If a callable is empty, its respective virtual method is used as normal.
 
@@ -6421,29 +6421,29 @@ can_drop_func corresponds to _can_drop_data() and requires both a Vector2 and a 
 
 drop_func corresponds to _drop_data() and requires both a Vector2 and a Variant.
 
-void set_drag_preview(control: Control) 🔗
+void set_drag_preview(control: Control) 
 
 Shows the given control at the mouse pointer. A good time to call this method is in _get_drag_data(). The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
 
-void set_end(position: Vector2) 🔗
+void set_end(position: Vector2) 
 
 Sets offset_right and offset_bottom at the same time.
 
-void set_focus_neighbor(side: Side, neighbor: NodePath) 🔗
+void set_focus_neighbor(side: Side, neighbor: NodePath) 
 
 Sets the focus neighbor for the specified Side to the Control at neighbor node path. A setter method for focus_neighbor_bottom, focus_neighbor_left, focus_neighbor_right and focus_neighbor_top.
 
-void set_global_position(position: Vector2, keep_offsets: bool = false) 🔗
+void set_global_position(position: Vector2, keep_offsets: bool = false) 
 
 Sets the global_position to given position.
 
 If keep_offsets is true, control's anchors will be updated instead of offsets.
 
-void set_offset(side: Side, offset: float) 🔗
+void set_offset(side: Side, offset: float) 
 
 Sets the offset for the specified Side to offset. A setter method for offset_bottom, offset_left, offset_right and offset_top.
 
-void set_offsets_preset(preset: LayoutPreset, resize_mode: LayoutPresetMode = 0, margin: int = 0) 🔗
+void set_offsets_preset(preset: LayoutPreset, resize_mode: LayoutPresetMode = 0, margin: int = 0) 
 
 Sets the offsets to a preset from LayoutPreset enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
@@ -6451,23 +6451,23 @@ Use parameter resize_mode with constants from LayoutPresetMode to better determi
 
 Use parameter margin to determine the gap between the Control and the edges.
 
-void set_position(position: Vector2, keep_offsets: bool = false) 🔗
+void set_position(position: Vector2, keep_offsets: bool = false) 
 
 Sets the position to given position.
 
 If keep_offsets is true, control's anchors will be updated instead of offsets.
 
-void set_size(size: Vector2, keep_offsets: bool = false) 🔗
+void set_size(size: Vector2, keep_offsets: bool = false) 
 
 Sets the size (see size).
 
 If keep_offsets is true, control's anchors will be updated instead of offsets.
 
-void update_minimum_size() 🔗
+void update_minimum_size() 
 
 Invalidates the size cache in this node and in parent nodes up to top level. Intended to be used with get_minimum_size() when the return value is changed. Setting custom_minimum_size directly calls this method automatically.
 
-void warp_mouse(position: Vector2) 🔗
+void warp_mouse(position: Vector2) 
 
 Moves the mouse cursor to position, relative to position of this Control.
 
@@ -6725,7 +6725,7 @@ operator ==(right: Dictionary)
 
 operator [](key: Variant)
 
-Dictionary Dictionary() 🔗
+Dictionary Dictionary() 
 
 Constructs an empty Dictionary.
 
@@ -6737,13 +6737,13 @@ Dictionary Dictionary(from: Dictionary)
 
 Returns the same dictionary as from. If you need a copy of the dictionary, use duplicate().
 
-void assign(dictionary: Dictionary) 🔗
+void assign(dictionary: Dictionary) 
 
 Assigns elements of another dictionary into the dictionary. Resizes the dictionary to match dictionary. Performs type conversions if the dictionary is typed.
 
 Clears the dictionary, removing all entries from it.
 
-Dictionary duplicate(deep: bool = false) const 🔗
+Dictionary duplicate(deep: bool = false) const 
 
 Returns a new copy of the dictionary.
 
@@ -6751,57 +6751,57 @@ By default, a shallow copy is returned: all nested Array, Dictionary, and Resour
 
 If deep is true, a deep copy is returned: all nested arrays and dictionaries are also duplicated (recursively). Any Resource is still shared with the original dictionary, though.
 
-Dictionary duplicate_deep(deep_subresources_mode: int = 1) const 🔗
+Dictionary duplicate_deep(deep_subresources_mode: int = 1) const 
 
 Duplicates this dictionary, deeply, like duplicate()(true), with extra control over how subresources are handled.
 
 deep_subresources_mode must be one of the values from DeepDuplicateMode. By default, only internal resources will be duplicated (recursively).
 
-bool erase(key: Variant) 🔗
+bool erase(key: Variant) 
 
 Removes the dictionary entry by key, if it exists. Returns true if the given key existed in the dictionary, otherwise false.
 
 Note: Do not erase entries while iterating over the dictionary. You can iterate over the keys() array instead.
 
-Variant find_key(value: Variant) const 🔗
+Variant find_key(value: Variant) const 
 
 Finds and returns the first key whose associated value is equal to value, or null if it is not found.
 
 Note: null is also a valid key. If inside the dictionary, find_key() may give misleading results.
 
-Variant get(key: Variant, default: Variant = null) const 🔗
+Variant get(key: Variant, default: Variant = null) const 
 
 Returns the corresponding value for the given key in the dictionary. If the key does not exist, returns default, or null if the parameter is omitted.
 
-Variant get_or_add(key: Variant, default: Variant = null) 🔗
+Variant get_or_add(key: Variant, default: Variant = null) 
 
 Gets a value and ensures the key is set. If the key exists in the dictionary, this behaves like get(). Otherwise, the default value is inserted into the dictionary and returned.
 
-int get_typed_key_builtin() const 🔗
+int get_typed_key_builtin() const 
 
 Returns the built-in Variant type of the typed dictionary's keys as a Variant.Type constant. If the keys are not typed, returns @GlobalScope.TYPE_NIL. See also is_typed_key().
 
-StringName get_typed_key_class_name() const 🔗
+StringName get_typed_key_class_name() const 
 
 Returns the built-in class name of the typed dictionary's keys, if the built-in Variant type is @GlobalScope.TYPE_OBJECT. Otherwise, returns an empty StringName. See also is_typed_key() and Object.get_class().
 
-Variant get_typed_key_script() const 🔗
+Variant get_typed_key_script() const 
 
 Returns the Script instance associated with this typed dictionary's keys, or null if it does not exist. See also is_typed_key().
 
-int get_typed_value_builtin() const 🔗
+int get_typed_value_builtin() const 
 
 Returns the built-in Variant type of the typed dictionary's values as a Variant.Type constant. If the values are not typed, returns @GlobalScope.TYPE_NIL. See also is_typed_value().
 
-StringName get_typed_value_class_name() const 🔗
+StringName get_typed_value_class_name() const 
 
 Returns the built-in class name of the typed dictionary's values, if the built-in Variant type is @GlobalScope.TYPE_OBJECT. Otherwise, returns an empty StringName. See also is_typed_value() and Object.get_class().
 
-Variant get_typed_value_script() const 🔗
+Variant get_typed_value_script() const 
 
 Returns the Script instance associated with this typed dictionary's values, or null if it does not exist. See also is_typed_value().
 
-bool has(key: Variant) const 🔗
+bool has(key: Variant) const 
 
 Returns true if the dictionary contains an entry with the given key.
 
@@ -6809,7 +6809,7 @@ In GDScript, this is equivalent to the in operator:
 
 Note: This method returns true as long as the key exists, even if its corresponding value is null.
 
-bool has_all(keys: Array) const 🔗
+bool has_all(keys: Array) const 
 
 Returns true if the dictionary contains all keys in the given keys array.
 
@@ -6819,61 +6819,61 @@ Note: Dictionaries with the same entries but in a different order will not have 
 
 Note: Dictionaries with equal hash values are not guaranteed to be the same, because of hash collisions. On the contrary, dictionaries with different hash values are guaranteed to be different.
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the dictionary is empty (its size is 0). See also size().
 
-bool is_read_only() const 🔗
+bool is_read_only() const 
 
 Returns true if the dictionary is read-only. See make_read_only(). Dictionaries are automatically read-only if declared with const keyword.
 
-bool is_same_typed(dictionary: Dictionary) const 🔗
+bool is_same_typed(dictionary: Dictionary) const 
 
 Returns true if the dictionary is typed the same as dictionary.
 
-bool is_same_typed_key(dictionary: Dictionary) const 🔗
+bool is_same_typed_key(dictionary: Dictionary) const 
 
 Returns true if the dictionary's keys are typed the same as dictionary's keys.
 
-bool is_same_typed_value(dictionary: Dictionary) const 🔗
+bool is_same_typed_value(dictionary: Dictionary) const 
 
 Returns true if the dictionary's values are typed the same as dictionary's values.
 
-bool is_typed() const 🔗
+bool is_typed() const 
 
 Returns true if the dictionary is typed. Typed dictionaries can only store keys/values of their associated type and provide type safety for the [] operator. Methods of typed dictionary still return Variant.
 
-bool is_typed_key() const 🔗
+bool is_typed_key() const 
 
 Returns true if the dictionary's keys are typed.
 
-bool is_typed_value() const 🔗
+bool is_typed_value() const 
 
 Returns true if the dictionary's values are typed.
 
 Returns the list of keys in the dictionary.
 
-void make_read_only() 🔗
+void make_read_only() 
 
 Makes the dictionary read-only, i.e. disables modification of the dictionary's contents. Does not apply to nested content, e.g. content of nested dictionaries.
 
-void merge(dictionary: Dictionary, overwrite: bool = false) 🔗
+void merge(dictionary: Dictionary, overwrite: bool = false) 
 
 Adds entries from dictionary to this dictionary. By default, duplicate keys are not copied over, unless overwrite is true.
 
 Note: merge() is not recursive. Nested dictionaries are considered as keys that can be overwritten or not depending on the value of overwrite, but they will never be merged together.
 
-Dictionary merged(dictionary: Dictionary, overwrite: bool = false) const 🔗
+Dictionary merged(dictionary: Dictionary, overwrite: bool = false) const 
 
 Returns a copy of this dictionary merged with the other dictionary. By default, duplicate keys are not copied over, unless overwrite is true. See also merge().
 
 This method is useful for quickly making dictionaries with default values:
 
-bool recursive_equal(dictionary: Dictionary, recursion_count: int) const 🔗
+bool recursive_equal(dictionary: Dictionary, recursion_count: int) const 
 
 Returns true if the two dictionaries contain the same keys and values, inner Dictionary and Array keys and values are compared recursively.
 
-bool set(key: Variant, value: Variant) 🔗
+bool set(key: Variant, value: Variant) 
 
 Sets the value of the element at the given key to the given value. This is the same as using the [] operator (array[index] = value).
 
@@ -6883,21 +6883,21 @@ Sorts the dictionary in ascending order, by key. The final order is dependent on
 
 This method ensures that the dictionary's entries are ordered consistently when keys() or values() are called, or when the dictionary needs to be converted to a string through @GlobalScope.str() or JSON.stringify().
 
-Array values() const 🔗
+Array values() const 
 
 Returns the list of values in this dictionary.
 
-bool operator !=(right: Dictionary) 🔗
+bool operator !=(right: Dictionary) 
 
 Returns true if the two dictionaries do not contain the same keys and values.
 
-bool operator ==(right: Dictionary) 🔗
+bool operator ==(right: Dictionary) 
 
 Returns true if the two dictionaries contain the same keys and values. The order of the entries does not matter.
 
 Note: In C#, by convention, this operator compares by reference. If you need to compare by value, iterate over both dictionaries.
 
-Variant operator [](key: Variant) 🔗
+Variant operator [](key: Variant) 
 
 Returns the corresponding value for the given key in the dictionary. If the entry does not exist, fails and returns null. For safe access, use get() or has().
 
@@ -6994,7 +6994,7 @@ LastWrapAlignmentMode
 
 get_line_count() const
 
-enum AlignmentMode: 🔗
+enum AlignmentMode: 
 
 AlignmentMode ALIGNMENT_BEGIN = 0
 
@@ -7008,7 +7008,7 @@ AlignmentMode ALIGNMENT_END = 2
 
 The child controls will be arranged at the end of the container, i.e. bottom if orientation is vertical, right if orientation is horizontal (left for RTL layout).
 
-enum LastWrapAlignmentMode: 🔗
+enum LastWrapAlignmentMode: 
 
 LastWrapAlignmentMode LAST_WRAP_ALIGNMENT_INHERIT = 0
 
@@ -7026,7 +7026,7 @@ LastWrapAlignmentMode LAST_WRAP_ALIGNMENT_END = 3
 
 The last partially filled row or column will wrap aligned to the end of the previous row or column.
 
-AlignmentMode alignment = 0 🔗
+AlignmentMode alignment = 0 
 
 void set_alignment(value: AlignmentMode)
 
@@ -7034,7 +7034,7 @@ AlignmentMode get_alignment()
 
 The alignment of the container's children (must be one of ALIGNMENT_BEGIN, ALIGNMENT_CENTER, or ALIGNMENT_END).
 
-LastWrapAlignmentMode last_wrap_alignment = 0 🔗
+LastWrapAlignmentMode last_wrap_alignment = 0 
 
 void set_last_wrap_alignment(value: LastWrapAlignmentMode)
 
@@ -7042,7 +7042,7 @@ LastWrapAlignmentMode get_last_wrap_alignment()
 
 The wrap behavior of the last, partially filled row or column (must be one of LAST_WRAP_ALIGNMENT_INHERIT, LAST_WRAP_ALIGNMENT_BEGIN, LAST_WRAP_ALIGNMENT_CENTER, or LAST_WRAP_ALIGNMENT_END).
 
-bool reverse_fill = false 🔗
+bool reverse_fill = false 
 
 void set_reverse_fill(value: bool)
 
@@ -7052,7 +7052,7 @@ If true, reverses fill direction. Horizontal FlowContainers will fill rows botto
 
 When using a vertical FlowContainer with a right to left Control.layout_direction, columns will fill left to right instead.
 
-bool vertical = false 🔗
+bool vertical = false 
 
 void set_vertical(value: bool)
 
@@ -7060,15 +7060,15 @@ If true, the FlowContainer will arrange its children vertically, rather than hor
 
 Can't be changed when using HFlowContainer and VFlowContainer.
 
-int get_line_count() const 🔗
+int get_line_count() const 
 
 Returns the current line count.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal separation of child nodes.
 
-int v_separation = 4 🔗
+int v_separation = 4 
 
 The vertical separation of child nodes.
 
@@ -7128,11 +7128,11 @@ title_collapsed_hover_panel
 
 title_collapsed_panel
 
-folding_changed(is_folded: bool) 🔗
+folding_changed(is_folded: bool) 
 
 Emitted when the container is folded/expanded.
 
-enum TitlePosition: 🔗
+enum TitlePosition: 
 
 TitlePosition POSITION_TOP = 0
 
@@ -7142,7 +7142,7 @@ TitlePosition POSITION_BOTTOM = 1
 
 Makes the title appear at the bottom of the container. Also makes all StyleBoxes flipped vertically.
 
-FoldableGroup foldable_group 🔗
+FoldableGroup foldable_group 
 
 void set_foldable_group(value: FoldableGroup)
 
@@ -7150,13 +7150,13 @@ FoldableGroup get_foldable_group()
 
 The FoldableGroup associated with the container. When multiple FoldableContainer nodes share the same group, only one of them is allowed to be unfolded.
 
-bool folded = false 🔗
+bool folded = false 
 
 void set_folded(value: bool)
 
 If true, the container will becomes folded and will hide all its children.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -7168,7 +7168,7 @@ void set_title(value: String)
 
 The container's title text.
 
-HorizontalAlignment title_alignment = 0 🔗
+HorizontalAlignment title_alignment = 0 
 
 void set_title_alignment(value: HorizontalAlignment)
 
@@ -7176,13 +7176,13 @@ HorizontalAlignment get_title_alignment()
 
 Title's horizontal text alignment.
 
-TitlePosition title_position = 0 🔗
+TitlePosition title_position = 0 
 
 void set_title_position(value: TitlePosition)
 
 TitlePosition get_title_position()
 
-TextDirection title_text_direction = 0 🔗
+TextDirection title_text_direction = 0 
 
 void set_title_text_direction(value: TextDirection)
 
@@ -7190,7 +7190,7 @@ TextDirection get_title_text_direction()
 
 Title text writing direction.
 
-OverrunBehavior title_text_overrun_behavior = 0 🔗
+OverrunBehavior title_text_overrun_behavior = 0 
 
 void set_title_text_overrun_behavior(value: OverrunBehavior)
 
@@ -7198,7 +7198,7 @@ OverrunBehavior get_title_text_overrun_behavior()
 
 Defines the behavior of the title when the text is longer than the available space.
 
-void add_title_bar_control(control: Control) 🔗
+void add_title_bar_control(control: Control) 
 
 Adds a Control that will be placed next to the container's title, obscuring the clickable area. Prime usage is adding Button nodes, but it can be any Control.
 
@@ -7208,49 +7208,49 @@ Expands the container and emits folding_changed.
 
 Folds the container and emits folding_changed.
 
-void remove_title_bar_control(control: Control) 🔗
+void remove_title_bar_control(control: Control) 
 
 Removes a Control added with add_title_bar_control(). The node is not freed automatically, you need to use Node.queue_free().
 
-Color collapsed_font_color = Color(1, 1, 1, 1) 🔗
+Color collapsed_font_color = Color(1, 1, 1, 1) 
 
 The title's font color when collapsed.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
 The title's font color when expanded.
 
-Color font_outline_color = Color(1, 1, 1, 1) 🔗
+Color font_outline_color = Color(1, 1, 1, 1) 
 
 The title's font outline color.
 
-Color hover_font_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color hover_font_color = Color(0.95, 0.95, 0.95, 1) 
 
 The title's font hover color.
 
-int h_separation = 2 🔗
+int h_separation = 2 
 
 The horizontal separation between the title's icon and text, and between title bar controls.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The title's font outline size.
 
 The title's font size.
 
-Texture2D expanded_arrow 🔗
+Texture2D expanded_arrow 
 
 The title's icon used when expanded.
 
-Texture2D expanded_arrow_mirrored 🔗
+Texture2D expanded_arrow_mirrored 
 
 The title's icon used when expanded (for bottom title).
 
-Texture2D folded_arrow 🔗
+Texture2D folded_arrow 
 
 The title's icon used when folded (for left-to-right layouts).
 
-Texture2D folded_arrow_mirrored 🔗
+Texture2D folded_arrow_mirrored 
 
 The title's icon used when collapsed (for right-to-left layouts).
 
@@ -7258,19 +7258,19 @@ Background used when FoldableContainer has GUI focus. The focus StyleBox is disp
 
 Default background for the FoldableContainer.
 
-StyleBox title_collapsed_hover_panel 🔗
+StyleBox title_collapsed_hover_panel 
 
 Background used when the mouse cursor enters the title's area when collapsed.
 
-StyleBox title_collapsed_panel 🔗
+StyleBox title_collapsed_panel 
 
 Default background for the FoldableContainer's title when collapsed.
 
-StyleBox title_hover_panel 🔗
+StyleBox title_hover_panel 
 
 Background used when the mouse cursor enters the title's area when expanded.
 
-StyleBox title_panel 🔗
+StyleBox title_panel 
 
 Default background for the FoldableContainer's title when expanded.
 
@@ -7424,81 +7424,81 @@ port_hotzone_outer_extent
 
 Emitted at the beginning of a GraphElement's movement.
 
-connection_drag_ended() 🔗
+connection_drag_ended() 
 
 Emitted at the end of a connection drag.
 
-connection_drag_started(from_node: StringName, from_port: int, is_output: bool) 🔗
+connection_drag_started(from_node: StringName, from_port: int, is_output: bool) 
 
 Emitted at the beginning of a connection drag.
 
-connection_from_empty(to_node: StringName, to_port: int, release_position: Vector2) 🔗
+connection_from_empty(to_node: StringName, to_port: int, release_position: Vector2) 
 
 Emitted when user drags a connection from an input port into the empty space of the graph.
 
-connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 🔗
+connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 
 
 Emitted to the GraphEdit when the connection between the from_port of the from_node GraphNode and the to_port of the to_node GraphNode is attempted to be created.
 
-connection_to_empty(from_node: StringName, from_port: int, release_position: Vector2) 🔗
+connection_to_empty(from_node: StringName, from_port: int, release_position: Vector2) 
 
 Emitted when user drags a connection from an output port into the empty space of the graph.
 
-copy_nodes_request() 🔗
+copy_nodes_request() 
 
 Emitted when this GraphEdit captures a ui_copy action (Ctrl + C by default). In general, this signal indicates that the selected GraphElements should be copied.
 
-cut_nodes_request() 🔗
+cut_nodes_request() 
 
 Emitted when this GraphEdit captures a ui_cut action (Ctrl + X by default). In general, this signal indicates that the selected GraphElements should be cut.
 
-delete_nodes_request(nodes: Array[StringName]) 🔗
+delete_nodes_request(nodes: Array[StringName]) 
 
 Emitted when this GraphEdit captures a ui_graph_delete action (Delete by default).
 
 nodes is an array of node names that should be removed. These usually include all selected nodes.
 
-disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 🔗
+disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 
 
 Emitted to the GraphEdit when the connection between from_port of from_node GraphNode and to_port of to_node GraphNode is attempted to be removed.
 
-duplicate_nodes_request() 🔗
+duplicate_nodes_request() 
 
 Emitted when this GraphEdit captures a ui_graph_duplicate action (Ctrl + D by default). In general, this signal indicates that the selected GraphElements should be duplicated.
 
 Emitted at the end of a GraphElement's movement.
 
-frame_rect_changed(frame: GraphFrame, new_rect: Rect2) 🔗
+frame_rect_changed(frame: GraphFrame, new_rect: Rect2) 
 
 Emitted when the GraphFrame frame is resized to new_rect.
 
-graph_elements_linked_to_frame_request(elements: Array, frame: StringName) 🔗
+graph_elements_linked_to_frame_request(elements: Array, frame: StringName) 
 
 Emitted when one or more GraphElements are dropped onto the GraphFrame named frame, when they were not previously attached to any other one.
 
 elements is an array of GraphElements to be attached.
 
-node_deselected(node: Node) 🔗
+node_deselected(node: Node) 
 
 Emitted when the given GraphElement node is deselected.
 
-node_selected(node: Node) 🔗
+node_selected(node: Node) 
 
 Emitted when the given GraphElement node is selected.
 
-paste_nodes_request() 🔗
+paste_nodes_request() 
 
 Emitted when this GraphEdit captures a ui_paste action (Ctrl + V by default). In general, this signal indicates that previously copied GraphElements should be pasted.
 
-popup_request(at_position: Vector2) 🔗
+popup_request(at_position: Vector2) 
 
 Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. at_position is the position of the mouse pointer when the signal is sent.
 
-scroll_offset_changed(offset: Vector2) 🔗
+scroll_offset_changed(offset: Vector2) 
 
 Emitted when the scroll offset is changed by the user. It will not be emitted when changed in code.
 
-enum PanningScheme: 🔗
+enum PanningScheme: 
 
 PanningScheme SCROLL_ZOOMS = 0
 
@@ -7516,7 +7516,7 @@ GridPattern GRID_PATTERN_DOTS = 1
 
 Draw the grid using dots.
 
-bool connection_lines_antialiased = true 🔗
+bool connection_lines_antialiased = true 
 
 void set_connection_lines_antialiased(value: bool)
 
@@ -7524,7 +7524,7 @@ bool is_connection_lines_antialiased()
 
 If true, the lines between nodes will use antialiasing.
 
-float connection_lines_curvature = 0.5 🔗
+float connection_lines_curvature = 0.5 
 
 void set_connection_lines_curvature(value: float)
 
@@ -7532,7 +7532,7 @@ float get_connection_lines_curvature()
 
 The curvature of the lines between the nodes. 0 results in straight lines.
 
-float connection_lines_thickness = 4.0 🔗
+float connection_lines_thickness = 4.0 
 
 void set_connection_lines_thickness(value: float)
 
@@ -7540,7 +7540,7 @@ float get_connection_lines_thickness()
 
 The thickness of the lines between the nodes.
 
-Array[Dictionary] connections = [] 🔗
+Array[Dictionary] connections = [] 
 
 void set_connections(value: Array[Dictionary])
 
@@ -7552,7 +7552,7 @@ A connection is represented as a Dictionary in the form of:
 
 Connections with keep_alive set to false may be deleted automatically if invalid during a redraw.
 
-GridPattern grid_pattern = 0 🔗
+GridPattern grid_pattern = 0 
 
 void set_grid_pattern(value: GridPattern)
 
@@ -7560,7 +7560,7 @@ GridPattern get_grid_pattern()
 
 The pattern used for drawing the grid.
 
-bool minimap_enabled = true 🔗
+bool minimap_enabled = true 
 
 void set_minimap_enabled(value: bool)
 
@@ -7568,7 +7568,7 @@ bool is_minimap_enabled()
 
 If true, the minimap is visible.
 
-float minimap_opacity = 0.65 🔗
+float minimap_opacity = 0.65 
 
 void set_minimap_opacity(value: float)
 
@@ -7576,7 +7576,7 @@ float get_minimap_opacity()
 
 The opacity of the minimap rectangle.
 
-Vector2 minimap_size = Vector2(240, 160) 🔗
+Vector2 minimap_size = Vector2(240, 160) 
 
 void set_minimap_size(value: Vector2)
 
@@ -7584,7 +7584,7 @@ Vector2 get_minimap_size()
 
 The size of the minimap rectangle. The map itself is based on the size of the grid area and is scaled to fit this rectangle.
 
-PanningScheme panning_scheme = 0 🔗
+PanningScheme panning_scheme = 0 
 
 void set_panning_scheme(value: PanningScheme)
 
@@ -7592,7 +7592,7 @@ PanningScheme get_panning_scheme()
 
 Defines the control scheme for panning with mouse wheel.
 
-bool right_disconnects = false 🔗
+bool right_disconnects = false 
 
 void set_right_disconnects(value: bool)
 
@@ -7600,13 +7600,13 @@ bool is_right_disconnects_enabled()
 
 If true, enables disconnection of existing connections in the GraphEdit by dragging the right end.
 
-Vector2 scroll_offset = Vector2(0, 0) 🔗
+Vector2 scroll_offset = Vector2(0, 0) 
 
 void set_scroll_offset(value: Vector2)
 
 Vector2 get_scroll_offset()
 
-bool show_arrange_button = true 🔗
+bool show_arrange_button = true 
 
 void set_show_arrange_button(value: bool)
 
@@ -7614,7 +7614,7 @@ bool is_showing_arrange_button()
 
 If true, the button to automatically arrange graph nodes is visible.
 
-bool show_grid = true 🔗
+bool show_grid = true 
 
 void set_show_grid(value: bool)
 
@@ -7622,7 +7622,7 @@ bool is_showing_grid()
 
 If true, the grid is visible.
 
-bool show_grid_buttons = true 🔗
+bool show_grid_buttons = true 
 
 void set_show_grid_buttons(value: bool)
 
@@ -7630,7 +7630,7 @@ bool is_showing_grid_buttons()
 
 If true, buttons that allow to configure grid and snapping options are visible.
 
-bool show_menu = true 🔗
+bool show_menu = true 
 
 void set_show_menu(value: bool)
 
@@ -7638,7 +7638,7 @@ bool is_showing_menu()
 
 If true, the menu toolbar is visible.
 
-bool show_minimap_button = true 🔗
+bool show_minimap_button = true 
 
 void set_show_minimap_button(value: bool)
 
@@ -7646,7 +7646,7 @@ bool is_showing_minimap_button()
 
 If true, the button to toggle the minimap is visible.
 
-bool show_zoom_buttons = true 🔗
+bool show_zoom_buttons = true 
 
 void set_show_zoom_buttons(value: bool)
 
@@ -7654,7 +7654,7 @@ bool is_showing_zoom_buttons()
 
 If true, buttons that allow to change and reset the zoom level are visible.
 
-bool show_zoom_label = false 🔗
+bool show_zoom_label = false 
 
 void set_show_zoom_label(value: bool)
 
@@ -7662,7 +7662,7 @@ bool is_showing_zoom_label()
 
 If true, the label with the current zoom level is visible. The zoom level is displayed in percents.
 
-int snapping_distance = 20 🔗
+int snapping_distance = 20 
 
 void set_snapping_distance(value: int)
 
@@ -7670,7 +7670,7 @@ int get_snapping_distance()
 
 The snapping distance in pixels, also determines the grid line distance.
 
-bool snapping_enabled = true 🔗
+bool snapping_enabled = true 
 
 void set_snapping_enabled(value: bool)
 
@@ -7678,7 +7678,7 @@ bool is_snapping_enabled()
 
 If true, enables snapping.
 
-Dictionary type_names = {} 🔗
+Dictionary type_names = {} 
 
 void set_type_names(value: Dictionary)
 
@@ -7690,19 +7690,19 @@ void set_zoom(value: float)
 
 The current zoom value.
 
-float zoom_max = 2.0736003 🔗
+float zoom_max = 2.0736003 
 
 void set_zoom_max(value: float)
 
 The upper zoom limit.
 
-float zoom_min = 0.23256795 🔗
+float zoom_min = 0.23256795 
 
 void set_zoom_min(value: float)
 
 The lower zoom limit.
 
-float zoom_step = 1.2 🔗
+float zoom_step = 1.2 
 
 void set_zoom_step(value: float)
 
@@ -7710,11 +7710,11 @@ float get_zoom_step()
 
 The step of each zoom level.
 
-PackedVector2Array _get_connection_line(from_position: Vector2, to_position: Vector2) virtual const 🔗
+PackedVector2Array _get_connection_line(from_position: Vector2, to_position: Vector2) virtual const 
 
 Virtual method which can be overridden to customize how connections are drawn.
 
-bool _is_in_input_hotzone(in_node: Object, in_port: int, mouse_position: Vector2) virtual 🔗
+bool _is_in_input_hotzone(in_node: Object, in_port: int, mouse_position: Vector2) virtual 
 
 Returns whether the mouse_position is in the input hot zone.
 
@@ -7722,13 +7722,13 @@ By default, a hot zone is a Rect2 positioned such that its center is at in_node.
 
 Below is a sample code to help get started:
 
-bool _is_in_output_hotzone(in_node: Object, in_port: int, mouse_position: Vector2) virtual 🔗
+bool _is_in_output_hotzone(in_node: Object, in_port: int, mouse_position: Vector2) virtual 
 
 Returns whether the mouse_position is in the output hot zone. For more information on hot zones, see _is_in_input_hotzone().
 
 Below is a sample code to help get started:
 
-bool _is_node_hover_valid(from_node: StringName, from_port: int, to_node: StringName, to_port: int) virtual 🔗
+bool _is_node_hover_valid(from_node: StringName, from_port: int, to_node: StringName, to_port: int) virtual 
 
 This virtual method can be used to insert additional error detection while the user is dragging a connection over a valid port.
 
@@ -7736,47 +7736,47 @@ Return true if the connection is indeed valid or return false if the connection 
 
 In this example a connection to same node is suppressed:
 
-void add_valid_connection_type(from_type: int, to_type: int) 🔗
+void add_valid_connection_type(from_type: int, to_type: int) 
 
 Allows the connection between two different port types. The port type is defined individually for the left and the right port of each slot with the GraphNode.set_slot() method.
 
 See also is_valid_connection_type() and remove_valid_connection_type().
 
-void add_valid_left_disconnect_type(type: int) 🔗
+void add_valid_left_disconnect_type(type: int) 
 
 Allows to disconnect nodes when dragging from the left port of the GraphNode's slot if it has the specified type. See also remove_valid_left_disconnect_type().
 
-void add_valid_right_disconnect_type(type: int) 🔗
+void add_valid_right_disconnect_type(type: int) 
 
 Allows to disconnect nodes when dragging from the right port of the GraphNode's slot if it has the specified type. See also remove_valid_right_disconnect_type().
 
-void arrange_nodes() 🔗
+void arrange_nodes() 
 
 Rearranges selected nodes in a layout with minimum crossings between connections and uniform horizontal and vertical gap between nodes.
 
-void attach_graph_element_to_frame(element: StringName, frame: StringName) 🔗
+void attach_graph_element_to_frame(element: StringName, frame: StringName) 
 
 Attaches the element GraphElement to the frame GraphFrame.
 
-void clear_connections() 🔗
+void clear_connections() 
 
 Removes all connections between nodes.
 
-Error connect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int, keep_alive: bool = false) 🔗
+Error connect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int, keep_alive: bool = false) 
 
 Create a connection between the from_port of the from_node GraphNode and the to_port of the to_node GraphNode. If the connection already exists, no connection is created.
 
 Connections with keep_alive set to false may be deleted automatically if invalid during a redraw.
 
-void detach_graph_element_from_frame(element: StringName) 🔗
+void detach_graph_element_from_frame(element: StringName) 
 
 Detaches the element GraphElement from the GraphFrame it is currently attached to.
 
-void disconnect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 🔗
+void disconnect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 
 
 Removes the connection between the from_port of the from_node GraphNode and the to_port of the to_node GraphNode. If the connection does not exist, no connection is removed.
 
-void force_connection_drag_end() 🔗
+void force_connection_drag_end() 
 
 Ends the creation of the current connection. In other words, if you are dragging a connection you can use this method to abort the process and remove the line that followed your cursor.
 
@@ -7784,11 +7784,11 @@ This is best used together with connection_drag_started and connection_drag_ende
 
 Note: This method suppresses any other connection request signals apart from connection_drag_ended.
 
-Array[StringName] get_attached_nodes_of_frame(frame: StringName) 🔗
+Array[StringName] get_attached_nodes_of_frame(frame: StringName) 
 
 Returns an array of node names that are attached to the GraphFrame with the given name.
 
-Dictionary get_closest_connection_at_point(point: Vector2, max_distance: float = 4.0) const 🔗
+Dictionary get_closest_connection_at_point(point: Vector2, max_distance: float = 4.0) const 
 
 Returns the closest connection to the given point in screen space. If no connection is found within max_distance pixels, an empty Dictionary is returned.
 
@@ -7796,15 +7796,15 @@ A connection is represented as a Dictionary in the form of:
 
 For example, getting a connection at a given mouse position can be achieved like this:
 
-int get_connection_count(from_node: StringName, from_port: int) 🔗
+int get_connection_count(from_node: StringName, from_port: int) 
 
 Returns the number of connections from from_port of from_node.
 
-PackedVector2Array get_connection_line(from_node: Vector2, to_node: Vector2) const 🔗
+PackedVector2Array get_connection_line(from_node: Vector2, to_node: Vector2) const 
 
 Returns the points which would make up a connection between from_node and to_node.
 
-Array[Dictionary] get_connection_list_from_node(node: StringName) const 🔗
+Array[Dictionary] get_connection_list_from_node(node: StringName) const 
 
 Returns an Array containing a list of all connections for node.
 
@@ -7812,109 +7812,109 @@ A connection is represented as a Dictionary in the form of:
 
 Example: Get all connections on a specific port:
 
-Array[Dictionary] get_connections_intersecting_with_rect(rect: Rect2) const 🔗
+Array[Dictionary] get_connections_intersecting_with_rect(rect: Rect2) const 
 
 Returns an Array containing the list of connections that intersect with the given Rect2.
 
 A connection is represented as a Dictionary in the form of:
 
-GraphFrame get_element_frame(element: StringName) 🔗
+GraphFrame get_element_frame(element: StringName) 
 
 Returns the GraphFrame that contains the GraphElement with the given name.
 
-HBoxContainer get_menu_hbox() 🔗
+HBoxContainer get_menu_hbox() 
 
 Gets the HBoxContainer that contains the zooming and grid snap controls in the top left of the graph. You can use this method to reposition the toolbar or to add your own custom controls to it.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-bool is_node_connected(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 🔗
+bool is_node_connected(from_node: StringName, from_port: int, to_node: StringName, to_port: int) 
 
 Returns true if the from_port of the from_node GraphNode is connected to the to_port of the to_node GraphNode.
 
-bool is_valid_connection_type(from_type: int, to_type: int) const 🔗
+bool is_valid_connection_type(from_type: int, to_type: int) const 
 
 Returns whether it's possible to make a connection between two different port types. The port type is defined individually for the left and the right port of each slot with the GraphNode.set_slot() method.
 
 See also add_valid_connection_type() and remove_valid_connection_type().
 
-void remove_valid_connection_type(from_type: int, to_type: int) 🔗
+void remove_valid_connection_type(from_type: int, to_type: int) 
 
 Disallows the connection between two different port types previously allowed by add_valid_connection_type(). The port type is defined individually for the left and the right port of each slot with the GraphNode.set_slot() method.
 
 See also is_valid_connection_type().
 
-void remove_valid_left_disconnect_type(type: int) 🔗
+void remove_valid_left_disconnect_type(type: int) 
 
 Disallows to disconnect nodes when dragging from the left port of the GraphNode's slot if it has the specified type. Use this to disable disconnection previously allowed with add_valid_left_disconnect_type().
 
-void remove_valid_right_disconnect_type(type: int) 🔗
+void remove_valid_right_disconnect_type(type: int) 
 
 Disallows to disconnect nodes when dragging from the right port of the GraphNode's slot if it has the specified type. Use this to disable disconnection previously allowed with add_valid_right_disconnect_type().
 
-void set_connection_activity(from_node: StringName, from_port: int, to_node: StringName, to_port: int, amount: float) 🔗
+void set_connection_activity(from_node: StringName, from_port: int, to_node: StringName, to_port: int, amount: float) 
 
 Sets the coloration of the connection between from_node's from_port and to_node's to_port with the color provided in the activity theme property. The color is linearly interpolated between the connection color and the activity color using amount as weight.
 
-void set_selected(node: Node) 🔗
+void set_selected(node: Node) 
 
 Sets the specified node as the one selected.
 
-Color activity = Color(1, 1, 1, 1) 🔗
+Color activity = Color(1, 1, 1, 1) 
 
 Color the connection line is interpolated to based on the activity value of a connection (see set_connection_activity()).
 
-Color connection_hover_tint_color = Color(0, 0, 0, 0.3) 🔗
+Color connection_hover_tint_color = Color(0, 0, 0, 0.3) 
 
 Color which is blended with the connection line when the mouse is hovering over it.
 
-Color connection_rim_color = Color(0.1, 0.1, 0.1, 0.6) 🔗
+Color connection_rim_color = Color(0.1, 0.1, 0.1, 0.6) 
 
 Color of the rim around each connection line used for making intersecting lines more distinguishable.
 
-Color connection_valid_target_tint_color = Color(1, 1, 1, 0.4) 🔗
+Color connection_valid_target_tint_color = Color(1, 1, 1, 0.4) 
 
 Color which is blended with the connection line when the currently dragged connection is hovering over a valid target port.
 
-Color grid_major = Color(1, 1, 1, 0.2) 🔗
+Color grid_major = Color(1, 1, 1, 0.2) 
 
 Color of major grid lines/dots.
 
-Color grid_minor = Color(1, 1, 1, 0.05) 🔗
+Color grid_minor = Color(1, 1, 1, 0.05) 
 
 Color of minor grid lines/dots.
 
-Color selection_fill = Color(1, 1, 1, 0.3) 🔗
+Color selection_fill = Color(1, 1, 1, 0.3) 
 
 The fill color of the selection rectangle.
 
-Color selection_stroke = Color(1, 1, 1, 0.8) 🔗
+Color selection_stroke = Color(1, 1, 1, 0.8) 
 
 The outline color of the selection rectangle.
 
-int connection_hover_thickness = 0 🔗
+int connection_hover_thickness = 0 
 
 Widen the line of the connection when the mouse is hovering over it by a percentage factor. A value of 0 disables the highlight. A value of 100 doubles the line width.
 
-int port_hotzone_inner_extent = 22 🔗
+int port_hotzone_inner_extent = 22 
 
 The horizontal range within which a port can be grabbed (inner side).
 
-int port_hotzone_outer_extent = 26 🔗
+int port_hotzone_outer_extent = 26 
 
 The horizontal range within which a port can be grabbed (outer side).
 
-Texture2D grid_toggle 🔗
+Texture2D grid_toggle 
 
 The icon for the grid toggle button.
 
 The icon for the layout button for auto-arranging the graph.
 
-Texture2D minimap_toggle 🔗
+Texture2D minimap_toggle 
 
 The icon for the minimap toggle button.
 
-Texture2D snapping_toggle 🔗
+Texture2D snapping_toggle 
 
 The icon for the snapping toggle button.
 
@@ -7922,17 +7922,17 @@ The icon for the zoom in button.
 
 The icon for the zoom out button.
 
-Texture2D zoom_reset 🔗
+Texture2D zoom_reset 
 
 The icon for the zoom reset button.
 
-StyleBox menu_panel 🔗
+StyleBox menu_panel 
 
 There is currently no description for this theme property. Please help us by contributing one!
 
 The background drawn under the grid.
 
-StyleBox panel_focus 🔗
+StyleBox panel_focus 
 
 StyleBox used when the GraphEdit is focused (when used with assistive apps).
 
@@ -8005,7 +8005,7 @@ GraphElement allows to create custom elements for a GraphEdit graph. By default 
 
 Emitted when removing the GraphElement is requested.
 
-dragged(from: Vector2, to: Vector2) 🔗
+dragged(from: Vector2, to: Vector2) 
 
 Emitted when the GraphElement is dragged.
 
@@ -8013,27 +8013,27 @@ Emitted when the GraphElement is deselected.
 
 Emitted when the GraphElement is selected.
 
-position_offset_changed() 🔗
+position_offset_changed() 
 
 Emitted when the GraphElement is moved.
 
 Emitted when displaying the GraphElement over other ones is requested. Happens on focusing (clicking into) the GraphElement.
 
-resize_end(new_size: Vector2) 🔗
+resize_end(new_size: Vector2) 
 
 Emitted when releasing the mouse button after dragging the resizer handle (see resizable).
 
-resize_request(new_size: Vector2) 🔗
+resize_request(new_size: Vector2) 
 
 Emitted when resizing the GraphElement is requested. Happens on dragging the resizer handle (see resizable).
 
-bool draggable = true 🔗
+bool draggable = true 
 
 void set_draggable(value: bool)
 
 If true, the user can drag the GraphElement.
 
-Vector2 position_offset = Vector2(0, 0) 🔗
+Vector2 position_offset = Vector2(0, 0) 
 
 void set_position_offset(value: Vector2)
 
@@ -8041,7 +8041,7 @@ Vector2 get_position_offset()
 
 The offset of the GraphElement, relative to the scroll offset of the GraphEdit.
 
-bool resizable = false 🔗
+bool resizable = false 
 
 void set_resizable(value: bool)
 
@@ -8049,13 +8049,13 @@ If true, the user can resize the GraphElement.
 
 Note: Dragging the handle will only emit the resize_request and resize_end signals, the GraphElement needs to be resized manually.
 
-bool selectable = true 🔗
+bool selectable = true 
 
 void set_selectable(value: bool)
 
 If true, the user can select the GraphElement.
 
-bool selected = false 🔗
+bool selected = false 
 
 void set_selected(value: bool)
 
@@ -8099,11 +8099,11 @@ Color(0.3, 0.3, 0.3, 0.75)
 
 Color(0.875, 0.875, 0.875, 1)
 
-autoshrink_changed() 🔗
+autoshrink_changed() 
 
 Emitted when autoshrink_enabled or autoshrink_margin changes.
 
-bool autoshrink_enabled = true 🔗
+bool autoshrink_enabled = true 
 
 void set_autoshrink_enabled(value: bool)
 
@@ -8111,7 +8111,7 @@ bool is_autoshrink_enabled()
 
 If true, the frame's rect will be adjusted automatically to enclose all attached GraphElements.
 
-int autoshrink_margin = 40 🔗
+int autoshrink_margin = 40 
 
 void set_autoshrink_margin(value: int)
 
@@ -8119,7 +8119,7 @@ int get_autoshrink_margin()
 
 The margin around the attached nodes that is used to calculate the size of the frame when autoshrink_enabled is true.
 
-int drag_margin = 16 🔗
+int drag_margin = 16 
 
 void set_drag_margin(value: int)
 
@@ -8127,7 +8127,7 @@ int get_drag_margin()
 
 The margin inside the frame that can be used to drag the frame.
 
-Color tint_color = Color(0.3, 0.3, 0.3, 0.75) 🔗
+Color tint_color = Color(0.3, 0.3, 0.3, 0.75) 
 
 void set_tint_color(value: Color)
 
@@ -8135,7 +8135,7 @@ Color get_tint_color()
 
 The color of the frame when tint_color_enabled is true.
 
-bool tint_color_enabled = false 🔗
+bool tint_color_enabled = false 
 
 void set_tint_color_enabled(value: bool)
 
@@ -8145,25 +8145,25 @@ If true, the tint color will be used to tint the frame.
 
 void set_title(value: String)
 
-HBoxContainer get_titlebar_hbox() 🔗
+HBoxContainer get_titlebar_hbox() 
 
 Returns the HBoxContainer used for the title bar, only containing a Label for displaying the title by default.
 
 This can be used to add custom controls to the title bar such as option or close buttons.
 
-Color resizer_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color resizer_color = Color(0.875, 0.875, 0.875, 1) 
 
 The color modulation applied to the resizer icon.
 
 The default StyleBox used for the background of the GraphFrame.
 
-StyleBox panel_selected 🔗
+StyleBox panel_selected 
 
 The StyleBox used for the background of the GraphFrame when it is selected.
 
 The StyleBox used for the title bar of the GraphFrame.
 
-StyleBox titlebar_selected 🔗
+StyleBox titlebar_selected 
 
 The StyleBox used for the title bar of the GraphFrame when it is selected.
 
@@ -8271,15 +8271,15 @@ set_slot_type_right(slot_index: int, type: int)
 
 Color(0.875, 0.875, 0.875, 1)
 
-slot_sizes_changed() 🔗
+slot_sizes_changed() 
 
 Emitted when any slot's size might have changed.
 
-slot_updated(slot_index: int) 🔗
+slot_updated(slot_index: int) 
 
 Emitted when any GraphNode's slot is updated.
 
-bool ignore_invalid_connection_type = false 🔗
+bool ignore_invalid_connection_type = false 
 
 void set_ignore_invalid_connection_type(value: bool)
 
@@ -8287,7 +8287,7 @@ bool is_ignoring_valid_connection_type()
 
 If true, you can connect ports with different types, even if the connection was not explicitly allowed in the parent GraphEdit.
 
-FocusMode slots_focus_mode = 3 🔗
+FocusMode slots_focus_mode = 3 
 
 void set_slots_focus_mode(value: FocusMode)
 
@@ -8305,99 +8305,99 @@ void set_title(value: String)
 
 The text displayed in the GraphNode's title bar.
 
-void _draw_port(slot_index: int, position: Vector2i, left: bool, color: Color) virtual 🔗
+void _draw_port(slot_index: int, position: Vector2i, left: bool, color: Color) virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void clear_all_slots() 🔗
+void clear_all_slots() 
 
 Disables all slots of the GraphNode. This will remove all input/output ports from the GraphNode.
 
-void clear_slot(slot_index: int) 🔗
+void clear_slot(slot_index: int) 
 
 Disables the slot with the given slot_index. This will remove the corresponding input and output port from the GraphNode.
 
-Color get_input_port_color(port_idx: int) 🔗
+Color get_input_port_color(port_idx: int) 
 
 Returns the Color of the input port with the given port_idx.
 
-int get_input_port_count() 🔗
+int get_input_port_count() 
 
 Returns the number of slots with an enabled input port.
 
-Vector2 get_input_port_position(port_idx: int) 🔗
+Vector2 get_input_port_position(port_idx: int) 
 
 Returns the position of the input port with the given port_idx.
 
-int get_input_port_slot(port_idx: int) 🔗
+int get_input_port_slot(port_idx: int) 
 
 Returns the corresponding slot index of the input port with the given port_idx.
 
-int get_input_port_type(port_idx: int) 🔗
+int get_input_port_type(port_idx: int) 
 
 Returns the type of the input port with the given port_idx.
 
-Color get_output_port_color(port_idx: int) 🔗
+Color get_output_port_color(port_idx: int) 
 
 Returns the Color of the output port with the given port_idx.
 
-int get_output_port_count() 🔗
+int get_output_port_count() 
 
 Returns the number of slots with an enabled output port.
 
-Vector2 get_output_port_position(port_idx: int) 🔗
+Vector2 get_output_port_position(port_idx: int) 
 
 Returns the position of the output port with the given port_idx.
 
-int get_output_port_slot(port_idx: int) 🔗
+int get_output_port_slot(port_idx: int) 
 
 Returns the corresponding slot index of the output port with the given port_idx.
 
-int get_output_port_type(port_idx: int) 🔗
+int get_output_port_type(port_idx: int) 
 
 Returns the type of the output port with the given port_idx.
 
-Color get_slot_color_left(slot_index: int) const 🔗
+Color get_slot_color_left(slot_index: int) const 
 
 Returns the left (input) Color of the slot with the given slot_index.
 
-Color get_slot_color_right(slot_index: int) const 🔗
+Color get_slot_color_right(slot_index: int) const 
 
 Returns the right (output) Color of the slot with the given slot_index.
 
-Texture2D get_slot_custom_icon_left(slot_index: int) const 🔗
+Texture2D get_slot_custom_icon_left(slot_index: int) const 
 
 Returns the left (input) custom Texture2D of the slot with the given slot_index.
 
-Texture2D get_slot_custom_icon_right(slot_index: int) const 🔗
+Texture2D get_slot_custom_icon_right(slot_index: int) const 
 
 Returns the right (output) custom Texture2D of the slot with the given slot_index.
 
-int get_slot_type_left(slot_index: int) const 🔗
+int get_slot_type_left(slot_index: int) const 
 
 Returns the left (input) type of the slot with the given slot_index.
 
-int get_slot_type_right(slot_index: int) const 🔗
+int get_slot_type_right(slot_index: int) const 
 
 Returns the right (output) type of the slot with the given slot_index.
 
-HBoxContainer get_titlebar_hbox() 🔗
+HBoxContainer get_titlebar_hbox() 
 
 Returns the HBoxContainer used for the title bar, only containing a Label for displaying the title by default. This can be used to add custom controls to the title bar such as option or close buttons.
 
-bool is_slot_draw_stylebox(slot_index: int) const 🔗
+bool is_slot_draw_stylebox(slot_index: int) const 
 
 Returns true if the background StyleBox of the slot with the given slot_index is drawn.
 
-bool is_slot_enabled_left(slot_index: int) const 🔗
+bool is_slot_enabled_left(slot_index: int) const 
 
 Returns true if left (input) side of the slot with the given slot_index is enabled.
 
-bool is_slot_enabled_right(slot_index: int) const 🔗
+bool is_slot_enabled_right(slot_index: int) const 
 
 Returns true if right (output) side of the slot with the given slot_index is enabled.
 
-void set_slot(slot_index: int, enable_left_port: bool, type_left: int, color_left: Color, enable_right_port: bool, type_right: int, color_right: Color, custom_icon_left: Texture2D = null, custom_icon_right: Texture2D = null, draw_stylebox: bool = true) 🔗
+void set_slot(slot_index: int, enable_left_port: bool, type_left: int, color_left: Color, enable_right_port: bool, type_right: int, color_right: Color, custom_icon_left: Texture2D = null, custom_icon_right: Texture2D = null, draw_stylebox: bool = true) 
 
 Sets properties of the slot with the given slot_index.
 
@@ -8413,47 +8413,47 @@ Individual properties can also be set using one of the set_slot_* methods.
 
 Note: This method only sets properties of the slot. To create the slot itself, add a Control-derived child to the GraphNode.
 
-void set_slot_color_left(slot_index: int, color: Color) 🔗
+void set_slot_color_left(slot_index: int, color: Color) 
 
 Sets the Color of the left (input) side of the slot with the given slot_index to color.
 
-void set_slot_color_right(slot_index: int, color: Color) 🔗
+void set_slot_color_right(slot_index: int, color: Color) 
 
 Sets the Color of the right (output) side of the slot with the given slot_index to color.
 
-void set_slot_custom_icon_left(slot_index: int, custom_icon: Texture2D) 🔗
+void set_slot_custom_icon_left(slot_index: int, custom_icon: Texture2D) 
 
 Sets the custom Texture2D of the left (input) side of the slot with the given slot_index to custom_icon.
 
-void set_slot_custom_icon_right(slot_index: int, custom_icon: Texture2D) 🔗
+void set_slot_custom_icon_right(slot_index: int, custom_icon: Texture2D) 
 
 Sets the custom Texture2D of the right (output) side of the slot with the given slot_index to custom_icon.
 
-void set_slot_draw_stylebox(slot_index: int, enable: bool) 🔗
+void set_slot_draw_stylebox(slot_index: int, enable: bool) 
 
 Toggles the background StyleBox of the slot with the given slot_index.
 
-void set_slot_enabled_left(slot_index: int, enable: bool) 🔗
+void set_slot_enabled_left(slot_index: int, enable: bool) 
 
 Toggles the left (input) side of the slot with the given slot_index. If enable is true, a port will appear on the left side and the slot will be able to be connected from this side.
 
-void set_slot_enabled_right(slot_index: int, enable: bool) 🔗
+void set_slot_enabled_right(slot_index: int, enable: bool) 
 
 Toggles the right (output) side of the slot with the given slot_index. If enable is true, a port will appear on the right side and the slot will be able to be connected from this side.
 
-void set_slot_type_left(slot_index: int, type: int) 🔗
+void set_slot_type_left(slot_index: int, type: int) 
 
 Sets the left (input) type of the slot with the given slot_index to type. If the value is negative, all connections will be disallowed to be created via user inputs.
 
-void set_slot_type_right(slot_index: int, type: int) 🔗
+void set_slot_type_right(slot_index: int, type: int) 
 
 Sets the right (output) type of the slot with the given slot_index to type. If the value is negative, all connections will be disallowed to be created via user inputs.
 
-Color resizer_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color resizer_color = Color(0.875, 0.875, 0.875, 1) 
 
 The color modulation applied to the resizer icon.
 
-int port_h_offset = 0 🔗
+int port_h_offset = 0 
 
 Horizontal offset for the ports.
 
@@ -8463,23 +8463,23 @@ The icon used for representing ports.
 
 The default background for the slot area of the GraphNode.
 
-StyleBox panel_focus 🔗
+StyleBox panel_focus 
 
 StyleBox used when the GraphNode is focused (when used with assistive apps).
 
-StyleBox panel_selected 🔗
+StyleBox panel_selected 
 
 The StyleBox used for the slot area when selected.
 
 The StyleBox used for each slot of the GraphNode.
 
-StyleBox slot_selected 🔗
+StyleBox slot_selected 
 
 StyleBox used when the slot is focused (when used with assistive apps).
 
 The StyleBox used for the title bar of the GraphNode.
 
-StyleBox titlebar_selected 🔗
+StyleBox titlebar_selected 
 
 The StyleBox used for the title bar of the GraphNode when it is selected.
 
@@ -8515,11 +8515,11 @@ void set_columns(value: int)
 
 The number of columns in the GridContainer. If modified, GridContainer reorders its Control-derived children to accommodate the new layout.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal separation of child nodes.
 
-int v_separation = 4 🔗
+int v_separation = 4 
 
 The vertical separation of child nodes.
 
@@ -8881,7 +8881,7 @@ Represents a gamepad button being pressed or released.
 
 Input event type for gamepad buttons. For gamepad analog sticks and joysticks, see InputEventJoypadMotion.
 
-JoyButton button_index = 0 🔗
+JoyButton button_index = 0 
 
 void set_button_index(value: JoyButton)
 
@@ -8889,13 +8889,13 @@ JoyButton get_button_index()
 
 Button identifier. One of the JoyButton button constants.
 
-bool pressed = false 🔗
+bool pressed = false 
 
 void set_pressed(value: bool)
 
 If true, the button's state is pressed. If false, the button's state is released.
 
-float pressure = 0.0 🔗
+float pressure = 0.0 
 
 void set_pressure(value: float)
 
@@ -8927,7 +8927,7 @@ Note: On Wear OS devices, rotary input is mapped to @GlobalScope.MOUSE_BUTTON_WH
 
 Mouse and input coordinates
 
-MouseButton button_index = 0 🔗
+MouseButton button_index = 0 
 
 void set_button_index(value: MouseButton)
 
@@ -8935,13 +8935,13 @@ MouseButton get_button_index()
 
 The mouse button identifier, one of the MouseButton button or button wheel constants.
 
-bool canceled = false 🔗
+bool canceled = false 
 
 void set_canceled(value: bool)
 
 If true, the mouse button event has been canceled.
 
-bool double_click = false 🔗
+bool double_click = false 
 
 void set_double_click(value: bool)
 
@@ -8953,7 +8953,7 @@ void set_factor(value: float)
 
 The amount (or delta) of the event. When used for high-precision scroll events, this indicates the scroll amount (vertical or horizontal). This is only supported on some platforms; the reported sensitivity varies depending on the platform. May be 0 if not supported.
 
-bool pressed = false 🔗
+bool pressed = false 
 
 void set_pressed(value: bool)
 
@@ -9091,7 +9091,7 @@ vibrate_handheld(duration_ms: int = 500, amplitude: float = -1.0)
 
 warp_mouse(position: Vector2)
 
-joy_connection_changed(device: int, connected: bool) 🔗
+joy_connection_changed(device: int, connected: bool) 
 
 Emitted when a joypad device has been connected or disconnected.
 
@@ -9191,7 +9191,7 @@ CursorShape CURSOR_HELP = 16
 
 Help cursor. Usually a question mark.
 
-bool emulate_mouse_from_touch 🔗
+bool emulate_mouse_from_touch 
 
 void set_emulate_mouse_from_touch(value: bool)
 
@@ -9199,7 +9199,7 @@ bool is_emulating_mouse_from_touch()
 
 If true, sends mouse input events when tapping or swiping on the touchscreen. See also ProjectSettings.input_devices/pointing/emulate_mouse_from_touch.
 
-bool emulate_touch_from_mouse 🔗
+bool emulate_touch_from_mouse 
 
 void set_emulate_touch_from_mouse(value: bool)
 
@@ -9207,7 +9207,7 @@ bool is_emulating_touch_from_mouse()
 
 If true, sends touch input events when clicking or dragging the mouse. See also ProjectSettings.input_devices/pointing/emulate_touch_from_mouse.
 
-MouseMode mouse_mode 🔗
+MouseMode mouse_mode 
 
 void set_mouse_mode(value: MouseMode)
 
@@ -9215,7 +9215,7 @@ MouseMode get_mouse_mode()
 
 Controls the mouse mode.
 
-bool use_accumulated_input 🔗
+bool use_accumulated_input 
 
 void set_use_accumulated_input(value: bool)
 
@@ -9227,7 +9227,7 @@ Input accumulation can be disabled to get slightly more precise/reactive input a
 
 Note: Input accumulation is enabled by default.
 
-void action_press(action: StringName, strength: float = 1.0) 🔗
+void action_press(action: StringName, strength: float = 1.0) 
 
 This will simulate pressing the specified action.
 
@@ -9235,21 +9235,21 @@ The strength can be used for non-boolean actions, it's ranged between 0 and 1 re
 
 Note: This method will not cause any Node._input() calls. It is intended to be used with is_action_pressed() and is_action_just_pressed(). If you want to simulate _input, use parse_input_event() instead.
 
-void action_release(action: StringName) 🔗
+void action_release(action: StringName) 
 
 If the specified action is already pressed, this will release it.
 
-void add_joy_mapping(mapping: String, update_existing: bool = false) 🔗
+void add_joy_mapping(mapping: String, update_existing: bool = false) 
 
 Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.
 
-void flush_buffered_events() 🔗
+void flush_buffered_events() 
 
 Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (use_accumulated_input) or agile input flushing (ProjectSettings.input_devices/buffering/agile_event_flushing).
 
 The engine will already do this itself at key execution points (at least once per frame). However, this can be useful in advanced cases where you want precise control over the timing of event handling.
 
-Vector3 get_accelerometer() const 🔗
+Vector3 get_accelerometer() const 
 
 Returns the acceleration in m/s² of the device's accelerometer sensor, if the device has one. Otherwise, the method returns Vector3.ZERO.
 
@@ -9259,33 +9259,33 @@ Note: This method only works on Android and iOS. On other platforms, it always r
 
 Note: For Android, ProjectSettings.input_devices/sensors/enable_accelerometer must be enabled.
 
-float get_action_raw_strength(action: StringName, exact_match: bool = false) const 🔗
+float get_action_raw_strength(action: StringName, exact_match: bool = false) const 
 
 Returns a value between 0 and 1 representing the raw intensity of the given action, ignoring the action's deadzone. In most cases, you should use get_action_strength() instead.
 
 If exact_match is false, it ignores additional input modifiers for InputEventKey and InputEventMouseButton events, and the direction for InputEventJoypadMotion events.
 
-float get_action_strength(action: StringName, exact_match: bool = false) const 🔗
+float get_action_strength(action: StringName, exact_match: bool = false) const 
 
 Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis such as the keyboard, the value returned will be 0 or 1.
 
 If exact_match is false, it ignores additional input modifiers for InputEventKey and InputEventMouseButton events, and the direction for InputEventJoypadMotion events.
 
-float get_axis(negative_action: StringName, positive_action: StringName) const 🔗
+float get_axis(negative_action: StringName, positive_action: StringName) const 
 
 Get axis input by specifying two actions, one negative and one positive.
 
 This is a shorthand for writing Input.get_action_strength("positive_action") - Input.get_action_strength("negative_action").
 
-Array[int] get_connected_joypads() 🔗
+Array[int] get_connected_joypads() 
 
 Returns an Array containing the device IDs of all currently connected joypads.
 
-CursorShape get_current_cursor_shape() const 🔗
+CursorShape get_current_cursor_shape() const 
 
 Returns the currently assigned cursor shape.
 
-Vector3 get_gravity() const 🔗
+Vector3 get_gravity() const 
 
 Returns the gravity in m/s² of the device's accelerometer sensor, if the device has one. Otherwise, the method returns Vector3.ZERO.
 
@@ -9293,7 +9293,7 @@ Note: This method only works on Android and iOS. On other platforms, it always r
 
 Note: For Android, ProjectSettings.input_devices/sensors/enable_gravity must be enabled.
 
-Vector3 get_gyroscope() const 🔗
+Vector3 get_gyroscope() const 
 
 Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope sensor, if the device has one. Otherwise, the method returns Vector3.ZERO.
 
@@ -9301,17 +9301,17 @@ Note: This method only works on Android and iOS. On other platforms, it always r
 
 Note: For Android, ProjectSettings.input_devices/sensors/enable_gyroscope must be enabled.
 
-float get_joy_axis(device: int, axis: JoyAxis) const 🔗
+float get_joy_axis(device: int, axis: JoyAxis) const 
 
 Returns the current value of the joypad axis at index axis.
 
-String get_joy_guid(device: int) const 🔗
+String get_joy_guid(device: int) const 
 
 Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. 030000004c050000c405000000010000. Returns an empty string if it cannot be found. Godot uses the SDL2 game controller database to determine gamepad names and mappings based on this GUID.
 
 On Windows, all XInput joypad GUIDs will be overridden by Godot to __XINPUT_DEVICE__, because their mappings are the same.
 
-Dictionary get_joy_info(device: int) const 🔗
+Dictionary get_joy_info(device: int) const 
 
 Returns a dictionary with extra platform-specific information about the device, e.g. the raw gamepad name from the OS or the Steam Input index.
 
@@ -9331,27 +9331,27 @@ xinput_index: The index of the controller in the XInput system. This key won't b
 
 Note: The returned dictionary is always empty on Android, iOS, visionOS, and Web.
 
-String get_joy_name(device: int) 🔗
+String get_joy_name(device: int) 
 
 Returns the name of the joypad at the specified device index, e.g. PS4 Controller. Godot uses the SDL2 game controller database to determine gamepad names.
 
-float get_joy_vibration_duration(device: int) 🔗
+float get_joy_vibration_duration(device: int) 
 
 Returns the duration of the current vibration effect in seconds.
 
-Vector2 get_joy_vibration_strength(device: int) 🔗
+Vector2 get_joy_vibration_strength(device: int) 
 
 Returns the strength of the joypad vibration: x is the strength of the weak motor, and y is the strength of the strong motor.
 
-Vector2 get_last_mouse_screen_velocity() 🔗
+Vector2 get_last_mouse_screen_velocity() 
 
 Returns the last mouse velocity in screen coordinates. To provide a precise and jitter-free velocity, mouse velocity is only calculated every 0.1s. Therefore, mouse velocity will lag mouse movements.
 
-Vector2 get_last_mouse_velocity() 🔗
+Vector2 get_last_mouse_velocity() 
 
 Returns the last mouse velocity. To provide a precise and jitter-free velocity, mouse velocity is only calculated every 0.1s. Therefore, mouse velocity will lag mouse movements.
 
-Vector3 get_magnetometer() const 🔗
+Vector3 get_magnetometer() const 
 
 Returns the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns Vector3.ZERO.
 
@@ -9359,11 +9359,11 @@ Note: This method only works on Android and iOS. On other platforms, it always r
 
 Note: For Android, ProjectSettings.input_devices/sensors/enable_magnetometer must be enabled.
 
-BitField[MouseButtonMask] get_mouse_button_mask() const 🔗
+BitField[MouseButtonMask] get_mouse_button_mask() const 
 
 Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to DisplayServer.mouse_get_button_state().
 
-Vector2 get_vector(negative_x: StringName, positive_x: StringName, negative_y: StringName, positive_y: StringName, deadzone: float = -1.0) const 🔗
+Vector2 get_vector(negative_x: StringName, positive_x: StringName, negative_y: StringName, positive_y: StringName, deadzone: float = -1.0) const 
 
 Gets an input vector by specifying four actions for the positive and negative X and Y axes.
 
@@ -9371,7 +9371,7 @@ This method is useful when getting vector input, such as from a joystick, direct
 
 By default, the deadzone is automatically calculated from the average of the action deadzones. However, you can override the deadzone to be whatever you want (on the range of 0 to 1).
 
-bool is_action_just_pressed(action: StringName, exact_match: bool = false) const 🔗
+bool is_action_just_pressed(action: StringName, exact_match: bool = false) const 
 
 Returns true when the user has started pressing the action event in the current frame or physics tick. It will only return true on the frame or tick that the user pressed down the button.
 
@@ -9385,7 +9385,7 @@ Note: Due to keyboard ghosting, is_action_just_pressed() may return false even i
 
 Note: During input handling (e.g. Node._input()), use InputEvent.is_action_pressed() instead to query the action state of the current event. See also is_action_just_pressed_by_event().
 
-bool is_action_just_pressed_by_event(action: StringName, event: InputEvent, exact_match: bool = false) const 🔗
+bool is_action_just_pressed_by_event(action: StringName, event: InputEvent, exact_match: bool = false) const 
 
 Returns true when the user has started pressing the action event in the current frame or physics tick, and the first event that triggered action press in the current frame/physics tick was event. It will only return true on the frame or tick that the user pressed down the button.
 
@@ -9397,7 +9397,7 @@ Note: Returning true does not imply that the action is still pressed. An action 
 
 Note: Due to keyboard ghosting, is_action_just_pressed() may return false even if one of the action's keys is pressed. See Input examples in the documentation for more information.
 
-bool is_action_just_released(action: StringName, exact_match: bool = false) const 🔗
+bool is_action_just_released(action: StringName, exact_match: bool = false) const 
 
 Returns true when the user stops pressing the action event in the current frame or physics tick. It will only return true on the frame or tick that the user releases the button.
 
@@ -9407,7 +9407,7 @@ If exact_match is false, it ignores additional input modifiers for InputEventKey
 
 Note: During input handling (e.g. Node._input()), use InputEvent.is_action_released() instead to query the action state of the current event. See also is_action_just_released_by_event().
 
-bool is_action_just_released_by_event(action: StringName, event: InputEvent, exact_match: bool = false) const 🔗
+bool is_action_just_released_by_event(action: StringName, event: InputEvent, exact_match: bool = false) const 
 
 Returns true when the user stops pressing the action event in the current frame or physics tick, and the first event that triggered action release in the current frame/physics tick was event. It will only return true on the frame or tick that the user releases the button.
 
@@ -9417,7 +9417,7 @@ Note: Returning true does not imply that the action is still not pressed. An act
 
 If exact_match is false, it ignores additional input modifiers for InputEventKey and InputEventMouseButton events, and the direction for InputEventJoypadMotion events.
 
-bool is_action_pressed(action: StringName, exact_match: bool = false) const 🔗
+bool is_action_pressed(action: StringName, exact_match: bool = false) const 
 
 Returns true if you are pressing the action event.
 
@@ -9425,23 +9425,23 @@ If exact_match is false, it ignores additional input modifiers for InputEventKey
 
 Note: Due to keyboard ghosting, is_action_pressed() may return false even if one of the action's keys is pressed. See Input examples in the documentation for more information.
 
-bool is_anything_pressed() const 🔗
+bool is_anything_pressed() const 
 
 Returns true if any action, key, joypad button, or mouse button is being pressed. This will also return true if any action is simulated via code by calling action_press().
 
-bool is_joy_button_pressed(device: int, button: JoyButton) const 🔗
+bool is_joy_button_pressed(device: int, button: JoyButton) const 
 
 Returns true if you are pressing the joypad button at index button.
 
-bool is_joy_known(device: int) 🔗
+bool is_joy_known(device: int) 
 
 Returns true if the system knows the specified device. This means that it sets all button and axis indices. Unknown joypads are not expected to match these constants, but you can still retrieve events from them.
 
-bool is_key_label_pressed(keycode: Key) const 🔗
+bool is_key_label_pressed(keycode: Key) const 
 
 Returns true if you are pressing the key with the keycode printed on it. You can pass a Key constant or any Unicode character code.
 
-bool is_key_pressed(keycode: Key) const 🔗
+bool is_key_pressed(keycode: Key) const 
 
 Returns true if you are pressing the Latin key in the current keyboard layout. You can pass a Key constant.
 
@@ -9449,11 +9449,11 @@ is_key_pressed() is only recommended over is_physical_key_pressed() in non-game 
 
 Note: Due to keyboard ghosting, is_key_pressed() may return false even if one of the action's keys is pressed. See Input examples in the documentation for more information.
 
-bool is_mouse_button_pressed(button: MouseButton) const 🔗
+bool is_mouse_button_pressed(button: MouseButton) const 
 
 Returns true if you are pressing the mouse button specified with MouseButton.
 
-bool is_physical_key_pressed(keycode: Key) const 🔗
+bool is_physical_key_pressed(keycode: Key) const 
 
 Returns true if you are pressing the key in the physical location on the 101/102-key US QWERTY keyboard. You can pass a Key constant.
 
@@ -9461,25 +9461,25 @@ is_physical_key_pressed() is recommended over is_key_pressed() for in-game actio
 
 Note: Due to keyboard ghosting, is_physical_key_pressed() may return false even if one of the action's keys is pressed. See Input examples in the documentation for more information.
 
-void parse_input_event(event: InputEvent) 🔗
+void parse_input_event(event: InputEvent) 
 
 Feeds an InputEvent to the game. Can be used to artificially trigger input events from code. Also generates Node._input() calls.
 
 Note: Calling this function has no influence on the operating system. So for example sending an InputEventMouseMotion will not move the OS mouse cursor to the specified position (use warp_mouse() instead) and sending Alt/Cmd + Tab as InputEventKey won't toggle between active windows.
 
-void remove_joy_mapping(guid: String) 🔗
+void remove_joy_mapping(guid: String) 
 
 Removes all mappings from the internal database that match the given GUID. All currently connected joypads that use this GUID will become unmapped.
 
 On Android, Godot will map to an internal fallback mapping.
 
-void set_accelerometer(value: Vector3) 🔗
+void set_accelerometer(value: Vector3) 
 
 Sets the acceleration value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
 Note: This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
-void set_custom_mouse_cursor(image: Resource, shape: CursorShape = 0, hotspot: Vector2 = Vector2(0, 0)) 🔗
+void set_custom_mouse_cursor(image: Resource, shape: CursorShape = 0, hotspot: Vector2 = Vector2(0, 0)) 
 
 Sets a custom mouse cursor image, which is only visible inside the game window, for the given mouse shape. The hotspot can also be specified. Passing null to the image parameter resets to the system cursor.
 
@@ -9493,7 +9493,7 @@ Note: The Lossless, Lossy or Uncompressed compression modes are recommended. The
 
 Note: On the web platform, the maximum allowed cursor image size is 128×128. Cursor images larger than 32×32 will also only be displayed if the mouse cursor image is entirely located within the page for security reasons.
 
-void set_default_cursor_shape(shape: CursorShape = 0) 🔗
+void set_default_cursor_shape(shape: CursorShape = 0) 
 
 Sets the default cursor shape to be used in the viewport instead of CURSOR_ARROW.
 
@@ -9501,31 +9501,31 @@ Note: If you want to change the default cursor shape for Control's nodes, use Co
 
 Note: This method generates an InputEventMouseMotion to update cursor immediately.
 
-void set_gravity(value: Vector3) 🔗
+void set_gravity(value: Vector3) 
 
 Sets the gravity value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
 Note: This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
-void set_gyroscope(value: Vector3) 🔗
+void set_gyroscope(value: Vector3) 
 
 Sets the value of the rotation rate of the gyroscope sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
 Note: This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
-void set_magnetometer(value: Vector3) 🔗
+void set_magnetometer(value: Vector3) 
 
 Sets the value of the magnetic field of the magnetometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
 Note: This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
-bool should_ignore_device(vendor_id: int, product_id: int) const 🔗
+bool should_ignore_device(vendor_id: int, product_id: int) const 
 
 Queries whether an input device should be ignored or not. Devices can be ignored by setting the environment variable SDL_GAMECONTROLLER_IGNORE_DEVICES. Read the SDL documentation for more information.
 
 Note: Some 3rd party tools can contribute to the list of ignored devices. For example, SteamInput creates virtual devices from physical devices for remapping purposes. To avoid handling the same input device twice, the original device is added to the ignore list.
 
-void start_joy_vibration(device: int, weak_magnitude: float, strong_magnitude: float, duration: float = 0) 🔗
+void start_joy_vibration(device: int, weak_magnitude: float, strong_magnitude: float, duration: float = 0) 
 
 Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. weak_magnitude is the strength of the weak motor (between 0 and 1) and strong_magnitude is the strength of the strong motor (between 0 and 1). duration is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely). The vibration can be stopped early by calling stop_joy_vibration().
 
@@ -9533,11 +9533,11 @@ Note: Not every hardware is compatible with long effect durations; it is recomme
 
 Note: For macOS, vibration is only supported in macOS 11 and later.
 
-void stop_joy_vibration(device: int) 🔗
+void stop_joy_vibration(device: int) 
 
 Stops the vibration of the joypad started with start_joy_vibration().
 
-void vibrate_handheld(duration_ms: int = 500, amplitude: float = -1.0) 🔗
+void vibrate_handheld(duration_ms: int = 500, amplitude: float = -1.0) 
 
 Vibrate the handheld device for the specified duration in milliseconds.
 
@@ -9553,7 +9553,7 @@ Note: For Web, the amplitude cannot be changed.
 
 Note: Some web browsers such as Safari and Firefox for Android do not support vibrate_handheld().
 
-void warp_mouse(position: Vector2) 🔗
+void warp_mouse(position: Vector2) 
 
 Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the currently focused Window Manager game window.
 
@@ -9711,29 +9711,29 @@ Color(0.7, 0.7, 0.7, 0.25)
 
 hovered_selected_focus
 
-empty_clicked(at_position: Vector2, mouse_button_index: int) 🔗
+empty_clicked(at_position: Vector2, mouse_button_index: int) 
 
 Emitted when any mouse click is issued within the rect of the list but on empty space.
 
 at_position is the click position in this control's local coordinate system.
 
-item_activated(index: int) 🔗
+item_activated(index: int) 
 
 Emitted when specified list item is activated via double-clicking or by pressing Enter.
 
-item_clicked(index: int, at_position: Vector2, mouse_button_index: int) 🔗
+item_clicked(index: int, at_position: Vector2, mouse_button_index: int) 
 
 Emitted when specified list item has been clicked with any mouse button.
 
 at_position is the click position in this control's local coordinate system.
 
-item_selected(index: int) 🔗
+item_selected(index: int) 
 
 Emitted when specified item has been selected. Only applicable in single selection mode.
 
 allow_reselect must be enabled to reselect an item.
 
-multi_selected(index: int, selected: bool) 🔗
+multi_selected(index: int, selected: bool) 
 
 Emitted when a multiple selection is altered on a list allowing multiple selection.
 
@@ -9757,7 +9757,7 @@ SelectMode SELECT_TOGGLE = 2
 
 Allows selecting multiple items by toggling them on and off.
 
-bool allow_reselect = false 🔗
+bool allow_reselect = false 
 
 void set_allow_reselect(value: bool)
 
@@ -9765,7 +9765,7 @@ bool get_allow_reselect()
 
 If true, the currently selected item can be selected again.
 
-bool allow_rmb_select = false 🔗
+bool allow_rmb_select = false 
 
 void set_allow_rmb_select(value: bool)
 
@@ -9773,7 +9773,7 @@ bool get_allow_rmb_select()
 
 If true, right mouse button click can select items.
 
-bool allow_search = true 🔗
+bool allow_search = true 
 
 void set_allow_search(value: bool)
 
@@ -9781,7 +9781,7 @@ bool get_allow_search()
 
 If true, allows navigating the ItemList with letter keys through incremental search.
 
-bool auto_height = false 🔗
+bool auto_height = false 
 
 void set_auto_height(value: bool)
 
@@ -9789,7 +9789,7 @@ bool has_auto_height()
 
 If true, the control will automatically resize the height to fit its content.
 
-bool auto_width = false 🔗
+bool auto_width = false 
 
 void set_auto_width(value: bool)
 
@@ -9797,7 +9797,7 @@ bool has_auto_width()
 
 If true, the control will automatically resize the width to fit its content.
 
-int fixed_column_width = 0 🔗
+int fixed_column_width = 0 
 
 void set_fixed_column_width(value: int)
 
@@ -9807,7 +9807,7 @@ The width all columns will be adjusted to.
 
 A value of zero disables the adjustment, each item will have a width equal to the width of its content and the columns will have an uneven width.
 
-Vector2i fixed_icon_size = Vector2i(0, 0) 🔗
+Vector2i fixed_icon_size = Vector2i(0, 0) 
 
 void set_fixed_icon_size(value: Vector2i)
 
@@ -9817,7 +9817,7 @@ The size all icons will be adjusted to.
 
 If either X or Y component is not greater than zero, icon size won't be affected.
 
-IconMode icon_mode = 1 🔗
+IconMode icon_mode = 1 
 
 void set_icon_mode(value: IconMode)
 
@@ -9825,7 +9825,7 @@ IconMode get_icon_mode()
 
 The icon position, whether above or to the left of the text. See the IconMode constants.
 
-float icon_scale = 1.0 🔗
+float icon_scale = 1.0 
 
 void set_icon_scale(value: float)
 
@@ -9837,7 +9837,7 @@ void set_item_count(value: int)
 
 The number of items currently in the list.
 
-int max_columns = 1 🔗
+int max_columns = 1 
 
 void set_max_columns(value: int)
 
@@ -9849,7 +9849,7 @@ If greater than zero, the content will be split among the specified columns.
 
 A value of zero means unlimited columns, i.e. all items will be put in the same row.
 
-int max_text_lines = 1 🔗
+int max_text_lines = 1 
 
 void set_max_text_lines(value: int)
 
@@ -9859,7 +9859,7 @@ Maximum lines of text allowed in each item. Space will be reserved even when the
 
 Note: This property takes effect only when icon_mode is ICON_MODE_TOP. To make the text wrap, fixed_column_width should be greater than zero.
 
-bool same_column_width = false 🔗
+bool same_column_width = false 
 
 void set_same_column_width(value: bool)
 
@@ -9869,7 +9869,7 @@ Whether all columns will have the same width.
 
 If true, the width is equal to the largest column width of all columns.
 
-SelectMode select_mode = 0 🔗
+SelectMode select_mode = 0 
 
 void set_select_mode(value: SelectMode)
 
@@ -9877,7 +9877,7 @@ SelectMode get_select_mode()
 
 Allows single or multiple item selection. See the SelectMode constants.
 
-OverrunBehavior text_overrun_behavior = 3 🔗
+OverrunBehavior text_overrun_behavior = 3 
 
 void set_text_overrun_behavior(value: OverrunBehavior)
 
@@ -9885,7 +9885,7 @@ OverrunBehavior get_text_overrun_behavior()
 
 The clipping behavior when the text exceeds an item's bounding rectangle.
 
-bool wraparound_items = true 🔗
+bool wraparound_items = true 
 
 void set_wraparound_items(value: bool)
 
@@ -9895,11 +9895,11 @@ If true, the control will automatically move items into a new row to fit its con
 
 If false, the control will add a horizontal scrollbar to make all items visible.
 
-int add_icon_item(icon: Texture2D, selectable: bool = true) 🔗
+int add_icon_item(icon: Texture2D, selectable: bool = true) 
 
 Adds an item to the item list with no text, only an icon. Returns the index of an added item.
 
-int add_item(text: String, icon: Texture2D = null, selectable: bool = true) 🔗
+int add_item(text: String, icon: Texture2D = null, selectable: bool = true) 
 
 Adds an item to the item list with specified text. Returns the index of an added item.
 
@@ -9909,29 +9909,29 @@ If selectable is true, the list item will be selectable.
 
 Removes all items from the list.
 
-void deselect(idx: int) 🔗
+void deselect(idx: int) 
 
 Ensures the item associated with the specified index is not selected.
 
-void deselect_all() 🔗
+void deselect_all() 
 
 Ensures there are no items selected.
 
-void ensure_current_is_visible() 🔗
+void ensure_current_is_visible() 
 
 Ensure current selection is visible, adjusting the scroll position as necessary.
 
-void force_update_list_size() 🔗
+void force_update_list_size() 
 
 Forces an update to the list size based on its items. This happens automatically whenever size of the items, or other relevant settings like auto_height, change. The method can be used to trigger the update ahead of next drawing pass.
 
-HScrollBar get_h_scroll_bar() 🔗
+HScrollBar get_h_scroll_bar() 
 
 Returns the horizontal scrollbar.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-int get_item_at_position(position: Vector2, exact: bool = false) const 🔗
+int get_item_at_position(position: Vector2, exact: bool = false) const 
 
 Returns the item index at the given position.
 
@@ -9939,215 +9939,215 @@ When there is no item at that point, -1 will be returned if exact is true, and t
 
 Note: The returned value is unreliable if called right after modifying the ItemList, before it redraws in the next frame.
 
-AutoTranslateMode get_item_auto_translate_mode(idx: int) const 🔗
+AutoTranslateMode get_item_auto_translate_mode(idx: int) const 
 
 Returns item's auto translate mode.
 
-Color get_item_custom_bg_color(idx: int) const 🔗
+Color get_item_custom_bg_color(idx: int) const 
 
 Returns the custom background color of the item specified by idx index.
 
-Color get_item_custom_fg_color(idx: int) const 🔗
+Color get_item_custom_fg_color(idx: int) const 
 
 Returns the custom foreground color of the item specified by idx index.
 
-Texture2D get_item_icon(idx: int) const 🔗
+Texture2D get_item_icon(idx: int) const 
 
 Returns the icon associated with the specified index.
 
-Color get_item_icon_modulate(idx: int) const 🔗
+Color get_item_icon_modulate(idx: int) const 
 
 Returns a Color modulating item's icon at the specified index.
 
-Rect2 get_item_icon_region(idx: int) const 🔗
+Rect2 get_item_icon_region(idx: int) const 
 
 Returns the region of item's icon used. The whole icon will be used if the region has no area.
 
-String get_item_language(idx: int) const 🔗
+String get_item_language(idx: int) const 
 
 Returns item's text language code.
 
-Variant get_item_metadata(idx: int) const 🔗
+Variant get_item_metadata(idx: int) const 
 
 Returns the metadata value of the specified index.
 
-Rect2 get_item_rect(idx: int, expand: bool = true) const 🔗
+Rect2 get_item_rect(idx: int, expand: bool = true) const 
 
 Returns the position and size of the item with the specified index, in the coordinate system of the ItemList node. If expand is true the last column expands to fill the rest of the row.
 
 Note: The returned value is unreliable if called right after modifying the ItemList, before it redraws in the next frame.
 
-String get_item_text(idx: int) const 🔗
+String get_item_text(idx: int) const 
 
 Returns the text associated with the specified index.
 
-TextDirection get_item_text_direction(idx: int) const 🔗
+TextDirection get_item_text_direction(idx: int) const 
 
 Returns item's text base writing direction.
 
-String get_item_tooltip(idx: int) const 🔗
+String get_item_tooltip(idx: int) const 
 
 Returns the tooltip hint associated with the specified index.
 
-PackedInt32Array get_selected_items() 🔗
+PackedInt32Array get_selected_items() 
 
 Returns an array with the indexes of the selected items.
 
-VScrollBar get_v_scroll_bar() 🔗
+VScrollBar get_v_scroll_bar() 
 
 Returns the vertical scrollbar.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-bool is_anything_selected() 🔗
+bool is_anything_selected() 
 
 Returns true if one or more items are selected.
 
-bool is_item_disabled(idx: int) const 🔗
+bool is_item_disabled(idx: int) const 
 
 Returns true if the item at the specified index is disabled.
 
-bool is_item_icon_transposed(idx: int) const 🔗
+bool is_item_icon_transposed(idx: int) const 
 
 Returns true if the item icon will be drawn transposed, i.e. the X and Y axes are swapped.
 
-bool is_item_selectable(idx: int) const 🔗
+bool is_item_selectable(idx: int) const 
 
 Returns true if the item at the specified index is selectable.
 
-bool is_item_tooltip_enabled(idx: int) const 🔗
+bool is_item_tooltip_enabled(idx: int) const 
 
 Returns true if the tooltip is enabled for specified item index.
 
-bool is_selected(idx: int) const 🔗
+bool is_selected(idx: int) const 
 
 Returns true if the item at the specified index is currently selected.
 
-void move_item(from_idx: int, to_idx: int) 🔗
+void move_item(from_idx: int, to_idx: int) 
 
 Moves item from index from_idx to to_idx.
 
-void remove_item(idx: int) 🔗
+void remove_item(idx: int) 
 
 Removes the item specified by idx index from the list.
 
-void select(idx: int, single: bool = true) 🔗
+void select(idx: int, single: bool = true) 
 
 Select the item at the specified index.
 
 Note: This method does not trigger the item selection signal.
 
-void set_item_auto_translate_mode(idx: int, mode: AutoTranslateMode) 🔗
+void set_item_auto_translate_mode(idx: int, mode: AutoTranslateMode) 
 
 Sets the auto translate mode of the item associated with the specified index.
 
 Items use Node.AUTO_TRANSLATE_MODE_INHERIT by default, which uses the same auto translate mode as the ItemList itself.
 
-void set_item_custom_bg_color(idx: int, custom_bg_color: Color) 🔗
+void set_item_custom_bg_color(idx: int, custom_bg_color: Color) 
 
 Sets the background color of the item specified by idx index to the specified Color.
 
-void set_item_custom_fg_color(idx: int, custom_fg_color: Color) 🔗
+void set_item_custom_fg_color(idx: int, custom_fg_color: Color) 
 
 Sets the foreground color of the item specified by idx index to the specified Color.
 
-void set_item_disabled(idx: int, disabled: bool) 🔗
+void set_item_disabled(idx: int, disabled: bool) 
 
 Disables (or enables) the item at the specified index.
 
 Disabled items cannot be selected and do not trigger activation signals (when double-clicking or pressing Enter).
 
-void set_item_icon(idx: int, icon: Texture2D) 🔗
+void set_item_icon(idx: int, icon: Texture2D) 
 
 Sets (or replaces) the icon's Texture2D associated with the specified index.
 
-void set_item_icon_modulate(idx: int, modulate: Color) 🔗
+void set_item_icon_modulate(idx: int, modulate: Color) 
 
 Sets a modulating Color of the item associated with the specified index.
 
-void set_item_icon_region(idx: int, rect: Rect2) 🔗
+void set_item_icon_region(idx: int, rect: Rect2) 
 
 Sets the region of item's icon used. The whole icon will be used if the region has no area.
 
-void set_item_icon_transposed(idx: int, transposed: bool) 🔗
+void set_item_icon_transposed(idx: int, transposed: bool) 
 
 Sets whether the item icon will be drawn transposed.
 
-void set_item_language(idx: int, language: String) 🔗
+void set_item_language(idx: int, language: String) 
 
 Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-void set_item_metadata(idx: int, metadata: Variant) 🔗
+void set_item_metadata(idx: int, metadata: Variant) 
 
 Sets a value (of any type) to be stored with the item associated with the specified index.
 
-void set_item_selectable(idx: int, selectable: bool) 🔗
+void set_item_selectable(idx: int, selectable: bool) 
 
 Allows or disallows selection of the item associated with the specified index.
 
-void set_item_text(idx: int, text: String) 🔗
+void set_item_text(idx: int, text: String) 
 
 Sets text of the item associated with the specified index.
 
-void set_item_text_direction(idx: int, direction: TextDirection) 🔗
+void set_item_text_direction(idx: int, direction: TextDirection) 
 
 Sets item's text base writing direction.
 
-void set_item_tooltip(idx: int, tooltip: String) 🔗
+void set_item_tooltip(idx: int, tooltip: String) 
 
 Sets the tooltip hint for the item associated with the specified index.
 
-void set_item_tooltip_enabled(idx: int, enable: bool) 🔗
+void set_item_tooltip_enabled(idx: int, enable: bool) 
 
 Sets whether the tooltip hint is enabled for specified item index.
 
-void sort_items_by_text() 🔗
+void sort_items_by_text() 
 
 Sorts items in the list by their text.
 
-Color font_color = Color(0.65, 0.65, 0.65, 1) 🔗
+Color font_color = Color(0.65, 0.65, 0.65, 1) 
 
 Default text Color of the item.
 
-Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the item is hovered and not selected yet.
 
-Color font_hovered_selected_color = Color(1, 1, 1, 1) 🔗
+Color font_hovered_selected_color = Color(1, 1, 1, 1) 
 
 Text Color used when the item is hovered and selected.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the item.
 
-Color font_selected_color = Color(1, 1, 1, 1) 🔗
+Color font_selected_color = Color(1, 1, 1, 1) 
 
 Text Color used when the item is selected, but not hovered.
 
-Color guide_color = Color(0.7, 0.7, 0.7, 0.25) 🔗
+Color guide_color = Color(0.7, 0.7, 0.7, 0.25) 
 
 Color of the guideline. The guideline is a line drawn between each row of items.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal spacing between items.
 
-int icon_margin = 4 🔗
+int icon_margin = 4 
 
 The spacing between item's icon and text.
 
-int line_separation = 2 🔗
+int line_separation = 2 
 
 The vertical spacing between each line of text.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the item text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int v_separation = 4 🔗
+int v_separation = 4 
 
 The vertical spacing between items.
 
@@ -10157,7 +10157,7 @@ Font size of the item's text.
 
 StyleBox used for the cursor, when the ItemList is being focused.
 
-StyleBox cursor_unfocused 🔗
+StyleBox cursor_unfocused 
 
 StyleBox used for the cursor, when the ItemList is not being focused.
 
@@ -10165,11 +10165,11 @@ The focused style for the ItemList, drawn on top of the background, but below ev
 
 StyleBox for the hovered, but not selected items.
 
-StyleBox hovered_selected 🔗
+StyleBox hovered_selected 
 
 StyleBox for the hovered and selected items, used when the ItemList is not being focused.
 
-StyleBox hovered_selected_focus 🔗
+StyleBox hovered_selected_focus 
 
 StyleBox for the hovered and selected items, used when the ItemList is being focused.
 
@@ -10177,7 +10177,7 @@ The background style for the ItemList.
 
 StyleBox for the selected items, used when the ItemList is not being focused.
 
-StyleBox selected_focus 🔗
+StyleBox selected_focus 
 
 StyleBox for the selected items, used when the ItemList is being focused.
 
@@ -10294,7 +10294,7 @@ void set_font(value: Font)
 
 Font used for the text.
 
-Color font_color = Color(1, 1, 1, 1) 🔗
+Color font_color = Color(1, 1, 1, 1) 
 
 void set_font_color(value: Color)
 
@@ -10302,7 +10302,7 @@ Color get_font_color()
 
 void set_font_size(value: int)
 
-float line_spacing = 3.0 🔗
+float line_spacing = 3.0 
 
 void set_line_spacing(value: float)
 
@@ -10310,7 +10310,7 @@ float get_line_spacing()
 
 Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
-Color outline_color = Color(1, 1, 1, 1) 🔗
+Color outline_color = Color(1, 1, 1, 1) 
 
 void set_outline_color(value: Color)
 
@@ -10318,13 +10318,13 @@ Color get_outline_color()
 
 The color of the outline.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 void set_outline_size(value: int)
 
 int get_outline_size()
 
-float paragraph_spacing = 0.0 🔗
+float paragraph_spacing = 0.0 
 
 void set_paragraph_spacing(value: float)
 
@@ -10332,7 +10332,7 @@ float get_paragraph_spacing()
 
 Vertical space between paragraphs. Added on top of line_spacing.
 
-Color shadow_color = Color(0, 0, 0, 0) 🔗
+Color shadow_color = Color(0, 0, 0, 0) 
 
 void set_shadow_color(value: Color)
 
@@ -10340,7 +10340,7 @@ Color get_shadow_color()
 
 Color of the shadow effect. If alpha is 0, no shadow will be drawn.
 
-Vector2 shadow_offset = Vector2(1, 1) 🔗
+Vector2 shadow_offset = Vector2(1, 1) 
 
 void set_shadow_offset(value: Vector2)
 
@@ -10348,7 +10348,7 @@ Vector2 get_shadow_offset()
 
 Offset of the shadow effect, in pixels.
 
-int shadow_size = 1 🔗
+int shadow_size = 1 
 
 void set_shadow_size(value: int)
 
@@ -10356,7 +10356,7 @@ int get_shadow_size()
 
 Size of the shadow effect.
 
-int stacked_outline_count = 0 🔗
+int stacked_outline_count = 0 
 
 void set_stacked_outline_count(value: int)
 
@@ -10364,7 +10364,7 @@ int get_stacked_outline_count()
 
 The number of stacked outlines.
 
-int stacked_shadow_count = 0 🔗
+int stacked_shadow_count = 0 
 
 void set_stacked_shadow_count(value: int)
 
@@ -10372,67 +10372,67 @@ int get_stacked_shadow_count()
 
 The number of stacked shadows.
 
-void add_stacked_outline(index: int = -1) 🔗
+void add_stacked_outline(index: int = -1) 
 
 Adds a new stacked outline to the label at the given index. If index is -1, the new stacked outline will be added at the end of the list.
 
-void add_stacked_shadow(index: int = -1) 🔗
+void add_stacked_shadow(index: int = -1) 
 
 Adds a new stacked shadow to the label at the given index. If index is -1, the new stacked shadow will be added at the end of the list.
 
-Color get_stacked_outline_color(index: int) const 🔗
+Color get_stacked_outline_color(index: int) const 
 
 Returns the color of the stacked outline at index.
 
-int get_stacked_outline_size(index: int) const 🔗
+int get_stacked_outline_size(index: int) const 
 
 Returns the size of the stacked outline at index.
 
-Color get_stacked_shadow_color(index: int) const 🔗
+Color get_stacked_shadow_color(index: int) const 
 
 Returns the color of the stacked shadow at index.
 
-Vector2 get_stacked_shadow_offset(index: int) const 🔗
+Vector2 get_stacked_shadow_offset(index: int) const 
 
 Returns the offset of the stacked shadow at index.
 
-int get_stacked_shadow_outline_size(index: int) const 🔗
+int get_stacked_shadow_outline_size(index: int) const 
 
 Returns the outline size of the stacked shadow at index.
 
-void move_stacked_outline(from_index: int, to_position: int) 🔗
+void move_stacked_outline(from_index: int, to_position: int) 
 
 Moves the stacked outline at index from_index to the given position to_position in the array.
 
-void move_stacked_shadow(from_index: int, to_position: int) 🔗
+void move_stacked_shadow(from_index: int, to_position: int) 
 
 Moves the stacked shadow at index from_index to the given position to_position in the array.
 
-void remove_stacked_outline(index: int) 🔗
+void remove_stacked_outline(index: int) 
 
 Removes the stacked outline at index index.
 
-void remove_stacked_shadow(index: int) 🔗
+void remove_stacked_shadow(index: int) 
 
 Removes the stacked shadow at index index.
 
-void set_stacked_outline_color(index: int, color: Color) 🔗
+void set_stacked_outline_color(index: int, color: Color) 
 
 Sets the color of the stacked outline identified by the given index to color.
 
-void set_stacked_outline_size(index: int, size: int) 🔗
+void set_stacked_outline_size(index: int, size: int) 
 
 Sets the size of the stacked outline identified by the given index to size.
 
-void set_stacked_shadow_color(index: int, color: Color) 🔗
+void set_stacked_shadow_color(index: int, color: Color) 
 
 Sets the color of the stacked shadow identified by the given index to color.
 
-void set_stacked_shadow_offset(index: int, offset: Vector2) 🔗
+void set_stacked_shadow_offset(index: int, offset: Vector2) 
 
 Sets the offset of the stacked shadow identified by the given index to offset.
 
-void set_stacked_shadow_outline_size(index: int, size: int) 🔗
+void set_stacked_shadow_outline_size(index: int, size: int) 
 
 Sets the outline size of the stacked shadow identified by the given index to size.
 
@@ -10492,7 +10492,7 @@ get_total_character_count() const
 
 get_visible_line_count() const
 
-AutowrapMode autowrap_mode = 0 🔗
+AutowrapMode autowrap_mode = 0 
 
 void set_autowrap_mode(value: AutowrapMode)
 
@@ -10500,7 +10500,7 @@ AutowrapMode get_autowrap_mode()
 
 If set to something other than TextServer.AUTOWRAP_OFF, the text gets wrapped inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text.
 
-BitField[LineBreakFlag] autowrap_trim_flags = 192 🔗
+BitField[LineBreakFlag] autowrap_trim_flags = 192 
 
 void set_autowrap_trim_flags(value: BitField[LineBreakFlag])
 
@@ -10508,7 +10508,7 @@ BitField[LineBreakFlag] get_autowrap_trim_flags()
 
 Autowrap space trimming flags. See TextServer.BREAK_TRIM_START_EDGE_SPACES and TextServer.BREAK_TRIM_END_EDGE_SPACES for more info.
 
-bool clip_text = false 🔗
+bool clip_text = false 
 
 void set_clip_text(value: bool)
 
@@ -10516,7 +10516,7 @@ bool is_clipping_text()
 
 If true, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
 
-String ellipsis_char = "…" 🔗
+String ellipsis_char = "…" 
 
 void set_ellipsis_char(value: String)
 
@@ -10524,7 +10524,7 @@ String get_ellipsis_char()
 
 Ellipsis character used for text clipping.
 
-HorizontalAlignment horizontal_alignment = 0 🔗
+HorizontalAlignment horizontal_alignment = 0 
 
 void set_horizontal_alignment(value: HorizontalAlignment)
 
@@ -10532,7 +10532,7 @@ HorizontalAlignment get_horizontal_alignment()
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill (also known as justify).
 
-BitField[JustificationFlag] justification_flags = 163 🔗
+BitField[JustificationFlag] justification_flags = 163 
 
 void set_justification_flags(value: BitField[JustificationFlag])
 
@@ -10540,7 +10540,7 @@ BitField[JustificationFlag] get_justification_flags()
 
 Line fill alignment rules.
 
-LabelSettings label_settings 🔗
+LabelSettings label_settings 
 
 void set_label_settings(value: LabelSettings)
 
@@ -10548,7 +10548,7 @@ LabelSettings get_label_settings()
 
 A LabelSettings resource that can be shared between multiple Label nodes. Takes priority over theme properties.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -10556,7 +10556,7 @@ String get_language()
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-int lines_skipped = 0 🔗
+int lines_skipped = 0 
 
 void set_lines_skipped(value: int)
 
@@ -10564,7 +10564,7 @@ int get_lines_skipped()
 
 The number of the lines ignored and not displayed from the start of the text value.
 
-int max_lines_visible = -1 🔗
+int max_lines_visible = -1 
 
 void set_max_lines_visible(value: int)
 
@@ -10572,7 +10572,7 @@ int get_max_lines_visible()
 
 Limits the lines of text the node shows on screen.
 
-String paragraph_separator = "\\n" 🔗
+String paragraph_separator = "\\n" 
 
 void set_paragraph_separator(value: String)
 
@@ -10580,7 +10580,7 @@ String get_paragraph_separator()
 
 String used as a paragraph separator. Each paragraph is processed independently, in its own BiDi context.
 
-StructuredTextParser structured_text_bidi_override = 0 🔗
+StructuredTextParser structured_text_bidi_override = 0 
 
 void set_structured_text_bidi_override(value: StructuredTextParser)
 
@@ -10588,7 +10588,7 @@ StructuredTextParser get_structured_text_bidi_override()
 
 Set BiDi algorithm override for the structured text.
 
-Array structured_text_bidi_override_options = [] 🔗
+Array structured_text_bidi_override_options = [] 
 
 void set_structured_text_bidi_override_options(value: Array)
 
@@ -10596,7 +10596,7 @@ Array get_structured_text_bidi_override_options()
 
 Set additional options for BiDi override.
 
-PackedFloat32Array tab_stops = PackedFloat32Array() 🔗
+PackedFloat32Array tab_stops = PackedFloat32Array() 
 
 void set_tab_stops(value: PackedFloat32Array)
 
@@ -10610,7 +10610,7 @@ void set_text(value: String)
 
 The text to display on screen.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -10618,7 +10618,7 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-OverrunBehavior text_overrun_behavior = 0 🔗
+OverrunBehavior text_overrun_behavior = 0 
 
 void set_text_overrun_behavior(value: OverrunBehavior)
 
@@ -10626,13 +10626,13 @@ OverrunBehavior get_text_overrun_behavior()
 
 The clipping behavior when the text exceeds the node's bounding rectangle.
 
-bool uppercase = false 🔗
+bool uppercase = false 
 
 void set_uppercase(value: bool)
 
 If true, all the text displays as UPPERCASE.
 
-VerticalAlignment vertical_alignment = 0 🔗
+VerticalAlignment vertical_alignment = 0 
 
 void set_vertical_alignment(value: VerticalAlignment)
 
@@ -10640,7 +10640,7 @@ VerticalAlignment get_vertical_alignment()
 
 Controls the text's vertical alignment. Supports top, center, bottom, and fill.
 
-int visible_characters = -1 🔗
+int visible_characters = -1 
 
 void set_visible_characters(value: int)
 
@@ -10652,7 +10652,7 @@ Note: Setting this property updates visible_ratio accordingly.
 
 Note: Characters are counted as Unicode codepoints. A single visible grapheme may contain multiple codepoints (e.g. certain emoji use three codepoints). A single codepoint may contain two UTF-16 characters, which are used in C# strings.
 
-VisibleCharactersBehavior visible_characters_behavior = 0 🔗
+VisibleCharactersBehavior visible_characters_behavior = 0 
 
 void set_visible_characters_behavior(value: VisibleCharactersBehavior)
 
@@ -10660,7 +10660,7 @@ VisibleCharactersBehavior get_visible_characters_behavior()
 
 The clipping behavior when visible_characters or visible_ratio is set.
 
-float visible_ratio = 1.0 🔗
+float visible_ratio = 1.0 
 
 void set_visible_ratio(value: float)
 
@@ -10670,15 +10670,15 @@ The fraction of characters to display, relative to the total number of character
 
 Note: Setting this property updates visible_characters accordingly.
 
-Rect2 get_character_bounds(pos: int) const 🔗
+Rect2 get_character_bounds(pos: int) const 
 
 Returns the bounding rectangle of the character at position pos in the label's local coordinate system. If the character is a non-visual character or pos is outside the valid range, an empty Rect2 is returned. If the character is a part of a composite grapheme, the bounding rectangle of the whole grapheme is returned.
 
-int get_line_count() const 🔗
+int get_line_count() const 
 
 Returns the number of lines of text the Label has.
 
-int get_line_height(line: int = -1) const 🔗
+int get_line_height(line: int = -1) const 
 
 Returns the height of the line line.
 
@@ -10686,49 +10686,49 @@ If line is set to -1, returns the biggest line height.
 
 If there are no lines, returns font size in pixels.
 
-int get_total_character_count() const 🔗
+int get_total_character_count() const 
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
 
-int get_visible_line_count() const 🔗
+int get_visible_line_count() const 
 
 Returns the number of lines shown. Useful if the Label's height cannot currently display all lines.
 
-Color font_color = Color(1, 1, 1, 1) 🔗
+Color font_color = Color(1, 1, 1, 1) 
 
 Default text Color of the Label.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The color of text outline.
 
-Color font_shadow_color = Color(0, 0, 0, 0) 🔗
+Color font_shadow_color = Color(0, 0, 0, 0) 
 
 Color of the text's shadow effect.
 
-int line_spacing = 3 🔗
+int line_spacing = 3 
 
 Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
 Note: Using a value that is larger than half the font size is not recommended, as the font outline may fail to be fully closed in this case.
 
-int paragraph_spacing = 0 🔗
+int paragraph_spacing = 0 
 
 Vertical space between paragraphs. Added on top of line_spacing.
 
-int shadow_offset_x = 1 🔗
+int shadow_offset_x = 1 
 
 The horizontal offset of the text's shadow.
 
-int shadow_offset_y = 1 🔗
+int shadow_offset_y = 1 
 
 The vertical offset of the text's shadow.
 
-int shadow_outline_size = 1 🔗
+int shadow_outline_size = 1 
 
 The size of the shadow outline.
 
@@ -10900,19 +10900,19 @@ Color(0.5, 0.5, 0.5, 1)
 
 minimum_character_width
 
-editing_toggled(toggled_on: bool) 🔗
+editing_toggled(toggled_on: bool) 
 
 Emitted when the LineEdit switches in or out of edit mode.
 
-text_change_rejected(rejected_substring: String) 🔗
+text_change_rejected(rejected_substring: String) 
 
 Emitted when appending text that overflows the max_length. The appended text is truncated to fit max_length, and the part that couldn't fit is passed as the rejected_substring argument.
 
-text_changed(new_text: String) 🔗
+text_changed(new_text: String) 
 
 Emitted when the text changes.
 
-text_submitted(new_text: String) 🔗
+text_submitted(new_text: String) 
 
 Emitted when the user presses the ui_text_submit action (by default: Enter or Kp Enter) while the LineEdit has focus.
 
@@ -11046,7 +11046,7 @@ MenuItems MENU_MAX = 31
 
 Represents the size of the MenuItems enum.
 
-enum VirtualKeyboardType: 🔗
+enum VirtualKeyboardType: 
 
 VirtualKeyboardType KEYBOARD_TYPE_DEFAULT = 0
 
@@ -11082,7 +11082,7 @@ VirtualKeyboardType KEYBOARD_TYPE_URL = 7
 
 Virtual keyboard with additional keys to assist with typing URLs.
 
-HorizontalAlignment alignment = 0 🔗
+HorizontalAlignment alignment = 0 
 
 void set_horizontal_alignment(value: HorizontalAlignment)
 
@@ -11090,15 +11090,15 @@ HorizontalAlignment get_horizontal_alignment()
 
 Text alignment as defined in the HorizontalAlignment enum.
 
-bool backspace_deletes_composite_character_enabled = false 🔗
+bool backspace_deletes_composite_character_enabled = false 
 
 void set_backspace_deletes_composite_character_enabled(value: bool)
 
 bool is_backspace_deletes_composite_character_enabled()
 
-If true and caret_mid_grapheme is false, backspace deletes an entire composite character such as ❤️‍🩹, instead of deleting part of the composite character.
+If true and caret_mid_grapheme is false, backspace deletes an entire composite character such as ️‍, instead of deleting part of the composite character.
 
-bool caret_blink = false 🔗
+bool caret_blink = false 
 
 void set_caret_blink_enabled(value: bool)
 
@@ -11106,7 +11106,7 @@ bool is_caret_blink_enabled()
 
 If true, makes the caret blink.
 
-float caret_blink_interval = 0.65 🔗
+float caret_blink_interval = 0.65 
 
 void set_caret_blink_interval(value: float)
 
@@ -11114,7 +11114,7 @@ float get_caret_blink_interval()
 
 The interval at which the caret blinks (in seconds).
 
-int caret_column = 0 🔗
+int caret_column = 0 
 
 void set_caret_column(value: int)
 
@@ -11122,7 +11122,7 @@ int get_caret_column()
 
 The caret's column position inside the LineEdit. When set, the text may scroll to accommodate it.
 
-bool caret_force_displayed = false 🔗
+bool caret_force_displayed = false 
 
 void set_caret_force_displayed(value: bool)
 
@@ -11130,7 +11130,7 @@ bool is_caret_force_displayed()
 
 If true, the LineEdit will always show the caret, even if not editing or focus is lost.
 
-bool caret_mid_grapheme = false 🔗
+bool caret_mid_grapheme = false 
 
 void set_caret_mid_grapheme_enabled(value: bool)
 
@@ -11140,7 +11140,7 @@ Allow moving caret, selecting and removing the individual composite character co
 
 Note: Backspace is always removing individual composite character components.
 
-bool clear_button_enabled = false 🔗
+bool clear_button_enabled = false 
 
 void set_clear_button_enabled(value: bool)
 
@@ -11148,7 +11148,7 @@ bool is_clear_button_enabled()
 
 If true, the LineEdit will show a clear button if text is not empty, which can be used to clear the text quickly.
 
-bool context_menu_enabled = true 🔗
+bool context_menu_enabled = true 
 
 void set_context_menu_enabled(value: bool)
 
@@ -11156,7 +11156,7 @@ bool is_context_menu_enabled()
 
 If true, the context menu will appear when right-clicked.
 
-bool deselect_on_focus_loss_enabled = true 🔗
+bool deselect_on_focus_loss_enabled = true 
 
 void set_deselect_on_focus_loss_enabled(value: bool)
 
@@ -11164,7 +11164,7 @@ bool is_deselect_on_focus_loss_enabled()
 
 If true, the selected text will be deselected when focus is lost.
 
-bool drag_and_drop_selection_enabled = true 🔗
+bool drag_and_drop_selection_enabled = true 
 
 void set_drag_and_drop_selection_enabled(value: bool)
 
@@ -11172,7 +11172,7 @@ bool is_drag_and_drop_selection_enabled()
 
 If true, allow drag and drop of selected text.
 
-bool draw_control_chars = false 🔗
+bool draw_control_chars = false 
 
 void set_draw_control_chars(value: bool)
 
@@ -11180,13 +11180,13 @@ bool get_draw_control_chars()
 
 If true, control characters are displayed.
 
-bool editable = true 🔗
+bool editable = true 
 
 void set_editable(value: bool)
 
 If false, existing text cannot be modified and new text cannot be added.
 
-bool emoji_menu_enabled = true 🔗
+bool emoji_menu_enabled = true 
 
 void set_emoji_menu_enabled(value: bool)
 
@@ -11194,7 +11194,7 @@ bool is_emoji_menu_enabled()
 
 If true, "Emoji and Symbols" menu is enabled.
 
-bool expand_to_text_length = false 🔗
+bool expand_to_text_length = false 
 
 void set_expand_to_text_length_enabled(value: bool)
 
@@ -11206,7 +11206,7 @@ void set_flat(value: bool)
 
 If true, the LineEdit doesn't display decoration.
 
-bool keep_editing_on_text_submit = false 🔗
+bool keep_editing_on_text_submit = false 
 
 void set_keep_editing_on_text_submit(value: bool)
 
@@ -11214,7 +11214,7 @@ bool is_editing_kept_on_text_submit()
 
 If true, the LineEdit will not exit edit mode when text is submitted by pressing ui_text_submit action (by default: Enter or Kp Enter).
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -11230,7 +11230,7 @@ When a limit is defined, characters that would exceed max_length are truncated. 
 
 If any input text is truncated, the text_change_rejected signal is emitted with the truncated substring as a parameter:
 
-bool middle_mouse_paste_enabled = true 🔗
+bool middle_mouse_paste_enabled = true 
 
 void set_middle_mouse_paste_enabled(value: bool)
 
@@ -11240,7 +11240,7 @@ If false, using middle mouse button to paste clipboard will be disabled.
 
 Note: This method is only implemented on Linux.
 
-String placeholder_text = "" 🔗
+String placeholder_text = "" 
 
 void set_placeholder(value: String)
 
@@ -11248,7 +11248,7 @@ String get_placeholder()
 
 Text shown when the LineEdit is empty. It is not the LineEdit's default value (see text).
 
-Texture2D right_icon 🔗
+Texture2D right_icon 
 
 void set_right_icon(value: Texture2D)
 
@@ -11256,13 +11256,13 @@ Texture2D get_right_icon()
 
 Sets the icon that will appear in the right end of the LineEdit if there's no text, or always, if clear_button_enabled is set to false.
 
-bool secret = false 🔗
+bool secret = false 
 
 void set_secret(value: bool)
 
 If true, every character is replaced with the secret character (see secret_character).
 
-String secret_character = "•" 🔗
+String secret_character = "•" 
 
 void set_secret_character(value: String)
 
@@ -11270,7 +11270,7 @@ String get_secret_character()
 
 The character to use to mask secret input. Only a single character can be used as the secret character. If it is longer than one character, only the first one will be used. If it is empty, a space will be used instead.
 
-bool select_all_on_focus = false 🔗
+bool select_all_on_focus = false 
 
 void set_select_all_on_focus(value: bool)
 
@@ -11278,7 +11278,7 @@ bool is_select_all_on_focus()
 
 If true, the LineEdit will select the whole text when it gains focus.
 
-bool selecting_enabled = true 🔗
+bool selecting_enabled = true 
 
 void set_selecting_enabled(value: bool)
 
@@ -11286,7 +11286,7 @@ bool is_selecting_enabled()
 
 If false, it's impossible to select the text using mouse nor keyboard.
 
-bool shortcut_keys_enabled = true 🔗
+bool shortcut_keys_enabled = true 
 
 void set_shortcut_keys_enabled(value: bool)
 
@@ -11294,7 +11294,7 @@ bool is_shortcut_keys_enabled()
 
 If true, shortcut keys for context menu items are enabled, even if the context menu is disabled.
 
-StructuredTextParser structured_text_bidi_override = 0 🔗
+StructuredTextParser structured_text_bidi_override = 0 
 
 void set_structured_text_bidi_override(value: StructuredTextParser)
 
@@ -11302,7 +11302,7 @@ StructuredTextParser get_structured_text_bidi_override()
 
 Set BiDi algorithm override for the structured text.
 
-Array structured_text_bidi_override_options = [] 🔗
+Array structured_text_bidi_override_options = [] 
 
 void set_structured_text_bidi_override_options(value: Array)
 
@@ -11316,7 +11316,7 @@ String value of the LineEdit.
 
 Note: Changing text using this property won't emit the text_changed signal.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -11324,7 +11324,7 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-bool virtual_keyboard_enabled = true 🔗
+bool virtual_keyboard_enabled = true 
 
 void set_virtual_keyboard_enabled(value: bool)
 
@@ -11332,7 +11332,7 @@ bool is_virtual_keyboard_enabled()
 
 If true, the native virtual keyboard is enabled on platforms that support it.
 
-bool virtual_keyboard_show_on_focus = true 🔗
+bool virtual_keyboard_show_on_focus = true 
 
 void set_virtual_keyboard_show_on_focus(value: bool)
 
@@ -11340,7 +11340,7 @@ bool get_virtual_keyboard_show_on_focus()
 
 If true, the native virtual keyboard is shown on focus events on platforms that support it.
 
-VirtualKeyboardType virtual_keyboard_type = 0 🔗
+VirtualKeyboardType virtual_keyboard_type = 0 
 
 void set_virtual_keyboard_type(value: VirtualKeyboardType)
 
@@ -11354,11 +11354,11 @@ Closes the Input Method Editor (IME) if it is open. Any text in the IME will be 
 
 Erases the LineEdit's text.
 
-void delete_char_at_caret() 🔗
+void delete_char_at_caret() 
 
 Deletes one character at the caret's current position (equivalent to pressing Delete).
 
-void delete_text(from_column: int, to_column: int) 🔗
+void delete_text(from_column: int, to_column: int) 
 
 Deletes a section of the text going from position from_column to to_column. Both parameters should be within the text's length.
 
@@ -11368,7 +11368,7 @@ Allows entering edit mode whether the LineEdit is focused or not.
 
 See also keep_editing_on_text_submit.
 
-PopupMenu get_menu() const 🔗
+PopupMenu get_menu() const 
 
 Returns the PopupMenu of this LineEdit. By default, this menu is displayed when right-clicking on the LineEdit.
 
@@ -11376,67 +11376,67 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their Window.visible property.
 
-int get_next_composite_character_column(column: int) const 🔗
+int get_next_composite_character_column(column: int) const 
 
-Returns the correct column at the end of a composite character like ❤️‍🩹 (mending heart; Unicode: U+2764 U+FE0F U+200D U+1FA79) which is comprised of more than one Unicode code point, if the caret is at the start of the composite character. Also returns the correct column with the caret at mid grapheme and for non-composite characters.
+Returns the correct column at the end of a composite character like ️‍ (mending heart; Unicode: U+2764 U+FE0F U+200D U+1FA79) which is comprised of more than one Unicode code point, if the caret is at the start of the composite character. Also returns the correct column with the caret at mid grapheme and for non-composite characters.
 
 Note: To check at caret location use get_next_composite_character_column(get_caret_column())
 
-int get_previous_composite_character_column(column: int) const 🔗
+int get_previous_composite_character_column(column: int) const 
 
-Returns the correct column at the start of a composite character like ❤️‍🩹 (mending heart; Unicode: U+2764 U+FE0F U+200D U+1FA79) which is comprised of more than one Unicode code point, if the caret is at the end of the composite character. Also returns the correct column with the caret at mid grapheme and for non-composite characters.
+Returns the correct column at the start of a composite character like ️‍ (mending heart; Unicode: U+2764 U+FE0F U+200D U+1FA79) which is comprised of more than one Unicode code point, if the caret is at the end of the composite character. Also returns the correct column with the caret at mid grapheme and for non-composite characters.
 
 Note: To check at caret location use get_previous_composite_character_column(get_caret_column())
 
-float get_scroll_offset() const 🔗
+float get_scroll_offset() const 
 
 Returns the scroll offset due to caret_column, as a number of characters.
 
-String get_selected_text() 🔗
+String get_selected_text() 
 
 Returns the text inside the selection.
 
-int get_selection_from_column() const 🔗
+int get_selection_from_column() const 
 
 Returns the selection begin column.
 
-int get_selection_to_column() const 🔗
+int get_selection_to_column() const 
 
 Returns the selection end column.
 
-bool has_ime_text() const 🔗
+bool has_ime_text() const 
 
 Returns true if the user has text in the Input Method Editor (IME).
 
-bool has_redo() const 🔗
+bool has_redo() const 
 
 Returns true if a "redo" action is available.
 
-bool has_selection() const 🔗
+bool has_selection() const 
 
 Returns true if the user has selected text.
 
-bool has_undo() const 🔗
+bool has_undo() const 
 
 Returns true if an "undo" action is available.
 
-void insert_text_at_caret(text: String) 🔗
+void insert_text_at_caret(text: String) 
 
 Inserts text at the caret. If the resulting value is longer than max_length, nothing happens.
 
-bool is_editing() const 🔗
+bool is_editing() const 
 
 Returns whether the LineEdit is being edited.
 
-bool is_menu_visible() const 🔗
+bool is_menu_visible() const 
 
 Returns whether the menu is visible. Use this instead of get_menu().visible to improve performance (so the creation of the menu is avoided).
 
-void menu_option(option: int) 🔗
+void menu_option(option: int) 
 
 Executes a given action as defined in the MenuItems enum.
 
-void select(from: int = 0, to: int = -1) 🔗
+void select(from: int = 0, to: int = -1) 
 
 Selects characters inside LineEdit between from and to. By default, from is at the beginning and to at the end.
 
@@ -11444,49 +11444,49 @@ Selects the whole String.
 
 Allows exiting edit mode while preserving focus.
 
-Color caret_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color caret_color = Color(0.95, 0.95, 0.95, 1) 
 
 Color of the LineEdit's caret (text cursor). This can be set to a fully transparent color to hide the caret entirely.
 
-Color clear_button_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color clear_button_color = Color(0.875, 0.875, 0.875, 1) 
 
 Color used as default tint for the clear button.
 
-Color clear_button_color_pressed = Color(1, 1, 1, 1) 🔗
+Color clear_button_color_pressed = Color(1, 1, 1, 1) 
 
 Color used for the clear button when it's pressed.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the LineEdit.
 
-Color font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6) 🔗
+Color font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6) 
 
 Font color for placeholder_text.
 
-Color font_selected_color = Color(1, 1, 1, 1) 🔗
+Color font_selected_color = Color(1, 1, 1, 1) 
 
 Font color for selected text (inside the selection rectangle).
 
-Color font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Font color when editing is disabled.
 
-Color selection_color = Color(0.5, 0.5, 0.5, 1) 🔗
+Color selection_color = Color(0.5, 0.5, 0.5, 1) 
 
 Color of the selection rectangle.
 
-int caret_width = 1 🔗
+int caret_width = 1 
 
 The caret's width in pixels. Greater values can be used to improve accessibility by ensuring the caret is easily visible, or to ensure consistency with a large font size.
 
-int minimum_character_width = 4 🔗
+int minimum_character_width = 4 
 
 Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'M' characters (i.e. this number of 'M' characters can be displayed without scrolling).
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
@@ -11612,7 +11612,7 @@ Color(0.95, 0.95, 0.95, 1)
 
 font_hover_pressed_color
 
-enum UnderlineMode: 🔗
+enum UnderlineMode: 
 
 UnderlineMode UNDERLINE_MODE_ALWAYS = 0
 
@@ -11626,7 +11626,7 @@ UnderlineMode UNDERLINE_MODE_NEVER = 2
 
 The LinkButton will never show an underline at the bottom of its text.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -11634,7 +11634,7 @@ String get_language()
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-StructuredTextParser structured_text_bidi_override = 0 🔗
+StructuredTextParser structured_text_bidi_override = 0 
 
 void set_structured_text_bidi_override(value: StructuredTextParser)
 
@@ -11642,7 +11642,7 @@ StructuredTextParser get_structured_text_bidi_override()
 
 Set BiDi algorithm override for the structured text.
 
-Array structured_text_bidi_override_options = [] 🔗
+Array structured_text_bidi_override_options = [] 
 
 void set_structured_text_bidi_override_options(value: Array)
 
@@ -11654,7 +11654,7 @@ void set_text(value: String)
 
 The button's text that will be displayed inside the button's area.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -11662,7 +11662,7 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-UnderlineMode underline = 0 🔗
+UnderlineMode underline = 0 
 
 void set_underline_mode(value: UnderlineMode)
 
@@ -11674,41 +11674,41 @@ void set_uri(value: String)
 
 The URI for this LinkButton. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via OS.shell_open()). HTTP and HTTPS URLs open the default web browser.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
 Default text Color of the LinkButton.
 
-Color font_disabled_color = Color(0, 0, 0, 1) 🔗
+Color font_disabled_color = Color(0, 0, 0, 1) 
 
 Text Color used when the LinkButton is disabled.
 
-Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the LinkButton is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
 
-Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the LinkButton is being hovered.
 
-Color font_hover_pressed_color = Color(0, 0, 0, 1) 🔗
+Color font_hover_pressed_color = Color(0, 0, 0, 1) 
 
 Text Color used when the LinkButton is being hovered and pressed.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the LinkButton.
 
-Color font_pressed_color = Color(1, 1, 1, 1) 🔗
+Color font_pressed_color = Color(1, 1, 1, 1) 
 
 Text Color used when the LinkButton is being pressed.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int underline_spacing = 2 🔗
+int underline_spacing = 2 
 
 The vertical space between the baseline of text and the underline.
 
@@ -11985,15 +11985,15 @@ MarginContainer adds an adjustable margin on each side of its child controls. Th
 
 Note: The margin sizes are theme overrides, not normal properties. This is an example of how to change them in code:
 
-int margin_bottom = 0 🔗
+int margin_bottom = 0 
 
 Offsets towards the inside direct children of the container by this amount of pixels from the bottom.
 
-int margin_left = 0 🔗
+int margin_left = 0 
 
 Offsets towards the inside direct children of the container by this amount of pixels from the left.
 
-int margin_right = 0 🔗
+int margin_right = 0 
 
 Offsets towards the inside direct children of the container by this amount of pixels from the right.
 
@@ -12325,7 +12325,7 @@ void set_flat(value: bool)
 
 Flat MenuBar don't display item decoration.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -12333,7 +12333,7 @@ String get_language()
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-bool prefer_global_menu = true 🔗
+bool prefer_global_menu = true 
 
 void set_prefer_global_menu(value: bool)
 
@@ -12345,7 +12345,7 @@ Note: If true and global menu is supported, this node is not displayed, has zero
 
 Note: This property overrides the value of the PopupMenu.prefer_native_menu property of the child nodes.
 
-int start_index = -1 🔗
+int start_index = -1 
 
 void set_start_index(value: int)
 
@@ -12353,7 +12353,7 @@ int get_start_index()
 
 Position order in the global menu to insert MenuBar items at. All menu items in the MenuBar are always inserted as a continuous range. Menus with lower start_index are inserted first. Menus with start_index equal to -1 are inserted last.
 
-bool switch_on_hover = true 🔗
+bool switch_on_hover = true 
 
 void set_switch_on_hover(value: bool)
 
@@ -12361,7 +12361,7 @@ bool is_switch_on_hover()
 
 If true, when the cursor hovers above menu item, it will close the current PopupMenu and open the other one.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -12369,87 +12369,87 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-int get_menu_count() const 🔗
+int get_menu_count() const 
 
 Returns number of menu items.
 
-PopupMenu get_menu_popup(menu: int) const 🔗
+PopupMenu get_menu_popup(menu: int) const 
 
 Returns PopupMenu associated with menu item.
 
-String get_menu_title(menu: int) const 🔗
+String get_menu_title(menu: int) const 
 
 Returns menu item title.
 
-String get_menu_tooltip(menu: int) const 🔗
+String get_menu_tooltip(menu: int) const 
 
 Returns menu item tooltip.
 
-bool is_menu_disabled(menu: int) const 🔗
+bool is_menu_disabled(menu: int) const 
 
 Returns true, if menu item is disabled.
 
-bool is_menu_hidden(menu: int) const 🔗
+bool is_menu_hidden(menu: int) const 
 
 Returns true, if menu item is hidden.
 
-bool is_native_menu() const 🔗
+bool is_native_menu() const 
 
 Returns true, if system global menu is supported and used by this MenuBar.
 
-void set_disable_shortcuts(disabled: bool) 🔗
+void set_disable_shortcuts(disabled: bool) 
 
 If true, shortcuts are disabled and cannot be used to trigger the button.
 
-void set_menu_disabled(menu: int, disabled: bool) 🔗
+void set_menu_disabled(menu: int, disabled: bool) 
 
 If true, menu item is disabled.
 
-void set_menu_hidden(menu: int, hidden: bool) 🔗
+void set_menu_hidden(menu: int, hidden: bool) 
 
 If true, menu item is hidden.
 
-void set_menu_title(menu: int, title: String) 🔗
+void set_menu_title(menu: int, title: String) 
 
 Sets menu item title.
 
-void set_menu_tooltip(menu: int, tooltip: String) 🔗
+void set_menu_tooltip(menu: int, tooltip: String) 
 
 Sets menu item tooltip.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
 Default text Color of the menu item.
 
-Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Text Color used when the menu item is disabled.
 
-Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_focus_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the menu item is focused. Only replaces the normal text color of the menu item. Disabled, hovered, and pressed states take precedence over this color.
 
-Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hover_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the menu item is being hovered.
 
-Color font_hover_pressed_color = Color(1, 1, 1, 1) 🔗
+Color font_hover_pressed_color = Color(1, 1, 1, 1) 
 
 Text Color used when the menu item is being hovered and pressed.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the menu item.
 
-Color font_pressed_color = Color(1, 1, 1, 1) 🔗
+Color font_pressed_color = Color(1, 1, 1, 1) 
 
 Text Color used when the menu item is being pressed.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal space between menu items.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
@@ -12461,33 +12461,33 @@ Font size of the menu item's text.
 
 StyleBox used when the menu item is disabled.
 
-StyleBox disabled_mirrored 🔗
+StyleBox disabled_mirrored 
 
 StyleBox used when the menu item is disabled (for right-to-left layouts).
 
 StyleBox used when the menu item is being hovered.
 
-StyleBox hover_mirrored 🔗
+StyleBox hover_mirrored 
 
 StyleBox used when the menu item is being hovered (for right-to-left layouts).
 
-StyleBox hover_pressed 🔗
+StyleBox hover_pressed 
 
 StyleBox used when the menu item is being pressed and hovered at the same time.
 
-StyleBox hover_pressed_mirrored 🔗
+StyleBox hover_pressed_mirrored 
 
 StyleBox used when the menu item is being pressed and hovered at the same time (for right-to-left layouts).
 
 Default StyleBox for the menu item.
 
-StyleBox normal_mirrored 🔗
+StyleBox normal_mirrored 
 
 Default StyleBox for the menu item (for right-to-left layouts).
 
 StyleBox used when the menu item is being pressed.
 
-StyleBox pressed_mirrored 🔗
+StyleBox pressed_mirrored 
 
 StyleBox used when the menu item is being pressed (for right-to-left layouts).
 
@@ -12542,33 +12542,33 @@ _write_frame(frame_image: Image, audio_frame_block: const void*) virtual require
 
 add_writer(writer: MovieWriter) static
 
-int _get_audio_mix_rate() virtual required const 🔗
+int _get_audio_mix_rate() virtual required const 
 
 Called when the audio sample rate used for recording the audio is requested by the engine. The value returned must be specified in Hz. Defaults to 48000 Hz if _get_audio_mix_rate() is not overridden.
 
-SpeakerMode _get_audio_speaker_mode() virtual required const 🔗
+SpeakerMode _get_audio_speaker_mode() virtual required const 
 
 Called when the audio speaker mode used for recording the audio is requested by the engine. This can affect the number of output channels in the resulting audio file/stream. Defaults to AudioServer.SPEAKER_MODE_STEREO if _get_audio_speaker_mode() is not overridden.
 
-bool _handles_file(path: String) virtual required const 🔗
+bool _handles_file(path: String) virtual required const 
 
 Called when the engine determines whether this MovieWriter is able to handle the file at path. Must return true if this MovieWriter is able to handle the given file path, false otherwise. Typically, _handles_file() is overridden as follows to allow the user to record a file at any path with a given file extension:
 
-Error _write_begin(movie_size: Vector2i, fps: int, base_path: String) virtual required 🔗
+Error _write_begin(movie_size: Vector2i, fps: int, base_path: String) virtual required 
 
 Called once before the engine starts writing video and audio data. movie_size is the width and height of the video to save. fps is the number of frames per second specified in the project settings or using the --fixed-fps <fps> command line argument.
 
-void _write_end() virtual required 🔗
+void _write_end() virtual required 
 
 Called when the engine finishes writing. This occurs when the engine quits by pressing the window manager's close button, or when SceneTree.quit() is called.
 
 Note: Pressing Ctrl + C on the terminal running the editor/project does not result in _write_end() being called.
 
-Error _write_frame(frame_image: Image, audio_frame_block: const void*) virtual required 🔗
+Error _write_frame(frame_image: Image, audio_frame_block: const void*) virtual required 
 
 Called at the end of every rendered frame. The frame_image and audio_frame_block function arguments should be written to.
 
-void add_writer(writer: MovieWriter) static 🔗
+void add_writer(writer: MovieWriter) static 
 
 Adds a writer to be usable by the engine. The supported file extensions can be set by overriding _handles_file().
 
@@ -12776,7 +12776,7 @@ SystemMenus DOCK_MENU_ID = 5
 
 Dock icon right-click menu ID (on macOS this menu include standard application control items and a list of open windows).
 
-int add_check_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_check_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new checkable item with text label to the global menu rid.
 
@@ -12790,7 +12790,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_icon_check_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_icon_check_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new checkable item with text label and icon icon to the global menu rid.
 
@@ -12804,7 +12804,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_icon_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_icon_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new item with text label and icon icon to the global menu rid.
 
@@ -12818,7 +12818,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_icon_radio_check_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_icon_radio_check_item(rid: RID, icon: Texture2D, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new radio-checkable item with text label and icon icon to the global menu rid.
 
@@ -12834,7 +12834,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new item with text label to the global menu rid.
 
@@ -12848,7 +12848,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_multistate_item(rid: RID, label: String, max_states: int, default_state: int, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_multistate_item(rid: RID, label: String, max_states: int, default_state: int, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new item with text label to the global menu rid.
 
@@ -12866,7 +12866,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_radio_check_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 🔗
+int add_radio_check_item(rid: RID, label: String, callback: Callable = Callable(), key_callback: Callable = Callable(), tag: Variant = null, accelerator: Key = 0, index: int = -1) 
 
 Adds a new radio-checkable item with text label to the global menu rid.
 
@@ -12882,7 +12882,7 @@ Note: This method is implemented on macOS and Windows.
 
 Note: On Windows, accelerator and key_callback are ignored.
 
-int add_separator(rid: RID, index: int = -1) 🔗
+int add_separator(rid: RID, index: int = -1) 
 
 Adds a separator between items to the global menu rid. Separators also occupy an index.
 
@@ -12890,7 +12890,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as index 
 
 Note: This method is implemented on macOS and Windows.
 
-int add_submenu_item(rid: RID, label: String, submenu_rid: RID, tag: Variant = null, index: int = -1) 🔗
+int add_submenu_item(rid: RID, label: String, submenu_rid: RID, tag: Variant = null, index: int = -1) 
 
 Adds an item that will act as a submenu of the global menu rid. The submenu_rid argument is the RID of the global menu that will be shown when the item is clicked.
 
@@ -12898,7 +12898,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as index 
 
 Note: This method is implemented on macOS and Windows.
 
-void clear(rid: RID) 🔗
+void clear(rid: RID) 
 
 Removes all items from the global menu rid.
 
@@ -12908,169 +12908,169 @@ Creates a new global menu object.
 
 Note: This method is implemented on macOS and Windows.
 
-int find_item_index_with_submenu(rid: RID, submenu_rid: RID) const 🔗
+int find_item_index_with_submenu(rid: RID, submenu_rid: RID) const 
 
 Returns the index of the item with the submenu specified by submenu_rid. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 Note: This method is implemented on macOS and Windows.
 
-int find_item_index_with_tag(rid: RID, tag: Variant) const 🔗
+int find_item_index_with_tag(rid: RID, tag: Variant) const 
 
 Returns the index of the item with the specified tag. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 Note: This method is implemented on macOS and Windows.
 
-int find_item_index_with_text(rid: RID, text: String) const 🔗
+int find_item_index_with_text(rid: RID, text: String) const 
 
 Returns the index of the item with the specified text. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 Note: This method is implemented on macOS and Windows.
 
-void free_menu(rid: RID) 🔗
+void free_menu(rid: RID) 
 
 Frees a global menu object created by this NativeMenu.
 
 Note: This method is implemented on macOS and Windows.
 
-Key get_item_accelerator(rid: RID, idx: int) const 🔗
+Key get_item_accelerator(rid: RID, idx: int) const 
 
 Returns the accelerator of the item at index idx. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
 
 Note: This method is implemented only on macOS.
 
-Callable get_item_callback(rid: RID, idx: int) const 🔗
+Callable get_item_callback(rid: RID, idx: int) const 
 
 Returns the callback of the item at index idx.
 
 Note: This method is implemented on macOS and Windows.
 
-int get_item_count(rid: RID) const 🔗
+int get_item_count(rid: RID) const 
 
 Returns number of items in the global menu rid.
 
 Note: This method is implemented on macOS and Windows.
 
-Texture2D get_item_icon(rid: RID, idx: int) const 🔗
+Texture2D get_item_icon(rid: RID, idx: int) const 
 
 Returns the icon of the item at index idx.
 
 Note: This method is implemented on macOS and Windows.
 
-int get_item_indentation_level(rid: RID, idx: int) const 🔗
+int get_item_indentation_level(rid: RID, idx: int) const 
 
 Returns the horizontal offset of the item at the given idx.
 
 Note: This method is implemented only on macOS.
 
-Callable get_item_key_callback(rid: RID, idx: int) const 🔗
+Callable get_item_key_callback(rid: RID, idx: int) const 
 
 Returns the callback of the item accelerator at index idx.
 
 Note: This method is implemented only on macOS.
 
-int get_item_max_states(rid: RID, idx: int) const 🔗
+int get_item_max_states(rid: RID, idx: int) const 
 
 Returns number of states of a multistate item. See add_multistate_item() for details.
 
 Note: This method is implemented on macOS and Windows.
 
-int get_item_state(rid: RID, idx: int) const 🔗
+int get_item_state(rid: RID, idx: int) const 
 
 Returns the state of a multistate item. See add_multistate_item() for details.
 
 Note: This method is implemented on macOS and Windows.
 
-RID get_item_submenu(rid: RID, idx: int) const 🔗
+RID get_item_submenu(rid: RID, idx: int) const 
 
 Returns the submenu ID of the item at index idx. See add_submenu_item() for more info on how to add a submenu.
 
 Note: This method is implemented on macOS and Windows.
 
-Variant get_item_tag(rid: RID, idx: int) const 🔗
+Variant get_item_tag(rid: RID, idx: int) const 
 
 Returns the metadata of the specified item, which might be of any type. You can set it with set_item_tag(), which provides a simple way of assigning context data to items.
 
 Note: This method is implemented on macOS and Windows.
 
-String get_item_text(rid: RID, idx: int) const 🔗
+String get_item_text(rid: RID, idx: int) const 
 
 Returns the text of the item at index idx.
 
 Note: This method is implemented on macOS and Windows.
 
-String get_item_tooltip(rid: RID, idx: int) const 🔗
+String get_item_tooltip(rid: RID, idx: int) const 
 
 Returns the tooltip associated with the specified index idx.
 
 Note: This method is implemented only on macOS.
 
-float get_minimum_width(rid: RID) const 🔗
+float get_minimum_width(rid: RID) const 
 
 Returns global menu minimum width.
 
 Note: This method is implemented only on macOS.
 
-Callable get_popup_close_callback(rid: RID) const 🔗
+Callable get_popup_close_callback(rid: RID) const 
 
 Returns global menu close callback.
 
 Note: This method is implemented on macOS and Windows.
 
-Callable get_popup_open_callback(rid: RID) const 🔗
+Callable get_popup_open_callback(rid: RID) const 
 
 Returns global menu open callback.
 
 Note: This method is implemented only on macOS.
 
-Vector2 get_size(rid: RID) const 🔗
+Vector2 get_size(rid: RID) const 
 
 Returns global menu size.
 
 Note: This method is implemented on macOS and Windows.
 
-RID get_system_menu(menu_id: SystemMenus) const 🔗
+RID get_system_menu(menu_id: SystemMenus) const 
 
 Returns RID of a special system menu.
 
 Note: This method is implemented only on macOS.
 
-String get_system_menu_name(menu_id: SystemMenus) const 🔗
+String get_system_menu_name(menu_id: SystemMenus) const 
 
 Returns readable name of a special system menu.
 
 Note: This method is implemented only on macOS.
 
-bool has_feature(feature: Feature) const 🔗
+bool has_feature(feature: Feature) const 
 
 Returns true if the specified feature is supported by the current NativeMenu, false otherwise.
 
 Note: This method is implemented on macOS and Windows.
 
-bool has_menu(rid: RID) const 🔗
+bool has_menu(rid: RID) const 
 
 Returns true if rid is valid global menu.
 
 Note: This method is implemented on macOS and Windows.
 
-bool has_system_menu(menu_id: SystemMenus) const 🔗
+bool has_system_menu(menu_id: SystemMenus) const 
 
 Returns true if a special system menu is supported.
 
 Note: This method is implemented only on macOS.
 
-bool is_item_checkable(rid: RID, idx: int) const 🔗
+bool is_item_checkable(rid: RID, idx: int) const 
 
 Returns true if the item at index idx is checkable in some way, i.e. if it has a checkbox or radio button.
 
 Note: This method is implemented on macOS and Windows.
 
-bool is_item_checked(rid: RID, idx: int) const 🔗
+bool is_item_checked(rid: RID, idx: int) const 
 
 Returns true if the item at index idx is checked.
 
 Note: This method is implemented on macOS and Windows.
 
-bool is_item_disabled(rid: RID, idx: int) const 🔗
+bool is_item_disabled(rid: RID, idx: int) const 
 
 Returns true if the item at index idx is disabled. When it is disabled it can't be selected, or its action invoked.
 
@@ -13078,7 +13078,7 @@ See set_item_disabled() for more info on how to disable an item.
 
 Note: This method is implemented on macOS and Windows.
 
-bool is_item_hidden(rid: RID, idx: int) const 🔗
+bool is_item_hidden(rid: RID, idx: int) const 
 
 Returns true if the item at index idx is hidden.
 
@@ -13086,7 +13086,7 @@ See set_item_hidden() for more info on how to hide an item.
 
 Note: This method is implemented only on macOS.
 
-bool is_item_radio_checkable(rid: RID, idx: int) const 🔗
+bool is_item_radio_checkable(rid: RID, idx: int) const 
 
 Returns true if the item at index idx has radio button-style checkability.
 
@@ -13094,25 +13094,25 @@ Note: This is purely cosmetic; you must add the logic for checking/unchecking it
 
 Note: This method is implemented on macOS and Windows.
 
-bool is_opened(rid: RID) const 🔗
+bool is_opened(rid: RID) const 
 
 Returns true if the menu is currently opened.
 
 Note: This method is implemented only on macOS.
 
-bool is_system_menu(rid: RID) const 🔗
+bool is_system_menu(rid: RID) const 
 
 Return true is global menu is a special system menu.
 
 Note: This method is implemented only on macOS.
 
-void popup(rid: RID, position: Vector2i) 🔗
+void popup(rid: RID, position: Vector2i) 
 
 Shows the global menu at position in the screen coordinates.
 
 Note: This method is implemented on macOS and Windows.
 
-void remove_item(rid: RID, idx: int) 🔗
+void remove_item(rid: RID, idx: int) 
 
 Removes the item at index idx from the global menu rid.
 
@@ -13120,19 +13120,19 @@ Note: The indices of items after the removed item will be shifted by one.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_interface_direction(rid: RID, is_rtl: bool) 🔗
+void set_interface_direction(rid: RID, is_rtl: bool) 
 
 Sets the menu text layout direction from right-to-left if is_rtl is true.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_accelerator(rid: RID, idx: int, keycode: Key) 🔗
+void set_item_accelerator(rid: RID, idx: int, keycode: Key) 
 
 Sets the accelerator of the item at index idx. keycode can be a single Key, or a combination of KeyModifierMasks and Keys using bitwise OR such as KEY_MASK_CTRL | KEY_A (Ctrl + A).
 
 Note: This method is implemented only on macOS.
 
-void set_item_callback(rid: RID, idx: int, callback: Callable) 🔗
+void set_item_callback(rid: RID, idx: int, callback: Callable) 
 
 Sets the callback of the item at index idx. Callback is emitted when an item is pressed.
 
@@ -13140,31 +13140,31 @@ Note: The callback Callable needs to accept exactly one Variant parameter, the p
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_checkable(rid: RID, idx: int, checkable: bool) 🔗
+void set_item_checkable(rid: RID, idx: int, checkable: bool) 
 
 Sets whether the item at index idx has a checkbox. If false, sets the type of the item to plain text.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_checked(rid: RID, idx: int, checked: bool) 🔗
+void set_item_checked(rid: RID, idx: int, checked: bool) 
 
 Sets the checkstate status of the item at index idx.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_disabled(rid: RID, idx: int, disabled: bool) 🔗
+void set_item_disabled(rid: RID, idx: int, disabled: bool) 
 
 Enables/disables the item at index idx. When it is disabled, it can't be selected and its action can't be invoked.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_hidden(rid: RID, idx: int, hidden: bool) 🔗
+void set_item_hidden(rid: RID, idx: int, hidden: bool) 
 
 Hides/shows the item at index idx. When it is hidden, an item does not appear in a menu and its action cannot be invoked.
 
 Note: This method is implemented only on macOS.
 
-void set_item_hover_callbacks(rid: RID, idx: int, callback: Callable) 🔗
+void set_item_hover_callbacks(rid: RID, idx: int, callback: Callable) 
 
 Sets the callback of the item at index idx. The callback is emitted when an item is hovered.
 
@@ -13172,7 +13172,7 @@ Note: The callback Callable needs to accept exactly one Variant parameter, the p
 
 Note: This method is implemented only on macOS.
 
-void set_item_icon(rid: RID, idx: int, icon: Texture2D) 🔗
+void set_item_icon(rid: RID, idx: int, icon: Texture2D) 
 
 Replaces the Texture2D icon of the specified idx.
 
@@ -13180,13 +13180,13 @@ Note: This method is implemented on macOS and Windows.
 
 Note: This method is not supported by macOS Dock menu items.
 
-void set_item_indentation_level(rid: RID, idx: int, level: int) 🔗
+void set_item_indentation_level(rid: RID, idx: int, level: int) 
 
 Sets the horizontal offset of the item at the given idx.
 
 Note: This method is implemented only on macOS.
 
-void set_item_key_callback(rid: RID, idx: int, key_callback: Callable) 🔗
+void set_item_key_callback(rid: RID, idx: int, key_callback: Callable) 
 
 Sets the callback of the item at index idx. Callback is emitted when its accelerator is activated.
 
@@ -13194,13 +13194,13 @@ Note: The key_callback Callable needs to accept exactly one Variant parameter, t
 
 Note: This method is implemented only on macOS.
 
-void set_item_max_states(rid: RID, idx: int, max_states: int) 🔗
+void set_item_max_states(rid: RID, idx: int, max_states: int) 
 
 Sets number of state of a multistate item. See add_multistate_item() for details.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_radio_checkable(rid: RID, idx: int, checkable: bool) 🔗
+void set_item_radio_checkable(rid: RID, idx: int, checkable: bool) 
 
 Sets the type of the item at the specified index idx to radio button. If false, sets the type of the item to plain text.
 
@@ -13208,43 +13208,43 @@ Note: This is purely cosmetic; you must add the logic for checking/unchecking it
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_state(rid: RID, idx: int, state: int) 🔗
+void set_item_state(rid: RID, idx: int, state: int) 
 
 Sets the state of a multistate item. See add_multistate_item() for details.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_submenu(rid: RID, idx: int, submenu_rid: RID) 🔗
+void set_item_submenu(rid: RID, idx: int, submenu_rid: RID) 
 
 Sets the submenu RID of the item at index idx. The submenu is a global menu that would be shown when the item is clicked.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_tag(rid: RID, idx: int, tag: Variant) 🔗
+void set_item_tag(rid: RID, idx: int, tag: Variant) 
 
 Sets the metadata of an item, which may be of any type. You can later get it with get_item_tag(), which provides a simple way of assigning context data to items.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_text(rid: RID, idx: int, text: String) 🔗
+void set_item_text(rid: RID, idx: int, text: String) 
 
 Sets the text of the item at index idx.
 
 Note: This method is implemented on macOS and Windows.
 
-void set_item_tooltip(rid: RID, idx: int, tooltip: String) 🔗
+void set_item_tooltip(rid: RID, idx: int, tooltip: String) 
 
 Sets the String tooltip of the item at the specified index idx.
 
 Note: This method is implemented only on macOS.
 
-void set_minimum_width(rid: RID, width: float) 🔗
+void set_minimum_width(rid: RID, width: float) 
 
 Sets the minimum width of the global menu.
 
 Note: This method is implemented only on macOS.
 
-void set_popup_close_callback(rid: RID, callback: Callable) 🔗
+void set_popup_close_callback(rid: RID, callback: Callable) 
 
 Registers callable to emit when the menu is about to show.
 
@@ -13252,7 +13252,7 @@ Note: The OS can simulate menu opening to track menu item changes and global sho
 
 Note: This method is implemented on macOS and Windows.
 
-void set_popup_open_callback(rid: RID, callback: Callable) 🔗
+void set_popup_open_callback(rid: RID, callback: Callable) 
 
 Registers callable to emit after the menu is closed.
 
@@ -13314,7 +13314,7 @@ An OpenXR composition layer that allows rendering a SubViewport on an internal s
 
 central_horizontal_angle
 
-float central_horizontal_angle = 1.5707964 🔗
+float central_horizontal_angle = 1.5707964 
 
 void set_central_horizontal_angle(value: float)
 
@@ -13322,7 +13322,7 @@ float get_central_horizontal_angle()
 
 The central horizontal angle of the sphere. Used to set the width.
 
-int fallback_segments = 10 🔗
+int fallback_segments = 10 
 
 void set_fallback_segments(value: int)
 
@@ -13330,7 +13330,7 @@ int get_fallback_segments()
 
 The number of segments to use in the fallback mesh.
 
-float lower_vertical_angle = 0.7853982 🔗
+float lower_vertical_angle = 0.7853982 
 
 void set_lower_vertical_angle(value: float)
 
@@ -13342,7 +13342,7 @@ void set_radius(value: float)
 
 The radius of the sphere.
 
-float upper_vertical_angle = 0.7853982 🔗
+float upper_vertical_angle = 0.7853982 
 
 void set_upper_vertical_angle(value: float)
 
@@ -13387,7 +13387,7 @@ has_path(path: String) const
 
 remove_path(path: String)
 
-OpenXRAction action 🔗
+OpenXRAction action 
 
 void set_action(value: OpenXRAction)
 
@@ -13395,7 +13395,7 @@ OpenXRAction get_action()
 
 OpenXRAction that is bound to binding_path.
 
-Array binding_modifiers = [] 🔗
+Array binding_modifiers = [] 
 
 void set_binding_modifiers(value: Array)
 
@@ -13403,7 +13403,7 @@ Array get_binding_modifiers()
 
 Binding modifiers for this binding.
 
-String binding_path = "" 🔗
+String binding_path = "" 
 
 void set_binding_path(value: String)
 
@@ -13413,7 +13413,7 @@ Binding path that defines the input or output bound to action.
 
 Note: Binding paths are suggestions, an XR runtime may choose to bind the action to a different input or output emulating this input or output.
 
-PackedStringArray paths 🔗
+PackedStringArray paths 
 
 void set_paths(value: PackedStringArray)
 
@@ -13425,33 +13425,33 @@ Paths that define the inputs or outputs bound on the device.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedStringArray for more details.
 
-void add_path(path: String) 🔗
+void add_path(path: String) 
 
 Deprecated: Binding is for a single path.
 
 Add an input/output path to this binding.
 
-OpenXRActionBindingModifier get_binding_modifier(index: int) const 🔗
+OpenXRActionBindingModifier get_binding_modifier(index: int) const 
 
 Get the OpenXRBindingModifier at this index.
 
-int get_binding_modifier_count() const 🔗
+int get_binding_modifier_count() const 
 
 Get the number of binding modifiers for this binding.
 
-int get_path_count() const 🔗
+int get_path_count() const 
 
 Deprecated: Binding is for a single path.
 
 Get the number of input/output paths in this binding.
 
-bool has_path(path: String) const 🔗
+bool has_path(path: String) const 
 
 Deprecated: Binding is for a single path.
 
 Returns true if this input/output path is part of this binding.
 
-void remove_path(path: String) 🔗
+void remove_path(path: String) 
 
 Deprecated: Binding is for a single path.
 
@@ -13543,17 +13543,17 @@ set_item_text(idx: int, text: String)
 
 set_item_tooltip(idx: int, tooltip: String)
 
-item_focused(index: int) 🔗
+item_focused(index: int) 
 
 Emitted when the user navigates to an item using the ProjectSettings.input/ui_up or ProjectSettings.input/ui_down input actions. The index of the item selected is passed as argument.
 
-item_selected(index: int) 🔗
+item_selected(index: int) 
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
 allow_reselect must be enabled to reselect an item.
 
-bool allow_reselect = false 🔗
+bool allow_reselect = false 
 
 void set_allow_reselect(value: bool)
 
@@ -13561,7 +13561,7 @@ bool get_allow_reselect()
 
 If true, the currently selected item can be selected again.
 
-bool fit_to_longest_item = true 🔗
+bool fit_to_longest_item = true 
 
 void set_fit_to_longest_item(value: bool)
 
@@ -13577,137 +13577,137 @@ The number of items to select from.
 
 The index of the currently selected item, or -1 if no item is selected.
 
-void add_icon_item(texture: Texture2D, label: String, id: int = -1) 🔗
+void add_icon_item(texture: Texture2D, label: String, id: int = -1) 
 
 Adds an item, with a texture icon, text label and (optionally) id. If no id is passed, the item index will be used as the item's ID. New items are appended at the end.
 
 Note: The item will be selected if there are no other items.
 
-void add_item(label: String, id: int = -1) 🔗
+void add_item(label: String, id: int = -1) 
 
 Adds an item, with text label and (optionally) id. If no id is passed, the item index will be used as the item's ID. New items are appended at the end.
 
 Note: The item will be selected if there are no other items.
 
-void add_separator(text: String = "") 🔗
+void add_separator(text: String = "") 
 
 Adds a separator to the list of items. Separators help to group items, and can optionally be given a text header. A separator also gets an index assigned, and is appended at the end of the item list.
 
 Clears all the items in the OptionButton.
 
-AutoTranslateMode get_item_auto_translate_mode(idx: int) const 🔗
+AutoTranslateMode get_item_auto_translate_mode(idx: int) const 
 
 Returns the auto translate mode of the item at index idx.
 
-Texture2D get_item_icon(idx: int) const 🔗
+Texture2D get_item_icon(idx: int) const 
 
 Returns the icon of the item at index idx.
 
-int get_item_id(idx: int) const 🔗
+int get_item_id(idx: int) const 
 
 Returns the ID of the item at index idx.
 
-int get_item_index(id: int) const 🔗
+int get_item_index(id: int) const 
 
 Returns the index of the item with the given id.
 
-Variant get_item_metadata(idx: int) const 🔗
+Variant get_item_metadata(idx: int) const 
 
 Retrieves the metadata of an item. Metadata may be any type and can be used to store extra information about an item, such as an external string ID.
 
-String get_item_text(idx: int) const 🔗
+String get_item_text(idx: int) const 
 
 Returns the text of the item at index idx.
 
-String get_item_tooltip(idx: int) const 🔗
+String get_item_tooltip(idx: int) const 
 
 Returns the tooltip of the item at index idx.
 
-PopupMenu get_popup() const 🔗
+PopupMenu get_popup() const 
 
 Returns the PopupMenu contained in this button.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their Window.visible property.
 
-int get_selectable_item(from_last: bool = false) const 🔗
+int get_selectable_item(from_last: bool = false) const 
 
 Returns the index of the first item which is not disabled, or marked as a separator. If from_last is true, the items will be searched in reverse order.
 
 Returns -1 if no item is found.
 
-int get_selected_id() const 🔗
+int get_selected_id() const 
 
 Returns the ID of the selected item, or -1 if no item is selected.
 
-Variant get_selected_metadata() const 🔗
+Variant get_selected_metadata() const 
 
 Gets the metadata of the selected item. Metadata for items can be set using set_item_metadata().
 
-bool has_selectable_items() const 🔗
+bool has_selectable_items() const 
 
 Returns true if this button contains at least one item which is not disabled, or marked as a separator.
 
-bool is_item_disabled(idx: int) const 🔗
+bool is_item_disabled(idx: int) const 
 
 Returns true if the item at index idx is disabled.
 
-bool is_item_separator(idx: int) const 🔗
+bool is_item_separator(idx: int) const 
 
 Returns true if the item at index idx is marked as a separator.
 
-void remove_item(idx: int) 🔗
+void remove_item(idx: int) 
 
 Removes the item at index idx.
 
-void select(idx: int) 🔗
+void select(idx: int) 
 
 Selects an item by index and makes it the current item. This will work even if the item is disabled.
 
 Passing -1 as the index deselects any currently selected item.
 
-void set_disable_shortcuts(disabled: bool) 🔗
+void set_disable_shortcuts(disabled: bool) 
 
 If true, shortcuts are disabled and cannot be used to trigger the button.
 
-void set_item_auto_translate_mode(idx: int, mode: AutoTranslateMode) 🔗
+void set_item_auto_translate_mode(idx: int, mode: AutoTranslateMode) 
 
 Sets the auto translate mode of the item at index idx.
 
 Items use Node.AUTO_TRANSLATE_MODE_INHERIT by default, which uses the same auto translate mode as the OptionButton itself.
 
-void set_item_disabled(idx: int, disabled: bool) 🔗
+void set_item_disabled(idx: int, disabled: bool) 
 
 Sets whether the item at index idx is disabled.
 
 Disabled items are drawn differently in the dropdown and are not selectable by the user. If the current selected item is set as disabled, it will remain selected.
 
-void set_item_icon(idx: int, texture: Texture2D) 🔗
+void set_item_icon(idx: int, texture: Texture2D) 
 
 Sets the icon of the item at index idx.
 
-void set_item_id(idx: int, id: int) 🔗
+void set_item_id(idx: int, id: int) 
 
 Sets the ID of the item at index idx.
 
-void set_item_metadata(idx: int, metadata: Variant) 🔗
+void set_item_metadata(idx: int, metadata: Variant) 
 
 Sets the metadata of an item. Metadata may be of any type and can be used to store extra information about an item, such as an external string ID.
 
-void set_item_text(idx: int, text: String) 🔗
+void set_item_text(idx: int, text: String) 
 
 Sets the text of the item at index idx.
 
-void set_item_tooltip(idx: int, tooltip: String) 🔗
+void set_item_tooltip(idx: int, tooltip: String) 
 
 Sets the tooltip of the item at index idx.
 
 Adjusts popup position and sizing for the OptionButton, then shows the PopupMenu. Prefer this over using get_popup().popup().
 
-int arrow_margin = 4 🔗
+int arrow_margin = 4 
 
 The horizontal space between the arrow icon and the right edge of the button.
 
-int modulate_arrow = 0 🔗
+int modulate_arrow = 0 
 
 If different than 0, the arrow icon will be modulated to the font color.
 
@@ -13792,7 +13792,7 @@ You can retrieve the data by iterating on the container, which will work as if i
 
 Nested containers will be packed recursively. While iterating, they will be returned as PackedDataContainerRef.
 
-Error pack(value: Variant) 🔗
+Error pack(value: Variant) 
 
 Packs the given container into a binary representation. The value must be either Array or Dictionary, any other type will result in invalid data error.
 
@@ -14097,23 +14097,23 @@ labeled_separator_left
 
 labeled_separator_right
 
-id_focused(id: int) 🔗
+id_focused(id: int) 
 
 Emitted when the user navigated to an item of some id using the ProjectSettings.input/ui_up or ProjectSettings.input/ui_down input action.
 
-id_pressed(id: int) 🔗
+id_pressed(id: int) 
 
 Emitted when an item of some id is pressed or its accelerator is activated.
 
 Note: If id is negative (either explicitly or due to overflow), this will return the corresponding index instead.
 
-index_pressed(index: int) 🔗
+index_pressed(index: int) 
 
 Emitted when an item of some index is pressed or its accelerator is activated.
 
 Emitted when any item is added, modified or removed.
 
-bool allow_search = true 🔗
+bool allow_search = true 
 
 void set_allow_search(value: bool)
 
@@ -14121,7 +14121,7 @@ bool get_allow_search()
 
 If true, allows navigating PopupMenu with letter keys.
 
-bool hide_on_checkable_item_selection = true 🔗
+bool hide_on_checkable_item_selection = true 
 
 void set_hide_on_checkable_item_selection(value: bool)
 
@@ -14129,7 +14129,7 @@ bool is_hide_on_checkable_item_selection()
 
 If true, hides the PopupMenu when a checkbox or radio button is selected.
 
-bool hide_on_item_selection = true 🔗
+bool hide_on_item_selection = true 
 
 void set_hide_on_item_selection(value: bool)
 
@@ -14137,7 +14137,7 @@ bool is_hide_on_item_selection()
 
 If true, hides the PopupMenu when an item is selected.
 
-bool hide_on_state_item_selection = false 🔗
+bool hide_on_state_item_selection = false 
 
 void set_hide_on_state_item_selection(value: bool)
 
@@ -14149,7 +14149,7 @@ void set_item_count(value: int)
 
 The number of items currently in the list.
 
-bool prefer_native_menu = false 🔗
+bool prefer_native_menu = false 
 
 void set_prefer_native_menu(value: bool)
 
@@ -14159,7 +14159,7 @@ If true, MenuBar will use native menu when supported.
 
 Note: If PopupMenu is linked to StatusIndicator, MenuBar, or another PopupMenu item it can use native menu regardless of this property, use is_native_menu() to check it.
 
-float submenu_popup_delay = 0.3 🔗
+float submenu_popup_delay = 0.3 
 
 void set_submenu_popup_delay(value: float)
 
@@ -14167,7 +14167,7 @@ float get_submenu_popup_delay()
 
 Sets the delay time in seconds for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item.
 
-SystemMenus system_menu_id = 0 🔗
+SystemMenus system_menu_id = 0 
 
 void set_system_menu(value: SystemMenus)
 
@@ -14175,7 +14175,7 @@ SystemMenus get_system_menu()
 
 If set to one of the values of SystemMenus, this PopupMenu is bound to the special system menu. Only one PopupMenu can be bound to each special menu at a time.
 
-bool activate_item_by_event(event: InputEvent, for_global_only: bool = false) 🔗
+bool activate_item_by_event(event: InputEvent, for_global_only: bool = false) 
 
 Checks the provided event against the PopupMenu's shortcuts and accelerators, and activates the first item with matching events. If for_global_only is true, only shortcuts and accelerators with global set to true will be called.
 
@@ -14183,7 +14183,7 @@ Returns true if an item was successfully activated.
 
 Note: Certain Controls, such as MenuButton, will call this method automatically.
 
-void add_check_item(label: String, id: int = -1, accel: Key = 0) 🔗
+void add_check_item(label: String, id: int = -1, accel: Key = 0) 
 
 Adds a new checkable item with text label.
 
@@ -14191,7 +14191,7 @@ An id can optionally be provided, as well as an accelerator (accel). If no id is
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_check_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false) 🔗
+void add_check_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false) 
 
 Adds a new checkable item and assigns the specified Shortcut to it. Sets the label of the checkbox to the Shortcut's name.
 
@@ -14199,7 +14199,7 @@ An id can optionally be provided. If no id is provided, one will be created from
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_icon_check_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 🔗
+void add_icon_check_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 
 
 Adds a new checkable item with text label and icon texture.
 
@@ -14207,7 +14207,7 @@ An id can optionally be provided, as well as an accelerator (accel). If no id is
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_icon_check_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false) 🔗
+void add_icon_check_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false) 
 
 Adds a new checkable item and assigns the specified Shortcut and icon texture to it. Sets the label of the checkbox to the Shortcut's name.
 
@@ -14215,21 +14215,21 @@ An id can optionally be provided. If no id is provided, one will be created from
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_icon_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 🔗
+void add_icon_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 
 
 Adds a new item with text label and icon texture.
 
 An id can optionally be provided, as well as an accelerator (accel). If no id is provided, one will be created from the index. If no accel is provided, then the default value of 0 (corresponding to @GlobalScope.KEY_NONE) will be assigned to the item (which means it won't have any accelerator). See get_item_accelerator() for more info on accelerators.
 
-void add_icon_radio_check_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 🔗
+void add_icon_radio_check_item(texture: Texture2D, label: String, id: int = -1, accel: Key = 0) 
 
 Same as add_icon_check_item(), but uses a radio check button.
 
-void add_icon_radio_check_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false) 🔗
+void add_icon_radio_check_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false) 
 
 Same as add_icon_check_shortcut(), but uses a radio check button.
 
-void add_icon_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false, allow_echo: bool = false) 🔗
+void add_icon_shortcut(texture: Texture2D, shortcut: Shortcut, id: int = -1, global: bool = false, allow_echo: bool = false) 
 
 Adds a new item and assigns the specified Shortcut and icon texture to it. Sets the label of the checkbox to the Shortcut's name.
 
@@ -14237,7 +14237,7 @@ An id can optionally be provided. If no id is provided, one will be created from
 
 If allow_echo is true, the shortcut can be activated with echo events.
 
-void add_item(label: String, id: int = -1, accel: Key = 0) 🔗
+void add_item(label: String, id: int = -1, accel: Key = 0) 
 
 Adds a new item with text label.
 
@@ -14245,7 +14245,7 @@ An id can optionally be provided, as well as an accelerator (accel). If no id is
 
 Note: The provided id is used only in id_pressed and id_focused signals. It's not related to the index arguments in e.g. set_item_checked().
 
-void add_multistate_item(label: String, max_states: int, default_state: int = 0, id: int = -1, accel: Key = 0) 🔗
+void add_multistate_item(label: String, max_states: int, default_state: int = 0, id: int = -1, accel: Key = 0) 
 
 Adds a new multistate item with text label.
 
@@ -14255,7 +14255,7 @@ An id can optionally be provided, as well as an accelerator (accel). If no id is
 
 Note: Multistate items don't update their state automatically and must be done manually. See toggle_item_multistate(), set_item_multistate() and get_item_multistate() for more info on how to control it.
 
-void add_radio_check_item(label: String, id: int = -1, accel: Key = 0) 🔗
+void add_radio_check_item(label: String, id: int = -1, accel: Key = 0) 
 
 Adds a new radio check button with text label.
 
@@ -14263,7 +14263,7 @@ An id can optionally be provided, as well as an accelerator (accel). If no id is
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_radio_check_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false) 🔗
+void add_radio_check_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false) 
 
 Adds a new radio check button and assigns a Shortcut to it. Sets the label of the checkbox to the Shortcut's name.
 
@@ -14271,19 +14271,19 @@ An id can optionally be provided. If no id is provided, one will be created from
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See set_item_checked() for more info on how to control it.
 
-void add_separator(label: String = "", id: int = -1) 🔗
+void add_separator(label: String = "", id: int = -1) 
 
 Adds a separator between items. Separators also occupy an index, which you can set by using the id parameter.
 
 A label can optionally be provided, which will appear at the center of the separator.
 
-void add_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false, allow_echo: bool = false) 🔗
+void add_shortcut(shortcut: Shortcut, id: int = -1, global: bool = false, allow_echo: bool = false) 
 
 An id can optionally be provided. If no id is provided, one will be created from the index.
 
 If allow_echo is true, the shortcut can be activated with echo events.
 
-void add_submenu_item(label: String, submenu: String, id: int = -1) 🔗
+void add_submenu_item(label: String, submenu: String, id: int = -1) 
 
 Deprecated: Prefer using add_submenu_node_item() instead.
 
@@ -14291,7 +14291,7 @@ Adds an item that will act as a submenu of the parent PopupMenu node when clicke
 
 An id can optionally be provided. If no id is provided, one will be created from the index.
 
-void add_submenu_node_item(label: String, submenu: PopupMenu, id: int = -1) 🔗
+void add_submenu_node_item(label: String, submenu: PopupMenu, id: int = -1) 
 
 Adds an item that will act as a submenu of the parent PopupMenu node when clicked. This submenu will be shown when the item is clicked, hovered for long enough, or activated using the ui_select or ui_right input actions.
 
@@ -14299,317 +14299,317 @@ submenu must be either child of this PopupMenu or has no parent node (in which c
 
 An id can optionally be provided. If no id is provided, one will be created from the index.
 
-void clear(free_submenus: bool = false) 🔗
+void clear(free_submenus: bool = false) 
 
 Removes all items from the PopupMenu. If free_submenus is true, the submenu nodes are automatically freed.
 
-int get_focused_item() const 🔗
+int get_focused_item() const 
 
 Returns the index of the currently focused item. Returns -1 if no item is focused.
 
-Key get_item_accelerator(index: int) const 🔗
+Key get_item_accelerator(index: int) const 
 
 Returns the accelerator of the item at the given index. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of KeyModifierMasks and Keys using bitwise OR such as KEY_MASK_CTRL | KEY_A (Ctrl + A). If no accelerator is defined for the specified index, get_item_accelerator() returns 0 (corresponding to @GlobalScope.KEY_NONE).
 
-AutoTranslateMode get_item_auto_translate_mode(index: int) const 🔗
+AutoTranslateMode get_item_auto_translate_mode(index: int) const 
 
 Returns the auto translate mode of the item at the given index.
 
-Texture2D get_item_icon(index: int) const 🔗
+Texture2D get_item_icon(index: int) const 
 
 Returns the icon of the item at the given index.
 
-int get_item_icon_max_width(index: int) const 🔗
+int get_item_icon_max_width(index: int) const 
 
 Returns the maximum allowed width of the icon for the item at the given index.
 
-Color get_item_icon_modulate(index: int) const 🔗
+Color get_item_icon_modulate(index: int) const 
 
 Returns a Color modulating the item's icon at the given index.
 
-int get_item_id(index: int) const 🔗
+int get_item_id(index: int) const 
 
 Returns the ID of the item at the given index. id can be manually assigned, while index can not.
 
-int get_item_indent(index: int) const 🔗
+int get_item_indent(index: int) const 
 
 Returns the horizontal offset of the item at the given index.
 
-int get_item_index(id: int) const 🔗
+int get_item_index(id: int) const 
 
 Returns the index of the item containing the specified id. Index is automatically assigned to each item by the engine and can not be set manually.
 
-String get_item_language(index: int) const 🔗
+String get_item_language(index: int) const 
 
 Returns item's text language code.
 
-Variant get_item_metadata(index: int) const 🔗
+Variant get_item_metadata(index: int) const 
 
 Returns the metadata of the specified item, which might be of any type. You can set it with set_item_metadata(), which provides a simple way of assigning context data to items.
 
-int get_item_multistate(index: int) const 🔗
+int get_item_multistate(index: int) const 
 
 Returns the state of the item at the given index.
 
-int get_item_multistate_max(index: int) const 🔗
+int get_item_multistate_max(index: int) const 
 
 Returns the max states of the item at the given index.
 
-Shortcut get_item_shortcut(index: int) const 🔗
+Shortcut get_item_shortcut(index: int) const 
 
 Returns the Shortcut associated with the item at the given index.
 
-String get_item_submenu(index: int) const 🔗
+String get_item_submenu(index: int) const 
 
 Deprecated: Prefer using get_item_submenu_node() instead.
 
 Returns the submenu name of the item at the given index. See add_submenu_item() for more info on how to add a submenu.
 
-PopupMenu get_item_submenu_node(index: int) const 🔗
+PopupMenu get_item_submenu_node(index: int) const 
 
 Returns the submenu of the item at the given index, or null if no submenu was added. See add_submenu_node_item() for more info on how to add a submenu.
 
-String get_item_text(index: int) const 🔗
+String get_item_text(index: int) const 
 
 Returns the text of the item at the given index.
 
-TextDirection get_item_text_direction(index: int) const 🔗
+TextDirection get_item_text_direction(index: int) const 
 
 Returns item's text base writing direction.
 
-String get_item_tooltip(index: int) const 🔗
+String get_item_tooltip(index: int) const 
 
 Returns the tooltip associated with the item at the given index.
 
-bool is_item_checkable(index: int) const 🔗
+bool is_item_checkable(index: int) const 
 
 Returns true if the item at the given index is checkable in some way, i.e. if it has a checkbox or radio button.
 
 Note: Checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
-bool is_item_checked(index: int) const 🔗
+bool is_item_checked(index: int) const 
 
 Returns true if the item at the given index is checked.
 
-bool is_item_disabled(index: int) const 🔗
+bool is_item_disabled(index: int) const 
 
 Returns true if the item at the given index is disabled. When it is disabled it can't be selected, or its action invoked.
 
 See set_item_disabled() for more info on how to disable an item.
 
-bool is_item_radio_checkable(index: int) const 🔗
+bool is_item_radio_checkable(index: int) const 
 
 Returns true if the item at the given index has radio button-style checkability.
 
 Note: This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.
 
-bool is_item_separator(index: int) const 🔗
+bool is_item_separator(index: int) const 
 
 Returns true if the item is a separator. If it is, it will be displayed as a line. See add_separator() for more info on how to add a separator.
 
-bool is_item_shortcut_disabled(index: int) const 🔗
+bool is_item_shortcut_disabled(index: int) const 
 
 Returns true if the specified item's shortcut is disabled.
 
-bool is_native_menu() const 🔗
+bool is_native_menu() const 
 
 Returns true if the system native menu is supported and currently used by this PopupMenu.
 
-bool is_system_menu() const 🔗
+bool is_system_menu() const 
 
 Returns true if the menu is bound to the special system menu.
 
-void remove_item(index: int) 🔗
+void remove_item(index: int) 
 
 Removes the item at the given index from the menu.
 
 Note: The indices of items after the removed item will be shifted by one.
 
-void scroll_to_item(index: int) 🔗
+void scroll_to_item(index: int) 
 
 Moves the scroll view to make the item at the given index visible.
 
-void set_focused_item(index: int) 🔗
+void set_focused_item(index: int) 
 
 Sets the currently focused item as the given index.
 
 Passing -1 as the index makes so that no item is focused.
 
-void set_item_accelerator(index: int, accel: Key) 🔗
+void set_item_accelerator(index: int, accel: Key) 
 
 Sets the accelerator of the item at the given index. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. accel is generally a combination of KeyModifierMasks and Keys using bitwise OR such as KEY_MASK_CTRL | KEY_A (Ctrl + A).
 
-void set_item_as_checkable(index: int, enable: bool) 🔗
+void set_item_as_checkable(index: int, enable: bool) 
 
 Sets whether the item at the given index has a checkbox. If false, sets the type of the item to plain text.
 
 Note: Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
-void set_item_as_radio_checkable(index: int, enable: bool) 🔗
+void set_item_as_radio_checkable(index: int, enable: bool) 
 
 Sets the type of the item at the given index to radio button. If false, sets the type of the item to plain text.
 
-void set_item_as_separator(index: int, enable: bool) 🔗
+void set_item_as_separator(index: int, enable: bool) 
 
 Mark the item at the given index as a separator, which means that it would be displayed as a line. If false, sets the type of the item to plain text.
 
-void set_item_auto_translate_mode(index: int, mode: AutoTranslateMode) 🔗
+void set_item_auto_translate_mode(index: int, mode: AutoTranslateMode) 
 
 Sets the auto translate mode of the item at the given index.
 
 Items use Node.AUTO_TRANSLATE_MODE_INHERIT by default, which uses the same auto translate mode as the PopupMenu itself.
 
-void set_item_checked(index: int, checked: bool) 🔗
+void set_item_checked(index: int, checked: bool) 
 
 Sets the checkstate status of the item at the given index.
 
-void set_item_disabled(index: int, disabled: bool) 🔗
+void set_item_disabled(index: int, disabled: bool) 
 
 Enables/disables the item at the given index. When it is disabled, it can't be selected and its action can't be invoked.
 
-void set_item_icon(index: int, icon: Texture2D) 🔗
+void set_item_icon(index: int, icon: Texture2D) 
 
 Replaces the Texture2D icon of the item at the given index.
 
-void set_item_icon_max_width(index: int, width: int) 🔗
+void set_item_icon_max_width(index: int, width: int) 
 
 Sets the maximum allowed width of the icon for the item at the given index. This limit is applied on top of the default size of the icon and on top of icon_max_width. The height is adjusted according to the icon's ratio.
 
-void set_item_icon_modulate(index: int, modulate: Color) 🔗
+void set_item_icon_modulate(index: int, modulate: Color) 
 
 Sets a modulating Color of the item's icon at the given index.
 
-void set_item_id(index: int, id: int) 🔗
+void set_item_id(index: int, id: int) 
 
 Sets the id of the item at the given index.
 
 The id is used in id_pressed and id_focused signals.
 
-void set_item_indent(index: int, indent: int) 🔗
+void set_item_indent(index: int, indent: int) 
 
 Sets the horizontal offset of the item at the given index.
 
-void set_item_language(index: int, language: String) 🔗
+void set_item_language(index: int, language: String) 
 
 Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-void set_item_metadata(index: int, metadata: Variant) 🔗
+void set_item_metadata(index: int, metadata: Variant) 
 
 Sets the metadata of an item, which may be of any type. You can later get it with get_item_metadata(), which provides a simple way of assigning context data to items.
 
-void set_item_multistate(index: int, state: int) 🔗
+void set_item_multistate(index: int, state: int) 
 
 Sets the state of a multistate item. See add_multistate_item() for details.
 
-void set_item_multistate_max(index: int, max_states: int) 🔗
+void set_item_multistate_max(index: int, max_states: int) 
 
 Sets the max states of a multistate item. See add_multistate_item() for details.
 
-void set_item_shortcut(index: int, shortcut: Shortcut, global: bool = false) 🔗
+void set_item_shortcut(index: int, shortcut: Shortcut, global: bool = false) 
 
 Sets a Shortcut for the item at the given index.
 
-void set_item_shortcut_disabled(index: int, disabled: bool) 🔗
+void set_item_shortcut_disabled(index: int, disabled: bool) 
 
 Disables the Shortcut of the item at the given index.
 
-void set_item_submenu(index: int, submenu: String) 🔗
+void set_item_submenu(index: int, submenu: String) 
 
 Deprecated: Prefer using set_item_submenu_node() instead.
 
 Sets the submenu of the item at the given index. The submenu is the name of a child PopupMenu node that would be shown when the item is clicked.
 
-void set_item_submenu_node(index: int, submenu: PopupMenu) 🔗
+void set_item_submenu_node(index: int, submenu: PopupMenu) 
 
 Sets the submenu of the item at the given index. The submenu is a PopupMenu node that would be shown when the item is clicked. It must either be a child of this PopupMenu or has no parent (in which case it will be automatically added as a child). If the submenu popup has another parent, this method will fail.
 
-void set_item_text(index: int, text: String) 🔗
+void set_item_text(index: int, text: String) 
 
 Sets the text of the item at the given index.
 
-void set_item_text_direction(index: int, direction: TextDirection) 🔗
+void set_item_text_direction(index: int, direction: TextDirection) 
 
 Sets item's text base writing direction.
 
-void set_item_tooltip(index: int, tooltip: String) 🔗
+void set_item_tooltip(index: int, tooltip: String) 
 
 Sets the String tooltip of the item at the given index.
 
-void toggle_item_checked(index: int) 🔗
+void toggle_item_checked(index: int) 
 
 Toggles the check state of the item at the given index.
 
-void toggle_item_multistate(index: int) 🔗
+void toggle_item_multistate(index: int) 
 
 Cycle to the next state of a multistate item. See add_multistate_item() for details.
 
-Color font_accelerator_color = Color(0.7, 0.7, 0.7, 0.8) 🔗
+Color font_accelerator_color = Color(0.7, 0.7, 0.7, 0.8) 
 
 The text Color used for shortcuts and accelerators that show next to the menu item name when defined. See get_item_accelerator() for more info on accelerators.
 
-Color font_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_color = Color(0.875, 0.875, 0.875, 1) 
 
 The default text Color for menu items' names.
 
-Color font_disabled_color = Color(0.4, 0.4, 0.4, 0.8) 🔗
+Color font_disabled_color = Color(0.4, 0.4, 0.4, 0.8) 
 
 Color used for disabled menu items' text.
 
-Color font_hover_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_hover_color = Color(0.875, 0.875, 0.875, 1) 
 
 Color used for the hovered text.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the menu item.
 
-Color font_separator_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_separator_color = Color(0.875, 0.875, 0.875, 1) 
 
 Color used for labeled separators' text. See add_separator().
 
-Color font_separator_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_separator_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the labeled separator.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal space between the item's elements.
 
-int icon_max_width = 0 🔗
+int icon_max_width = 0 
 
 The maximum allowed width of the item's icon. This limit is applied on top of the default size of the icon, but before the value set with set_item_icon_max_width(). The height is adjusted according to the icon's ratio.
 
 Width of the single indentation level.
 
-int item_end_padding = 2 🔗
+int item_end_padding = 2 
 
 Horizontal padding to the right of the items (or left, in RTL layout).
 
-int item_start_padding = 2 🔗
+int item_start_padding = 2 
 
 Horizontal padding to the left of the items (or right, in RTL layout).
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the item text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int separator_outline_size = 0 🔗
+int separator_outline_size = 0 
 
 The size of the labeled separator text outline.
 
-int v_separation = 4 🔗
+int v_separation = 4 
 
 The vertical space between each menu item.
 
 Font used for the menu items.
 
-Font font_separator 🔗
+Font font_separator 
 
 Font used for the labeled separator.
 
-int font_separator_size 🔗
+int font_separator_size 
 
 Font size of the labeled separator.
 
@@ -14617,47 +14617,47 @@ Font size of the menu items.
 
 Texture2D icon for the checked checkbox items.
 
-Texture2D checked_disabled 🔗
+Texture2D checked_disabled 
 
 Texture2D icon for the checked checkbox items when they are disabled.
 
-Texture2D radio_checked 🔗
+Texture2D radio_checked 
 
 Texture2D icon for the checked radio button items.
 
-Texture2D radio_checked_disabled 🔗
+Texture2D radio_checked_disabled 
 
 Texture2D icon for the checked radio button items when they are disabled.
 
-Texture2D radio_unchecked 🔗
+Texture2D radio_unchecked 
 
 Texture2D icon for the unchecked radio button items.
 
-Texture2D radio_unchecked_disabled 🔗
+Texture2D radio_unchecked_disabled 
 
 Texture2D icon for the unchecked radio button items when they are disabled.
 
 Texture2D icon for the submenu arrow (for left-to-right layouts).
 
-Texture2D submenu_mirrored 🔗
+Texture2D submenu_mirrored 
 
 Texture2D icon for the submenu arrow (for right-to-left layouts).
 
-Texture2D unchecked 🔗
+Texture2D unchecked 
 
 Texture2D icon for the unchecked checkbox items.
 
-Texture2D unchecked_disabled 🔗
+Texture2D unchecked_disabled 
 
 Texture2D icon for the unchecked checkbox items when they are disabled.
 
 StyleBox displayed when the PopupMenu item is hovered.
 
-StyleBox labeled_separator_left 🔗
+StyleBox labeled_separator_left 
 
 StyleBox for the left side of labeled separator. See add_separator().
 
-StyleBox labeled_separator_right 🔗
+StyleBox labeled_separator_right 
 
 StyleBox for the right side of labeled separator. See add_separator().
 
@@ -14904,7 +14904,7 @@ A rectangular box for designing UIs.
 
 A rectangular box that displays only a colored border around its rectangle (see Control.get_rect()). It can be used to visualize the extents of a Control node, for testing purposes.
 
-Color border_color = Color(1, 0, 0, 1) 🔗
+Color border_color = Color(1, 0, 0, 1) 
 
 void set_border_color(value: Color)
 
@@ -14912,7 +14912,7 @@ Color get_border_color()
 
 Sets the border color of the ReferenceRect.
 
-float border_width = 1.0 🔗
+float border_width = 1.0 
 
 void set_border_width(value: float)
 
@@ -14920,7 +14920,7 @@ float get_border_width()
 
 Sets the border width of the ReferenceRect. The border grows both inwards and outwards with respect to the rectangle box.
 
-bool editor_only = true 🔗
+bool editor_only = true 
 
 void set_editor_only(value: bool)
 
@@ -14974,7 +14974,7 @@ The value to use for an invalid UID, for example if the resource could not be lo
 
 Its text representation is uid://<invalid>.
 
-void add_id(id: int, path: String) 🔗
+void add_id(id: int, path: String) 
 
 Adds a new UID value which is mapped to the given resource path.
 
@@ -14984,49 +14984,49 @@ Generates a random resource UID which is guaranteed to be unique within the list
 
 In order for this UID to be registered, you must call add_id() or set_id().
 
-int create_id_for_path(path: String) 🔗
+int create_id_for_path(path: String) 
 
 Like create_id(), but the UID is seeded with the provided path and project name. UIDs generated for that path will be always the same within the current project.
 
-String ensure_path(path_or_uid: String) static 🔗
+String ensure_path(path_or_uid: String) static 
 
 Returns a path, converting path_or_uid if necessary. Prints an error if provided an invalid UID.
 
-String get_id_path(id: int) const 🔗
+String get_id_path(id: int) const 
 
 Returns the path that the given UID value refers to.
 
 Fails with an error if the UID does not exist, so be sure to check has_id() beforehand.
 
-bool has_id(id: int) const 🔗
+bool has_id(id: int) const 
 
 Returns whether the given UID value is known to the cache.
 
-String id_to_text(id: int) const 🔗
+String id_to_text(id: int) const 
 
 Converts the given UID to a uid:// string value.
 
-String path_to_uid(path: String) static 🔗
+String path_to_uid(path: String) static 
 
 Converts the provided resource path to a UID. Returns the unchanged path if it has no associated UID.
 
-void remove_id(id: int) 🔗
+void remove_id(id: int) 
 
 Removes a loaded UID value from the cache.
 
 Fails with an error if the UID does not exist, so be sure to check has_id() beforehand.
 
-void set_id(id: int, path: String) 🔗
+void set_id(id: int, path: String) 
 
 Updates the resource path of an existing UID.
 
 Fails with an error if the UID does not exist, so be sure to check has_id() beforehand, or use add_id() instead.
 
-int text_to_id(text_id: String) const 🔗
+int text_to_id(text_id: String) const 
 
 Extracts the UID value from the given uid:// string.
 
-String uid_to_path(uid: String) static 🔗
+String uid_to_path(uid: String) static 
 
 Converts the provided uid to a path. Prints an error if the UID is invalid.
 
@@ -15226,17 +15226,17 @@ Triggered when the document is fully loaded.
 
 Note: This can happen before the text is processed for drawing. Scrolling values may not be valid until the document is drawn for the first time after this signal.
 
-meta_clicked(meta: Variant) 🔗
+meta_clicked(meta: Variant) 
 
 Triggered when the user clicks on content between meta (URL) tags. If the meta is defined in BBCode, e.g. [url={"key": "value"}]Text[/url], then the parameter for this signal will always be a String type. If a particular type or an object is desired, the push_meta() method must be used to manually insert the data into the tag stack. Alternatively, you can convert the String input to the desired type based on its contents (such as calling JSON.parse() on it).
 
 For example, the following method can be connected to meta_clicked to open clicked URLs using the user's default web browser:
 
-meta_hover_ended(meta: Variant) 🔗
+meta_hover_ended(meta: Variant) 
 
 Triggers when the mouse exits a meta tag.
 
-meta_hover_started(meta: Variant) 🔗
+meta_hover_started(meta: Variant) 
 
 Triggers when the mouse enters a meta tag.
 
@@ -15268,7 +15268,7 @@ MenuItems MENU_MAX = 2
 
 Represents the size of the MenuItems enum.
 
-enum MetaUnderline: 🔗
+enum MetaUnderline: 
 
 MetaUnderline META_UNDERLINE_NEVER = 0
 
@@ -15282,7 +15282,7 @@ MetaUnderline META_UNDERLINE_ON_HOVER = 2
 
 If meta_underlined is true, meta tag display an underline when the mouse cursor is over it.
 
-flags ImageUpdateMask: 🔗
+flags ImageUpdateMask: 
 
 ImageUpdateMask UPDATE_TEXTURE = 1
 
@@ -15316,7 +15316,7 @@ ImageUpdateMask UPDATE_WIDTH_IN_PERCENT = 128
 
 If this bit is set, update_image() changes image width from/to percents.
 
-AutowrapMode autowrap_mode = 3 🔗
+AutowrapMode autowrap_mode = 3 
 
 void set_autowrap_mode(value: AutowrapMode)
 
@@ -15324,7 +15324,7 @@ AutowrapMode get_autowrap_mode()
 
 If set to something other than TextServer.AUTOWRAP_OFF, the text gets wrapped inside the node's bounding rectangle.
 
-BitField[LineBreakFlag] autowrap_trim_flags = 192 🔗
+BitField[LineBreakFlag] autowrap_trim_flags = 192 
 
 void set_autowrap_trim_flags(value: BitField[LineBreakFlag])
 
@@ -15332,7 +15332,7 @@ BitField[LineBreakFlag] get_autowrap_trim_flags()
 
 Autowrap space trimming flags. See TextServer.BREAK_TRIM_START_EDGE_SPACES and TextServer.BREAK_TRIM_END_EDGE_SPACES for more info.
 
-bool bbcode_enabled = false 🔗
+bool bbcode_enabled = false 
 
 void set_use_bbcode(value: bool)
 
@@ -15342,7 +15342,7 @@ If true, the label uses BBCode formatting.
 
 Note: This only affects the contents of text, not the tag stack.
 
-bool context_menu_enabled = false 🔗
+bool context_menu_enabled = false 
 
 void set_context_menu_enabled(value: bool)
 
@@ -15350,7 +15350,7 @@ bool is_context_menu_enabled()
 
 If true, a right-click displays the context menu.
 
-Array custom_effects = [] 🔗
+Array custom_effects = [] 
 
 void set_effects(value: Array)
 
@@ -15358,7 +15358,7 @@ The currently installed custom effects. This is an array of RichTextEffects.
 
 To add a custom effect, it's more convenient to use install_effect().
 
-bool deselect_on_focus_loss_enabled = true 🔗
+bool deselect_on_focus_loss_enabled = true 
 
 void set_deselect_on_focus_loss_enabled(value: bool)
 
@@ -15366,7 +15366,7 @@ bool is_deselect_on_focus_loss_enabled()
 
 If true, the selected text will be deselected when focus is lost.
 
-bool drag_and_drop_selection_enabled = true 🔗
+bool drag_and_drop_selection_enabled = true 
 
 void set_drag_and_drop_selection_enabled(value: bool)
 
@@ -15374,7 +15374,7 @@ bool is_drag_and_drop_selection_enabled()
 
 If true, allow drag and drop of selected text.
 
-bool fit_content = false 🔗
+bool fit_content = false 
 
 void set_fit_content(value: bool)
 
@@ -15382,7 +15382,7 @@ bool is_fit_content_enabled()
 
 If true, the label's minimum size will be automatically updated to fit its content, matching the behavior of Label.
 
-bool hint_underlined = true 🔗
+bool hint_underlined = true 
 
 void set_hint_underline(value: bool)
 
@@ -15390,7 +15390,7 @@ bool is_hint_underlined()
 
 If true, the label underlines hint tags such as [hint=description]{text}[/hint].
 
-HorizontalAlignment horizontal_alignment = 0 🔗
+HorizontalAlignment horizontal_alignment = 0 
 
 void set_horizontal_alignment(value: HorizontalAlignment)
 
@@ -15398,7 +15398,7 @@ HorizontalAlignment get_horizontal_alignment()
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify.
 
-BitField[JustificationFlag] justification_flags = 163 🔗
+BitField[JustificationFlag] justification_flags = 163 
 
 void set_justification_flags(value: BitField[JustificationFlag])
 
@@ -15406,7 +15406,7 @@ BitField[JustificationFlag] get_justification_flags()
 
 Line fill alignment rules.
 
-String language = "" 🔗
+String language = "" 
 
 void set_language(value: String)
 
@@ -15414,7 +15414,7 @@ String get_language()
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-bool meta_underlined = true 🔗
+bool meta_underlined = true 
 
 void set_meta_underline(value: bool)
 
@@ -15422,7 +15422,7 @@ bool is_meta_underlined()
 
 If true, the label underlines meta tags such as [url]{text}[/url]. These tags can call a function when clicked if meta_clicked is connected to a function.
 
-int progress_bar_delay = 1000 🔗
+int progress_bar_delay = 1000 
 
 void set_progress_bar_delay(value: int)
 
@@ -15432,7 +15432,7 @@ The delay after which the loading progress bar is displayed, in milliseconds. Se
 
 Note: Progress bar is displayed only if threaded is enabled.
 
-bool scroll_active = true 🔗
+bool scroll_active = true 
 
 void set_scroll_active(value: bool)
 
@@ -15440,7 +15440,7 @@ bool is_scroll_active()
 
 If true, the scrollbar is visible. Setting this to false does not block scrolling completely. See scroll_to_line().
 
-bool scroll_following = false 🔗
+bool scroll_following = false 
 
 void set_scroll_follow(value: bool)
 
@@ -15448,7 +15448,7 @@ bool is_scroll_following()
 
 If true, the window scrolls down to display new content automatically.
 
-bool scroll_following_visible_characters = false 🔗
+bool scroll_following_visible_characters = false 
 
 void set_scroll_follow_visible_characters(value: bool)
 
@@ -15456,7 +15456,7 @@ bool is_scroll_following_visible_characters()
 
 If true, the window scrolls to display the last visible line when visible_characters or visible_ratio is changed.
 
-bool selection_enabled = false 🔗
+bool selection_enabled = false 
 
 void set_selection_enabled(value: bool)
 
@@ -15464,7 +15464,7 @@ bool is_selection_enabled()
 
 If true, the label allows text selection.
 
-bool shortcut_keys_enabled = true 🔗
+bool shortcut_keys_enabled = true 
 
 void set_shortcut_keys_enabled(value: bool)
 
@@ -15472,7 +15472,7 @@ bool is_shortcut_keys_enabled()
 
 If true, shortcut keys for context menu items are enabled, even if the context menu is disabled.
 
-StructuredTextParser structured_text_bidi_override = 0 🔗
+StructuredTextParser structured_text_bidi_override = 0 
 
 void set_structured_text_bidi_override(value: StructuredTextParser)
 
@@ -15480,7 +15480,7 @@ StructuredTextParser get_structured_text_bidi_override()
 
 Set BiDi algorithm override for the structured text.
 
-Array structured_text_bidi_override_options = [] 🔗
+Array structured_text_bidi_override_options = [] 
 
 void set_structured_text_bidi_override_options(value: Array)
 
@@ -15492,7 +15492,7 @@ void set_tab_size(value: int)
 
 The number of spaces associated with a single tab length. Does not affect \t in text tags, only indent tags.
 
-PackedFloat32Array tab_stops = PackedFloat32Array() 🔗
+PackedFloat32Array tab_stops = PackedFloat32Array() 
 
 void set_tab_stops(value: PackedFloat32Array)
 
@@ -15508,7 +15508,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 
 Note: If bbcode_enabled is true, it is unadvised to use the += operator with text (e.g. text += "some string") as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using push_* methods. Use append_text() for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
 
-TextDirection text_direction = 0 🔗
+TextDirection text_direction = 0 
 
 void set_text_direction(value: TextDirection)
 
@@ -15516,13 +15516,13 @@ TextDirection get_text_direction()
 
 Base text writing direction.
 
-bool threaded = false 🔗
+bool threaded = false 
 
 void set_threaded(value: bool)
 
 If true, text processing is done in a background thread.
 
-VerticalAlignment vertical_alignment = 0 🔗
+VerticalAlignment vertical_alignment = 0 
 
 void set_vertical_alignment(value: VerticalAlignment)
 
@@ -15530,7 +15530,7 @@ VerticalAlignment get_vertical_alignment()
 
 Controls the text's vertical alignment. Supports top, center, bottom, and fill.
 
-int visible_characters = -1 🔗
+int visible_characters = -1 
 
 void set_visible_characters(value: int)
 
@@ -15542,7 +15542,7 @@ Note: Setting this property updates visible_ratio accordingly.
 
 Note: Characters are counted as Unicode codepoints. A single visible grapheme may contain multiple codepoints (e.g. certain emoji use three codepoints). A single codepoint may contain two UTF-16 characters, which are used in C# strings.
 
-VisibleCharactersBehavior visible_characters_behavior = 0 🔗
+VisibleCharactersBehavior visible_characters_behavior = 0 
 
 void set_visible_characters_behavior(value: VisibleCharactersBehavior)
 
@@ -15550,7 +15550,7 @@ VisibleCharactersBehavior get_visible_characters_behavior()
 
 The clipping behavior when visible_characters or visible_ratio is set.
 
-float visible_ratio = 1.0 🔗
+float visible_ratio = 1.0 
 
 void set_visible_ratio(value: float)
 
@@ -15560,7 +15560,7 @@ The fraction of characters to display, relative to the total number of character
 
 Note: Setting this property updates visible_characters accordingly.
 
-void add_hr(width: int = 90, height: int = 2, color: Color = Color(1, 1, 1, 1), alignment: HorizontalAlignment = 1, width_in_percent: bool = true, height_in_percent: bool = false) 🔗
+void add_hr(width: int = 90, height: int = 2, color: Color = Color(1, 1, 1, 1), alignment: HorizontalAlignment = 1, width_in_percent: bool = true, height_in_percent: bool = false) 
 
 Adds a horizontal rule that can be used to separate content.
 
@@ -15568,7 +15568,7 @@ If width_in_percent is set, width values are percentages of the control width in
 
 If height_in_percent is set, height values are percentages of the control width instead of pixels.
 
-void add_image(image: Texture2D, width: int = 0, height: int = 0, color: Color = Color(1, 1, 1, 1), inline_align: InlineAlignment = 5, region: Rect2 = Rect2(0, 0, 0, 0), key: Variant = null, pad: bool = false, tooltip: String = "", width_in_percent: bool = false, height_in_percent: bool = false, alt_text: String = "") 🔗
+void add_image(image: Texture2D, width: int = 0, height: int = 0, color: Color = Color(1, 1, 1, 1), inline_align: InlineAlignment = 5, region: Rect2 = Rect2(0, 0, 0, 0), key: Variant = null, pad: bool = false, tooltip: String = "", width_in_percent: bool = false, height_in_percent: bool = false, alt_text: String = "") 
 
 Adds an image's opening and closing tags to the tag stack, optionally providing a width and height to resize the image, a color to tint the image and a region to only use parts of the image.
 
@@ -15586,11 +15586,11 @@ If height_in_percent is set, height values are percentages of the control width 
 
 alt_text is used as the image description for assistive apps.
 
-void add_text(text: String) 🔗
+void add_text(text: String) 
 
 Adds raw non-BBCode-parsed text to the tag stack.
 
-void append_text(bbcode: String) 🔗
+void append_text(bbcode: String) 
 
 Parses bbcode and adds tags to the tag stack as needed.
 
@@ -15602,19 +15602,19 @@ Note: This method does not affect text, and its contents will show again if the 
 
 Clears the current selection.
 
-int get_character_line(character: int) 🔗
+int get_character_line(character: int) 
 
 Returns the line number of the character position provided. Line and character numbers are both zero-indexed.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_character_paragraph(character: int) 🔗
+int get_character_paragraph(character: int) 
 
 Returns the paragraph number of the character position provided. Paragraph and character numbers are both zero-indexed.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_content_height() const 🔗
+int get_content_height() const 
 
 Returns the height of the content.
 
@@ -15622,7 +15622,7 @@ Note: This method always returns the full content size, and is not affected by v
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_content_width() const 🔗
+int get_content_width() const 
 
 Returns the width of the content.
 
@@ -15630,25 +15630,25 @@ Note: This method always returns the full content size, and is not affected by v
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_line_count() const 🔗
+int get_line_count() const 
 
 Returns the total number of lines in the text. Wrapped text is counted as multiple lines.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_line_height(line: int) const 🔗
+int get_line_height(line: int) const 
 
 Returns the height of the line found at the provided index.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether the document is fully loaded.
 
-float get_line_offset(line: int) 🔗
+float get_line_offset(line: int) 
 
 Returns the vertical offset of the line found at the provided index.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-Vector2i get_line_range(line: int) 🔗
+Vector2i get_line_range(line: int) 
 
 Returns the indexes of the first and last visible characters for the given line, as a Vector2i.
 
@@ -15656,13 +15656,13 @@ Note: If visible_characters_behavior is set to TextServer.VC_CHARS_BEFORE_SHAPIN
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_line_width(line: int) const 🔗
+int get_line_width(line: int) const 
 
 Returns the width of the line found at the provided index.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether the document is fully loaded.
 
-PopupMenu get_menu() const 🔗
+PopupMenu get_menu() const 
 
 Returns the PopupMenu of this RichTextLabel. By default, this menu is displayed when right-clicking on the RichTextLabel.
 
@@ -15670,53 +15670,53 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their Window.visible property.
 
-int get_paragraph_count() const 🔗
+int get_paragraph_count() const 
 
 Returns the total number of paragraphs (newlines or p tags in the tag stack's text tags). Considers wrapped text as one paragraph.
 
-float get_paragraph_offset(paragraph: int) 🔗
+float get_paragraph_offset(paragraph: int) 
 
 Returns the vertical offset of the paragraph found at the provided index.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-String get_parsed_text() const 🔗
+String get_parsed_text() const 
 
 Returns the text without BBCode mark-up.
 
-String get_selected_text() const 🔗
+String get_selected_text() const 
 
 Returns the current selection text. Does not include BBCodes.
 
-int get_selection_from() const 🔗
+int get_selection_from() const 
 
 Returns the current selection first character index if a selection is active, -1 otherwise. Does not include BBCodes.
 
-float get_selection_line_offset() const 🔗
+float get_selection_line_offset() const 
 
 Returns the current selection vertical line offset if a selection is active, -1.0 otherwise.
 
-int get_selection_to() const 🔗
+int get_selection_to() const 
 
 Returns the current selection last character index if a selection is active, -1 otherwise. Does not include BBCodes.
 
-int get_total_character_count() const 🔗
+int get_total_character_count() const 
 
 Returns the total number of characters from text tags. Does not include BBCodes.
 
-VScrollBar get_v_scroll_bar() 🔗
+VScrollBar get_v_scroll_bar() 
 
 Returns the vertical scrollbar.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-Rect2i get_visible_content_rect() const 🔗
+Rect2i get_visible_content_rect() const 
 
 Returns the bounding rectangle of the visible content.
 
 Note: This method returns a correct value only after the label has been drawn.
 
-int get_visible_line_count() const 🔗
+int get_visible_line_count() const 
 
 Returns the number of visible lines.
 
@@ -15724,7 +15724,7 @@ Note: This method returns a correct value only after the label has been drawn.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-int get_visible_paragraph_count() const 🔗
+int get_visible_paragraph_count() const 
 
 Returns the number of visible paragraphs. A paragraph is considered visible if at least one of its lines is visible.
 
@@ -15732,7 +15732,7 @@ Note: This method returns a correct value only after the label has been drawn.
 
 Note: If threaded is enabled, this method returns a value for the loaded part of the document. Use is_finished() or finished to determine whether document is fully loaded.
 
-void install_effect(effect: Variant) 🔗
+void install_effect(effect: Variant) 
 
 Installs a custom effect. This can also be done in the Inspector through the custom_effects property. effect should be a valid RichTextEffect.
 
@@ -15740,35 +15740,35 @@ Example: With the following script extending from RichTextEffect:
 
 The above effect can be installed in RichTextLabel from a script:
 
-bool invalidate_paragraph(paragraph: int) 🔗
+bool invalidate_paragraph(paragraph: int) 
 
 Invalidates paragraph and all subsequent paragraphs cache.
 
-bool is_finished() const 🔗
+bool is_finished() const 
 
 If threaded is enabled, returns true if the background thread has finished text processing, otherwise always return true.
 
-bool is_menu_visible() const 🔗
+bool is_menu_visible() const 
 
 Returns whether the menu is visible. Use this instead of get_menu().visible to improve performance (so the creation of the menu is avoided).
 
-bool is_ready() const 🔗
+bool is_ready() const 
 
 Deprecated: Use is_finished() instead.
 
 If threaded is enabled, returns true if the background thread has finished text processing, otherwise always return true.
 
-void menu_option(option: int) 🔗
+void menu_option(option: int) 
 
 Executes a given action as defined in the MenuItems enum.
 
 Adds a newline tag to the tag stack.
 
-void parse_bbcode(bbcode: String) 🔗
+void parse_bbcode(bbcode: String) 
 
 The assignment version of append_text(). Clears the tag stack and inserts the new content.
 
-Dictionary parse_expressions_for_values(expressions: PackedStringArray) 🔗
+Dictionary parse_expressions_for_values(expressions: PackedStringArray) 
 
 Parses BBCode parameter expressions into a dictionary.
 
@@ -15778,7 +15778,7 @@ Terminates all tags opened by push_* methods.
 
 Terminates tags opened after the last push_context() call (including context marker), or all tags if there's no context marker on the stack.
 
-void push_bgcolor(bgcolor: Color) 🔗
+void push_bgcolor(bgcolor: Color) 
 
 Adds a [bgcolor] tag to the tag stack.
 
@@ -15786,65 +15786,65 @@ Note: The background color has padding applied by default, which is controlled u
 
 Adds a [font] tag with a bold font to the tag stack. This is the same as adding a [b] tag if not currently in a [i] tag.
 
-void push_bold_italics() 🔗
+void push_bold_italics() 
 
 Adds a [font] tag with a bold italics font to the tag stack.
 
 Adds a [cell] tag to the tag stack. Must be inside a [table] tag. See push_table() for details. Use set_table_column_expand() to set column expansion ratio, set_cell_border_color() to set cell border, set_cell_row_background_color() to set cell background, set_cell_size_override() to override cell size, and set_cell_padding() to set padding.
 
-void push_color(color: Color) 🔗
+void push_color(color: Color) 
 
 Adds a [color] tag to the tag stack.
 
-void push_context() 🔗
+void push_context() 
 
 Adds a context marker to the tag stack. See pop_context().
 
-void push_customfx(effect: RichTextEffect, env: Dictionary) 🔗
+void push_customfx(effect: RichTextEffect, env: Dictionary) 
 
 Adds a custom effect tag to the tag stack. The effect does not need to be in custom_effects. The environment is directly passed to the effect.
 
-void push_dropcap(string: String, font: Font, size: int, dropcap_margins: Rect2 = Rect2(0, 0, 0, 0), color: Color = Color(1, 1, 1, 1), outline_size: int = 0, outline_color: Color = Color(0, 0, 0, 0)) 🔗
+void push_dropcap(string: String, font: Font, size: int, dropcap_margins: Rect2 = Rect2(0, 0, 0, 0), color: Color = Color(1, 1, 1, 1), outline_size: int = 0, outline_color: Color = Color(0, 0, 0, 0)) 
 
 Adds a [dropcap] tag to the tag stack. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
 
-void push_fgcolor(fgcolor: Color) 🔗
+void push_fgcolor(fgcolor: Color) 
 
 Adds a [fgcolor] tag to the tag stack.
 
 Note: The foreground color has padding applied by default, which is controlled using text_highlight_h_padding and text_highlight_v_padding. This can lead to overlapping highlights if foreground colors are placed on neighboring lines/columns, so consider setting those theme items to 0 if you want to avoid this.
 
-void push_font(font: Font, font_size: int = 0) 🔗
+void push_font(font: Font, font_size: int = 0) 
 
 Adds a [font] tag to the tag stack. Overrides default fonts for its duration.
 
 Passing 0 to font_size will use the existing default font size.
 
-void push_font_size(font_size: int) 🔗
+void push_font_size(font_size: int) 
 
 Adds a [font_size] tag to the tag stack. Overrides default font size for its duration.
 
-void push_hint(description: String) 🔗
+void push_hint(description: String) 
 
 Adds a [hint] tag to the tag stack. Same as BBCode [hint=something]{text}[/hint].
 
-void push_indent(level: int) 🔗
+void push_indent(level: int) 
 
 Adds an [indent] tag to the tag stack. Multiplies level by current tab_size to determine new margin length.
 
-void push_italics() 🔗
+void push_italics() 
 
 Adds a [font] tag with an italics font to the tag stack. This is the same as adding an [i] tag if not currently in a [b] tag.
 
-void push_language(language: String) 🔗
+void push_language(language: String) 
 
 Adds language code used for text shaping algorithm and Open-Type font features.
 
-void push_list(level: int, type: ListType, capitalize: bool, bullet: String = "•") 🔗
+void push_list(level: int, type: ListType, capitalize: bool, bullet: String = "•") 
 
 Adds [ol] or [ul] tag to the tag stack. Multiplies level by current tab_size to determine new margin length.
 
-void push_meta(data: Variant, underline_mode: MetaUnderline = 1, tooltip: String = "") 🔗
+void push_meta(data: Variant, underline_mode: MetaUnderline = 1, tooltip: String = "") 
 
 Adds a meta tag to the tag stack. Similar to the BBCode [url=something]{text}[/url], but supports non-String metadata types.
 
@@ -15856,35 +15856,35 @@ Adds a [font] tag with a monospace font to the tag stack.
 
 Adds a [font] tag with a normal font to the tag stack.
 
-void push_outline_color(color: Color) 🔗
+void push_outline_color(color: Color) 
 
 Adds a [outline_color] tag to the tag stack. Adds text outline for its duration.
 
-void push_outline_size(outline_size: int) 🔗
+void push_outline_size(outline_size: int) 
 
 Adds a [outline_size] tag to the tag stack. Overrides default text outline size for its duration.
 
-void push_paragraph(alignment: HorizontalAlignment, base_direction: TextDirection = 0, language: String = "", st_parser: StructuredTextParser = 0, justification_flags: BitField[JustificationFlag] = 163, tab_stops: PackedFloat32Array = PackedFloat32Array()) 🔗
+void push_paragraph(alignment: HorizontalAlignment, base_direction: TextDirection = 0, language: String = "", st_parser: StructuredTextParser = 0, justification_flags: BitField[JustificationFlag] = 163, tab_stops: PackedFloat32Array = PackedFloat32Array()) 
 
 Adds a [p] tag to the tag stack.
 
-void push_strikethrough(color: Color = Color(0, 0, 0, 0)) 🔗
+void push_strikethrough(color: Color = Color(0, 0, 0, 0)) 
 
 Adds a [s] tag to the tag stack. If color alpha value is zero, current font color with alpha multiplied by strikethrough_alpha is used.
 
-void push_table(columns: int, inline_align: InlineAlignment = 0, align_to_row: int = -1, name: String = "") 🔗
+void push_table(columns: int, inline_align: InlineAlignment = 0, align_to_row: int = -1, name: String = "") 
 
 Adds a [table=columns,inline_align] tag to the tag stack. Use set_table_column_expand() to set column expansion ratio. Use push_cell() to add cells. name is used as the table name for assistive apps.
 
-void push_underline(color: Color = Color(0, 0, 0, 0)) 🔗
+void push_underline(color: Color = Color(0, 0, 0, 0)) 
 
 Adds a [u] tag to the tag stack. If color alpha value is zero, current font color with alpha multiplied by underline_alpha is used.
 
-void reload_effects() 🔗
+void reload_effects() 
 
 Reloads custom effects. Useful when custom_effects is modified manually.
 
-bool remove_paragraph(paragraph: int, no_invalidate: bool = false) 🔗
+bool remove_paragraph(paragraph: int, no_invalidate: bool = false) 
 
 Removes a paragraph of content from the label. Returns true if the paragraph exists.
 
@@ -15892,37 +15892,37 @@ The paragraph argument is the index of the paragraph to remove, it can take valu
 
 If no_invalidate is set to true, cache for the subsequent paragraphs is not invalidated. Use it for faster updates if deleted paragraph is fully self-contained (have no unclosed tags), or this call is part of the complex edit operation and invalidate_paragraph() will be called at the end of operation.
 
-void scroll_to_line(line: int) 🔗
+void scroll_to_line(line: int) 
 
 Scrolls the window's top line to match line.
 
-void scroll_to_paragraph(paragraph: int) 🔗
+void scroll_to_paragraph(paragraph: int) 
 
 Scrolls the window's top line to match first line of the paragraph.
 
-void scroll_to_selection() 🔗
+void scroll_to_selection() 
 
 Scrolls to the beginning of the current selection.
 
 If selection_enabled is false, no selection will occur.
 
-void set_cell_border_color(color: Color) 🔗
+void set_cell_border_color(color: Color) 
 
 Sets color of a table cell border.
 
-void set_cell_padding(padding: Rect2) 🔗
+void set_cell_padding(padding: Rect2) 
 
 Sets inner padding of a table cell.
 
-void set_cell_row_background_color(odd_row_bg: Color, even_row_bg: Color) 🔗
+void set_cell_row_background_color(odd_row_bg: Color, even_row_bg: Color) 
 
 Sets color of a table cell. Separate colors for alternating rows can be specified.
 
-void set_cell_size_override(min_size: Vector2, max_size: Vector2) 🔗
+void set_cell_size_override(min_size: Vector2, max_size: Vector2) 
 
 Sets minimum and maximum size overrides for a table cell.
 
-void set_table_column_expand(column: int, expand: bool, ratio: int = 1, shrink: bool = true) 🔗
+void set_table_column_expand(column: int, expand: bool, ratio: int = 1, shrink: bool = true) 
 
 Edits the selected column's expansion options. If expand is true, the column expands in proportion to its expansion ratio versus the other columns' ratios.
 
@@ -15930,99 +15930,99 @@ For example, 2 columns with ratios 3 and 4 plus 70 pixels in available width wou
 
 If expand is false, the column will not contribute to the total ratio.
 
-void set_table_column_name(column: int, name: String) 🔗
+void set_table_column_name(column: int, name: String) 
 
 Sets table column name for assistive apps.
 
-void update_image(key: Variant, mask: BitField[ImageUpdateMask], image: Texture2D, width: int = 0, height: int = 0, color: Color = Color(1, 1, 1, 1), inline_align: InlineAlignment = 5, region: Rect2 = Rect2(0, 0, 0, 0), pad: bool = false, tooltip: String = "", width_in_percent: bool = false, height_in_percent: bool = false) 🔗
+void update_image(key: Variant, mask: BitField[ImageUpdateMask], image: Texture2D, width: int = 0, height: int = 0, color: Color = Color(1, 1, 1, 1), inline_align: InlineAlignment = 5, region: Rect2 = Rect2(0, 0, 0, 0), pad: bool = false, tooltip: String = "", width_in_percent: bool = false, height_in_percent: bool = false) 
 
 Updates the existing images with the key key. Only properties specified by mask bits are updated. See add_image().
 
-Color default_color = Color(1, 1, 1, 1) 🔗
+Color default_color = Color(1, 1, 1, 1) 
 
 The default text color.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The default tint of text outline.
 
-Color font_selected_color = Color(0, 0, 0, 0) 🔗
+Color font_selected_color = Color(0, 0, 0, 0) 
 
 The color of selected text, used when selection_enabled is true. If equal to Color(0, 0, 0, 0), it will be ignored.
 
-Color font_shadow_color = Color(0, 0, 0, 0) 🔗
+Color font_shadow_color = Color(0, 0, 0, 0) 
 
 The color of the font's shadow.
 
-Color selection_color = Color(0.1, 0.1, 1, 0.8) 🔗
+Color selection_color = Color(0.1, 0.1, 1, 0.8) 
 
 The color of the selection box.
 
-Color table_border = Color(0, 0, 0, 0) 🔗
+Color table_border = Color(0, 0, 0, 0) 
 
 The default cell border color.
 
-Color table_even_row_bg = Color(0, 0, 0, 0) 🔗
+Color table_even_row_bg = Color(0, 0, 0, 0) 
 
 The default background color for even rows.
 
-Color table_odd_row_bg = Color(0, 0, 0, 0) 🔗
+Color table_odd_row_bg = Color(0, 0, 0, 0) 
 
 The default background color for odd rows.
 
-int line_separation = 0 🔗
+int line_separation = 0 
 
 Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int paragraph_separation = 0 🔗
+int paragraph_separation = 0 
 
 Additional vertical spacing between paragraphs (in pixels). Spacing is added after the last line. This value can be negative.
 
-int shadow_offset_x = 1 🔗
+int shadow_offset_x = 1 
 
 The horizontal offset of the font's shadow.
 
-int shadow_offset_y = 1 🔗
+int shadow_offset_y = 1 
 
 The vertical offset of the font's shadow.
 
-int shadow_outline_size = 1 🔗
+int shadow_outline_size = 1 
 
 The size of the shadow outline.
 
-int strikethrough_alpha = 50 🔗
+int strikethrough_alpha = 50 
 
 The default strikethrough color transparency (percent). For strikethroughs with a custom color, this theme item is only used if the custom color's alpha is 0.0 (fully transparent).
 
-int table_h_separation = 3 🔗
+int table_h_separation = 3 
 
 The horizontal separation of elements in a table.
 
-int table_v_separation = 3 🔗
+int table_v_separation = 3 
 
 The vertical separation of elements in a table.
 
-int text_highlight_h_padding = 3 🔗
+int text_highlight_h_padding = 3 
 
 The horizontal padding around boxes drawn by the [fgcolor] and [bgcolor] tags. This does not affect the appearance of text selection. To avoid any risk of neighboring highlights overlapping each other, set this to 0 to disable padding.
 
-int text_highlight_v_padding = 3 🔗
+int text_highlight_v_padding = 3 
 
 The vertical padding around boxes drawn by the [fgcolor] and [bgcolor] tags. This does not affect the appearance of text selection. To avoid any risk of neighboring highlights overlapping each other, set this to 0 to disable padding.
 
-int underline_alpha = 50 🔗
+int underline_alpha = 50 
 
 The default underline color transparency (percent). For underlines with a custom color, this theme item is only used if the custom color's alpha is 0.0 (fully transparent).
 
 The font used for bold text.
 
-Font bold_italics_font 🔗
+Font bold_italics_font 
 
 The font used for bold italics text.
 
@@ -16034,21 +16034,21 @@ The default text font.
 
 The font size used for bold text.
 
-int bold_italics_font_size 🔗
+int bold_italics_font_size 
 
 The font size used for bold italics text.
 
-int italics_font_size 🔗
+int italics_font_size 
 
 The font size used for italics text.
 
 The font size used for monospace text.
 
-int normal_font_size 🔗
+int normal_font_size 
 
 The default text font size.
 
-Texture2D horizontal_rule 🔗
+Texture2D horizontal_rule 
 
 The horizontal rule texture.
 
@@ -16150,11 +16150,11 @@ false (overrides AcceptDialog)
 
 config(inherits: String, path: String, built_in_enabled: bool = true, load_enabled: bool = true)
 
-script_created(script: Script) 🔗
+script_created(script: Script) 
 
 Emitted when the user clicks the OK button.
 
-void config(inherits: String, path: String, built_in_enabled: bool = true, load_enabled: bool = true) 🔗
+void config(inherits: String, path: String, built_in_enabled: bool = true, load_enabled: bool = true) 
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 
@@ -16686,15 +16686,15 @@ The shortcut's InputEvent array.
 
 Generally the InputEvent used is an InputEventKey, though it can be any InputEvent, including an InputEventAction.
 
-String get_as_text() const 🔗
+String get_as_text() const 
 
 Returns the shortcut's first valid InputEvent as a String.
 
-bool has_valid_event() const 🔗
+bool has_valid_event() const 
 
 Returns whether events contains an InputEvent which is valid.
 
-bool matches_event(event: InputEvent) const 🔗
+bool matches_event(event: InputEvent) const 
 
 Returns whether any InputEvent in events equals event. This uses InputEvent.is_match() to compare events.
 
@@ -16921,7 +16921,7 @@ up_background_pressed
 
 up_down_buttons_separator
 
-HorizontalAlignment alignment = 0 🔗
+HorizontalAlignment alignment = 0 
 
 void set_horizontal_alignment(value: HorizontalAlignment)
 
@@ -16929,7 +16929,7 @@ HorizontalAlignment get_horizontal_alignment()
 
 Changes the alignment of the underlying LineEdit.
 
-float custom_arrow_step = 0.0 🔗
+float custom_arrow_step = 0.0 
 
 void set_custom_arrow_step(value: float)
 
@@ -16939,7 +16939,7 @@ If not 0, sets the step when interacting with the arrow buttons of the SpinBox.
 
 Note: Range.value will still be rounded to a multiple of Range.step.
 
-bool editable = true 🔗
+bool editable = true 
 
 void set_editable(value: bool)
 
@@ -16949,7 +16949,7 @@ void set_prefix(value: String)
 
 Adds the specified prefix string before the numerical value of the SpinBox.
 
-bool select_all_on_focus = false 🔗
+bool select_all_on_focus = false 
 
 void set_select_all_on_focus(value: bool)
 
@@ -16961,7 +16961,7 @@ void set_suffix(value: String)
 
 Adds the specified suffix string after the numerical value of the SpinBox.
 
-bool update_on_text_changed = false 🔗
+bool update_on_text_changed = false 
 
 void set_update_on_text_changed(value: bool)
 
@@ -16973,125 +16973,125 @@ Note: If set to true, this will interfere with entering mathematical expressions
 
 Applies the current value of this SpinBox. This is equivalent to pressing Enter while editing the LineEdit used by the SpinBox. This will cause LineEdit.text_submitted to be emitted and its currently contained expression to be evaluated.
 
-LineEdit get_line_edit() 🔗
+LineEdit get_line_edit() 
 
 Returns the LineEdit instance from this SpinBox. You can use it to access properties and methods of LineEdit.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-Color down_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color down_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5) 
 
 Down button icon modulation color, when the button is disabled.
 
-Color down_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1) 🔗
+Color down_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1) 
 
 Down button icon modulation color, when the button is hovered.
 
-Color down_icon_modulate = Color(0.875, 0.875, 0.875, 1) 🔗
+Color down_icon_modulate = Color(0.875, 0.875, 0.875, 1) 
 
 Down button icon modulation color.
 
-Color down_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1) 🔗
+Color down_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1) 
 
 Down button icon modulation color, when the button is being pressed.
 
-Color up_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color up_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5) 
 
 Up button icon modulation color, when the button is disabled.
 
-Color up_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1) 🔗
+Color up_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1) 
 
 Up button icon modulation color, when the button is hovered.
 
-Color up_icon_modulate = Color(0.875, 0.875, 0.875, 1) 🔗
+Color up_icon_modulate = Color(0.875, 0.875, 0.875, 1) 
 
 Up button icon modulation color.
 
-Color up_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1) 🔗
+Color up_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1) 
 
 Up button icon modulation color, when the button is being pressed.
 
-int buttons_vertical_separation = 0 🔗
+int buttons_vertical_separation = 0 
 
 Vertical separation between the up and down buttons.
 
-int buttons_width = 16 🔗
+int buttons_width = 16 
 
 Width of the up and down buttons. If smaller than any icon set on the buttons, the respective icon may overlap neighboring elements. If smaller than 0, the width is automatically adjusted from the icon size.
 
-int field_and_buttons_separation = 2 🔗
+int field_and_buttons_separation = 2 
 
 Width of the horizontal separation between the text input field (LineEdit) and the buttons.
 
-int set_min_buttons_width_from_icons = 1 🔗
+int set_min_buttons_width_from_icons = 1 
 
 If not 0, the minimum button width corresponds to the widest of all icons set on those buttons, even if buttons_width is smaller.
 
 Down button icon, displayed in the middle of the down (value-decreasing) button.
 
-Texture2D down_disabled 🔗
+Texture2D down_disabled 
 
 Down button icon when the button is disabled.
 
-Texture2D down_hover 🔗
+Texture2D down_hover 
 
 Down button icon when the button is hovered.
 
-Texture2D down_pressed 🔗
+Texture2D down_pressed 
 
 Down button icon when the button is being pressed.
 
 Up button icon, displayed in the middle of the up (value-increasing) button.
 
-Texture2D up_disabled 🔗
+Texture2D up_disabled 
 
 Up button icon when the button is disabled.
 
 Up button icon when the button is hovered.
 
-Texture2D up_pressed 🔗
+Texture2D up_pressed 
 
 Up button icon when the button is being pressed.
 
 Single texture representing both the up and down buttons icons. It is displayed in the middle of the buttons and does not change upon interaction. If a valid icon is assigned, it will replace up and down.
 
-StyleBox down_background 🔗
+StyleBox down_background 
 
 Background style of the down button.
 
-StyleBox down_background_disabled 🔗
+StyleBox down_background_disabled 
 
 Background style of the down button when disabled.
 
-StyleBox down_background_hovered 🔗
+StyleBox down_background_hovered 
 
 Background style of the down button when hovered.
 
-StyleBox down_background_pressed 🔗
+StyleBox down_background_pressed 
 
 Background style of the down button when being pressed.
 
-StyleBox field_and_buttons_separator 🔗
+StyleBox field_and_buttons_separator 
 
 StyleBox drawn in the space occupied by the separation between the input field and the buttons.
 
-StyleBox up_background 🔗
+StyleBox up_background 
 
 Background style of the up button.
 
-StyleBox up_background_disabled 🔗
+StyleBox up_background_disabled 
 
 Background style of the up button when disabled.
 
-StyleBox up_background_hovered 🔗
+StyleBox up_background_hovered 
 
 Background style of the up button when hovered.
 
-StyleBox up_background_pressed 🔗
+StyleBox up_background_pressed 
 
 Background style of the up button when being pressed.
 
-StyleBox up_down_buttons_separator 🔗
+StyleBox up_down_buttons_separator 
 
 StyleBox drawn in the space occupied by the separation between the up and down buttons.
 
@@ -17161,11 +17161,11 @@ Emitted when the user ends dragging.
 
 Emitted when the user starts dragging.
 
-dragged(offset: int) 🔗
+dragged(offset: int) 
 
 Emitted when the dragger is dragged by user.
 
-enum DraggerVisibility: 🔗
+enum DraggerVisibility: 
 
 DraggerVisibility DRAGGER_VISIBLE = 0
 
@@ -17185,13 +17185,13 @@ DraggerVisibility DRAGGER_HIDDEN_COLLAPSED = 2
 
 The split dragger icon is not visible, and the split bar is collapsed to zero thickness.
 
-bool collapsed = false 🔗
+bool collapsed = false 
 
 void set_collapsed(value: bool)
 
 If true, the dragger will be disabled and the children will be sized as if the split_offset was 0.
 
-bool drag_area_highlight_in_editor = false 🔗
+bool drag_area_highlight_in_editor = false 
 
 void set_drag_area_highlight_in_editor(value: bool)
 
@@ -17199,7 +17199,7 @@ bool is_drag_area_highlight_in_editor_enabled()
 
 Highlights the drag area Rect2 so you can see where it is during development. The drag area is gold if dragging_enabled is true, and red if false.
 
-int drag_area_margin_begin = 0 🔗
+int drag_area_margin_begin = 0 
 
 void set_drag_area_margin_begin(value: int)
 
@@ -17207,7 +17207,7 @@ int get_drag_area_margin_begin()
 
 Reduces the size of the drag area and split bar split_bar_background at the beginning of the container.
 
-int drag_area_margin_end = 0 🔗
+int drag_area_margin_end = 0 
 
 void set_drag_area_margin_end(value: int)
 
@@ -17215,7 +17215,7 @@ int get_drag_area_margin_end()
 
 Reduces the size of the drag area and split bar split_bar_background at the end of the container.
 
-int drag_area_offset = 0 🔗
+int drag_area_offset = 0 
 
 void set_drag_area_offset(value: int)
 
@@ -17223,7 +17223,7 @@ int get_drag_area_offset()
 
 Shifts the drag area in the axis of the container to prevent the drag area from overlapping the ScrollBar or other selectable Control of a child node.
 
-DraggerVisibility dragger_visibility = 0 🔗
+DraggerVisibility dragger_visibility = 0 
 
 void set_dragger_visibility(value: DraggerVisibility)
 
@@ -17231,7 +17231,7 @@ DraggerVisibility get_dragger_visibility()
 
 Determines the dragger's visibility. This property does not determine whether dragging is enabled or not. Use dragging_enabled for that.
 
-bool dragging_enabled = true 🔗
+bool dragging_enabled = true 
 
 void set_dragging_enabled(value: bool)
 
@@ -17239,7 +17239,7 @@ bool is_dragging_enabled()
 
 Enables or disables split dragging.
 
-int split_offset = 0 🔗
+int split_offset = 0 
 
 void set_split_offset(value: int)
 
@@ -17247,7 +17247,7 @@ int get_split_offset()
 
 The initial offset of the splitting between the two Controls, with 0 being at the end of the first Control.
 
-bool touch_dragger_enabled = false 🔗
+bool touch_dragger_enabled = false 
 
 void set_touch_dragger_enabled(value: bool)
 
@@ -17255,7 +17255,7 @@ bool is_touch_dragger_enabled()
 
 If true, a touch-friendly drag handle will be enabled for better usability on smaller screens. Unlike the standard grabber, this drag handle overlaps the SplitContainer's children and does not affect their minimum separation. The standard grabber will no longer be drawn when this option is enabled.
 
-bool vertical = false 🔗
+bool vertical = false 
 
 void set_vertical(value: bool)
 
@@ -17263,11 +17263,11 @@ If true, the SplitContainer will arrange its children vertically, rather than ho
 
 Can't be changed when using HSplitContainer and VSplitContainer.
 
-void clamp_split_offset() 🔗
+void clamp_split_offset() 
 
 Clamps the split_offset value to not go outside the currently possible minimal and maximum values.
 
-Control get_drag_area_control() 🔗
+Control get_drag_area_control() 
 
 Returns the drag area Control. For example, you can move a pre-configured button into the drag area Control so that it rides along with the split bar. Try setting the Button anchors to center prior to the reparent() call.
 
@@ -17275,25 +17275,25 @@ Note: The drag area Control is drawn over the SplitContainer's children, so Canv
 
 Warning: This is a required internal node, removing and freeing it may cause a crash.
 
-Color touch_dragger_color = Color(1, 1, 1, 0.3) 🔗
+Color touch_dragger_color = Color(1, 1, 1, 0.3) 
 
 The color of the touch dragger.
 
-Color touch_dragger_hover_color = Color(1, 1, 1, 0.6) 🔗
+Color touch_dragger_hover_color = Color(1, 1, 1, 0.6) 
 
 The color of the touch dragger when hovered.
 
-Color touch_dragger_pressed_color = Color(1, 1, 1, 1) 🔗
+Color touch_dragger_pressed_color = Color(1, 1, 1, 1) 
 
 The color of the touch dragger when pressed.
 
 Boolean value. If 1 (true), the grabber will hide automatically when it isn't under the cursor. If 0 (false), it's always visible. The dragger_visibility must be DRAGGER_VISIBLE.
 
-int minimum_grab_thickness = 6 🔗
+int minimum_grab_thickness = 6 
 
 The minimum thickness of the area users can click on to grab the split bar. This ensures that the split bar can still be dragged if separation or h_grabber / v_grabber's size is too narrow to easily select.
 
-int separation = 12 🔗
+int separation = 12 
 
 The split bar thickness, i.e., the gap between the two children of the container. This is overridden by the size of the grabber icon if dragger_visibility is set to DRAGGER_VISIBLE, or DRAGGER_HIDDEN, and separation is smaller than the size of the grabber icon in the same axis.
 
@@ -17301,27 +17301,27 @@ Note: To obtain separation values less than the size of the grabber icon, for ex
 
 The icon used for the grabber drawn in the middle area. This is only used in HSplitContainer and VSplitContainer. For SplitContainer, see h_grabber and v_grabber instead.
 
-Texture2D h_grabber 🔗
+Texture2D h_grabber 
 
 The icon used for the grabber drawn in the middle area when vertical is false.
 
-Texture2D h_touch_dragger 🔗
+Texture2D h_touch_dragger 
 
 The icon used for the drag handle when touch_dragger_enabled is true and vertical is false.
 
-Texture2D touch_dragger 🔗
+Texture2D touch_dragger 
 
 The icon used for the drag handle when touch_dragger_enabled is true. This is only used in HSplitContainer and VSplitContainer. For SplitContainer, see h_touch_dragger and v_touch_dragger instead.
 
-Texture2D v_grabber 🔗
+Texture2D v_grabber 
 
 The icon used for the grabber drawn in the middle area when vertical is true.
 
-Texture2D v_touch_dragger 🔗
+Texture2D v_touch_dragger 
 
 The icon used for the drag handle when touch_dragger_enabled is true and vertical is true.
 
-StyleBox split_bar_background 🔗
+StyleBox split_bar_background 
 
 Determines the background of the split bar if its thickness is greater than zero.
 
@@ -17355,7 +17355,7 @@ Application status indicator (aka notification area icon).
 
 Note: Status indicator is implemented on macOS and Windows.
 
-pressed(mouse_button: int, mouse_position: Vector2i) 🔗
+pressed(mouse_button: int, mouse_position: Vector2i) 
 
 Emitted when the status indicator is pressed.
 
@@ -17363,7 +17363,7 @@ void set_icon(value: Texture2D)
 
 Status indicator icon.
 
-NodePath menu = NodePath("") 🔗
+NodePath menu = NodePath("") 
 
 void set_menu(value: NodePath)
 
@@ -17371,19 +17371,19 @@ Status indicator native popup menu. If this is set, the pressed signal is not em
 
 Note: Native popup is only supported if NativeMenu supports NativeMenu.FEATURE_POPUP_MENU feature.
 
-String tooltip = "" 🔗
+String tooltip = "" 
 
 void set_tooltip(value: String)
 
 Status indicator tooltip.
 
-bool visible = true 🔗
+bool visible = true 
 
 void set_visible(value: bool)
 
 If true, the status indicator is visible.
 
-Rect2 get_rect() const 🔗
+Rect2 get_rect() const 
 
 Returns the status indicator rectangle in screen coordinates. If this status indicator is not visible, returns an empty Rect2.
 
@@ -17465,7 +17465,7 @@ set_expand_margin(margin: Side, size: float)
 
 set_expand_margin_all(size: float)
 
-bool anti_aliasing = true 🔗
+bool anti_aliasing = true 
 
 void set_anti_aliased(value: bool)
 
@@ -17475,7 +17475,7 @@ Antialiasing draws a small ring around the edges, which fades to transparency. A
 
 Note: When using beveled corners with 45-degree angles (corner_detail = 1), it is recommended to set anti_aliasing to false to ensure crisp visuals and avoid possible visual glitches.
 
-float anti_aliasing_size = 1.0 🔗
+float anti_aliasing_size = 1.0 
 
 void set_aa_size(value: float)
 
@@ -17483,13 +17483,13 @@ This changes the size of the antialiasing effect. 1.0 is recommended for an opti
 
 Note: Higher values may produce a blur effect but can also create undesired artifacts on small boxes with large-radius corners.
 
-Color bg_color = Color(0.6, 0.6, 0.6, 1) 🔗
+Color bg_color = Color(0.6, 0.6, 0.6, 1) 
 
 void set_bg_color(value: Color)
 
 The background color of the stylebox.
 
-bool border_blend = false 🔗
+bool border_blend = false 
 
 void set_border_blend(value: bool)
 
@@ -17497,7 +17497,7 @@ bool get_border_blend()
 
 If true, the border will fade into the background color.
 
-Color border_color = Color(0.8, 0.8, 0.8, 1) 🔗
+Color border_color = Color(0.8, 0.8, 0.8, 1) 
 
 void set_border_color(value: Color)
 
@@ -17505,7 +17505,7 @@ Color get_border_color()
 
 Sets the color of the border.
 
-int border_width_bottom = 0 🔗
+int border_width_bottom = 0 
 
 void set_border_width(margin: Side, width: int)
 
@@ -17513,7 +17513,7 @@ int get_border_width(margin: Side) const
 
 Border width for the bottom border.
 
-int border_width_left = 0 🔗
+int border_width_left = 0 
 
 void set_border_width(margin: Side, width: int)
 
@@ -17521,7 +17521,7 @@ int get_border_width(margin: Side) const
 
 Border width for the left border.
 
-int border_width_right = 0 🔗
+int border_width_right = 0 
 
 void set_border_width(margin: Side, width: int)
 
@@ -17529,7 +17529,7 @@ int get_border_width(margin: Side) const
 
 Border width for the right border.
 
-int border_width_top = 0 🔗
+int border_width_top = 0 
 
 void set_border_width(margin: Side, width: int)
 
@@ -17537,7 +17537,7 @@ int get_border_width(margin: Side) const
 
 Border width for the top border.
 
-int corner_detail = 8 🔗
+int corner_detail = 8 
 
 void set_corner_detail(value: int)
 
@@ -17549,7 +17549,7 @@ For corner radii less than 10, 4 or 5 should be enough. For corner radii less th
 
 A corner detail of 1 will result in chamfered corners instead of rounded corners, which is useful for some artistic effects.
 
-int corner_radius_bottom_left = 0 🔗
+int corner_radius_bottom_left = 0 
 
 void set_corner_radius(corner: Corner, radius: int)
 
@@ -17557,7 +17557,7 @@ int get_corner_radius(corner: Corner) const
 
 The bottom-left corner's radius. If 0, the corner is not rounded.
 
-int corner_radius_bottom_right = 0 🔗
+int corner_radius_bottom_right = 0 
 
 void set_corner_radius(corner: Corner, radius: int)
 
@@ -17565,7 +17565,7 @@ int get_corner_radius(corner: Corner) const
 
 The bottom-right corner's radius. If 0, the corner is not rounded.
 
-int corner_radius_top_left = 0 🔗
+int corner_radius_top_left = 0 
 
 void set_corner_radius(corner: Corner, radius: int)
 
@@ -17573,7 +17573,7 @@ int get_corner_radius(corner: Corner) const
 
 The top-left corner's radius. If 0, the corner is not rounded.
 
-int corner_radius_top_right = 0 🔗
+int corner_radius_top_right = 0 
 
 void set_corner_radius(corner: Corner, radius: int)
 
@@ -17581,7 +17581,7 @@ int get_corner_radius(corner: Corner) const
 
 The top-right corner's radius. If 0, the corner is not rounded.
 
-bool draw_center = true 🔗
+bool draw_center = true 
 
 void set_draw_center(value: bool)
 
@@ -17589,7 +17589,7 @@ bool is_draw_center_enabled()
 
 Toggles drawing of the inner part of the stylebox.
 
-float expand_margin_bottom = 0.0 🔗
+float expand_margin_bottom = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17599,7 +17599,7 @@ Expands the stylebox outside of the control rect on the bottom edge. Useful in c
 
 Note: Unlike StyleBox.content_margin_bottom, expand_margin_bottom does not affect the size of the clickable area for Controls. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
-float expand_margin_left = 0.0 🔗
+float expand_margin_left = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17609,7 +17609,7 @@ Expands the stylebox outside of the control rect on the left edge. Useful in com
 
 Note: Unlike StyleBox.content_margin_left, expand_margin_left does not affect the size of the clickable area for Controls. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
-float expand_margin_right = 0.0 🔗
+float expand_margin_right = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17619,7 +17619,7 @@ Expands the stylebox outside of the control rect on the right edge. Useful in co
 
 Note: Unlike StyleBox.content_margin_right, expand_margin_right does not affect the size of the clickable area for Controls. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
-float expand_margin_top = 0.0 🔗
+float expand_margin_top = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17629,7 +17629,7 @@ Expands the stylebox outside of the control rect on the top edge. Useful in comb
 
 Note: Unlike StyleBox.content_margin_top, expand_margin_top does not affect the size of the clickable area for Controls. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
-Color shadow_color = Color(0, 0, 0, 0.6) 🔗
+Color shadow_color = Color(0, 0, 0, 0.6) 
 
 void set_shadow_color(value: Color)
 
@@ -17637,7 +17637,7 @@ Color get_shadow_color()
 
 The color of the shadow. This has no effect if shadow_size is lower than 1.
 
-Vector2 shadow_offset = Vector2(0, 0) 🔗
+Vector2 shadow_offset = Vector2(0, 0) 
 
 void set_shadow_offset(value: Vector2)
 
@@ -17645,7 +17645,7 @@ Vector2 get_shadow_offset()
 
 The shadow offset in pixels. Adjusts the position of the shadow relatively to the stylebox.
 
-int shadow_size = 0 🔗
+int shadow_size = 0 
 
 void set_shadow_size(value: int)
 
@@ -17653,7 +17653,7 @@ int get_shadow_size()
 
 The shadow size in pixels.
 
-Vector2 skew = Vector2(0, 0) 🔗
+Vector2 skew = Vector2(0, 0) 
 
 void set_skew(value: Vector2)
 
@@ -17661,43 +17661,43 @@ If set to a non-zero value on either axis, skew distorts the StyleBox horizontal
 
 Note: To ensure text does not touch the StyleBox's edges, consider increasing the StyleBox's content margin (see StyleBox.content_margin_bottom). It is preferable to increase the content margin instead of the expand margin (see expand_margin_bottom), as increasing the expand margin does not increase the size of the clickable area for Controls.
 
-int get_border_width(margin: Side) const 🔗
+int get_border_width(margin: Side) const 
 
 Returns the specified Side's border width.
 
-int get_border_width_min() const 🔗
+int get_border_width_min() const 
 
 Returns the smallest border width out of all four borders.
 
-int get_corner_radius(corner: Corner) const 🔗
+int get_corner_radius(corner: Corner) const 
 
 Returns the given corner's radius.
 
-float get_expand_margin(margin: Side) const 🔗
+float get_expand_margin(margin: Side) const 
 
 Returns the size of the specified Side's expand margin.
 
-void set_border_width(margin: Side, width: int) 🔗
+void set_border_width(margin: Side, width: int) 
 
 Sets the specified Side's border width to width pixels.
 
-void set_border_width_all(width: int) 🔗
+void set_border_width_all(width: int) 
 
 Sets the border width to width pixels for all sides.
 
-void set_corner_radius(corner: Corner, radius: int) 🔗
+void set_corner_radius(corner: Corner, radius: int) 
 
 Sets the corner radius to radius pixels for the given corner.
 
-void set_corner_radius_all(radius: int) 🔗
+void set_corner_radius_all(radius: int) 
 
 Sets the corner radius to radius pixels for all corners.
 
-void set_expand_margin(margin: Side, size: float) 🔗
+void set_expand_margin(margin: Side, size: float) 
 
 Sets the expand margin to size pixels for the specified Side.
 
-void set_expand_margin_all(size: float) 🔗
+void set_expand_margin_all(size: float) 
 
 Sets the expand margin to size pixels for all sides.
 
@@ -17737,11 +17737,11 @@ A StyleBox that displays a single line of a given color and thickness.
 
 A StyleBox that displays a single line of a given color and thickness. The line can be either horizontal or vertical. Useful for separators.
 
-Color color = Color(0, 0, 0, 1) 🔗
+Color color = Color(0, 0, 0, 1) 
 
 void set_color(value: Color)
 
-float grow_begin = 1.0 🔗
+float grow_begin = 1.0 
 
 void set_grow_begin(value: float)
 
@@ -17749,7 +17749,7 @@ float get_grow_begin()
 
 The number of pixels the line will extend before the StyleBoxLine's bounds. If set to a negative value, the line will begin inside the StyleBoxLine's bounds.
 
-float grow_end = 1.0 🔗
+float grow_end = 1.0 
 
 void set_grow_end(value: float)
 
@@ -17759,7 +17759,7 @@ void set_thickness(value: int)
 
 The line's thickness in pixels.
 
-bool vertical = false 🔗
+bool vertical = false 
 
 void set_vertical(value: bool)
 
@@ -17807,7 +17807,7 @@ set_texture_margin(margin: Side, size: float)
 
 set_texture_margin_all(size: float)
 
-enum AxisStretchMode: 🔗
+enum AxisStretchMode: 
 
 AxisStretchMode AXIS_STRETCH_MODE_STRETCH = 0
 
@@ -17821,7 +17821,7 @@ AxisStretchMode AXIS_STRETCH_MODE_TILE_FIT = 2
 
 Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system. Unlike AXIS_STRETCH_MODE_TILE, the texture may be slightly stretched to make the nine-patch texture tile seamlessly.
 
-AxisStretchMode axis_stretch_horizontal = 0 🔗
+AxisStretchMode axis_stretch_horizontal = 0 
 
 void set_h_axis_stretch_mode(value: AxisStretchMode)
 
@@ -17829,7 +17829,7 @@ AxisStretchMode get_h_axis_stretch_mode()
 
 Controls how the stylebox's texture will be stretched or tiled horizontally.
 
-AxisStretchMode axis_stretch_vertical = 0 🔗
+AxisStretchMode axis_stretch_vertical = 0 
 
 void set_v_axis_stretch_mode(value: AxisStretchMode)
 
@@ -17837,7 +17837,7 @@ AxisStretchMode get_v_axis_stretch_mode()
 
 Controls how the stylebox's texture will be stretched or tiled vertically.
 
-bool draw_center = true 🔗
+bool draw_center = true 
 
 void set_draw_center(value: bool)
 
@@ -17845,7 +17845,7 @@ bool is_draw_center_enabled()
 
 If true, the nine-patch texture's center tile will be drawn.
 
-float expand_margin_bottom = 0.0 🔗
+float expand_margin_bottom = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17853,7 +17853,7 @@ float get_expand_margin(margin: Side) const
 
 Expands the bottom margin of this style box when drawing, causing it to be drawn larger than requested.
 
-float expand_margin_left = 0.0 🔗
+float expand_margin_left = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17861,7 +17861,7 @@ float get_expand_margin(margin: Side) const
 
 Expands the left margin of this style box when drawing, causing it to be drawn larger than requested.
 
-float expand_margin_right = 0.0 🔗
+float expand_margin_right = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17869,7 +17869,7 @@ float get_expand_margin(margin: Side) const
 
 Expands the right margin of this style box when drawing, causing it to be drawn larger than requested.
 
-float expand_margin_top = 0.0 🔗
+float expand_margin_top = 0.0 
 
 void set_expand_margin(margin: Side, size: float)
 
@@ -17877,13 +17877,13 @@ float get_expand_margin(margin: Side) const
 
 Expands the top margin of this style box when drawing, causing it to be drawn larger than requested.
 
-Color modulate_color = Color(1, 1, 1, 1) 🔗
+Color modulate_color = Color(1, 1, 1, 1) 
 
 void set_modulate(value: Color)
 
 Modulates the color of the texture when this style box is drawn.
 
-Rect2 region_rect = Rect2(0, 0, 0, 0) 🔗
+Rect2 region_rect = Rect2(0, 0, 0, 0) 
 
 void set_region_rect(value: Rect2)
 
@@ -17901,7 +17901,7 @@ Texture2D get_texture()
 
 The texture to use when drawing this style box.
 
-float texture_margin_bottom = 0.0 🔗
+float texture_margin_bottom = 0.0 
 
 void set_texture_margin(margin: Side, size: float)
 
@@ -17913,7 +17913,7 @@ A higher value means more of the source texture is considered to be part of the 
 
 This is also the value used as fallback for StyleBox.content_margin_bottom if it is negative.
 
-float texture_margin_left = 0.0 🔗
+float texture_margin_left = 0.0 
 
 void set_texture_margin(margin: Side, size: float)
 
@@ -17925,7 +17925,7 @@ A higher value means more of the source texture is considered to be part of the 
 
 This is also the value used as fallback for StyleBox.content_margin_left if it is negative.
 
-float texture_margin_right = 0.0 🔗
+float texture_margin_right = 0.0 
 
 void set_texture_margin(margin: Side, size: float)
 
@@ -17937,7 +17937,7 @@ A higher value means more of the source texture is considered to be part of the 
 
 This is also the value used as fallback for StyleBox.content_margin_right if it is negative.
 
-float texture_margin_top = 0.0 🔗
+float texture_margin_top = 0.0 
 
 void set_texture_margin(margin: Side, size: float)
 
@@ -17949,27 +17949,27 @@ A higher value means more of the source texture is considered to be part of the 
 
 This is also the value used as fallback for StyleBox.content_margin_top if it is negative.
 
-float get_expand_margin(margin: Side) const 🔗
+float get_expand_margin(margin: Side) const 
 
 Returns the expand margin size of the specified Side.
 
-float get_texture_margin(margin: Side) const 🔗
+float get_texture_margin(margin: Side) const 
 
 Returns the margin size of the specified Side.
 
-void set_expand_margin(margin: Side, size: float) 🔗
+void set_expand_margin(margin: Side, size: float) 
 
 Sets the expand margin to size pixels for the specified Side.
 
-void set_expand_margin_all(size: float) 🔗
+void set_expand_margin_all(size: float) 
 
 Sets the expand margin to size pixels for all sides.
 
-void set_texture_margin(margin: Side, size: float) 🔗
+void set_texture_margin(margin: Side, size: float) 
 
 Sets the margin to size pixels for the specified Side.
 
-void set_texture_margin_all(size: float) 🔗
+void set_texture_margin_all(size: float) 
 
 Sets the margin to size pixels for all sides.
 
@@ -18026,7 +18026,7 @@ set_content_margin_all(offset: float)
 
 test_mask(point: Vector2, rect: Rect2) const
 
-float content_margin_bottom = -1.0 🔗
+float content_margin_bottom = -1.0 
 
 void set_content_margin(margin: Side, offset: float)
 
@@ -18040,7 +18040,7 @@ It is up to the code using this style box to decide what these contents are: for
 
 get_margin() should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
 
-float content_margin_left = -1.0 🔗
+float content_margin_left = -1.0 
 
 void set_content_margin(margin: Side, offset: float)
 
@@ -18050,7 +18050,7 @@ The left margin for the contents of this style box. Increasing this value reduce
 
 Refer to content_margin_bottom for extra considerations.
 
-float content_margin_right = -1.0 🔗
+float content_margin_right = -1.0 
 
 void set_content_margin(margin: Side, offset: float)
 
@@ -18060,7 +18060,7 @@ The right margin for the contents of this style box. Increasing this value reduc
 
 Refer to content_margin_bottom for extra considerations.
 
-float content_margin_top = -1.0 🔗
+float content_margin_top = -1.0 
 
 void set_content_margin(margin: Side, offset: float)
 
@@ -18070,59 +18070,59 @@ The top margin for the contents of this style box. Increasing this value reduces
 
 Refer to content_margin_bottom for extra considerations.
 
-void _draw(to_canvas_item: RID, rect: Rect2) virtual required const 🔗
+void _draw(to_canvas_item: RID, rect: Rect2) virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Rect2 _get_draw_rect(rect: Rect2) virtual const 🔗
+Rect2 _get_draw_rect(rect: Rect2) virtual const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Vector2 _get_minimum_size() virtual const 🔗
+Vector2 _get_minimum_size() virtual const 
 
 Virtual method to be implemented by the user. Returns a custom minimum size that the stylebox must respect when drawing. By default get_minimum_size() only takes content margins into account. This method can be overridden to add another size restriction. A combination of the default behavior and the output of this method will be used, to account for both sizes.
 
-bool _test_mask(point: Vector2, rect: Rect2) virtual const 🔗
+bool _test_mask(point: Vector2, rect: Rect2) virtual const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void draw(canvas_item: RID, rect: Rect2) const 🔗
+void draw(canvas_item: RID, rect: Rect2) const 
 
 Draws this stylebox using a canvas item identified by the given RID.
 
 The RID value can either be the result of CanvasItem.get_canvas_item() called on an existing CanvasItem-derived node, or directly from creating a canvas item in the RenderingServer with RenderingServer.canvas_item_create().
 
-float get_content_margin(margin: Side) const 🔗
+float get_content_margin(margin: Side) const 
 
 Returns the default margin of the specified Side.
 
-CanvasItem get_current_item_drawn() const 🔗
+CanvasItem get_current_item_drawn() const 
 
 Returns the CanvasItem that handles its CanvasItem.NOTIFICATION_DRAW or CanvasItem._draw() callback at this moment.
 
-float get_margin(margin: Side) const 🔗
+float get_margin(margin: Side) const 
 
 Returns the content margin offset for the specified Side.
 
 Positive values reduce size inwards, unlike Control's margin values.
 
-Vector2 get_minimum_size() const 🔗
+Vector2 get_minimum_size() const 
 
 Returns the minimum size that this stylebox can be shrunk to.
 
-Vector2 get_offset() const 🔗
+Vector2 get_offset() const 
 
 Returns the "offset" of a stylebox. This helper function returns a value equivalent to Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP)).
 
-void set_content_margin(margin: Side, offset: float) 🔗
+void set_content_margin(margin: Side, offset: float) 
 
 Sets the default value of the specified Side to offset pixels.
 
-void set_content_margin_all(offset: float) 🔗
+void set_content_margin_all(offset: float) 
 
 Sets the default margin to offset pixels for all sides.
 
-bool test_mask(point: Vector2, rect: Rect2) const 🔗
+bool test_mask(point: Vector2, rect: Rect2) const 
 
 Test a position in a rectangle, return whether it passes the mask test.
 
@@ -18157,7 +18157,7 @@ Note: The SubViewportContainer forwards mouse-enter and mouse-exit notifications
 
 _propagate_input_event(event: InputEvent) virtual const
 
-bool mouse_target = false 🔗
+bool mouse_target = false 
 
 void set_mouse_target(value: bool)
 
@@ -18169,7 +18169,7 @@ If false, the Control nodes inside its SubViewport children are considered as ta
 
 If true, the SubViewportContainer itself will be considered as a target.
 
-bool stretch = false 🔗
+bool stretch = false 
 
 void set_stretch(value: bool)
 
@@ -18179,7 +18179,7 @@ If true, the sub-viewport will be automatically resized to the control's size.
 
 Note: If true, this will prohibit changing SubViewport.size of its children manually.
 
-int stretch_shrink = 1 🔗
+int stretch_shrink = 1 
 
 void set_stretch_shrink(value: int)
 
@@ -18191,7 +18191,7 @@ For example, a 1280×720 sub-viewport with stretch_shrink set to 2 will be rende
 
 Note: stretch must be true for this property to work.
 
-bool _propagate_input_event(event: InputEvent) virtual const 🔗
+bool _propagate_input_event(event: InputEvent) virtual const 
 
 Experimental: This method may be changed or removed in future versions.
 
@@ -18274,7 +18274,7 @@ UpdateMode UPDATE_ALWAYS = 4
 
 Always update the render target.
 
-ClearMode render_target_clear_mode = 0 🔗
+ClearMode render_target_clear_mode = 0 
 
 void set_clear_mode(value: ClearMode)
 
@@ -18284,7 +18284,7 @@ The clear mode when the sub-viewport is used as a render target.
 
 Note: This property is intended for 2D usage.
 
-UpdateMode render_target_update_mode = 2 🔗
+UpdateMode render_target_update_mode = 2 
 
 void set_update_mode(value: UpdateMode)
 
@@ -18292,7 +18292,7 @@ UpdateMode get_update_mode()
 
 The update mode when the sub-viewport is used as a render target.
 
-Vector2i size = Vector2i(512, 512) 🔗
+Vector2i size = Vector2i(512, 512) 
 
 void set_size(value: Vector2i)
 
@@ -18300,7 +18300,7 @@ The width and height of the sub-viewport. Must be set to a value greater than or
 
 Note: If the parent node is a SubViewportContainer and its SubViewportContainer.stretch is true, the viewport size cannot be changed manually.
 
-Vector2i size_2d_override = Vector2i(0, 0) 🔗
+Vector2i size_2d_override = Vector2i(0, 0) 
 
 void set_size_2d_override(value: Vector2i)
 
@@ -18308,7 +18308,7 @@ Vector2i get_size_2d_override()
 
 The 2D size override of the sub-viewport. If either the width or height is 0, the override is disabled.
 
-bool size_2d_override_stretch = false 🔗
+bool size_2d_override_stretch = false 
 
 void set_size_2d_override_stretch(value: bool)
 
@@ -18576,41 +18576,41 @@ font_unselected_color
 
 Color(0.7, 0.7, 0.7, 1)
 
-active_tab_rearranged(idx_to: int) 🔗
+active_tab_rearranged(idx_to: int) 
 
 Emitted when the active tab is rearranged via mouse drag. See drag_to_rearrange_enabled.
 
-tab_button_pressed(tab: int) 🔗
+tab_button_pressed(tab: int) 
 
 Emitted when a tab's right button is pressed. See set_tab_button_icon().
 
-tab_changed(tab: int) 🔗
+tab_changed(tab: int) 
 
 Emitted when switching to another tab.
 
-tab_clicked(tab: int) 🔗
+tab_clicked(tab: int) 
 
 Emitted when a tab is clicked, even if it is the current tab.
 
-tab_close_pressed(tab: int) 🔗
+tab_close_pressed(tab: int) 
 
 Emitted when a tab's close button is pressed or when middle-clicking on a tab, if close_with_middle_mouse is enabled.
 
 Note: Tabs are not removed automatically once the close button is pressed, this behavior needs to be programmed manually. For example:
 
-tab_hovered(tab: int) 🔗
+tab_hovered(tab: int) 
 
 Emitted when a tab is hovered by the mouse.
 
-tab_rmb_clicked(tab: int) 🔗
+tab_rmb_clicked(tab: int) 
 
 Emitted when a tab is right-clicked. select_with_rmb must be enabled.
 
-tab_selected(tab: int) 🔗
+tab_selected(tab: int) 
 
 Emitted when a tab is selected via click, directional input, or script, even if it is the current tab.
 
-enum AlignmentMode: 🔗
+enum AlignmentMode: 
 
 AlignmentMode ALIGNMENT_LEFT = 0
 
@@ -18628,7 +18628,7 @@ AlignmentMode ALIGNMENT_MAX = 3
 
 Represents the size of the AlignmentMode enum.
 
-enum CloseButtonDisplayPolicy: 🔗
+enum CloseButtonDisplayPolicy: 
 
 CloseButtonDisplayPolicy CLOSE_BUTTON_SHOW_NEVER = 0
 
@@ -18646,13 +18646,13 @@ CloseButtonDisplayPolicy CLOSE_BUTTON_MAX = 3
 
 Represents the size of the CloseButtonDisplayPolicy enum.
 
-bool clip_tabs = true 🔗
+bool clip_tabs = true 
 
 void set_clip_tabs(value: bool)
 
 If true, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
 
-bool close_with_middle_mouse = true 🔗
+bool close_with_middle_mouse = true 
 
 void set_close_with_middle_mouse(value: bool)
 
@@ -18660,7 +18660,7 @@ bool get_close_with_middle_mouse()
 
 If true, middle clicking on the mouse will fire the tab_close_pressed signal.
 
-int current_tab = -1 🔗
+int current_tab = -1 
 
 void set_current_tab(value: int)
 
@@ -18668,7 +18668,7 @@ int get_current_tab()
 
 The index of the current selected tab. A value of -1 means that no tab is selected and can only be set when deselect_enabled is true or if all tabs are hidden or disabled.
 
-bool deselect_enabled = false 🔗
+bool deselect_enabled = false 
 
 void set_deselect_enabled(value: bool)
 
@@ -18676,7 +18676,7 @@ bool get_deselect_enabled()
 
 If true, all tabs can be deselected so that no tab is selected. Click on the current tab to deselect it.
 
-bool drag_to_rearrange_enabled = false 🔗
+bool drag_to_rearrange_enabled = false 
 
 void set_drag_to_rearrange_enabled(value: bool)
 
@@ -18684,7 +18684,7 @@ bool get_drag_to_rearrange_enabled()
 
 If true, tabs can be rearranged with mouse drag.
 
-int max_tab_width = 0 🔗
+int max_tab_width = 0 
 
 void set_max_tab_width(value: int)
 
@@ -18692,7 +18692,7 @@ int get_max_tab_width()
 
 Sets the maximum width which all tabs should be limited to. Unlimited if set to 0.
 
-bool scroll_to_selected = true 🔗
+bool scroll_to_selected = true 
 
 void set_scroll_to_selected(value: bool)
 
@@ -18700,7 +18700,7 @@ bool get_scroll_to_selected()
 
 If true, the tab offset will be changed to keep the currently selected tab visible.
 
-bool scrolling_enabled = true 🔗
+bool scrolling_enabled = true 
 
 void set_scrolling_enabled(value: bool)
 
@@ -18708,7 +18708,7 @@ bool get_scrolling_enabled()
 
 if true, the mouse's scroll wheel can be used to navigate the scroll view.
 
-bool select_with_rmb = false 🔗
+bool select_with_rmb = false 
 
 void set_select_with_rmb(value: bool)
 
@@ -18716,7 +18716,7 @@ bool get_select_with_rmb()
 
 If true, enables selecting a tab with the right mouse button.
 
-AlignmentMode tab_alignment = 0 🔗
+AlignmentMode tab_alignment = 0 
 
 void set_tab_alignment(value: AlignmentMode)
 
@@ -18724,7 +18724,7 @@ AlignmentMode get_tab_alignment()
 
 The position at which tabs will be placed.
 
-CloseButtonDisplayPolicy tab_close_display_policy = 0 🔗
+CloseButtonDisplayPolicy tab_close_display_policy = 0 
 
 void set_tab_close_display_policy(value: CloseButtonDisplayPolicy)
 
@@ -18736,7 +18736,7 @@ void set_tab_count(value: int)
 
 The number of tabs currently in the bar.
 
-int tabs_rearrange_group = -1 🔗
+int tabs_rearrange_group = -1 
 
 void set_tabs_rearrange_group(value: int)
 
@@ -18746,169 +18746,169 @@ TabBars with the same rearrange group ID will allow dragging the tabs between th
 
 Setting this to -1 will disable rearranging between TabBars.
 
-void add_tab(title: String = "", icon: Texture2D = null) 🔗
+void add_tab(title: String = "", icon: Texture2D = null) 
 
-void ensure_tab_visible(idx: int) 🔗
+void ensure_tab_visible(idx: int) 
 
 Moves the scroll view to make the tab visible.
 
-bool get_offset_buttons_visible() const 🔗
+bool get_offset_buttons_visible() const 
 
 Returns true if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
 
-int get_previous_tab() const 🔗
+int get_previous_tab() const 
 
 Returns the previously active tab index.
 
-Texture2D get_tab_button_icon(tab_idx: int) const 🔗
+Texture2D get_tab_button_icon(tab_idx: int) const 
 
 Returns the icon for the right button of the tab at index tab_idx or null if the right button has no icon.
 
-Texture2D get_tab_icon(tab_idx: int) const 🔗
+Texture2D get_tab_icon(tab_idx: int) const 
 
 Returns the icon for the tab at index tab_idx or null if the tab has no icon.
 
-int get_tab_icon_max_width(tab_idx: int) const 🔗
+int get_tab_icon_max_width(tab_idx: int) const 
 
 Returns the maximum allowed width of the icon for the tab at index tab_idx.
 
-int get_tab_idx_at_point(point: Vector2) const 🔗
+int get_tab_idx_at_point(point: Vector2) const 
 
 Returns the index of the tab at local coordinates point. Returns -1 if the point is outside the control boundaries or if there's no tab at the queried position.
 
-String get_tab_language(tab_idx: int) const 🔗
+String get_tab_language(tab_idx: int) const 
 
 Returns tab title language code.
 
-Variant get_tab_metadata(tab_idx: int) const 🔗
+Variant get_tab_metadata(tab_idx: int) const 
 
 Returns the metadata value set to the tab at index tab_idx using set_tab_metadata(). If no metadata was previously set, returns null by default.
 
-int get_tab_offset() const 🔗
+int get_tab_offset() const 
 
 Returns the number of hidden tabs offsetted to the left.
 
-Rect2 get_tab_rect(tab_idx: int) const 🔗
+Rect2 get_tab_rect(tab_idx: int) const 
 
 Returns tab Rect2 with local position and size.
 
-TextDirection get_tab_text_direction(tab_idx: int) const 🔗
+TextDirection get_tab_text_direction(tab_idx: int) const 
 
 Returns tab title text base writing direction.
 
-String get_tab_title(tab_idx: int) const 🔗
+String get_tab_title(tab_idx: int) const 
 
 Returns the title of the tab at index tab_idx.
 
-String get_tab_tooltip(tab_idx: int) const 🔗
+String get_tab_tooltip(tab_idx: int) const 
 
 Returns the tooltip text of the tab at index tab_idx.
 
-bool is_tab_disabled(tab_idx: int) const 🔗
+bool is_tab_disabled(tab_idx: int) const 
 
 Returns true if the tab at index tab_idx is disabled.
 
-bool is_tab_hidden(tab_idx: int) const 🔗
+bool is_tab_hidden(tab_idx: int) const 
 
 Returns true if the tab at index tab_idx is hidden.
 
-void move_tab(from: int, to: int) 🔗
+void move_tab(from: int, to: int) 
 
 Moves a tab from from to to.
 
-void remove_tab(tab_idx: int) 🔗
+void remove_tab(tab_idx: int) 
 
 Removes the tab at index tab_idx.
 
-bool select_next_available() 🔗
+bool select_next_available() 
 
 Selects the first available tab with greater index than the currently selected. Returns true if tab selection changed.
 
-bool select_previous_available() 🔗
+bool select_previous_available() 
 
 Selects the first available tab with lower index than the currently selected. Returns true if tab selection changed.
 
-void set_tab_button_icon(tab_idx: int, icon: Texture2D) 🔗
+void set_tab_button_icon(tab_idx: int, icon: Texture2D) 
 
 Sets an icon for the button of the tab at index tab_idx (located to the right, before the close button), making it visible and clickable (See tab_button_pressed). Giving it a null value will hide the button.
 
-void set_tab_disabled(tab_idx: int, disabled: bool) 🔗
+void set_tab_disabled(tab_idx: int, disabled: bool) 
 
 If disabled is true, disables the tab at index tab_idx, making it non-interactable.
 
-void set_tab_hidden(tab_idx: int, hidden: bool) 🔗
+void set_tab_hidden(tab_idx: int, hidden: bool) 
 
 If hidden is true, hides the tab at index tab_idx, making it disappear from the tab area.
 
-void set_tab_icon(tab_idx: int, icon: Texture2D) 🔗
+void set_tab_icon(tab_idx: int, icon: Texture2D) 
 
 Sets an icon for the tab at index tab_idx.
 
-void set_tab_icon_max_width(tab_idx: int, width: int) 🔗
+void set_tab_icon_max_width(tab_idx: int, width: int) 
 
 Sets the maximum allowed width of the icon for the tab at index tab_idx. This limit is applied on top of the default size of the icon and on top of icon_max_width. The height is adjusted according to the icon's ratio.
 
-void set_tab_language(tab_idx: int, language: String) 🔗
+void set_tab_language(tab_idx: int, language: String) 
 
 Sets language code of tab title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-void set_tab_metadata(tab_idx: int, metadata: Variant) 🔗
+void set_tab_metadata(tab_idx: int, metadata: Variant) 
 
 Sets the metadata value for the tab at index tab_idx, which can be retrieved later using get_tab_metadata().
 
-void set_tab_text_direction(tab_idx: int, direction: TextDirection) 🔗
+void set_tab_text_direction(tab_idx: int, direction: TextDirection) 
 
 Sets tab title base writing direction.
 
-void set_tab_title(tab_idx: int, title: String) 🔗
+void set_tab_title(tab_idx: int, title: String) 
 
 Sets a title for the tab at index tab_idx.
 
-void set_tab_tooltip(tab_idx: int, tooltip: String) 🔗
+void set_tab_tooltip(tab_idx: int, tooltip: String) 
 
 Sets a tooltip for tab at index tab_idx.
 
 Note: By default, if the tooltip is empty and the tab text is truncated (not all characters fit into the tab), the title will be displayed as a tooltip. To hide the tooltip, assign " " as the tooltip text.
 
-Color drop_mark_color = Color(1, 1, 1, 1) 🔗
+Color drop_mark_color = Color(1, 1, 1, 1) 
 
 Modulation color for the drop_mark icon.
 
-Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Font color of disabled tabs.
 
-Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 
 
 Font color of the currently hovered tab. Does not apply to the selected tab.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the tab name.
 
-Color font_selected_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_selected_color = Color(0.95, 0.95, 0.95, 1) 
 
 Font color of the currently selected tab.
 
-Color font_unselected_color = Color(0.7, 0.7, 0.7, 1) 🔗
+Color font_unselected_color = Color(0.7, 0.7, 0.7, 1) 
 
 Font color of the other, unselected tabs.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal separation between the elements inside tabs.
 
-int icon_max_width = 0 🔗
+int icon_max_width = 0 
 
 The maximum allowed width of the tab's icon. This limit is applied on top of the default size of the icon, but before the value set with set_tab_icon_max_width(). The height is adjusted according to the icon's ratio.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the tab text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int tab_separation = 0 🔗
+int tab_separation = 0 
 
 The space between tabs in the tab bar.
 
@@ -18918,51 +18918,51 @@ Font size of the tab names.
 
 The icon for the close button (see tab_close_display_policy).
 
-Texture2D decrement 🔗
+Texture2D decrement 
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
 
-Texture2D decrement_highlight 🔗
+Texture2D decrement_highlight 
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
-Texture2D drop_mark 🔗
+Texture2D drop_mark 
 
 Icon shown to indicate where a dragged tab is gonna be dropped (see drag_to_rearrange_enabled).
 
-Texture2D increment 🔗
+Texture2D increment 
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
 
-Texture2D increment_highlight 🔗
+Texture2D increment_highlight 
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
-StyleBox button_highlight 🔗
+StyleBox button_highlight 
 
 Background of the tab and close buttons when they're being hovered with the cursor.
 
-StyleBox button_pressed 🔗
+StyleBox button_pressed 
 
 Background of the tab and close buttons when it's being pressed.
 
-StyleBox tab_disabled 🔗
+StyleBox tab_disabled 
 
 The style of disabled tabs.
 
 StyleBox used when the TabBar is focused. The tab_focus StyleBox is displayed over the base StyleBox of the selected tab, so a partially transparent StyleBox should be used to ensure the base StyleBox remains visible. A StyleBox that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a StyleBoxEmpty resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-StyleBox tab_hovered 🔗
+StyleBox tab_hovered 
 
 The style of the currently hovered tab. Does not apply to the selected tab.
 
 Note: This style will be drawn with the same width as tab_unselected at minimum.
 
-StyleBox tab_selected 🔗
+StyleBox tab_selected 
 
 The style of the currently selected tab.
 
-StyleBox tab_unselected 🔗
+StyleBox tab_unselected 
 
 The style of the other, unselected tabs.
 
@@ -19070,31 +19070,31 @@ font_unselected_color
 
 Color(0.7, 0.7, 0.7, 1)
 
-active_tab_rearranged(idx_to: int) 🔗
+active_tab_rearranged(idx_to: int) 
 
 Emitted when the active tab is rearranged via mouse drag. See drag_to_rearrange_enabled.
 
-pre_popup_pressed() 🔗
+pre_popup_pressed() 
 
 Emitted when the TabContainer's Popup button is clicked. See set_popup() for details.
 
-tab_button_pressed(tab: int) 🔗
+tab_button_pressed(tab: int) 
 
 Emitted when the user clicks on the button icon on this tab.
 
-tab_changed(tab: int) 🔗
+tab_changed(tab: int) 
 
 Emitted when switching to another tab.
 
-tab_clicked(tab: int) 🔗
+tab_clicked(tab: int) 
 
 Emitted when a tab is clicked, even if it is the current tab.
 
-tab_hovered(tab: int) 🔗
+tab_hovered(tab: int) 
 
 Emitted when a tab is hovered by the mouse.
 
-tab_selected(tab: int) 🔗
+tab_selected(tab: int) 
 
 Emitted when a tab is selected via click, directional input, or script, even if it is the current tab.
 
@@ -19110,7 +19110,7 @@ TabPosition POSITION_MAX = 2
 
 Represents the size of the TabPosition enum.
 
-bool all_tabs_in_front = false 🔗
+bool all_tabs_in_front = false 
 
 void set_all_tabs_in_front(value: bool)
 
@@ -19118,13 +19118,13 @@ bool is_all_tabs_in_front()
 
 If true, all tabs are drawn in front of the panel. If false, inactive tabs are drawn behind the panel.
 
-bool clip_tabs = true 🔗
+bool clip_tabs = true 
 
 void set_clip_tabs(value: bool)
 
 If true, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
 
-int current_tab = -1 🔗
+int current_tab = -1 
 
 void set_current_tab(value: int)
 
@@ -19134,7 +19134,7 @@ The current tab index. When set, this index's Control node's visible property is
 
 A value of -1 means that no tab is selected.
 
-bool deselect_enabled = false 🔗
+bool deselect_enabled = false 
 
 void set_deselect_enabled(value: bool)
 
@@ -19144,7 +19144,7 @@ If true, all tabs can be deselected so that no tab is selected. Click on the cur
 
 Only the tab header will be shown if no tabs are selected.
 
-bool drag_to_rearrange_enabled = false 🔗
+bool drag_to_rearrange_enabled = false 
 
 void set_drag_to_rearrange_enabled(value: bool)
 
@@ -19152,7 +19152,7 @@ bool get_drag_to_rearrange_enabled()
 
 If true, tabs can be rearranged with mouse drag.
 
-AlignmentMode tab_alignment = 0 🔗
+AlignmentMode tab_alignment = 0 
 
 void set_tab_alignment(value: AlignmentMode)
 
@@ -19160,7 +19160,7 @@ AlignmentMode get_tab_alignment()
 
 The position at which tabs will be placed.
 
-FocusMode tab_focus_mode = 2 🔗
+FocusMode tab_focus_mode = 2 
 
 void set_tab_focus_mode(value: FocusMode)
 
@@ -19168,7 +19168,7 @@ FocusMode get_tab_focus_mode()
 
 The focus access mode for the internal TabBar node.
 
-TabPosition tabs_position = 0 🔗
+TabPosition tabs_position = 0 
 
 void set_tabs_position(value: TabPosition)
 
@@ -19176,7 +19176,7 @@ TabPosition get_tabs_position()
 
 The position of the tab bar.
 
-int tabs_rearrange_group = -1 🔗
+int tabs_rearrange_group = -1 
 
 void set_tabs_rearrange_group(value: int)
 
@@ -19186,7 +19186,7 @@ TabContainers with the same rearrange group ID will allow dragging the tabs betw
 
 Setting this to -1 will disable rearranging between TabContainers.
 
-bool tabs_visible = true 🔗
+bool tabs_visible = true 
 
 void set_tabs_visible(value: bool)
 
@@ -19194,7 +19194,7 @@ bool are_tabs_visible()
 
 If true, tabs are visible. If false, tabs' content and titles are hidden.
 
-bool use_hidden_tabs_for_min_size = false 🔗
+bool use_hidden_tabs_for_min_size = false 
 
 void set_use_hidden_tabs_for_min_size(value: bool)
 
@@ -19202,165 +19202,165 @@ bool get_use_hidden_tabs_for_min_size()
 
 If true, child Control nodes that are hidden have their minimum size take into account in the total, instead of only the currently visible one.
 
-Control get_current_tab_control() const 🔗
+Control get_current_tab_control() const 
 
 Returns the child Control node located at the active tab index.
 
-Popup get_popup() const 🔗
+Popup get_popup() const 
 
 Returns the Popup node instance if one has been set already with set_popup().
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their Window.visible property.
 
-int get_previous_tab() const 🔗
+int get_previous_tab() const 
 
 Returns the previously active tab index.
 
-TabBar get_tab_bar() const 🔗
+TabBar get_tab_bar() const 
 
 Returns the TabBar contained in this container.
 
 Warning: This is a required internal node, removing and freeing it or editing its tabs may cause a crash. If you wish to edit the tabs, use the methods provided in TabContainer.
 
-Texture2D get_tab_button_icon(tab_idx: int) const 🔗
+Texture2D get_tab_button_icon(tab_idx: int) const 
 
 Returns the button icon from the tab at index tab_idx.
 
-Control get_tab_control(tab_idx: int) const 🔗
+Control get_tab_control(tab_idx: int) const 
 
 Returns the Control node from the tab at index tab_idx.
 
-int get_tab_count() const 🔗
+int get_tab_count() const 
 
 Returns the number of tabs.
 
-Texture2D get_tab_icon(tab_idx: int) const 🔗
+Texture2D get_tab_icon(tab_idx: int) const 
 
 Returns the Texture2D for the tab at index tab_idx or null if the tab has no Texture2D.
 
-int get_tab_icon_max_width(tab_idx: int) const 🔗
+int get_tab_icon_max_width(tab_idx: int) const 
 
 Returns the maximum allowed width of the icon for the tab at index tab_idx.
 
-int get_tab_idx_at_point(point: Vector2) const 🔗
+int get_tab_idx_at_point(point: Vector2) const 
 
 Returns the index of the tab at local coordinates point. Returns -1 if the point is outside the control boundaries or if there's no tab at the queried position.
 
-int get_tab_idx_from_control(control: Control) const 🔗
+int get_tab_idx_from_control(control: Control) const 
 
 Returns the index of the tab tied to the given control. The control must be a child of the TabContainer.
 
-Variant get_tab_metadata(tab_idx: int) const 🔗
+Variant get_tab_metadata(tab_idx: int) const 
 
 Returns the metadata value set to the tab at index tab_idx using set_tab_metadata(). If no metadata was previously set, returns null by default.
 
-String get_tab_title(tab_idx: int) const 🔗
+String get_tab_title(tab_idx: int) const 
 
 Returns the title of the tab at index tab_idx. Tab titles default to the name of the indexed child node, but this can be overridden with set_tab_title().
 
-String get_tab_tooltip(tab_idx: int) const 🔗
+String get_tab_tooltip(tab_idx: int) const 
 
 Returns the tooltip text of the tab at index tab_idx.
 
-bool is_tab_disabled(tab_idx: int) const 🔗
+bool is_tab_disabled(tab_idx: int) const 
 
 Returns true if the tab at index tab_idx is disabled.
 
-bool is_tab_hidden(tab_idx: int) const 🔗
+bool is_tab_hidden(tab_idx: int) const 
 
 Returns true if the tab at index tab_idx is hidden.
 
-bool select_next_available() 🔗
+bool select_next_available() 
 
 Selects the first available tab with greater index than the currently selected. Returns true if tab selection changed.
 
-bool select_previous_available() 🔗
+bool select_previous_available() 
 
 Selects the first available tab with lower index than the currently selected. Returns true if tab selection changed.
 
-void set_popup(popup: Node) 🔗
+void set_popup(popup: Node) 
 
 If set on a Popup node instance, a popup menu icon appears in the top-right corner of the TabContainer (setting it to null will make it go away). Clicking it will expand the Popup node.
 
-void set_tab_button_icon(tab_idx: int, icon: Texture2D) 🔗
+void set_tab_button_icon(tab_idx: int, icon: Texture2D) 
 
 Sets the button icon from the tab at index tab_idx.
 
-void set_tab_disabled(tab_idx: int, disabled: bool) 🔗
+void set_tab_disabled(tab_idx: int, disabled: bool) 
 
 If disabled is true, disables the tab at index tab_idx, making it non-interactable.
 
-void set_tab_hidden(tab_idx: int, hidden: bool) 🔗
+void set_tab_hidden(tab_idx: int, hidden: bool) 
 
 If hidden is true, hides the tab at index tab_idx, making it disappear from the tab area.
 
-void set_tab_icon(tab_idx: int, icon: Texture2D) 🔗
+void set_tab_icon(tab_idx: int, icon: Texture2D) 
 
 Sets an icon for the tab at index tab_idx.
 
-void set_tab_icon_max_width(tab_idx: int, width: int) 🔗
+void set_tab_icon_max_width(tab_idx: int, width: int) 
 
 Sets the maximum allowed width of the icon for the tab at index tab_idx. This limit is applied on top of the default size of the icon and on top of icon_max_width. The height is adjusted according to the icon's ratio.
 
-void set_tab_metadata(tab_idx: int, metadata: Variant) 🔗
+void set_tab_metadata(tab_idx: int, metadata: Variant) 
 
 Sets the metadata value for the tab at index tab_idx, which can be retrieved later using get_tab_metadata().
 
-void set_tab_title(tab_idx: int, title: String) 🔗
+void set_tab_title(tab_idx: int, title: String) 
 
 Sets a custom title for the tab at index tab_idx (tab titles default to the name of the indexed child node). Set it back to the child's name to make the tab default to it again.
 
-void set_tab_tooltip(tab_idx: int, tooltip: String) 🔗
+void set_tab_tooltip(tab_idx: int, tooltip: String) 
 
 Sets a custom tooltip text for tab at index tab_idx.
 
 Note: By default, if the tooltip is empty and the tab text is truncated (not all characters fit into the tab), the title will be displayed as a tooltip. To hide the tooltip, assign " " as the tooltip text.
 
-Color drop_mark_color = Color(1, 1, 1, 1) 🔗
+Color drop_mark_color = Color(1, 1, 1, 1) 
 
 Modulation color for the drop_mark icon.
 
-Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Font color of disabled tabs.
 
-Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 
 
 Font color of the currently hovered tab.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the tab name.
 
-Color font_selected_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_selected_color = Color(0.95, 0.95, 0.95, 1) 
 
 Font color of the currently selected tab.
 
-Color font_unselected_color = Color(0.7, 0.7, 0.7, 1) 🔗
+Color font_unselected_color = Color(0.7, 0.7, 0.7, 1) 
 
 Font color of the other, unselected tabs.
 
-int icon_max_width = 0 🔗
+int icon_max_width = 0 
 
 The maximum allowed width of the tab's icon. This limit is applied on top of the default size of the icon, but before the value set with TabBar.set_tab_icon_max_width(). The height is adjusted according to the icon's ratio.
 
-int icon_separation = 4 🔗
+int icon_separation = 4 
 
 Space between tab's name and its icon.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the tab text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int side_margin = 8 🔗
+int side_margin = 8 
 
 The space at the left or right edges of the tab bar, accordingly with the current tab_alignment.
 
 The margin is ignored with TabBar.ALIGNMENT_RIGHT if the tabs are clipped (see clip_tabs) or a popup has been set (see set_popup()). The margin is always ignored with TabBar.ALIGNMENT_CENTER.
 
-int tab_separation = 0 🔗
+int tab_separation = 0 
 
 The space between tabs in the tab bar.
 
@@ -19368,55 +19368,55 @@ The font used to draw tab names.
 
 Font size of the tab names.
 
-Texture2D decrement 🔗
+Texture2D decrement 
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
 
-Texture2D decrement_highlight 🔗
+Texture2D decrement_highlight 
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
-Texture2D drop_mark 🔗
+Texture2D drop_mark 
 
 Icon shown to indicate where a dragged tab is gonna be dropped (see drag_to_rearrange_enabled).
 
-Texture2D increment 🔗
+Texture2D increment 
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
 
-Texture2D increment_highlight 🔗
+Texture2D increment_highlight 
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
 The icon for the menu button (see set_popup()).
 
-Texture2D menu_highlight 🔗
+Texture2D menu_highlight 
 
 The icon for the menu button (see set_popup()) when it's being hovered with the cursor.
 
 The style for the background fill.
 
-StyleBox tab_disabled 🔗
+StyleBox tab_disabled 
 
 The style of disabled tabs.
 
 StyleBox used when the TabBar is focused. The tab_focus StyleBox is displayed over the base StyleBox of the selected tab, so a partially transparent StyleBox should be used to ensure the base StyleBox remains visible. A StyleBox that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a StyleBoxEmpty resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-StyleBox tab_hovered 🔗
+StyleBox tab_hovered 
 
 The style of the currently hovered tab.
 
 Note: This style will be drawn with the same width as tab_unselected at minimum.
 
-StyleBox tab_selected 🔗
+StyleBox tab_selected 
 
 The style of the currently selected tab.
 
-StyleBox tab_unselected 🔗
+StyleBox tab_unselected 
 
 The style of the other, unselected tabs.
 
-StyleBox tabbar_background 🔗
+StyleBox tabbar_background 
 
 The style for the background fill of the TabBar area.
 
@@ -19495,43 +19495,43 @@ remove_interface(interface: TextServer)
 
 set_primary_interface(index: TextServer)
 
-interface_added(interface_name: StringName) 🔗
+interface_added(interface_name: StringName) 
 
 Emitted when a new interface has been added.
 
-interface_removed(interface_name: StringName) 🔗
+interface_removed(interface_name: StringName) 
 
 Emitted when an interface is removed.
 
-void add_interface(interface: TextServer) 🔗
+void add_interface(interface: TextServer) 
 
 Registers a TextServer interface.
 
-TextServer find_interface(name: String) const 🔗
+TextServer find_interface(name: String) const 
 
 Finds an interface by its name.
 
-TextServer get_interface(idx: int) const 🔗
+TextServer get_interface(idx: int) const 
 
 Returns the interface registered at a given index.
 
-int get_interface_count() const 🔗
+int get_interface_count() const 
 
 Returns the number of interfaces currently registered.
 
-Array[Dictionary] get_interfaces() const 🔗
+Array[Dictionary] get_interfaces() const 
 
 Returns a list of available interfaces, with the index and name of each interface.
 
-TextServer get_primary_interface() const 🔗
+TextServer get_primary_interface() const 
 
 Returns the primary TextServer interface currently in use.
 
-void remove_interface(interface: TextServer) 🔗
+void remove_interface(interface: TextServer) 
 
 Removes an interface. All fonts and shaped text caches should be freed before removing an interface.
 
-void set_primary_interface(index: TextServer) 🔗
+void set_primary_interface(index: TextServer) 
 
 Sets the primary TextServer interface.
 
@@ -19590,19 +19590,19 @@ StretchMode STRETCH_KEEP_ASPECT_COVERED = 6
 
 Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
-bool flip_h = false 🔗
+bool flip_h = false 
 
 void set_flip_h(value: bool)
 
 If true, texture is flipped horizontally.
 
-bool flip_v = false 🔗
+bool flip_v = false 
 
 void set_flip_v(value: bool)
 
 If true, texture is flipped vertically.
 
-bool ignore_texture_size = false 🔗
+bool ignore_texture_size = false 
 
 void set_ignore_texture_size(value: bool)
 
@@ -19610,7 +19610,7 @@ bool get_ignore_texture_size()
 
 If true, the size of the texture won't be considered for minimum size calculation, so the TextureButton can be shrunk down past the texture size.
 
-StretchMode stretch_mode = 2 🔗
+StretchMode stretch_mode = 2 
 
 void set_stretch_mode(value: StretchMode)
 
@@ -19618,7 +19618,7 @@ StretchMode get_stretch_mode()
 
 Controls the texture's behavior when you resize the node's bounding rectangle. See the StretchMode constants for available options.
 
-BitMap texture_click_mask 🔗
+BitMap texture_click_mask 
 
 void set_click_mask(value: BitMap)
 
@@ -19626,7 +19626,7 @@ BitMap get_click_mask()
 
 Pure black and white BitMap image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
 
-Texture2D texture_disabled 🔗
+Texture2D texture_disabled 
 
 void set_texture_disabled(value: Texture2D)
 
@@ -19634,7 +19634,7 @@ Texture2D get_texture_disabled()
 
 Texture to display when the node is disabled. See BaseButton.disabled. If not assigned, the TextureButton displays texture_normal instead.
 
-Texture2D texture_focused 🔗
+Texture2D texture_focused 
 
 void set_texture_focused(value: Texture2D)
 
@@ -19642,7 +19642,7 @@ Texture2D get_texture_focused()
 
 Texture to overlay on the base texture when the node has mouse or keyboard focus. Because texture_focused is displayed on top of the base texture, a partially transparent texture should be used to ensure the base texture remains visible. A texture that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a fully transparent texture of any size. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-Texture2D texture_hover 🔗
+Texture2D texture_hover 
 
 void set_texture_hover(value: Texture2D)
 
@@ -19650,7 +19650,7 @@ Texture2D get_texture_hover()
 
 Texture to display when the mouse hovers over the node. If not assigned, the TextureButton displays texture_normal instead when hovered over.
 
-Texture2D texture_normal 🔗
+Texture2D texture_normal 
 
 void set_texture_normal(value: Texture2D)
 
@@ -19658,7 +19658,7 @@ Texture2D get_texture_normal()
 
 Texture to display by default, when the node is not in the disabled, hover or pressed state. This texture is still displayed in the focused state, with texture_focused drawn on top.
 
-Texture2D texture_pressed 🔗
+Texture2D texture_pressed 
 
 void set_texture_pressed(value: Texture2D)
 
@@ -19744,7 +19744,7 @@ void set_fill_mode(value: int)
 
 The fill direction. See FillMode for possible values.
 
-bool nine_patch_stretch = false 🔗
+bool nine_patch_stretch = false 
 
 void set_nine_patch_stretch(value: bool)
 
@@ -19752,7 +19752,7 @@ bool get_nine_patch_stretch()
 
 If true, Godot treats the bar's textures like in NinePatchRect. Use the stretch_margin_* properties like stretch_margin_bottom to set up the nine patch's 3×3 grid. When using a radial fill_mode, this setting will only enable stretching for texture_progress, while texture_under and texture_over will be treated like in NinePatchRect.
 
-Vector2 radial_center_offset = Vector2(0, 0) 🔗
+Vector2 radial_center_offset = Vector2(0, 0) 
 
 void set_radial_center_offset(value: Vector2)
 
@@ -19762,7 +19762,7 @@ Offsets texture_progress if fill_mode is FILL_CLOCKWISE, FILL_COUNTER_CLOCKWISE,
 
 Note: The effective radial center always stays within the texture_progress bounds. If you need to move it outside the texture's bounds, modify the texture_progress to contain additional empty space where needed.
 
-float radial_fill_degrees = 360.0 🔗
+float radial_fill_degrees = 360.0 
 
 void set_fill_degrees(value: float)
 
@@ -19772,7 +19772,7 @@ Upper limit for the fill of texture_progress if fill_mode is FILL_CLOCKWISE, FIL
 
 See Range.value, Range.max_value.
 
-float radial_initial_angle = 0.0 🔗
+float radial_initial_angle = 0.0 
 
 void set_radial_initial_angle(value: float)
 
@@ -19782,7 +19782,7 @@ Starting angle for the fill of texture_progress if fill_mode is FILL_CLOCKWISE, 
 
 Note: radial_initial_angle is wrapped between 0 and 360 degrees (inclusive).
 
-int stretch_margin_bottom = 0 🔗
+int stretch_margin_bottom = 0 
 
 void set_stretch_margin(margin: Side, value: int)
 
@@ -19790,7 +19790,7 @@ int get_stretch_margin(margin: Side) const
 
 The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders. Only effective if nine_patch_stretch is true.
 
-int stretch_margin_left = 0 🔗
+int stretch_margin_left = 0 
 
 void set_stretch_margin(margin: Side, value: int)
 
@@ -19798,7 +19798,7 @@ int get_stretch_margin(margin: Side) const
 
 The width of the 9-patch's left column. Only effective if nine_patch_stretch is true.
 
-int stretch_margin_right = 0 🔗
+int stretch_margin_right = 0 
 
 void set_stretch_margin(margin: Side, value: int)
 
@@ -19806,7 +19806,7 @@ int get_stretch_margin(margin: Side) const
 
 The width of the 9-patch's right column. Only effective if nine_patch_stretch is true.
 
-int stretch_margin_top = 0 🔗
+int stretch_margin_top = 0 
 
 void set_stretch_margin(margin: Side, value: int)
 
@@ -19814,7 +19814,7 @@ int get_stretch_margin(margin: Side) const
 
 The height of the 9-patch's top row. Only effective if nine_patch_stretch is true.
 
-Texture2D texture_over 🔗
+Texture2D texture_over 
 
 void set_over_texture(value: Texture2D)
 
@@ -19822,7 +19822,7 @@ Texture2D get_over_texture()
 
 Texture2D that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of texture_progress.
 
-Texture2D texture_progress 🔗
+Texture2D texture_progress 
 
 void set_progress_texture(value: Texture2D)
 
@@ -19832,7 +19832,7 @@ Texture2D that clips based on the node's value and fill_mode. As value increased
 
 The value property comes from Range. See Range.value, Range.min_value, Range.max_value.
 
-Vector2 texture_progress_offset = Vector2(0, 0) 🔗
+Vector2 texture_progress_offset = Vector2(0, 0) 
 
 void set_texture_progress_offset(value: Vector2)
 
@@ -19840,7 +19840,7 @@ Vector2 get_texture_progress_offset()
 
 The offset of texture_progress. Useful for texture_over and texture_under with fancy borders, to avoid transparent margins in your progress texture.
 
-Texture2D texture_under 🔗
+Texture2D texture_under 
 
 void set_under_texture(value: Texture2D)
 
@@ -19848,7 +19848,7 @@ Texture2D get_under_texture()
 
 Texture2D that draws under the progress bar. The bar's background.
 
-Color tint_over = Color(1, 1, 1, 1) 🔗
+Color tint_over = Color(1, 1, 1, 1) 
 
 void set_tint_over(value: Color)
 
@@ -19856,7 +19856,7 @@ Color get_tint_over()
 
 Multiplies the color of the bar's texture_over texture. The effect is similar to CanvasItem.modulate, except it only affects this specific texture instead of the entire node.
 
-Color tint_progress = Color(1, 1, 1, 1) 🔗
+Color tint_progress = Color(1, 1, 1, 1) 
 
 void set_tint_progress(value: Color)
 
@@ -19864,7 +19864,7 @@ Color get_tint_progress()
 
 Multiplies the color of the bar's texture_progress texture.
 
-Color tint_under = Color(1, 1, 1, 1) 🔗
+Color tint_under = Color(1, 1, 1, 1) 
 
 void set_tint_under(value: Color)
 
@@ -19872,11 +19872,11 @@ Color get_tint_under()
 
 Multiplies the color of the bar's texture_under texture.
 
-int get_stretch_margin(margin: Side) const 🔗
+int get_stretch_margin(margin: Side) const 
 
 Returns the stretch margin with the specified index. See stretch_margin_bottom and related properties.
 
-void set_stretch_margin(margin: Side, value: int) 🔗
+void set_stretch_margin(margin: Side, value: int) 
 
 Sets the stretch margin with the specified index. See stretch_margin_bottom and related properties.
 
@@ -19957,7 +19957,7 @@ StretchMode STRETCH_KEEP_ASPECT_COVERED = 6
 
 Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
-ExpandMode expand_mode = 0 🔗
+ExpandMode expand_mode = 0 
 
 void set_expand_mode(value: ExpandMode)
 
@@ -19967,19 +19967,19 @@ Experimental: Using EXPAND_FIT_WIDTH, EXPAND_FIT_WIDTH_PROPORTIONAL, EXPAND_FIT_
 
 Defines how minimum size is determined based on the texture's size.
 
-bool flip_h = false 🔗
+bool flip_h = false 
 
 void set_flip_h(value: bool)
 
 If true, texture is flipped horizontally.
 
-bool flip_v = false 🔗
+bool flip_v = false 
 
 void set_flip_v(value: bool)
 
 If true, texture is flipped vertically.
 
-StretchMode stretch_mode = 0 🔗
+StretchMode stretch_mode = 0 
 
 void set_stretch_mode(value: StretchMode)
 
@@ -20019,7 +20019,7 @@ ThemeDB also contains fallback values for theme properties.
 
 Emitted when one of the fallback values had been changed. Use it to refresh the look of controls that may rely on the fallback theme items.
 
-float fallback_base_scale = 1.0 🔗
+float fallback_base_scale = 1.0 
 
 void set_fallback_base_scale(value: float)
 
@@ -20037,7 +20037,7 @@ The fallback font of every Control node and Theme resource. Used when no other v
 
 See also Theme.default_font.
 
-int fallback_font_size = 16 🔗
+int fallback_font_size = 16 
 
 void set_fallback_font_size(value: int)
 
@@ -20047,7 +20047,7 @@ The fallback font size of every Control node and Theme resource. Used when no ot
 
 See also Theme.default_font_size.
 
-Texture2D fallback_icon 🔗
+Texture2D fallback_icon 
 
 void set_fallback_icon(value: Texture2D)
 
@@ -20055,7 +20055,7 @@ Texture2D get_fallback_icon()
 
 The fallback icon of every Control node and Theme resource. Used when no other value is available to the control.
 
-StyleBox fallback_stylebox 🔗
+StyleBox fallback_stylebox 
 
 void set_fallback_stylebox(value: StyleBox)
 
@@ -20063,11 +20063,11 @@ StyleBox get_fallback_stylebox()
 
 The fallback stylebox of every Control node and Theme resource. Used when no other value is available to the control.
 
-Theme get_default_theme() 🔗
+Theme get_default_theme() 
 
 Returns a reference to the default engine Theme. This theme resource is responsible for the out-of-the-box look of Control nodes and cannot be overridden.
 
-Theme get_project_theme() 🔗
+Theme get_project_theme() 
 
 Returns a reference to the custom project Theme. This theme resources allows to override the default engine theme for every control node in the project.
 
@@ -20474,7 +20474,7 @@ Emitted when the button is pressed (down).
 
 Emitted when the button is released (up).
 
-enum VisibilityMode: 🔗
+enum VisibilityMode: 
 
 VisibilityMode VISIBILITY_ALWAYS = 0
 
@@ -20490,7 +20490,7 @@ void set_bitmask(value: BitMap)
 
 The button's bitmask.
 
-bool passby_press = false 🔗
+bool passby_press = false 
 
 void set_passby_press(value: bool)
 
@@ -20502,7 +20502,7 @@ Note: This is a "pass-by" (not "bypass") press mode.
 
 void set_shape(value: Shape2D)
 
-bool shape_centered = true 🔗
+bool shape_centered = true 
 
 void set_shape_centered(value: bool)
 
@@ -20510,7 +20510,7 @@ bool is_shape_centered()
 
 If true, the button's shape is centered in the provided texture. If no texture is used, this property has no effect.
 
-bool shape_visible = true 🔗
+bool shape_visible = true 
 
 void set_shape_visible(value: bool)
 
@@ -20518,7 +20518,7 @@ bool is_shape_visible()
 
 If true, the button's shape is visible in the editor.
 
-Texture2D texture_normal 🔗
+Texture2D texture_normal 
 
 void set_texture_normal(value: Texture2D)
 
@@ -20526,7 +20526,7 @@ Texture2D get_texture_normal()
 
 The button's texture for the normal state.
 
-Texture2D texture_pressed 🔗
+Texture2D texture_pressed 
 
 void set_texture_pressed(value: Texture2D)
 
@@ -20534,7 +20534,7 @@ Texture2D get_texture_pressed()
 
 The button's texture for the pressed state.
 
-VisibilityMode visibility_mode = 0 🔗
+VisibilityMode visibility_mode = 0 
 
 void set_visibility_mode(value: VisibilityMode)
 
@@ -20542,7 +20542,7 @@ VisibilityMode get_visibility_mode()
 
 The button's visibility mode.
 
-bool is_pressed() const 🔗
+bool is_pressed() const 
 
 Returns true if this button is currently pressed.
 
@@ -20804,7 +20804,7 @@ void set_collapsed(value: bool)
 
 If true, the TreeItem is collapsed.
 
-int custom_minimum_height 🔗
+int custom_minimum_height 
 
 void set_custom_minimum_height(value: int)
 
@@ -20812,7 +20812,7 @@ int get_custom_minimum_height()
 
 The custom minimum height.
 
-bool disable_folding 🔗
+bool disable_folding 
 
 void set_disable_folding(value: bool)
 
@@ -20826,359 +20826,359 @@ If true, the TreeItem is visible (default).
 
 Note that if a TreeItem is set to not be visible, none of its children will be visible either.
 
-void add_button(column: int, button: Texture2D, id: int = -1, disabled: bool = false, tooltip_text: String = "", description: String = "") 🔗
+void add_button(column: int, button: Texture2D, id: int = -1, disabled: bool = false, tooltip_text: String = "", description: String = "") 
 
 Adds a button with Texture2D button to the end of the cell at column column. The id is used to identify the button in the according Tree.button_clicked signal and can be different from the buttons index. If not specified, the next available index is used, which may be retrieved by calling get_button_count() immediately before this method. Optionally, the button can be disabled and have a tooltip_text. description is used as the button description for assistive apps.
 
-void add_child(child: TreeItem) 🔗
+void add_child(child: TreeItem) 
 
 Adds a previously unparented TreeItem as a direct child of this one. The child item must not be a part of any Tree or parented to any TreeItem. See also remove_child().
 
-void call_recursive(method: StringName, ...) vararg 🔗
+void call_recursive(method: StringName, ...) vararg 
 
 Calls the method on the actual TreeItem and its children recursively. Pass parameters as a comma separated list.
 
-void clear_buttons() 🔗
+void clear_buttons() 
 
 Removes all buttons from all columns of this item.
 
-void clear_custom_bg_color(column: int) 🔗
+void clear_custom_bg_color(column: int) 
 
 Resets the background color for the given column to default.
 
-void clear_custom_color(column: int) 🔗
+void clear_custom_color(column: int) 
 
 Resets the color for the given column to default.
 
-TreeItem create_child(index: int = -1) 🔗
+TreeItem create_child(index: int = -1) 
 
 Creates an item and adds it as a child.
 
 The new item will be inserted as position index (the default value -1 means the last position), or it will be the last child if index is higher than the child count.
 
-void deselect(column: int) 🔗
+void deselect(column: int) 
 
 Deselects the given column.
 
-void erase_button(column: int, button_index: int) 🔗
+void erase_button(column: int, button_index: int) 
 
 Removes the button at index button_index in column column.
 
-AutoTranslateMode get_auto_translate_mode(column: int) const 🔗
+AutoTranslateMode get_auto_translate_mode(column: int) const 
 
 Returns the column's auto translate mode.
 
-AutowrapMode get_autowrap_mode(column: int) const 🔗
+AutowrapMode get_autowrap_mode(column: int) const 
 
 Returns the text autowrap mode in the given column. By default it is TextServer.AUTOWRAP_OFF.
 
-Texture2D get_button(column: int, button_index: int) const 🔗
+Texture2D get_button(column: int, button_index: int) const 
 
 Returns the Texture2D of the button at index button_index in column column.
 
-int get_button_by_id(column: int, id: int) const 🔗
+int get_button_by_id(column: int, id: int) const 
 
 Returns the button index if there is a button with ID id in column column, otherwise returns -1.
 
-Color get_button_color(column: int, id: int) const 🔗
+Color get_button_color(column: int, id: int) const 
 
 Returns the color of the button with ID id in column column. If the specified button does not exist, returns Color.BLACK.
 
-int get_button_count(column: int) const 🔗
+int get_button_count(column: int) const 
 
 Returns the number of buttons in column column.
 
-int get_button_id(column: int, button_index: int) const 🔗
+int get_button_id(column: int, button_index: int) const 
 
 Returns the ID for the button at index button_index in column column.
 
-String get_button_tooltip_text(column: int, button_index: int) const 🔗
+String get_button_tooltip_text(column: int, button_index: int) const 
 
 Returns the tooltip text for the button at index button_index in column column.
 
-TreeCellMode get_cell_mode(column: int) const 🔗
+TreeCellMode get_cell_mode(column: int) const 
 
 Returns the column's cell mode.
 
-TreeItem get_child(index: int) 🔗
+TreeItem get_child(index: int) 
 
 Returns a child item by its index (see get_child_count()). This method is often used for iterating all children of an item.
 
 Negative indices access the children from the last one.
 
-int get_child_count() 🔗
+int get_child_count() 
 
 Returns the number of child items.
 
-Array[TreeItem] get_children() 🔗
+Array[TreeItem] get_children() 
 
 Returns an array of references to the item's children.
 
-Color get_custom_bg_color(column: int) const 🔗
+Color get_custom_bg_color(column: int) const 
 
 Returns the custom background color of column column.
 
-Color get_custom_color(column: int) const 🔗
+Color get_custom_color(column: int) const 
 
 Returns the custom color of column column.
 
-Callable get_custom_draw_callback(column: int) const 🔗
+Callable get_custom_draw_callback(column: int) const 
 
 Returns the custom callback of column column.
 
-Font get_custom_font(column: int) const 🔗
+Font get_custom_font(column: int) const 
 
 Returns custom font used to draw text in the column column.
 
-int get_custom_font_size(column: int) const 🔗
+int get_custom_font_size(column: int) const 
 
 Returns custom font size used to draw text in the column column.
 
-String get_description(column: int) const 🔗
+String get_description(column: int) const 
 
 Returns the given column's description for assistive apps.
 
-bool get_expand_right(column: int) const 🔗
+bool get_expand_right(column: int) const 
 
 Returns true if expand_right is set.
 
-TreeItem get_first_child() const 🔗
+TreeItem get_first_child() const 
 
 Returns the TreeItem's first child.
 
-Texture2D get_icon(column: int) const 🔗
+Texture2D get_icon(column: int) const 
 
 Returns the given column's icon Texture2D. Error if no icon is set.
 
-int get_icon_max_width(column: int) const 🔗
+int get_icon_max_width(column: int) const 
 
 Returns the maximum allowed width of the icon in the given column.
 
-Color get_icon_modulate(column: int) const 🔗
+Color get_icon_modulate(column: int) const 
 
 Returns the Color modulating the column's icon.
 
-Texture2D get_icon_overlay(column: int) const 🔗
+Texture2D get_icon_overlay(column: int) const 
 
 Returns the given column's icon overlay Texture2D.
 
-Rect2 get_icon_region(column: int) const 🔗
+Rect2 get_icon_region(column: int) const 
 
 Returns the icon Texture2D region as Rect2.
 
 Returns the node's order in the tree. For example, if called on the first child item the position is 0.
 
-String get_language(column: int) const 🔗
+String get_language(column: int) const 
 
 Returns item's text language code.
 
-Variant get_metadata(column: int) const 🔗
+Variant get_metadata(column: int) const 
 
 Returns the metadata value that was set for the given column using set_metadata().
 
-TreeItem get_next() const 🔗
+TreeItem get_next() const 
 
 Returns the next sibling TreeItem in the tree or a null object if there is none.
 
-TreeItem get_next_in_tree(wrap: bool = false) 🔗
+TreeItem get_next_in_tree(wrap: bool = false) 
 
 Returns the next TreeItem in the tree (in the context of a depth-first search) or a null object if there is none.
 
 If wrap is enabled, the method will wrap around to the first element in the tree when called on the last element, otherwise it returns null.
 
-TreeItem get_next_visible(wrap: bool = false) 🔗
+TreeItem get_next_visible(wrap: bool = false) 
 
 Returns the next visible TreeItem in the tree (in the context of a depth-first search) or a null object if there is none.
 
 If wrap is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns null.
 
-TreeItem get_parent() const 🔗
+TreeItem get_parent() const 
 
 Returns the parent TreeItem or a null object if there is none.
 
-TreeItem get_prev() 🔗
+TreeItem get_prev() 
 
 Returns the previous sibling TreeItem in the tree or a null object if there is none.
 
-TreeItem get_prev_in_tree(wrap: bool = false) 🔗
+TreeItem get_prev_in_tree(wrap: bool = false) 
 
 Returns the previous TreeItem in the tree (in the context of a depth-first search) or a null object if there is none.
 
 If wrap is enabled, the method will wrap around to the last element in the tree when called on the first visible element, otherwise it returns null.
 
-TreeItem get_prev_visible(wrap: bool = false) 🔗
+TreeItem get_prev_visible(wrap: bool = false) 
 
 Returns the previous visible sibling TreeItem in the tree (in the context of a depth-first search) or a null object if there is none.
 
 If wrap is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns null.
 
-float get_range(column: int) const 🔗
+float get_range(column: int) const 
 
 Returns the value of a CELL_MODE_RANGE column.
 
-Dictionary get_range_config(column: int) 🔗
+Dictionary get_range_config(column: int) 
 
 Returns a dictionary containing the range parameters for a given column. The keys are "min", "max", "step", and "expr".
 
-StructuredTextParser get_structured_text_bidi_override(column: int) const 🔗
+StructuredTextParser get_structured_text_bidi_override(column: int) const 
 
 Returns the BiDi algorithm override set for this cell.
 
-Array get_structured_text_bidi_override_options(column: int) const 🔗
+Array get_structured_text_bidi_override_options(column: int) const 
 
 Returns the additional BiDi options set for this cell.
 
-String get_suffix(column: int) const 🔗
+String get_suffix(column: int) const 
 
 Gets the suffix string shown after the column value.
 
-String get_text(column: int) const 🔗
+String get_text(column: int) const 
 
 Returns the given column's text.
 
-HorizontalAlignment get_text_alignment(column: int) const 🔗
+HorizontalAlignment get_text_alignment(column: int) const 
 
 Returns the given column's text alignment.
 
-TextDirection get_text_direction(column: int) const 🔗
+TextDirection get_text_direction(column: int) const 
 
 Returns item's text base writing direction.
 
-OverrunBehavior get_text_overrun_behavior(column: int) const 🔗
+OverrunBehavior get_text_overrun_behavior(column: int) const 
 
 Returns the clipping behavior when the text exceeds the item's bounding rectangle in the given column. By default it is TextServer.OVERRUN_TRIM_ELLIPSIS.
 
-String get_tooltip_text(column: int) const 🔗
+String get_tooltip_text(column: int) const 
 
 Returns the given column's tooltip text.
 
-Tree get_tree() const 🔗
+Tree get_tree() const 
 
 Returns the Tree that owns this TreeItem.
 
-bool is_any_collapsed(only_visible: bool = false) 🔗
+bool is_any_collapsed(only_visible: bool = false) 
 
 Returns true if this TreeItem, or any of its descendants, is collapsed.
 
 If only_visible is true it ignores non-visible TreeItems.
 
-bool is_button_disabled(column: int, button_index: int) const 🔗
+bool is_button_disabled(column: int, button_index: int) const 
 
 Returns true if the button at index button_index for the given column is disabled.
 
-bool is_checked(column: int) const 🔗
+bool is_checked(column: int) const 
 
 Returns true if the given column is checked.
 
-bool is_custom_set_as_button(column: int) const 🔗
+bool is_custom_set_as_button(column: int) const 
 
 Returns true if the cell was made into a button with set_custom_as_button().
 
-bool is_edit_multiline(column: int) const 🔗
+bool is_edit_multiline(column: int) const 
 
 Returns true if the given column is multiline editable.
 
-bool is_editable(column: int) 🔗
+bool is_editable(column: int) 
 
 Returns true if the given column is editable.
 
-bool is_indeterminate(column: int) const 🔗
+bool is_indeterminate(column: int) const 
 
 Returns true if the given column is indeterminate.
 
-bool is_selectable(column: int) const 🔗
+bool is_selectable(column: int) const 
 
 Returns true if the given column is selectable.
 
-bool is_selected(column: int) 🔗
+bool is_selected(column: int) 
 
 Returns true if the given column is selected.
 
-bool is_visible_in_tree() const 🔗
+bool is_visible_in_tree() const 
 
 Returns true if visible is true and all its ancestors are also visible.
 
-void move_after(item: TreeItem) 🔗
+void move_after(item: TreeItem) 
 
 Moves this TreeItem right after the given item.
 
 Note: You can't move to the root or move the root.
 
-void move_before(item: TreeItem) 🔗
+void move_before(item: TreeItem) 
 
 Moves this TreeItem right before the given item.
 
 Note: You can't move to the root or move the root.
 
-void propagate_check(column: int, emit_signal: bool = true) 🔗
+void propagate_check(column: int, emit_signal: bool = true) 
 
 Propagates this item's checked status to its children and parents for the given column. It is possible to process the items affected by this method call by connecting to Tree.check_propagated_to_item. The order that the items affected will be processed is as follows: the item invoking this method, children of that item, and finally parents of that item. If emit_signal is false, then Tree.check_propagated_to_item will not be emitted.
 
-void remove_child(child: TreeItem) 🔗
+void remove_child(child: TreeItem) 
 
 Removes the given child TreeItem and all its children from the Tree. Note that it doesn't free the item from memory, so it can be reused later (see add_child()). To completely remove a TreeItem use Object.free().
 
 Note: If you want to move a child from one Tree to another, then instead of removing and adding it manually you can use move_before() or move_after().
 
-void select(column: int) 🔗
+void select(column: int) 
 
 Selects the given column.
 
-void set_auto_translate_mode(column: int, mode: AutoTranslateMode) 🔗
+void set_auto_translate_mode(column: int, mode: AutoTranslateMode) 
 
 Sets the given column's auto translate mode to mode.
 
 All columns use Node.AUTO_TRANSLATE_MODE_INHERIT by default, which uses the same auto translate mode as the Tree itself.
 
-void set_autowrap_mode(column: int, autowrap_mode: AutowrapMode) 🔗
+void set_autowrap_mode(column: int, autowrap_mode: AutowrapMode) 
 
 Sets the autowrap mode in the given column. If set to something other than TextServer.AUTOWRAP_OFF, the text gets wrapped inside the cell's bounding rectangle.
 
-void set_button(column: int, button_index: int, button: Texture2D) 🔗
+void set_button(column: int, button_index: int, button: Texture2D) 
 
 Sets the given column's button Texture2D at index button_index to button.
 
-void set_button_color(column: int, button_index: int, color: Color) 🔗
+void set_button_color(column: int, button_index: int, color: Color) 
 
 Sets the given column's button color at index button_index to color.
 
-void set_button_description(column: int, button_index: int, description: String) 🔗
+void set_button_description(column: int, button_index: int, description: String) 
 
 Sets the given column's button description at index button_index for assistive apps.
 
-void set_button_disabled(column: int, button_index: int, disabled: bool) 🔗
+void set_button_disabled(column: int, button_index: int, disabled: bool) 
 
 If true, disables the button at index button_index in the given column.
 
-void set_button_tooltip_text(column: int, button_index: int, tooltip: String) 🔗
+void set_button_tooltip_text(column: int, button_index: int, tooltip: String) 
 
 Sets the tooltip text for the button at index button_index in the given column.
 
-void set_cell_mode(column: int, mode: TreeCellMode) 🔗
+void set_cell_mode(column: int, mode: TreeCellMode) 
 
 Sets the given column's cell mode to mode. This determines how the cell is displayed and edited.
 
-void set_checked(column: int, checked: bool) 🔗
+void set_checked(column: int, checked: bool) 
 
 If checked is true, the given column is checked. Clears column's indeterminate status.
 
-void set_collapsed_recursive(enable: bool) 🔗
+void set_collapsed_recursive(enable: bool) 
 
 Collapses or uncollapses this TreeItem and all the descendants of this item.
 
-void set_custom_as_button(column: int, enable: bool) 🔗
+void set_custom_as_button(column: int, enable: bool) 
 
 Makes a cell with CELL_MODE_CUSTOM display as a non-flat button with a StyleBox.
 
-void set_custom_bg_color(column: int, color: Color, just_outline: bool = false) 🔗
+void set_custom_bg_color(column: int, color: Color, just_outline: bool = false) 
 
 Sets the given column's custom background color and whether to just use it as an outline.
 
-void set_custom_color(column: int, color: Color) 🔗
+void set_custom_color(column: int, color: Color) 
 
 Sets the given column's custom color.
 
-void set_custom_draw(column: int, object: Object, callback: StringName) 🔗
+void set_custom_draw(column: int, object: Object, callback: StringName) 
 
 Deprecated: Use set_custom_draw_callback() instead.
 
@@ -21186,119 +21186,119 @@ Sets the given column's custom draw callback to the callback method on object.
 
 The method named callback should accept two arguments: the TreeItem that is drawn and its position and size as a Rect2.
 
-void set_custom_draw_callback(column: int, callback: Callable) 🔗
+void set_custom_draw_callback(column: int, callback: Callable) 
 
 Sets the given column's custom draw callback. Use an empty Callable (Callable()) to clear the custom callback. The cell has to be in CELL_MODE_CUSTOM to use this feature.
 
 The callback should accept two arguments: the TreeItem that is drawn and its position and size as a Rect2.
 
-void set_custom_font(column: int, font: Font) 🔗
+void set_custom_font(column: int, font: Font) 
 
 Sets custom font used to draw text in the given column.
 
-void set_custom_font_size(column: int, font_size: int) 🔗
+void set_custom_font_size(column: int, font_size: int) 
 
 Sets custom font size used to draw text in the given column.
 
-void set_description(column: int, description: String) 🔗
+void set_description(column: int, description: String) 
 
 Sets the given column's description for assistive apps.
 
-void set_edit_multiline(column: int, multiline: bool) 🔗
+void set_edit_multiline(column: int, multiline: bool) 
 
 If multiline is true, the given column is multiline editable.
 
 Note: This option only affects the type of control (LineEdit or TextEdit) that appears when editing the column. You can set multiline values with set_text() even if the column is not multiline editable.
 
-void set_editable(column: int, enabled: bool) 🔗
+void set_editable(column: int, enabled: bool) 
 
 If enabled is true, the given column is editable.
 
-void set_expand_right(column: int, enable: bool) 🔗
+void set_expand_right(column: int, enable: bool) 
 
 If enable is true, the given column is expanded to the right.
 
-void set_icon(column: int, texture: Texture2D) 🔗
+void set_icon(column: int, texture: Texture2D) 
 
 Sets the given cell's icon Texture2D. If the cell is in CELL_MODE_ICON mode, the icon is displayed in the center of the cell. Otherwise, the icon is displayed before the cell's text. CELL_MODE_RANGE does not display an icon.
 
-void set_icon_max_width(column: int, width: int) 🔗
+void set_icon_max_width(column: int, width: int) 
 
 Sets the maximum allowed width of the icon in the given column. This limit is applied on top of the default size of the icon and on top of Tree.icon_max_width. The height is adjusted according to the icon's ratio.
 
-void set_icon_modulate(column: int, modulate: Color) 🔗
+void set_icon_modulate(column: int, modulate: Color) 
 
 Modulates the given column's icon with modulate.
 
-void set_icon_overlay(column: int, texture: Texture2D) 🔗
+void set_icon_overlay(column: int, texture: Texture2D) 
 
 Sets the given cell's icon overlay Texture2D. The cell has to be in CELL_MODE_ICON mode, and icon has to be set. Overlay is drawn on top of icon, in the bottom left corner.
 
-void set_icon_region(column: int, region: Rect2) 🔗
+void set_icon_region(column: int, region: Rect2) 
 
 Sets the given column's icon's texture region.
 
-void set_indeterminate(column: int, indeterminate: bool) 🔗
+void set_indeterminate(column: int, indeterminate: bool) 
 
 If indeterminate is true, the given column is marked indeterminate.
 
 Note: If set true from false, then column is cleared of checked status.
 
-void set_language(column: int, language: String) 🔗
+void set_language(column: int, language: String) 
 
 Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-void set_metadata(column: int, meta: Variant) 🔗
+void set_metadata(column: int, meta: Variant) 
 
 Sets the metadata value for the given column, which can be retrieved later using get_metadata(). This can be used, for example, to store a reference to the original data.
 
-void set_range(column: int, value: float) 🔗
+void set_range(column: int, value: float) 
 
 Sets the value of a CELL_MODE_RANGE column.
 
-void set_range_config(column: int, min: float, max: float, step: float, expr: bool = false) 🔗
+void set_range_config(column: int, min: float, max: float, step: float, expr: bool = false) 
 
 Sets the range of accepted values for a column. The column must be in the CELL_MODE_RANGE mode.
 
 If expr is true, the edit mode slider will use an exponential scale as with Range.exp_edit.
 
-void set_selectable(column: int, selectable: bool) 🔗
+void set_selectable(column: int, selectable: bool) 
 
 If selectable is true, the given column is selectable.
 
-void set_structured_text_bidi_override(column: int, parser: StructuredTextParser) 🔗
+void set_structured_text_bidi_override(column: int, parser: StructuredTextParser) 
 
 Set BiDi algorithm override for the structured text. Has effect for cells that display text.
 
-void set_structured_text_bidi_override_options(column: int, args: Array) 🔗
+void set_structured_text_bidi_override_options(column: int, args: Array) 
 
 Set additional options for BiDi override. Has effect for cells that display text.
 
-void set_suffix(column: int, text: String) 🔗
+void set_suffix(column: int, text: String) 
 
 Sets a string to be shown after a column's value (for example, a unit abbreviation).
 
-void set_text(column: int, text: String) 🔗
+void set_text(column: int, text: String) 
 
 Sets the given column's text value.
 
-void set_text_alignment(column: int, text_alignment: HorizontalAlignment) 🔗
+void set_text_alignment(column: int, text_alignment: HorizontalAlignment) 
 
 Sets the given column's text alignment to text_alignment.
 
-void set_text_direction(column: int, direction: TextDirection) 🔗
+void set_text_direction(column: int, direction: TextDirection) 
 
 Sets item's text base writing direction.
 
-void set_text_overrun_behavior(column: int, overrun_behavior: OverrunBehavior) 🔗
+void set_text_overrun_behavior(column: int, overrun_behavior: OverrunBehavior) 
 
 Sets the clipping behavior when the text exceeds the item's bounding rectangle in the given column.
 
-void set_tooltip_text(column: int, tooltip: String) 🔗
+void set_tooltip_text(column: int, tooltip: String) 
 
 Sets the given column's tooltip text.
 
-void uncollapse_tree() 🔗
+void uncollapse_tree() 
 
 Uncollapses all TreeItems necessary to reveal this TreeItem, i.e. all ancestor TreeItems.
 
@@ -21474,35 +21474,35 @@ custom_button_pressed
 
 hovered_selected_focus
 
-button_clicked(item: TreeItem, column: int, id: int, mouse_button_index: int) 🔗
+button_clicked(item: TreeItem, column: int, id: int, mouse_button_index: int) 
 
 Emitted when a button on the tree was pressed (see TreeItem.add_button()).
 
 Emitted when a cell is selected.
 
-check_propagated_to_item(item: TreeItem, column: int) 🔗
+check_propagated_to_item(item: TreeItem, column: int) 
 
 Emitted when TreeItem.propagate_check() is called. Connect to this signal to process the items that are affected when TreeItem.propagate_check() is invoked. The order that the items affected will be processed is as follows: the item that invoked the method, children of that item, and finally parents of that item.
 
-column_title_clicked(column: int, mouse_button_index: int) 🔗
+column_title_clicked(column: int, mouse_button_index: int) 
 
 Emitted when a column's title is clicked with either @GlobalScope.MOUSE_BUTTON_LEFT or @GlobalScope.MOUSE_BUTTON_RIGHT.
 
-custom_item_clicked(mouse_button_index: int) 🔗
+custom_item_clicked(mouse_button_index: int) 
 
 Emitted when an item with TreeItem.CELL_MODE_CUSTOM is clicked with a mouse button.
 
-custom_popup_edited(arrow_clicked: bool) 🔗
+custom_popup_edited(arrow_clicked: bool) 
 
 Emitted when a cell with the TreeItem.CELL_MODE_CUSTOM is clicked to be edited.
 
-empty_clicked(click_position: Vector2, mouse_button_index: int) 🔗
+empty_clicked(click_position: Vector2, mouse_button_index: int) 
 
 Emitted when a mouse button is clicked in the empty space of the tree.
 
 Emitted when an item is double-clicked, or selected with a ui_accept input event (e.g. using Enter or Space on the keyboard).
 
-item_collapsed(item: TreeItem) 🔗
+item_collapsed(item: TreeItem) 
 
 Emitted when an item is expanded or collapsed by clicking on the folding arrow or through code.
 
@@ -21510,17 +21510,17 @@ Note: Despite its name, this signal is also emitted when an item is expanded.
 
 Emitted when an item is edited.
 
-item_icon_double_clicked() 🔗
+item_icon_double_clicked() 
 
 Emitted when an item's icon is double-clicked. For a signal that emits when any part of the item is double-clicked, see item_activated.
 
-item_mouse_selected(mouse_position: Vector2, mouse_button_index: int) 🔗
+item_mouse_selected(mouse_position: Vector2, mouse_button_index: int) 
 
 Emitted when an item is selected with a mouse button.
 
 Emitted when an item is selected.
 
-multi_selected(item: TreeItem, column: int, selected: bool) 🔗
+multi_selected(item: TreeItem, column: int, selected: bool) 
 
 Emitted instead of item_selected if select_mode is set to SELECT_MULTI.
 
@@ -21544,7 +21544,7 @@ Allows selection of multiple cells at the same time. From the perspective of ite
 
 The focus cursor is visible in this mode, the item or column under the cursor is not necessarily selected.
 
-enum DropModeFlags: 🔗
+enum DropModeFlags: 
 
 DropModeFlags DROP_MODE_DISABLED = 0
 
@@ -21564,7 +21564,7 @@ Enables "above item" and "below item" drop sections. The "above item" drop secti
 
 When combined with DROP_MODE_ON_ITEM, these drop sections halves the height and stays on top / bottom accordingly.
 
-bool allow_reselect = false 🔗
+bool allow_reselect = false 
 
 void set_allow_reselect(value: bool)
 
@@ -21572,7 +21572,7 @@ bool get_allow_reselect()
 
 If true, the currently selected cell may be selected again.
 
-bool allow_rmb_select = false 🔗
+bool allow_rmb_select = false 
 
 void set_allow_rmb_select(value: bool)
 
@@ -21580,7 +21580,7 @@ bool get_allow_rmb_select()
 
 If true, a right mouse button click can select items.
 
-bool allow_search = true 🔗
+bool allow_search = true 
 
 void set_allow_search(value: bool)
 
@@ -21588,7 +21588,7 @@ bool get_allow_search()
 
 If true, allows navigating the Tree with letter keys through incremental search.
 
-bool auto_tooltip = true 🔗
+bool auto_tooltip = true 
 
 void set_auto_tooltip(value: bool)
 
@@ -21596,7 +21596,7 @@ bool is_auto_tooltip_enabled()
 
 If true, tree items with no tooltip assigned display their text as their tooltip. See also TreeItem.get_tooltip_text() and TreeItem.get_button_tooltip_text().
 
-bool column_titles_visible = false 🔗
+bool column_titles_visible = false 
 
 void set_column_titles_visible(value: bool)
 
@@ -21608,7 +21608,7 @@ void set_columns(value: int)
 
 The number of columns.
 
-int drop_mode_flags = 0 🔗
+int drop_mode_flags = 0 
 
 void set_drop_mode_flags(value: int)
 
@@ -21618,7 +21618,7 @@ The drop mode as an OR combination of flags. See DropModeFlags constants. Once d
 
 This controls the drop sections, i.e. the decision and drawing of possible drop locations based on the mouse position.
 
-bool enable_recursive_folding = true 🔗
+bool enable_recursive_folding = true 
 
 void set_enable_recursive_folding(value: bool)
 
@@ -21626,7 +21626,7 @@ bool is_recursive_folding_enabled()
 
 If true, recursive folding is enabled for this Tree. Holding down Shift while clicking the fold arrow or using ui_right/ui_left shortcuts collapses or uncollapses the TreeItem and all its descendants.
 
-bool hide_folding = false 🔗
+bool hide_folding = false 
 
 void set_hide_folding(value: bool)
 
@@ -21634,7 +21634,7 @@ bool is_folding_hidden()
 
 If true, the folding arrow is hidden.
 
-bool hide_root = false 🔗
+bool hide_root = false 
 
 void set_hide_root(value: bool)
 
@@ -21642,7 +21642,7 @@ bool is_root_hidden()
 
 If true, the tree's root is hidden.
 
-bool scroll_horizontal_enabled = true 🔗
+bool scroll_horizontal_enabled = true 
 
 void set_h_scroll_enabled(value: bool)
 
@@ -21650,7 +21650,7 @@ bool is_h_scroll_enabled()
 
 If true, enables horizontal scrolling.
 
-bool scroll_vertical_enabled = true 🔗
+bool scroll_vertical_enabled = true 
 
 void set_v_scroll_enabled(value: bool)
 
@@ -21658,7 +21658,7 @@ bool is_v_scroll_enabled()
 
 If true, enables vertical scrolling.
 
-SelectMode select_mode = 0 🔗
+SelectMode select_mode = 0 
 
 void set_select_mode(value: SelectMode)
 
@@ -21668,7 +21668,7 @@ Allows single or multiple selection. See the SelectMode constants.
 
 Clears the tree. This removes all items.
 
-TreeItem create_item(parent: TreeItem = null, index: int = -1) 🔗
+TreeItem create_item(parent: TreeItem = null, index: int = -1) 
 
 Creates an item in the tree and adds it as a child of parent, which can be either a valid TreeItem or null.
 
@@ -21676,11 +21676,11 @@ If parent is null, the root item will be the parent, or the new item will be the
 
 The new item will be the index-th child of parent, or it will be the last child if there are not enough siblings.
 
-void deselect_all() 🔗
+void deselect_all() 
 
 Deselects all tree items (rows and columns). In SELECT_MULTI mode also removes selection cursor.
 
-bool edit_selected(force_edit: bool = false) 🔗
+bool edit_selected(force_edit: bool = false) 
 
 Edits the selected tree item as if it was clicked.
 
@@ -21688,7 +21688,7 @@ Either the item must be set editable with TreeItem.set_editable() or force_edit 
 
 Returns true if the item could be edited. Fails if no item is selected.
 
-void ensure_cursor_is_visible() 🔗
+void ensure_cursor_is_visible() 
 
 Makes the currently focused cell visible.
 
@@ -21696,43 +21696,43 @@ This will scroll the tree if necessary. In SELECT_ROW mode, this will not do hor
 
 Note: Despite the name of this method, the focus cursor itself is only visible in SELECT_MULTI mode.
 
-int get_button_id_at_position(position: Vector2) const 🔗
+int get_button_id_at_position(position: Vector2) const 
 
 Returns the button ID at position, or -1 if no button is there.
 
-int get_column_at_position(position: Vector2) const 🔗
+int get_column_at_position(position: Vector2) const 
 
 Returns the column index at position, or -1 if no item is there.
 
-int get_column_expand_ratio(column: int) const 🔗
+int get_column_expand_ratio(column: int) const 
 
 Returns the expand ratio assigned to the column.
 
-String get_column_title(column: int) const 🔗
+String get_column_title(column: int) const 
 
 Returns the column's title.
 
-HorizontalAlignment get_column_title_alignment(column: int) const 🔗
+HorizontalAlignment get_column_title_alignment(column: int) const 
 
 Returns the column title alignment.
 
-TextDirection get_column_title_direction(column: int) const 🔗
+TextDirection get_column_title_direction(column: int) const 
 
 Returns column title base writing direction.
 
-String get_column_title_language(column: int) const 🔗
+String get_column_title_language(column: int) const 
 
 Returns column title language code.
 
-int get_column_width(column: int) const 🔗
+int get_column_width(column: int) const 
 
 Returns the column's width in pixels.
 
-Rect2 get_custom_popup_rect() const 🔗
+Rect2 get_custom_popup_rect() const 
 
 Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See TreeItem.set_cell_mode().
 
-int get_drop_section_at_position(position: Vector2) const 🔗
+int get_drop_section_at_position(position: Vector2) const 
 
 Returns the drop section at position, or -100 if no item is there.
 
@@ -21740,41 +21740,41 @@ Values -1, 0, or 1 will be returned for the "above item", "on item", and "below 
 
 To get the item which the returned drop section is relative to, use get_item_at_position().
 
-TreeItem get_edited() const 🔗
+TreeItem get_edited() const 
 
 Returns the currently edited item. Can be used with item_edited to get the item that was modified.
 
-int get_edited_column() const 🔗
+int get_edited_column() const 
 
 Returns the column for the currently edited item.
 
-Rect2 get_item_area_rect(item: TreeItem, column: int = -1, button_index: int = -1) const 🔗
+Rect2 get_item_area_rect(item: TreeItem, column: int = -1, button_index: int = -1) const 
 
 Returns the rectangle area for the specified TreeItem. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns. If a button index is specified, the rectangle of that button will be returned.
 
-TreeItem get_item_at_position(position: Vector2) const 🔗
+TreeItem get_item_at_position(position: Vector2) const 
 
 Returns the tree item at the specified position (relative to the tree origin position).
 
-TreeItem get_next_selected(from: TreeItem) 🔗
+TreeItem get_next_selected(from: TreeItem) 
 
 Returns the next selected TreeItem after the given one, or null if the end is reached.
 
 If from is null, this returns the first selected item.
 
-int get_pressed_button() const 🔗
+int get_pressed_button() const 
 
 Returns the last pressed button's index.
 
-TreeItem get_root() const 🔗
+TreeItem get_root() const 
 
 Returns the tree's root item, or null if the tree is empty.
 
-Vector2 get_scroll() const 🔗
+Vector2 get_scroll() const 
 
 Returns the current scrolling position.
 
-TreeItem get_selected() const 🔗
+TreeItem get_selected() const 
 
 Returns the currently focused item, or null if no item is focused.
 
@@ -21782,7 +21782,7 @@ In SELECT_ROW and SELECT_SINGLE modes, the focused item is same as the selected 
 
 To get the currently selected item(s), use get_next_selected().
 
-int get_selected_column() const 🔗
+int get_selected_column() const 
 
 Returns the currently focused column, or -1 if no column is focused.
 
@@ -21790,281 +21790,281 @@ In SELECT_SINGLE mode, the focused column is the selected column. In SELECT_ROW 
 
 To tell whether a column of an item is selected, use TreeItem.is_selected().
 
-bool is_column_clipping_content(column: int) const 🔗
+bool is_column_clipping_content(column: int) const 
 
 Returns true if the column has enabled clipping (see set_column_clip_content()).
 
-bool is_column_expanding(column: int) const 🔗
+bool is_column_expanding(column: int) const 
 
 Returns true if the column has enabled expanding (see set_column_expand()).
 
-void scroll_to_item(item: TreeItem, center_on_item: bool = false) 🔗
+void scroll_to_item(item: TreeItem, center_on_item: bool = false) 
 
 Causes the Tree to jump to the specified TreeItem.
 
-void set_column_clip_content(column: int, enable: bool) 🔗
+void set_column_clip_content(column: int, enable: bool) 
 
 Allows to enable clipping for column's content, making the content size ignored.
 
-void set_column_custom_minimum_width(column: int, min_width: int) 🔗
+void set_column_custom_minimum_width(column: int, min_width: int) 
 
 Overrides the calculated minimum width of a column. It can be set to 0 to restore the default behavior. Columns that have the "Expand" flag will use their "min_width" in a similar fashion to Control.size_flags_stretch_ratio.
 
-void set_column_expand(column: int, expand: bool) 🔗
+void set_column_expand(column: int, expand: bool) 
 
 If true, the column will have the "Expand" flag of Control. Columns that have the "Expand" flag will use their expand ratio in a similar fashion to Control.size_flags_stretch_ratio (see set_column_expand_ratio()).
 
-void set_column_expand_ratio(column: int, ratio: int) 🔗
+void set_column_expand_ratio(column: int, ratio: int) 
 
 Sets the relative expand ratio for a column. See set_column_expand().
 
-void set_column_title(column: int, title: String) 🔗
+void set_column_title(column: int, title: String) 
 
 Sets the title of a column.
 
-void set_column_title_alignment(column: int, title_alignment: HorizontalAlignment) 🔗
+void set_column_title_alignment(column: int, title_alignment: HorizontalAlignment) 
 
 Sets the column title alignment. Note that @GlobalScope.HORIZONTAL_ALIGNMENT_FILL is not supported for column titles.
 
-void set_column_title_direction(column: int, direction: TextDirection) 🔗
+void set_column_title_direction(column: int, direction: TextDirection) 
 
 Sets column title base writing direction.
 
-void set_column_title_language(column: int, language: String) 🔗
+void set_column_title_language(column: int, language: String) 
 
 Sets language code of column title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
-void set_selected(item: TreeItem, column: int) 🔗
+void set_selected(item: TreeItem, column: int) 
 
 Selects the specified TreeItem and column.
 
-Color children_hl_line_color = Color(0.27, 0.27, 0.27, 1) 🔗
+Color children_hl_line_color = Color(0.27, 0.27, 0.27, 1) 
 
 The Color of the relationship lines between the selected TreeItem and its children.
 
-Color custom_button_font_highlight = Color(0.95, 0.95, 0.95, 1) 🔗
+Color custom_button_font_highlight = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color for a TreeItem.CELL_MODE_CUSTOM mode cell when it's hovered.
 
-Color drop_position_color = Color(1, 1, 1, 1) 🔗
+Color drop_position_color = Color(1, 1, 1, 1) 
 
 Color used to draw possible drop locations. See DropModeFlags constants for further description of drop locations.
 
-Color font_color = Color(0.7, 0.7, 0.7, 1) 🔗
+Color font_color = Color(0.7, 0.7, 0.7, 1) 
 
 Default text Color of the item.
 
-Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 🔗
+Color font_disabled_color = Color(0.875, 0.875, 0.875, 0.5) 
 
 Text Color for a TreeItem.CELL_MODE_CHECK mode cell when it's non-editable (see TreeItem.set_editable()).
 
-Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 🔗
+Color font_hovered_color = Color(0.95, 0.95, 0.95, 1) 
 
 Text Color used when the item is hovered and not selected yet.
 
-Color font_hovered_dimmed_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color font_hovered_dimmed_color = Color(0.875, 0.875, 0.875, 1) 
 
 Text Color used when the item is hovered, while a button of the same item is hovered as the same time.
 
-Color font_hovered_selected_color = Color(1, 1, 1, 1) 🔗
+Color font_hovered_selected_color = Color(1, 1, 1, 1) 
 
 Text Color used when the item is hovered and selected.
 
-Color font_outline_color = Color(0, 0, 0, 1) 🔗
+Color font_outline_color = Color(0, 0, 0, 1) 
 
 The tint of text outline of the item.
 
-Color font_selected_color = Color(1, 1, 1, 1) 🔗
+Color font_selected_color = Color(1, 1, 1, 1) 
 
 Text Color used when the item is selected.
 
-Color guide_color = Color(0.7, 0.7, 0.7, 0.25) 🔗
+Color guide_color = Color(0.7, 0.7, 0.7, 0.25) 
 
 Color of the guideline.
 
-Color parent_hl_line_color = Color(0.27, 0.27, 0.27, 1) 🔗
+Color parent_hl_line_color = Color(0.27, 0.27, 0.27, 1) 
 
 The Color of the relationship lines between the selected TreeItem and its parents.
 
-Color relationship_line_color = Color(0.27, 0.27, 0.27, 1) 🔗
+Color relationship_line_color = Color(0.27, 0.27, 0.27, 1) 
 
 The default Color of the relationship lines.
 
-Color title_button_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color title_button_color = Color(0.875, 0.875, 0.875, 1) 
 
 Default text Color of the title button.
 
-int button_margin = 4 🔗
+int button_margin = 4 
 
 The horizontal space between each button in a cell.
 
-int children_hl_line_width = 1 🔗
+int children_hl_line_width = 1 
 
 The width of the relationship lines between the selected TreeItem and its children.
 
-int draw_guides = 1 🔗
+int draw_guides = 1 
 
 Draws the guidelines if not zero, this acts as a boolean. The guideline is a horizontal line drawn at the bottom of each item.
 
-int draw_relationship_lines = 0 🔗
+int draw_relationship_lines = 0 
 
 Draws the relationship lines if not zero, this acts as a boolean. Relationship lines are drawn at the start of child items to show hierarchy.
 
-int h_separation = 4 🔗
+int h_separation = 4 
 
 The horizontal space between item cells. This is also used as the margin at the start of an item when folding is disabled.
 
-int icon_max_width = 0 🔗
+int icon_max_width = 0 
 
 The maximum allowed width of the icon in item's cells. This limit is applied on top of the default size of the icon, but before the value set with TreeItem.set_icon_max_width(). The height is adjusted according to the icon's ratio.
 
-int inner_item_margin_bottom = 0 🔗
+int inner_item_margin_bottom = 0 
 
 The inner bottom margin of a cell.
 
-int inner_item_margin_left = 0 🔗
+int inner_item_margin_left = 0 
 
 The inner left margin of a cell.
 
-int inner_item_margin_right = 0 🔗
+int inner_item_margin_right = 0 
 
 The inner right margin of a cell.
 
-int inner_item_margin_top = 0 🔗
+int inner_item_margin_top = 0 
 
 The inner top margin of a cell.
 
-int item_margin = 16 🔗
+int item_margin = 16 
 
 The horizontal margin at the start of an item. This is used when folding is enabled for the item.
 
-int outline_size = 0 🔗
+int outline_size = 0 
 
 The size of the text outline.
 
 Note: If using a font with FontFile.multichannel_signed_distance_field enabled, its FontFile.msdf_pixel_range must be set to at least twice the value of outline_size for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
-int parent_hl_line_margin = 0 🔗
+int parent_hl_line_margin = 0 
 
 The space between the parent relationship lines for the selected TreeItem and the relationship lines to its siblings that are not selected.
 
-int parent_hl_line_width = 1 🔗
+int parent_hl_line_width = 1 
 
 The width of the relationship lines between the selected TreeItem and its parents.
 
-int relationship_line_width = 1 🔗
+int relationship_line_width = 1 
 
 The default width of the relationship lines.
 
-int scroll_border = 4 🔗
+int scroll_border = 4 
 
 The maximum distance between the mouse cursor and the control's border to trigger border scrolling when dragging.
 
-int scroll_speed = 12 🔗
+int scroll_speed = 12 
 
 The speed of border scrolling.
 
-int scrollbar_h_separation = 4 🔗
+int scrollbar_h_separation = 4 
 
 The horizontal separation of tree content and scrollbar.
 
-int scrollbar_margin_bottom = -1 🔗
+int scrollbar_margin_bottom = -1 
 
 The bottom margin of the scrollbars. When negative, uses panel bottom margin.
 
-int scrollbar_margin_left = -1 🔗
+int scrollbar_margin_left = -1 
 
 The left margin of the horizontal scrollbar. When negative, uses panel left margin.
 
-int scrollbar_margin_right = -1 🔗
+int scrollbar_margin_right = -1 
 
 The right margin of the scrollbars. When negative, uses panel right margin.
 
-int scrollbar_margin_top = -1 🔗
+int scrollbar_margin_top = -1 
 
 The top margin of the vertical scrollbar. When negative, uses panel top margin.
 
-int scrollbar_v_separation = 4 🔗
+int scrollbar_v_separation = 4 
 
 The vertical separation of tree content and scrollbar.
 
-int v_separation = 4 🔗
+int v_separation = 4 
 
 The vertical padding inside each item, i.e. the distance between the item's content and top/bottom border.
 
 Font of the item's text.
 
-Font title_button_font 🔗
+Font title_button_font 
 
 Font of the title button's text.
 
 Font size of the item's text.
 
-int title_button_font_size 🔗
+int title_button_font_size 
 
 Font size of the title button's text.
 
 The arrow icon used when a foldable item is not collapsed.
 
-Texture2D arrow_collapsed 🔗
+Texture2D arrow_collapsed 
 
 The arrow icon used when a foldable item is collapsed (for left-to-right layouts).
 
-Texture2D arrow_collapsed_mirrored 🔗
+Texture2D arrow_collapsed_mirrored 
 
 The arrow icon used when a foldable item is collapsed (for right-to-left layouts).
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is checked and editable (see TreeItem.set_editable()).
 
-Texture2D checked_disabled 🔗
+Texture2D checked_disabled 
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is checked and non-editable (see TreeItem.set_editable()).
 
-Texture2D indeterminate 🔗
+Texture2D indeterminate 
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is indeterminate and editable (see TreeItem.set_editable()).
 
-Texture2D indeterminate_disabled 🔗
+Texture2D indeterminate_disabled 
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is indeterminate and non-editable (see TreeItem.set_editable()).
 
-Texture2D select_arrow 🔗
+Texture2D select_arrow 
 
 The arrow icon to display for the TreeItem.CELL_MODE_RANGE mode cell.
 
-Texture2D unchecked 🔗
+Texture2D unchecked 
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is unchecked and editable (see TreeItem.set_editable()).
 
-Texture2D unchecked_disabled 🔗
+Texture2D unchecked_disabled 
 
 The check icon to display when the TreeItem.CELL_MODE_CHECK mode cell is unchecked and non-editable (see TreeItem.set_editable()).
 
 The updown arrow icon to display for the TreeItem.CELL_MODE_RANGE mode cell.
 
-StyleBox button_hover 🔗
+StyleBox button_hover 
 
 StyleBox used when a button in the tree is hovered.
 
-StyleBox button_pressed 🔗
+StyleBox button_pressed 
 
 StyleBox used when a button in the tree is pressed.
 
 StyleBox used for the cursor, when the Tree is being focused.
 
-StyleBox cursor_unfocused 🔗
+StyleBox cursor_unfocused 
 
 StyleBox used for the cursor, when the Tree is not being focused.
 
-StyleBox custom_button 🔗
+StyleBox custom_button 
 
 Default StyleBox for a TreeItem.CELL_MODE_CUSTOM mode cell when button is enabled with TreeItem.set_custom_as_button().
 
-StyleBox custom_button_hover 🔗
+StyleBox custom_button_hover 
 
 StyleBox for a TreeItem.CELL_MODE_CUSTOM mode button cell when it's hovered.
 
-StyleBox custom_button_pressed 🔗
+StyleBox custom_button_pressed 
 
 StyleBox for a TreeItem.CELL_MODE_CUSTOM mode button cell when it's pressed.
 
@@ -22072,15 +22072,15 @@ The focused style for the Tree, drawn on top of everything.
 
 StyleBox for the item being hovered, but not selected.
 
-StyleBox hovered_dimmed 🔗
+StyleBox hovered_dimmed 
 
 StyleBox for the item being hovered, while a button of the same item is hovered as the same time.
 
-StyleBox hovered_selected 🔗
+StyleBox hovered_selected 
 
 StyleBox for the hovered and selected items, used when the Tree is not being focused.
 
-StyleBox hovered_selected_focus 🔗
+StyleBox hovered_selected_focus 
 
 StyleBox for the hovered and selected items, used when the Tree is being focused.
 
@@ -22088,19 +22088,19 @@ The background style for the Tree.
 
 StyleBox for the selected items, used when the Tree is not being focused.
 
-StyleBox selected_focus 🔗
+StyleBox selected_focus 
 
 StyleBox for the selected items, used when the Tree is being focused.
 
-StyleBox title_button_hover 🔗
+StyleBox title_button_hover 
 
 StyleBox used when the title button is being hovered.
 
-StyleBox title_button_normal 🔗
+StyleBox title_button_normal 
 
 Default StyleBox for the title button.
 
-StyleBox title_button_pressed 🔗
+StyleBox title_button_pressed 
 
 StyleBox used when the title button is being pressed.
 
@@ -22516,7 +22516,7 @@ Function FUNC_MAX = 2
 
 Represents the size of the Function enum.
 
-Function function = 0 🔗
+Function function = 0 
 
 void set_function(value: Function)
 
@@ -22584,7 +22584,7 @@ Operator OP_ENUM_SIZE = 12
 
 Represents the size of the Operator enum.
 
-Operator operator = 0 🔗
+Operator operator = 0 
 
 void set_operator(value: Operator)
 
@@ -22615,7 +22615,7 @@ A VisualShaderNodeParameter of type unsigned int. Offers additional customizatio
 
 default_value_enabled
 
-int default_value = 0 🔗
+int default_value = 0 
 
 void set_default_value(value: int)
 
@@ -22623,7 +22623,7 @@ int get_default_value()
 
 Default value of this parameter, which will be used if not set externally. default_value_enabled must be enabled; defaults to 0 otherwise.
 
-bool default_value_enabled = false 🔗
+bool default_value_enabled = false 
 
 void set_default_value_enabled(value: bool)
 
@@ -22724,75 +22724,75 @@ _set_write_mode(p_write_mode: WriteMode) virtual required
 
 _was_string_packet() virtual required const
 
-void _close() virtual required 🔗
+void _close() virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_available_packet_count() virtual required const 🔗
+int _get_available_packet_count() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_buffered_amount() virtual required const 🔗
+int _get_buffered_amount() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_id() virtual required const 🔗
+int _get_id() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-String _get_label() virtual required const 🔗
+String _get_label() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_max_packet_life_time() virtual required const 🔗
+int _get_max_packet_life_time() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_max_packet_size() virtual required const 🔗
+int _get_max_packet_size() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-int _get_max_retransmits() virtual required const 🔗
+int _get_max_retransmits() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _get_packet(r_buffer: const uint8_t **, r_buffer_size: int32_t*) virtual 🔗
+Error _get_packet(r_buffer: const uint8_t **, r_buffer_size: int32_t*) virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-String _get_protocol() virtual required const 🔗
+String _get_protocol() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-ChannelState _get_ready_state() virtual required const 🔗
+ChannelState _get_ready_state() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-WriteMode _get_write_mode() virtual required const 🔗
+WriteMode _get_write_mode() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-bool _is_negotiated() virtual required const 🔗
+bool _is_negotiated() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-bool _is_ordered() virtual required const 🔗
+bool _is_ordered() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _poll() virtual required 🔗
+Error _poll() virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _put_packet(p_buffer: const uint8_t*, p_buffer_size: int) virtual 🔗
+Error _put_packet(p_buffer: const uint8_t*, p_buffer_size: int) virtual 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void _set_write_mode(p_write_mode: WriteMode) virtual required 🔗
+void _set_write_mode(p_write_mode: WriteMode) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-bool _was_string_packet() virtual required const 🔗
+bool _was_string_packet() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
@@ -22836,47 +22836,47 @@ _set_local_description(p_type: String, p_sdp: String) virtual required
 
 _set_remote_description(p_type: String, p_sdp: String) virtual required
 
-Error _add_ice_candidate(p_sdp_mid_name: String, p_sdp_mline_index: int, p_sdp_name: String) virtual required 🔗
+Error _add_ice_candidate(p_sdp_mid_name: String, p_sdp_mline_index: int, p_sdp_name: String) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void _close() virtual required 🔗
+void _close() virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-WebRTCDataChannel _create_data_channel(p_label: String, p_config: Dictionary) virtual required 🔗
+WebRTCDataChannel _create_data_channel(p_label: String, p_config: Dictionary) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _create_offer() virtual required 🔗
+Error _create_offer() virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-ConnectionState _get_connection_state() virtual required const 🔗
+ConnectionState _get_connection_state() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-GatheringState _get_gathering_state() virtual required const 🔗
+GatheringState _get_gathering_state() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-SignalingState _get_signaling_state() virtual required const 🔗
+SignalingState _get_signaling_state() virtual required const 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _initialize(p_config: Dictionary) virtual required 🔗
+Error _initialize(p_config: Dictionary) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _poll() virtual required 🔗
+Error _poll() virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _set_local_description(p_type: String, p_sdp: String) virtual required 🔗
+Error _set_local_description(p_type: String, p_sdp: String) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Error _set_remote_description(p_type: String, p_sdp: String) virtual required 🔗
+Error _set_remote_description(p_type: String, p_sdp: String) virtual required 
 
 There is currently no description for this method. Please help us by contributing one!
 
@@ -23062,7 +23062,7 @@ Emitted when the Window's DPI changes as a result of OS-level changes (e.g. movi
 
 Note: Only implemented on macOS and Linux (Wayland).
 
-files_dropped(files: PackedStringArray) 🔗
+files_dropped(files: PackedStringArray) 
 
 Emitted when files are dragged from the OS file manager and dropped in the game window. The argument is a list of file paths.
 
@@ -23072,7 +23072,7 @@ Emitted when the Window gains focus.
 
 Emitted when the Window loses its focus.
 
-go_back_requested() 🔗
+go_back_requested() 
 
 Emitted when a go back request is sent (e.g. pressing the "Back" button on Android), right after Node.NOTIFICATION_WM_GO_BACK_REQUEST.
 
@@ -23086,11 +23086,11 @@ Emitted when window title bar text is changed.
 
 Emitted when window title bar decorations are changed, e.g. macOS window enter/exit full screen mode, or extend-to-title flag is changed.
 
-visibility_changed() 🔗
+visibility_changed() 
 
 Emitted when Window is made visible or disappears.
 
-window_input(event: InputEvent) 🔗
+window_input(event: InputEvent) 
 
 Emitted when the Window is currently focused and receives any input, passing the received event as an argument. The event's position, if present, is in the embedder's coordinate system.
 
@@ -23214,7 +23214,7 @@ Note: This flag is implemented on macOS and Windows.
 
 Max value of the Flags.
 
-enum ContentScaleMode: 🔗
+enum ContentScaleMode: 
 
 ContentScaleMode CONTENT_SCALE_MODE_DISABLED = 0
 
@@ -23228,7 +23228,7 @@ ContentScaleMode CONTENT_SCALE_MODE_VIEWPORT = 2
 
 The content will be rendered at the base size and then scaled to the target size. More performant than CONTENT_SCALE_MODE_CANVAS_ITEMS, but results in pixelated image.
 
-enum ContentScaleAspect: 🔗
+enum ContentScaleAspect: 
 
 ContentScaleAspect CONTENT_SCALE_ASPECT_IGNORE = 0
 
@@ -23250,7 +23250,7 @@ ContentScaleAspect CONTENT_SCALE_ASPECT_EXPAND = 4
 
 The content's aspect will be preserved. If the target size has different aspect from the base one, the content will stay in the top-left corner and add an extra visible area in the stretched space.
 
-enum ContentScaleStretch: 🔗
+enum ContentScaleStretch: 
 
 ContentScaleStretch CONTENT_SCALE_STRETCH_FRACTIONAL = 0
 
@@ -23260,7 +23260,7 @@ ContentScaleStretch CONTENT_SCALE_STRETCH_INTEGER = 1
 
 The content will be stretched only according to an integer factor, preserving sharp pixels. This may leave a black background visible on the window's edges depending on the window size.
 
-enum LayoutDirection: 🔗
+enum LayoutDirection: 
 
 LayoutDirection LAYOUT_DIRECTION_INHERITED = 0
 
@@ -23290,7 +23290,7 @@ LayoutDirection LAYOUT_DIRECTION_LOCALE = 1
 
 Deprecated: Use LAYOUT_DIRECTION_APPLICATION_LOCALE instead.
 
-enum WindowInitialPosition: 🔗
+enum WindowInitialPosition: 
 
 WindowInitialPosition WINDOW_INITIAL_POSITION_ABSOLUTE = 0
 
@@ -23316,11 +23316,11 @@ WindowInitialPosition WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_KEYBOARD_FOCUS 
 
 Initial window position is the center of the screen containing the window with the keyboard focus.
 
-NOTIFICATION_VISIBILITY_CHANGED = 30 🔗
+NOTIFICATION_VISIBILITY_CHANGED = 30 
 
 Emitted when Window's visibility changes, right before visibility_changed.
 
-NOTIFICATION_THEME_CHANGED = 32 🔗
+NOTIFICATION_THEME_CHANGED = 32 
 
 Sent when the node needs to refresh its theme items. This happens in one of the following cases:
 
@@ -23332,7 +23332,7 @@ The node enters the scene tree.
 
 Note: As an optimization, this notification won't be sent from changes that occur while this node is outside of the scene tree. Instead, all of the theme item updates can be applied at once when the node enters the scene tree.
 
-String accessibility_description = "" 🔗
+String accessibility_description = "" 
 
 void set_accessibility_description(value: String)
 
@@ -23340,7 +23340,7 @@ String get_accessibility_description()
 
 The human-readable node description that is reported to assistive apps.
 
-String accessibility_name = "" 🔗
+String accessibility_name = "" 
 
 void set_accessibility_name(value: String)
 
@@ -23348,7 +23348,7 @@ String get_accessibility_name()
 
 The human-readable node name that is reported to assistive apps.
 
-bool always_on_top = false 🔗
+bool always_on_top = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23356,7 +23356,7 @@ bool get_flag(flag: Flags) const
 
 If true, the window will be on top of all other windows. Does not work if transient is enabled.
 
-bool auto_translate 🔗
+bool auto_translate 
 
 void set_auto_translate(value: bool)
 
@@ -23366,7 +23366,7 @@ Deprecated: Use Node.auto_translate_mode and Node.can_auto_translate() instead.
 
 Toggles if any text should automatically change to its translated version depending on the current locale.
 
-bool borderless = false 🔗
+bool borderless = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23374,7 +23374,7 @@ bool get_flag(flag: Flags) const
 
 If true, the window will have no borders.
 
-ContentScaleAspect content_scale_aspect = 0 🔗
+ContentScaleAspect content_scale_aspect = 0 
 
 void set_content_scale_aspect(value: ContentScaleAspect)
 
@@ -23382,7 +23382,7 @@ ContentScaleAspect get_content_scale_aspect()
 
 Specifies how the content's aspect behaves when the Window is resized. The base aspect is determined by content_scale_size.
 
-float content_scale_factor = 1.0 🔗
+float content_scale_factor = 1.0 
 
 void set_content_scale_factor(value: float)
 
@@ -23390,7 +23390,7 @@ float get_content_scale_factor()
 
 Specifies the base scale of Window's content when its size is equal to content_scale_size. See also Viewport.get_stretch_transform().
 
-ContentScaleMode content_scale_mode = 0 🔗
+ContentScaleMode content_scale_mode = 0 
 
 void set_content_scale_mode(value: ContentScaleMode)
 
@@ -23398,7 +23398,7 @@ ContentScaleMode get_content_scale_mode()
 
 Specifies how the content is scaled when the Window is resized.
 
-Vector2i content_scale_size = Vector2i(0, 0) 🔗
+Vector2i content_scale_size = Vector2i(0, 0) 
 
 void set_content_scale_size(value: Vector2i)
 
@@ -23406,7 +23406,7 @@ Vector2i get_content_scale_size()
 
 Base size of the content (i.e. nodes that are drawn inside the window). If non-zero, Window's content will be scaled when the window is resized to a different size.
 
-ContentScaleStretch content_scale_stretch = 0 🔗
+ContentScaleStretch content_scale_stretch = 0 
 
 void set_content_scale_stretch(value: ContentScaleStretch)
 
@@ -23420,7 +23420,7 @@ int get_current_screen()
 
 The screen the window is currently on.
 
-bool exclude_from_capture = false 🔗
+bool exclude_from_capture = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23432,7 +23432,7 @@ Note: This property is implemented on macOS and Windows.
 
 Note: Enabling this setting will prevent standard screenshot methods from capturing a window image, but does NOT guarantee that other apps won't be able to capture an image. It should not be used as a DRM or security measure.
 
-bool exclusive = false 🔗
+bool exclusive = false 
 
 void set_exclusive(value: bool)
 
@@ -23440,7 +23440,7 @@ If true, the Window will be in exclusive mode. Exclusive windows are always on t
 
 Needs transient enabled to work.
 
-bool extend_to_title = false 🔗
+bool extend_to_title = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23452,7 +23452,7 @@ Note: This property is implemented only on macOS.
 
 Note: This property only works with native windows.
 
-bool force_native = false 🔗
+bool force_native = false 
 
 void set_force_native(value: bool)
 
@@ -23460,7 +23460,7 @@ bool get_force_native()
 
 If true, native window will be used regardless of parent viewport and project settings.
 
-WindowInitialPosition initial_position = 0 🔗
+WindowInitialPosition initial_position = 0 
 
 void set_initial_position(value: WindowInitialPosition)
 
@@ -23468,7 +23468,7 @@ WindowInitialPosition get_initial_position()
 
 Specifies the initial type of position for the Window.
 
-bool keep_title_visible = false 🔗
+bool keep_title_visible = false 
 
 void set_keep_title_visible(value: bool)
 
@@ -23476,7 +23476,7 @@ bool get_keep_title_visible()
 
 If true, the Window width is expanded to keep the title bar text fully visible.
 
-Vector2i max_size = Vector2i(0, 0) 🔗
+Vector2i max_size = Vector2i(0, 0) 
 
 void set_max_size(value: Vector2i)
 
@@ -23486,7 +23486,7 @@ If non-zero, the Window can't be resized to be bigger than this size.
 
 Note: This property will be ignored if the value is lower than min_size.
 
-bool maximize_disabled = false 🔗
+bool maximize_disabled = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23498,7 +23498,7 @@ Note: If both minimize and maximize buttons are disabled, buttons are fully hidd
 
 Note: This property is implemented only on macOS and Windows.
 
-Vector2i min_size = Vector2i(0, 0) 🔗
+Vector2i min_size = Vector2i(0, 0) 
 
 void set_min_size(value: Vector2i)
 
@@ -23508,7 +23508,7 @@ If non-zero, the Window can't be resized to be smaller than this size.
 
 Note: This property will be ignored in favor of get_contents_minimum_size() if wrap_controls is enabled and if its size is bigger.
 
-bool minimize_disabled = false 🔗
+bool minimize_disabled = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23528,7 +23528,7 @@ Note: Fullscreen mode is not exclusive full screen on Windows and Linux.
 
 Note: This method only works with native windows, i.e. the main window and Window-derived nodes when Viewport.gui_embed_subwindows is disabled in the main viewport.
 
-bool mouse_passthrough = false 🔗
+bool mouse_passthrough = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23540,7 +23540,7 @@ Note: This property is implemented on Linux (X11), macOS and Windows.
 
 Note: This property only works with native windows.
 
-PackedVector2Array mouse_passthrough_polygon = PackedVector2Array() 🔗
+PackedVector2Array mouse_passthrough_polygon = PackedVector2Array() 
 
 void set_mouse_passthrough_polygon(value: PackedVector2Array)
 
@@ -23558,7 +23558,7 @@ Note: This property is implemented on Linux (X11), macOS and Windows.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedVector2Array for more details.
 
-bool popup_window = false 🔗
+bool popup_window = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23566,7 +23566,7 @@ bool get_flag(flag: Flags) const
 
 If true, the Window will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless exclusive is enabled).
 
-bool popup_wm_hint = false 🔗
+bool popup_wm_hint = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23574,7 +23574,7 @@ bool get_flag(flag: Flags) const
 
 If true, the Window will signal to the window manager that it is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
 
-Vector2i position = Vector2i(0, 0) 🔗
+Vector2i position = Vector2i(0, 0) 
 
 void set_position(value: Vector2i)
 
@@ -23586,7 +23586,7 @@ If ProjectSettings.display/window/subwindows/embed_subwindows is false, the posi
 
 Note: This property only works if initial_position is set to WINDOW_INITIAL_POSITION_ABSOLUTE.
 
-bool sharp_corners = false 🔗
+bool sharp_corners = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23598,7 +23598,7 @@ Note: This property is implemented only on Windows (11).
 
 Note: This property only works with native windows.
 
-Vector2i size = Vector2i(100, 100) 🔗
+Vector2i size = Vector2i(100, 100) 
 
 void set_size(value: Vector2i)
 
@@ -23610,7 +23610,7 @@ The Theme resource this node and all its Control and Window children use. If a c
 
 Note: Window styles will have no effect unless the window is embedded.
 
-StringName theme_type_variation = &"" 🔗
+StringName theme_type_variation = &"" 
 
 void set_theme_type_variation(value: StringName)
 
@@ -23622,7 +23622,7 @@ void set_title(value: String)
 
 The window's title. If the Window is native, title styles set in Theme will have no effect.
 
-bool transient = false 🔗
+bool transient = false 
 
 void set_transient(value: bool)
 
@@ -23630,7 +23630,7 @@ If true, the Window is transient, i.e. it's considered a child of another Window
 
 Note that behavior might be different depending on the platform.
 
-bool transient_to_focused = false 🔗
+bool transient_to_focused = false 
 
 void set_transient_to_focused(value: bool)
 
@@ -23638,7 +23638,7 @@ bool is_transient_to_focused()
 
 If true, and the Window is transient, this window will (at the time of becoming visible) become transient to the currently focused window instead of the immediate parent window in the hierarchy. Note that the transient parent is assigned at the time this window becomes visible, so changing it afterwards has no effect until re-shown.
 
-bool transparent = false 🔗
+bool transparent = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23650,7 +23650,7 @@ Note: Transparency support is implemented on Linux, macOS and Windows, but avail
 
 Note: This property has no effect if ProjectSettings.display/window/per_pixel_transparency/allowed is set to false.
 
-bool unfocusable = false 🔗
+bool unfocusable = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23658,7 +23658,7 @@ bool get_flag(flag: Flags) const
 
 If true, the Window can't be focused nor interacted with. It can still be visible.
 
-bool unresizable = false 🔗
+bool unresizable = false 
 
 void set_flag(flag: Flags, enabled: bool)
 
@@ -23666,13 +23666,13 @@ bool get_flag(flag: Flags) const
 
 If true, the window can't be resized.
 
-bool visible = true 🔗
+bool visible = true 
 
 void set_visible(value: bool)
 
 If true, the window is visible.
 
-bool wrap_controls = false 🔗
+bool wrap_controls = false 
 
 void set_wrap_controls(value: bool)
 
@@ -23682,223 +23682,223 @@ If true, the window's size will automatically update when a child node is added 
 
 If false, you need to call child_controls_changed() manually.
 
-Vector2 _get_contents_minimum_size() virtual const 🔗
+Vector2 _get_contents_minimum_size() virtual const 
 
 Virtual method to be implemented by the user. Overrides the value returned by get_contents_minimum_size().
 
-void add_theme_color_override(name: StringName, color: Color) 🔗
+void add_theme_color_override(name: StringName, color: Color) 
 
 Creates a local override for a theme Color with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_color_override().
 
 See also get_theme_color() and Control.add_theme_color_override() for more details.
 
-void add_theme_constant_override(name: StringName, constant: int) 🔗
+void add_theme_constant_override(name: StringName, constant: int) 
 
 Creates a local override for a theme constant with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_constant_override().
 
 See also get_theme_constant().
 
-void add_theme_font_override(name: StringName, font: Font) 🔗
+void add_theme_font_override(name: StringName, font: Font) 
 
 Creates a local override for a theme Font with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_font_override().
 
 See also get_theme_font().
 
-void add_theme_font_size_override(name: StringName, font_size: int) 🔗
+void add_theme_font_size_override(name: StringName, font_size: int) 
 
 Creates a local override for a theme font size with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_font_size_override().
 
 See also get_theme_font_size().
 
-void add_theme_icon_override(name: StringName, texture: Texture2D) 🔗
+void add_theme_icon_override(name: StringName, texture: Texture2D) 
 
 Creates a local override for a theme icon with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_icon_override().
 
 See also get_theme_icon().
 
-void add_theme_stylebox_override(name: StringName, stylebox: StyleBox) 🔗
+void add_theme_stylebox_override(name: StringName, stylebox: StyleBox) 
 
 Creates a local override for a theme StyleBox with the specified name. Local overrides always take precedence when fetching theme items for the control. An override can be removed with remove_theme_stylebox_override().
 
 See also get_theme_stylebox() and Control.add_theme_stylebox_override() for more details.
 
-void begin_bulk_theme_override() 🔗
+void begin_bulk_theme_override() 
 
 Prevents *_theme_*_override methods from emitting NOTIFICATION_THEME_CHANGED until end_bulk_theme_override() is called.
 
-bool can_draw() const 🔗
+bool can_draw() const 
 
 Returns whether the window is being drawn to the screen.
 
-void child_controls_changed() 🔗
+void child_controls_changed() 
 
 Requests an update of the Window size to fit underlying Control nodes.
 
-void end_bulk_theme_override() 🔗
+void end_bulk_theme_override() 
 
 Ends a bulk theme override update. See begin_bulk_theme_override().
 
-Vector2 get_contents_minimum_size() const 🔗
+Vector2 get_contents_minimum_size() const 
 
 Returns the combined minimum size from the child Control nodes of the window. Use child_controls_changed() to update it when child nodes have changed.
 
 The value returned by this method can be overridden with _get_contents_minimum_size().
 
-bool get_flag(flag: Flags) const 🔗
+bool get_flag(flag: Flags) const 
 
 Returns true if the flag is set.
 
-Window get_focused_window() static 🔗
+Window get_focused_window() static 
 
 Returns the focused window.
 
-LayoutDirection get_layout_direction() const 🔗
+LayoutDirection get_layout_direction() const 
 
 Returns layout direction and text writing direction.
 
-Vector2i get_position_with_decorations() const 🔗
+Vector2i get_position_with_decorations() const 
 
 Returns the window's position including its border.
 
 Note: If visible is false, this method returns the same value as position.
 
-Vector2i get_size_with_decorations() const 🔗
+Vector2i get_size_with_decorations() const 
 
 Returns the window's size including its border.
 
 Note: If visible is false, this method returns the same value as size.
 
-Color get_theme_color(name: StringName, theme_type: StringName = &"") const 🔗
+Color get_theme_color(name: StringName, theme_type: StringName = &"") const 
 
 Returns a Color from the first matching Theme in the tree if that Theme has a color item with the specified name and theme_type.
 
 See Control.get_theme_color() for more details.
 
-int get_theme_constant(name: StringName, theme_type: StringName = &"") const 🔗
+int get_theme_constant(name: StringName, theme_type: StringName = &"") const 
 
 Returns a constant from the first matching Theme in the tree if that Theme has a constant item with the specified name and theme_type.
 
 See Control.get_theme_color() for more details.
 
-float get_theme_default_base_scale() const 🔗
+float get_theme_default_base_scale() const 
 
 Returns the default base scale value from the first matching Theme in the tree if that Theme has a valid Theme.default_base_scale value.
 
 See Control.get_theme_color() for details.
 
-Font get_theme_default_font() const 🔗
+Font get_theme_default_font() const 
 
 Returns the default font from the first matching Theme in the tree if that Theme has a valid Theme.default_font value.
 
 See Control.get_theme_color() for details.
 
-int get_theme_default_font_size() const 🔗
+int get_theme_default_font_size() const 
 
 Returns the default font size value from the first matching Theme in the tree if that Theme has a valid Theme.default_font_size value.
 
 See Control.get_theme_color() for details.
 
-Font get_theme_font(name: StringName, theme_type: StringName = &"") const 🔗
+Font get_theme_font(name: StringName, theme_type: StringName = &"") const 
 
 Returns a Font from the first matching Theme in the tree if that Theme has a font item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-int get_theme_font_size(name: StringName, theme_type: StringName = &"") const 🔗
+int get_theme_font_size(name: StringName, theme_type: StringName = &"") const 
 
 Returns a font size from the first matching Theme in the tree if that Theme has a font size item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-Texture2D get_theme_icon(name: StringName, theme_type: StringName = &"") const 🔗
+Texture2D get_theme_icon(name: StringName, theme_type: StringName = &"") const 
 
 Returns an icon from the first matching Theme in the tree if that Theme has an icon item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-StyleBox get_theme_stylebox(name: StringName, theme_type: StringName = &"") const 🔗
+StyleBox get_theme_stylebox(name: StringName, theme_type: StringName = &"") const 
 
 Returns a StyleBox from the first matching Theme in the tree if that Theme has a stylebox item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-int get_window_id() const 🔗
+int get_window_id() const 
 
 Returns the ID of the window.
 
 Causes the window to grab focus, allowing it to receive user input.
 
-bool has_focus() const 🔗
+bool has_focus() const 
 
 Returns true if the window is focused.
 
-bool has_theme_color(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_color(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a color item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_color_override(name: StringName) const 🔗
+bool has_theme_color_override(name: StringName) const 
 
 Returns true if there is a local override for a theme Color with the specified name in this Control node.
 
 See add_theme_color_override().
 
-bool has_theme_constant(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_constant(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a constant item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_constant_override(name: StringName) const 🔗
+bool has_theme_constant_override(name: StringName) const 
 
 Returns true if there is a local override for a theme constant with the specified name in this Control node.
 
 See add_theme_constant_override().
 
-bool has_theme_font(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_font(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a font item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_font_override(name: StringName) const 🔗
+bool has_theme_font_override(name: StringName) const 
 
 Returns true if there is a local override for a theme Font with the specified name in this Control node.
 
 See add_theme_font_override().
 
-bool has_theme_font_size(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_font_size(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a font size item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_font_size_override(name: StringName) const 🔗
+bool has_theme_font_size_override(name: StringName) const 
 
 Returns true if there is a local override for a theme font size with the specified name in this Control node.
 
 See add_theme_font_size_override().
 
-bool has_theme_icon(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_icon(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has an icon item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_icon_override(name: StringName) const 🔗
+bool has_theme_icon_override(name: StringName) const 
 
 Returns true if there is a local override for a theme icon with the specified name in this Control node.
 
 See add_theme_icon_override().
 
-bool has_theme_stylebox(name: StringName, theme_type: StringName = &"") const 🔗
+bool has_theme_stylebox(name: StringName, theme_type: StringName = &"") const 
 
 Returns true if there is a matching Theme in the tree that has a stylebox item with the specified name and theme_type.
 
 See Control.get_theme_color() for details.
 
-bool has_theme_stylebox_override(name: StringName) const 🔗
+bool has_theme_stylebox_override(name: StringName) const 
 
 Returns true if there is a local override for a theme StyleBox with the specified name in this Control node.
 
@@ -23906,33 +23906,33 @@ See add_theme_stylebox_override().
 
 Hides the window. This is not the same as minimized state. Hidden window can't be interacted with and needs to be made visible with show().
 
-bool is_embedded() const 🔗
+bool is_embedded() const 
 
 Returns true if the window is currently embedded in another window.
 
-bool is_layout_rtl() const 🔗
+bool is_layout_rtl() const 
 
 Returns true if the layout is right-to-left.
 
-bool is_maximize_allowed() const 🔗
+bool is_maximize_allowed() const 
 
 Returns true if the window can be maximized (the maximize button is enabled).
 
-bool is_using_font_oversampling() const 🔗
+bool is_using_font_oversampling() const 
 
 Returns true if font oversampling is enabled. See set_use_font_oversampling().
 
-void move_to_center() 🔗
+void move_to_center() 
 
 Centers a native window on the current screen and an embedded window on its embedder Viewport.
 
-void move_to_foreground() 🔗
+void move_to_foreground() 
 
 Deprecated: Use grab_focus() instead.
 
 Causes the window to grab focus, allowing it to receive user input.
 
-void popup(rect: Rect2i = Rect2i(0, 0, 0, 0)) 🔗
+void popup(rect: Rect2i = Rect2i(0, 0, 0, 0)) 
 
 Shows the Window and makes it transient (see transient). If rect is provided, it will be set as the Window's size. Fails if called on the main window.
 
@@ -23942,111 +23942,111 @@ If ProjectSettings.display/window/subwindows/embed_subwindows is false (multi-wi
 
 Note: rect must be in global coordinates if specified.
 
-void popup_centered(minsize: Vector2i = Vector2i(0, 0)) 🔗
+void popup_centered(minsize: Vector2i = Vector2i(0, 0)) 
 
 Popups the Window at the center of the current screen, with optionally given minimum size. If the Window is embedded, it will be centered in the parent Viewport instead.
 
 Note: Calling it with the default value of minsize is equivalent to calling it with size.
 
-void popup_centered_clamped(minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 🔗
+void popup_centered_clamped(minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 
 
 Popups the Window centered inside its parent Window. fallback_ratio determines the maximum size of the Window, in relation to its parent.
 
 Note: Calling it with the default value of minsize is equivalent to calling it with size.
 
-void popup_centered_ratio(ratio: float = 0.8) 🔗
+void popup_centered_ratio(ratio: float = 0.8) 
 
 If Window is embedded, popups the Window centered inside its embedder and sets its size as a ratio of embedder's size.
 
 If Window is a native window, popups the Window centered inside the screen of its parent Window and sets its size as a ratio of the screen size.
 
-void popup_exclusive(from_node: Node, rect: Rect2i = Rect2i(0, 0, 0, 0)) 🔗
+void popup_exclusive(from_node: Node, rect: Rect2i = Rect2i(0, 0, 0, 0)) 
 
 Attempts to parent this dialog to the last exclusive window relative to from_node, and then calls popup() on it. The dialog must have no current parent, otherwise the method fails.
 
 See also set_unparent_when_invisible() and Node.get_last_exclusive_window().
 
-void popup_exclusive_centered(from_node: Node, minsize: Vector2i = Vector2i(0, 0)) 🔗
+void popup_exclusive_centered(from_node: Node, minsize: Vector2i = Vector2i(0, 0)) 
 
 Attempts to parent this dialog to the last exclusive window relative to from_node, and then calls popup_centered() on it. The dialog must have no current parent, otherwise the method fails.
 
 See also set_unparent_when_invisible() and Node.get_last_exclusive_window().
 
-void popup_exclusive_centered_clamped(from_node: Node, minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 🔗
+void popup_exclusive_centered_clamped(from_node: Node, minsize: Vector2i = Vector2i(0, 0), fallback_ratio: float = 0.75) 
 
 Attempts to parent this dialog to the last exclusive window relative to from_node, and then calls popup_centered_clamped() on it. The dialog must have no current parent, otherwise the method fails.
 
 See also set_unparent_when_invisible() and Node.get_last_exclusive_window().
 
-void popup_exclusive_centered_ratio(from_node: Node, ratio: float = 0.8) 🔗
+void popup_exclusive_centered_ratio(from_node: Node, ratio: float = 0.8) 
 
 Attempts to parent this dialog to the last exclusive window relative to from_node, and then calls popup_centered_ratio() on it. The dialog must have no current parent, otherwise the method fails.
 
 See also set_unparent_when_invisible() and Node.get_last_exclusive_window().
 
-void popup_exclusive_on_parent(from_node: Node, parent_rect: Rect2i) 🔗
+void popup_exclusive_on_parent(from_node: Node, parent_rect: Rect2i) 
 
 Attempts to parent this dialog to the last exclusive window relative to from_node, and then calls popup_on_parent() on it. The dialog must have no current parent, otherwise the method fails.
 
 See also set_unparent_when_invisible() and Node.get_last_exclusive_window().
 
-void popup_on_parent(parent_rect: Rect2i) 🔗
+void popup_on_parent(parent_rect: Rect2i) 
 
 Popups the Window with a position shifted by parent Window's position. If the Window is embedded, has the same effect as popup().
 
-void remove_theme_color_override(name: StringName) 🔗
+void remove_theme_color_override(name: StringName) 
 
 Removes a local override for a theme Color with the specified name previously added by add_theme_color_override() or via the Inspector dock.
 
-void remove_theme_constant_override(name: StringName) 🔗
+void remove_theme_constant_override(name: StringName) 
 
 Removes a local override for a theme constant with the specified name previously added by add_theme_constant_override() or via the Inspector dock.
 
-void remove_theme_font_override(name: StringName) 🔗
+void remove_theme_font_override(name: StringName) 
 
 Removes a local override for a theme Font with the specified name previously added by add_theme_font_override() or via the Inspector dock.
 
-void remove_theme_font_size_override(name: StringName) 🔗
+void remove_theme_font_size_override(name: StringName) 
 
 Removes a local override for a theme font size with the specified name previously added by add_theme_font_size_override() or via the Inspector dock.
 
-void remove_theme_icon_override(name: StringName) 🔗
+void remove_theme_icon_override(name: StringName) 
 
 Removes a local override for a theme icon with the specified name previously added by add_theme_icon_override() or via the Inspector dock.
 
-void remove_theme_stylebox_override(name: StringName) 🔗
+void remove_theme_stylebox_override(name: StringName) 
 
 Removes a local override for a theme StyleBox with the specified name previously added by add_theme_stylebox_override() or via the Inspector dock.
 
-void request_attention() 🔗
+void request_attention() 
 
 Tells the OS that the Window needs an attention. This makes the window stand out in some way depending on the system, e.g. it might blink on the task bar.
 
 Resets the size to the minimum size, which is the max of min_size and (if wrap_controls is enabled) get_contents_minimum_size(). This is equivalent to calling set_size(Vector2i()) (or any size below the minimum).
 
-void set_flag(flag: Flags, enabled: bool) 🔗
+void set_flag(flag: Flags, enabled: bool) 
 
 Sets a specified window flag.
 
-void set_ime_active(active: bool) 🔗
+void set_ime_active(active: bool) 
 
 If active is true, enables system's native IME (Input Method Editor).
 
-void set_ime_position(position: Vector2i) 🔗
+void set_ime_position(position: Vector2i) 
 
 Moves IME to the given position.
 
-void set_layout_direction(direction: LayoutDirection) 🔗
+void set_layout_direction(direction: LayoutDirection) 
 
 Sets layout direction and text writing direction. Right-to-left layouts are necessary for certain languages (e.g. Arabic and Hebrew).
 
-void set_unparent_when_invisible(unparent: bool) 🔗
+void set_unparent_when_invisible(unparent: bool) 
 
 If unparent is true, the window is automatically unparented when going invisible.
 
 Note: Make sure to keep a reference to the node, otherwise it will be orphaned. You also need to manually call Node.queue_free() to free the window if it's not parented.
 
-void set_use_font_oversampling(enable: bool) 🔗
+void set_use_font_oversampling(enable: bool) 
 
 Enables font oversampling. This makes fonts look better when they are scaled up.
 
@@ -24054,57 +24054,57 @@ Makes the Window appear. This enables interactions with the Window and doesn't c
 
 Starts an interactive drag operation on the window, using the current mouse position. Call this method when handling a mouse button being pressed to simulate a pressed event on the window's title bar. Using this method allows the window to participate in space switching, tiling, and other system features.
 
-void start_resize(edge: WindowResizeEdge) 🔗
+void start_resize(edge: WindowResizeEdge) 
 
 Starts an interactive resize operation on the window, using the current mouse position. Call this method when handling a mouse button being pressed to simulate a pressed event on the window's edge.
 
-Color title_color = Color(0.875, 0.875, 0.875, 1) 🔗
+Color title_color = Color(0.875, 0.875, 0.875, 1) 
 
 The color of the title's text.
 
-Color title_outline_modulate = Color(0, 0, 0, 1) 🔗
+Color title_outline_modulate = Color(0, 0, 0, 1) 
 
 The color of the title's text outline.
 
-int close_h_offset = 18 🔗
+int close_h_offset = 18 
 
 Horizontal position offset of the close button, relative to the end of the title bar, towards the beginning of the title bar.
 
-int close_v_offset = 24 🔗
+int close_v_offset = 24 
 
 Vertical position offset of the close button, relative to the bottom of the title bar, towards the top of the title bar.
 
-int resize_margin = 4 🔗
+int resize_margin = 4 
 
 Defines the outside margin at which the window border can be grabbed with mouse and resized.
 
-int title_height = 36 🔗
+int title_height = 36 
 
 Height of the title bar.
 
-int title_outline_size = 0 🔗
+int title_outline_size = 0 
 
 The size of the title outline.
 
 The font used to draw the title.
 
-int title_font_size 🔗
+int title_font_size 
 
 The size of the title font.
 
 The icon for the close button.
 
-Texture2D close_pressed 🔗
+Texture2D close_pressed 
 
 The icon for the close button when it's being pressed.
 
-StyleBox embedded_border 🔗
+StyleBox embedded_border 
 
 The background style used when the Window is embedded. Note that this is drawn only under the window's content, excluding the title. For proper borders and title bar style, you can use expand_margin_* properties of StyleBoxFlat.
 
 Note: The content background will not be visible unless transparent is enabled.
 
-StyleBox embedded_unfocused_border 🔗
+StyleBox embedded_unfocused_border 
 
 The background style used when the Window is embedded and unfocused.
 

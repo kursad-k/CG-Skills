@@ -396,49 +396,49 @@ remove_animation(name: StringName)
 
 rename_animation(name: StringName, newname: StringName)
 
-animation_added(name: StringName) 🔗
+animation_added(name: StringName) 
 
 Emitted when an Animation is added, under the key name.
 
-animation_changed(name: StringName) 🔗
+animation_changed(name: StringName) 
 
 Emitted when there's a change in one of the animations, e.g. tracks are added, moved or have changed paths. name is the key of the animation that was changed.
 
 See also Resource.changed, which this acts as a relay for.
 
-animation_removed(name: StringName) 🔗
+animation_removed(name: StringName) 
 
 Emitted when an Animation stored with the key name is removed.
 
-animation_renamed(name: StringName, to_name: StringName) 🔗
+animation_renamed(name: StringName, to_name: StringName) 
 
 Emitted when the key for an Animation is changed, from name to to_name.
 
-Error add_animation(name: StringName, animation: Animation) 🔗
+Error add_animation(name: StringName, animation: Animation) 
 
 Adds the animation to the library, accessible by the key name.
 
-Animation get_animation(name: StringName) const 🔗
+Animation get_animation(name: StringName) const 
 
 Returns the Animation with the key name. If the animation does not exist, null is returned and an error is logged.
 
-Array[StringName] get_animation_list() const 🔗
+Array[StringName] get_animation_list() const 
 
 Returns the keys for the Animations stored in the library.
 
-int get_animation_list_size() const 🔗
+int get_animation_list_size() const 
 
 Returns the key count for the Animations stored in the library.
 
-bool has_animation(name: StringName) const 🔗
+bool has_animation(name: StringName) const 
 
 Returns true if the library stores an Animation with name as the key.
 
-void remove_animation(name: StringName) 🔗
+void remove_animation(name: StringName) 
 
 Removes the Animation with the key name.
 
-void rename_animation(name: StringName, newname: StringName) 🔗
+void rename_animation(name: StringName, newname: StringName) 
 
 Changes the key of the Animation associated with the key name to newname.
 
@@ -484,47 +484,47 @@ start(node: StringName, reset: bool = true)
 
 travel(to_node: StringName, reset_on_teleport: bool = true)
 
-state_finished(state: StringName) 🔗
+state_finished(state: StringName) 
 
 Emitted when the state finishes playback. If state is a state machine set to grouped mode, its signals are passed through with its name prefixed.
 
 If there is a crossfade, this will be fired when the influence of the get_fading_from_node() animation is no longer present.
 
-state_started(state: StringName) 🔗
+state_started(state: StringName) 
 
 Emitted when the state starts playback. If state is a state machine set to grouped mode, its signals are passed through with its name prefixed.
 
-float get_current_length() const 🔗
+float get_current_length() const 
 
 Returns the current state length.
 
 Note: It is possible that any AnimationRootNode can be nodes as well as animations. This means that there can be multiple animations within a single state. Which animation length has priority depends on the nodes connected inside it. Also, if a transition does not reset, the remaining length at that point will be returned.
 
-StringName get_current_node() const 🔗
+StringName get_current_node() const 
 
 Returns the currently playing animation state.
 
 Note: When using a cross-fade, the current state changes to the next state immediately after the cross-fade begins.
 
-float get_current_play_position() const 🔗
+float get_current_play_position() const 
 
 Returns the playback position within the current animation state.
 
-StringName get_fading_from_node() const 🔗
+StringName get_fading_from_node() const 
 
 Returns the starting state of currently fading animation.
 
-Array[StringName] get_travel_path() const 🔗
+Array[StringName] get_travel_path() const 
 
 Returns the current travel path as computed internally by the A* algorithm.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if an animation is playing.
 
 If there is a next path by travel or auto advance, immediately transitions from the current state to the next state.
 
-void start(node: StringName, reset: bool = true) 🔗
+void start(node: StringName, reset: bool = true) 
 
 Starts playing the given animation.
 
@@ -532,7 +532,7 @@ If reset is true, the animation is played from the beginning.
 
 Stops the currently playing animation.
 
-void travel(to_node: StringName, reset_on_teleport: bool = true) 🔗
+void travel(to_node: StringName, reset_on_teleport: bool = true) 
 
 Transitions from the current state to another one, following the shortest path.
 
@@ -580,7 +580,7 @@ The path generated when using AnimationNodeStateMachinePlayback.travel() is limi
 
 You can set the timing and conditions of the transition in detail.
 
-advance_condition_changed() 🔗
+advance_condition_changed() 
 
 Emitted when advance_condition is changed.
 
@@ -608,7 +608,7 @@ AdvanceMode ADVANCE_MODE_AUTO = 2
 
 Automatically use this transition if the advance_condition and advance_expression checks are true (if assigned).
 
-StringName advance_condition = &"" 🔗
+StringName advance_condition = &"" 
 
 void set_advance_condition(value: StringName)
 
@@ -616,7 +616,7 @@ StringName get_advance_condition()
 
 Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the AnimationTree that can be controlled from code (see Using AnimationTree). For example, if AnimationTree.tree_root is an AnimationNodeStateMachine and advance_condition is set to "idle":
 
-String advance_expression = "" 🔗
+String advance_expression = "" 
 
 void set_advance_expression(value: String)
 
@@ -624,7 +624,7 @@ String get_advance_expression()
 
 Use an expression as a condition for state machine transitions. It is possible to create complex animation advance conditions for switching between states and gives much greater flexibility for creating complex state machines by directly interfacing with the script code.
 
-AdvanceMode advance_mode = 1 🔗
+AdvanceMode advance_mode = 1 
 
 void set_advance_mode(value: AdvanceMode)
 
@@ -632,7 +632,7 @@ AdvanceMode get_advance_mode()
 
 Determines whether the transition should be disabled, enabled when using AnimationNodeStateMachinePlayback.travel(), or traversed automatically if the advance_condition and advance_expression checks are true (if assigned).
 
-bool break_loop_at_end = false 🔗
+bool break_loop_at_end = false 
 
 void set_break_loop_at_end(value: bool)
 
@@ -648,7 +648,7 @@ void set_reset(value: bool)
 
 If true, the destination animation is played back from the beginning when switched.
 
-SwitchMode switch_mode = 0 🔗
+SwitchMode switch_mode = 0 
 
 void set_switch_mode(value: SwitchMode)
 
@@ -660,7 +660,7 @@ Curve get_xfade_curve()
 
 Ease curve for better control over cross-fade between this state and the next. Should be a unit Curve.
 
-float xfade_time = 0.0 🔗
+float xfade_time = 0.0 
 
 void set_xfade_time(value: float)
 
@@ -751,7 +751,7 @@ set_graph_offset(offset: Vector2)
 
 set_node_position(name: StringName, position: Vector2)
 
-enum StateMachineType: 🔗
+enum StateMachineType: 
 
 StateMachineType STATE_MACHINE_TYPE_ROOT = 0
 
@@ -765,7 +765,7 @@ StateMachineType STATE_MACHINE_TYPE_GROUPED = 2
 
 This is a grouped state machine that can be controlled from a parent state machine. It does not work independently. There must be a state machine with state_machine_type of STATE_MACHINE_TYPE_ROOT or STATE_MACHINE_TYPE_NESTED in the parent or ancestor.
 
-bool allow_transition_to_self = false 🔗
+bool allow_transition_to_self = false 
 
 void set_allow_transition_to_self(value: bool)
 
@@ -773,7 +773,7 @@ bool is_allow_transition_to_self()
 
 If true, allows teleport to the self state with AnimationNodeStateMachinePlayback.travel(). When the reset option is enabled in AnimationNodeStateMachinePlayback.travel(), the animation is restarted. If false, nothing happens on the teleportation to the self state.
 
-bool reset_ends = false 🔗
+bool reset_ends = false 
 
 void set_reset_ends(value: bool)
 
@@ -783,7 +783,7 @@ If true, treat the cross-fade to the start and end nodes as a blend with the RES
 
 In most cases, when additional cross-fades are performed in the parent AnimationNode of the state machine, setting this property to false and matching the cross-fade time of the parent AnimationNode and the state machine's start node and end node gives good results.
 
-StateMachineType state_machine_type = 0 🔗
+StateMachineType state_machine_type = 0 
 
 void set_state_machine_type(value: StateMachineType)
 
@@ -791,83 +791,83 @@ StateMachineType get_state_machine_type()
 
 This property can define the process of transitions for different use cases. See also StateMachineType.
 
-void add_node(name: StringName, node: AnimationNode, position: Vector2 = Vector2(0, 0)) 🔗
+void add_node(name: StringName, node: AnimationNode, position: Vector2 = Vector2(0, 0)) 
 
 Adds a new animation node to the graph. The position is used for display in the editor.
 
-void add_transition(from: StringName, to: StringName, transition: AnimationNodeStateMachineTransition) 🔗
+void add_transition(from: StringName, to: StringName, transition: AnimationNodeStateMachineTransition) 
 
 Adds a transition between the given animation nodes.
 
-Vector2 get_graph_offset() const 🔗
+Vector2 get_graph_offset() const 
 
 Returns the draw offset of the graph. Used for display in the editor.
 
-AnimationNode get_node(name: StringName) const 🔗
+AnimationNode get_node(name: StringName) const 
 
 Returns the animation node with the given name.
 
-Array[StringName] get_node_list() const 🔗
+Array[StringName] get_node_list() const 
 
 Returns a list containing the names of all animation nodes in this state machine.
 
-StringName get_node_name(node: AnimationNode) const 🔗
+StringName get_node_name(node: AnimationNode) const 
 
 Returns the given animation node's name.
 
-Vector2 get_node_position(name: StringName) const 🔗
+Vector2 get_node_position(name: StringName) const 
 
 Returns the given animation node's coordinates. Used for display in the editor.
 
-AnimationNodeStateMachineTransition get_transition(idx: int) const 🔗
+AnimationNodeStateMachineTransition get_transition(idx: int) const 
 
 Returns the given transition.
 
-int get_transition_count() const 🔗
+int get_transition_count() const 
 
 Returns the number of connections in the graph.
 
-StringName get_transition_from(idx: int) const 🔗
+StringName get_transition_from(idx: int) const 
 
 Returns the given transition's start node.
 
-StringName get_transition_to(idx: int) const 🔗
+StringName get_transition_to(idx: int) const 
 
 Returns the given transition's end node.
 
-bool has_node(name: StringName) const 🔗
+bool has_node(name: StringName) const 
 
 Returns true if the graph contains the given animation node.
 
-bool has_transition(from: StringName, to: StringName) const 🔗
+bool has_transition(from: StringName, to: StringName) const 
 
 Returns true if there is a transition between the given animation nodes.
 
-void remove_node(name: StringName) 🔗
+void remove_node(name: StringName) 
 
 Deletes the given animation node from the graph.
 
-void remove_transition(from: StringName, to: StringName) 🔗
+void remove_transition(from: StringName, to: StringName) 
 
 Deletes the transition between the two specified animation nodes.
 
-void remove_transition_by_index(idx: int) 🔗
+void remove_transition_by_index(idx: int) 
 
 Deletes the given transition by index.
 
-void rename_node(name: StringName, new_name: StringName) 🔗
+void rename_node(name: StringName, new_name: StringName) 
 
 Renames the given animation node.
 
-void replace_node(name: StringName, node: AnimationNode) 🔗
+void replace_node(name: StringName, node: AnimationNode) 
 
 Replaces the given animation node with a new animation node.
 
-void set_graph_offset(offset: Vector2) 🔗
+void set_graph_offset(offset: Vector2) 
 
 Sets the draw offset of the graph. Used for display in the editor.
 
-void set_node_position(name: StringName, position: Vector2) 🔗
+void set_node_position(name: StringName, position: Vector2) 
 
 Sets the animation node's coordinates. Used for display in the editor.
 
@@ -1191,7 +1191,7 @@ AnchorMode ANCHOR_MODE_DRAG_CENTER = 1
 
 The camera's position takes into account vertical/horizontal offsets and the screen size.
 
-enum Camera2DProcessCallback: 🔗
+enum Camera2DProcessCallback: 
 
 Camera2DProcessCallback CAMERA2D_PROCESS_PHYSICS = 0
 
@@ -1201,7 +1201,7 @@ Camera2DProcessCallback CAMERA2D_PROCESS_IDLE = 1
 
 The camera updates during process frames (see Node.NOTIFICATION_INTERNAL_PROCESS).
 
-AnchorMode anchor_mode = 1 🔗
+AnchorMode anchor_mode = 1 
 
 void set_anchor_mode(value: AnchorMode)
 
@@ -1209,7 +1209,7 @@ AnchorMode get_anchor_mode()
 
 The Camera2D's anchor point.
 
-Node custom_viewport 🔗
+Node custom_viewport 
 
 void set_custom_viewport(value: Node)
 
@@ -1217,7 +1217,7 @@ Node get_custom_viewport()
 
 The custom Viewport node attached to the Camera2D. If null or not a Viewport, uses the default viewport instead.
 
-float drag_bottom_margin = 0.2 🔗
+float drag_bottom_margin = 0.2 
 
 void set_drag_margin(margin: Side, drag_margin: float)
 
@@ -1225,7 +1225,7 @@ float get_drag_margin(margin: Side) const
 
 Bottom margin needed to drag the camera. A value of 1 makes the camera move only when reaching the bottom edge of the screen.
 
-bool drag_horizontal_enabled = false 🔗
+bool drag_horizontal_enabled = false 
 
 void set_drag_horizontal_enabled(value: bool)
 
@@ -1233,7 +1233,7 @@ bool is_drag_horizontal_enabled()
 
 If true, the camera only moves when reaching the horizontal (left and right) drag margins. If false, the camera moves horizontally regardless of margins.
 
-float drag_horizontal_offset = 0.0 🔗
+float drag_horizontal_offset = 0.0 
 
 void set_drag_horizontal_offset(value: float)
 
@@ -1243,7 +1243,7 @@ The relative horizontal drag offset of the camera between the right (-1) and lef
 
 Note: Used to set the initial horizontal drag offset; determine the current offset; or force the current offset. It's not automatically updated when drag_horizontal_enabled is true or the drag margins are changed.
 
-float drag_left_margin = 0.2 🔗
+float drag_left_margin = 0.2 
 
 void set_drag_margin(margin: Side, drag_margin: float)
 
@@ -1251,7 +1251,7 @@ float get_drag_margin(margin: Side) const
 
 Left margin needed to drag the camera. A value of 1 makes the camera move only when reaching the left edge of the screen.
 
-float drag_right_margin = 0.2 🔗
+float drag_right_margin = 0.2 
 
 void set_drag_margin(margin: Side, drag_margin: float)
 
@@ -1259,7 +1259,7 @@ float get_drag_margin(margin: Side) const
 
 Right margin needed to drag the camera. A value of 1 makes the camera move only when reaching the right edge of the screen.
 
-float drag_top_margin = 0.2 🔗
+float drag_top_margin = 0.2 
 
 void set_drag_margin(margin: Side, drag_margin: float)
 
@@ -1267,7 +1267,7 @@ float get_drag_margin(margin: Side) const
 
 Top margin needed to drag the camera. A value of 1 makes the camera move only when reaching the top edge of the screen.
 
-bool drag_vertical_enabled = false 🔗
+bool drag_vertical_enabled = false 
 
 void set_drag_vertical_enabled(value: bool)
 
@@ -1275,7 +1275,7 @@ bool is_drag_vertical_enabled()
 
 If true, the camera only moves when reaching the vertical (top and bottom) drag margins. If false, the camera moves vertically regardless of the drag margins.
 
-float drag_vertical_offset = 0.0 🔗
+float drag_vertical_offset = 0.0 
 
 void set_drag_vertical_offset(value: float)
 
@@ -1285,7 +1285,7 @@ The relative vertical drag offset of the camera between the bottom (-1) and top 
 
 Note: Used to set the initial vertical drag offset; determine the current offset; or force the current offset. It's not automatically updated when drag_vertical_enabled is true or the drag margins are changed.
 
-bool editor_draw_drag_margin = false 🔗
+bool editor_draw_drag_margin = false 
 
 void set_margin_drawing_enabled(value: bool)
 
@@ -1293,7 +1293,7 @@ bool is_margin_drawing_enabled()
 
 If true, draws the camera's drag margin rectangle in the editor.
 
-bool editor_draw_limits = false 🔗
+bool editor_draw_limits = false 
 
 void set_limit_drawing_enabled(value: bool)
 
@@ -1301,7 +1301,7 @@ bool is_limit_drawing_enabled()
 
 If true, draws the camera's limits rectangle in the editor.
 
-bool editor_draw_screen = true 🔗
+bool editor_draw_screen = true 
 
 void set_screen_drawing_enabled(value: bool)
 
@@ -1309,7 +1309,7 @@ bool is_screen_drawing_enabled()
 
 If true, draws the camera's screen rectangle in the editor.
 
-bool enabled = true 🔗
+bool enabled = true 
 
 void set_enabled(value: bool)
 
@@ -1317,7 +1317,7 @@ Controls whether the camera can be active or not. If true, the Camera2D will bec
 
 When the camera is currently active and enabled is set to false, the next enabled Camera2D in the scene tree will become active.
 
-bool ignore_rotation = true 🔗
+bool ignore_rotation = true 
 
 void set_ignore_rotation(value: bool)
 
@@ -1325,7 +1325,7 @@ bool is_ignoring_rotation()
 
 If true, the camera's rendered view is not affected by its Node2D.rotation and Node2D.global_rotation.
 
-int limit_bottom = 10000000 🔗
+int limit_bottom = 10000000 
 
 void set_limit(margin: Side, limit: int)
 
@@ -1333,7 +1333,7 @@ int get_limit(margin: Side) const
 
 Bottom scroll limit in pixels. The camera stops moving when reaching this value, but offset can push the view past the limit.
 
-bool limit_enabled = true 🔗
+bool limit_enabled = true 
 
 void set_limit_enabled(value: bool)
 
@@ -1341,7 +1341,7 @@ bool is_limit_enabled()
 
 If true, the limits will be enabled. Disabling this will allow the camera to focus anywhere, when the four limit_* properties will not work.
 
-int limit_left = -10000000 🔗
+int limit_left = -10000000 
 
 void set_limit(margin: Side, limit: int)
 
@@ -1349,7 +1349,7 @@ int get_limit(margin: Side) const
 
 Left scroll limit in pixels. The camera stops moving when reaching this value, but offset can push the view past the limit.
 
-int limit_right = 10000000 🔗
+int limit_right = 10000000 
 
 void set_limit(margin: Side, limit: int)
 
@@ -1357,7 +1357,7 @@ int get_limit(margin: Side) const
 
 Right scroll limit in pixels. The camera stops moving when reaching this value, but offset can push the view past the limit.
 
-bool limit_smoothed = false 🔗
+bool limit_smoothed = false 
 
 void set_limit_smoothing_enabled(value: bool)
 
@@ -1369,7 +1369,7 @@ This property has no effect if position_smoothing_enabled is false.
 
 Note: To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke reset_smoothing().
 
-int limit_top = -10000000 🔗
+int limit_top = -10000000 
 
 void set_limit(margin: Side, limit: int)
 
@@ -1377,13 +1377,13 @@ int get_limit(margin: Side) const
 
 Top scroll limit in pixels. The camera stops moving when reaching this value, but offset can push the view past the limit.
 
-Vector2 offset = Vector2(0, 0) 🔗
+Vector2 offset = Vector2(0, 0) 
 
 void set_offset(value: Vector2)
 
 The camera's relative offset. Useful for looking around or camera shake animations. The offsetted camera can go past the limits defined in limit_top, limit_bottom, limit_left and limit_right.
 
-bool position_smoothing_enabled = false 🔗
+bool position_smoothing_enabled = false 
 
 void set_position_smoothing_enabled(value: bool)
 
@@ -1391,7 +1391,7 @@ bool is_position_smoothing_enabled()
 
 If true, the camera's view smoothly moves towards its target position at position_smoothing_speed.
 
-float position_smoothing_speed = 5.0 🔗
+float position_smoothing_speed = 5.0 
 
 void set_position_smoothing_speed(value: float)
 
@@ -1399,7 +1399,7 @@ float get_position_smoothing_speed()
 
 Speed in pixels per second of the camera's smoothing effect when position_smoothing_enabled is true.
 
-Camera2DProcessCallback process_callback = 1 🔗
+Camera2DProcessCallback process_callback = 1 
 
 void set_process_callback(value: Camera2DProcessCallback)
 
@@ -1407,7 +1407,7 @@ Camera2DProcessCallback get_process_callback()
 
 The camera's process callback.
 
-bool rotation_smoothing_enabled = false 🔗
+bool rotation_smoothing_enabled = false 
 
 void set_rotation_smoothing_enabled(value: bool)
 
@@ -1417,7 +1417,7 @@ If true, the camera's view smoothly rotates, via asymptotic smoothing, to align 
 
 Note: This property has no effect if ignore_rotation is true.
 
-float rotation_smoothing_speed = 5.0 🔗
+float rotation_smoothing_speed = 5.0 
 
 void set_rotation_smoothing_speed(value: float)
 
@@ -1425,7 +1425,7 @@ float get_rotation_smoothing_speed()
 
 The angular, asymptotic speed of the camera's rotation smoothing effect when rotation_smoothing_enabled is true.
 
-Vector2 zoom = Vector2(1, 1) 🔗
+Vector2 zoom = Vector2(1, 1) 
 
 void set_zoom(value: Vector2)
 
@@ -1435,55 +1435,55 @@ Note: FontFile.oversampling does not take Camera2D zoom into account. This means
 
 Aligns the camera to the tracked node.
 
-void force_update_scroll() 🔗
+void force_update_scroll() 
 
 Forces the camera to update scroll immediately.
 
-float get_drag_margin(margin: Side) const 🔗
+float get_drag_margin(margin: Side) const 
 
 Returns the specified Side's margin. See also drag_bottom_margin, drag_top_margin, drag_left_margin, and drag_right_margin.
 
-int get_limit(margin: Side) const 🔗
+int get_limit(margin: Side) const 
 
 Returns the camera limit for the specified Side. See also limit_bottom, limit_top, limit_left, and limit_right.
 
-Vector2 get_screen_center_position() const 🔗
+Vector2 get_screen_center_position() const 
 
 Returns the center of the screen from this camera's point of view, in global coordinates.
 
 Note: The exact targeted position of the camera may be different. See get_target_position().
 
-float get_screen_rotation() const 🔗
+float get_screen_rotation() const 
 
 Returns the current screen rotation from this camera's point of view.
 
 Note: The screen rotation can be different from Node2D.global_rotation if the camera is rotating smoothly due to rotation_smoothing_enabled.
 
-Vector2 get_target_position() const 🔗
+Vector2 get_target_position() const 
 
 Returns this camera's target position, in global coordinates.
 
 Note: The returned value is not the same as Node2D.global_position, as it is affected by the drag properties. It is also not the same as the current position if position_smoothing_enabled is true (see get_screen_center_position()).
 
-bool is_current() const 🔗
+bool is_current() const 
 
 Returns true if this Camera2D is the active camera (see Viewport.get_camera_2d()).
 
-void make_current() 🔗
+void make_current() 
 
 Forces this Camera2D to become the current active one. enabled must be true.
 
-void reset_smoothing() 🔗
+void reset_smoothing() 
 
 Sets the camera's position immediately to its current smoothing destination.
 
 This method has no effect if position_smoothing_enabled is false.
 
-void set_drag_margin(margin: Side, drag_margin: float) 🔗
+void set_drag_margin(margin: Side, drag_margin: float) 
 
 Sets the specified Side's margin. See also drag_bottom_margin, drag_top_margin, drag_left_margin, and drag_right_margin.
 
-void set_limit(margin: Side, limit: int) 🔗
+void set_limit(margin: Side, limit: int) 
 
 Sets the camera limit for the specified Side. See also limit_bottom, limit_top, limit_left, and limit_right.
 
@@ -1649,7 +1649,7 @@ Operation OPERATION_SUBTRACTION = 2
 
 The second shape is subtracted from the first, leaving a dent with its shape.
 
-bool calculate_tangents = true 🔗
+bool calculate_tangents = true 
 
 void set_calculate_tangents(value: bool)
 
@@ -1657,7 +1657,7 @@ bool is_calculating_tangents()
 
 Calculate tangents for the CSG shape which allows the use of normal and height maps. This is only applied on the root shape, this setting is ignored on any child. Setting this to false can speed up shape generation slightly.
 
-int collision_layer = 1 🔗
+int collision_layer = 1 
 
 void set_collision_layer(value: int)
 
@@ -1669,7 +1669,7 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A. See Collision layers and masks in the documentation for more information.
 
-int collision_mask = 1 🔗
+int collision_mask = 1 
 
 void set_collision_mask(value: int)
 
@@ -1677,7 +1677,7 @@ int get_collision_mask()
 
 The physics layers this CSG shape scans for collisions. Only effective if use_collision is true. See Collision layers and masks in the documentation for more information.
 
-float collision_priority = 1.0 🔗
+float collision_priority = 1.0 
 
 void set_collision_priority(value: float)
 
@@ -1685,7 +1685,7 @@ float get_collision_priority()
 
 The priority used to solve colliding when occurring penetration. Only effective if use_collision is true. The higher the priority is, the lower the penetration into the object will be. This can for example be used to prevent the player from breaking through the boundaries of a level.
 
-Operation operation = 0 🔗
+Operation operation = 0 
 
 void set_operation(value: Operation)
 
@@ -1699,7 +1699,7 @@ Deprecated: The CSG library no longer uses snapping.
 
 This property does nothing.
 
-bool use_collision = false 🔗
+bool use_collision = false 
 
 void set_use_collision(value: bool)
 
@@ -1707,7 +1707,7 @@ bool is_using_collision()
 
 Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden. See also collision_mask and collision_priority.
 
-ConcavePolygonShape3D bake_collision_shape() 🔗
+ConcavePolygonShape3D bake_collision_shape() 
 
 Returns a baked physics ConcavePolygonShape3D of this node's CSG operation result. Returns an empty shape if the node is not a CSG root node or has no valid geometry.
 
@@ -1715,35 +1715,35 @@ Performance: If the CSG operation results in a very detailed geometry with many 
 
 Note: CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty shape or outdated mesh data, make sure to call await get_tree().process_frame before using bake_collision_shape() in Node._ready() or after changing properties on the CSGShape3D.
 
-ArrayMesh bake_static_mesh() 🔗
+ArrayMesh bake_static_mesh() 
 
 Returns a baked static ArrayMesh of this node's CSG operation result. Materials from involved CSG nodes are added as extra mesh surfaces. Returns an empty mesh if the node is not a CSG root node or has no valid geometry.
 
 Note: CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty mesh or outdated mesh data, make sure to call await get_tree().process_frame before using bake_static_mesh() in Node._ready() or after changing properties on the CSGShape3D.
 
-bool get_collision_layer_value(layer_number: int) const 🔗
+bool get_collision_layer_value(layer_number: int) const 
 
 Returns whether or not the specified layer of the collision_layer is enabled, given a layer_number between 1 and 32.
 
-bool get_collision_mask_value(layer_number: int) const 🔗
+bool get_collision_mask_value(layer_number: int) const 
 
 Returns whether or not the specified layer of the collision_mask is enabled, given a layer_number between 1 and 32.
 
-Array get_meshes() const 🔗
+Array get_meshes() const 
 
 Returns an Array with two elements, the first is the Transform3D of this node and the second is the root Mesh of this node. Only works when this node is the root shape.
 
 Note: CSG mesh data updates are deferred, which means they are updated with a delay of one rendered frame. To avoid getting an empty shape or outdated mesh data, make sure to call await get_tree().process_frame before using get_meshes() in Node._ready() or after changing properties on the CSGShape3D.
 
-bool is_root_shape() const 🔗
+bool is_root_shape() const 
 
 Returns true if this is a root shape and is thus the object that is rendered.
 
-void set_collision_layer_value(layer_number: int, value: bool) 🔗
+void set_collision_layer_value(layer_number: int, value: bool) 
 
 Based on value, enables or disables the specified layer in the collision_layer, given a layer_number between 1 and 32.
 
-void set_collision_mask_value(layer_number: int, value: bool) 🔗
+void set_collision_mask_value(layer_number: int, value: bool) 
 
 Based on value, enables or disables the specified layer in the collision_mask, given a layer_number between 1 and 32.
 
@@ -1824,7 +1824,7 @@ TangentMode TANGENT_MODE_COUNT = 2
 
 The total number of available tangent modes.
 
-int bake_resolution = 100 🔗
+int bake_resolution = 100 
 
 void set_bake_resolution(value: int)
 
@@ -1832,7 +1832,7 @@ int get_bake_resolution()
 
 The number of points to include in the baked (i.e. cached) curve data.
 
-float max_domain = 1.0 🔗
+float max_domain = 1.0 
 
 void set_max_domain(value: float)
 
@@ -1840,7 +1840,7 @@ float get_max_domain()
 
 The maximum domain (x-coordinate) that points can have.
 
-float max_value = 1.0 🔗
+float max_value = 1.0 
 
 void set_max_value(value: float)
 
@@ -1848,7 +1848,7 @@ float get_max_value()
 
 The maximum value (y-coordinate) that points can have. Tangents can cause higher values between points.
 
-float min_domain = 0.0 🔗
+float min_domain = 0.0 
 
 void set_min_domain(value: float)
 
@@ -1856,7 +1856,7 @@ float get_min_domain()
 
 The minimum domain (x-coordinate) that points can have.
 
-float min_value = 0.0 🔗
+float min_value = 0.0 
 
 void set_min_value(value: float)
 
@@ -1864,7 +1864,7 @@ float get_min_value()
 
 The minimum value (y-coordinate) that points can have. Tangents can cause lower values between points.
 
-int point_count = 0 🔗
+int point_count = 0 
 
 void set_point_count(value: int)
 
@@ -1872,7 +1872,7 @@ int get_point_count()
 
 The number of points describing the curve.
 
-int add_point(position: Vector2, left_tangent: float = 0, right_tangent: float = 0, left_mode: TangentMode = 0, right_mode: TangentMode = 0) 🔗
+int add_point(position: Vector2, left_tangent: float = 0, right_tangent: float = 0, left_mode: TangentMode = 0, right_mode: TangentMode = 0) 
 
 Adds a point to the curve. For each side, if the *_mode is TANGENT_LINEAR, the *_tangent angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the *_tangent angle if *_mode is set to TANGENT_FREE.
 
@@ -1880,71 +1880,71 @@ Recomputes the baked cache of points for the curve.
 
 Removes duplicate points, i.e. points that are less than 0.00001 units (engine epsilon value) away from their neighbor on the curve.
 
-void clear_points() 🔗
+void clear_points() 
 
 Removes all points from the curve.
 
-float get_domain_range() const 🔗
+float get_domain_range() const 
 
 Returns the difference between min_domain and max_domain.
 
-TangentMode get_point_left_mode(index: int) const 🔗
+TangentMode get_point_left_mode(index: int) const 
 
 Returns the left TangentMode for the point at index.
 
-float get_point_left_tangent(index: int) const 🔗
+float get_point_left_tangent(index: int) const 
 
 Returns the left tangent angle (in degrees) for the point at index.
 
-Vector2 get_point_position(index: int) const 🔗
+Vector2 get_point_position(index: int) const 
 
 Returns the curve coordinates for the point at index.
 
-TangentMode get_point_right_mode(index: int) const 🔗
+TangentMode get_point_right_mode(index: int) const 
 
 Returns the right TangentMode for the point at index.
 
-float get_point_right_tangent(index: int) const 🔗
+float get_point_right_tangent(index: int) const 
 
 Returns the right tangent angle (in degrees) for the point at index.
 
-float get_value_range() const 🔗
+float get_value_range() const 
 
 Returns the difference between min_value and max_value.
 
-void remove_point(index: int) 🔗
+void remove_point(index: int) 
 
 Removes the point at index from the curve.
 
-float sample(offset: float) const 🔗
+float sample(offset: float) const 
 
 Returns the Y value for the point that would exist at the X position offset along the curve.
 
-float sample_baked(offset: float) const 🔗
+float sample_baked(offset: float) const 
 
 Returns the Y value for the point that would exist at the X position offset along the curve using the baked cache. Bakes the curve's points if not already baked.
 
-void set_point_left_mode(index: int, mode: TangentMode) 🔗
+void set_point_left_mode(index: int, mode: TangentMode) 
 
 Sets the left TangentMode for the point at index to mode.
 
-void set_point_left_tangent(index: int, tangent: float) 🔗
+void set_point_left_tangent(index: int, tangent: float) 
 
 Sets the left tangent angle for the point at index to tangent.
 
-int set_point_offset(index: int, offset: float) 🔗
+int set_point_offset(index: int, offset: float) 
 
 Sets the offset from 0.5.
 
-void set_point_right_mode(index: int, mode: TangentMode) 🔗
+void set_point_right_mode(index: int, mode: TangentMode) 
 
 Sets the right TangentMode for the point at index to mode.
 
-void set_point_right_tangent(index: int, tangent: float) 🔗
+void set_point_right_tangent(index: int, tangent: float) 
 
 Sets the right tangent angle for the point at index to tangent.
 
-void set_point_value(index: int, y: float) 🔗
+void set_point_value(index: int, y: float) 
 
 Assigns the vertical position y to the point at index.
 
@@ -2203,29 +2203,29 @@ set_unique_animation_names(unique_animation_names: Array[String])
 
 set_unique_names(unique_names: Array[String])
 
-HANDLE_BINARY_DISCARD_TEXTURES = 0 🔗
+HANDLE_BINARY_DISCARD_TEXTURES = 0 
 
 Discards all embedded textures and uses untextured materials.
 
-HANDLE_BINARY_EXTRACT_TEXTURES = 1 🔗
+HANDLE_BINARY_EXTRACT_TEXTURES = 1 
 
 Extracts embedded textures to be reimported and compressed. Editor only. Acts as uncompressed at runtime.
 
-HANDLE_BINARY_EMBED_AS_BASISU = 2 🔗
+HANDLE_BINARY_EMBED_AS_BASISU = 2 
 
 Embeds textures VRAM compressed with Basis Universal into the generated scene.
 
-HANDLE_BINARY_EMBED_AS_UNCOMPRESSED = 3 🔗
+HANDLE_BINARY_EMBED_AS_UNCOMPRESSED = 3 
 
 Embeds textures compressed losslessly into the generated scene, matching old behavior.
 
-float bake_fps = 30.0 🔗
+float bake_fps = 30.0 
 
 void set_bake_fps(value: float)
 
 The baking fps of the animation for either import or export.
 
-String base_path = "" 🔗
+String base_path = "" 
 
 void set_base_path(value: String)
 
@@ -2233,7 +2233,7 @@ String get_base_path()
 
 The folder path associated with this glTF data. This is used to find other files the glTF file references, like images or binary buffers. This will be set during import when appending from a file, and will be set during export when writing to a file.
 
-Array[PackedByteArray] buffers = [] 🔗
+Array[PackedByteArray] buffers = [] 
 
 void set_buffers(value: Array[PackedByteArray])
 
@@ -2241,7 +2241,7 @@ Array[PackedByteArray] get_buffers()
 
 There is currently no description for this property. Please help us by contributing one!
 
-String copyright = "" 🔗
+String copyright = "" 
 
 void set_copyright(value: String)
 
@@ -2249,7 +2249,7 @@ String get_copyright()
 
 The copyright string in the asset header of the glTF file. This is set during import if present and export if non-empty. See the glTF asset header documentation for more information.
 
-bool create_animations = true 🔗
+bool create_animations = true 
 
 void set_create_animations(value: bool)
 
@@ -2257,7 +2257,7 @@ bool get_create_animations()
 
 There is currently no description for this property. Please help us by contributing one!
 
-String filename = "" 🔗
+String filename = "" 
 
 void set_filename(value: String)
 
@@ -2265,7 +2265,7 @@ String get_filename()
 
 The file name associated with this glTF data. If it ends with .gltf, this is text-based glTF, otherwise this is binary GLB. This will be set during import when appending from a file, and will be set during export when writing to a file. If writing to a buffer, this will be an empty string.
 
-PackedByteArray glb_data = PackedByteArray() 🔗
+PackedByteArray glb_data = PackedByteArray() 
 
 void set_glb_data(value: PackedByteArray)
 
@@ -2275,7 +2275,7 @@ The binary buffer attached to a .glb file.
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedByteArray for more details.
 
-bool import_as_skeleton_bones = false 🔗
+bool import_as_skeleton_bones = false 
 
 void set_import_as_skeleton_bones(value: bool)
 
@@ -2283,7 +2283,7 @@ bool get_import_as_skeleton_bones()
 
 If true, forces all GLTFNodes in the document to be bones of a single Skeleton3D Godot node.
 
-Dictionary json = {} 🔗
+Dictionary json = {} 
 
 void set_json(value: Dictionary)
 
@@ -2291,7 +2291,7 @@ Dictionary get_json()
 
 The original raw JSON document corresponding to this GLTFState.
 
-int major_version = 0 🔗
+int major_version = 0 
 
 void set_major_version(value: int)
 
@@ -2299,7 +2299,7 @@ int get_major_version()
 
 There is currently no description for this property. Please help us by contributing one!
 
-int minor_version = 0 🔗
+int minor_version = 0 
 
 void set_minor_version(value: int)
 
@@ -2307,7 +2307,7 @@ int get_minor_version()
 
 There is currently no description for this property. Please help us by contributing one!
 
-PackedInt32Array root_nodes = PackedInt32Array() 🔗
+PackedInt32Array root_nodes = PackedInt32Array() 
 
 void set_root_nodes(value: PackedInt32Array)
 
@@ -2317,7 +2317,7 @@ The root nodes of the glTF file. Typically, a glTF file will only have one scene
 
 Note: The returned array is copied and any changes to it will not update the original property value. See PackedInt32Array for more details.
 
-String scene_name = "" 🔗
+String scene_name = "" 
 
 void set_scene_name(value: String)
 
@@ -2325,7 +2325,7 @@ String get_scene_name()
 
 The name of the scene. When importing, if not specified, this will be the file name. When exporting, if specified, the scene name will be saved to the glTF file.
 
-bool use_named_skin_binds = false 🔗
+bool use_named_skin_binds = false 
 
 void set_use_named_skin_binds(value: bool)
 
@@ -2333,15 +2333,15 @@ bool get_use_named_skin_binds()
 
 There is currently no description for this property. Please help us by contributing one!
 
-void add_used_extension(extension_name: String, required: bool) 🔗
+void add_used_extension(extension_name: String, required: bool) 
 
 Appends an extension to the list of extensions used by this glTF file during serialization. If required is true, the extension will also be added to the list of required extensions. Do not run this in GLTFDocumentExtension._export_post(), as that stage is too late to add extensions. The final list is sorted alphabetically.
 
-int append_data_to_buffers(data: PackedByteArray, deduplication: bool) 🔗
+int append_data_to_buffers(data: PackedByteArray, deduplication: bool) 
 
 Appends the given byte array data to the buffers and creates a GLTFBufferView for it. The index of the destination GLTFBufferView is returned. If deduplication is true, the buffers are first searched for duplicate data, otherwise new bytes are always appended.
 
-int append_gltf_node(gltf_node: GLTFNode, godot_scene_node: Node, parent_node_index: int) 🔗
+int append_gltf_node(gltf_node: GLTFNode, godot_scene_node: Node, parent_node_index: int) 
 
 Appends the given GLTFNode to the state, and returns its new index. This can be used to export one Godot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before GLTFDocumentExtension._generate_scene_node() finishes for the parent node. On export, this must be called before GLTFDocumentExtension._export_node() runs for the parent node.
 
@@ -2349,163 +2349,163 @@ The godot_scene_node parameter is the Godot scene node that corresponds to this 
 
 The parent_node_index parameter is the index of the parent GLTFNode in the state. If -1, the node will be a root node, otherwise the new node will be added to the parent's list of children. The index will also be written to the GLTFNode.parent property of the new node.
 
-Array[GLTFAccessor] get_accessors() 🔗
+Array[GLTFAccessor] get_accessors() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Variant get_additional_data(extension_name: StringName) 🔗
+Variant get_additional_data(extension_name: StringName) 
 
 Gets additional arbitrary data in this GLTFState instance. This can be used to keep per-file state data in GLTFDocumentExtension classes, which is important because they are stateless.
 
 The argument should be the GLTFDocumentExtension name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is null.
 
-AnimationPlayer get_animation_player(idx: int) 🔗
+AnimationPlayer get_animation_player(idx: int) 
 
 Returns the AnimationPlayer node with the given index. These nodes are only used during the export process when converting Godot AnimationPlayer nodes to glTF animations.
 
-int get_animation_players_count(idx: int) 🔗
+int get_animation_players_count(idx: int) 
 
 Returns the number of AnimationPlayer nodes in this GLTFState. These nodes are only used during the export process when converting Godot AnimationPlayer nodes to glTF animations.
 
-Array[GLTFAnimation] get_animations() 🔗
+Array[GLTFAnimation] get_animations() 
 
 Returns an array of all GLTFAnimations in the glTF file. When importing, these will be generated as animations in an AnimationPlayer node. When exporting, these will be generated from Godot AnimationPlayer nodes.
 
-Array[GLTFBufferView] get_buffer_views() 🔗
+Array[GLTFBufferView] get_buffer_views() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Array[GLTFCamera] get_cameras() 🔗
+Array[GLTFCamera] get_cameras() 
 
 Returns an array of all GLTFCameras in the glTF file. These are the cameras that the GLTFNode.camera index refers to.
 
-int get_handle_binary_image() 🔗
+int get_handle_binary_image() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Array[Texture2D] get_images() 🔗
+Array[Texture2D] get_images() 
 
 Gets the images of the glTF file as an array of Texture2Ds. These are the images that the GLTFTexture.src_image index refers to.
 
-Array[GLTFLight] get_lights() 🔗
+Array[GLTFLight] get_lights() 
 
 Returns an array of all GLTFLights in the glTF file. These are the lights that the GLTFNode.light index refers to.
 
-Array[Material] get_materials() 🔗
+Array[Material] get_materials() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Array[GLTFMesh] get_meshes() 🔗
+Array[GLTFMesh] get_meshes() 
 
 Returns an array of all GLTFMeshes in the glTF file. These are the meshes that the GLTFNode.mesh index refers to.
 
-int get_node_index(scene_node: Node) 🔗
+int get_node_index(scene_node: Node) 
 
 Returns the index of the GLTFNode corresponding to this Godot scene node. This is the inverse of get_scene_node(). Useful during the export process.
 
 Note: Not every Godot scene node will have a corresponding GLTFNode, and not every GLTFNode will have a scene node generated. If there is no GLTFNode index for this scene node, -1 is returned.
 
-Array[GLTFNode] get_nodes() 🔗
+Array[GLTFNode] get_nodes() 
 
 Returns an array of all GLTFNodes in the glTF file. These are the nodes that GLTFNode.children and root_nodes refer to. This includes nodes that may not be generated in the Godot scene, or nodes that may generate multiple Godot scene nodes.
 
-Node get_scene_node(idx: int) 🔗
+Node get_scene_node(idx: int) 
 
 Returns the Godot scene node that corresponds to the same index as the GLTFNode it was generated from. This is the inverse of get_node_index(). Useful during the import process.
 
 Note: Not every GLTFNode will have a scene node generated, and not every generated scene node will have a corresponding GLTFNode. If there is no scene node for this GLTFNode index, null is returned.
 
-Array[GLTFSkeleton] get_skeletons() 🔗
+Array[GLTFSkeleton] get_skeletons() 
 
 Returns an array of all GLTFSkeletons in the glTF file. These are the skeletons that the GLTFNode.skeleton index refers to.
 
-Array[GLTFSkin] get_skins() 🔗
+Array[GLTFSkin] get_skins() 
 
 Returns an array of all GLTFSkins in the glTF file. These are the skins that the GLTFNode.skin index refers to.
 
-Array[GLTFTextureSampler] get_texture_samplers() 🔗
+Array[GLTFTextureSampler] get_texture_samplers() 
 
 Retrieves the array of texture samplers that are used by the textures contained in the glTF.
 
-Array[GLTFTexture] get_textures() 🔗
+Array[GLTFTexture] get_textures() 
 
 There is currently no description for this method. Please help us by contributing one!
 
-Array[String] get_unique_animation_names() 🔗
+Array[String] get_unique_animation_names() 
 
 Returns an array of unique animation names. This is only used during the import process.
 
-Array[String] get_unique_names() 🔗
+Array[String] get_unique_names() 
 
 Returns an array of unique node names. This is used in both the import process and export process.
 
-void set_accessors(accessors: Array[GLTFAccessor]) 🔗
+void set_accessors(accessors: Array[GLTFAccessor]) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_additional_data(extension_name: StringName, additional_data: Variant) 🔗
+void set_additional_data(extension_name: StringName, additional_data: Variant) 
 
 Sets additional arbitrary data in this GLTFState instance. This can be used to keep per-file state data in GLTFDocumentExtension classes, which is important because they are stateless.
 
 The first argument should be the GLTFDocumentExtension name (does not have to match the extension name in the glTF file), and the second argument can be anything you want.
 
-void set_animations(animations: Array[GLTFAnimation]) 🔗
+void set_animations(animations: Array[GLTFAnimation]) 
 
 Sets the GLTFAnimations in the state. When importing, these will be generated as animations in an AnimationPlayer node. When exporting, these will be generated from Godot AnimationPlayer nodes.
 
-void set_buffer_views(buffer_views: Array[GLTFBufferView]) 🔗
+void set_buffer_views(buffer_views: Array[GLTFBufferView]) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_cameras(cameras: Array[GLTFCamera]) 🔗
+void set_cameras(cameras: Array[GLTFCamera]) 
 
 Sets the GLTFCameras in the state. These are the cameras that the GLTFNode.camera index refers to.
 
-void set_handle_binary_image(method: int) 🔗
+void set_handle_binary_image(method: int) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_images(images: Array[Texture2D]) 🔗
+void set_images(images: Array[Texture2D]) 
 
 Sets the images in the state stored as an array of Texture2Ds. This can be used during export. These are the images that the GLTFTexture.src_image index refers to.
 
-void set_lights(lights: Array[GLTFLight]) 🔗
+void set_lights(lights: Array[GLTFLight]) 
 
 Sets the GLTFLights in the state. These are the lights that the GLTFNode.light index refers to.
 
-void set_materials(materials: Array[Material]) 🔗
+void set_materials(materials: Array[Material]) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_meshes(meshes: Array[GLTFMesh]) 🔗
+void set_meshes(meshes: Array[GLTFMesh]) 
 
 Sets the GLTFMeshes in the state. These are the meshes that the GLTFNode.mesh index refers to.
 
-void set_nodes(nodes: Array[GLTFNode]) 🔗
+void set_nodes(nodes: Array[GLTFNode]) 
 
 Sets the GLTFNodes in the state. These are the nodes that GLTFNode.children and root_nodes refer to. Some of the nodes set here may not be generated in the Godot scene, or may generate multiple Godot scene nodes.
 
-void set_skeletons(skeletons: Array[GLTFSkeleton]) 🔗
+void set_skeletons(skeletons: Array[GLTFSkeleton]) 
 
 Sets the GLTFSkeletons in the state. These are the skeletons that the GLTFNode.skeleton index refers to.
 
-void set_skins(skins: Array[GLTFSkin]) 🔗
+void set_skins(skins: Array[GLTFSkin]) 
 
 Sets the GLTFSkins in the state. These are the skins that the GLTFNode.skin index refers to.
 
-void set_texture_samplers(texture_samplers: Array[GLTFTextureSampler]) 🔗
+void set_texture_samplers(texture_samplers: Array[GLTFTextureSampler]) 
 
 Sets the array of texture samplers that are used by the textures contained in the glTF.
 
-void set_textures(textures: Array[GLTFTexture]) 🔗
+void set_textures(textures: Array[GLTFTexture]) 
 
 There is currently no description for this method. Please help us by contributing one!
 
-void set_unique_animation_names(unique_animation_names: Array[String]) 🔗
+void set_unique_animation_names(unique_animation_names: Array[String]) 
 
 Sets the unique animation names in the state. This is only used during the import process.
 
-void set_unique_names(unique_names: Array[String]) 🔗
+void set_unique_names(unique_names: Array[String]) 
 
 Sets the unique node names in the state. This is used in both the import process and export process.
 
@@ -3141,15 +3141,15 @@ get_spawnable_scene_count() const
 
 spawn(data: Variant = null)
 
-despawned(node: Node) 🔗
+despawned(node: Node) 
 
 Emitted when a spawnable scene or custom spawn was despawned by the multiplayer authority. Only called on remote peers.
 
-spawned(node: Node) 🔗
+spawned(node: Node) 
 
 Emitted when a spawnable scene or custom spawn was spawned by the multiplayer authority. Only called on remote peers.
 
-Callable spawn_function 🔗
+Callable spawn_function 
 
 void set_spawn_function(value: Callable)
 
@@ -3159,7 +3159,7 @@ Method called on all peers when a custom spawn() is requested by the authority. 
 
 Note: The returned node should not be added to the scene with Node.add_child(). This is done automatically.
 
-int spawn_limit = 0 🔗
+int spawn_limit = 0 
 
 void set_spawn_limit(value: int)
 
@@ -3169,7 +3169,7 @@ Maximum number of nodes allowed to be spawned by this spawner. Includes both spa
 
 When set to 0 (the default), there is no limit.
 
-NodePath spawn_path = NodePath("") 🔗
+NodePath spawn_path = NodePath("") 
 
 void set_spawn_path(value: NodePath)
 
@@ -3177,23 +3177,23 @@ NodePath get_spawn_path()
 
 Path to the spawn root. Spawnable scenes that are added as direct children are replicated to other peers.
 
-void add_spawnable_scene(path: String) 🔗
+void add_spawnable_scene(path: String) 
 
 Adds a scene path to spawnable scenes, making it automatically replicated from the multiplayer authority to other peers when added as children of the node pointed by spawn_path.
 
-void clear_spawnable_scenes() 🔗
+void clear_spawnable_scenes() 
 
 Clears all spawnable scenes. Does not despawn existing instances on remote peers.
 
-String get_spawnable_scene(index: int) const 🔗
+String get_spawnable_scene(index: int) const 
 
 Returns the spawnable scene path by index.
 
-int get_spawnable_scene_count() const 🔗
+int get_spawnable_scene_count() const 
 
 Returns the count of spawnable scene paths.
 
-Node spawn(data: Variant = null) 🔗
+Node spawn(data: Variant = null) 
 
 Requests a custom spawn, with data passed to spawn_function on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by spawn_path.
 
@@ -3691,39 +3691,39 @@ generate_lightmap_uv2
 
 generate_lightmap_uv2_texel_size
 
-bool force_disable_mesh_compression = false 🔗
+bool force_disable_mesh_compression = false 
 
 If true, mesh compression will not be used. Consider enabling if you notice blocky artifacts in your mesh normals or UVs, or if you have meshes that are larger than a few thousand meters in each direction.
 
-bool generate_lightmap_uv2 = false 🔗
+bool generate_lightmap_uv2 = false 
 
 If true, generates UV2 on import for LightmapGI baking.
 
-float generate_lightmap_uv2_texel_size = 0.2 🔗
+float generate_lightmap_uv2_texel_size = 0.2 
 
 Controls the size of each texel on the baked lightmap. A smaller value results in more precise lightmaps, at the cost of larger lightmap sizes and longer bake times.
 
 Note: Only effective if generate_lightmap_uv2 is true.
 
-bool generate_lods = true 🔗
+bool generate_lods = true 
 
 If true, generates lower detail variants of the mesh which will be displayed in the distance to improve rendering performance. Not all meshes benefit from LOD, especially if they are never rendered from far away. Disabling this can reduce output file size and speed up importing. See Mesh level of detail (LOD) for more information.
 
-bool generate_shadow_mesh = true 🔗
+bool generate_shadow_mesh = true 
 
 If true, enables the generation of shadow meshes on import. This optimizes shadow rendering without reducing quality by welding vertices together when possible. This in turn reduces the memory bandwidth required to render shadows. Shadow mesh generation currently doesn't support using a lower detail level than the source mesh (but shadow rendering will make use of LODs when relevant).
 
-bool generate_tangents = true 🔗
+bool generate_tangents = true 
 
 If true, generate vertex tangents using Mikktspace if the source mesh doesn't have tangent data. When possible, it's recommended to let the 3D modeling software generate tangents on export instead on relying on this option. Tangents are required for correct display of normal and height maps, along with any material/shader features that require tangents.
 
 If you don't need material features that require tangents, disabling this can reduce output file size and speed up importing if the source 3D file doesn't contain tangents.
 
-Vector3 offset_mesh = Vector3(0, 0, 0) 🔗
+Vector3 offset_mesh = Vector3(0, 0, 0) 
 
 Offsets the mesh's data by the specified value. This can be used to work around misaligned meshes without having to modify the source file.
 
-Vector3 scale_mesh = Vector3(1, 1, 1) 🔗
+Vector3 scale_mesh = Vector3(1, 1, 1) 
 
 Scales the mesh's data by the specified value. This can be used to work around misscaled meshes without having to modify the source file.
 
@@ -3793,25 +3793,25 @@ SaverFlags FLAG_REPLACE_SUBRESOURCE_PATHS = 64
 
 Take over the paths of the saved subresources (see Resource.take_over_path()).
 
-void add_resource_format_saver(format_saver: ResourceFormatSaver, at_front: bool = false) 🔗
+void add_resource_format_saver(format_saver: ResourceFormatSaver, at_front: bool = false) 
 
 Registers a new ResourceFormatSaver. The ResourceSaver will use the ResourceFormatSaver as described in save().
 
 This method is performed implicitly for ResourceFormatSavers written in GDScript (see ResourceFormatSaver for more information).
 
-PackedStringArray get_recognized_extensions(type: Resource) 🔗
+PackedStringArray get_recognized_extensions(type: Resource) 
 
 Returns the list of extensions available for saving a resource of a given type.
 
-int get_resource_id_for_path(path: String, generate: bool = false) 🔗
+int get_resource_id_for_path(path: String, generate: bool = false) 
 
 Returns the resource ID for the given path. If generate is true, a new resource ID will be generated if one for the path is not found. If generate is false and the path is not found, ResourceUID.INVALID_ID is returned.
 
-void remove_resource_format_saver(format_saver: ResourceFormatSaver) 🔗
+void remove_resource_format_saver(format_saver: ResourceFormatSaver) 
 
 Unregisters the given ResourceFormatSaver.
 
-Error save(resource: Resource, path: String = "", flags: BitField[SaverFlags] = 0) 🔗
+Error save(resource: Resource, path: String = "", flags: BitField[SaverFlags] = 0) 
 
 Saves a resource to disk to the given path, using a ResourceFormatSaver that recognizes the resource object. If path is empty, ResourceSaver will try to use Resource.resource_path.
 
@@ -3821,7 +3821,7 @@ Returns @GlobalScope.OK on success.
 
 Note: When the project is running, any generated UID associated with the resource will not be saved as the required code is only executed in editor mode.
 
-Error set_uid(resource: String, uid: int) 🔗
+Error set_uid(resource: String, uid: int) 
 
 Sets the UID of the given resource path to uid. You can generate a new UID using ResourceUID.create_id().
 
@@ -4065,103 +4065,103 @@ If passed to PackedScene.instantiate(), it's similar to GEN_EDIT_STATE_MAIN, but
 
 Note: Only available in editor builds.
 
-SceneState get_base_scene_state() const 🔗
+SceneState get_base_scene_state() const 
 
 Returns the SceneState of the scene that this scene inherits from, or null if it doesn't inherit from any scene.
 
-Array get_connection_binds(idx: int) const 🔗
+Array get_connection_binds(idx: int) const 
 
 Returns the list of bound parameters for the signal at idx.
 
-int get_connection_count() const 🔗
+int get_connection_count() const 
 
 Returns the number of signal connections in the scene.
 
 The idx argument used to query connection metadata in other get_connection_* methods in the interval [0, get_connection_count() - 1].
 
-int get_connection_flags(idx: int) const 🔗
+int get_connection_flags(idx: int) const 
 
 Returns the connection flags for the signal at idx. See ConnectFlags constants.
 
-StringName get_connection_method(idx: int) const 🔗
+StringName get_connection_method(idx: int) const 
 
 Returns the method connected to the signal at idx.
 
-StringName get_connection_signal(idx: int) const 🔗
+StringName get_connection_signal(idx: int) const 
 
 Returns the name of the signal at idx.
 
-NodePath get_connection_source(idx: int) const 🔗
+NodePath get_connection_source(idx: int) const 
 
 Returns the path to the node that owns the signal at idx, relative to the root node.
 
-NodePath get_connection_target(idx: int) const 🔗
+NodePath get_connection_target(idx: int) const 
 
 Returns the path to the node that owns the method connected to the signal at idx, relative to the root node.
 
-int get_connection_unbinds(idx: int) const 🔗
+int get_connection_unbinds(idx: int) const 
 
 Returns the number of unbound parameters for the signal at idx.
 
-int get_node_count() const 🔗
+int get_node_count() const 
 
 Returns the number of nodes in the scene.
 
 The idx argument used to query node data in other get_node_* methods in the interval [0, get_node_count() - 1].
 
-PackedStringArray get_node_groups(idx: int) const 🔗
+PackedStringArray get_node_groups(idx: int) const 
 
 Returns the list of group names associated with the node at idx.
 
-int get_node_index(idx: int) const 🔗
+int get_node_index(idx: int) const 
 
 Returns the node's index, which is its position relative to its siblings. This is only relevant and saved in scenes for cases where new nodes are added to an instantiated or inherited scene among siblings from the base scene. Despite the name, this index is not related to the idx argument used here and in other methods.
 
-PackedScene get_node_instance(idx: int) const 🔗
+PackedScene get_node_instance(idx: int) const 
 
 Returns a PackedScene for the node at idx (i.e. the whole branch starting at this node, with its child nodes and resources), or null if the node is not an instance.
 
-String get_node_instance_placeholder(idx: int) const 🔗
+String get_node_instance_placeholder(idx: int) const 
 
 Returns the path to the represented scene file if the node at idx is an InstancePlaceholder.
 
-StringName get_node_name(idx: int) const 🔗
+StringName get_node_name(idx: int) const 
 
 Returns the name of the node at idx.
 
-NodePath get_node_owner_path(idx: int) const 🔗
+NodePath get_node_owner_path(idx: int) const 
 
 Returns the path to the owner of the node at idx, relative to the root node.
 
-NodePath get_node_path(idx: int, for_parent: bool = false) const 🔗
+NodePath get_node_path(idx: int, for_parent: bool = false) const 
 
 Returns the path to the node at idx.
 
 If for_parent is true, returns the path of the idx node's parent instead.
 
-int get_node_property_count(idx: int) const 🔗
+int get_node_property_count(idx: int) const 
 
 Returns the number of exported or overridden properties for the node at idx.
 
 The prop_idx argument used to query node property data in other get_node_property_* methods in the interval [0, get_node_property_count() - 1].
 
-StringName get_node_property_name(idx: int, prop_idx: int) const 🔗
+StringName get_node_property_name(idx: int, prop_idx: int) const 
 
 Returns the name of the property at prop_idx for the node at idx.
 
-Variant get_node_property_value(idx: int, prop_idx: int) const 🔗
+Variant get_node_property_value(idx: int, prop_idx: int) const 
 
 Returns the value of the property at prop_idx for the node at idx.
 
-StringName get_node_type(idx: int) const 🔗
+StringName get_node_type(idx: int) const 
 
 Returns the type of the node at idx.
 
-String get_path() const 🔗
+String get_path() const 
 
 Returns the resource path to the represented PackedScene.
 
-bool is_node_instance_placeholder(idx: int) const 🔗
+bool is_node_instance_placeholder(idx: int) const 
 
 Returns true if the node at idx is an InstancePlaceholder.
 
@@ -4247,19 +4247,19 @@ set_multiplayer(multiplayer: MultiplayerAPI, root_path: NodePath = NodePath(""))
 
 unload_current_scene()
 
-node_added(node: Node) 🔗
+node_added(node: Node) 
 
 Emitted when the node enters this tree.
 
-node_configuration_warning_changed(node: Node) 🔗
+node_configuration_warning_changed(node: Node) 
 
 Emitted when the node's Node.update_configuration_warnings() is called. Only emitted in the editor.
 
-node_removed(node: Node) 🔗
+node_removed(node: Node) 
 
 Emitted when the node exits this tree.
 
-node_renamed(node: Node) 🔗
+node_renamed(node: Node) 
 
 Emitted when the node's Node.name is changed.
 
@@ -4271,11 +4271,11 @@ Emitted after the new scene is added to scene tree and initialized. Can be used 
 
 Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc.).
 
-tree_process_mode_changed() 🔗
+tree_process_mode_changed() 
 
 Emitted when the Node.process_mode of any node inside the tree is changed. Only emitted in the editor, to update the visibility of disabled nodes.
 
-enum GroupCallFlags: 🔗
+enum GroupCallFlags: 
 
 GroupCallFlags GROUP_CALL_DEFAULT = 0
 
@@ -4295,7 +4295,7 @@ Call nodes within a group only once, even if the call is executed many times in 
 
 Note: Different arguments are not taken into account. Therefore, when the same call is executed with different arguments, only the first call will be performed.
 
-bool auto_accept_quit = true 🔗
+bool auto_accept_quit = true 
 
 void set_auto_accept_quit(value: bool)
 
@@ -4313,7 +4313,7 @@ The root node of the currently loaded main scene, usually as a direct child of r
 
 Warning: Setting this property directly may not work as expected, as it does not add or remove any nodes from this tree.
 
-bool debug_collisions_hint = false 🔗
+bool debug_collisions_hint = false 
 
 void set_debug_collisions_hint(value: bool)
 
@@ -4323,7 +4323,7 @@ If true, collision shapes will be visible when running the game from the editor 
 
 Note: This property is not designed to be changed at run-time. Changing the value of debug_collisions_hint while the project is running will not have the desired effect.
 
-bool debug_navigation_hint = false 🔗
+bool debug_navigation_hint = false 
 
 void set_debug_navigation_hint(value: bool)
 
@@ -4333,7 +4333,7 @@ If true, navigation polygons will be visible when running the game from the edit
 
 Note: This property is not designed to be changed at run-time. Changing the value of debug_navigation_hint while the project is running will not have the desired effect.
 
-bool debug_paths_hint = false 🔗
+bool debug_paths_hint = false 
 
 void set_debug_paths_hint(value: bool)
 
@@ -4343,7 +4343,7 @@ If true, curves from Path2D and Path3D nodes will be visible when running the ga
 
 Note: This property is not designed to be changed at run-time. Changing the value of debug_paths_hint while the project is running will not have the desired effect.
 
-Node edited_scene_root 🔗
+Node edited_scene_root 
 
 void set_edited_scene_root(value: Node)
 
@@ -4353,7 +4353,7 @@ The root of the scene currently being edited in the editor. This is usually a di
 
 Note: This property does nothing in release builds.
 
-bool multiplayer_poll = true 🔗
+bool multiplayer_poll = true 
 
 void set_multiplayer_poll_enabled(value: bool)
 
@@ -4363,7 +4363,7 @@ If true (default value), enables automatic polling of the MultiplayerAPI for thi
 
 If false, you need to manually call MultiplayerAPI.poll() to process network packets and deliver RPCs. This allows running RPCs in a different loop (e.g. physics, thread, specific time step) and for manual Mutex protection when accessing the MultiplayerAPI from threads.
 
-bool paused = false 🔗
+bool paused = false 
 
 void set_pause(value: bool)
 
@@ -4373,7 +4373,7 @@ If true, the scene tree is considered paused. This causes the following behavior
 
 Depending on each node's Node.process_mode, their Node._process(), Node._physics_process() and Node._input() callback methods may not called anymore.
 
-bool physics_interpolation = false 🔗
+bool physics_interpolation = false 
 
 void set_physics_interpolation_enabled(value: bool)
 
@@ -4385,7 +4385,7 @@ The default value of this property is controlled by ProjectSettings.physics/comm
 
 Note: Although this is a global setting, finer control of individual branches of the SceneTree is possible using Node.physics_interpolation_mode.
 
-bool quit_on_go_back = true 🔗
+bool quit_on_go_back = true 
 
 void set_quit_on_go_back(value: bool)
 
@@ -4399,7 +4399,7 @@ The tree's root Window. This is top-most Node of the scene tree, and is always p
 
 Warning: Do not delete this node. This will result in unstable behavior, followed by a crash.
 
-void call_group(group: StringName, method: StringName, ...) vararg 🔗
+void call_group(group: StringName, method: StringName, ...) vararg 
 
 Calls method on each node inside this tree added to the given group. You can pass arguments to method by specifying them at the end of this method call. Nodes that cannot call method (either because the method doesn't exist or the arguments do not match) are ignored. See also set_group() and notify_group().
 
@@ -4407,13 +4407,13 @@ Note: This method acts immediately on all selected nodes at once, which may caus
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-void call_group_flags(flags: int, group: StringName, method: StringName, ...) vararg 🔗
+void call_group_flags(flags: int, group: StringName, method: StringName, ...) vararg 
 
 Calls the given method on each node inside this tree added to the given group. Use flags to customize this method's behavior (see GroupCallFlags). Additional arguments for method can be passed at the end of this method. Nodes that cannot call method (either because the method doesn't exist or the arguments do not match) are ignored.
 
 Note: In C#, method must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the MethodName class to avoid allocating a new StringName on each call.
 
-Error change_scene_to_file(path: String) 🔗
+Error change_scene_to_file(path: String) 
 
 Changes the running scene to the one at the given path, after loading it into a PackedScene and creating a new instance.
 
@@ -4421,7 +4421,7 @@ Returns @GlobalScope.OK on success, @GlobalScope.ERR_CANT_OPEN if the path canno
 
 Note: See change_scene_to_packed() for details on the order of operations.
 
-Error change_scene_to_packed(packed_scene: PackedScene) 🔗
+Error change_scene_to_packed(packed_scene: PackedScene) 
 
 Changes the running scene to a new instance of the given PackedScene (which must be valid).
 
@@ -4437,7 +4437,7 @@ This ensures that both scenes aren't running at the same time, while still freei
 
 If you want to reliably access the new scene, await the scene_changed signal.
 
-SceneTreeTimer create_timer(time_sec: float, process_always: bool = true, process_in_physics: bool = false, ignore_time_scale: bool = false) 🔗
+SceneTreeTimer create_timer(time_sec: float, process_always: bool = true, process_in_physics: bool = false, ignore_time_scale: bool = false) 
 
 Returns a new SceneTreeTimer. After time_sec in seconds have passed, the timer will emit SceneTreeTimer.timeout and will be automatically freed.
 
@@ -4451,67 +4451,67 @@ This method is commonly used to create a one-shot delay timer, as in the followi
 
 Note: The timer is always updated after all of the nodes in the tree. A node's Node._process() method would be called before the timer updates (or Node._physics_process() if process_in_physics is set to true).
 
-Tween create_tween() 🔗
+Tween create_tween() 
 
 Creates and returns a new Tween processed in this tree. The Tween will start automatically on the next process frame or physics frame (depending on its TweenProcessMode).
 
 Note: A Tween created using this method is not bound to any Node. It may keep working until there is nothing left to animate. If you want the Tween to be automatically killed when the Node is freed, use Node.create_tween() or Tween.bind_node().
 
-Node get_first_node_in_group(group: StringName) 🔗
+Node get_first_node_in_group(group: StringName) 
 
 Returns the first Node found inside the tree, that has been added to the given group, in scene hierarchy order. Returns null if no match is found. See also get_nodes_in_group().
 
-int get_frame() const 🔗
+int get_frame() const 
 
 Returns how many physics process steps have been processed, since the application started. This is not a measurement of elapsed time. See also physics_frame. For the number of frames rendered, see Engine.get_process_frames().
 
-MultiplayerAPI get_multiplayer(for_path: NodePath = NodePath("")) const 🔗
+MultiplayerAPI get_multiplayer(for_path: NodePath = NodePath("")) const 
 
 Searches for the MultiplayerAPI configured for the given path, if one does not exist it searches the parent paths until one is found. If the path is empty, or none is found, the default one is returned. See set_multiplayer().
 
-int get_node_count() const 🔗
+int get_node_count() const 
 
 Returns the number of nodes inside this tree.
 
-int get_node_count_in_group(group: StringName) const 🔗
+int get_node_count_in_group(group: StringName) const 
 
 Returns the number of nodes assigned to the given group.
 
-Array[Node] get_nodes_in_group(group: StringName) 🔗
+Array[Node] get_nodes_in_group(group: StringName) 
 
 Returns an Array containing all nodes inside this tree, that have been added to the given group, in scene hierarchy order.
 
-Array[Tween] get_processed_tweens() 🔗
+Array[Tween] get_processed_tweens() 
 
 Returns an Array of currently existing Tweens in the tree, including paused tweens.
 
-bool has_group(name: StringName) const 🔗
+bool has_group(name: StringName) const 
 
 Returns true if a node added to the given group name exists in the tree.
 
-bool is_accessibility_enabled() const 🔗
+bool is_accessibility_enabled() const 
 
 Returns true if accessibility features are enabled, and accessibility information updates are actively processed.
 
-bool is_accessibility_supported() const 🔗
+bool is_accessibility_supported() const 
 
 Returns true if accessibility features are supported by the OS and enabled in project settings.
 
-void notify_group(group: StringName, notification: int) 🔗
+void notify_group(group: StringName, notification: int) 
 
 Calls Object.notification() with the given notification to all nodes inside this tree added to the group. See also Godot notifications and call_group() and set_group().
 
 Note: This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
 
-void notify_group_flags(call_flags: int, group: StringName, notification: int) 🔗
+void notify_group_flags(call_flags: int, group: StringName, notification: int) 
 
 Calls Object.notification() with the given notification to all nodes inside this tree added to the group. Use call_flags to customize this method's behavior (see GroupCallFlags).
 
-void queue_delete(obj: Object) 🔗
+void queue_delete(obj: Object) 
 
 Queues the given obj to be deleted, calling its Object.free() at the end of the current frame. This method is similar to Node.queue_free().
 
-void quit(exit_code: int = 0) 🔗
+void quit(exit_code: int = 0) 
 
 Quits the application at the end of the current iteration, with the given exit_code.
 
@@ -4519,13 +4519,13 @@ By convention, an exit code of 0 indicates success, whereas any other exit code 
 
 Note: On iOS this method doesn't work. Instead, as recommended by the iOS Human Interface Guidelines, the user is expected to close apps via the Home button.
 
-Error reload_current_scene() 🔗
+Error reload_current_scene() 
 
 Reloads the currently active scene, replacing current_scene with a new instance of its original PackedScene.
 
 Returns @GlobalScope.OK on success, @GlobalScope.ERR_UNCONFIGURED if no current_scene is defined, @GlobalScope.ERR_CANT_OPEN if current_scene cannot be loaded into a PackedScene, or @GlobalScope.ERR_CANT_CREATE if the scene cannot be instantiated.
 
-void set_group(group: StringName, property: String, value: Variant) 🔗
+void set_group(group: StringName, property: String, value: Variant) 
 
 Sets the given property to value on all nodes inside this tree added to the given group. Nodes that do not have the property are ignored. See also call_group() and notify_group().
 
@@ -4533,13 +4533,13 @@ Note: This method acts immediately on all selected nodes at once, which may caus
 
 Note: In C#, property must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-void set_group_flags(call_flags: int, group: StringName, property: String, value: Variant) 🔗
+void set_group_flags(call_flags: int, group: StringName, property: String, value: Variant) 
 
 Sets the given property to value on all nodes inside this tree added to the given group. Nodes that do not have the property are ignored. Use call_flags to customize this method's behavior (see GroupCallFlags).
 
 Note: In C#, property must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the PropertyName class to avoid allocating a new StringName on each call.
 
-void set_multiplayer(multiplayer: MultiplayerAPI, root_path: NodePath = NodePath("")) 🔗
+void set_multiplayer(multiplayer: MultiplayerAPI, root_path: NodePath = NodePath("")) 
 
 Sets a custom MultiplayerAPI with the given root_path (controlling also the relative subpaths), or override the default one if root_path is empty.
 
@@ -4547,7 +4547,7 @@ Note: No MultiplayerAPI must be configured for the subpath containing root_path,
 
 Note: set_multiplayer() should be called before the child nodes are ready at the given root_path. If multiplayer nodes like MultiplayerSpawner or MultiplayerSynchronizer are added to the tree before the custom multiplayer API is set, they will not work.
 
-void unload_current_scene() 🔗
+void unload_current_scene() 
 
 If a current scene is loaded, calling this method will unload it.
 
@@ -5026,7 +5026,7 @@ DataType DATA_TYPE_MAX = 6
 
 Maximum value for the DataType enum.
 
-float default_base_scale = 0.0 🔗
+float default_base_scale = 0.0 
 
 void set_default_base_scale(value: float)
 
@@ -5044,7 +5044,7 @@ The default font of this theme resource. Used as the default value when trying t
 
 Use has_default_font() to check if this value is valid.
 
-int default_font_size = -1 🔗
+int default_font_size = -1 
 
 void set_default_font_size(value: int)
 
@@ -5054,7 +5054,7 @@ The default font size of this theme resource. Used as the default value when try
 
 Values below 1 are invalid and can be used to unset the property. Use has_default_font_size() to check if this value is valid.
 
-void add_type(theme_type: StringName) 🔗
+void add_type(theme_type: StringName) 
 
 Adds an empty theme type for every valid data type.
 
@@ -5062,43 +5062,43 @@ Note: Empty types are not saved with the theme. This method only exists to perfo
 
 Removes all the theme properties defined on the theme resource.
 
-void clear_color(name: StringName, theme_type: StringName) 🔗
+void clear_color(name: StringName, theme_type: StringName) 
 
 Removes the Color property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_color() to check for existence.
 
-void clear_constant(name: StringName, theme_type: StringName) 🔗
+void clear_constant(name: StringName, theme_type: StringName) 
 
 Removes the constant property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_constant() to check for existence.
 
-void clear_font(name: StringName, theme_type: StringName) 🔗
+void clear_font(name: StringName, theme_type: StringName) 
 
 Removes the Font property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_font() to check for existence.
 
-void clear_font_size(name: StringName, theme_type: StringName) 🔗
+void clear_font_size(name: StringName, theme_type: StringName) 
 
 Removes the font size property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_font_size() to check for existence.
 
-void clear_icon(name: StringName, theme_type: StringName) 🔗
+void clear_icon(name: StringName, theme_type: StringName) 
 
 Removes the icon property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_icon() to check for existence.
 
-void clear_stylebox(name: StringName, theme_type: StringName) 🔗
+void clear_stylebox(name: StringName, theme_type: StringName) 
 
 Removes the StyleBox property defined by name and theme_type, if it exists.
 
 Fails if it doesn't exist. Use has_stylebox() to check for existence.
 
-void clear_theme_item(data_type: DataType, name: StringName, theme_type: StringName) 🔗
+void clear_theme_item(data_type: DataType, name: StringName, theme_type: StringName) 
 
 Removes the theme property of data_type defined by name and theme_type, if it exists.
 
@@ -5106,39 +5106,39 @@ Fails if it doesn't exist. Use has_theme_item() to check for existence.
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-void clear_type_variation(theme_type: StringName) 🔗
+void clear_type_variation(theme_type: StringName) 
 
 Unmarks theme_type as being a variation of another theme type. See set_type_variation().
 
-Color get_color(name: StringName, theme_type: StringName) const 🔗
+Color get_color(name: StringName, theme_type: StringName) const 
 
 Returns the Color property defined by name and theme_type, if it exists.
 
 Returns the default color value if the property doesn't exist. Use has_color() to check for existence.
 
-PackedStringArray get_color_list(theme_type: String) const 🔗
+PackedStringArray get_color_list(theme_type: String) const 
 
 Returns a list of names for Color properties defined with theme_type. Use get_color_type_list() to get a list of possible theme type names.
 
-PackedStringArray get_color_type_list() const 🔗
+PackedStringArray get_color_type_list() const 
 
 Returns a list of all unique theme type names for Color properties. Use get_type_list() to get a list of all unique theme types.
 
-int get_constant(name: StringName, theme_type: StringName) const 🔗
+int get_constant(name: StringName, theme_type: StringName) const 
 
 Returns the constant property defined by name and theme_type, if it exists.
 
 Returns 0 if the property doesn't exist. Use has_constant() to check for existence.
 
-PackedStringArray get_constant_list(theme_type: String) const 🔗
+PackedStringArray get_constant_list(theme_type: String) const 
 
 Returns a list of names for constant properties defined with theme_type. Use get_constant_type_list() to get a list of possible theme type names.
 
-PackedStringArray get_constant_type_list() const 🔗
+PackedStringArray get_constant_type_list() const 
 
 Returns a list of all unique theme type names for constant properties. Use get_type_list() to get a list of all unique theme types.
 
-Font get_font(name: StringName, theme_type: StringName) const 🔗
+Font get_font(name: StringName, theme_type: StringName) const 
 
 Returns the Font property defined by name and theme_type, if it exists.
 
@@ -5146,11 +5146,11 @@ Returns the default theme font if the property doesn't exist and the default the
 
 Returns the engine fallback font value, if neither exist (see ThemeDB.fallback_font).
 
-PackedStringArray get_font_list(theme_type: String) const 🔗
+PackedStringArray get_font_list(theme_type: String) const 
 
 Returns a list of names for Font properties defined with theme_type. Use get_font_type_list() to get a list of possible theme type names.
 
-int get_font_size(name: StringName, theme_type: StringName) const 🔗
+int get_font_size(name: StringName, theme_type: StringName) const 
 
 Returns the font size property defined by name and theme_type, if it exists.
 
@@ -5158,47 +5158,47 @@ Returns the default theme font size if the property doesn't exist and the defaul
 
 Returns the engine fallback font size value, if neither exist (see ThemeDB.fallback_font_size).
 
-PackedStringArray get_font_size_list(theme_type: String) const 🔗
+PackedStringArray get_font_size_list(theme_type: String) const 
 
 Returns a list of names for font size properties defined with theme_type. Use get_font_size_type_list() to get a list of possible theme type names.
 
-PackedStringArray get_font_size_type_list() const 🔗
+PackedStringArray get_font_size_type_list() const 
 
 Returns a list of all unique theme type names for font size properties. Use get_type_list() to get a list of all unique theme types.
 
-PackedStringArray get_font_type_list() const 🔗
+PackedStringArray get_font_type_list() const 
 
 Returns a list of all unique theme type names for Font properties. Use get_type_list() to get a list of all unique theme types.
 
-Texture2D get_icon(name: StringName, theme_type: StringName) const 🔗
+Texture2D get_icon(name: StringName, theme_type: StringName) const 
 
 Returns the icon property defined by name and theme_type, if it exists.
 
 Returns the engine fallback icon value if the property doesn't exist (see ThemeDB.fallback_icon). Use has_icon() to check for existence.
 
-PackedStringArray get_icon_list(theme_type: String) const 🔗
+PackedStringArray get_icon_list(theme_type: String) const 
 
 Returns a list of names for icon properties defined with theme_type. Use get_icon_type_list() to get a list of possible theme type names.
 
-PackedStringArray get_icon_type_list() const 🔗
+PackedStringArray get_icon_type_list() const 
 
 Returns a list of all unique theme type names for icon properties. Use get_type_list() to get a list of all unique theme types.
 
-StyleBox get_stylebox(name: StringName, theme_type: StringName) const 🔗
+StyleBox get_stylebox(name: StringName, theme_type: StringName) const 
 
 Returns the StyleBox property defined by name and theme_type, if it exists.
 
 Returns the engine fallback stylebox value if the property doesn't exist (see ThemeDB.fallback_stylebox). Use has_stylebox() to check for existence.
 
-PackedStringArray get_stylebox_list(theme_type: String) const 🔗
+PackedStringArray get_stylebox_list(theme_type: String) const 
 
 Returns a list of names for StyleBox properties defined with theme_type. Use get_stylebox_type_list() to get a list of possible theme type names.
 
-PackedStringArray get_stylebox_type_list() const 🔗
+PackedStringArray get_stylebox_type_list() const 
 
 Returns a list of all unique theme type names for StyleBox properties. Use get_type_list() to get a list of all unique theme types.
 
-Variant get_theme_item(data_type: DataType, name: StringName, theme_type: StringName) const 🔗
+Variant get_theme_item(data_type: DataType, name: StringName, theme_type: StringName) const 
 
 Returns the theme property of data_type defined by name and theme_type, if it exists.
 
@@ -5206,85 +5206,85 @@ Returns the engine fallback value if the property doesn't exist (see ThemeDB). U
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-PackedStringArray get_theme_item_list(data_type: DataType, theme_type: String) const 🔗
+PackedStringArray get_theme_item_list(data_type: DataType, theme_type: String) const 
 
 Returns a list of names for properties of data_type defined with theme_type. Use get_theme_item_type_list() to get a list of possible theme type names.
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-PackedStringArray get_theme_item_type_list(data_type: DataType) const 🔗
+PackedStringArray get_theme_item_type_list(data_type: DataType) const 
 
 Returns a list of all unique theme type names for data_type properties. Use get_type_list() to get a list of all unique theme types.
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-PackedStringArray get_type_list() const 🔗
+PackedStringArray get_type_list() const 
 
 Returns a list of all unique theme type names. Use the appropriate get_*_type_list method to get a list of unique theme types for a single data type.
 
-StringName get_type_variation_base(theme_type: StringName) const 🔗
+StringName get_type_variation_base(theme_type: StringName) const 
 
 Returns the name of the base theme type if theme_type is a valid variation type. Returns an empty string otherwise.
 
-PackedStringArray get_type_variation_list(base_type: StringName) const 🔗
+PackedStringArray get_type_variation_list(base_type: StringName) const 
 
 Returns a list of all type variations for the given base_type.
 
-bool has_color(name: StringName, theme_type: StringName) const 🔗
+bool has_color(name: StringName, theme_type: StringName) const 
 
 Returns true if the Color property defined by name and theme_type exists.
 
 Returns false if it doesn't exist. Use set_color() to define it.
 
-bool has_constant(name: StringName, theme_type: StringName) const 🔗
+bool has_constant(name: StringName, theme_type: StringName) const 
 
 Returns true if the constant property defined by name and theme_type exists.
 
 Returns false if it doesn't exist. Use set_constant() to define it.
 
-bool has_default_base_scale() const 🔗
+bool has_default_base_scale() const 
 
 Returns true if default_base_scale has a valid value.
 
 Returns false if it doesn't. The value must be greater than 0.0 to be considered valid.
 
-bool has_default_font() const 🔗
+bool has_default_font() const 
 
 Returns true if default_font has a valid value.
 
 Returns false if it doesn't.
 
-bool has_default_font_size() const 🔗
+bool has_default_font_size() const 
 
 Returns true if default_font_size has a valid value.
 
 Returns false if it doesn't. The value must be greater than 0 to be considered valid.
 
-bool has_font(name: StringName, theme_type: StringName) const 🔗
+bool has_font(name: StringName, theme_type: StringName) const 
 
 Returns true if the Font property defined by name and theme_type exists, or if the default theme font is set up (see has_default_font()).
 
 Returns false if neither exist. Use set_font() to define the property.
 
-bool has_font_size(name: StringName, theme_type: StringName) const 🔗
+bool has_font_size(name: StringName, theme_type: StringName) const 
 
 Returns true if the font size property defined by name and theme_type exists, or if the default theme font size is set up (see has_default_font_size()).
 
 Returns false if neither exist. Use set_font_size() to define the property.
 
-bool has_icon(name: StringName, theme_type: StringName) const 🔗
+bool has_icon(name: StringName, theme_type: StringName) const 
 
 Returns true if the icon property defined by name and theme_type exists.
 
 Returns false if it doesn't exist. Use set_icon() to define it.
 
-bool has_stylebox(name: StringName, theme_type: StringName) const 🔗
+bool has_stylebox(name: StringName, theme_type: StringName) const 
 
 Returns true if the StyleBox property defined by name and theme_type exists.
 
 Returns false if it doesn't exist. Use set_stylebox() to define it.
 
-bool has_theme_item(data_type: DataType, name: StringName, theme_type: StringName) const 🔗
+bool has_theme_item(data_type: DataType, name: StringName, theme_type: StringName) const 
 
 Returns true if the theme property of data_type defined by name and theme_type exists.
 
@@ -5292,57 +5292,57 @@ Returns false if it doesn't exist. Use set_theme_item() to define it.
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-bool is_type_variation(theme_type: StringName, base_type: StringName) const 🔗
+bool is_type_variation(theme_type: StringName, base_type: StringName) const 
 
 Returns true if theme_type is marked as a variation of base_type.
 
-void merge_with(other: Theme) 🔗
+void merge_with(other: Theme) 
 
 Adds missing and overrides existing definitions with values from the other theme resource.
 
 Note: This modifies the current theme. If you want to merge two themes together without modifying either one, create a new empty theme and merge the other two into it one after another.
 
-void remove_type(theme_type: StringName) 🔗
+void remove_type(theme_type: StringName) 
 
 Removes the theme type, gracefully discarding defined theme items. If the type is a variation, this information is also erased. If the type is a base for type variations, those variations lose their base.
 
-void rename_color(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_color(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the Color property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_color() to check for existence, and clear_color() to remove the existing property.
 
-void rename_constant(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_constant(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the constant property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_constant() to check for existence, and clear_constant() to remove the existing property.
 
-void rename_font(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_font(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the Font property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_font() to check for existence, and clear_font() to remove the existing property.
 
-void rename_font_size(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_font_size(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the font size property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_font_size() to check for existence, and clear_font_size() to remove the existing property.
 
-void rename_icon(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_icon(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the icon property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_icon() to check for existence, and clear_icon() to remove the existing property.
 
-void rename_stylebox(old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_stylebox(old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the StyleBox property defined by old_name and theme_type to name, if it exists.
 
 Fails if it doesn't exist, or if a similar property with the new name already exists. Use has_stylebox() to check for existence, and clear_stylebox() to remove the existing property.
 
-void rename_theme_item(data_type: DataType, old_name: StringName, name: StringName, theme_type: StringName) 🔗
+void rename_theme_item(data_type: DataType, old_name: StringName, name: StringName, theme_type: StringName) 
 
 Renames the theme property of data_type defined by old_name and theme_type to name, if it exists.
 
@@ -5350,37 +5350,37 @@ Fails if it doesn't exist, or if a similar property with the new name already ex
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-void rename_type(old_theme_type: StringName, theme_type: StringName) 🔗
+void rename_type(old_theme_type: StringName, theme_type: StringName) 
 
 Renames the theme type old_theme_type to theme_type, if the old type exists and the new one doesn't exist.
 
 Note: Renaming a theme type to an empty name or a variation to a type associated with a built-in class removes type variation connections in a way that cannot be undone by reversing the rename alone.
 
-void set_color(name: StringName, theme_type: StringName, color: Color) 🔗
+void set_color(name: StringName, theme_type: StringName, color: Color) 
 
 Creates or changes the value of the Color property defined by name and theme_type. Use clear_color() to remove the property.
 
-void set_constant(name: StringName, theme_type: StringName, constant: int) 🔗
+void set_constant(name: StringName, theme_type: StringName, constant: int) 
 
 Creates or changes the value of the constant property defined by name and theme_type. Use clear_constant() to remove the property.
 
-void set_font(name: StringName, theme_type: StringName, font: Font) 🔗
+void set_font(name: StringName, theme_type: StringName, font: Font) 
 
 Creates or changes the value of the Font property defined by name and theme_type. Use clear_font() to remove the property.
 
-void set_font_size(name: StringName, theme_type: StringName, font_size: int) 🔗
+void set_font_size(name: StringName, theme_type: StringName, font_size: int) 
 
 Creates or changes the value of the font size property defined by name and theme_type. Use clear_font_size() to remove the property.
 
-void set_icon(name: StringName, theme_type: StringName, texture: Texture2D) 🔗
+void set_icon(name: StringName, theme_type: StringName, texture: Texture2D) 
 
 Creates or changes the value of the icon property defined by name and theme_type. Use clear_icon() to remove the property.
 
-void set_stylebox(name: StringName, theme_type: StringName, texture: StyleBox) 🔗
+void set_stylebox(name: StringName, theme_type: StringName, texture: StyleBox) 
 
 Creates or changes the value of the StyleBox property defined by name and theme_type. Use clear_stylebox() to remove the property.
 
-void set_theme_item(data_type: DataType, name: StringName, theme_type: StringName, value: Variant) 🔗
+void set_theme_item(data_type: DataType, name: StringName, theme_type: StringName, value: Variant) 
 
 Creates or changes the value of the theme property of data_type defined by name and theme_type. Use clear_theme_item() to remove the property.
 
@@ -5388,7 +5388,7 @@ Fails if the value type is not accepted by data_type.
 
 Note: This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
-void set_type_variation(theme_type: StringName, base_type: StringName) 🔗
+void set_type_variation(theme_type: StringName, base_type: StringName) 
 
 Marks theme_type as a variation of base_type.
 
@@ -5447,49 +5447,49 @@ set_scene_tile_id(id: int, new_id: int)
 
 set_scene_tile_scene(id: int, packed_scene: PackedScene)
 
-int create_scene_tile(packed_scene: PackedScene, id_override: int = -1) 🔗
+int create_scene_tile(packed_scene: PackedScene, id_override: int = -1) 
 
 Creates a scene-based tile out of the given scene.
 
 Returns a newly generated unique ID.
 
-int get_next_scene_tile_id() const 🔗
+int get_next_scene_tile_id() const 
 
 Returns the scene ID a following call to create_scene_tile() would return.
 
-bool get_scene_tile_display_placeholder(id: int) const 🔗
+bool get_scene_tile_display_placeholder(id: int) const 
 
 Returns whether the scene tile with id displays a placeholder in the editor.
 
-int get_scene_tile_id(index: int) 🔗
+int get_scene_tile_id(index: int) 
 
 Returns the scene tile ID of the scene tile at index.
 
-PackedScene get_scene_tile_scene(id: int) const 🔗
+PackedScene get_scene_tile_scene(id: int) const 
 
 Returns the PackedScene resource of scene tile with id.
 
-int get_scene_tiles_count() 🔗
+int get_scene_tiles_count() 
 
 Returns the number or scene tiles this TileSet source has.
 
-bool has_scene_tile_id(id: int) 🔗
+bool has_scene_tile_id(id: int) 
 
 Returns whether this TileSet source has a scene tile with id.
 
-void remove_scene_tile(id: int) 🔗
+void remove_scene_tile(id: int) 
 
 Remove the scene tile with id.
 
-void set_scene_tile_display_placeholder(id: int, display_placeholder: bool) 🔗
+void set_scene_tile_display_placeholder(id: int, display_placeholder: bool) 
 
 Sets whether or not the scene tile with id should display a placeholder in the editor. This might be useful for scenes that are not visible.
 
-void set_scene_tile_id(id: int, new_id: int) 🔗
+void set_scene_tile_id(id: int, new_id: int) 
 
 Changes a scene tile's ID from id to new_id. This will fail if there is already a tile with an ID equal to new_id.
 
-void set_scene_tile_scene(id: int, packed_scene: PackedScene) 🔗
+void set_scene_tile_scene(id: int, packed_scene: PackedScene) 
 
 Assigns a PackedScene resource to the scene tile with id. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMapLayer.
 
@@ -5939,13 +5939,13 @@ VaryingType VARYING_TYPE_MAX = 8
 
 Represents the size of the VaryingType enum.
 
-NODE_ID_INVALID = -1 🔗
+NODE_ID_INVALID = -1 
 
 Indicates an invalid VisualShader node.
 
 Indicates an output node of VisualShader.
 
-Vector2 graph_offset 🔗
+Vector2 graph_offset 
 
 void set_graph_offset(value: Vector2)
 
@@ -5953,83 +5953,83 @@ Vector2 get_graph_offset()
 
 Deprecated: This property does nothing and always equals to zero.
 
-void add_node(type: Type, node: VisualShaderNode, position: Vector2, id: int) 🔗
+void add_node(type: Type, node: VisualShaderNode, position: Vector2, id: int) 
 
 Adds the specified node to the shader.
 
-void add_varying(name: String, mode: VaryingMode, type: VaryingType) 🔗
+void add_varying(name: String, mode: VaryingMode, type: VaryingType) 
 
 Adds a new varying value node to the shader.
 
-void attach_node_to_frame(type: Type, id: int, frame: int) 🔗
+void attach_node_to_frame(type: Type, id: int, frame: int) 
 
 Attaches the given node to the given frame.
 
-bool can_connect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) const 🔗
+bool can_connect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) const 
 
 Returns true if the specified nodes and ports can be connected together.
 
-Error connect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 🔗
+Error connect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 
 
 Connects the specified nodes and ports.
 
-void connect_nodes_forced(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 🔗
+void connect_nodes_forced(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 
 
 Connects the specified nodes and ports, even if they can't be connected. Such connection is invalid and will not function properly.
 
-void detach_node_from_frame(type: Type, id: int) 🔗
+void detach_node_from_frame(type: Type, id: int) 
 
 Detaches the given node from the frame it is attached to.
 
-void disconnect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 🔗
+void disconnect_nodes(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) 
 
 Connects the specified nodes and ports.
 
-VisualShaderNode get_node(type: Type, id: int) const 🔗
+VisualShaderNode get_node(type: Type, id: int) const 
 
 Returns the shader node instance with specified type and id.
 
-Array[Dictionary] get_node_connections(type: Type) const 🔗
+Array[Dictionary] get_node_connections(type: Type) const 
 
 Returns the list of connected nodes with the specified type.
 
-PackedInt32Array get_node_list(type: Type) const 🔗
+PackedInt32Array get_node_list(type: Type) const 
 
 Returns the list of all nodes in the shader with the specified type.
 
-Vector2 get_node_position(type: Type, id: int) const 🔗
+Vector2 get_node_position(type: Type, id: int) const 
 
 Returns the position of the specified node within the shader graph.
 
-int get_valid_node_id(type: Type) const 🔗
+int get_valid_node_id(type: Type) const 
 
 Returns next valid node ID that can be added to the shader graph.
 
-bool has_varying(name: String) const 🔗
+bool has_varying(name: String) const 
 
 Returns true if the shader has a varying with the given name.
 
-bool is_node_connection(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) const 🔗
+bool is_node_connection(type: Type, from_node: int, from_port: int, to_node: int, to_port: int) const 
 
 Returns true if the specified node and port connection exist.
 
-void remove_node(type: Type, id: int) 🔗
+void remove_node(type: Type, id: int) 
 
 Removes the specified node from the shader.
 
-void remove_varying(name: String) 🔗
+void remove_varying(name: String) 
 
 Removes a varying value node with the given name. Prints an error if a node with this name is not found.
 
-void replace_node(type: Type, id: int, new_class: StringName) 🔗
+void replace_node(type: Type, id: int, new_class: StringName) 
 
 Replaces the specified node with a node of new class type.
 
-void set_mode(mode: Mode) 🔗
+void set_mode(mode: Mode) 
 
 Sets the mode of this shader.
 
-void set_node_position(type: Type, id: int, position: Vector2) 🔗
+void set_node_position(type: Type, id: int, position: Vector2) 
 
 Sets the position of the specified node.
 
@@ -6260,7 +6260,7 @@ PhysicsDirectSpaceState2D
 
 The RID of this world's canvas resource. Used by the RenderingServer for 2D drawing.
 
-PhysicsDirectSpaceState2D direct_space_state 🔗
+PhysicsDirectSpaceState2D direct_space_state 
 
 PhysicsDirectSpaceState2D get_direct_space_state()
 
@@ -6296,7 +6296,7 @@ Class that has everything pertaining to a world: A physics space, a visual scena
 
 PhysicsDirectSpaceState3D
 
-CameraAttributes camera_attributes 🔗
+CameraAttributes camera_attributes 
 
 void set_camera_attributes(value: CameraAttributes)
 
@@ -6304,13 +6304,13 @@ CameraAttributes get_camera_attributes()
 
 The default CameraAttributes resource to use if none set on the Camera3D.
 
-PhysicsDirectSpaceState3D direct_space_state 🔗
+PhysicsDirectSpaceState3D direct_space_state 
 
 PhysicsDirectSpaceState3D get_direct_space_state()
 
 Direct access to the world's physics 3D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to Node._physics_process() in the main thread.
 
-Environment environment 🔗
+Environment environment 
 
 void set_environment(value: Environment)
 
@@ -6318,7 +6318,7 @@ Environment get_environment()
 
 The World3D's Environment.
 
-Environment fallback_environment 🔗
+Environment fallback_environment 
 
 void set_fallback_environment(value: Environment)
 

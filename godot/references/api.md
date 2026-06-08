@@ -58,17 +58,17 @@ Emitted when the dialog is closed or the button created with add_cancel_button()
 
 Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
-custom_action(action: StringName) 🔗
+custom_action(action: StringName) 
 
 Emitted when a custom button with an action is pressed. See add_button().
 
-bool dialog_autowrap = false 🔗
+bool dialog_autowrap = false 
 
 void set_autowrap(value: bool)
 
 Sets autowrapping for the text in the dialog.
 
-bool dialog_close_on_escape = true 🔗
+bool dialog_close_on_escape = true 
 
 void set_close_on_escape(value: bool)
 
@@ -76,7 +76,7 @@ bool get_close_on_escape()
 
 If true, the dialog will be hidden when the ui_cancel action is pressed (by default, this action is bound to @GlobalScope.KEY_ESCAPE).
 
-bool dialog_hide_on_ok = true 🔗
+bool dialog_hide_on_ok = true 
 
 void set_hide_on_ok(value: bool)
 
@@ -86,13 +86,13 @@ If true, the dialog is hidden when the OK button is pressed. You can set it to f
 
 Note: Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example FileDialog defaults to false, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such, this property can't be used in FileDialog to disable hiding the dialog when pressing OK.
 
-String dialog_text = "" 🔗
+String dialog_text = "" 
 
 void set_text(value: String)
 
 The text displayed by the dialog.
 
-String ok_button_text = "" 🔗
+String ok_button_text = "" 
 
 void set_ok_button_text(value: String)
 
@@ -100,7 +100,7 @@ String get_ok_button_text()
 
 The text displayed by the OK button (see get_ok_button()). If empty, a default text will be used.
 
-Button add_button(text: String, right: bool = false, action: String = "") 🔗
+Button add_button(text: String, right: bool = false, action: String = "") 
 
 Adds a button with label text and a custom action to the dialog and returns the created button.
 
@@ -110,7 +110,7 @@ If true, right will place the button to the right of any sibling buttons.
 
 You can use remove_button() method to remove a button created with this method from the dialog.
 
-Button add_cancel_button(name: String) 🔗
+Button add_cancel_button(name: String) 
 
 Adds a button with label name and a cancel action to the dialog and returns the created button.
 
@@ -120,29 +120,29 @@ Returns the label used for built-in text.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-Button get_ok_button() 🔗
+Button get_ok_button() 
 
 Returns the OK Button instance.
 
 Warning: This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their CanvasItem.visible property.
 
-void register_text_enter(line_edit: LineEdit) 🔗
+void register_text_enter(line_edit: LineEdit) 
 
 Registers a LineEdit in the dialog. When the enter key is pressed, the dialog will be accepted.
 
-void remove_button(button: Button) 🔗
+void remove_button(button: Button) 
 
 Removes the button from the dialog. Does NOT free the button. The button must be a Button added with add_button() or add_cancel_button() method. After removal, pressing the button will no longer emit this dialog's custom_action or canceled signals.
 
-int buttons_min_height = 0 🔗
+int buttons_min_height = 0 
 
 The minimum height of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
 
-int buttons_min_width = 0 🔗
+int buttons_min_width = 0 
 
 The minimum width of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
 
-int buttons_separation = 10 🔗
+int buttons_separation = 10 
 
 The size of the vertical space between the dialog's content and the button row.
 
@@ -176,7 +176,7 @@ When AnimatableBody2D is moved, its linear and angular velocity are estimated an
 
 Troubleshooting physics issues
 
-bool sync_to_physics = true 🔗
+bool sync_to_physics = true 
 
 void set_sync_to_physics(value: bool)
 
@@ -221,11 +221,11 @@ play_backwards(name: StringName = &"")
 
 set_frame_and_progress(frame: int, progress: float)
 
-animation_changed() 🔗
+animation_changed() 
 
 Emitted when animation changes.
 
-animation_finished() 🔗
+animation_finished() 
 
 Emitted when the animation reaches the end, or the start if it is played in reverse. When the animation finishes, it pauses the playback.
 
@@ -235,11 +235,11 @@ Emitted when the animation loops.
 
 Emitted when frame changes.
 
-sprite_frames_changed() 🔗
+sprite_frames_changed() 
 
 Emitted when sprite_frames changes.
 
-StringName animation = &"default" 🔗
+StringName animation = &"default" 
 
 void set_animation(value: StringName)
 
@@ -247,7 +247,7 @@ StringName get_animation()
 
 The current animation from the sprite_frames resource. If this value is changed, the frame counter and the frame_progress are reset.
 
-String autoplay = "" 🔗
+String autoplay = "" 
 
 void set_autoplay(value: String)
 
@@ -255,7 +255,7 @@ String get_autoplay()
 
 The key of the animation to play when the scene loads.
 
-bool centered = true 🔗
+bool centered = true 
 
 void set_centered(value: bool)
 
@@ -263,13 +263,13 @@ If true, texture will be centered.
 
 Note: For games with a pixel art aesthetic, textures may appear deformed when centered. This is caused by their position being between pixels. To prevent this, set this property to false, or consider enabling ProjectSettings.rendering/2d/snap/snap_2d_vertices_to_pixel and ProjectSettings.rendering/2d/snap/snap_2d_transforms_to_pixel.
 
-bool flip_h = false 🔗
+bool flip_h = false 
 
 void set_flip_h(value: bool)
 
 If true, texture is flipped horizontally.
 
-bool flip_v = false 🔗
+bool flip_v = false 
 
 void set_flip_v(value: bool)
 
@@ -279,7 +279,7 @@ void set_frame(value: int)
 
 The displayed animation frame's index. Setting this property also resets frame_progress. If this is not desired, use set_frame_and_progress().
 
-float frame_progress = 0.0 🔗
+float frame_progress = 0.0 
 
 void set_frame_progress(value: float)
 
@@ -287,13 +287,13 @@ float get_frame_progress()
 
 The progress value between 0.0 and 1.0 until the current frame transitions to the next frame. If the animation is playing backwards, the value transitions from 1.0 to 0.0.
 
-Vector2 offset = Vector2(0, 0) 🔗
+Vector2 offset = Vector2(0, 0) 
 
 void set_offset(value: Vector2)
 
 The texture's drawing offset.
 
-float speed_scale = 1.0 🔗
+float speed_scale = 1.0 
 
 void set_speed_scale(value: float)
 
@@ -303,7 +303,7 @@ The speed scaling ratio. For example, if this value is 1, then the animation pla
 
 If set to a negative value, the animation is played in reverse. If set to 0, the animation will not advance.
 
-SpriteFrames sprite_frames 🔗
+SpriteFrames sprite_frames 
 
 void set_sprite_frames(value: SpriteFrames)
 
@@ -311,31 +311,31 @@ SpriteFrames get_sprite_frames()
 
 The SpriteFrames resource containing the animation(s). Allows you the option to load, edit, clear, make unique and save the states of the SpriteFrames resource.
 
-float get_playing_speed() const 🔗
+float get_playing_speed() const 
 
 Returns the actual playing speed of current animation or 0 if not playing. This speed is the speed_scale property multiplied by custom_speed argument specified when calling the play() method.
 
 Returns a negative value if the current animation is playing backwards.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if an animation is currently playing (even if speed_scale and/or custom_speed are 0).
 
 Pauses the currently playing animation. The frame and frame_progress will be kept and calling play() or play_backwards() without arguments will resume the animation from the current playback position.
 
-void play(name: StringName = &"", custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play(name: StringName = &"", custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name. If custom_speed is negative and from_end is true, the animation will play backwards (which is equivalent to calling play_backwards()).
 
 If this method is called with that same animation name, or with no name parameter, the assigned animation will resume playing if it was paused.
 
-void play_backwards(name: StringName = &"") 🔗
+void play_backwards(name: StringName = &"") 
 
 Plays the animation with key name in reverse.
 
 This method is a shorthand for play() with custom_speed = -1.0 and from_end = true, so see its description for more information.
 
-void set_frame_and_progress(frame: int, progress: float) 🔗
+void set_frame_and_progress(frame: int, progress: float) 
 
 Sets frame and frame_progress to the given values. Unlike setting frame, this method does not reset the frame_progress to 0.0 implicitly.
 
@@ -427,21 +427,21 @@ remove_animation_library(name: StringName)
 
 rename_animation_library(name: StringName, newname: StringName)
 
-animation_finished(anim_name: StringName) 🔗
+animation_finished(anim_name: StringName) 
 
 Notifies when an animation finished playing.
 
 Note: This signal is not emitted if an animation is looping.
 
-animation_libraries_updated() 🔗
+animation_libraries_updated() 
 
 Notifies when the animation libraries have changed.
 
-animation_list_changed() 🔗
+animation_list_changed() 
 
 Notifies when an animation list is changed.
 
-animation_started(anim_name: StringName) 🔗
+animation_started(anim_name: StringName) 
 
 Notifies when an animation starts playing.
 
@@ -453,7 +453,7 @@ Notifies when the blending result related have been applied to the target object
 
 Notifies when the property related process have been updated.
 
-enum AnimationCallbackModeProcess: 🔗
+enum AnimationCallbackModeProcess: 
 
 AnimationCallbackModeProcess ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS = 0
 
@@ -467,7 +467,7 @@ AnimationCallbackModeProcess ANIMATION_CALLBACK_MODE_PROCESS_MANUAL = 2
 
 Do not process animation. Use advance() to process the animation manually.
 
-enum AnimationCallbackModeMethod: 🔗
+enum AnimationCallbackModeMethod: 
 
 AnimationCallbackModeMethod ANIMATION_CALLBACK_MODE_METHOD_DEFERRED = 0
 
@@ -477,7 +477,7 @@ AnimationCallbackModeMethod ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE = 1
 
 Make method calls immediately when reached in the animation.
 
-enum AnimationCallbackModeDiscrete: 🔗
+enum AnimationCallbackModeDiscrete: 
 
 AnimationCallbackModeDiscrete ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT = 0
 
@@ -521,7 +521,7 @@ void set_active(value: bool)
 
 If true, the AnimationMixer will be processing.
 
-int audio_max_polyphony = 32 🔗
+int audio_max_polyphony = 32 
 
 void set_audio_max_polyphony(value: int)
 
@@ -531,7 +531,7 @@ The number of possible simultaneous sounds for each of the assigned AudioStreamP
 
 For example, if this value is 32 and the animation has two audio tracks, the two AudioStreamPlayers assigned can play simultaneously up to 32 voices each.
 
-AnimationCallbackModeDiscrete callback_mode_discrete = 1 🔗
+AnimationCallbackModeDiscrete callback_mode_discrete = 1 
 
 void set_callback_mode_discrete(value: AnimationCallbackModeDiscrete)
 
@@ -543,7 +543,7 @@ However, when blending with Animation.UPDATE_CONTINUOUS several results are cons
 
 To make the blended results look good, it is recommended to set this to ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS to update every frame during blending. Other values exist for compatibility and they are fine if there is no blending, but not so, may produce artifacts.
 
-AnimationCallbackModeMethod callback_mode_method = 0 🔗
+AnimationCallbackModeMethod callback_mode_method = 0 
 
 void set_callback_mode_method(value: AnimationCallbackModeMethod)
 
@@ -551,7 +551,7 @@ AnimationCallbackModeMethod get_callback_mode_method()
 
 The call mode used for "Call Method" tracks.
 
-AnimationCallbackModeProcess callback_mode_process = 1 🔗
+AnimationCallbackModeProcess callback_mode_process = 1 
 
 void set_callback_mode_process(value: AnimationCallbackModeProcess)
 
@@ -559,7 +559,7 @@ AnimationCallbackModeProcess get_callback_mode_process()
 
 The process notification in which to update animations.
 
-bool deterministic = false 🔗
+bool deterministic = false 
 
 void set_deterministic(value: bool)
 
@@ -577,7 +577,7 @@ Note: In AnimationTree, the blending with AnimationNodeAdd2, AnimationNodeAdd3, 
 
 For example, if AnimationNodeAdd2 blends two nodes with the amount 1.0, then total weight is 2.0 but it will be normalized to make the total amount 1.0 and the result will be equal to AnimationNodeBlend2 with the amount 0.5.
 
-bool reset_on_save = true 🔗
+bool reset_on_save = true 
 
 void set_reset_on_save_enabled(value: bool)
 
@@ -587,7 +587,7 @@ This is used by the editor. If set to true, the scene will be saved with the eff
 
 This makes it more convenient to preview and edit animations in the editor, as changes to the scene will not be saved as long as they are set in the reset animation.
 
-bool root_motion_local = false 🔗
+bool root_motion_local = false 
 
 void set_root_motion_local(value: bool)
 
@@ -595,7 +595,7 @@ bool is_root_motion_local()
 
 If true, get_root_motion_position() value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
 
-NodePath root_motion_track = NodePath("") 🔗
+NodePath root_motion_track = NodePath("") 
 
 void set_root_motion_track(value: NodePath)
 
@@ -605,7 +605,7 @@ The path to the Animation track used for root motion. Paths must be valid scene-
 
 If the track has type Animation.TYPE_POSITION_3D, Animation.TYPE_ROTATION_3D, or Animation.TYPE_SCALE_3D the transformation will be canceled visually, and the animation will appear to stay in place. See also get_root_motion_position(), get_root_motion_rotation(), get_root_motion_scale(), and RootMotionView.
 
-NodePath root_node = NodePath("..") 🔗
+NodePath root_node = NodePath("..") 
 
 void set_root_node(value: NodePath)
 
@@ -613,21 +613,21 @@ NodePath get_root_node()
 
 The node which node path references will travel from.
 
-Variant _post_process_key_value(animation: Animation, track: int, value: Variant, object_id: int, object_sub_idx: int) virtual const 🔗
+Variant _post_process_key_value(animation: Animation, track: int, value: Variant, object_id: int, object_sub_idx: int) virtual const 
 
 A virtual function for processing after getting a key during playback.
 
-Error add_animation_library(name: StringName, library: AnimationLibrary) 🔗
+Error add_animation_library(name: StringName, library: AnimationLibrary) 
 
 Adds library to the animation player, under the key name.
 
 AnimationMixer has a global library by default with an empty string as key. For adding an animation to the global library:
 
-void advance(delta: float) 🔗
+void advance(delta: float) 
 
 Manually advance the animations by the specified time (in seconds).
 
-void capture(name: StringName, duration: float, trans_type: TransitionType = 0, ease_type: EaseType = 0) 🔗
+void capture(name: StringName, duration: float, trans_type: TransitionType = 0, ease_type: EaseType = 0) 
 
 If the animation track specified by name has an option Animation.UPDATE_CAPTURE, stores current values of the objects indicated by the track path as a cache. If there is already a captured cache, the old cache is discarded.
 
@@ -635,37 +635,37 @@ After this it will interpolate with current animation blending result during the
 
 You can specify trans_type as the curve for the interpolation. For better results, it may be appropriate to specify Tween.TRANS_LINEAR for cases where the first key of the track begins with a non-zero value or where the key value does not change, and Tween.TRANS_QUAD for cases where the key value changes linearly.
 
-void clear_caches() 🔗
+void clear_caches() 
 
 AnimationMixer caches animated nodes. It may not notice if a node disappears; clear_caches() forces it to update the cache again.
 
-StringName find_animation(animation: Animation) const 🔗
+StringName find_animation(animation: Animation) const 
 
 Returns the key of animation or an empty StringName if not found.
 
-StringName find_animation_library(animation: Animation) const 🔗
+StringName find_animation_library(animation: Animation) const 
 
 Returns the key for the AnimationLibrary that contains animation or an empty StringName if not found.
 
-Animation get_animation(name: StringName) const 🔗
+Animation get_animation(name: StringName) const 
 
 Returns the Animation with the key name. If the animation does not exist, null is returned and an error is logged.
 
-AnimationLibrary get_animation_library(name: StringName) const 🔗
+AnimationLibrary get_animation_library(name: StringName) const 
 
 Returns the first AnimationLibrary with key name or null if not found.
 
 To get the AnimationMixer's global animation library, use get_animation_library("").
 
-Array[StringName] get_animation_library_list() const 🔗
+Array[StringName] get_animation_library_list() const 
 
 Returns the list of stored library keys.
 
-PackedStringArray get_animation_list() const 🔗
+PackedStringArray get_animation_list() const 
 
 Returns the list of stored animation keys.
 
-Vector3 get_root_motion_position() const 🔗
+Vector3 get_root_motion_position() const 
 
 Retrieve the motion delta of position with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -681,7 +681,7 @@ If root_motion_local is true, returns the pre-multiplied translation value with 
 
 In this case, the code can be written as follows:
 
-Vector3 get_root_motion_position_accumulator() const 🔗
+Vector3 get_root_motion_position_accumulator() const 
 
 Retrieve the blended value of the position tracks with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -691,7 +691,7 @@ For example, if an animation with only one key Vector3(0, 0, 0) is played in the
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-Quaternion get_root_motion_rotation() const 🔗
+Quaternion get_root_motion_rotation() const 
 
 Retrieve the motion delta of rotation with the root_motion_track as a Quaternion that can be used elsewhere.
 
@@ -701,7 +701,7 @@ See also root_motion_track and RootMotionView.
 
 The most basic example is applying rotation to CharacterBody3D:
 
-Quaternion get_root_motion_rotation_accumulator() const 🔗
+Quaternion get_root_motion_rotation_accumulator() const 
 
 Retrieve the blended value of the rotation tracks with the root_motion_track as a Quaternion that can be used elsewhere.
 
@@ -713,7 +713,7 @@ For example, if an animation with only one key Quaternion(0, 0, 0, 1) is played 
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-Vector3 get_root_motion_scale() const 🔗
+Vector3 get_root_motion_scale() const 
 
 Retrieve the motion delta of scale with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -723,7 +723,7 @@ See also root_motion_track and RootMotionView.
 
 The most basic example is applying scale to CharacterBody3D:
 
-Vector3 get_root_motion_scale_accumulator() const 🔗
+Vector3 get_root_motion_scale_accumulator() const 
 
 Retrieve the blended value of the scale tracks with the root_motion_track as a Vector3 that can be used elsewhere.
 
@@ -731,19 +731,19 @@ For example, if an animation with only one key Vector3(1, 1, 1) is played in the
 
 However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
-bool has_animation(name: StringName) const 🔗
+bool has_animation(name: StringName) const 
 
 Returns true if the AnimationMixer stores an Animation with key name.
 
-bool has_animation_library(name: StringName) const 🔗
+bool has_animation_library(name: StringName) const 
 
 Returns true if the AnimationMixer stores an AnimationLibrary with key name.
 
-void remove_animation_library(name: StringName) 🔗
+void remove_animation_library(name: StringName) 
 
 Removes the AnimationLibrary associated with the key name.
 
-void rename_animation_library(name: StringName, newname: StringName) 🔗
+void rename_animation_library(name: StringName, newname: StringName) 
 
 Moves the AnimationLibrary associated with the key name to the key newname.
 
@@ -851,17 +851,17 @@ set_section_with_markers(start_marker: StringName = &"", end_marker: StringName 
 
 stop(keep_state: bool = false)
 
-animation_changed(old_name: StringName, new_name: StringName) 🔗
+animation_changed(old_name: StringName, new_name: StringName) 
 
 Emitted when a queued animation plays after the previous animation finished. See also queue().
 
 Note: The signal is not emitted when the animation is changed via play() or by an AnimationTree.
 
-current_animation_changed(name: String) 🔗
+current_animation_changed(name: String) 
 
 Emitted when current_animation changes.
 
-enum AnimationProcessCallback: 🔗
+enum AnimationProcessCallback: 
 
 AnimationProcessCallback ANIMATION_PROCESS_PHYSICS = 0
 
@@ -875,7 +875,7 @@ AnimationProcessCallback ANIMATION_PROCESS_MANUAL = 2
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL.
 
-enum AnimationMethodCallMode: 🔗
+enum AnimationMethodCallMode: 
 
 AnimationMethodCallMode ANIMATION_METHOD_CALL_DEFERRED = 0
 
@@ -885,7 +885,7 @@ AnimationMethodCallMode ANIMATION_METHOD_CALL_IMMEDIATE = 1
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE.
 
-String assigned_animation 🔗
+String assigned_animation 
 
 void set_assigned_animation(value: String)
 
@@ -893,7 +893,7 @@ String get_assigned_animation()
 
 If playing, the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also current_animation.
 
-String autoplay = "" 🔗
+String autoplay = "" 
 
 void set_autoplay(value: String)
 
@@ -901,7 +901,7 @@ String get_autoplay()
 
 The key of the animation to play when the scene loads.
 
-String current_animation = "" 🔗
+String current_animation = "" 
 
 void set_current_animation(value: String)
 
@@ -911,19 +911,19 @@ The key of the currently playing animation. If no animation is playing, the prop
 
 Note: While this property appears in the Inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see Animation.
 
-float current_animation_length 🔗
+float current_animation_length 
 
 float get_current_animation_length()
 
 The length (in seconds) of the currently playing animation.
 
-float current_animation_position 🔗
+float current_animation_position 
 
 float get_current_animation_position()
 
 The position (in seconds) of the currently playing animation.
 
-bool movie_quit_on_finish = false 🔗
+bool movie_quit_on_finish = false 
 
 void set_movie_quit_on_finish_enabled(value: bool)
 
@@ -933,7 +933,7 @@ If true and the engine is running in Movie Maker mode (see MovieWriter), exits t
 
 Note: This obeys the same logic as the AnimationMixer.animation_finished signal, so it will not quit the engine if the animation is set to be looping.
 
-bool playback_auto_capture = true 🔗
+bool playback_auto_capture = true 
 
 void set_auto_capture(value: bool)
 
@@ -943,7 +943,7 @@ If true, performs AnimationMixer.capture() before playback automatically. This m
 
 Note: Capture interpolation is only performed if the animation contains a capture track. See also Animation.UPDATE_CAPTURE.
 
-float playback_auto_capture_duration = -1.0 🔗
+float playback_auto_capture_duration = -1.0 
 
 void set_auto_capture_duration(value: float)
 
@@ -953,7 +953,7 @@ See also play_with_capture() and AnimationMixer.capture().
 
 If playback_auto_capture_duration is negative value, the duration is set to the interval between the current position and the first key.
 
-EaseType playback_auto_capture_ease_type = 0 🔗
+EaseType playback_auto_capture_ease_type = 0 
 
 void set_auto_capture_ease_type(value: EaseType)
 
@@ -961,7 +961,7 @@ EaseType get_auto_capture_ease_type()
 
 The ease type of the capture interpolation. See also EaseType.
 
-TransitionType playback_auto_capture_transition_type = 0 🔗
+TransitionType playback_auto_capture_transition_type = 0 
 
 void set_auto_capture_transition_type(value: TransitionType)
 
@@ -969,7 +969,7 @@ TransitionType get_auto_capture_transition_type()
 
 The transition type of the capture interpolation. See also TransitionType.
 
-float playback_default_blend_time = 0.0 🔗
+float playback_default_blend_time = 0.0 
 
 void set_default_blend_time(value: float)
 
@@ -977,7 +977,7 @@ float get_default_blend_time()
 
 The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 precision.
 
-float speed_scale = 1.0 🔗
+float speed_scale = 1.0 
 
 void set_speed_scale(value: float)
 
@@ -987,67 +987,67 @@ The speed scaling ratio. For example, if this value is 1, then the animation pla
 
 If set to a negative value, the animation is played in reverse. If set to 0, the animation will not advance.
 
-StringName animation_get_next(animation_from: StringName) const 🔗
+StringName animation_get_next(animation_from: StringName) const 
 
 Returns the key of the animation which is queued to play after the animation_from animation.
 
-void animation_set_next(animation_from: StringName, animation_to: StringName) 🔗
+void animation_set_next(animation_from: StringName, animation_to: StringName) 
 
 Triggers the animation_to animation when the animation_from animation completes.
 
 Clears all queued, unplayed animations.
 
-float get_blend_time(animation_from: StringName, animation_to: StringName) const 🔗
+float get_blend_time(animation_from: StringName, animation_to: StringName) const 
 
 Returns the blend time (in seconds) between two animations, referenced by their keys.
 
-AnimationMethodCallMode get_method_call_mode() const 🔗
+AnimationMethodCallMode get_method_call_mode() const 
 
 Deprecated: Use AnimationMixer.callback_mode_method instead.
 
 Returns the call mode used for "Call Method" tracks.
 
-float get_playing_speed() const 🔗
+float get_playing_speed() const 
 
 Returns the actual playing speed of current animation or 0 if not playing. This speed is the speed_scale property multiplied by custom_speed argument specified when calling the play() method.
 
 Returns a negative value if the current animation is playing backwards.
 
-AnimationProcessCallback get_process_callback() const 🔗
+AnimationProcessCallback get_process_callback() const 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Returns the process notification in which to update animations.
 
-PackedStringArray get_queue() 🔗
+PackedStringArray get_queue() 
 
 Returns a list of the animation keys that are currently queued to play.
 
-NodePath get_root() const 🔗
+NodePath get_root() const 
 
 Deprecated: Use AnimationMixer.root_node instead.
 
 Returns the node which node path references will travel from.
 
-float get_section_end_time() const 🔗
+float get_section_end_time() const 
 
 Returns the end time of the section currently being played.
 
-float get_section_start_time() const 🔗
+float get_section_start_time() const 
 
 Returns the start time of the section currently being played.
 
-bool has_section() const 🔗
+bool has_section() const 
 
 Returns true if an animation is currently playing with a section.
 
-bool is_playing() const 🔗
+bool is_playing() const 
 
 Returns true if an animation is currently playing (even if speed_scale and/or custom_speed are 0).
 
 Pauses the currently playing animation. The current_animation_position will be kept and calling play() or play_backwards() without arguments or with the same animation name as assigned_animation will resume the animation.
 
-void play(name: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play(name: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name. Custom blend times and speed can be set.
 
@@ -1057,37 +1057,37 @@ The AnimationPlayer keeps track of its current or last played animation with ass
 
 Note: The animation will be updated the next time the AnimationPlayer is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call advance(0).
 
-void play_backwards(name: StringName = &"", custom_blend: float = -1) 🔗
+void play_backwards(name: StringName = &"", custom_blend: float = -1) 
 
 Plays the animation with key name in reverse.
 
 This method is a shorthand for play() with custom_speed = -1.0 and from_end = true, so see its description for more information.
 
-void play_section(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play_section(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name and the section starting from start_time and ending on end_time. See also play().
 
 Setting start_time to a value outside the range of the animation means the start of the animation will be used instead, and setting end_time to a value outside the range of the animation means the end of the animation will be used instead. start_time cannot be equal to end_time.
 
-void play_section_backwards(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1) 🔗
+void play_section_backwards(name: StringName = &"", start_time: float = -1, end_time: float = -1, custom_blend: float = -1) 
 
 Plays the animation with key name and the section starting from start_time and ending on end_time in reverse.
 
 This method is a shorthand for play_section() with custom_speed = -1.0 and from_end = true, see its description for more information.
 
-void play_section_with_markers(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 🔗
+void play_section_with_markers(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false) 
 
 Plays the animation with key name and the section starting from start_marker and ending on end_marker.
 
 If the start marker is empty, the section starts from the beginning of the animation. If the end marker is empty, the section ends on the end of the animation. See also play().
 
-void play_section_with_markers_backwards(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1) 🔗
+void play_section_with_markers_backwards(name: StringName = &"", start_marker: StringName = &"", end_marker: StringName = &"", custom_blend: float = -1) 
 
 Plays the animation with key name and the section starting from start_marker and ending on end_marker in reverse.
 
 This method is a shorthand for play_section_with_markers() with custom_speed = -1.0 and from_end = true, see its description for more information.
 
-void play_with_capture(name: StringName = &"", duration: float = -1.0, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false, trans_type: TransitionType = 0, ease_type: EaseType = 0) 🔗
+void play_with_capture(name: StringName = &"", duration: float = -1.0, custom_blend: float = -1, custom_speed: float = 1.0, from_end: bool = false, trans_type: TransitionType = 0, ease_type: EaseType = 0) 
 
 See also AnimationMixer.capture().
 
@@ -1099,17 +1099,17 @@ If duration is a negative value, the duration is set to the interval between the
 
 Note: The duration takes speed_scale into account, but custom_speed does not, because the capture cache is interpolated with the blend result and the result may contain multiple animations.
 
-void queue(name: StringName) 🔗
+void queue(name: StringName) 
 
 Queues an animation for playback once the current animation and all previously queued animations are done.
 
 Note: If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 
-void reset_section() 🔗
+void reset_section() 
 
 Resets the current section. Does nothing if a section has not been set.
 
-void seek(seconds: float, update: bool = false, update_only: bool = false) 🔗
+void seek(seconds: float, update: bool = false, update_only: bool = false) 
 
 Seeks the animation to the seconds point in time (in seconds). If update is true, the animation updates too, otherwise it updates at process time. Events between the current frame and seconds are skipped.
 
@@ -1117,39 +1117,39 @@ If update_only is true, the method / audio / animation playback tracks will not 
 
 Note: Seeking to the end of the animation doesn't emit AnimationMixer.animation_finished. If you want to skip animation and emit the signal, use AnimationMixer.advance().
 
-void set_blend_time(animation_from: StringName, animation_to: StringName, sec: float) 🔗
+void set_blend_time(animation_from: StringName, animation_to: StringName, sec: float) 
 
 Specifies a blend time (in seconds) between two animations, referenced by their keys.
 
-void set_method_call_mode(mode: AnimationMethodCallMode) 🔗
+void set_method_call_mode(mode: AnimationMethodCallMode) 
 
 Deprecated: Use AnimationMixer.callback_mode_method instead.
 
 Sets the call mode used for "Call Method" tracks.
 
-void set_process_callback(mode: AnimationProcessCallback) 🔗
+void set_process_callback(mode: AnimationProcessCallback) 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Sets the process notification in which to update animations.
 
-void set_root(path: NodePath) 🔗
+void set_root(path: NodePath) 
 
 Deprecated: Use AnimationMixer.root_node instead.
 
 Sets the node which node path references will travel from.
 
-void set_section(start_time: float = -1, end_time: float = -1) 🔗
+void set_section(start_time: float = -1, end_time: float = -1) 
 
 Changes the start and end times of the section being played. The current playback position will be clamped within the new section. See also play_section().
 
-void set_section_with_markers(start_marker: StringName = &"", end_marker: StringName = &"") 🔗
+void set_section_with_markers(start_marker: StringName = &"", end_marker: StringName = &"") 
 
 Changes the start and end markers of the section being played. The current playback position will be clamped within the new section. See also play_section_with_markers().
 
 If the argument is empty, the section uses the beginning or end of the animation. If both are empty, it means that the section is not set.
 
-void stop(keep_state: bool = false) 🔗
+void stop(keep_state: bool = false) 
 
 Stops the currently playing animation. The animation position is reset to 0 and the custom_speed is reset to 1.0. See also pause().
 
@@ -1205,11 +1205,11 @@ get_process_callback() const
 
 set_process_callback(mode: AnimationProcessCallback)
 
-animation_player_changed() 🔗
+animation_player_changed() 
 
 Emitted when the anim_player is changed.
 
-enum AnimationProcessCallback: 🔗
+enum AnimationProcessCallback: 
 
 AnimationProcessCallback ANIMATION_PROCESS_PHYSICS = 0
 
@@ -1223,7 +1223,7 @@ AnimationProcessCallback ANIMATION_PROCESS_MANUAL = 2
 
 Deprecated: See AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL.
 
-NodePath advance_expression_base_node = NodePath(".") 🔗
+NodePath advance_expression_base_node = NodePath(".") 
 
 void set_advance_expression_base_node(value: NodePath)
 
@@ -1231,7 +1231,7 @@ NodePath get_advance_expression_base_node()
 
 The path to the Node used to evaluate the AnimationNode Expression if one is not explicitly specified internally.
 
-NodePath anim_player = NodePath("") 🔗
+NodePath anim_player = NodePath("") 
 
 void set_animation_player(value: NodePath)
 
@@ -1239,7 +1239,7 @@ NodePath get_animation_player()
 
 The path to the AnimationPlayer used for animating.
 
-AnimationRootNode tree_root 🔗
+AnimationRootNode tree_root 
 
 void set_tree_root(value: AnimationRootNode)
 
@@ -1247,13 +1247,13 @@ AnimationRootNode get_tree_root()
 
 The root animation node of this AnimationTree. See AnimationRootNode.
 
-AnimationProcessCallback get_process_callback() const 🔗
+AnimationProcessCallback get_process_callback() const 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
 Returns the process notification in which to update animations.
 
-void set_process_callback(mode: AnimationProcessCallback) 🔗
+void set_process_callback(mode: AnimationProcessCallback) 
 
 Deprecated: Use AnimationMixer.callback_mode_process instead.
 
@@ -1313,15 +1313,15 @@ overlaps_area(area: Node) const
 
 overlaps_body(body: Node) const
 
-area_entered(area: Area2D) 🔗
+area_entered(area: Area2D) 
 
 Emitted when the received area enters this area. Requires monitoring to be set to true.
 
-area_exited(area: Area2D) 🔗
+area_exited(area: Area2D) 
 
 Emitted when the received area exits this area. Requires monitoring to be set to true.
 
-area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) 🔗
+area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) 
 
 Emitted when a Shape2D of the received area enters a shape of this area. Requires monitoring to be set to true.
 
@@ -1329,21 +1329,21 @@ local_shape_index and area_shape_index contain indices of the interacting shapes
 
 Example: Get the CollisionShape2D node from the shape index:
 
-area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) 🔗
+area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) 
 
 Emitted when a Shape2D of the received area exits a shape of this area. Requires monitoring to be set to true.
 
 See also area_shape_entered.
 
-body_entered(body: Node2D) 🔗
+body_entered(body: Node2D) 
 
 Emitted when the received body enters this area. body can be a PhysicsBody2D or a TileMap. TileMaps are detected if their TileSet has collision shapes configured. Requires monitoring to be set to true.
 
-body_exited(body: Node2D) 🔗
+body_exited(body: Node2D) 
 
 Emitted when the received body exits this area. body can be a PhysicsBody2D or a TileMap. TileMaps are detected if their TileSet has collision shapes configured. Requires monitoring to be set to true.
 
-body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) 🔗
+body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) 
 
 Emitted when a Shape2D of the received body enters a shape of this area. body can be a PhysicsBody2D or a TileMap. TileMaps are detected if their TileSet has collision shapes configured. Requires monitoring to be set to true.
 
@@ -1351,13 +1351,13 @@ local_shape_index and body_shape_index contain indices of the interacting shapes
 
 Example: Get the CollisionShape2D node from the shape index:
 
-body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) 🔗
+body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) 
 
 Emitted when a Shape2D of the received body exits a shape of this area. body can be a PhysicsBody2D or a TileMap. TileMaps are detected if their TileSet has collision shapes configured. Requires monitoring to be set to true.
 
 See also body_shape_entered.
 
-enum SpaceOverride: 🔗
+enum SpaceOverride: 
 
 SpaceOverride SPACE_OVERRIDE_DISABLED = 0
 
@@ -1379,7 +1379,7 @@ SpaceOverride SPACE_OVERRIDE_REPLACE_COMBINE = 4
 
 This area replaces any gravity/damping calculated so far (in priority order), but keeps calculating the rest of the areas.
 
-float angular_damp = 1.0 🔗
+float angular_damp = 1.0 
 
 void set_angular_damp(value: float)
 
@@ -1389,7 +1389,7 @@ The rate at which objects stop spinning in this area. Represents the angular vel
 
 See ProjectSettings.physics/2d/default_angular_damp for more details about damping.
 
-SpaceOverride angular_damp_space_override = 0 🔗
+SpaceOverride angular_damp_space_override = 0 
 
 void set_angular_damp_space_override_mode(value: SpaceOverride)
 
@@ -1397,7 +1397,7 @@ SpaceOverride get_angular_damp_space_override_mode()
 
 Override mode for angular damping calculations within this area.
 
-StringName audio_bus_name = &"Master" 🔗
+StringName audio_bus_name = &"Master" 
 
 void set_audio_bus_name(value: StringName)
 
@@ -1405,7 +1405,7 @@ StringName get_audio_bus_name()
 
 The name of the area's audio bus.
 
-bool audio_bus_override = false 🔗
+bool audio_bus_override = false 
 
 void set_audio_bus_override(value: bool)
 
@@ -1413,13 +1413,13 @@ bool is_overriding_audio_bus()
 
 If true, the area's audio bus overrides the default audio bus.
 
-float gravity = 980.0 🔗
+float gravity = 980.0 
 
 void set_gravity(value: float)
 
 The area's gravity intensity (in pixels per second squared). This value multiplies the gravity direction. This is useful to alter the force of gravity without altering its direction.
 
-Vector2 gravity_direction = Vector2(0, 1) 🔗
+Vector2 gravity_direction = Vector2(0, 1) 
 
 void set_gravity_direction(value: Vector2)
 
@@ -1427,7 +1427,7 @@ Vector2 get_gravity_direction()
 
 The area's gravity vector (not normalized).
 
-bool gravity_point = false 🔗
+bool gravity_point = false 
 
 void set_gravity_is_point(value: bool)
 
@@ -1435,7 +1435,7 @@ bool is_gravity_a_point()
 
 If true, gravity is calculated from a point (set via gravity_point_center). See also gravity_space_override.
 
-Vector2 gravity_point_center = Vector2(0, 1) 🔗
+Vector2 gravity_point_center = Vector2(0, 1) 
 
 void set_gravity_point_center(value: Vector2)
 
@@ -1443,7 +1443,7 @@ Vector2 get_gravity_point_center()
 
 If gravity is a point (see gravity_point), this will be the point of attraction.
 
-float gravity_point_unit_distance = 0.0 🔗
+float gravity_point_unit_distance = 0.0 
 
 void set_gravity_point_unit_distance(value: float)
 
@@ -1453,7 +1453,7 @@ The distance at which the gravity strength is equal to gravity. For example, on 
 
 The above is true only when the unit distance is a positive number. When this is set to 0.0, the gravity will be constant regardless of distance.
 
-SpaceOverride gravity_space_override = 0 🔗
+SpaceOverride gravity_space_override = 0 
 
 void set_gravity_space_override_mode(value: SpaceOverride)
 
@@ -1461,7 +1461,7 @@ SpaceOverride get_gravity_space_override_mode()
 
 Override mode for gravity calculations within this area.
 
-float linear_damp = 0.1 🔗
+float linear_damp = 0.1 
 
 void set_linear_damp(value: float)
 
@@ -1471,7 +1471,7 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 
 See ProjectSettings.physics/2d/default_linear_damp for more details about damping.
 
-SpaceOverride linear_damp_space_override = 0 🔗
+SpaceOverride linear_damp_space_override = 0 
 
 void set_linear_damp_space_override_mode(value: SpaceOverride)
 
@@ -1479,7 +1479,7 @@ SpaceOverride get_linear_damp_space_override_mode()
 
 Override mode for linear damping calculations within this area.
 
-bool monitorable = true 🔗
+bool monitorable = true 
 
 void set_monitorable(value: bool)
 
@@ -1487,7 +1487,7 @@ bool is_monitorable()
 
 If true, other monitoring areas can detect this area.
 
-bool monitoring = true 🔗
+bool monitoring = true 
 
 void set_monitoring(value: bool)
 
@@ -1497,37 +1497,37 @@ void set_priority(value: int)
 
 The area's priority. Higher priority areas are processed first. The World2D's physics is always processed last, after all areas.
 
-Array[Area2D] get_overlapping_areas() const 🔗
+Array[Area2D] get_overlapping_areas() const 
 
 Returns a list of intersecting Area2Ds. The overlapping area's CollisionObject2D.collision_layer must be part of this area's CollisionObject2D.collision_mask in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-Array[Node2D] get_overlapping_bodies() const 🔗
+Array[Node2D] get_overlapping_bodies() const 
 
 Returns a list of intersecting PhysicsBody2Ds and TileMaps. The overlapping body's CollisionObject2D.collision_layer must be part of this area's CollisionObject2D.collision_mask in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-bool has_overlapping_areas() const 🔗
+bool has_overlapping_areas() const 
 
 Returns true if intersecting any Area2Ds, otherwise returns false. The overlapping area's CollisionObject2D.collision_layer must be part of this area's CollisionObject2D.collision_mask in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) the list of overlapping areas is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-bool has_overlapping_bodies() const 🔗
+bool has_overlapping_bodies() const 
 
 Returns true if intersecting any PhysicsBody2Ds or TileMaps, otherwise returns false. The overlapping body's CollisionObject2D.collision_layer must be part of this area's CollisionObject2D.collision_mask in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) the list of overlapping bodies is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-bool overlaps_area(area: Node) const 🔗
+bool overlaps_area(area: Node) const 
 
 Returns true if the given Area2D intersects or overlaps this Area2D, false otherwise.
 
 Note: The result of this test is not immediate after moving objects. For performance, the list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-bool overlaps_body(body: Node) const 🔗
+bool overlaps_body(body: Node) const 
 
 Returns true if the given physics body intersects or overlaps this Area2D, false otherwise.
 
@@ -1578,7 +1578,7 @@ The width and height of child controls is automatically adjusted to make their b
 
 When the bounding rectangle of child controls exceed the container's size and Control.clip_contents is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
 
-enum AlignmentMode: 🔗
+enum AlignmentMode: 
 
 AlignmentMode ALIGNMENT_BEGIN = 0
 
@@ -1592,7 +1592,7 @@ AlignmentMode ALIGNMENT_END = 2
 
 Aligns child controls with the end (right or bottom) of the container.
 
-AlignmentMode alignment_horizontal = 1 🔗
+AlignmentMode alignment_horizontal = 1 
 
 void set_alignment_horizontal(value: AlignmentMode)
 
@@ -1600,7 +1600,7 @@ AlignmentMode get_alignment_horizontal()
 
 Specifies the horizontal relative position of child controls.
 
-AlignmentMode alignment_vertical = 1 🔗
+AlignmentMode alignment_vertical = 1 
 
 void set_alignment_vertical(value: AlignmentMode)
 
@@ -1612,7 +1612,7 @@ void set_ratio(value: float)
 
 The aspect ratio to enforce on child controls. This is the width divided by the height. The ratio depends on the stretch_mode.
 
-StretchMode stretch_mode = 2 🔗
+StretchMode stretch_mode = 2 
 
 void set_stretch_mode(value: StretchMode)
 
@@ -1860,11 +1860,11 @@ print_debug(...) vararg
 
 type_exists(type: StringName)
 
-PI = 3.14159265358979 🔗
+PI = 3.14159265358979 
 
 Constant that represents how many times the diameter of a circle fits around its perimeter. This is equivalent to TAU / 2, or 180 degrees in rotations.
 
-TAU = 6.28318530717959 🔗
+TAU = 6.28318530717959 
 
 The circle constant, the circumference of the unit circle in radians. This is equivalent to PI * 2, or 360 degrees in rotations.
 
@@ -1892,7 +1892,7 @@ Note: Custom resources and nodes should be registered as global classes using cl
 
 Note: Node export is only supported in Node-derived classes and has a number of other limitations.
 
-@export_category(name: String) 🔗
+@export_category(name: String) 
 
 Define a new category for the following exported properties. This helps to organize properties in the Inspector dock.
 
@@ -1900,13 +1900,13 @@ See also @GlobalScope.PROPERTY_USAGE_CATEGORY.
 
 Note: Categories in the Inspector dock's list usually divide properties coming from different classes (Node, Node2D, Sprite, etc.). For better clarity, it's recommended to use @export_group and @export_subgroup, instead.
 
-@export_color_no_alpha() 🔗
+@export_color_no_alpha() 
 
 Export a Color, Array[Color], or PackedColorArray property without allowing its transparency (Color.a) to be edited.
 
 See also @GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA.
 
-@export_custom(hint: PropertyHint, hint_string: String, usage: BitField[PropertyUsageFlags] = 6) 🔗
+@export_custom(hint: PropertyHint, hint_string: String, usage: BitField[PropertyUsageFlags] = 6) 
 
 Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the parameters to the editor.
 
@@ -1916,7 +1916,7 @@ Export a String, Array[String], or PackedStringArray property as a path to a dir
 
 See also @GlobalScope.PROPERTY_HINT_DIR.
 
-@export_enum(names: String, ...) vararg 🔗
+@export_enum(names: String, ...) vararg 
 
 Export an int, String, Array[int], Array[String], PackedByteArray, PackedInt32Array, PackedInt64Array, or PackedStringArray property as an enumerated list of options (or an array of options). If the property is an int, then the index of the value is stored, in the same order the values are provided. You can add explicit values using a colon. If the property is a String, then the value is stored.
 
@@ -1926,13 +1926,13 @@ If you want to set an initial value, you must specify it explicitly:
 
 If you want to use named GDScript enums, then use @export instead:
 
-@export_exp_easing(hints: String = "", ...) vararg 🔗
+@export_exp_easing(hints: String = "", ...) vararg 
 
 Export a floating-point property with an easing editor widget. Additional hints can be provided to adjust the behavior of the widget. "attenuation" flips the curve, which makes it more intuitive for editing attenuation properties. "positive_only" limits values to only be greater than or equal to zero.
 
 See also @GlobalScope.PROPERTY_HINT_EXP_EASING.
 
-@export_file(filter: String = "", ...) vararg 🔗
+@export_file(filter: String = "", ...) vararg 
 
 Export a String, Array[String], or PackedStringArray property as a path to a file. The path will be limited to the project folder and its subfolders. See @export_global_file to allow picking from the entire filesystem.
 
@@ -1942,11 +1942,11 @@ See also @GlobalScope.PROPERTY_HINT_FILE.
 
 Note: The file will be stored and referenced as UID, if available. This ensures that the reference is valid even when the file is moved. You can use ResourceUID methods to convert it to path.
 
-@export_file_path(filter: String = "", ...) vararg 🔗
+@export_file_path(filter: String = "", ...) vararg 
 
 Same as @export_file, except the file will be stored as a raw path. This means that it may become invalid when the file is moved. If you are exporting a Resource path, consider using @export_file instead.
 
-@export_flags(names: String, ...) vararg 🔗
+@export_flags(names: String, ...) vararg 
 
 Export an integer property as a bit flag field. This allows to store several "checked" or true values with one property, and comfortably select them from the Inspector dock.
 
@@ -1962,55 +1962,55 @@ Note: Unlike @export_enum, the previous explicit value is not taken into account
 
 You can also use the annotation on Array[int], PackedByteArray, PackedInt32Array, and PackedInt64Array
 
-@export_flags_2d_navigation() 🔗
+@export_flags_2d_navigation() 
 
 Export an integer property as a bit flag field for 2D navigation layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/2d_navigation/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_2D_NAVIGATION.
 
-@export_flags_2d_physics() 🔗
+@export_flags_2d_physics() 
 
 Export an integer property as a bit flag field for 2D physics layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/2d_physics/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_2D_PHYSICS.
 
-@export_flags_2d_render() 🔗
+@export_flags_2d_render() 
 
 Export an integer property as a bit flag field for 2D render layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/2d_render/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_2D_RENDER.
 
-@export_flags_3d_navigation() 🔗
+@export_flags_3d_navigation() 
 
 Export an integer property as a bit flag field for 3D navigation layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/3d_navigation/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_3D_NAVIGATION.
 
-@export_flags_3d_physics() 🔗
+@export_flags_3d_physics() 
 
 Export an integer property as a bit flag field for 3D physics layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/3d_physics/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_3D_PHYSICS.
 
-@export_flags_3d_render() 🔗
+@export_flags_3d_render() 
 
 Export an integer property as a bit flag field for 3D render layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/3d_render/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER.
 
-@export_flags_avoidance() 🔗
+@export_flags_avoidance() 
 
 Export an integer property as a bit flag field for navigation avoidance layers. The widget in the Inspector dock will use the layer names defined in ProjectSettings.layer_names/avoidance/layer_1.
 
 See also @GlobalScope.PROPERTY_HINT_LAYERS_AVOIDANCE.
 
-@export_global_dir() 🔗
+@export_global_dir() 
 
 Export a String, Array[String], or PackedStringArray property as an absolute path to a directory. The path can be picked from the entire filesystem. See @export_dir to limit it to the project folder and its subfolders.
 
 See also @GlobalScope.PROPERTY_HINT_GLOBAL_DIR.
 
-@export_global_file(filter: String = "", ...) vararg 🔗
+@export_global_file(filter: String = "", ...) vararg 
 
 Export a String, Array[String], or PackedStringArray property as an absolute path to a file. The path can be picked from the entire filesystem. See @export_file to limit it to the project folder and its subfolders.
 
@@ -2018,7 +2018,7 @@ If filter is provided, only matching files will be available for picking.
 
 See also @GlobalScope.PROPERTY_HINT_GLOBAL_FILE.
 
-@export_group(name: String, prefix: String = "") 🔗
+@export_group(name: String, prefix: String = "") 
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional prefix, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
@@ -2028,13 +2028,13 @@ Groups cannot be nested, use @export_subgroup to add subgroups within groups.
 
 See also @GlobalScope.PROPERTY_USAGE_GROUP.
 
-@export_multiline() 🔗
+@export_multiline() 
 
 Export a String, Array[String], PackedStringArray, Dictionary or Array[Dictionary] property with a large TextEdit widget instead of a LineEdit. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
 
 See also @GlobalScope.PROPERTY_HINT_MULTILINE_TEXT.
 
-@export_node_path(type: String = "", ...) vararg 🔗
+@export_node_path(type: String = "", ...) vararg 
 
 Export a NodePath or Array[NodePath] property with a filter for allowed node types.
 
@@ -2042,13 +2042,13 @@ See also @GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES.
 
 Note: The type must be a native class or a globally registered script (using the class_name keyword) that inherits Node.
 
-@export_placeholder(placeholder: String) 🔗
+@export_placeholder(placeholder: String) 
 
 Export a String, Array[String], or PackedStringArray property with a placeholder text displayed in the editor widget when no value is present.
 
 See also @GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT.
 
-@export_range(min: float, max: float, step: float = 1.0, extra_hints: String = "", ...) vararg 🔗
+@export_range(min: float, max: float, step: float = 1.0, extra_hints: String = "", ...) vararg 
 
 Export an int, float, Array[int], Array[float], PackedByteArray, PackedInt32Array, PackedInt64Array, PackedFloat32Array, or PackedFloat64Array property as a range value. The range must be defined by min and max, as well as an optional step and a variety of extra hints. The step defaults to 1 for integer properties. For floating-point numbers this value depends on your EditorSettings.interface/inspector/default_float_step setting.
 
@@ -2060,7 +2060,7 @@ See also @GlobalScope.PROPERTY_HINT_RANGE.
 
 Export a property with @GlobalScope.PROPERTY_USAGE_STORAGE flag. The property is not displayed in the editor, but it is serialized and stored in the scene or resource file. This can be useful for @tool scripts. Also the property value is copied when Resource.duplicate() or Node.duplicate() is called, unlike non-exported variables.
 
-@export_subgroup(name: String, prefix: String = "") 🔗
+@export_subgroup(name: String, prefix: String = "") 
 
 Define a new subgroup for the following exported properties. This helps to organize properties in the Inspector dock. Subgroups work exactly like groups, except they need a parent group to exist. See @export_group.
 
@@ -2068,7 +2068,7 @@ See also @GlobalScope.PROPERTY_USAGE_SUBGROUP.
 
 Note: Subgroups cannot be nested, but you can use the slash separator (/) to achieve the desired effect:
 
-@export_tool_button(text: String, icon: String = "") 🔗
+@export_tool_button(text: String, icon: String = "") 
 
 Export a Callable property as a clickable button with the label text. When the button is pressed, the callable is called.
 
@@ -2084,7 +2084,7 @@ Note: In an exported project neither EditorInterface nor EditorUndoRedoManager e
 
 Note: Avoid storing lambda callables in member variables of RefCounted-based classes (e.g. resources), as this can lead to memory leaks. Use only method callables and optionally Callable.bind() or Callable.unbind().
 
-@icon(icon_path: String) 🔗
+@icon(icon_path: String) 
 
 Add a custom icon to the current script. The icon specified at icon_path is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
 
@@ -2096,7 +2096,7 @@ Note: Unlike most other annotations, the argument of the @icon annotation must b
 
 Mark the following property as assigned when the Node is ready. Values for these properties are not assigned immediately when the node is initialized (Object._init()), and instead are computed and stored right before Node._ready().
 
-@rpc(mode: String = "authority", sync: String = "call_remote", transfer_mode: String = "unreliable", transfer_channel: int = 0) 🔗
+@rpc(mode: String = "authority", sync: String = "call_remote", transfer_mode: String = "unreliable", transfer_channel: int = 0) 
 
 Mark the following method for remote procedure calls. See High-level multiplayer.
 
@@ -2122,19 +2122,19 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
 
 Note: As annotations describe their subject, the @tool annotation must be placed before the class definition and inheritance.
 
-@warning_ignore(warning: String, ...) vararg 🔗
+@warning_ignore(warning: String, ...) vararg 
 
 Mark the following statement to ignore the specified warning. See GDScript warning system.
 
 See also @warning_ignore_start and @warning_ignore_restore.
 
-@warning_ignore_restore(warning: String, ...) vararg 🔗
+@warning_ignore_restore(warning: String, ...) vararg 
 
 Stops ignoring the listed warning types after @warning_ignore_start. Ignoring the specified warning types will be reset to Project Settings. This annotation can be omitted to ignore the warning types until the end of the file.
 
 Note: Unlike most other annotations, arguments of the @warning_ignore_restore annotation must be string literals (constant expressions are not supported).
 
-@warning_ignore_start(warning: String, ...) vararg 🔗
+@warning_ignore_start(warning: String, ...) vararg 
 
 Starts ignoring the listed warning types until the end of the file or the @warning_ignore_restore annotation with the given warning type.
 
@@ -2142,7 +2142,7 @@ Note: To suppress a single warning, use @warning_ignore instead.
 
 Note: Unlike most other annotations, arguments of the @warning_ignore_start annotation must be string literals (constant expressions are not supported).
 
-Color Color8(r8: int, g8: int, b8: int, a8: int = 255) 🔗
+Color Color8(r8: int, g8: int, b8: int, a8: int = 255) 
 
 Deprecated: Use Color.from_rgba8() instead.
 
@@ -2150,7 +2150,7 @@ Returns a Color constructed from red (r8), green (g8), blue (b8), and optionally
 
 Note: Due to the lower precision of Color8() compared to the standard Color constructor, a color created with Color8() will generally not be equal to the same color created with the standard Color constructor. Use Color.is_equal_approx() for comparisons to avoid issues with floating-point precision error.
 
-void assert(condition: bool, message: String = "") 🔗
+void assert(condition: bool, message: String = "") 
 
 Asserts that the condition is true. If the condition is false, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of @GlobalScope.push_error() for reporting errors to project developers or add-on users.
 
@@ -2160,19 +2160,19 @@ Warning: For performance reasons, the code inside assert() is only executed in d
 
 Note: assert() is a keyword, not a function. So you cannot access it as a Callable or use it inside expressions.
 
-String char(code: int) 🔗
+String char(code: int) 
 
 Returns a single character (as a String of length 1) of the given Unicode code point code.
 
 This is the inverse of ord(). See also String.chr() and String.unicode_at().
 
-Variant convert(what: Variant, type: Variant.Type) 🔗
+Variant convert(what: Variant, type: Variant.Type) 
 
 Deprecated: Use @GlobalScope.type_convert() instead.
 
 Converts what to type in the best way possible. The type uses the Variant.Type values.
 
-Object dict_to_inst(dictionary: Dictionary) 🔗
+Object dict_to_inst(dictionary: Dictionary) 
 
 Deprecated: Consider using JSON.to_native() or Object.get_property_list() instead.
 
@@ -2186,7 +2186,7 @@ See also print_debug(), print_stack(), and Engine.capture_script_backtraces().
 
 Note: By default, backtraces are only available in editor builds and debug builds. To enable them for release builds as well, you need to enable ProjectSettings.debug/settings/gdscript/always_track_call_stacks.
 
-Dictionary inst_to_dict(instance: Object) 🔗
+Dictionary inst_to_dict(instance: Object) 
 
 Deprecated: Consider using JSON.from_native() or Object.get_property_list() instead.
 
@@ -2196,7 +2196,7 @@ Note: This function can only be used to serialize objects with an attached GDScr
 
 Note: This function is not recursive, which means that nested objects will not be represented as dictionaries. Also, properties passed by reference (Object, Dictionary, Array, and packed arrays) are copied by reference, not duplicated.
 
-bool is_instance_of(value: Variant, type: Variant) 🔗
+bool is_instance_of(value: Variant, type: Variant) 
 
 Returns true if value is an instance of type. The type value must be one of the following:
 
@@ -2212,11 +2212,11 @@ Note: If value and/or type are freed objects (see @GlobalScope.is_instance_valid
 
 See also @GlobalScope.typeof(), type_exists(), Array.is_same_typed() (and other Array methods).
 
-int len(var: Variant) 🔗
+int len(var: Variant) 
 
 Returns the length of the given Variant var. The length can be the character count of a String or StringName, the element count of any array type, or the size of a Dictionary. For every other Variant type, a run-time error is generated and execution is stopped.
 
-Resource load(path: String) 🔗
+Resource load(path: String) 
 
 Returns a Resource from the filesystem located at the absolute path. Unless it's already referenced elsewhere (such as in another script or in the scene), the resource is loaded from disk on function call, which might cause a slight delay, especially when loading large scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use preload(). This method is equivalent of using ResourceLoader.load() with ResourceLoader.CACHE_MODE_REUSE.
 
@@ -2230,13 +2230,13 @@ Note: Files have to be imported into the engine first to load them using this fu
 
 Note: If ProjectSettings.editor/export/convert_text_resources_to_binary is true, load() will not be able to read converted files in an exported project. If you rely on run-time loading of files present within the PCK, set ProjectSettings.editor/export/convert_text_resources_to_binary to false.
 
-int ord(char: String) 🔗
+int ord(char: String) 
 
 Returns an integer representing the Unicode code point of the given character char, which should be a string of length 1.
 
 This is the inverse of char(). See also String.chr() and String.unicode_at().
 
-Resource preload(path: String) 🔗
+Resource preload(path: String) 
 
 Returns a Resource from the filesystem located at path. During run-time, the resource is loaded when the script is being parsed. This function effectively acts as a reference to that resource. Note that this function requires path to be a constant String. If you want to load a resource from a dynamic/variable path, use load().
 
@@ -2244,7 +2244,7 @@ Note: Resource paths can be obtained by right-clicking on a resource in the Asse
 
 Note: preload() is a keyword, not a function. So you cannot access it as a Callable.
 
-void print_debug(...) vararg 🔗
+void print_debug(...) vararg 
 
 Like @GlobalScope.print(), but includes the current stack frame when running with the debugger turned on.
 
@@ -2262,7 +2262,7 @@ See also print_debug(), get_stack(), and Engine.capture_script_backtraces().
 
 Note: By default, backtraces are only available in editor builds and debug builds. To enable them for release builds as well, you need to enable ProjectSettings.debug/settings/gdscript/always_track_call_stacks.
 
-Array range(...) vararg 🔗
+Array range(...) vararg 
 
 Returns an array with the given range. range() can be called in three ways:
 
@@ -2280,7 +2280,7 @@ To iterate over an Array backwards, use:
 
 To iterate over float, convert them in the loop.
 
-bool type_exists(type: StringName) 🔗
+bool type_exists(type: StringName) 
 
 Returns true if the given Object-derived class exists in ClassDB. Note that Variant data types are not registered in ClassDB.
 
@@ -2491,7 +2491,7 @@ Orientation HORIZONTAL = 0
 
 General horizontal alignment, usually used for Separator, ScrollBar, Slider, etc.
 
-enum ClockDirection: 🔗
+enum ClockDirection: 
 
 ClockDirection CLOCKWISE = 0
 
@@ -2501,7 +2501,7 @@ ClockDirection COUNTERCLOCKWISE = 1
 
 Counter-clockwise rotation. Used by some methods (e.g. Image.rotate_90()).
 
-enum HorizontalAlignment: 🔗
+enum HorizontalAlignment: 
 
 HorizontalAlignment HORIZONTAL_ALIGNMENT_LEFT = 0
 
@@ -2519,7 +2519,7 @@ HorizontalAlignment HORIZONTAL_ALIGNMENT_FILL = 3
 
 Expand row to fit width, usually for text-derived classes.
 
-enum VerticalAlignment: 🔗
+enum VerticalAlignment: 
 
 VerticalAlignment VERTICAL_ALIGNMENT_TOP = 0
 
@@ -2537,7 +2537,7 @@ VerticalAlignment VERTICAL_ALIGNMENT_FILL = 3
 
 Expand rows to fit height, usually for text-derived classes.
 
-enum InlineAlignment: 🔗
+enum InlineAlignment: 
 
 InlineAlignment INLINE_ALIGNMENT_TOP_TO = 0
 
@@ -3005,7 +3005,7 @@ Key KEY_SECTION = 167
 
 Section sign (§) key.
 
-flags KeyModifierMask: 🔗
+flags KeyModifierMask: 
 
 KeyModifierMask KEY_CODE_MASK = 8388607
 
@@ -3085,7 +3085,7 @@ MouseButton MOUSE_BUTTON_XBUTTON2 = 9
 
 Extra mouse button 2. This is sometimes present, usually to the sides of the mouse.
 
-flags MouseButtonMask: 🔗
+flags MouseButtonMask: 
 
 MouseButtonMask MOUSE_BUTTON_MASK_LEFT = 1
 
@@ -3697,7 +3697,7 @@ PropertyHint PROPERTY_HINT_MAX = 45
 
 Represents the size of the PropertyHint enum.
 
-flags PropertyUsageFlags: 🔗
+flags PropertyUsageFlags: 
 
 PropertyUsageFlags PROPERTY_USAGE_NONE = 0
 
@@ -4021,7 +4021,7 @@ Variant.Type TYPE_MAX = 39
 
 Represents the size of the Variant.Type enum.
 
-enum Variant.Operator: 🔗
+enum Variant.Operator: 
 
 Variant.Operator OP_EQUAL = 0
 
@@ -4125,21 +4125,21 @@ Variant.Operator OP_MAX = 25
 
 Represents the size of the Variant.Operator enum.
 
-AudioServer AudioServer 🔗
+AudioServer AudioServer 
 
 The AudioServer singleton.
 
-CameraServer CameraServer 🔗
+CameraServer CameraServer 
 
 The CameraServer singleton.
 
 The ClassDB singleton.
 
-DisplayServer DisplayServer 🔗
+DisplayServer DisplayServer 
 
 The DisplayServer singleton.
 
-EditorInterface EditorInterface 🔗
+EditorInterface EditorInterface 
 
 The EditorInterface singleton.
 
@@ -4147,147 +4147,147 @@ Note: Only available in editor builds.
 
 The Engine singleton.
 
-EngineDebugger EngineDebugger 🔗
+EngineDebugger EngineDebugger 
 
 The EngineDebugger singleton.
 
-GDExtensionManager GDExtensionManager 🔗
+GDExtensionManager GDExtensionManager 
 
 The GDExtensionManager singleton.
 
-Geometry2D Geometry2D 🔗
+Geometry2D Geometry2D 
 
 The Geometry2D singleton.
 
-Geometry3D Geometry3D 🔗
+Geometry3D Geometry3D 
 
 The Geometry3D singleton.
 
 The InputMap singleton.
 
-JavaClassWrapper JavaClassWrapper 🔗
+JavaClassWrapper JavaClassWrapper 
 
 The JavaClassWrapper singleton.
 
 Note: Only implemented on Android.
 
-JavaScriptBridge JavaScriptBridge 🔗
+JavaScriptBridge JavaScriptBridge 
 
 The JavaScriptBridge singleton.
 
 Note: Only implemented on the Web platform.
 
-Marshalls Marshalls 🔗
+Marshalls Marshalls 
 
 The Marshalls singleton.
 
-NativeMenu NativeMenu 🔗
+NativeMenu NativeMenu 
 
 The NativeMenu singleton.
 
 Note: Only implemented on macOS.
 
-NavigationMeshGenerator NavigationMeshGenerator 🔗
+NavigationMeshGenerator NavigationMeshGenerator 
 
 The NavigationMeshGenerator singleton.
 
-NavigationServer2D NavigationServer2D 🔗
+NavigationServer2D NavigationServer2D 
 
 The NavigationServer2D singleton.
 
-NavigationServer3D NavigationServer3D 🔗
+NavigationServer3D NavigationServer3D 
 
 The NavigationServer3D singleton.
 
-Performance Performance 🔗
+Performance Performance 
 
 The Performance singleton.
 
-PhysicsServer2D PhysicsServer2D 🔗
+PhysicsServer2D PhysicsServer2D 
 
 The PhysicsServer2D singleton.
 
-PhysicsServer2DManager PhysicsServer2DManager 🔗
+PhysicsServer2DManager PhysicsServer2DManager 
 
 The PhysicsServer2DManager singleton.
 
-PhysicsServer3D PhysicsServer3D 🔗
+PhysicsServer3D PhysicsServer3D 
 
 The PhysicsServer3D singleton.
 
-PhysicsServer3DManager PhysicsServer3DManager 🔗
+PhysicsServer3DManager PhysicsServer3DManager 
 
 The PhysicsServer3DManager singleton.
 
-ProjectSettings ProjectSettings 🔗
+ProjectSettings ProjectSettings 
 
 The ProjectSettings singleton.
 
-RenderingServer RenderingServer 🔗
+RenderingServer RenderingServer 
 
 The RenderingServer singleton.
 
-ResourceLoader ResourceLoader 🔗
+ResourceLoader ResourceLoader 
 
 The ResourceLoader singleton.
 
-ResourceSaver ResourceSaver 🔗
+ResourceSaver ResourceSaver 
 
 The ResourceSaver singleton.
 
-ResourceUID ResourceUID 🔗
+ResourceUID ResourceUID 
 
 The ResourceUID singleton.
 
-TextServerManager TextServerManager 🔗
+TextServerManager TextServerManager 
 
 The TextServerManager singleton.
 
 The ThemeDB singleton.
 
-TranslationServer TranslationServer 🔗
+TranslationServer TranslationServer 
 
 The TranslationServer singleton.
 
-WorkerThreadPool WorkerThreadPool 🔗
+WorkerThreadPool WorkerThreadPool 
 
 The WorkerThreadPool singleton.
 
 The XRServer singleton.
 
-Variant abs(x: Variant) 🔗
+Variant abs(x: Variant) 
 
 Returns the absolute value of a Variant parameter x (i.e. non-negative value). Supported types: int, float, Vector2, Vector2i, Vector3, Vector3i, Vector4, Vector4i.
 
 Note: For better type safety, use absf(), absi(), Vector2.abs(), Vector2i.abs(), Vector3.abs(), Vector3i.abs(), Vector4.abs(), or Vector4i.abs().
 
-float absf(x: float) 🔗
+float absf(x: float) 
 
 Returns the absolute value of float parameter x (i.e. positive value).
 
 Returns the absolute value of int parameter x (i.e. positive value).
 
-float acos(x: float) 🔗
+float acos(x: float) 
 
 Returns the arc cosine of x in radians. Use to get the angle of cosine x. x will be clamped between -1.0 and 1.0 (inclusive), in order to prevent acos() from returning @GDScript.NAN.
 
-float acosh(x: float) 🔗
+float acosh(x: float) 
 
 Returns the hyperbolic arc (also called inverse) cosine of x, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if x is larger or equal to 1. For values of x lower than 1, it will return 0, in order to prevent acosh() from returning @GDScript.NAN.
 
-float angle_difference(from: float, to: float) 🔗
+float angle_difference(from: float, to: float) 
 
 Returns the difference between the two angles (in radians), in the range of [-PI, +PI]. When from and to are opposite, returns -PI if from is smaller than to, or PI otherwise.
 
-float asin(x: float) 🔗
+float asin(x: float) 
 
 Returns the arc sine of x in radians. Use to get the angle of sine x. x will be clamped between -1.0 and 1.0 (inclusive), in order to prevent asin() from returning @GDScript.NAN.
 
-float asinh(x: float) 🔗
+float asinh(x: float) 
 
 Returns the hyperbolic arc (also called inverse) sine of x, returning a value in radians. Use it to get the angle from an angle's sine in hyperbolic space.
 
-float atan(x: float) 🔗
+float atan(x: float) 
 
 Returns the arc tangent of x in radians. Use it to get the angle from an angle's tangent in trigonometry.
 
@@ -4295,39 +4295,39 @@ The method cannot know in which quadrant the angle should fall. See atan2() if y
 
 If x is between -PI / 2 and PI / 2 (inclusive), atan(tan(x)) is equal to x.
 
-float atan2(y: float, x: float) 🔗
+float atan2(y: float, x: float) 
 
 Returns the arc tangent of y/x in radians. Use to get the angle of tangent y/x. To compute the value, the method takes into account the sign of both arguments in order to determine the quadrant.
 
 Important note: The Y coordinate comes first, by convention.
 
-float atanh(x: float) 🔗
+float atanh(x: float) 
 
 Returns the hyperbolic arc (also called inverse) tangent of x, returning a value in radians. Use it to get the angle from an angle's tangent in hyperbolic space if x is between -1 and 1 (non-inclusive).
 
 In mathematics, the inverse hyperbolic tangent is only defined for -1 < x < 1 in the real set, so values equal or lower to -1 for x return negative @GDScript.INF and values equal or higher than 1 return positive @GDScript.INF in order to prevent atanh() from returning @GDScript.NAN.
 
-float bezier_derivative(start: float, control_1: float, control_2: float, end: float, t: float) 🔗
+float bezier_derivative(start: float, control_1: float, control_2: float, end: float, t: float) 
 
 Returns the derivative at the given t on a one-dimensional Bézier curve defined by the given control_1, control_2, and end points.
 
-float bezier_interpolate(start: float, control_1: float, control_2: float, end: float, t: float) 🔗
+float bezier_interpolate(start: float, control_1: float, control_2: float, end: float, t: float) 
 
 Returns the point at the given t on a one-dimensional Bézier curve defined by the given control_1, control_2, and end points.
 
-Variant bytes_to_var(bytes: PackedByteArray) 🔗
+Variant bytes_to_var(bytes: PackedByteArray) 
 
 Decodes a byte array back to a Variant value, without decoding objects.
 
 Note: If you need object deserialization, see bytes_to_var_with_objects().
 
-Variant bytes_to_var_with_objects(bytes: PackedByteArray) 🔗
+Variant bytes_to_var_with_objects(bytes: PackedByteArray) 
 
 Decodes a byte array back to a Variant value. Decoding objects is allowed.
 
 Warning: Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
-Variant ceil(x: Variant) 🔗
+Variant ceil(x: Variant) 
 
 Rounds x upward (towards positive infinity), returning the smallest whole number that is not less than x. Supported types: int, float, Vector2, Vector2i, Vector3, Vector3i, Vector4, Vector4i.
 
@@ -4335,19 +4335,19 @@ See also floor(), round(), and snapped().
 
 Note: For better type safety, use ceilf(), ceili(), Vector2.ceil(), Vector3.ceil(), or Vector4.ceil().
 
-float ceilf(x: float) 🔗
+float ceilf(x: float) 
 
 Rounds x upward (towards positive infinity), returning the smallest whole number that is not less than x.
 
 A type-safe version of ceil(), returning a float.
 
-int ceili(x: float) 🔗
+int ceili(x: float) 
 
 Rounds x upward (towards positive infinity), returning the smallest whole number that is not less than x.
 
 A type-safe version of ceil(), returning an int.
 
-Variant clamp(value: Variant, min: Variant, max: Variant) 🔗
+Variant clamp(value: Variant, min: Variant, max: Variant) 
 
 Clamps the value, returning a Variant not less than min and not more than max. Any values that can be compared with the less than and greater than operators will work.
 
@@ -4355,51 +4355,51 @@ Note: For better type safety, use clampf(), clampi(), Vector2.clamp(), Vector2i.
 
 Note: When using this on vectors it will not perform component-wise clamping, and will pick min if value < min or max if value > max. To perform component-wise clamping use the methods listed above.
 
-float clampf(value: float, min: float, max: float) 🔗
+float clampf(value: float, min: float, max: float) 
 
 Clamps the value, returning a float not less than min and not more than max.
 
-int clampi(value: int, min: int, max: int) 🔗
+int clampi(value: int, min: int, max: int) 
 
 Clamps the value, returning an int not less than min and not more than max.
 
-float cos(angle_rad: float) 🔗
+float cos(angle_rad: float) 
 
 Returns the cosine of angle angle_rad in radians.
 
-float cosh(x: float) 🔗
+float cosh(x: float) 
 
 Returns the hyperbolic cosine of x in radians.
 
-float cubic_interpolate(from: float, to: float, pre: float, post: float, weight: float) 🔗
+float cubic_interpolate(from: float, to: float, pre: float, post: float, weight: float) 
 
 Cubic interpolates between two values by the factor defined in weight with pre and post values.
 
-float cubic_interpolate_angle(from: float, to: float, pre: float, post: float, weight: float) 🔗
+float cubic_interpolate_angle(from: float, to: float, pre: float, post: float, weight: float) 
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in weight with pre and post values. See also lerp_angle().
 
-float cubic_interpolate_angle_in_time(from: float, to: float, pre: float, post: float, weight: float, to_t: float, pre_t: float, post_t: float) 🔗
+float cubic_interpolate_angle_in_time(from: float, to: float, pre: float, post: float, weight: float, to_t: float, pre_t: float, post_t: float) 
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in weight with pre and post values. See also lerp_angle().
 
 It can perform smoother interpolation than cubic_interpolate() by the time values.
 
-float cubic_interpolate_in_time(from: float, to: float, pre: float, post: float, weight: float, to_t: float, pre_t: float, post_t: float) 🔗
+float cubic_interpolate_in_time(from: float, to: float, pre: float, post: float, weight: float, to_t: float, pre_t: float, post_t: float) 
 
 Cubic interpolates between two values by the factor defined in weight with pre and post values.
 
 It can perform smoother interpolation than cubic_interpolate() by the time values.
 
-float db_to_linear(db: float) 🔗
+float db_to_linear(db: float) 
 
 Converts from decibels to linear energy (audio).
 
-float deg_to_rad(deg: float) 🔗
+float deg_to_rad(deg: float) 
 
 Converts an angle expressed in degrees to radians.
 
-float ease(x: float, curve: float) 🔗
+float ease(x: float, curve: float) 
 
 Returns an "eased" value of x based on an easing function defined with curve. This easing function is based on an exponent. The curve can be any floating-point number, with specific values leading to the following behaviors:
 
@@ -4407,11 +4407,11 @@ ease() curve values cheatsheet
 
 See also smoothstep(). If you need to perform more advanced transitions, use Tween.interpolate_value().
 
-String error_string(error: int) 🔗
+String error_string(error: int) 
 
 Returns a human-readable name for the given Error code.
 
-float exp(x: float) 🔗
+float exp(x: float) 
 
 The natural exponential function. It raises the mathematical constant e to the power of x and returns it.
 
@@ -4419,7 +4419,7 @@ e has an approximate value of 2.71828, and can be obtained with exp(1).
 
 For exponents to other bases use the method pow().
 
-Variant floor(x: Variant) 🔗
+Variant floor(x: Variant) 
 
 Rounds x downward (towards negative infinity), returning the largest whole number that is not more than x. Supported types: int, float, Vector2, Vector2i, Vector3, Vector3i, Vector4, Vector4i.
 
@@ -4427,13 +4427,13 @@ See also ceil(), round(), and snapped().
 
 Note: For better type safety, use floorf(), floori(), Vector2.floor(), Vector3.floor(), or Vector4.floor().
 
-float floorf(x: float) 🔗
+float floorf(x: float) 
 
 Rounds x downward (towards negative infinity), returning the largest whole number that is not more than x.
 
 A type-safe version of floor(), returning a float.
 
-int floori(x: float) 🔗
+int floori(x: float) 
 
 Rounds x downward (towards negative infinity), returning the largest whole number that is not more than x.
 
@@ -4441,31 +4441,31 @@ A type-safe version of floor(), returning an int.
 
 Note: This function is not the same as int(x), which rounds towards 0.
 
-float fmod(x: float, y: float) 🔗
+float fmod(x: float, y: float) 
 
 Returns the floating-point remainder of x divided by y, keeping the sign of x.
 
 For the integer remainder operation, use the % operator.
 
-float fposmod(x: float, y: float) 🔗
+float fposmod(x: float, y: float) 
 
 Returns the floating-point modulus of x divided by y, wrapping equally in positive and negative.
 
-int hash(variable: Variant) 🔗
+int hash(variable: Variant) 
 
 Returns the integer hash of the passed variable.
 
-Object instance_from_id(instance_id: int) 🔗
+Object instance_from_id(instance_id: int) 
 
 Returns the Object that corresponds to instance_id. All Objects have a unique instance ID. See also Object.get_instance_id().
 
-float inverse_lerp(from: float, to: float, weight: float) 🔗
+float inverse_lerp(from: float, to: float, weight: float) 
 
 Returns an interpolation or extrapolation factor considering the range specified in from and to, and the interpolated value specified in weight. The returned value will be between 0.0 and 1.0 if weight is between from and to (inclusive). If weight is located outside this range, then an extrapolation factor will be returned (return value lower than 0.0 or greater than 1.0). Use clamp() on the result of inverse_lerp() if this is not desired.
 
 See also lerp(), which performs the reverse of this operation, and remap() to map a continuous series of values to another.
 
-bool is_equal_approx(a: float, b: float) 🔗
+bool is_equal_approx(a: float, b: float) 
 
 Returns true if a and b are approximately equal to each other.
 
@@ -4473,27 +4473,27 @@ Here, "approximately equal" means that a and b are within a small internal epsil
 
 Infinity values of the same sign are considered equal.
 
-bool is_finite(x: float) 🔗
+bool is_finite(x: float) 
 
 Returns whether x is a finite value, i.e. it is not @GDScript.NAN, positive infinity, or negative infinity. See also is_inf() and is_nan().
 
-bool is_inf(x: float) 🔗
+bool is_inf(x: float) 
 
 Returns true if x is either positive infinity or negative infinity. See also is_finite() and is_nan().
 
-bool is_instance_id_valid(id: int) 🔗
+bool is_instance_id_valid(id: int) 
 
 Returns true if the Object that corresponds to id is a valid object (e.g. has not been deleted from memory). All Objects have a unique instance ID.
 
-bool is_instance_valid(instance: Variant) 🔗
+bool is_instance_valid(instance: Variant) 
 
 Returns true if instance is a valid Object (e.g. has not been deleted from memory).
 
-bool is_nan(x: float) 🔗
+bool is_nan(x: float) 
 
 Returns true if x is a NaN ("Not a Number" or invalid) value. This method is needed as @GDScript.NAN is not equal to itself, which means x == NAN can't be used to check whether a value is a NaN.
 
-bool is_same(a: Variant, b: Variant) 🔗
+bool is_same(a: Variant, b: Variant) 
 
 Returns true, for value types, if a and b share the same value. Returns true, for reference types, if the references of a and b are the same.
 
@@ -4501,13 +4501,13 @@ These are Variant value types: null, bool, int, float, String, StringName, Vecto
 
 These are Variant reference types: Object, Dictionary, Array, PackedByteArray, PackedInt32Array, PackedInt64Array, PackedFloat32Array, PackedFloat64Array, PackedStringArray, PackedVector2Array, PackedVector3Array, PackedVector4Array, and PackedColorArray.
 
-bool is_zero_approx(x: float) 🔗
+bool is_zero_approx(x: float) 
 
 Returns true if x is zero or almost zero. The comparison is done using a tolerance calculation with a small internal epsilon.
 
 This function is faster than using is_equal_approx() with one value as zero.
 
-Variant lerp(from: Variant, to: Variant, weight: Variant) 🔗
+Variant lerp(from: Variant, to: Variant, weight: Variant) 
 
 Linearly interpolates between two values by the factor defined in weight. To perform interpolation, weight should be between 0.0 and 1.0 (inclusive). However, values outside this range are allowed and can be used to perform extrapolation. If this is not desired, use clampf() to limit weight.
 
@@ -4517,7 +4517,7 @@ See also inverse_lerp() which performs the reverse of this operation. To perform
 
 Note: For better type safety, use lerpf(), Vector2.lerp(), Vector3.lerp(), Vector4.lerp(), Color.lerp(), Quaternion.slerp(), Basis.slerp(), Transform2D.interpolate_with(), or Transform3D.interpolate_with().
 
-float lerp_angle(from: float, to: float, weight: float) 🔗
+float lerp_angle(from: float, to: float, weight: float) 
 
 Linearly interpolates between two angles (in radians) by a weight value between 0.0 and 1.0.
 
@@ -4525,19 +4525,19 @@ Similar to lerp(), but interpolates correctly when the angles wrap around @GDScr
 
 Note: This function lerps through the shortest path between from and to. However, when these two angles are approximately PI + k * TAU apart for any integer k, it's not obvious which way they lerp due to floating-point precision errors. For example, lerp_angle(0, PI, weight) lerps counter-clockwise, while lerp_angle(0, PI + 5 * TAU, weight) lerps clockwise.
 
-float lerpf(from: float, to: float, weight: float) 🔗
+float lerpf(from: float, to: float, weight: float) 
 
 Linearly interpolates between two values by the factor defined in weight. To perform interpolation, weight should be between 0.0 and 1.0 (inclusive). However, values outside this range are allowed and can be used to perform extrapolation. If this is not desired, use clampf() on the result of this function.
 
 See also inverse_lerp() which performs the reverse of this operation. To perform eased interpolation with lerp(), combine it with ease() or smoothstep().
 
-float linear_to_db(lin: float) 🔗
+float linear_to_db(lin: float) 
 
 Converts from linear energy to decibels (audio). Since volume is not normally linear, this can be used to implement volume sliders that behave as expected.
 
 Example: Change the Master bus's volume through a Slider node, which ranges from 0.0 to 1.0:
 
-float log(x: float) 🔗
+float log(x: float) 
 
 Returns the natural logarithm of x (base [i]e[/i], with e being approximately 2.71828). This is the amount of time needed to reach a certain level of continuous growth.
 
@@ -4545,67 +4545,67 @@ Note: This is not the same as the "log" function on most calculators, which uses
 
 Note: The logarithm of 0 returns -inf, while negative values return -nan.
 
-Variant max(...) vararg 🔗
+Variant max(...) vararg 
 
 Returns the maximum of the given numeric values. This function can take any number of arguments.
 
 Note: When using this on vectors it will not perform component-wise maximum, and will pick the largest value when compared using x < y. To perform component-wise maximum, use Vector2.max(), Vector2i.max(), Vector3.max(), Vector3i.max(), Vector4.max(), and Vector4i.max().
 
-float maxf(a: float, b: float) 🔗
+float maxf(a: float, b: float) 
 
 Returns the maximum of two float values.
 
-int maxi(a: int, b: int) 🔗
+int maxi(a: int, b: int) 
 
 Returns the maximum of two int values.
 
-Variant min(...) vararg 🔗
+Variant min(...) vararg 
 
 Returns the minimum of the given numeric values. This function can take any number of arguments.
 
 Note: When using this on vectors it will not perform component-wise minimum, and will pick the smallest value when compared using x < y. To perform component-wise minimum, use Vector2.min(), Vector2i.min(), Vector3.min(), Vector3i.min(), Vector4.min(), and Vector4i.min().
 
-float minf(a: float, b: float) 🔗
+float minf(a: float, b: float) 
 
 Returns the minimum of two float values.
 
-int mini(a: int, b: int) 🔗
+int mini(a: int, b: int) 
 
 Returns the minimum of two int values.
 
-float move_toward(from: float, to: float, delta: float) 🔗
+float move_toward(from: float, to: float, delta: float) 
 
 Moves from toward to by the delta amount. Will not go past to.
 
 Use a negative delta value to move away.
 
-int nearest_po2(value: int) 🔗
+int nearest_po2(value: int) 
 
 Returns the smallest integer power of 2 that is greater than or equal to value.
 
 Warning: Due to its implementation, this method returns 0 rather than 1 for values less than or equal to 0, with an exception for value being the smallest negative 64-bit integer (-9223372036854775808) in which case the value is returned unchanged.
 
-float pingpong(value: float, length: float) 🔗
+float pingpong(value: float, length: float) 
 
 Wraps value between 0 and the length. If the limit is reached, the next value the function returns is decreased to the 0 side or increased to the length side (like a triangle wave). If length is less than zero, it becomes positive.
 
-int posmod(x: int, y: int) 🔗
+int posmod(x: int, y: int) 
 
 Returns the integer modulus of x divided by y that wraps equally in positive and negative.
 
-float pow(base: float, exp: float) 🔗
+float pow(base: float, exp: float) 
 
 Returns the result of base raised to the power of exp.
 
 In GDScript, this is the equivalent of the ** operator.
 
-void print(...) vararg 🔗
+void print(...) vararg 
 
 Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
 Note: Consider using push_error() and push_warning() to print error and warning messages instead of print() or print_rich(). This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed. See also Engine.print_to_stdout and ProjectSettings.application/run/disable_stdout.
 
-void print_rich(...) vararg 🔗
+void print_rich(...) vararg 
 
 Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
@@ -4619,43 +4619,43 @@ Note: Consider using push_error() and push_warning() to print error and warning 
 
 Note: Output displayed in the editor supports clickable [url=address]text[/url] tags. The [url] tag's address value is handled by OS.shell_open() when clicked.
 
-void print_verbose(...) vararg 🔗
+void print_verbose(...) vararg 
 
 If verbose mode is enabled (OS.is_stdout_verbose() returning true), converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
-void printerr(...) vararg 🔗
+void printerr(...) vararg 
 
 Prints one or more arguments to strings in the best way possible to standard error line.
 
-void printraw(...) vararg 🔗
+void printraw(...) vararg 
 
 Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike print(), no newline is automatically added at the end.
 
 Note: The OS terminal is not the same as the editor's Output dock. The output sent to the OS terminal can be seen when running Godot from a terminal. On Windows, this requires using the console.exe executable.
 
-void prints(...) vararg 🔗
+void prints(...) vararg 
 
 Prints one or more arguments to the console with a space between each argument.
 
-void printt(...) vararg 🔗
+void printt(...) vararg 
 
 Prints one or more arguments to the console with a tab between each argument.
 
-void push_error(...) vararg 🔗
+void push_error(...) vararg 
 
 Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
 Note: This function does not pause project execution. To print an error message and pause project execution in debug builds, use assert(false, "test error") instead.
 
-void push_warning(...) vararg 🔗
+void push_warning(...) vararg 
 
 Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
-float rad_to_deg(rad: float) 🔗
+float rad_to_deg(rad: float) 
 
 Converts an angle expressed in radians to degrees.
 
-PackedInt64Array rand_from_seed(seed: int) 🔗
+PackedInt64Array rand_from_seed(seed: int) 
 
 Given a seed, returns a PackedInt64Array of size 2, where its first element is the randomized int value, and the second element is the same as seed. Passing the same seed consistently returns the same array.
 
@@ -4663,11 +4663,11 @@ Note: "Seed" here refers to the internal state of the pseudo random number gener
 
 Returns a random floating-point value between 0.0 and 1.0 (inclusive).
 
-float randf_range(from: float, to: float) 🔗
+float randf_range(from: float, to: float) 
 
 Returns a random floating-point value between from and to (inclusive).
 
-float randfn(mean: float, deviation: float) 🔗
+float randfn(mean: float, deviation: float) 
 
 Returns a normally-distributed, pseudo-random floating-point value from the specified mean and a standard deviation. This is also known as a Gaussian distribution.
 
@@ -4675,7 +4675,7 @@ Note: This method uses the Box-Muller transform algorithm.
 
 Returns a random unsigned 32-bit integer. Use remainder to obtain a random value in the interval [0, N - 1] (where N is smaller than 2^32).
 
-int randi_range(from: int, to: int) 🔗
+int randi_range(from: int, to: int) 
 
 Returns a random signed 32-bit integer between from and to (inclusive). If to is lesser than from, they are swapped.
 
@@ -4683,7 +4683,7 @@ Randomizes the seed (or the internal state) of the random number generator. The 
 
 Note: This function is called automatically when the project is run. If you need to fix the seed to have consistent, reproducible results, use seed() to initialize the random number generator.
 
-float remap(value: float, istart: float, istop: float, ostart: float, ostop: float) 🔗
+float remap(value: float, istart: float, istop: float, ostart: float, ostop: float) 
 
 Maps a value from range [istart, istop] to [ostart, ostop]. See also lerp() and inverse_lerp(). If value is outside [istart, istop], then the resulting value will also be outside [ostart, ostop]. If this is not desired, use clamp() on the result of this function.
 
@@ -4691,15 +4691,15 @@ For complex use cases where multiple ranges are needed, consider using Curve or 
 
 Note: If istart == istop, the return value is undefined (most likely NaN, INF, or -INF).
 
-int rid_allocate_id() 🔗
+int rid_allocate_id() 
 
 Allocates a unique ID which can be used by the implementation to construct an RID. This is used mainly from native extensions to implement servers.
 
-RID rid_from_int64(base: int) 🔗
+RID rid_from_int64(base: int) 
 
 Creates an RID from a base. This is used mainly from native extensions to build servers.
 
-float rotate_toward(from: float, to: float, delta: float) 🔗
+float rotate_toward(from: float, to: float, delta: float) 
 
 Rotates from toward to by the delta amount. Will not go past to.
 
@@ -4707,7 +4707,7 @@ Similar to move_toward(), but interpolates correctly when the angles wrap around
 
 If delta is negative, this function will rotate away from to, toward the opposite angle, and will not go past the opposite angle.
 
-Variant round(x: Variant) 🔗
+Variant round(x: Variant) 
 
 Rounds x to the nearest whole number, with halfway cases rounded away from 0. Supported types: int, float, Vector2, Vector2i, Vector3, Vector3i, Vector4, Vector4i.
 
@@ -4715,23 +4715,23 @@ See also floor(), ceil(), and snapped().
 
 Note: For better type safety, use roundf(), roundi(), Vector2.round(), Vector3.round(), or Vector4.round().
 
-float roundf(x: float) 🔗
+float roundf(x: float) 
 
 Rounds x to the nearest whole number, with halfway cases rounded away from 0.
 
 A type-safe version of round(), returning a float.
 
-int roundi(x: float) 🔗
+int roundi(x: float) 
 
 Rounds x to the nearest whole number, with halfway cases rounded away from 0.
 
 A type-safe version of round(), returning an int.
 
-void seed(base: int) 🔗
+void seed(base: int) 
 
 Sets the seed for the random number generator to base. Setting the seed manually can ensure consistent, repeatable results for most random functions.
 
-Variant sign(x: Variant) 🔗
+Variant sign(x: Variant) 
 
 Returns the same type of Variant as x, with -1 for negative values, 1 for positive values, and 0 for zeros. For nan values it returns 0.
 
@@ -4739,21 +4739,21 @@ Supported types: int, float, Vector2, Vector2i, Vector3, Vector3i, Vector4, Vect
 
 Note: For better type safety, use signf(), signi(), Vector2.sign(), Vector2i.sign(), Vector3.sign(), Vector3i.sign(), Vector4.sign(), or Vector4i.sign().
 
-float signf(x: float) 🔗
+float signf(x: float) 
 
 Returns -1.0 if x is negative, 1.0 if x is positive, and 0.0 if x is zero. For nan values of x it returns 0.0.
 
 Returns -1 if x is negative, 1 if x is positive, and 0 if x is zero.
 
-float sin(angle_rad: float) 🔗
+float sin(angle_rad: float) 
 
 Returns the sine of angle angle_rad in radians.
 
-float sinh(x: float) 🔗
+float sinh(x: float) 
 
 Returns the hyperbolic sine of x.
 
-float smoothstep(from: float, to: float, x: float) 🔗
+float smoothstep(from: float, to: float, x: float) 
 
 Returns a smooth cubic Hermite interpolation between 0 and 1.
 
@@ -4769,7 +4769,7 @@ Comparison between smoothstep() and ease(x, -1.6521) return values
 
 Smoothstep() return values with positive, zero, and negative ranges
 
-Variant snapped(x: Variant, step: Variant) 🔗
+Variant snapped(x: Variant, step: Variant) 
 
 Returns the multiple of step that is the closest to x. This can also be used to round a floating-point number to an arbitrary number of decimals.
 
@@ -4779,45 +4779,45 @@ See also ceil(), floor(), and round().
 
 Note: For better type safety, use snappedf(), snappedi(), Vector2.snapped(), Vector2i.snapped(), Vector3.snapped(), Vector3i.snapped(), Vector4.snapped(), or Vector4i.snapped().
 
-float snappedf(x: float, step: float) 🔗
+float snappedf(x: float, step: float) 
 
 Returns the multiple of step that is the closest to x. This can also be used to round a floating-point number to an arbitrary number of decimals.
 
 A type-safe version of snapped(), returning a float.
 
-int snappedi(x: float, step: int) 🔗
+int snappedi(x: float, step: int) 
 
 Returns the multiple of step that is the closest to x.
 
 A type-safe version of snapped(), returning an int.
 
-float sqrt(x: float) 🔗
+float sqrt(x: float) 
 
 Returns the square root of x, where x is a non-negative number.
 
 Note: Negative values of x return NaN ("Not a Number"). In C#, if you need negative inputs, use System.Numerics.Complex.
 
-int step_decimals(x: float) 🔗
+int step_decimals(x: float) 
 
 Returns the position of the first non-zero digit, after the decimal point. Note that the maximum return value is 10, which is a design decision in the implementation.
 
-String str(...) vararg 🔗
+String str(...) vararg 
 
 Converts one or more arguments of any Variant type to a String in the best way possible.
 
-Variant str_to_var(string: String) 🔗
+Variant str_to_var(string: String) 
 
 Converts a formatted string that was returned by var_to_str() to the original Variant.
 
-float tan(angle_rad: float) 🔗
+float tan(angle_rad: float) 
 
 Returns the tangent of angle angle_rad in radians.
 
-float tanh(x: float) 🔗
+float tanh(x: float) 
 
 Returns the hyperbolic tangent of x.
 
-Variant type_convert(variant: Variant, type: int) 🔗
+Variant type_convert(variant: Variant, type: int) 
 
 Converts the given variant to the given type, using the Variant.Type values. This method is generous with how it handles types, it can automatically convert between array types, convert numeric Strings to int, and converting most things to String.
 
@@ -4825,17 +4825,17 @@ If the type conversion cannot be done, this method will return the default value
 
 The returned value is a Variant, but the data inside and its type will be the same as the requested type.
 
-String type_string(type: int) 🔗
+String type_string(type: int) 
 
 Returns a human-readable name of the given type, using the Variant.Type values.
 
-int typeof(variable: Variant) 🔗
+int typeof(variable: Variant) 
 
 Returns the internal type of the given variable, using the Variant.Type values.
 
 See also type_string().
 
-PackedByteArray var_to_bytes(variable: Variant) 🔗
+PackedByteArray var_to_bytes(variable: Variant) 
 
 Encodes a Variant value to a byte array, without encoding objects. Deserialization can be done with bytes_to_var().
 
@@ -4843,37 +4843,37 @@ Note: If you need object serialization, see var_to_bytes_with_objects().
 
 Note: Encoding Callable is not supported and will result in an empty value, regardless of the data.
 
-PackedByteArray var_to_bytes_with_objects(variable: Variant) 🔗
+PackedByteArray var_to_bytes_with_objects(variable: Variant) 
 
 Encodes a Variant value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with bytes_to_var_with_objects().
 
 Note: Encoding Callable is not supported and will result in an empty value, regardless of the data.
 
-String var_to_str(variable: Variant) 🔗
+String var_to_str(variable: Variant) 
 
 Converts a Variant variable to a formatted String that can then be parsed using str_to_var().
 
 Note: Converting Signal or Callable is not supported and will result in an empty value for these types, regardless of their data.
 
-Variant weakref(obj: Variant) 🔗
+Variant weakref(obj: Variant) 
 
 Returns a WeakRef instance holding a weak reference to obj. Returns an empty WeakRef instance if obj is null. Prints an error and returns null if obj is neither Object-derived nor null.
 
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 
-Variant wrap(value: Variant, min: Variant, max: Variant) 🔗
+Variant wrap(value: Variant, min: Variant, max: Variant) 
 
 Wraps the Variant value between min and max. min is inclusive while max is exclusive. This can be used for creating loop-like behavior or infinite surfaces.
 
 Variant types int and float are supported. If any of the arguments is float, this function returns a float, otherwise it returns an int.
 
-float wrapf(value: float, min: float, max: float) 🔗
+float wrapf(value: float, min: float, max: float) 
 
 Wraps the float value between min and max. min is inclusive while max is exclusive. This can be used for creating loop-like behavior or infinite surfaces.
 
 Note: If min is 0, this is equivalent to fposmod(), so prefer using that instead. wrapf() is more flexible than using the fposmod() approach by giving the user control over the minimum value.
 
-int wrapi(value: int, min: int, max: int) 🔗
+int wrapi(value: int, min: int, max: int) 
 
 Wraps the integer value between min and max. min is inclusive while max is exclusive. This can be used for creating loop-like behavior or infinite surfaces.
 
@@ -5121,27 +5121,27 @@ set_translation_domain_inherited()
 
 update_configuration_warnings()
 
-child_entered_tree(node: Node) 🔗
+child_entered_tree(node: Node) 
 
 Emitted when the child node enters the SceneTree, usually because this node entered the tree (see tree_entered), or add_child() has been called.
 
 This signal is emitted after the child node's own NOTIFICATION_ENTER_TREE and tree_entered.
 
-child_exiting_tree(node: Node) 🔗
+child_exiting_tree(node: Node) 
 
 Emitted when the child node is about to exit the SceneTree, usually because this node is exiting the tree (see tree_exiting), or because the child node is being removed or freed.
 
 When this signal is received, the child node is still accessible inside the tree. This signal is emitted after the child node's own tree_exiting and NOTIFICATION_EXIT_TREE.
 
-child_order_changed() 🔗
+child_order_changed() 
 
 Emitted when the list of children is changed. This happens when child nodes are added, moved or removed.
 
-editor_description_changed(node: Node) 🔗
+editor_description_changed(node: Node) 
 
 Emitted when the node's editor description field changed.
 
-editor_state_changed() 🔗
+editor_state_changed() 
 
 Emitted when an attribute of the node that is relevant to the editor is changed. Only emitted in the editor.
 
@@ -5149,7 +5149,7 @@ Emitted when the node is considered ready, after _ready() is called.
 
 Emitted when the node's name is changed, if the node is inside the tree.
 
-replacing_by(node: Node) 🔗
+replacing_by(node: Node) 
 
 Emitted when this node is being replaced by the node, see replace_by().
 
@@ -5187,7 +5187,7 @@ ProcessMode PROCESS_MODE_DISABLED = 4
 
 Never process. Completely disables processing, ignoring SceneTree.paused. This is the inverse of PROCESS_MODE_ALWAYS.
 
-enum ProcessThreadGroup: 🔗
+enum ProcessThreadGroup: 
 
 ProcessThreadGroup PROCESS_THREAD_GROUP_INHERIT = 0
 
@@ -5201,7 +5201,7 @@ ProcessThreadGroup PROCESS_THREAD_GROUP_SUB_THREAD = 2
 
 Process this node (and child nodes set to inherit) on a sub-thread. See process_thread_group for more information.
 
-flags ProcessThreadMessages: 🔗
+flags ProcessThreadMessages: 
 
 ProcessThreadMessages FLAG_PROCESS_THREAD_MESSAGES = 1
 
@@ -5215,7 +5215,7 @@ ProcessThreadMessages FLAG_PROCESS_THREAD_MESSAGES_ALL = 3
 
 Allows this node to process threaded messages created with call_deferred_thread_group() right before either _process() or _physics_process() are called.
 
-enum PhysicsInterpolationMode: 🔗
+enum PhysicsInterpolationMode: 
 
 PhysicsInterpolationMode PHYSICS_INTERPOLATION_MODE_INHERIT = 0
 
@@ -5229,7 +5229,7 @@ PhysicsInterpolationMode PHYSICS_INTERPOLATION_MODE_OFF = 2
 
 Disables physics interpolation for this node and for children set to PHYSICS_INTERPOLATION_MODE_INHERIT.
 
-enum DuplicateFlags: 🔗
+enum DuplicateFlags: 
 
 DuplicateFlags DUPLICATE_SIGNALS = 1
 
@@ -5259,7 +5259,7 @@ InternalMode INTERNAL_MODE_BACK = 2
 
 The node will be placed at the end of the parent's children, after any non-internal sibling.
 
-enum AutoTranslateMode: 🔗
+enum AutoTranslateMode: 
 
 AutoTranslateMode AUTO_TRANSLATE_MODE_INHERIT = 0
 
@@ -5275,59 +5275,59 @@ Never automatically translate. This is the inverse of AUTO_TRANSLATE_MODE_ALWAYS
 
 String parsing for POT generation will be skipped for this node and children that are set to AUTO_TRANSLATE_MODE_INHERIT.
 
-NOTIFICATION_ENTER_TREE = 10 🔗
+NOTIFICATION_ENTER_TREE = 10 
 
 Notification received when the node enters a SceneTree. See _enter_tree().
 
 This notification is received before the related tree_entered signal.
 
-NOTIFICATION_EXIT_TREE = 11 🔗
+NOTIFICATION_EXIT_TREE = 11 
 
 Notification received when the node is about to exit a SceneTree. See _exit_tree().
 
 This notification is received after the related tree_exiting signal.
 
-NOTIFICATION_MOVED_IN_PARENT = 12 🔗
+NOTIFICATION_MOVED_IN_PARENT = 12 
 
 Deprecated: This notification is no longer sent by the engine. Use NOTIFICATION_CHILD_ORDER_CHANGED instead.
 
-NOTIFICATION_READY = 13 🔗
+NOTIFICATION_READY = 13 
 
 Notification received when the node is ready. See _ready().
 
-NOTIFICATION_PAUSED = 14 🔗
+NOTIFICATION_PAUSED = 14 
 
 Notification received when the node is paused. See process_mode.
 
-NOTIFICATION_UNPAUSED = 15 🔗
+NOTIFICATION_UNPAUSED = 15 
 
 Notification received when the node is unpaused. See process_mode.
 
-NOTIFICATION_PHYSICS_PROCESS = 16 🔗
+NOTIFICATION_PHYSICS_PROCESS = 16 
 
 Notification received from the tree every physics frame when is_physics_processing() returns true. See _physics_process().
 
-NOTIFICATION_PROCESS = 17 🔗
+NOTIFICATION_PROCESS = 17 
 
 Notification received from the tree every rendered frame when is_processing() returns true. See _process().
 
-NOTIFICATION_PARENTED = 18 🔗
+NOTIFICATION_PARENTED = 18 
 
 Notification received when the node is set as a child of another node (see add_child() and add_sibling()).
 
 Note: This does not mean that the node entered the SceneTree.
 
-NOTIFICATION_UNPARENTED = 19 🔗
+NOTIFICATION_UNPARENTED = 19 
 
 Notification received when the parent node calls remove_child() on this node.
 
 Note: This does not mean that the node exited the SceneTree.
 
-NOTIFICATION_SCENE_INSTANTIATED = 20 🔗
+NOTIFICATION_SCENE_INSTANTIATED = 20 
 
 Notification received only by the newly instantiated scene root node, when PackedScene.instantiate() is completed.
 
-NOTIFICATION_DRAG_BEGIN = 21 🔗
+NOTIFICATION_DRAG_BEGIN = 21 
 
 Notification received when a drag operation begins. All nodes receive this notification, not only the dragged one.
 
@@ -5335,147 +5335,147 @@ Can be triggered either by dragging a Control that provides drag data (see Contr
 
 Use Viewport.gui_get_drag_data() to get the dragged data.
 
-NOTIFICATION_DRAG_END = 22 🔗
+NOTIFICATION_DRAG_END = 22 
 
 Notification received when a drag operation ends.
 
 Use Viewport.gui_is_drag_successful() to check if the drag succeeded.
 
-NOTIFICATION_PATH_RENAMED = 23 🔗
+NOTIFICATION_PATH_RENAMED = 23 
 
 Notification received when the node's name or one of its ancestors' name is changed. This notification is not received when the node is removed from the SceneTree.
 
-NOTIFICATION_CHILD_ORDER_CHANGED = 24 🔗
+NOTIFICATION_CHILD_ORDER_CHANGED = 24 
 
 Notification received when the list of children is changed. This happens when child nodes are added, moved or removed.
 
-NOTIFICATION_INTERNAL_PROCESS = 25 🔗
+NOTIFICATION_INTERNAL_PROCESS = 25 
 
 Notification received from the tree every rendered frame when is_processing_internal() returns true.
 
-NOTIFICATION_INTERNAL_PHYSICS_PROCESS = 26 🔗
+NOTIFICATION_INTERNAL_PHYSICS_PROCESS = 26 
 
 Notification received from the tree every physics frame when is_physics_processing_internal() returns true.
 
-NOTIFICATION_POST_ENTER_TREE = 27 🔗
+NOTIFICATION_POST_ENTER_TREE = 27 
 
 Notification received when the node enters the tree, just before NOTIFICATION_READY may be received. Unlike the latter, it is sent every time the node enters tree, not just once.
 
-NOTIFICATION_DISABLED = 28 🔗
+NOTIFICATION_DISABLED = 28 
 
 Notification received when the node is disabled. See PROCESS_MODE_DISABLED.
 
-NOTIFICATION_ENABLED = 29 🔗
+NOTIFICATION_ENABLED = 29 
 
 Notification received when the node is enabled again after being disabled. See PROCESS_MODE_DISABLED.
 
-NOTIFICATION_RESET_PHYSICS_INTERPOLATION = 2001 🔗
+NOTIFICATION_RESET_PHYSICS_INTERPOLATION = 2001 
 
 Notification received when reset_physics_interpolation() is called on the node or its ancestors.
 
-NOTIFICATION_EDITOR_PRE_SAVE = 9001 🔗
+NOTIFICATION_EDITOR_PRE_SAVE = 9001 
 
 Notification received right before the scene with the node is saved in the editor. This notification is only sent in the Godot editor and will not occur in exported projects.
 
-NOTIFICATION_EDITOR_POST_SAVE = 9002 🔗
+NOTIFICATION_EDITOR_POST_SAVE = 9002 
 
 Notification received right after the scene with the node is saved in the editor. This notification is only sent in the Godot editor and will not occur in exported projects.
 
-NOTIFICATION_WM_MOUSE_ENTER = 1002 🔗
+NOTIFICATION_WM_MOUSE_ENTER = 1002 
 
 Notification received when the mouse enters the window.
 
 Implemented for embedded windows and on desktop and web platforms.
 
-NOTIFICATION_WM_MOUSE_EXIT = 1003 🔗
+NOTIFICATION_WM_MOUSE_EXIT = 1003 
 
 Notification received when the mouse leaves the window.
 
 Implemented for embedded windows and on desktop and web platforms.
 
-NOTIFICATION_WM_WINDOW_FOCUS_IN = 1004 🔗
+NOTIFICATION_WM_WINDOW_FOCUS_IN = 1004 
 
 Notification received from the OS when the node's Window ancestor is focused. This may be a change of focus between two windows of the same engine instance, or from the OS desktop or a third-party application to a window of the game (in which case NOTIFICATION_APPLICATION_FOCUS_IN is also received).
 
 A Window node receives this notification when it is focused.
 
-NOTIFICATION_WM_WINDOW_FOCUS_OUT = 1005 🔗
+NOTIFICATION_WM_WINDOW_FOCUS_OUT = 1005 
 
 Notification received from the OS when the node's Window ancestor is defocused. This may be a change of focus between two windows of the same engine instance, or from a window of the game to the OS desktop or a third-party application (in which case NOTIFICATION_APPLICATION_FOCUS_OUT is also received).
 
 A Window node receives this notification when it is defocused.
 
-NOTIFICATION_WM_CLOSE_REQUEST = 1006 🔗
+NOTIFICATION_WM_CLOSE_REQUEST = 1006 
 
 Notification received from the OS when a close request is sent (e.g. closing the window with a "Close" button or Alt + F4).
 
 Implemented on desktop platforms.
 
-NOTIFICATION_WM_GO_BACK_REQUEST = 1007 🔗
+NOTIFICATION_WM_GO_BACK_REQUEST = 1007 
 
 Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
 
 Implemented only on Android.
 
-NOTIFICATION_WM_SIZE_CHANGED = 1008 🔗
+NOTIFICATION_WM_SIZE_CHANGED = 1008 
 
 Notification received when the window is resized.
 
 Note: Only the resized Window node receives this notification, and it's not propagated to the child nodes.
 
-NOTIFICATION_WM_DPI_CHANGE = 1009 🔗
+NOTIFICATION_WM_DPI_CHANGE = 1009 
 
 Notification received from the OS when the screen's dots per inch (DPI) scale is changed. Only implemented on macOS.
 
-NOTIFICATION_VP_MOUSE_ENTER = 1010 🔗
+NOTIFICATION_VP_MOUSE_ENTER = 1010 
 
 Notification received when the mouse cursor enters the Viewport's visible area, that is not occluded behind other Controls or Windows, provided its Viewport.gui_disable_input is false and regardless if it's currently focused or not.
 
-NOTIFICATION_VP_MOUSE_EXIT = 1011 🔗
+NOTIFICATION_VP_MOUSE_EXIT = 1011 
 
 Notification received when the mouse cursor leaves the Viewport's visible area, that is not occluded behind other Controls or Windows, provided its Viewport.gui_disable_input is false and regardless if it's currently focused or not.
 
-NOTIFICATION_WM_POSITION_CHANGED = 1012 🔗
+NOTIFICATION_WM_POSITION_CHANGED = 1012 
 
 Notification received when the window is moved.
 
-NOTIFICATION_OS_MEMORY_WARNING = 2009 🔗
+NOTIFICATION_OS_MEMORY_WARNING = 2009 
 
 Notification received from the OS when the application is exceeding its allocated memory.
 
 Implemented only on iOS.
 
-NOTIFICATION_TRANSLATION_CHANGED = 2010 🔗
+NOTIFICATION_TRANSLATION_CHANGED = 2010 
 
 Notification received when translations may have changed. Can be triggered by the user changing the locale, changing auto_translate_mode or when the node enters the scene tree. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like Object.tr().
 
 Note: This notification is received alongside NOTIFICATION_ENTER_TREE, so if you are instantiating a scene, the child nodes will not be initialized yet. You can use it to setup translations for this node, child nodes created from script, or if you want to access child nodes added in the editor, make sure the node is ready using is_node_ready().
 
-NOTIFICATION_WM_ABOUT = 2011 🔗
+NOTIFICATION_WM_ABOUT = 2011 
 
 Notification received from the OS when a request for "About" information is sent.
 
 Implemented only on macOS.
 
-NOTIFICATION_CRASH = 2012 🔗
+NOTIFICATION_CRASH = 2012 
 
 Notification received from Godot's crash handler when the engine is about to crash.
 
 Implemented on desktop platforms, if the crash handler is enabled.
 
-NOTIFICATION_OS_IME_UPDATE = 2013 🔗
+NOTIFICATION_OS_IME_UPDATE = 2013 
 
 Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
 Implemented only on macOS.
 
-NOTIFICATION_APPLICATION_RESUMED = 2014 🔗
+NOTIFICATION_APPLICATION_RESUMED = 2014 
 
 Notification received from the OS when the application is resumed.
 
 Specific to the Android and iOS platforms.
 
-NOTIFICATION_APPLICATION_PAUSED = 2015 🔗
+NOTIFICATION_APPLICATION_PAUSED = 2015 
 
 Notification received from the OS when the application is paused.
 
@@ -5483,31 +5483,31 @@ Specific to the Android and iOS platforms.
 
 Note: On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
 
-NOTIFICATION_APPLICATION_FOCUS_IN = 2016 🔗
+NOTIFICATION_APPLICATION_FOCUS_IN = 2016 
 
 Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
 Implemented on desktop and mobile platforms.
 
-NOTIFICATION_APPLICATION_FOCUS_OUT = 2017 🔗
+NOTIFICATION_APPLICATION_FOCUS_OUT = 2017 
 
 Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
 Implemented on desktop and mobile platforms.
 
-NOTIFICATION_TEXT_SERVER_CHANGED = 2018 🔗
+NOTIFICATION_TEXT_SERVER_CHANGED = 2018 
 
 Notification received when the TextServer is changed.
 
-NOTIFICATION_ACCESSIBILITY_UPDATE = 3000 🔗
+NOTIFICATION_ACCESSIBILITY_UPDATE = 3000 
 
 Notification received when an accessibility information update is required.
 
-NOTIFICATION_ACCESSIBILITY_INVALIDATE = 3001 🔗
+NOTIFICATION_ACCESSIBILITY_INVALIDATE = 3001 
 
 Notification received when accessibility elements are invalidated. All node accessibility elements are automatically deleted after receiving this message, therefore all existing references to such elements should be discarded.
 
-AutoTranslateMode auto_translate_mode = 0 🔗
+AutoTranslateMode auto_translate_mode = 0 
 
 void set_auto_translate_mode(value: AutoTranslateMode)
 
@@ -5517,7 +5517,7 @@ Defines if any text should automatically change to its translated version depend
 
 Note: For the root node, auto translate mode can also be set via ProjectSettings.internationalization/rendering/root_node_auto_translate.
 
-String editor_description = "" 🔗
+String editor_description = "" 
 
 void set_editor_description(value: String)
 
@@ -5525,7 +5525,7 @@ String get_editor_description()
 
 An optional description to the node. It will be displayed as a tooltip when hovering over the node in the editor's Scene dock.
 
-MultiplayerAPI multiplayer 🔗
+MultiplayerAPI multiplayer 
 
 MultiplayerAPI get_multiplayer()
 
@@ -5547,7 +5547,7 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 
 Note: In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will not be saved. To prevent this, remember to set the owner after calling add_child().
 
-PhysicsInterpolationMode physics_interpolation_mode = 0 🔗
+PhysicsInterpolationMode physics_interpolation_mode = 0 
 
 void set_physics_interpolation_mode(value: PhysicsInterpolationMode)
 
@@ -5561,7 +5561,7 @@ Note: Some node types like VehicleWheel3D have physics interpolation disabled by
 
 Note: When teleporting a node to a distant position, it's recommended to temporarily disable interpolation with reset_physics_interpolation() after moving the node. This avoids creating a visual streak between the old and new positions.
 
-ProcessMode process_mode = 0 🔗
+ProcessMode process_mode = 0 
 
 void set_process_mode(value: ProcessMode)
 
@@ -5569,7 +5569,7 @@ ProcessMode get_process_mode()
 
 The node's processing behavior. To check if the node can process in its current mode, use can_process().
 
-int process_physics_priority = 0 🔗
+int process_physics_priority = 0 
 
 void set_physics_process_priority(value: int)
 
@@ -5577,7 +5577,7 @@ int get_physics_process_priority()
 
 Similar to process_priority but for NOTIFICATION_PHYSICS_PROCESS, _physics_process(), or NOTIFICATION_INTERNAL_PHYSICS_PROCESS.
 
-int process_priority = 0 🔗
+int process_priority = 0 
 
 void set_process_priority(value: int)
 
@@ -5585,7 +5585,7 @@ int get_process_priority()
 
 The node's execution order of the process callbacks (_process(), NOTIFICATION_PROCESS, and NOTIFICATION_INTERNAL_PROCESS). Nodes whose priority value is lower call their process callbacks first, regardless of tree order.
 
-ProcessThreadGroup process_thread_group = 0 🔗
+ProcessThreadGroup process_thread_group = 0 
 
 void set_process_thread_group(value: ProcessThreadGroup)
 
@@ -5599,7 +5599,7 @@ During processing in a sub-thread, accessing most functions in nodes outside the
 
 To better understand process thread groups, the idea is that any node set to any other value than PROCESS_THREAD_GROUP_INHERIT will include any child (and grandchild) nodes set to inherit into its process thread group. This means that the processing of all the nodes in the group will happen together, at the same time as the node including them.
 
-int process_thread_group_order 🔗
+int process_thread_group_order 
 
 void set_process_thread_group_order(value: int)
 
@@ -5607,7 +5607,7 @@ int get_process_thread_group_order()
 
 Change the process thread group order. Groups with a lesser order will process before groups with a greater order. This is useful when a large amount of nodes process in sub thread and, afterwards, another group wants to collect their result in the main thread, as an example.
 
-BitField[ProcessThreadMessages] process_thread_messages 🔗
+BitField[ProcessThreadMessages] process_thread_messages 
 
 void set_process_thread_messages(value: BitField[ProcessThreadMessages])
 
@@ -5615,7 +5615,7 @@ BitField[ProcessThreadMessages] get_process_thread_messages()
 
 Set whether the current thread group will process messages (calls to call_deferred_thread_group() on threads), and whether it wants to receive them during regular process or physics process callbacks.
 
-String scene_file_path 🔗
+String scene_file_path 
 
 void set_scene_file_path(value: String)
 
@@ -5623,7 +5623,7 @@ String get_scene_file_path()
 
 The original scene's file path, if the node has been instantiated from a PackedScene file. Only scene root nodes contains this.
 
-bool unique_name_in_owner = false 🔗
+bool unique_name_in_owner = false 
 
 void set_unique_name_in_owner(value: bool)
 
@@ -5633,25 +5633,25 @@ If true, the node can be accessed from any node sharing the same owner or from t
 
 Note: If another node with the same owner shares the same name as this node, the other node will no longer be accessible as unique.
 
-void _enter_tree() virtual 🔗
+void _enter_tree() virtual 
 
 Called when the node enters the SceneTree (e.g. upon instantiating, scene changing, or after calling add_child() in a script). If the node has children, its _enter_tree() callback will be called first, and then that of the children.
 
 Corresponds to the NOTIFICATION_ENTER_TREE notification in Object._notification().
 
-void _exit_tree() virtual 🔗
+void _exit_tree() virtual 
 
 Called when the node is about to leave the SceneTree (e.g. upon freeing, scene changing, or after calling remove_child() in a script). If the node has children, its _exit_tree() callback will be called last, after all its children have left the tree.
 
 Corresponds to the NOTIFICATION_EXIT_TREE notification in Object._notification() and signal tree_exiting. To get notified when the node has already left the active tree, connect to the tree_exited.
 
-PackedStringArray _get_accessibility_configuration_warnings() virtual const 🔗
+PackedStringArray _get_accessibility_configuration_warnings() virtual const 
 
 The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a tool script, and accessibility warnings are enabled in the editor settings.
 
 Returning an empty array produces no warnings.
 
-PackedStringArray _get_configuration_warnings() virtual const 🔗
+PackedStringArray _get_configuration_warnings() virtual const 
 
 The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a tool script.
 
@@ -5659,11 +5659,11 @@ Returning an empty array produces no warnings.
 
 Call update_configuration_warnings() when the warnings need to be updated for this node.
 
-RID _get_focused_accessibility_element() virtual const 🔗
+RID _get_focused_accessibility_element() virtual const 
 
 Called during accessibility information updates to determine the currently focused sub-element, should return a sub-element RID or the value returned by get_accessibility_element().
 
-void _input(event: InputEvent) virtual 🔗
+void _input(event: InputEvent) virtual 
 
 Called when there is an input event. The input event propagates up through the node tree until a node consumes it.
 
@@ -5675,7 +5675,7 @@ For gameplay input, _unhandled_input() and _unhandled_key_input() are usually a 
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void _physics_process(delta: float) virtual 🔗
+void _physics_process(delta: float) virtual 
 
 Called once on each physics tick, and allows Nodes to synchronize their logic with physics ticks. delta is the logical time between physics ticks in seconds and is equal to Engine.time_scale / Engine.physics_ticks_per_second.
 
@@ -5689,7 +5689,7 @@ Note: This method is only called if the node is present in the scene tree (i.e. 
 
 Note: Accumulated delta may diverge from real world seconds.
 
-void _process(delta: float) virtual 🔗
+void _process(delta: float) virtual 
 
 Called on each idle frame, prior to rendering, and after physics ticks have been processed. delta is the time between frames in seconds.
 
@@ -5707,7 +5707,7 @@ Note: When --fixed-fps is enabled or the engine is running in Movie Maker mode (
 
 Note: Frame delta may be post-processed by OS.delta_smoothing if this is enabled for the project.
 
-void _ready() virtual 🔗
+void _ready() virtual 
 
 Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their _ready() callbacks get triggered first, and the parent node will receive the ready notification afterwards.
 
@@ -5717,7 +5717,7 @@ Usually used for initialization. For even earlier initialization, Object._init()
 
 Note: This method may be called only once for each node. After removing a node from the scene tree and adding it again, _ready() will not be called a second time. This can be bypassed by requesting another call with request_ready(), which may be called anywhere before adding the node again.
 
-void _shortcut_input(event: InputEvent) virtual 🔗
+void _shortcut_input(event: InputEvent) virtual 
 
 Called when an InputEventKey, InputEventShortcut, or InputEventJoypadButton hasn't been consumed by _input() or any GUI Control item. It is called before _unhandled_key_input() and _unhandled_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -5729,7 +5729,7 @@ This method can be used to handle shortcuts. For generic GUI events, use _input(
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
 
-void _unhandled_input(event: InputEvent) virtual 🔗
+void _unhandled_input(event: InputEvent) virtual 
 
 Called when an InputEvent hasn't been consumed by _input() or any GUI Control item. It is called after _shortcut_input() and after _unhandled_key_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -5741,7 +5741,7 @@ For gameplay input, this method is usually a better fit than _input(), as GUI ev
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void _unhandled_key_input(event: InputEvent) virtual 🔗
+void _unhandled_key_input(event: InputEvent) virtual 
 
 Called when an InputEventKey hasn't been consumed by _input() or any GUI Control item. It is called after _shortcut_input() but before _unhandled_input(). The input event propagates up through the node tree until a node consumes it.
 
@@ -5755,7 +5755,7 @@ For gameplay input, this and _unhandled_input() are usually a better fit than _i
 
 Note: This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
-void add_child(node: Node, force_readable_name: bool = false, internal: InternalMode = 0) 🔗
+void add_child(node: Node, force_readable_name: bool = false, internal: InternalMode = 0) 
 
 Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.
 
@@ -5769,7 +5769,7 @@ If you need the child node to be added below a specific node in the list of chil
 
 Note: If you want a child to be persisted to a PackedScene, you must set owner in addition to calling add_child(). This is typically relevant for tool scripts and editor plugins. If add_child() is called without setting owner, the newly added Node will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
-void add_sibling(sibling: Node, force_readable_name: bool = false) 🔗
+void add_sibling(sibling: Node, force_readable_name: bool = false) 
 
 Adds a sibling node to this node's parent, and moves the added sibling right below this node.
 
@@ -5779,7 +5779,7 @@ Use add_child() instead of this method if you don't need the child node to be ad
 
 Note: If this node is internal, the added sibling will be internal too (see add_child()'s internal parameter).
 
-void add_to_group(group: StringName, persistent: bool = false) 🔗
+void add_to_group(group: StringName, persistent: bool = false) 
 
 Adds the node to the group. Groups can be helpful to organize a subset of nodes, for example "enemies" or "collectables". See notes in the description, and the group methods in SceneTree.
 
@@ -5789,7 +5789,7 @@ Note: To improve performance, the order of group names is not guaranteed and may
 
 Note: SceneTree's group methods will not work on this node if not inside the tree (see is_inside_tree()).
 
-String atr(message: String, context: StringName = "") const 🔗
+String atr(message: String, context: StringName = "") const 
 
 Translates a message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation. Note that most Control nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
 
@@ -5799,7 +5799,7 @@ If Object.can_translate_messages() is false, or no translation is available, thi
 
 For detailed examples, see Internationalizing games.
 
-String atr_n(message: String, plural_message: StringName, n: int, context: StringName = "") const 🔗
+String atr_n(message: String, plural_message: StringName, n: int, context: StringName = "") const 
 
 Translates a message or plural_message, using the translation catalogs configured in the Project Settings. Further context can be specified to help with the translation.
 
@@ -5813,19 +5813,19 @@ For detailed examples, see Localization using gettext.
 
 Note: Negative and float numbers may not properly apply to some countable subjects. It's recommended to handle these cases with atr().
 
-Variant call_deferred_thread_group(method: StringName, ...) vararg 🔗
+Variant call_deferred_thread_group(method: StringName, ...) vararg 
 
 This function is similar to Object.call_deferred() except that the call will take place when the node thread group is processed. If the node thread group processes in sub-threads, then the call will be done on that thread, right before NOTIFICATION_PROCESS or NOTIFICATION_PHYSICS_PROCESS, the _process() or _physics_process() or their internal versions are called.
 
-Variant call_thread_safe(method: StringName, ...) vararg 🔗
+Variant call_thread_safe(method: StringName, ...) vararg 
 
 This function ensures that the calling of this function will succeed, no matter whether it's being done from a thread or not. If called from a thread that is not allowed to call the function, the call will become deferred. Otherwise, the call will go through directly.
 
-bool can_auto_translate() const 🔗
+bool can_auto_translate() const 
 
 Returns true if this node can automatically translate messages depending on the current locale. See auto_translate_mode, atr(), and atr_n().
 
-bool can_process() const 🔗
+bool can_process() const 
 
 Returns true if the node can receive processing notifications and input callbacks (NOTIFICATION_PROCESS, _input(), etc.) from the SceneTree and Viewport. The returned value depends on process_mode:
 
@@ -5841,7 +5841,7 @@ If set to PROCESS_MODE_INHERIT, use the parent node's process_mode to determine 
 
 If the node is not inside the tree, returns false no matter the value of process_mode.
 
-Tween create_tween() 🔗
+Tween create_tween() 
 
 Creates a new Tween and binds it to this node.
 
@@ -5851,13 +5851,13 @@ The Tween will start automatically on the next process frame or physics frame (d
 
 Note: The method can still be used when the node is not inside SceneTree. It can fail in an unlikely case of using a custom MainLoop.
 
-Node duplicate(flags: int = 15) const 🔗
+Node duplicate(flags: int = 15) const 
 
 Duplicates the node, returning a new node with all of its properties, signals, groups, and children copied from the original. The behavior can be tweaked through the flags (see DuplicateFlags). Internal nodes are not duplicated.
 
 Note: For nodes with a Script attached, if Object._init() has been defined with required parameters, the duplicated node will not have a Script.
 
-Node find_child(pattern: String, recursive: bool = true, owned: bool = true) const 🔗
+Node find_child(pattern: String, recursive: bool = true, owned: bool = true) const 
 
 Finds the first descendant of this node whose name matches pattern, returning null if no match is found. The matching is done against node names, not their paths, through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character.
 
@@ -5869,7 +5869,7 @@ Note: This method can be very slow. Consider storing a reference to the found no
 
 Note: To find all descendant nodes matching a pattern or a class type, see find_children().
 
-Array[Node] find_children(pattern: String, type: String = "", recursive: bool = true, owned: bool = true) const 🔗
+Array[Node] find_children(pattern: String, type: String = "", recursive: bool = true, owned: bool = true) const 
 
 Finds all descendants of this node whose names match pattern, returning an empty Array if no match is found. The matching is done against node names, not their paths, through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character.
 
@@ -5883,19 +5883,19 @@ Note: This method can be very slow. Consider storing references to the found nod
 
 Note: To find a single descendant node matching a pattern, see find_child().
 
-Node find_parent(pattern: String) const 🔗
+Node find_parent(pattern: String) const 
 
 Finds the first ancestor of this node whose name matches pattern, returning null if no match is found. The matching is done through String.match(). As such, it is case-sensitive, "*" matches zero or more characters, and "?" matches any single character. See also find_child() and find_children().
 
 Note: As this method walks upwards in the scene tree, it can be slow in large, deeply nested nodes. Consider storing a reference to the found node in a variable. Alternatively, use get_node() with unique names (see unique_name_in_owner).
 
-RID get_accessibility_element() const 🔗
+RID get_accessibility_element() const 
 
 Returns main accessibility element RID.
 
 Note: This method should be called only during accessibility information updates (NOTIFICATION_ACCESSIBILITY_UPDATE).
 
-Node get_child(idx: int, include_internal: bool = false) const 🔗
+Node get_child(idx: int, include_internal: bool = false) const 
 
 Fetches a child node by its index. Each child node has an index relative to its siblings (see get_index()). The first child is at index 0. Negative values can also be used to start from the end of the list. This method can be used in combination with get_child_count() to iterate over this node's children. If no child exists at the given index, this method returns null and an error is generated.
 
@@ -5903,19 +5903,19 @@ If include_internal is false, internal children are ignored (see add_child()'s i
 
 Note: To fetch a node by NodePath, use get_node().
 
-int get_child_count(include_internal: bool = false) const 🔗
+int get_child_count(include_internal: bool = false) const 
 
 Returns the number of children of this node.
 
 If include_internal is false, internal children are not counted (see add_child()'s internal parameter).
 
-Array[Node] get_children(include_internal: bool = false) const 🔗
+Array[Node] get_children(include_internal: bool = false) const 
 
 Returns all children of this node inside an Array.
 
 If include_internal is false, excludes internal children from the returned array (see add_child()'s internal parameter).
 
-Array[StringName] get_groups() const 🔗
+Array[StringName] get_groups() const 
 
 Returns an Array of group names that the node has been added to.
 
@@ -5923,21 +5923,21 @@ Note: To improve performance, the order of group names is not guaranteed and may
 
 Note: This method may also return some group names starting with an underscore (_). These are internally used by the engine. To avoid conflicts, do not use custom groups starting with underscores. To exclude internal groups, see the following code snippet:
 
-int get_index(include_internal: bool = false) const 🔗
+int get_index(include_internal: bool = false) const 
 
 Returns this node's order among its siblings. The first node's index is 0. See also get_child().
 
 If include_internal is false, returns the index ignoring internal children. The first, non-internal child will have an index of 0 (see add_child()'s internal parameter).
 
-Window get_last_exclusive_window() const 🔗
+Window get_last_exclusive_window() const 
 
 Returns the Window that contains this node, or the last exclusive child in a chain of windows starting with the one that contains this node.
 
-int get_multiplayer_authority() const 🔗
+int get_multiplayer_authority() const 
 
 Returns the peer ID of the multiplayer authority for this node. See set_multiplayer_authority().
 
-Node get_node(path: NodePath) const 🔗
+Node get_node(path: NodePath) const 
 
 Fetches a node. The NodePath can either be a relative path (from this node), or an absolute path (from the SceneTree.root) to a node. If path does not point to a valid node, generates an error and returns null. Attempts to access methods on the return value will result in an "Attempt to call <method> on a null instance." error.
 
@@ -5947,7 +5947,7 @@ Example: Assume this method is called from the Character node, inside the follow
 
 The following calls will return a valid node:
 
-Array get_node_and_resource(path: NodePath) 🔗
+Array get_node_and_resource(path: NodePath) 
 
 Fetches a node and its most nested resource as specified by the NodePath's subname. Returns an Array of size 3 where:
 
@@ -5959,31 +5959,31 @@ Element 2 is the remaining NodePath, referring to an existing, non-Resource prop
 
 Example: Assume that the child's Sprite2D.texture has been assigned an AtlasTexture:
 
-Node get_node_or_null(path: NodePath) const 🔗
+Node get_node_or_null(path: NodePath) const 
 
 Fetches a node by NodePath. Similar to get_node(), but does not generate an error if path does not point to a valid node.
 
-Variant get_node_rpc_config() const 🔗
+Variant get_node_rpc_config() const 
 
 Returns a Dictionary mapping method names to their RPC configuration defined for this node using rpc_config().
 
 Note: This method only returns the RPC configuration assigned via rpc_config(). See Script.get_rpc_config() to retrieve the RPCs defined by the Script.
 
-Array[int] get_orphan_node_ids() static 🔗
+Array[int] get_orphan_node_ids() static 
 
 Returns object IDs of all orphan nodes (nodes outside the SceneTree). Used for debugging.
 
 Note: get_orphan_node_ids() only works in debug builds. When called in a project exported in release mode, get_orphan_node_ids() will return an empty array.
 
-Node get_parent() const 🔗
+Node get_parent() const 
 
 Returns this node's parent node, or null if the node doesn't have a parent.
 
-NodePath get_path() const 🔗
+NodePath get_path() const 
 
 Returns the node's absolute path, relative to the SceneTree.root. If the node is not inside the scene tree, this method fails and returns an empty NodePath.
 
-NodePath get_path_to(node: Node, use_unique_path: bool = false) const 🔗
+NodePath get_path_to(node: Node, use_unique_path: bool = false) const 
 
 Returns the relative NodePath from this node to the specified node. Both nodes must be in the same SceneTree or scene hierarchy, otherwise this method fails and returns an empty NodePath.
 
@@ -5991,99 +5991,99 @@ If use_unique_path is true, returns the shortest path accounting for this node's
 
 Note: If you get a relative path which starts from a unique node, the path may be longer than a normal relative path, due to the addition of the unique node's name.
 
-float get_physics_process_delta_time() const 🔗
+float get_physics_process_delta_time() const 
 
 Returns the time elapsed (in seconds) since the last physics callback. This value is identical to _physics_process()'s delta parameter, and is often consistent at run-time, unless Engine.physics_ticks_per_second is changed. See also NOTIFICATION_PHYSICS_PROCESS.
 
 Note: The returned value will be larger than expected if running at a framerate lower than Engine.physics_ticks_per_second / Engine.max_physics_steps_per_frame FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both _process() and _physics_process(). As a result, avoid using delta for time measurements in real-world seconds. Use the Time singleton's methods for this purpose instead, such as Time.get_ticks_usec().
 
-float get_process_delta_time() const 🔗
+float get_process_delta_time() const 
 
 Returns the time elapsed (in seconds) since the last process callback. This value is identical to _process()'s delta parameter, and may vary from frame to frame. See also NOTIFICATION_PROCESS.
 
 Note: The returned value will be larger than expected if running at a framerate lower than Engine.physics_ticks_per_second / Engine.max_physics_steps_per_frame FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both _process() and _physics_process(). As a result, avoid using delta for time measurements in real-world seconds. Use the Time singleton's methods for this purpose instead, such as Time.get_ticks_usec().
 
-bool get_scene_instance_load_placeholder() const 🔗
+bool get_scene_instance_load_placeholder() const 
 
 Returns true if this node is an instance load placeholder. See InstancePlaceholder and set_scene_instance_load_placeholder().
 
-SceneTree get_tree() const 🔗
+SceneTree get_tree() const 
 
 Returns the SceneTree that contains this node. If this node is not inside the tree, generates an error and returns null. See also is_inside_tree().
 
-String get_tree_string() 🔗
+String get_tree_string() 
 
 Returns the tree as a String. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the get_node() function. It also can be used in game UI/UX.
 
 May print, for example:
 
-String get_tree_string_pretty() 🔗
+String get_tree_string_pretty() 
 
 Similar to get_tree_string(), this returns the tree as a String. This version displays a more graphical representation similar to what is displayed in the Scene Dock. It is useful for inspecting larger trees.
 
 May print, for example:
 
-Viewport get_viewport() const 🔗
+Viewport get_viewport() const 
 
 Returns the node's closest Viewport ancestor, if the node is inside the tree. Otherwise, returns null.
 
-Window get_window() const 🔗
+Window get_window() const 
 
 Returns the Window that contains this node. If the node is in the main window, this is equivalent to getting the root node (get_tree().get_root()).
 
-bool has_node(path: NodePath) const 🔗
+bool has_node(path: NodePath) const 
 
 Returns true if the path points to a valid node. See also get_node().
 
-bool has_node_and_resource(path: NodePath) const 🔗
+bool has_node_and_resource(path: NodePath) const 
 
 Returns true if path points to a valid node and its subnames point to a valid Resource, e.g. Area2D/CollisionShape2D:shape. Properties that are not Resource types (such as nodes or other Variant types) are not considered. See also get_node_and_resource().
 
-bool is_ancestor_of(node: Node) const 🔗
+bool is_ancestor_of(node: Node) const 
 
 Returns true if the given node is a direct or indirect child of this node.
 
-bool is_displayed_folded() const 🔗
+bool is_displayed_folded() const 
 
 Returns true if the node is folded (collapsed) in the Scene dock. This method is intended to be used in editor plugins and tools. See also set_display_folded().
 
-bool is_editable_instance(node: Node) const 🔗
+bool is_editable_instance(node: Node) const 
 
 Returns true if node has editable children enabled relative to this node. This method is intended to be used in editor plugins and tools. See also set_editable_instance().
 
-bool is_greater_than(node: Node) const 🔗
+bool is_greater_than(node: Node) const 
 
 Returns true if the given node occurs later in the scene hierarchy than this node. A node occurring later is usually processed last.
 
-bool is_in_group(group: StringName) const 🔗
+bool is_in_group(group: StringName) const 
 
 Returns true if this node has been added to the given group. See add_to_group() and remove_from_group(). See also notes in the description, and the SceneTree's group methods.
 
-bool is_inside_tree() const 🔗
+bool is_inside_tree() const 
 
 Returns true if this node is currently inside a SceneTree. See also get_tree().
 
-bool is_multiplayer_authority() const 🔗
+bool is_multiplayer_authority() const 
 
 Returns true if the local system is the multiplayer authority of this node.
 
-bool is_node_ready() const 🔗
+bool is_node_ready() const 
 
 Returns true if the node is ready, i.e. it's inside scene tree and all its children are initialized.
 
 request_ready() resets it back to false.
 
-bool is_part_of_edited_scene() const 🔗
+bool is_part_of_edited_scene() const 
 
 Returns true if the node is part of the scene currently opened in the editor.
 
-bool is_physics_interpolated() const 🔗
+bool is_physics_interpolated() const 
 
 Returns true if physics interpolation is enabled for this node (see physics_interpolation_mode).
 
 Note: Interpolation will only be active if both the flag is set and physics interpolation is enabled within the SceneTree. This can be tested using is_physics_interpolated_and_enabled().
 
-bool is_physics_interpolated_and_enabled() const 🔗
+bool is_physics_interpolated_and_enabled() const 
 
 Returns true if physics interpolation is enabled (see physics_interpolation_mode) and enabled in the SceneTree.
 
@@ -6091,53 +6091,53 @@ This is a convenience version of is_physics_interpolated() that also checks whet
 
 See SceneTree.physics_interpolation and ProjectSettings.physics/common/physics_interpolation.
 
-bool is_physics_processing() const 🔗
+bool is_physics_processing() const 
 
 Returns true if physics processing is enabled (see set_physics_process()).
 
-bool is_physics_processing_internal() const 🔗
+bool is_physics_processing_internal() const 
 
 Returns true if internal physics processing is enabled (see set_physics_process_internal()).
 
-bool is_processing() const 🔗
+bool is_processing() const 
 
 Returns true if processing is enabled (see set_process()).
 
-bool is_processing_input() const 🔗
+bool is_processing_input() const 
 
 Returns true if the node is processing input (see set_process_input()).
 
-bool is_processing_internal() const 🔗
+bool is_processing_internal() const 
 
 Returns true if internal processing is enabled (see set_process_internal()).
 
-bool is_processing_shortcut_input() const 🔗
+bool is_processing_shortcut_input() const 
 
 Returns true if the node is processing shortcuts (see set_process_shortcut_input()).
 
-bool is_processing_unhandled_input() const 🔗
+bool is_processing_unhandled_input() const 
 
 Returns true if the node is processing unhandled input (see set_process_unhandled_input()).
 
-bool is_processing_unhandled_key_input() const 🔗
+bool is_processing_unhandled_key_input() const 
 
 Returns true if the node is processing unhandled key input (see set_process_unhandled_key_input()).
 
-void move_child(child_node: Node, to_index: int) 🔗
+void move_child(child_node: Node, to_index: int) 
 
 Moves child_node to the given index. A node's index is the order among its siblings. If to_index is negative, the index is counted from the end of the list. See also get_child() and get_index().
 
 Note: The processing order of several engine callbacks (_ready(), _process(), etc.) and notifications sent through propagate_notification() is affected by tree order. CanvasItem nodes are also rendered in tree order. See also process_priority.
 
-void notify_deferred_thread_group(what: int) 🔗
+void notify_deferred_thread_group(what: int) 
 
 Similar to call_deferred_thread_group(), but for notifications.
 
-void notify_thread_safe(what: int) 🔗
+void notify_thread_safe(what: int) 
 
 Similar to call_thread_safe(), but for notifications.
 
-void print_orphan_nodes() static 🔗
+void print_orphan_nodes() static 
 
 Prints all orphan nodes (nodes outside the SceneTree). Useful for debugging.
 
@@ -6147,23 +6147,23 @@ Prints the node and its children to the console, recursively. The node does not 
 
 May print, for example:
 
-void print_tree_pretty() 🔗
+void print_tree_pretty() 
 
 Prints the node and its children to the console, recursively. The node does not have to be inside the tree. Similar to print_tree(), but the graphical representation looks like what is displayed in the editor's Scene dock. It is useful for inspecting larger trees.
 
 May print, for example:
 
-void propagate_call(method: StringName, args: Array = [], parent_first: bool = false) 🔗
+void propagate_call(method: StringName, args: Array = [], parent_first: bool = false) 
 
 Calls the given method name, passing args as arguments, on this node and all of its children, recursively.
 
 If parent_first is true, the method is called on this node first, then on all of its children. If false, the children's methods are called first.
 
-void propagate_notification(what: int) 🔗
+void propagate_notification(what: int) 
 
 Calls Object.notification() with what on this node and all of its children, recursively.
 
-void queue_accessibility_update() 🔗
+void queue_accessibility_update() 
 
 Queues an accessibility information update for this node.
 
@@ -6173,23 +6173,23 @@ Unlike with Object.free(), the node is not deleted instantly, and it can still b
 
 Note: The node will only be freed after all other deferred calls are finished. Using this method is not always the same as calling Object.free() through Object.call_deferred().
 
-void remove_child(node: Node) 🔗
+void remove_child(node: Node) 
 
 Removes a child node. The node, along with its children, are not deleted. To delete a node, see queue_free().
 
 Note: When this node is inside the tree, this method sets the owner of the removed node (or its descendants) to null, if their owner is no longer an ancestor (see is_ancestor_of()).
 
-void remove_from_group(group: StringName) 🔗
+void remove_from_group(group: StringName) 
 
 Removes the node from the given group. Does nothing if the node is not in the group. See also notes in the description, and the SceneTree's group methods.
 
-void reparent(new_parent: Node, keep_global_transform: bool = true) 🔗
+void reparent(new_parent: Node, keep_global_transform: bool = true) 
 
 Changes the parent of this Node to the new_parent. The node needs to already have a parent. The node's owner is preserved if its owner is still reachable from the new location (i.e., the node is still a descendant of the new parent after the operation).
 
 If keep_global_transform is true, the node's global transform will be preserved if supported. Node2D, Node3D and Control support this argument (but Control keeps only position).
 
-void replace_by(node: Node, keep_groups: bool = false) 🔗
+void replace_by(node: Node, keep_groups: bool = false) 
 
 Replaces this node by the given node. All children of this node are moved to node.
 
@@ -6197,13 +6197,13 @@ If keep_groups is true, the node is added to the same groups that the replaced n
 
 Warning: The replaced node is removed from the tree, but it is not deleted. To prevent memory leaks, store a reference to the node in a variable, or use Object.free().
 
-void request_ready() 🔗
+void request_ready() 
 
 Requests _ready() to be called again the next time the node enters the tree. Does not immediately call _ready().
 
 Note: This method only affects the current node. If the node's children also need to request ready, this method needs to be called for each one of them. When the node and its children enter the tree again, the order of _ready() callbacks will be the same as normal.
 
-void reset_physics_interpolation() 🔗
+void reset_physics_interpolation() 
 
 When physics interpolation is active, moving a node to a radically different transform (such as placement within a level) can result in a visible glitch as the object is rendered moving from the old to new position over the physics tick.
 
@@ -6213,7 +6213,7 @@ The notification NOTIFICATION_RESET_PHYSICS_INTERPOLATION will be received by th
 
 Note: This function should be called after moving the node, rather than before.
 
-Error rpc(method: StringName, ...) vararg 🔗
+Error rpc(method: StringName, ...) vararg 
 
 Sends a remote procedure call request for the given method to peers on the network (and locally), sending additional arguments to the method called by the RPC. The call request will only be received by nodes with the same NodePath, including the exact same name. Behavior depends on the RPC configuration for the given method (see rpc_config() and @GDScript.@rpc). By default, methods are not exposed to RPCs.
 
@@ -6221,7 +6221,7 @@ May return @GlobalScope.OK if the call is successful, @GlobalScope.ERR_INVALID_P
 
 Note: You can only safely use RPCs on clients after you received the MultiplayerAPI.connected_to_server signal from the MultiplayerAPI. You also need to keep track of the connection state, either by the MultiplayerAPI signals like MultiplayerAPI.server_disconnected or by checking (get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED).
 
-void rpc_config(method: StringName, config: Variant) 🔗
+void rpc_config(method: StringName, config: Variant) 
 
 Changes the RPC configuration for the given method. config should either be null to disable the feature (as by default), or a Dictionary containing the following entries:
 
@@ -6235,25 +6235,25 @@ channel: an int representing the channel to send the RPC on.
 
 Note: In GDScript, this method corresponds to the @GDScript.@rpc annotation, with various parameters passed (@rpc(any), @rpc(authority)...). See also the high-level multiplayer tutorial.
 
-Error rpc_id(peer_id: int, method: StringName, ...) vararg 🔗
+Error rpc_id(peer_id: int, method: StringName, ...) vararg 
 
 Sends a rpc() to a specific peer identified by peer_id (see MultiplayerPeer.set_target_peer()).
 
 May return @GlobalScope.OK if the call is successful, @GlobalScope.ERR_INVALID_PARAMETER if the arguments passed in the method do not match, @GlobalScope.ERR_UNCONFIGURED if the node's multiplayer cannot be fetched (such as when the node is not inside the tree), @GlobalScope.ERR_CONNECTION_ERROR if multiplayer's connection is not available.
 
-void set_deferred_thread_group(property: StringName, value: Variant) 🔗
+void set_deferred_thread_group(property: StringName, value: Variant) 
 
 Similar to call_deferred_thread_group(), but for setting properties.
 
-void set_display_folded(fold: bool) 🔗
+void set_display_folded(fold: bool) 
 
 If set to true, the node appears folded in the Scene dock. As a result, all of its children are hidden. This method is intended to be used in editor plugins and tools, but it also works in release builds. See also is_displayed_folded().
 
-void set_editable_instance(node: Node, is_editable: bool) 🔗
+void set_editable_instance(node: Node, is_editable: bool) 
 
 Set to true to allow all nodes owned by node to be available, and editable, in the Scene dock, even if their owner is not the scene root. This method is intended to be used in editor plugins and tools, but it also works in release builds. See also is_editable_instance().
 
-void set_multiplayer_authority(id: int, recursive: bool = true) 🔗
+void set_multiplayer_authority(id: int, recursive: bool = true) 
 
 Sets the node's multiplayer authority to the peer with the given peer id. The multiplayer authority is the peer that has authority over the node on the network. Defaults to peer ID 1 (the server). Useful in conjunction with rpc_config() and the MultiplayerAPI.
 
@@ -6261,19 +6261,19 @@ If recursive is true, the given peer is recursively set as the authority for all
 
 Warning: This does not automatically replicate the new authority to other peers. It is the developer's responsibility to do so. You may replicate the new authority's information using MultiplayerSpawner.spawn_function, an RPC, or a MultiplayerSynchronizer. Furthermore, the parent's authority does not propagate to newly added children.
 
-void set_physics_process(enable: bool) 🔗
+void set_physics_process(enable: bool) 
 
 If set to true, enables physics (fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 FPS, see Engine.physics_ticks_per_second to change) interval (and the _physics_process() callback will be called if it exists).
 
 Note: If _physics_process() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_physics_process_internal(enable: bool) 🔗
+void set_physics_process_internal(enable: bool) 
 
 If set to true, enables internal physics for this node. Internal physics processing happens in isolation from the normal _physics_process() calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (set_physics_process()).
 
 Warning: Built-in nodes rely on internal processing for their internal logic. Disabling it is unsafe and may lead to unexpected behavior. Use this method if you know what you are doing.
 
-void set_process(enable: bool) 🔗
+void set_process(enable: bool) 
 
 If set to true, enables processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the _process() callback will be called if it exists).
 
@@ -6281,51 +6281,51 @@ Note: If _process() is overridden, this will be automatically enabled before _re
 
 Note: This method only affects the _process() callback, i.e. it has no effect on other callbacks like _physics_process(). If you want to disable all processing for the node, set process_mode to PROCESS_MODE_DISABLED.
 
-void set_process_input(enable: bool) 🔗
+void set_process_input(enable: bool) 
 
 If set to true, enables input processing.
 
 Note: If _input() is overridden, this will be automatically enabled before _ready() is called. Input processing is also already enabled for GUI controls, such as Button and TextEdit.
 
-void set_process_internal(enable: bool) 🔗
+void set_process_internal(enable: bool) 
 
 If set to true, enables internal processing for this node. Internal processing happens in isolation from the normal _process() calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (set_process()).
 
 Warning: Built-in nodes rely on internal processing for their internal logic. Disabling it is unsafe and may lead to unexpected behavior. Use this method if you know what you are doing.
 
-void set_process_shortcut_input(enable: bool) 🔗
+void set_process_shortcut_input(enable: bool) 
 
 If set to true, enables shortcut processing for this node.
 
 Note: If _shortcut_input() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_process_unhandled_input(enable: bool) 🔗
+void set_process_unhandled_input(enable: bool) 
 
 If set to true, enables unhandled input processing. It enables the node to receive all input that was not previously handled (usually by a Control).
 
 Note: If _unhandled_input() is overridden, this will be automatically enabled before _ready() is called. Unhandled input processing is also already enabled for GUI controls, such as Button and TextEdit.
 
-void set_process_unhandled_key_input(enable: bool) 🔗
+void set_process_unhandled_key_input(enable: bool) 
 
 If set to true, enables unhandled key input processing.
 
 Note: If _unhandled_key_input() is overridden, this will be automatically enabled before _ready() is called.
 
-void set_scene_instance_load_placeholder(load_placeholder: bool) 🔗
+void set_scene_instance_load_placeholder(load_placeholder: bool) 
 
 If set to true, the node becomes an InstancePlaceholder when packed and instantiated from a PackedScene. See also get_scene_instance_load_placeholder().
 
-void set_thread_safe(property: StringName, value: Variant) 🔗
+void set_thread_safe(property: StringName, value: Variant) 
 
 Similar to call_thread_safe(), but for setting properties.
 
-void set_translation_domain_inherited() 🔗
+void set_translation_domain_inherited() 
 
 Makes this node inherit the translation domain from its parent node. If this node has no parent, the main translation domain will be used.
 
 This is the default behavior for all nodes. Calling Object.set_translation_domain() disables this behavior.
 
-void update_configuration_warnings() 🔗
+void update_configuration_warnings() 
 
 Refreshes the warnings displayed for this node in the Scene dock. Use _get_configuration_warnings() to customize the warning messages to display.
 

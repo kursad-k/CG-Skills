@@ -80,15 +80,15 @@ operator *(right: Transform3D)
 
 operator ==(right: AABB)
 
-Vector3 end = Vector3(0, 0, 0) 🔗
+Vector3 end = Vector3(0, 0, 0) 
 
 The ending point. This is usually the corner on the top-right and back of the bounding box, and is equivalent to position + size. Setting this point affects the size.
 
-Vector3 position = Vector3(0, 0, 0) 🔗
+Vector3 position = Vector3(0, 0, 0) 
 
 The origin point. This is usually the corner on the bottom-left and forward of the bounding box.
 
-Vector3 size = Vector3(0, 0, 0) 🔗
+Vector3 size = Vector3(0, 0, 0) 
 
 The bounding box's width, height, and depth starting from position. Setting this value also affects the end point.
 
@@ -108,129 +108,129 @@ Returns an AABB equivalent to this bounding box, with its width, height, and dep
 
 Note: It's recommended to use this method when size is negative, as most other methods in Godot assume that the size's components are greater than 0.
 
-bool encloses(with: AABB) const 🔗
+bool encloses(with: AABB) const 
 
 Returns true if this bounding box completely encloses the with box. The edges of both boxes are included.
 
-AABB expand(to_point: Vector3) const 🔗
+AABB expand(to_point: Vector3) const 
 
 Returns a copy of this bounding box expanded to align the edges with the given to_point, if necessary.
 
-Vector3 get_center() const 🔗
+Vector3 get_center() const 
 
 Returns the center point of the bounding box. This is the same as position + (size / 2.0).
 
-Vector3 get_endpoint(idx: int) const 🔗
+Vector3 get_endpoint(idx: int) const 
 
 Returns the position of one of the 8 vertices that compose this bounding box. With an idx of 0 this is the same as position, and an idx of 7 is the same as end.
 
-Vector3 get_longest_axis() const 🔗
+Vector3 get_longest_axis() const 
 
 Returns the longest normalized axis of this bounding box's size, as a Vector3 (Vector3.RIGHT, Vector3.UP, or Vector3.BACK).
 
 See also get_longest_axis_index() and get_longest_axis_size().
 
-int get_longest_axis_index() const 🔗
+int get_longest_axis_index() const 
 
 Returns the index to the longest axis of this bounding box's size (see Vector3.AXIS_X, Vector3.AXIS_Y, and Vector3.AXIS_Z).
 
 For an example, see get_longest_axis().
 
-float get_longest_axis_size() const 🔗
+float get_longest_axis_size() const 
 
 Returns the longest dimension of this bounding box's size.
 
 For an example, see get_longest_axis().
 
-Vector3 get_shortest_axis() const 🔗
+Vector3 get_shortest_axis() const 
 
 Returns the shortest normalized axis of this bounding box's size, as a Vector3 (Vector3.RIGHT, Vector3.UP, or Vector3.BACK).
 
 See also get_shortest_axis_index() and get_shortest_axis_size().
 
-int get_shortest_axis_index() const 🔗
+int get_shortest_axis_index() const 
 
 Returns the index to the shortest axis of this bounding box's size (see Vector3.AXIS_X, Vector3.AXIS_Y, and Vector3.AXIS_Z).
 
 For an example, see get_shortest_axis().
 
-float get_shortest_axis_size() const 🔗
+float get_shortest_axis_size() const 
 
 Returns the shortest dimension of this bounding box's size.
 
 For an example, see get_shortest_axis().
 
-Vector3 get_support(direction: Vector3) const 🔗
+Vector3 get_support(direction: Vector3) const 
 
 Returns the vertex's position of this bounding box that's the farthest in the given direction. This point is commonly known as the support point in collision detection algorithms.
 
-float get_volume() const 🔗
+float get_volume() const 
 
 Returns the bounding box's volume. This is equivalent to size.x * size.y * size.z. See also has_volume().
 
-AABB grow(by: float) const 🔗
+AABB grow(by: float) const 
 
 Returns a copy of this bounding box extended on all sides by the given amount by. A negative amount shrinks the box instead.
 
-bool has_point(point: Vector3) const 🔗
+bool has_point(point: Vector3) const 
 
 Returns true if the bounding box contains the given point. By convention, points exactly on the right, top, and front sides are not included.
 
 Note: This method is not reliable for AABB with a negative size. Use abs() first to get a valid bounding box.
 
-bool has_surface() const 🔗
+bool has_surface() const 
 
 Returns true if this bounding box has a surface or a length, that is, at least one component of size is greater than 0. Otherwise, returns false.
 
-bool has_volume() const 🔗
+bool has_volume() const 
 
 Returns true if this bounding box's width, height, and depth are all positive. See also get_volume().
 
-AABB intersection(with: AABB) const 🔗
+AABB intersection(with: AABB) const 
 
 Returns the intersection between this bounding box and with. If the boxes do not intersect, returns an empty AABB. If the boxes intersect at the edge, returns a flat AABB with no volume (see has_surface() and has_volume()).
 
 Note: If you only need to know whether two bounding boxes are intersecting, use intersects(), instead.
 
-bool intersects(with: AABB) const 🔗
+bool intersects(with: AABB) const 
 
 Returns true if this bounding box overlaps with the box with. The edges of both boxes are always excluded.
 
-bool intersects_plane(plane: Plane) const 🔗
+bool intersects_plane(plane: Plane) const 
 
 Returns true if this bounding box is on both sides of the given plane.
 
-Variant intersects_ray(from: Vector3, dir: Vector3) const 🔗
+Variant intersects_ray(from: Vector3, dir: Vector3) const 
 
 Returns the first point where this bounding box and the given ray intersect, as a Vector3. If no intersection occurs, returns null.
 
 The ray begin at from, faces dir and extends towards infinity.
 
-Variant intersects_segment(from: Vector3, to: Vector3) const 🔗
+Variant intersects_segment(from: Vector3, to: Vector3) const 
 
 Returns the first point where this bounding box and the given segment intersect, as a Vector3. If no intersection occurs, returns null.
 
 The segment begins at from and ends at to.
 
-bool is_equal_approx(aabb: AABB) const 🔗
+bool is_equal_approx(aabb: AABB) const 
 
 Returns true if this bounding box and aabb are approximately equal, by calling Vector3.is_equal_approx() on the position and the size.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this bounding box's values are finite, by calling Vector3.is_finite() on the position and the size.
 
-AABB merge(with: AABB) const 🔗
+AABB merge(with: AABB) const 
 
 Returns an AABB that encloses both this bounding box and with around the edges. See also encloses().
 
-bool operator !=(right: AABB) 🔗
+bool operator !=(right: AABB) 
 
 Returns true if the position or size of both bounding boxes are not equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-AABB operator *(right: Transform3D) 🔗
+AABB operator *(right: Transform3D) 
 
 Inversely transforms (multiplies) the AABB by the given Transform3D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -238,7 +238,7 @@ aabb * transform is equivalent to transform.inverse() * aabb. See Transform3D.in
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * aabb can be used instead. See Transform3D.affine_inverse().
 
-bool operator ==(right: AABB) 🔗
+bool operator ==(right: AABB) 
 
 Returns true if both position and size of the bounding boxes are exactly equal, respectively.
 
@@ -507,7 +507,7 @@ operator ==(right: Basis)
 
 operator [](index: int)
 
-IDENTITY = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1) 🔗
+IDENTITY = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1) 
 
 The identity Basis. This is an orthonormal basis with no rotation, no shear, and a scale of Vector3.ONE. This also means that:
 
@@ -521,37 +521,37 @@ If a Vector3 or another Basis is transformed (multiplied) by this constant, no t
 
 Note: In GDScript, this constant is equivalent to creating a Basis without any arguments. It can be used to make your code clearer, and for consistency with C#.
 
-FLIP_X = Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1) 🔗
+FLIP_X = Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1) 
 
 When any basis is multiplied by FLIP_X, it negates all components of the x axis (the X column).
 
 When FLIP_X is multiplied by any basis, it negates the Vector3.x component of all axes (the X row).
 
-FLIP_Y = Basis(1, 0, 0, 0, -1, 0, 0, 0, 1) 🔗
+FLIP_Y = Basis(1, 0, 0, 0, -1, 0, 0, 0, 1) 
 
 When any basis is multiplied by FLIP_Y, it negates all components of the y axis (the Y column).
 
 When FLIP_Y is multiplied by any basis, it negates the Vector3.y component of all axes (the Y row).
 
-FLIP_Z = Basis(1, 0, 0, 0, 1, 0, 0, 0, -1) 🔗
+FLIP_Z = Basis(1, 0, 0, 0, 1, 0, 0, 0, -1) 
 
 When any basis is multiplied by FLIP_Z, it negates all components of the z axis (the Z column).
 
 When FLIP_Z is multiplied by any basis, it negates the Vector3.z component of all axes (the Z row).
 
-Vector3 x = Vector3(1, 0, 0) 🔗
+Vector3 x = Vector3(1, 0, 0) 
 
 The basis's X axis, and the column 0 of the matrix.
 
 On the identity basis, this vector points right (Vector3.RIGHT).
 
-Vector3 y = Vector3(0, 1, 0) 🔗
+Vector3 y = Vector3(0, 1, 0) 
 
 The basis's Y axis, and the column 1 of the matrix.
 
 On the identity basis, this vector points up (Vector3.UP).
 
-Vector3 z = Vector3(0, 0, 1) 🔗
+Vector3 z = Vector3(0, 0, 1) 
 
 The basis's Z axis, and the column 2 of the matrix.
 
@@ -581,7 +581,7 @@ Basis Basis(x_axis: Vector3, y_axis: Vector3, z_axis: Vector3)
 
 Constructs a Basis from 3 axis vectors. These are the columns of the basis matrix.
 
-float determinant() const 🔗
+float determinant() const 
 
 Returns the determinant of this basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
@@ -591,7 +591,7 @@ If the determinant is a negative number, the basis represents a negative scale.
 
 Note: If the basis's scale is the same for every axis, its determinant is always that scale by the power of 3.
 
-Basis from_euler(euler: Vector3, order: int = 2) static 🔗
+Basis from_euler(euler: Vector3, order: int = 2) static 
 
 Constructs a new Basis that only represents rotation from the given Vector3 of Euler angles, in radians.
 
@@ -603,13 +603,13 @@ The Vector3.z should contain the angle around the z axis (roll).
 
 The order of each consecutive rotation can be changed with order (see EulerOrder constants). By default, the YXZ convention is used (@GlobalScope.EULER_ORDER_YXZ): the basis rotates first around the Y axis (yaw), then X (pitch), and lastly Z (roll). When using the opposite method get_euler(), this order is reversed.
 
-Basis from_scale(scale: Vector3) static 🔗
+Basis from_scale(scale: Vector3) static 
 
 Constructs a new Basis that only represents scale, with no rotation or shear, from the given scale vector.
 
 Note: In linear algebra, the matrix of this basis is also known as a diagonal matrix.
 
-Vector3 get_euler(order: int = 2) const 🔗
+Vector3 get_euler(order: int = 2) const 
 
 Returns this basis's rotation as a Vector3 of Euler angles, in radians. For the returned value:
 
@@ -627,35 +627,35 @@ Note: Euler angles are much more intuitive but are not suitable for 3D math. Bec
 
 Note: In the Inspector dock, a basis's rotation is often displayed in Euler angles (in degrees), as is the case with the Node3D.rotation property.
 
-Quaternion get_rotation_quaternion() const 🔗
+Quaternion get_rotation_quaternion() const 
 
 Returns this basis's rotation as a Quaternion.
 
 Note: Quaternions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the get_euler() method, which returns Euler angles.
 
-Vector3 get_scale() const 🔗
+Vector3 get_scale() const 
 
 Returns the length of each axis of this basis, as a Vector3. If the basis is not sheared, this value is the scaling factor. It is not affected by rotation.
 
 Note: If the value returned by determinant() is negative, the scale is also negative.
 
-Basis inverse() const 🔗
+Basis inverse() const 
 
 Returns the inverse of this basis's matrix.
 
-bool is_conformal() const 🔗
+bool is_conformal() const 
 
 Returns true if this basis is conformal. A conformal basis is both orthogonal (the axes are perpendicular to each other) and uniform (the axes share the same length). This method can be especially useful during physics calculations.
 
-bool is_equal_approx(b: Basis) const 🔗
+bool is_equal_approx(b: Basis) const 
 
 Returns true if this basis and b are approximately equal, by calling @GlobalScope.is_equal_approx() on all vector components.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this basis is finite, by calling @GlobalScope.is_finite() on all vector components.
 
-Basis looking_at(target: Vector3, up: Vector3 = Vector3(0, 1, 0), use_model_front: bool = false) static 🔗
+Basis looking_at(target: Vector3, up: Vector3 = Vector3(0, 1, 0), use_model_front: bool = false) static 
 
 Creates a new Basis with a rotation such that the forward axis (-Z) points towards the target position.
 
@@ -665,97 +665,97 @@ The up axis (+Y) points as close to the up vector as possible while staying perp
 
 The target and the up cannot be Vector3.ZERO, and shouldn't be colinear to avoid unintended rotation around local Z axis.
 
-Basis orthonormalized() const 🔗
+Basis orthonormalized() const 
 
 Returns the orthonormalized version of this basis. An orthonormal basis is both orthogonal (the axes are perpendicular to each other) and normalized (the axes have a length of 1.0), which also means it can only represent a rotation.
 
 It is often useful to call this method to avoid rounding errors on a rotating basis:
 
-Basis rotated(axis: Vector3, angle: float) const 🔗
+Basis rotated(axis: Vector3, angle: float) const 
 
 Returns a copy of this basis rotated around the given axis by the given angle (in radians).
 
 The axis must be a normalized vector (see Vector3.normalized()). If angle is positive, the basis is rotated counter-clockwise around the axis.
 
-Basis scaled(scale: Vector3) const 🔗
+Basis scaled(scale: Vector3) const 
 
 Returns this basis with each axis's components scaled by the given scale's components.
 
 The basis matrix's rows are multiplied by scale's components. This operation is a global scale (relative to the parent).
 
-Basis scaled_local(scale: Vector3) const 🔗
+Basis scaled_local(scale: Vector3) const 
 
 Returns this basis with each axis scaled by the corresponding component in the given scale.
 
 The basis matrix's columns are multiplied by scale's components. This operation is a local scale (relative to self).
 
-Basis slerp(to: Basis, weight: float) const 🔗
+Basis slerp(to: Basis, weight: float) const 
 
 Performs a spherical-linear interpolation with the to basis, given a weight. Both this basis and to should represent a rotation.
 
 Example: Smoothly rotate a Node3D to the target basis over time, with a Tween:
 
-float tdotx(with: Vector3) const 🔗
+float tdotx(with: Vector3) const 
 
 Returns the transposed dot product between with and the x axis (see transposed()).
 
 This is equivalent to basis.x.dot(vector).
 
-float tdoty(with: Vector3) const 🔗
+float tdoty(with: Vector3) const 
 
 Returns the transposed dot product between with and the y axis (see transposed()).
 
 This is equivalent to basis.y.dot(vector).
 
-float tdotz(with: Vector3) const 🔗
+float tdotz(with: Vector3) const 
 
 Returns the transposed dot product between with and the z axis (see transposed()).
 
 This is equivalent to basis.z.dot(vector).
 
-Basis transposed() const 🔗
+Basis transposed() const 
 
 Returns the transposed version of this basis. This turns the basis matrix's columns into rows, and its rows into columns.
 
-bool operator !=(right: Basis) 🔗
+bool operator !=(right: Basis) 
 
 Returns true if the components of both Basis matrices are not equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Basis operator *(right: Basis) 🔗
+Basis operator *(right: Basis) 
 
 Transforms (multiplies) the right basis by this basis.
 
 This is the operation performed between parent and child Node3Ds.
 
-Vector3 operator *(right: Vector3) 🔗
+Vector3 operator *(right: Vector3) 
 
 Transforms (multiplies) the right vector by this basis, returning a Vector3.
 
-Basis operator *(right: float) 🔗
+Basis operator *(right: float) 
 
 Multiplies all components of the Basis by the given float. This affects the basis's scale uniformly, resizing all 3 axes by the right value.
 
-Basis operator *(right: int) 🔗
+Basis operator *(right: int) 
 
 Multiplies all components of the Basis by the given int. This affects the basis's scale uniformly, resizing all 3 axes by the right value.
 
-Basis operator /(right: float) 🔗
+Basis operator /(right: float) 
 
 Divides all components of the Basis by the given float. This affects the basis's scale uniformly, resizing all 3 axes by the right value.
 
-Basis operator /(right: int) 🔗
+Basis operator /(right: int) 
 
 Divides all components of the Basis by the given int. This affects the basis's scale uniformly, resizing all 3 axes by the right value.
 
-bool operator ==(right: Basis) 🔗
+bool operator ==(right: Basis) 
 
 Returns true if the components of both Basis matrices are exactly equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Vector3 operator [](index: int) 🔗
+Vector3 operator [](index: int) 
 
 Accesses each axis (column) of this basis by their index. Index 0 is the same as x, index 1 is the same as y, and index 2 is the same as z.
 
@@ -950,7 +950,7 @@ The FBXState handles the state data imported from FBX files.
 
 allow_geometry_helper_nodes
 
-bool allow_geometry_helper_nodes = false 🔗
+bool allow_geometry_helper_nodes = false 
 
 void set_allow_geometry_helper_nodes(value: bool)
 
@@ -1131,7 +1131,7 @@ operator ==(right: PackedVector2Array)
 
 operator [](index: int)
 
-PackedVector2Array PackedVector2Array() 🔗
+PackedVector2Array PackedVector2Array() 
 
 Constructs an empty PackedVector2Array.
 
@@ -1145,15 +1145,15 @@ Constructs a new PackedVector2Array. Optionally, you can pass in a generic Array
 
 Note: When initializing a PackedVector2Array with elements, it must be initialized with an Array of Vector2 values:
 
-bool append(value: Vector2) 🔗
+bool append(value: Vector2) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedVector2Array) 🔗
+void append_array(array: PackedVector2Array) 
 
 Appends a PackedVector2Array at the end of this array.
 
-int bsearch(value: Vector2, before: bool = true) 🔗
+int bsearch(value: Vector2, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -1163,61 +1163,61 @@ Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: Vector2) const 🔗
+int count(value: Vector2) const 
 
 Returns the number of times an element is in the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedVector2Array duplicate() 🔗
+PackedVector2Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: Vector2) 🔗
+bool erase(value: Vector2) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void fill(value: Vector2) 🔗
+void fill(value: Vector2) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: Vector2, from: int = 0) const 🔗
+int find(value: Vector2, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-Vector2 get(index: int) const 🔗
+Vector2 get(index: int) const 
 
 Returns the Vector2 at the given index in the array. If index out-of-bounds or negative, this method fails and returns Vector2(0, 0).
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: Vector2) const 🔗
+bool has(value: Vector2) const 
 
 Returns true if the array contains value.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-int insert(at_index: int, value: Vector2) 🔗
+int insert(at_index: int, value: Vector2) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: Vector2) 🔗
+bool push_back(value: Vector2) 
 
 Inserts a Vector2 at the end.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -1225,19 +1225,19 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: Vector2, from: int = -1) const 🔗
+int rfind(value: Vector2, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void set(index: int, value: Vector2) 🔗
+void set(index: int, value: Vector2) 
 
 Changes the Vector2 at the given index.
 
 Returns the number of elements in the array.
 
-PackedVector2Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedVector2Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedVector2Array, from begin (inclusive) to end (exclusive), as a new PackedVector2Array.
 
@@ -1249,15 +1249,15 @@ Sorts the elements of the array in ascending order.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a PackedByteArray with each vector encoded as bytes.
 
-bool operator !=(right: PackedVector2Array) 🔗
+bool operator !=(right: PackedVector2Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedVector2Array operator *(right: Transform2D) 🔗
+PackedVector2Array operator *(right: Transform2D) 
 
 Returns a new PackedVector2Array with all vectors in this array inversely transformed (multiplied) by the given Transform2D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -1265,15 +1265,15 @@ array * transform is equivalent to transform.inverse() * array. See Transform2D.
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * array can be used instead. See Transform2D.affine_inverse().
 
-PackedVector2Array operator +(right: PackedVector2Array) 🔗
+PackedVector2Array operator +(right: PackedVector2Array) 
 
 Returns a new PackedVector2Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedVector2Array) 🔗
+bool operator ==(right: PackedVector2Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal Vector2s at the corresponding indices.
 
-Vector2 operator [](index: int) 🔗
+Vector2 operator [](index: int) 
 
 Returns the Vector2 at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -1359,7 +1359,7 @@ operator ==(right: PackedVector3Array)
 
 operator [](index: int)
 
-PackedVector3Array PackedVector3Array() 🔗
+PackedVector3Array PackedVector3Array() 
 
 Constructs an empty PackedVector3Array.
 
@@ -1373,15 +1373,15 @@ Constructs a new PackedVector3Array. Optionally, you can pass in a generic Array
 
 Note: When initializing a PackedVector3Array with elements, it must be initialized with an Array of Vector3 values:
 
-bool append(value: Vector3) 🔗
+bool append(value: Vector3) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedVector3Array) 🔗
+void append_array(array: PackedVector3Array) 
 
 Appends a PackedVector3Array at the end of this array.
 
-int bsearch(value: Vector3, before: bool = true) 🔗
+int bsearch(value: Vector3, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -1391,61 +1391,61 @@ Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: Vector3) const 🔗
+int count(value: Vector3) const 
 
 Returns the number of times an element is in the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedVector3Array duplicate() 🔗
+PackedVector3Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: Vector3) 🔗
+bool erase(value: Vector3) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void fill(value: Vector3) 🔗
+void fill(value: Vector3) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: Vector3, from: int = 0) const 🔗
+int find(value: Vector3, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-Vector3 get(index: int) const 🔗
+Vector3 get(index: int) const 
 
 Returns the Vector3 at the given index in the array. If index out-of-bounds or negative, this method fails and returns Vector3(0, 0, 0).
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: Vector3) const 🔗
+bool has(value: Vector3) const 
 
 Returns true if the array contains value.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-int insert(at_index: int, value: Vector3) 🔗
+int insert(at_index: int, value: Vector3) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: Vector3) 🔗
+bool push_back(value: Vector3) 
 
 Inserts a Vector3 at the end.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -1453,19 +1453,19 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: Vector3, from: int = -1) const 🔗
+int rfind(value: Vector3, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void set(index: int, value: Vector3) 🔗
+void set(index: int, value: Vector3) 
 
 Changes the Vector3 at the given index.
 
 Returns the number of elements in the array.
 
-PackedVector3Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedVector3Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedVector3Array, from begin (inclusive) to end (exclusive), as a new PackedVector3Array.
 
@@ -1477,15 +1477,15 @@ Sorts the elements of the array in ascending order.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a PackedByteArray with each vector encoded as bytes.
 
-bool operator !=(right: PackedVector3Array) 🔗
+bool operator !=(right: PackedVector3Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedVector3Array operator *(right: Transform3D) 🔗
+PackedVector3Array operator *(right: Transform3D) 
 
 Returns a new PackedVector3Array with all vectors in this array inversely transformed (multiplied) by the given Transform3D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -1493,15 +1493,15 @@ array * transform is equivalent to transform.inverse() * array. See Transform3D.
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * array can be used instead. See Transform3D.affine_inverse().
 
-PackedVector3Array operator +(right: PackedVector3Array) 🔗
+PackedVector3Array operator +(right: PackedVector3Array) 
 
 Returns a new PackedVector3Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedVector3Array) 🔗
+bool operator ==(right: PackedVector3Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal Vector3s at the corresponding indices.
 
-Vector3 operator [](index: int) 🔗
+Vector3 operator [](index: int) 
 
 Returns the Vector3 at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -1585,7 +1585,7 @@ operator ==(right: PackedVector4Array)
 
 operator [](index: int)
 
-PackedVector4Array PackedVector4Array() 🔗
+PackedVector4Array PackedVector4Array() 
 
 Constructs an empty PackedVector4Array.
 
@@ -1599,15 +1599,15 @@ Constructs a new PackedVector4Array. Optionally, you can pass in a generic Array
 
 Note: When initializing a PackedVector4Array with elements, it must be initialized with an Array of Vector4 values:
 
-bool append(value: Vector4) 🔗
+bool append(value: Vector4) 
 
 Appends an element at the end of the array (alias of push_back()).
 
-void append_array(array: PackedVector4Array) 🔗
+void append_array(array: PackedVector4Array) 
 
 Appends a PackedVector4Array at the end of this array.
 
-int bsearch(value: Vector4, before: bool = true) 🔗
+int bsearch(value: Vector4, before: bool = true) 
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.
 
@@ -1617,61 +1617,61 @@ Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors
 
 Clears the array. This is equivalent to using resize() with a size of 0.
 
-int count(value: Vector4) const 🔗
+int count(value: Vector4) const 
 
 Returns the number of times an element is in the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedVector4Array duplicate() 🔗
+PackedVector4Array duplicate() 
 
 Creates a copy of the array, and returns it.
 
-bool erase(value: Vector4) 🔗
+bool erase(value: Vector4) 
 
 Removes the first occurrence of a value from the array and returns true. If the value does not exist in the array, nothing happens and false is returned. To remove an element by index, use remove_at() instead.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void fill(value: Vector4) 🔗
+void fill(value: Vector4) 
 
 Assigns the given value to all elements in the array. This can typically be used together with resize() to create an array with a given size and initialized elements.
 
-int find(value: Vector4, from: int = 0) const 🔗
+int find(value: Vector4, from: int = 0) const 
 
 Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-Vector4 get(index: int) const 🔗
+Vector4 get(index: int) const 
 
 Returns the Vector4 at the given index in the array. If index out-of-bounds or negative, this method fails and returns Vector4(0, 0, 0, 0).
 
 This method is similar (but not identical) to the [] operator. Most notably, when this method fails, it doesn't pause project execution if run from the editor.
 
-bool has(value: Vector4) const 🔗
+bool has(value: Vector4) const 
 
 Returns true if the array contains value.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-int insert(at_index: int, value: Vector4) 🔗
+int insert(at_index: int, value: Vector4) 
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (idx == size()).
 
-bool is_empty() const 🔗
+bool is_empty() const 
 
 Returns true if the array is empty.
 
-bool push_back(value: Vector4) 🔗
+bool push_back(value: Vector4) 
 
 Inserts a Vector4 at the end.
 
-void remove_at(index: int) 🔗
+void remove_at(index: int) 
 
 Removes an element from the array by index.
 
-int resize(new_size: int) 🔗
+int resize(new_size: int) 
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling resize() once and assigning the new values is faster than adding new elements one by one.
 
@@ -1679,19 +1679,19 @@ Returns @GlobalScope.OK on success, or one of the following Error constants if t
 
 Reverses the order of the elements in the array.
 
-int rfind(value: Vector4, from: int = -1) const 🔗
+int rfind(value: Vector4, from: int = -1) const 
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-void set(index: int, value: Vector4) 🔗
+void set(index: int, value: Vector4) 
 
 Changes the Vector4 at the given index.
 
 Returns the number of elements in the array.
 
-PackedVector4Array slice(begin: int, end: int = 2147483647) const 🔗
+PackedVector4Array slice(begin: int, end: int = 2147483647) const 
 
 Returns the slice of the PackedVector4Array, from begin (inclusive) to end (exclusive), as a new PackedVector4Array.
 
@@ -1703,23 +1703,23 @@ Sorts the elements of the array in ascending order.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
-PackedByteArray to_byte_array() const 🔗
+PackedByteArray to_byte_array() const 
 
 Returns a PackedByteArray with each vector encoded as bytes.
 
-bool operator !=(right: PackedVector4Array) 🔗
+bool operator !=(right: PackedVector4Array) 
 
 Returns true if contents of the arrays differ.
 
-PackedVector4Array operator +(right: PackedVector4Array) 🔗
+PackedVector4Array operator +(right: PackedVector4Array) 
 
 Returns a new PackedVector4Array with contents of right added at the end of this array. For better performance, consider using append_array() instead.
 
-bool operator ==(right: PackedVector4Array) 🔗
+bool operator ==(right: PackedVector4Array) 
 
 Returns true if contents of both arrays are the same, i.e. they have all equal Vector4s at the corresponding indices.
 
-Vector4 operator [](index: int) 🔗
+Vector4 operator [](index: int) 
 
 Returns the Vector4 at index index. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
@@ -1788,15 +1788,15 @@ operator *(right: Transform3D)
 
 operator ==(right: Plane)
 
-PLANE_YZ = Plane(1, 0, 0, 0) 🔗
+PLANE_YZ = Plane(1, 0, 0, 0) 
 
 A plane that extends in the Y and Z axes (normal vector points +X).
 
-PLANE_XZ = Plane(0, 1, 0, 0) 🔗
+PLANE_XZ = Plane(0, 1, 0, 0) 
 
 A plane that extends in the X and Z axes (normal vector points +Y).
 
-PLANE_XY = Plane(0, 0, 1, 0) 🔗
+PLANE_XY = Plane(0, 0, 1, 0) 
 
 A plane that extends in the X and Y axes (normal vector points +Z).
 
@@ -1804,7 +1804,7 @@ The distance from the origin to the plane, expressed in terms of normal (accordi
 
 In the scalar equation of the plane ax + by + cz = d, this is d, while the (a, b, c) coordinates are represented by the normal property.
 
-Vector3 normal = Vector3(0, 0, 0) 🔗
+Vector3 normal = Vector3(0, 0, 0) 
 
 The normal of the plane, typically a unit vector. Shouldn't be a zero vector as Plane with such normal does not represent a valid plane.
 
@@ -1848,73 +1848,73 @@ Plane Plane(point1: Vector3, point2: Vector3, point3: Vector3)
 
 Creates a plane from the three points, given in clockwise order.
 
-float distance_to(point: Vector3) const 🔗
+float distance_to(point: Vector3) const 
 
 Returns the shortest distance from the plane to the position point. If the point is above the plane, the distance will be positive. If below, the distance will be negative.
 
-Vector3 get_center() const 🔗
+Vector3 get_center() const 
 
 Returns the center of the plane.
 
-bool has_point(point: Vector3, tolerance: float = 1e-05) const 🔗
+bool has_point(point: Vector3, tolerance: float = 1e-05) const 
 
 Returns true if point is inside the plane. Comparison uses a custom minimum tolerance threshold.
 
-Variant intersect_3(b: Plane, c: Plane) const 🔗
+Variant intersect_3(b: Plane, c: Plane) const 
 
 Returns the intersection point of the three planes b, c and this plane. If no intersection is found, null is returned.
 
-Variant intersects_ray(from: Vector3, dir: Vector3) const 🔗
+Variant intersects_ray(from: Vector3, dir: Vector3) const 
 
 Returns the intersection point of a ray consisting of the position from and the direction normal dir with this plane. If no intersection is found, null is returned.
 
-Variant intersects_segment(from: Vector3, to: Vector3) const 🔗
+Variant intersects_segment(from: Vector3, to: Vector3) const 
 
 Returns the intersection point of a segment from position from to position to with this plane. If no intersection is found, null is returned.
 
-bool is_equal_approx(to_plane: Plane) const 🔗
+bool is_equal_approx(to_plane: Plane) const 
 
 Returns true if this plane and to_plane are approximately equal, by running @GlobalScope.is_equal_approx() on each component.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this plane is finite, by calling @GlobalScope.is_finite() on each component.
 
-bool is_point_over(point: Vector3) const 🔗
+bool is_point_over(point: Vector3) const 
 
 Returns true if point is located above the plane.
 
-Plane normalized() const 🔗
+Plane normalized() const 
 
 Returns a copy of the plane, with normalized normal (so it's a unit vector). Returns Plane(0, 0, 0, 0) if normal can't be normalized (it has zero length).
 
-Vector3 project(point: Vector3) const 🔗
+Vector3 project(point: Vector3) const 
 
 Returns the orthogonal projection of point into a point in the plane.
 
-bool operator !=(right: Plane) 🔗
+bool operator !=(right: Plane) 
 
 Returns true if the planes are not equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Plane operator *(right: Transform3D) 🔗
+Plane operator *(right: Transform3D) 
 
 Inversely transforms (multiplies) the Plane by the given Transform3D transformation matrix.
 
 plane * transform is equivalent to transform.affine_inverse() * plane. See Transform3D.affine_inverse().
 
-bool operator ==(right: Plane) 🔗
+bool operator ==(right: Plane) 
 
 Returns true if the planes are exactly equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Plane operator unary+() 🔗
+Plane operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Plane operator unary-() 🔗
+Plane operator unary-() 
 
 Returns the negative value of the Plane. This is the same as writing Plane(-p.normal, -p.d). This operation flips the direction of the normal vector and also flips the distance value, resulting in a Plane that is in the same place, but facing the opposite direction.
 
@@ -2022,31 +2022,31 @@ Planes PLANE_BOTTOM = 5
 
 The index value of the projection bottom clipping plane.
 
-IDENTITY = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) 🔗
+IDENTITY = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) 
 
 A Projection with no transformation defined. When applied to other data structures, no transformation is performed.
 
-ZERO = Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) 🔗
+ZERO = Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) 
 
 A Projection with all values initialized to 0. When applied to other data structures, they will be zeroed.
 
-Vector4 w = Vector4(0, 0, 0, 1) 🔗
+Vector4 w = Vector4(0, 0, 0, 1) 
 
 The projection matrix's W vector (column 3). Equivalent to array index 3.
 
-Vector4 x = Vector4(1, 0, 0, 0) 🔗
+Vector4 x = Vector4(1, 0, 0, 0) 
 
 The projection matrix's X vector (column 0). Equivalent to array index 0.
 
-Vector4 y = Vector4(0, 1, 0, 0) 🔗
+Vector4 y = Vector4(0, 1, 0, 0) 
 
 The projection matrix's Y vector (column 1). Equivalent to array index 1.
 
-Vector4 z = Vector4(0, 0, 1, 0) 🔗
+Vector4 z = Vector4(0, 0, 1, 0) 
 
 The projection matrix's Z vector (column 2). Equivalent to array index 2.
 
-Projection Projection() 🔗
+Projection Projection() 
 
 Constructs a default-initialized Projection identical to IDENTITY.
 
@@ -2064,51 +2064,51 @@ Projection Projection(x_axis: Vector4, y_axis: Vector4, z_axis: Vector4, w_axis:
 
 Constructs a Projection from four Vector4 values (matrix columns).
 
-Projection create_depth_correction(flip_y: bool) static 🔗
+Projection create_depth_correction(flip_y: bool) static 
 
 Creates a new Projection that projects positions from a depth range of -1 to 1 to one that ranges from 0 to 1, and flips the projected positions vertically, according to flip_y.
 
-Projection create_fit_aabb(aabb: AABB) static 🔗
+Projection create_fit_aabb(aabb: AABB) static 
 
 Creates a new Projection that scales a given projection to fit around a given AABB in projection space.
 
-Projection create_for_hmd(eye: int, aspect: float, intraocular_dist: float, display_width: float, display_to_lens: float, oversample: float, z_near: float, z_far: float) static 🔗
+Projection create_for_hmd(eye: int, aspect: float, intraocular_dist: float, display_width: float, display_to_lens: float, oversample: float, z_near: float, z_far: float) static 
 
 Creates a new Projection for projecting positions onto a head-mounted display with the given X:Y aspect ratio, distance between eyes, display width, distance to lens, oversampling factor, and depth clipping planes.
 
 eye creates the projection for the left eye when set to 1, or the right eye when set to 2.
 
-Projection create_frustum(left: float, right: float, bottom: float, top: float, z_near: float, z_far: float) static 🔗
+Projection create_frustum(left: float, right: float, bottom: float, top: float, z_near: float, z_far: float) static 
 
 Creates a new Projection that projects positions in a frustum with the given clipping planes.
 
-Projection create_frustum_aspect(size: float, aspect: float, offset: Vector2, z_near: float, z_far: float, flip_fov: bool = false) static 🔗
+Projection create_frustum_aspect(size: float, aspect: float, offset: Vector2, z_near: float, z_far: float, flip_fov: bool = false) static 
 
 Creates a new Projection that projects positions in a frustum with the given size, X:Y aspect ratio, offset, and clipping planes.
 
 flip_fov determines whether the projection's field of view is flipped over its diagonal.
 
-Projection create_light_atlas_rect(rect: Rect2) static 🔗
+Projection create_light_atlas_rect(rect: Rect2) static 
 
 Creates a new Projection that projects positions into the given Rect2.
 
-Projection create_orthogonal(left: float, right: float, bottom: float, top: float, z_near: float, z_far: float) static 🔗
+Projection create_orthogonal(left: float, right: float, bottom: float, top: float, z_near: float, z_far: float) static 
 
 Creates a new Projection that projects positions using an orthogonal projection with the given clipping planes.
 
-Projection create_orthogonal_aspect(size: float, aspect: float, z_near: float, z_far: float, flip_fov: bool = false) static 🔗
+Projection create_orthogonal_aspect(size: float, aspect: float, z_near: float, z_far: float, flip_fov: bool = false) static 
 
 Creates a new Projection that projects positions using an orthogonal projection with the given size, X:Y aspect ratio, and clipping planes.
 
 flip_fov determines whether the projection's field of view is flipped over its diagonal.
 
-Projection create_perspective(fovy: float, aspect: float, z_near: float, z_far: float, flip_fov: bool = false) static 🔗
+Projection create_perspective(fovy: float, aspect: float, z_near: float, z_far: float, flip_fov: bool = false) static 
 
 Creates a new Projection that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping planes.
 
 flip_fov determines whether the projection's field of view is flipped over its diagonal.
 
-Projection create_perspective_hmd(fovy: float, aspect: float, z_near: float, z_far: float, flip_fov: bool, eye: int, intraocular_dist: float, convergence_dist: float) static 🔗
+Projection create_perspective_hmd(fovy: float, aspect: float, z_near: float, z_far: float, flip_fov: bool, eye: int, intraocular_dist: float, convergence_dist: float) static 
 
 Creates a new Projection that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping distances. The projection is adjusted for a head-mounted display with the given distance between eyes and distance to a point that can be focused on.
 
@@ -2116,99 +2116,99 @@ eye creates the projection for the left eye when set to 1, or the right eye when
 
 flip_fov determines whether the projection's field of view is flipped over its diagonal.
 
-float determinant() const 🔗
+float determinant() const 
 
 Returns a scalar value that is the signed factor by which areas are scaled by this matrix. If the sign is negative, the matrix flips the orientation of the area.
 
 The determinant can be used to calculate the invertibility of a matrix or solve linear systems of equations involving the matrix, among other applications.
 
-Projection flipped_y() const 🔗
+Projection flipped_y() const 
 
 Returns a copy of this Projection with the signs of the values of the Y column flipped.
 
-float get_aspect() const 🔗
+float get_aspect() const 
 
 Returns the X:Y aspect ratio of this Projection's viewport.
 
-Vector2 get_far_plane_half_extents() const 🔗
+Vector2 get_far_plane_half_extents() const 
 
 Returns the dimensions of the far clipping plane of the projection, divided by two.
 
-float get_fov() const 🔗
+float get_fov() const 
 
 Returns the horizontal field of view of the projection (in degrees).
 
-float get_fovy(fovx: float, aspect: float) static 🔗
+float get_fovy(fovx: float, aspect: float) static 
 
 Returns the vertical field of view of the projection (in degrees) associated with the given horizontal field of view (in degrees) and aspect ratio.
 
 Note: Unlike most methods of Projection, aspect is expected to be 1 divided by the X:Y aspect ratio.
 
-float get_lod_multiplier() const 🔗
+float get_lod_multiplier() const 
 
 Returns the factor by which the visible level of detail is scaled by this Projection.
 
-int get_pixels_per_meter(for_pixel_width: int) const 🔗
+int get_pixels_per_meter(for_pixel_width: int) const 
 
 Returns for_pixel_width divided by the viewport's width measured in meters on the near plane, after this Projection is applied.
 
-Plane get_projection_plane(plane: int) const 🔗
+Plane get_projection_plane(plane: int) const 
 
 Returns the clipping plane of this Projection whose index is given by plane.
 
 plane should be equal to one of PLANE_NEAR, PLANE_FAR, PLANE_LEFT, PLANE_TOP, PLANE_RIGHT, or PLANE_BOTTOM.
 
-Vector2 get_viewport_half_extents() const 🔗
+Vector2 get_viewport_half_extents() const 
 
 Returns the dimensions of the viewport plane that this Projection projects positions onto, divided by two.
 
-float get_z_far() const 🔗
+float get_z_far() const 
 
 Returns the distance for this Projection beyond which positions are clipped.
 
-float get_z_near() const 🔗
+float get_z_near() const 
 
 Returns the distance for this Projection before which positions are clipped.
 
-Projection inverse() const 🔗
+Projection inverse() const 
 
 Returns a Projection that performs the inverse of this Projection's projective transformation.
 
-bool is_orthogonal() const 🔗
+bool is_orthogonal() const 
 
 Returns true if this Projection performs an orthogonal projection.
 
-Projection jitter_offseted(offset: Vector2) const 🔗
+Projection jitter_offseted(offset: Vector2) const 
 
 Returns a Projection with the X and Y values from the given Vector2 added to the first and second values of the final column respectively.
 
-Projection perspective_znear_adjusted(new_znear: float) const 🔗
+Projection perspective_znear_adjusted(new_znear: float) const 
 
 Returns a Projection with the near clipping distance adjusted to be new_znear.
 
 Note: The original Projection must be a perspective projection.
 
-bool operator !=(right: Projection) 🔗
+bool operator !=(right: Projection) 
 
 Returns true if the projections are not equal.
 
 Note: Due to floating-point precision errors, this may return true, even if the projections are virtually equal. An is_equal_approx method may be added in a future version of Godot.
 
-Projection operator *(right: Projection) 🔗
+Projection operator *(right: Projection) 
 
 Returns a Projection that applies the combined transformations of this Projection and right.
 
-Vector4 operator *(right: Vector4) 🔗
+Vector4 operator *(right: Vector4) 
 
 Projects (multiplies) the given Vector4 by this Projection matrix.
 
-bool operator ==(right: Projection) 🔗
+bool operator ==(right: Projection) 
 
 Returns true if the projections are equal.
 
 Note: Due to floating-point precision errors, this may return false, even if the projections are virtually equal. An is_equal_approx method may be added in a future version of Godot.
 
-Vector4 operator [](index: int) 🔗
+Vector4 operator [](index: int) 
 
 Returns the column of the Projection with the given index.
 
@@ -2310,7 +2310,7 @@ operator ==(right: Quaternion)
 
 operator [](index: int)
 
-IDENTITY = Quaternion(0, 0, 0, 1) 🔗
+IDENTITY = Quaternion(0, 0, 0, 1) 
 
 The identity quaternion, representing no rotation. This has the same rotation as Basis.IDENTITY.
 
@@ -2334,7 +2334,7 @@ Z component of the quaternion. This is the value along the "imaginary" k axis.
 
 Note: Quaternion components should usually not be manipulated directly.
 
-Quaternion Quaternion() 🔗
+Quaternion Quaternion() 
 
 Constructs a Quaternion identical to IDENTITY.
 
@@ -2364,161 +2364,161 @@ Constructs a Quaternion defined by the given values.
 
 Note: Only normalized quaternions represent rotation; if these values are not normalized, the new Quaternion will not be a valid rotation.
 
-float angle_to(to: Quaternion) const 🔗
+float angle_to(to: Quaternion) const 
 
 Returns the angle between this quaternion and to. This is the magnitude of the angle you would need to rotate by to get from one to the other.
 
 Note: The magnitude of the floating-point error for this method is abnormally high, so methods such as is_zero_approx will not work reliably.
 
-float dot(with: Quaternion) const 🔗
+float dot(with: Quaternion) const 
 
 Returns the dot product between this quaternion and with.
 
 This is equivalent to (quat.x * with.x) + (quat.y * with.y) + (quat.z * with.z) + (quat.w * with.w).
 
-Quaternion exp() const 🔗
+Quaternion exp() const 
 
 Returns the exponential of this quaternion. The rotation axis of the result is the normalized rotation axis of this quaternion, the angle of the result is the length of the vector part of this quaternion.
 
-Quaternion from_euler(euler: Vector3) static 🔗
+Quaternion from_euler(euler: Vector3) static 
 
 Constructs a new Quaternion from the given Vector3 of Euler angles, in radians. This method always uses the YXZ convention (@GlobalScope.EULER_ORDER_YXZ).
 
-float get_angle() const 🔗
+float get_angle() const 
 
 Returns the angle of the rotation represented by this quaternion.
 
 Note: The quaternion must be normalized.
 
-Vector3 get_axis() const 🔗
+Vector3 get_axis() const 
 
 Returns the rotation axis of the rotation represented by this quaternion.
 
-Vector3 get_euler(order: int = 2) const 🔗
+Vector3 get_euler(order: int = 2) const 
 
 Returns this quaternion's rotation as a Vector3 of Euler angles, in radians.
 
 The order of each consecutive rotation can be changed with order (see EulerOrder constants). By default, the YXZ convention is used (@GlobalScope.EULER_ORDER_YXZ): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method from_euler(), this order is reversed.
 
-Quaternion inverse() const 🔗
+Quaternion inverse() const 
 
 Returns the inverse version of this quaternion, inverting the sign of every component except w.
 
-bool is_equal_approx(to: Quaternion) const 🔗
+bool is_equal_approx(to: Quaternion) const 
 
 Returns true if this quaternion and to are approximately equal, by calling @GlobalScope.is_equal_approx() on each component.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this quaternion is finite, by calling @GlobalScope.is_finite() on each component.
 
-bool is_normalized() const 🔗
+bool is_normalized() const 
 
 Returns true if this quaternion is normalized. See also normalized().
 
-float length() const 🔗
+float length() const 
 
 Returns this quaternion's length, also called magnitude.
 
-float length_squared() const 🔗
+float length_squared() const 
 
 Returns this quaternion's length, squared.
 
 Note: This method is faster than length(), so prefer it if you only need to compare quaternion lengths.
 
-Quaternion log() const 🔗
+Quaternion log() const 
 
 Returns the logarithm of this quaternion. Multiplies this quaternion's rotation axis by its rotation angle, and stores the result in the returned quaternion's vector part (x, y, and z). The returned quaternion's real part (w) is always 0.0.
 
-Quaternion normalized() const 🔗
+Quaternion normalized() const 
 
 Returns a copy of this quaternion, normalized so that its length is 1.0. See also is_normalized().
 
-Quaternion slerp(to: Quaternion, weight: float) const 🔗
+Quaternion slerp(to: Quaternion, weight: float) const 
 
 Performs a spherical-linear interpolation with the to quaternion, given a weight and returns the result. Both this quaternion and to must be normalized.
 
-Quaternion slerpni(to: Quaternion, weight: float) const 🔗
+Quaternion slerpni(to: Quaternion, weight: float) const 
 
 Performs a spherical-linear interpolation with the to quaternion, given a weight and returns the result. Unlike slerp(), this method does not check if the rotation path is smaller than 90 degrees. Both this quaternion and to must be normalized.
 
-Quaternion spherical_cubic_interpolate(b: Quaternion, pre_a: Quaternion, post_b: Quaternion, weight: float) const 🔗
+Quaternion spherical_cubic_interpolate(b: Quaternion, pre_a: Quaternion, post_b: Quaternion, weight: float) const 
 
 Performs a spherical cubic interpolation between quaternions pre_a, this vector, b, and post_b, by the given amount weight.
 
-Quaternion spherical_cubic_interpolate_in_time(b: Quaternion, pre_a: Quaternion, post_b: Quaternion, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 🔗
+Quaternion spherical_cubic_interpolate_in_time(b: Quaternion, pre_a: Quaternion, post_b: Quaternion, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 
 
 Performs a spherical cubic interpolation between quaternions pre_a, this vector, b, and post_b, by the given amount weight.
 
 It can perform smoother interpolation than spherical_cubic_interpolate() by the time values.
 
-bool operator !=(right: Quaternion) 🔗
+bool operator !=(right: Quaternion) 
 
 Returns true if the components of both quaternions are not exactly equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Quaternion operator *(right: Quaternion) 🔗
+Quaternion operator *(right: Quaternion) 
 
 Composes (multiplies) two quaternions. This rotates the right quaternion (the child) by this quaternion (the parent).
 
-Vector3 operator *(right: Vector3) 🔗
+Vector3 operator *(right: Vector3) 
 
 Rotates (multiplies) the right vector by this quaternion, returning a Vector3.
 
-Quaternion operator *(right: float) 🔗
+Quaternion operator *(right: float) 
 
 Multiplies each component of the Quaternion by the right float value.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
-Quaternion operator *(right: int) 🔗
+Quaternion operator *(right: int) 
 
 Multiplies each component of the Quaternion by the right int value.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
-Quaternion operator +(right: Quaternion) 🔗
+Quaternion operator +(right: Quaternion) 
 
 Adds each component of the left Quaternion to the right Quaternion.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression, such as approximating an intermediate rotation between two nearby rotations.
 
-Quaternion operator -(right: Quaternion) 🔗
+Quaternion operator -(right: Quaternion) 
 
 Subtracts each component of the left Quaternion by the right Quaternion.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
-Quaternion operator /(right: float) 🔗
+Quaternion operator /(right: float) 
 
 Divides each component of the Quaternion by the right float value.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
-Quaternion operator /(right: int) 🔗
+Quaternion operator /(right: int) 
 
 Divides each component of the Quaternion by the right int value.
 
 This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
-bool operator ==(right: Quaternion) 🔗
+bool operator ==(right: Quaternion) 
 
 Returns true if the components of both quaternions are exactly equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Accesses each component of this quaternion by their index.
 
 Index 0 is the same as x, index 1 is the same as y, index 2 is the same as z, and index 3 is the same as w.
 
-Quaternion operator unary+() 🔗
+Quaternion operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Quaternion operator unary-() 🔗
+Quaternion operator unary-() 
 
 Returns the negative value of the Quaternion. This is the same as multiplying all components by -1. This operation results in a quaternion that represents the same rotation.
 
@@ -2588,15 +2588,15 @@ operator *(right: Transform2D)
 
 operator ==(right: Rect2)
 
-Vector2 end = Vector2(0, 0) 🔗
+Vector2 end = Vector2(0, 0) 
 
 The ending point. This is usually the bottom-right corner of the rectangle, and is equivalent to position + size. Setting this point affects the size.
 
-Vector2 position = Vector2(0, 0) 🔗
+Vector2 position = Vector2(0, 0) 
 
 The origin point. This is usually the top-left corner of the rectangle.
 
-Vector2 size = Vector2(0, 0) 🔗
+Vector2 size = Vector2(0, 0) 
 
 The rectangle's width and height, starting from position. Setting this value also affects the end point.
 
@@ -2624,77 +2624,77 @@ Returns a Rect2 equivalent to this rectangle, with its width and height modified
 
 Note: It's recommended to use this method when size is negative, as most other methods in Godot assume that the position is the top-left corner, and the end is the bottom-right corner.
 
-bool encloses(b: Rect2) const 🔗
+bool encloses(b: Rect2) const 
 
 Returns true if this rectangle completely encloses the b rectangle.
 
-Rect2 expand(to: Vector2) const 🔗
+Rect2 expand(to: Vector2) const 
 
 Returns a copy of this rectangle expanded to align the edges with the given to point, if necessary.
 
-float get_area() const 🔗
+float get_area() const 
 
 Returns the rectangle's area. This is equivalent to size.x * size.y. See also has_area().
 
-Vector2 get_center() const 🔗
+Vector2 get_center() const 
 
 Returns the center point of the rectangle. This is the same as position + (size / 2.0).
 
-Vector2 get_support(direction: Vector2) const 🔗
+Vector2 get_support(direction: Vector2) const 
 
 Returns the vertex's position of this rect that's the farthest in the given direction. This point is commonly known as the support point in collision detection algorithms.
 
-Rect2 grow(amount: float) const 🔗
+Rect2 grow(amount: float) const 
 
 Returns a copy of this rectangle extended on all sides by the given amount. A negative amount shrinks the rectangle instead. See also grow_individual() and grow_side().
 
-Rect2 grow_individual(left: float, top: float, right: float, bottom: float) const 🔗
+Rect2 grow_individual(left: float, top: float, right: float, bottom: float) const 
 
 Returns a copy of this rectangle with its left, top, right, and bottom sides extended by the given amounts. Negative values shrink the sides, instead. See also grow() and grow_side().
 
-Rect2 grow_side(side: int, amount: float) const 🔗
+Rect2 grow_side(side: int, amount: float) const 
 
 Returns a copy of this rectangle with its side extended by the given amount (see Side constants). A negative amount shrinks the rectangle, instead. See also grow() and grow_individual().
 
-bool has_area() const 🔗
+bool has_area() const 
 
 Returns true if this rectangle has positive width and height. See also get_area().
 
-bool has_point(point: Vector2) const 🔗
+bool has_point(point: Vector2) const 
 
 Returns true if the rectangle contains the given point. By convention, points on the right and bottom edges are not included.
 
 Note: This method is not reliable for Rect2 with a negative size. Use abs() first to get a valid rectangle.
 
-Rect2 intersection(b: Rect2) const 🔗
+Rect2 intersection(b: Rect2) const 
 
 Returns the intersection between this rectangle and b. If the rectangles do not intersect, returns an empty Rect2.
 
 Note: If you only need to know whether two rectangles are overlapping, use intersects(), instead.
 
-bool intersects(b: Rect2, include_borders: bool = false) const 🔗
+bool intersects(b: Rect2, include_borders: bool = false) const 
 
 Returns true if this rectangle overlaps with the b rectangle. The edges of both rectangles are excluded, unless include_borders is true.
 
-bool is_equal_approx(rect: Rect2) const 🔗
+bool is_equal_approx(rect: Rect2) const 
 
 Returns true if this rectangle and rect are approximately equal, by calling Vector2.is_equal_approx() on the position and the size.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this rectangle's values are finite, by calling Vector2.is_finite() on the position and the size.
 
-Rect2 merge(b: Rect2) const 🔗
+Rect2 merge(b: Rect2) const 
 
 Returns a Rect2 that encloses both this rectangle and b around the edges. See also encloses().
 
-bool operator !=(right: Rect2) 🔗
+bool operator !=(right: Rect2) 
 
 Returns true if the position or size of both rectangles are not equal.
 
 Note: Due to floating-point precision errors, consider using is_equal_approx() instead, which is more reliable.
 
-Rect2 operator *(right: Transform2D) 🔗
+Rect2 operator *(right: Transform2D) 
 
 Inversely transforms (multiplies) the Rect2 by the given Transform2D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -2702,7 +2702,7 @@ rect * transform is equivalent to transform.inverse() * rect. See Transform2D.in
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * rect can be used instead. See Transform2D.affine_inverse().
 
-bool operator ==(right: Rect2) 🔗
+bool operator ==(right: Rect2) 
 
 Returns true if both position and size of the rectangles are exactly equal, respectively.
 
@@ -2840,35 +2840,35 @@ Enumerated value for the X axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the Y axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector2i(0, 0) 🔗
+ZERO = Vector2i(0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector2i(1, 1) 🔗
+ONE = Vector2i(1, 1) 
 
 One vector, a vector with all components set to 1.
 
-MIN = Vector2i(-2147483648, -2147483648) 🔗
+MIN = Vector2i(-2147483648, -2147483648) 
 
 Min vector, a vector with all components equal to INT32_MIN. Can be used as a negative integer equivalent of Vector2.INF.
 
-MAX = Vector2i(2147483647, 2147483647) 🔗
+MAX = Vector2i(2147483647, 2147483647) 
 
 Max vector, a vector with all components equal to INT32_MAX. Can be used as an integer equivalent of Vector2.INF.
 
-LEFT = Vector2i(-1, 0) 🔗
+LEFT = Vector2i(-1, 0) 
 
 Left unit vector. Represents the direction of left.
 
-RIGHT = Vector2i(1, 0) 🔗
+RIGHT = Vector2i(1, 0) 
 
 Right unit vector. Represents the direction of right.
 
-UP = Vector2i(0, -1) 🔗
+UP = Vector2i(0, -1) 
 
 Up unit vector. Y is down in 2D, so this vector points -Y.
 
-DOWN = Vector2i(0, 1) 🔗
+DOWN = Vector2i(0, 1) 
 
 Down unit vector. Y is down in 2D, so this vector points +Y.
 
@@ -2876,7 +2876,7 @@ The vector's X component. Also accessible by using the index position [0].
 
 The vector's Y component. Also accessible by using the index position [1].
 
-Vector2i Vector2i() 🔗
+Vector2i Vector2i() 
 
 Constructs a default-initialized Vector2i with all components set to 0.
 
@@ -2892,151 +2892,151 @@ Vector2i Vector2i(x: int, y: int)
 
 Constructs a new Vector2i from the given x and y.
 
-Vector2i abs() const 🔗
+Vector2i abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-float aspect() const 🔗
+float aspect() const 
 
 Returns the aspect ratio of this vector, the ratio of x to y.
 
-Vector2i clamp(min: Vector2i, max: Vector2i) const 🔗
+Vector2i clamp(min: Vector2i, max: Vector2i) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector2i clampi(min: int, max: int) const 🔗
+Vector2i clampi(min: int, max: int) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-int distance_squared_to(to: Vector2i) const 🔗
+int distance_squared_to(to: Vector2i) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector2i) const 🔗
+float distance_to(to: Vector2i) const 
 
 Returns the distance between this vector and to.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-int length_squared() const 🔗
+int length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector2i max(with: Vector2i) const 🔗
+Vector2i max(with: Vector2i) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector2i(maxi(x, with.x), maxi(y, with.y)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector2i maxi(with: int) const 🔗
+Vector2i maxi(with: int) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector2i(maxi(x, with), maxi(y, with)).
 
-Vector2i min(with: Vector2i) const 🔗
+Vector2i min(with: Vector2i) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector2i(mini(x, with.x), mini(y, with.y)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_Y.
 
-Vector2i mini(with: int) const 🔗
+Vector2i mini(with: int) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector2i(mini(x, with), mini(y, with)).
 
-Vector2i sign() const 🔗
+Vector2i sign() const 
 
 Returns a new vector with each component set to 1 if it's positive, -1 if it's negative, and 0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-Vector2i snapped(step: Vector2i) const 🔗
+Vector2i snapped(step: Vector2i) const 
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in step.
 
-Vector2i snappedi(step: int) const 🔗
+Vector2i snappedi(step: int) const 
 
 Returns a new vector with each component snapped to the closest multiple of step.
 
-bool operator !=(right: Vector2i) 🔗
+bool operator !=(right: Vector2i) 
 
 Returns true if the vectors are not equal.
 
-Vector2i operator %(right: Vector2i) 🔗
+Vector2i operator %(right: Vector2i) 
 
 Gets the remainder of each component of the Vector2i with the components of the given Vector2i. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector2i operator %(right: int) 🔗
+Vector2i operator %(right: int) 
 
 Gets the remainder of each component of the Vector2i with the given int. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector2i operator *(right: Vector2i) 🔗
+Vector2i operator *(right: Vector2i) 
 
 Multiplies each component of the Vector2i by the components of the given Vector2i.
 
-Vector2 operator *(right: float) 🔗
+Vector2 operator *(right: float) 
 
 Multiplies each component of the Vector2i by the given float. Returns a Vector2.
 
-Vector2i operator *(right: int) 🔗
+Vector2i operator *(right: int) 
 
 Multiplies each component of the Vector2i by the given int.
 
-Vector2i operator +(right: Vector2i) 🔗
+Vector2i operator +(right: Vector2i) 
 
 Adds each component of the Vector2i by the components of the given Vector2i.
 
-Vector2i operator -(right: Vector2i) 🔗
+Vector2i operator -(right: Vector2i) 
 
 Subtracts each component of the Vector2i by the components of the given Vector2i.
 
-Vector2i operator /(right: Vector2i) 🔗
+Vector2i operator /(right: Vector2i) 
 
 Divides each component of the Vector2i by the components of the given Vector2i.
 
-Vector2 operator /(right: float) 🔗
+Vector2 operator /(right: float) 
 
 Divides each component of the Vector2i by the given float. Returns a Vector2.
 
-Vector2i operator /(right: int) 🔗
+Vector2i operator /(right: int) 
 
 Divides each component of the Vector2i by the given int.
 
-bool operator <(right: Vector2i) 🔗
+bool operator <(right: Vector2i) 
 
 Compares two Vector2i vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
-bool operator <=(right: Vector2i) 🔗
+bool operator <=(right: Vector2i) 
 
 Compares two Vector2i vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
-bool operator ==(right: Vector2i) 🔗
+bool operator ==(right: Vector2i) 
 
 Returns true if the vectors are equal.
 
-bool operator >(right: Vector2i) 🔗
+bool operator >(right: Vector2i) 
 
 Compares two Vector2i vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
-bool operator >=(right: Vector2i) 🔗
+bool operator >=(right: Vector2i) 
 
 Compares two Vector2i vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, and v[1] is equivalent to v.y.
 
-Vector2i operator unary+() 🔗
+Vector2i operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector2i operator unary-() 🔗
+Vector2i operator unary-() 
 
 Returns the negative value of the Vector2i. This is the same as writing Vector2i(-v.x, -v.y). This operation flips the direction of the vector while keeping the same magnitude.
 
@@ -3214,31 +3214,31 @@ Enumerated value for the X axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the Y axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector2(0, 0) 🔗
+ZERO = Vector2(0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector2(1, 1) 🔗
+ONE = Vector2(1, 1) 
 
 One vector, a vector with all components set to 1.
 
-INF = Vector2(inf, inf) 🔗
+INF = Vector2(inf, inf) 
 
 Infinity vector, a vector with all components set to @GDScript.INF.
 
-LEFT = Vector2(-1, 0) 🔗
+LEFT = Vector2(-1, 0) 
 
 Left unit vector. Represents the direction of left.
 
-RIGHT = Vector2(1, 0) 🔗
+RIGHT = Vector2(1, 0) 
 
 Right unit vector. Represents the direction of right.
 
-UP = Vector2(0, -1) 🔗
+UP = Vector2(0, -1) 
 
 Up unit vector. Y is down in 2D, so this vector points -Y.
 
-DOWN = Vector2(0, 1) 🔗
+DOWN = Vector2(0, 1) 
 
 Down unit vector. Y is down in 2D, so this vector points +Y.
 
@@ -3260,11 +3260,11 @@ Vector2 Vector2(x: float, y: float)
 
 Constructs a new Vector2 from the given x and y.
 
-Vector2 abs() const 🔗
+Vector2 abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-float angle() const 🔗
+float angle() const 
 
 Returns this vector's angle with respect to the positive X axis, or (1, 0) vector, in radians.
 
@@ -3274,13 +3274,13 @@ Illustration of the returned angle.
 
 Equivalent to the result of @GlobalScope.atan2() when called with the vector's y and x as parameters: atan2(y, x).
 
-float angle_to(to: Vector2) const 🔗
+float angle_to(to: Vector2) const 
 
 Returns the signed angle to the given vector, in radians.
 
 Illustration of the returned angle.
 
-float angle_to_point(to: Vector2) const 🔗
+float angle_to_point(to: Vector2) const 
 
 Returns the angle between the line connecting the two points and the X axis, in radians.
 
@@ -3288,37 +3288,37 @@ a.angle_to_point(b) is equivalent of doing (b - a).angle().
 
 Illustration of the returned angle.
 
-float aspect() const 🔗
+float aspect() const 
 
 Returns the aspect ratio of this vector, the ratio of x to y.
 
-Vector2 bezier_derivative(control_1: Vector2, control_2: Vector2, end: Vector2, t: float) const 🔗
+Vector2 bezier_derivative(control_1: Vector2, control_2: Vector2, end: Vector2, t: float) const 
 
 Returns the derivative at the given t on the Bézier curve defined by this vector and the given control_1, control_2, and end points.
 
-Vector2 bezier_interpolate(control_1: Vector2, control_2: Vector2, end: Vector2, t: float) const 🔗
+Vector2 bezier_interpolate(control_1: Vector2, control_2: Vector2, end: Vector2, t: float) const 
 
 Returns the point at the given t on the Bézier curve defined by this vector and the given control_1, control_2, and end points.
 
-Vector2 bounce(n: Vector2) const 🔗
+Vector2 bounce(n: Vector2) const 
 
 Returns the vector "bounced off" from a line defined by the given normal n perpendicular to the line.
 
 Note: bounce() performs the operation that most engines and frameworks call reflect().
 
-Vector2 ceil() const 🔗
+Vector2 ceil() const 
 
 Returns a new vector with all components rounded up (towards positive infinity).
 
-Vector2 clamp(min: Vector2, max: Vector2) const 🔗
+Vector2 clamp(min: Vector2, max: Vector2) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector2 clampf(min: float, max: float) const 🔗
+Vector2 clampf(min: float, max: float) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-float cross(with: Vector2) const 🔗
+float cross(with: Vector2) const 
 
 Returns the 2D analog of the cross product for this vector and with.
 
@@ -3326,31 +3326,31 @@ This is the signed area of the parallelogram formed by the two vectors. If the s
 
 Note: Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 
-Vector2 cubic_interpolate(b: Vector2, pre_a: Vector2, post_b: Vector2, weight: float) const 🔗
+Vector2 cubic_interpolate(b: Vector2, pre_a: Vector2, post_b: Vector2, weight: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector2 cubic_interpolate_in_time(b: Vector2, pre_a: Vector2, post_b: Vector2, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 🔗
+Vector2 cubic_interpolate_in_time(b: Vector2, pre_a: Vector2, post_b: Vector2, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 It can perform smoother interpolation than cubic_interpolate() by the time values.
 
-Vector2 direction_to(to: Vector2) const 🔗
+Vector2 direction_to(to: Vector2) const 
 
 Returns the normalized vector pointing from this vector to to. This is equivalent to using (b - a).normalized().
 
-float distance_squared_to(to: Vector2) const 🔗
+float distance_squared_to(to: Vector2) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector2) const 🔗
+float distance_to(to: Vector2) const 
 
 Returns the distance between this vector and to.
 
-float dot(with: Vector2) const 🔗
+float dot(with: Vector2) const 
 
 Returns the dot product of this vector and with. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
 
@@ -3360,143 +3360,143 @@ When using unit (normalized) vectors, the result will always be between -1.0 (18
 
 Note: a.dot(b) is equivalent to b.dot(a).
 
-Vector2 floor() const 🔗
+Vector2 floor() const 
 
 Returns a new vector with all components rounded down (towards negative infinity).
 
-Vector2 from_angle(angle: float) static 🔗
+Vector2 from_angle(angle: float) static 
 
 Creates a Vector2 rotated to the given angle in radians. This is equivalent to doing Vector2(cos(angle), sin(angle)) or Vector2.RIGHT.rotated(angle).
 
 Note: The length of the returned Vector2 is approximately 1.0, but is is not guaranteed to be exactly 1.0 due to floating-point precision issues. Call normalized() on the returned Vector2 if you require a unit vector.
 
-bool is_equal_approx(to: Vector2) const 🔗
+bool is_equal_approx(to: Vector2) const 
 
 Returns true if this vector and to are approximately equal, by running @GlobalScope.is_equal_approx() on each component.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this vector is finite, by calling @GlobalScope.is_finite() on each component.
 
-bool is_normalized() const 🔗
+bool is_normalized() const 
 
 Returns true if the vector is normalized, i.e. its length is approximately equal to 1.
 
-bool is_zero_approx() const 🔗
+bool is_zero_approx() const 
 
 Returns true if this vector's values are approximately zero, by running @GlobalScope.is_zero_approx() on each component.
 
 This method is faster than using is_equal_approx() with one value as a zero vector.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-float length_squared() const 🔗
+float length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector2 lerp(to: Vector2, weight: float) const 🔗
+Vector2 lerp(to: Vector2, weight: float) const 
 
 Returns the result of the linear interpolation between this vector and to by amount weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector2 limit_length(length: float = 1.0) const 🔗
+Vector2 limit_length(length: float = 1.0) const 
 
 Returns the vector with a maximum length by limiting its length to length. If the vector is non-finite, the result is undefined.
 
-Vector2 max(with: Vector2) const 🔗
+Vector2 max(with: Vector2) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector2(maxf(x, with.x), maxf(y, with.y)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector2 maxf(with: float) const 🔗
+Vector2 maxf(with: float) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector2(maxf(x, with), maxf(y, with)).
 
-Vector2 min(with: Vector2) const 🔗
+Vector2 min(with: Vector2) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector2(minf(x, with.x), minf(y, with.y)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_Y.
 
-Vector2 minf(with: float) const 🔗
+Vector2 minf(with: float) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector2(minf(x, with), minf(y, with)).
 
-Vector2 move_toward(to: Vector2, delta: float) const 🔗
+Vector2 move_toward(to: Vector2, delta: float) const 
 
 Returns a new vector moved toward to by the fixed delta amount. Will not go past the final value.
 
-Vector2 normalized() const 🔗
+Vector2 normalized() const 
 
 Returns the result of scaling the vector to unit length. Equivalent to v / v.length(). Returns (0, 0) if v.length() == 0. See also is_normalized().
 
 Note: This function may return incorrect values if the input vector length is near zero.
 
-Vector2 orthogonal() const 🔗
+Vector2 orthogonal() const 
 
 Returns a perpendicular vector rotated 90 degrees counter-clockwise compared to the original, with the same length.
 
-Vector2 posmod(mod: float) const 🔗
+Vector2 posmod(mod: float) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and mod.
 
-Vector2 posmodv(modv: Vector2) const 🔗
+Vector2 posmodv(modv: Vector2) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and modv's components.
 
-Vector2 project(b: Vector2) const 🔗
+Vector2 project(b: Vector2) const 
 
 Returns a new vector resulting from projecting this vector onto the given vector b. The resulting new vector is parallel to b. See also slide().
 
 Note: If the vector b is a zero vector, the components of the resulting new vector will be @GDScript.NAN.
 
-Vector2 reflect(line: Vector2) const 🔗
+Vector2 reflect(line: Vector2) const 
 
 Returns the result of reflecting the vector from a line defined by the given direction vector line.
 
 Note: reflect() differs from what other engines and frameworks call reflect(). In other engines, reflect() takes a normal direction which is a direction perpendicular to the line. In Godot, you specify the direction of the line directly. See also bounce() which does what most engines call reflect().
 
-Vector2 rotated(angle: float) const 🔗
+Vector2 rotated(angle: float) const 
 
 Returns the result of rotating this vector by angle (in radians). See also @GlobalScope.deg_to_rad().
 
-Vector2 round() const 🔗
+Vector2 round() const 
 
 Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
-Vector2 sign() const 🔗
+Vector2 sign() const 
 
 Returns a new vector with each component set to 1.0 if it's positive, -1.0 if it's negative, and 0.0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-Vector2 slerp(to: Vector2, weight: float) const 🔗
+Vector2 slerp(to: Vector2, weight: float) const 
 
 Returns the result of spherical linear interpolation between this vector and to, by amount weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 This method also handles interpolating the lengths if the input vectors have different lengths. For the special case of one or both input vectors having zero length, this method behaves like lerp().
 
-Vector2 slide(n: Vector2) const 🔗
+Vector2 slide(n: Vector2) const 
 
 Returns a new vector resulting from sliding this vector along a line with normal n. The resulting new vector is perpendicular to n, and is equivalent to this vector minus its projection on n. See also project().
 
 Note: The vector n must be normalized. See also normalized().
 
-Vector2 snapped(step: Vector2) const 🔗
+Vector2 snapped(step: Vector2) const 
 
 Returns a new vector with each component snapped to the nearest multiple of the corresponding component in step. This can also be used to round the components to an arbitrary number of decimals.
 
-Vector2 snappedf(step: float) const 🔗
+Vector2 snappedf(step: float) const 
 
 Returns a new vector with each component snapped to the nearest multiple of step. This can also be used to round the components to an arbitrary number of decimals.
 
-bool operator !=(right: Vector2) 🔗
+bool operator !=(right: Vector2) 
 
 Returns true if the vectors are not equal.
 
@@ -3504,7 +3504,7 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-Vector2 operator *(right: Transform2D) 🔗
+Vector2 operator *(right: Transform2D) 
 
 Inversely transforms (multiplies) the Vector2 by the given Transform2D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -3512,51 +3512,51 @@ vector * transform is equivalent to transform.inverse() * vector. See Transform2
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * vector can be used instead. See Transform2D.affine_inverse().
 
-Vector2 operator *(right: Vector2) 🔗
+Vector2 operator *(right: Vector2) 
 
 Multiplies each component of the Vector2 by the components of the given Vector2.
 
-Vector2 operator *(right: float) 🔗
+Vector2 operator *(right: float) 
 
 Multiplies each component of the Vector2 by the given float.
 
-Vector2 operator *(right: int) 🔗
+Vector2 operator *(right: int) 
 
 Multiplies each component of the Vector2 by the given int.
 
-Vector2 operator +(right: Vector2) 🔗
+Vector2 operator +(right: Vector2) 
 
 Adds each component of the Vector2 by the components of the given Vector2.
 
-Vector2 operator -(right: Vector2) 🔗
+Vector2 operator -(right: Vector2) 
 
 Subtracts each component of the Vector2 by the components of the given Vector2.
 
-Vector2 operator /(right: Vector2) 🔗
+Vector2 operator /(right: Vector2) 
 
 Divides each component of the Vector2 by the components of the given Vector2.
 
-Vector2 operator /(right: float) 🔗
+Vector2 operator /(right: float) 
 
 Divides each component of the Vector2 by the given float.
 
-Vector2 operator /(right: int) 🔗
+Vector2 operator /(right: int) 
 
 Divides each component of the Vector2 by the given int.
 
-bool operator <(right: Vector2) 🔗
+bool operator <(right: Vector2) 
 
 Compares two Vector2 vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator <=(right: Vector2) 🔗
+bool operator <=(right: Vector2) 
 
 Compares two Vector2 vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator ==(right: Vector2) 🔗
+bool operator ==(right: Vector2) 
 
 Returns true if the vectors are exactly equal.
 
@@ -3564,27 +3564,27 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >(right: Vector2) 🔗
+bool operator >(right: Vector2) 
 
 Compares two Vector2 vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >=(right: Vector2) 🔗
+bool operator >=(right: Vector2) 
 
 Compares two Vector2 vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, and v[1] is equivalent to v.y.
 
-Vector2 operator unary+() 🔗
+Vector2 operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector2 operator unary-() 🔗
+Vector2 operator unary-() 
 
 Returns the negative value of the Vector2. This is the same as writing Vector2(-v.x, -v.y). This operation flips the direction of the vector while keeping the same magnitude. With floats, the number zero can be either positive or negative.
 
@@ -3716,39 +3716,39 @@ Enumerated value for the Y axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the Z axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector3i(0, 0, 0) 🔗
+ZERO = Vector3i(0, 0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector3i(1, 1, 1) 🔗
+ONE = Vector3i(1, 1, 1) 
 
 One vector, a vector with all components set to 1.
 
-MIN = Vector3i(-2147483648, -2147483648, -2147483648) 🔗
+MIN = Vector3i(-2147483648, -2147483648, -2147483648) 
 
 Min vector, a vector with all components equal to INT32_MIN. Can be used as a negative integer equivalent of Vector3.INF.
 
-MAX = Vector3i(2147483647, 2147483647, 2147483647) 🔗
+MAX = Vector3i(2147483647, 2147483647, 2147483647) 
 
 Max vector, a vector with all components equal to INT32_MAX. Can be used as an integer equivalent of Vector3.INF.
 
-LEFT = Vector3i(-1, 0, 0) 🔗
+LEFT = Vector3i(-1, 0, 0) 
 
 Left unit vector. Represents the local direction of left, and the global direction of west.
 
-RIGHT = Vector3i(1, 0, 0) 🔗
+RIGHT = Vector3i(1, 0, 0) 
 
 Right unit vector. Represents the local direction of right, and the global direction of east.
 
-UP = Vector3i(0, 1, 0) 🔗
+UP = Vector3i(0, 1, 0) 
 
-DOWN = Vector3i(0, -1, 0) 🔗
+DOWN = Vector3i(0, -1, 0) 
 
-FORWARD = Vector3i(0, 0, -1) 🔗
+FORWARD = Vector3i(0, 0, -1) 
 
 Forward unit vector. Represents the local direction of forward, and the global direction of north.
 
-BACK = Vector3i(0, 0, 1) 🔗
+BACK = Vector3i(0, 0, 1) 
 
 Back unit vector. Represents the local direction of back, and the global direction of south.
 
@@ -3758,7 +3758,7 @@ The vector's Y component. Also accessible by using the index position [1].
 
 The vector's Z component. Also accessible by using the index position [2].
 
-Vector3i Vector3i() 🔗
+Vector3i Vector3i() 
 
 Constructs a default-initialized Vector3i with all components set to 0.
 
@@ -3774,147 +3774,147 @@ Vector3i Vector3i(x: int, y: int, z: int)
 
 Returns a Vector3i with the given components.
 
-Vector3i abs() const 🔗
+Vector3i abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-Vector3i clamp(min: Vector3i, max: Vector3i) const 🔗
+Vector3i clamp(min: Vector3i, max: Vector3i) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector3i clampi(min: int, max: int) const 🔗
+Vector3i clampi(min: int, max: int) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-int distance_squared_to(to: Vector3i) const 🔗
+int distance_squared_to(to: Vector3i) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector3i) const 🔗
+float distance_to(to: Vector3i) const 
 
 Returns the distance between this vector and to.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-int length_squared() const 🔗
+int length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector3i max(with: Vector3i) const 🔗
+Vector3i max(with: Vector3i) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector3i(maxi(x, with.x), maxi(y, with.y), maxi(z, with.z)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector3i maxi(with: int) const 🔗
+Vector3i maxi(with: int) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector3i(maxi(x, with), maxi(y, with), maxi(z, with)).
 
-Vector3i min(with: Vector3i) const 🔗
+Vector3i min(with: Vector3i) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector3i(mini(x, with.x), mini(y, with.y), mini(z, with.z)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_Z.
 
-Vector3i mini(with: int) const 🔗
+Vector3i mini(with: int) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector3i(mini(x, with), mini(y, with), mini(z, with)).
 
-Vector3i sign() const 🔗
+Vector3i sign() const 
 
 Returns a new vector with each component set to 1 if it's positive, -1 if it's negative, and 0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-Vector3i snapped(step: Vector3i) const 🔗
+Vector3i snapped(step: Vector3i) const 
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in step.
 
-Vector3i snappedi(step: int) const 🔗
+Vector3i snappedi(step: int) const 
 
 Returns a new vector with each component snapped to the closest multiple of step.
 
-bool operator !=(right: Vector3i) 🔗
+bool operator !=(right: Vector3i) 
 
 Returns true if the vectors are not equal.
 
-Vector3i operator %(right: Vector3i) 🔗
+Vector3i operator %(right: Vector3i) 
 
 Gets the remainder of each component of the Vector3i with the components of the given Vector3i. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector3i operator %(right: int) 🔗
+Vector3i operator %(right: int) 
 
 Gets the remainder of each component of the Vector3i with the given int. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector3i operator *(right: Vector3i) 🔗
+Vector3i operator *(right: Vector3i) 
 
 Multiplies each component of the Vector3i by the components of the given Vector3i.
 
-Vector3 operator *(right: float) 🔗
+Vector3 operator *(right: float) 
 
 Multiplies each component of the Vector3i by the given float. Returns a Vector3.
 
-Vector3i operator *(right: int) 🔗
+Vector3i operator *(right: int) 
 
 Multiplies each component of the Vector3i by the given int.
 
-Vector3i operator +(right: Vector3i) 🔗
+Vector3i operator +(right: Vector3i) 
 
 Adds each component of the Vector3i by the components of the given Vector3i.
 
-Vector3i operator -(right: Vector3i) 🔗
+Vector3i operator -(right: Vector3i) 
 
 Subtracts each component of the Vector3i by the components of the given Vector3i.
 
-Vector3i operator /(right: Vector3i) 🔗
+Vector3i operator /(right: Vector3i) 
 
 Divides each component of the Vector3i by the components of the given Vector3i.
 
-Vector3 operator /(right: float) 🔗
+Vector3 operator /(right: float) 
 
 Divides each component of the Vector3i by the given float. Returns a Vector3.
 
-Vector3i operator /(right: int) 🔗
+Vector3i operator /(right: int) 
 
 Divides each component of the Vector3i by the given int.
 
-bool operator <(right: Vector3i) 🔗
+bool operator <(right: Vector3i) 
 
 Compares two Vector3i vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
-bool operator <=(right: Vector3i) 🔗
+bool operator <=(right: Vector3i) 
 
 Compares two Vector3i vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
-bool operator ==(right: Vector3i) 🔗
+bool operator ==(right: Vector3i) 
 
 Returns true if the vectors are equal.
 
-bool operator >(right: Vector3i) 🔗
+bool operator >(right: Vector3i) 
 
 Compares two Vector3i vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
-bool operator >=(right: Vector3i) 🔗
+bool operator >=(right: Vector3i) 
 
 Compares two Vector3i vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, v[1] is equivalent to v.y, and v[2] is equivalent to v.z.
 
-Vector3i operator unary+() 🔗
+Vector3i operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector3i operator unary-() 🔗
+Vector3i operator unary-() 
 
 Returns the negative value of the Vector3i. This is the same as writing Vector3i(-v.x, -v.y, -v.z). This operation flips the direction of the vector while keeping the same magnitude.
 
@@ -4102,59 +4102,59 @@ Enumerated value for the Y axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the Z axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector3(0, 0, 0) 🔗
+ZERO = Vector3(0, 0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector3(1, 1, 1) 🔗
+ONE = Vector3(1, 1, 1) 
 
 One vector, a vector with all components set to 1.
 
-INF = Vector3(inf, inf, inf) 🔗
+INF = Vector3(inf, inf, inf) 
 
 Infinity vector, a vector with all components set to @GDScript.INF.
 
-LEFT = Vector3(-1, 0, 0) 🔗
+LEFT = Vector3(-1, 0, 0) 
 
 Left unit vector. Represents the local direction of left, and the global direction of west.
 
-RIGHT = Vector3(1, 0, 0) 🔗
+RIGHT = Vector3(1, 0, 0) 
 
 Right unit vector. Represents the local direction of right, and the global direction of east.
 
-UP = Vector3(0, 1, 0) 🔗
+UP = Vector3(0, 1, 0) 
 
-DOWN = Vector3(0, -1, 0) 🔗
+DOWN = Vector3(0, -1, 0) 
 
-FORWARD = Vector3(0, 0, -1) 🔗
+FORWARD = Vector3(0, 0, -1) 
 
 Forward unit vector. Represents the local direction of forward, and the global direction of north. Keep in mind that the forward direction for lights, cameras, etc is different from 3D assets like characters, which face towards the camera by convention. Use MODEL_FRONT and similar constants when working in 3D asset space.
 
-BACK = Vector3(0, 0, 1) 🔗
+BACK = Vector3(0, 0, 1) 
 
 Back unit vector. Represents the local direction of back, and the global direction of south.
 
-MODEL_LEFT = Vector3(1, 0, 0) 🔗
+MODEL_LEFT = Vector3(1, 0, 0) 
 
 Unit vector pointing towards the left side of imported 3D assets.
 
-MODEL_RIGHT = Vector3(-1, 0, 0) 🔗
+MODEL_RIGHT = Vector3(-1, 0, 0) 
 
 Unit vector pointing towards the right side of imported 3D assets.
 
-MODEL_TOP = Vector3(0, 1, 0) 🔗
+MODEL_TOP = Vector3(0, 1, 0) 
 
 Unit vector pointing towards the top side (up) of imported 3D assets.
 
-MODEL_BOTTOM = Vector3(0, -1, 0) 🔗
+MODEL_BOTTOM = Vector3(0, -1, 0) 
 
 Unit vector pointing towards the bottom side (down) of imported 3D assets.
 
-MODEL_FRONT = Vector3(0, 0, 1) 🔗
+MODEL_FRONT = Vector3(0, 0, 1) 
 
 Unit vector pointing towards the front side (facing forward) of imported 3D assets.
 
-MODEL_REAR = Vector3(0, 0, -1) 🔗
+MODEL_REAR = Vector3(0, 0, -1) 
 
 Unit vector pointing towards the rear side (back) of imported 3D assets.
 
@@ -4178,71 +4178,71 @@ Vector3 Vector3(x: float, y: float, z: float)
 
 Returns a Vector3 with the given components.
 
-Vector3 abs() const 🔗
+Vector3 abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-float angle_to(to: Vector3) const 🔗
+float angle_to(to: Vector3) const 
 
 Returns the unsigned minimum angle to the given vector, in radians.
 
-Vector3 bezier_derivative(control_1: Vector3, control_2: Vector3, end: Vector3, t: float) const 🔗
+Vector3 bezier_derivative(control_1: Vector3, control_2: Vector3, end: Vector3, t: float) const 
 
 Returns the derivative at the given t on the Bézier curve defined by this vector and the given control_1, control_2, and end points.
 
-Vector3 bezier_interpolate(control_1: Vector3, control_2: Vector3, end: Vector3, t: float) const 🔗
+Vector3 bezier_interpolate(control_1: Vector3, control_2: Vector3, end: Vector3, t: float) const 
 
 Returns the point at the given t on the Bézier curve defined by this vector and the given control_1, control_2, and end points.
 
-Vector3 bounce(n: Vector3) const 🔗
+Vector3 bounce(n: Vector3) const 
 
 Returns the vector "bounced off" from a plane defined by the given normal n.
 
 Note: bounce() performs the operation that most engines and frameworks call reflect().
 
-Vector3 ceil() const 🔗
+Vector3 ceil() const 
 
 Returns a new vector with all components rounded up (towards positive infinity).
 
-Vector3 clamp(min: Vector3, max: Vector3) const 🔗
+Vector3 clamp(min: Vector3, max: Vector3) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector3 clampf(min: float, max: float) const 🔗
+Vector3 clampf(min: float, max: float) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-Vector3 cross(with: Vector3) const 🔗
+Vector3 cross(with: Vector3) const 
 
 Returns the cross product of this vector and with.
 
 This returns a vector perpendicular to both this and with, which would be the normal vector of the plane defined by the two vectors. As there are two such vectors, in opposite directions, this method returns the vector defined by a right-handed coordinate system. If the two vectors are parallel this returns an empty vector, making it useful for testing if two vectors are parallel.
 
-Vector3 cubic_interpolate(b: Vector3, pre_a: Vector3, post_b: Vector3, weight: float) const 🔗
+Vector3 cubic_interpolate(b: Vector3, pre_a: Vector3, post_b: Vector3, weight: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector3 cubic_interpolate_in_time(b: Vector3, pre_a: Vector3, post_b: Vector3, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 🔗
+Vector3 cubic_interpolate_in_time(b: Vector3, pre_a: Vector3, post_b: Vector3, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 It can perform smoother interpolation than cubic_interpolate() by the time values.
 
-Vector3 direction_to(to: Vector3) const 🔗
+Vector3 direction_to(to: Vector3) const 
 
 Returns the normalized vector pointing from this vector to to. This is equivalent to using (b - a).normalized().
 
-float distance_squared_to(to: Vector3) const 🔗
+float distance_squared_to(to: Vector3) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector3) const 🔗
+float distance_to(to: Vector3) const 
 
 Returns the distance between this vector and to.
 
-float dot(with: Vector3) const 🔗
+float dot(with: Vector3) const 
 
 Returns the dot product of this vector and with. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.
 
@@ -4252,89 +4252,89 @@ When using unit (normalized) vectors, the result will always be between -1.0 (18
 
 Note: a.dot(b) is equivalent to b.dot(a).
 
-Vector3 floor() const 🔗
+Vector3 floor() const 
 
 Returns a new vector with all components rounded down (towards negative infinity).
 
-Vector3 inverse() const 🔗
+Vector3 inverse() const 
 
 Returns the inverse of the vector. This is the same as Vector3(1.0 / v.x, 1.0 / v.y, 1.0 / v.z).
 
-bool is_equal_approx(to: Vector3) const 🔗
+bool is_equal_approx(to: Vector3) const 
 
 Returns true if this vector and to are approximately equal, by running @GlobalScope.is_equal_approx() on each component.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this vector is finite, by calling @GlobalScope.is_finite() on each component.
 
-bool is_normalized() const 🔗
+bool is_normalized() const 
 
 Returns true if the vector is normalized, i.e. its length is approximately equal to 1.
 
-bool is_zero_approx() const 🔗
+bool is_zero_approx() const 
 
 Returns true if this vector's values are approximately zero, by running @GlobalScope.is_zero_approx() on each component.
 
 This method is faster than using is_equal_approx() with one value as a zero vector.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-float length_squared() const 🔗
+float length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector3 lerp(to: Vector3, weight: float) const 🔗
+Vector3 lerp(to: Vector3, weight: float) const 
 
 Returns the result of the linear interpolation between this vector and to by amount weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector3 limit_length(length: float = 1.0) const 🔗
+Vector3 limit_length(length: float = 1.0) const 
 
 Returns the vector with a maximum length by limiting its length to length. If the vector is non-finite, the result is undefined.
 
-Vector3 max(with: Vector3) const 🔗
+Vector3 max(with: Vector3) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector3(maxf(x, with.x), maxf(y, with.y), maxf(z, with.z)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector3 maxf(with: float) const 🔗
+Vector3 maxf(with: float) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector3(maxf(x, with), maxf(y, with), maxf(z, with)).
 
-Vector3 min(with: Vector3) const 🔗
+Vector3 min(with: Vector3) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector3(minf(x, with.x), minf(y, with.y), minf(z, with.z)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_Z.
 
-Vector3 minf(with: float) const 🔗
+Vector3 minf(with: float) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector3(minf(x, with), minf(y, with), minf(z, with)).
 
-Vector3 move_toward(to: Vector3, delta: float) const 🔗
+Vector3 move_toward(to: Vector3, delta: float) const 
 
 Returns a new vector moved toward to by the fixed delta amount. Will not go past the final value.
 
-Vector3 normalized() const 🔗
+Vector3 normalized() const 
 
 Returns the result of scaling the vector to unit length. Equivalent to v / v.length(). Returns (0, 0, 0) if v.length() == 0. See also is_normalized().
 
 Note: This function may return incorrect values if the input vector length is near zero.
 
-Vector3 octahedron_decode(uv: Vector2) static 🔗
+Vector3 octahedron_decode(uv: Vector2) static 
 
 Returns the Vector3 from an octahedral-compressed form created using octahedron_encode() (stored as a Vector2).
 
-Vector2 octahedron_encode() const 🔗
+Vector2 octahedron_encode() const 
 
 Returns the octahedral-encoded (oct32) form of this Vector3 as a Vector2. Since a Vector2 occupies 1/3 less memory compared to Vector3, this form of compression can be used to pass greater amounts of normalized() Vector3s without increasing storage or memory requirements. See also octahedron_decode().
 
@@ -4342,67 +4342,67 @@ Note: octahedron_encode() can only be used for normalized() vectors. octahedron_
 
 Note: Octahedral compression is lossy, although visual differences are rarely perceptible in real world scenarios.
 
-Basis outer(with: Vector3) const 🔗
+Basis outer(with: Vector3) const 
 
 Returns the outer product with with.
 
-Vector3 posmod(mod: float) const 🔗
+Vector3 posmod(mod: float) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and mod.
 
-Vector3 posmodv(modv: Vector3) const 🔗
+Vector3 posmodv(modv: Vector3) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and modv's components.
 
-Vector3 project(b: Vector3) const 🔗
+Vector3 project(b: Vector3) const 
 
 Returns a new vector resulting from projecting this vector onto the given vector b. The resulting new vector is parallel to b. See also slide().
 
 Note: If the vector b is a zero vector, the components of the resulting new vector will be @GDScript.NAN.
 
-Vector3 reflect(n: Vector3) const 🔗
+Vector3 reflect(n: Vector3) const 
 
 Returns the result of reflecting the vector through a plane defined by the given normal vector n.
 
 Note: reflect() differs from what other engines and frameworks call reflect(). In other engines, reflect() returns the result of the vector reflected by the given plane. The reflection thus passes through the given normal. While in Godot the reflection passes through the plane and can be thought of as bouncing off the normal. See also bounce() which does what most engines call reflect().
 
-Vector3 rotated(axis: Vector3, angle: float) const 🔗
+Vector3 rotated(axis: Vector3, angle: float) const 
 
 Returns the result of rotating this vector around a given axis by angle (in radians). The axis must be a normalized vector. See also @GlobalScope.deg_to_rad().
 
-Vector3 round() const 🔗
+Vector3 round() const 
 
 Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
-Vector3 sign() const 🔗
+Vector3 sign() const 
 
 Returns a new vector with each component set to 1.0 if it's positive, -1.0 if it's negative, and 0.0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-float signed_angle_to(to: Vector3, axis: Vector3) const 🔗
+float signed_angle_to(to: Vector3, axis: Vector3) const 
 
 Returns the signed angle to the given vector, in radians. The sign of the angle is positive in a counter-clockwise direction and negative in a clockwise direction when viewed from the side specified by the axis.
 
-Vector3 slerp(to: Vector3, weight: float) const 🔗
+Vector3 slerp(to: Vector3, weight: float) const 
 
 Returns the result of spherical linear interpolation between this vector and to, by amount weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 This method also handles interpolating the lengths if the input vectors have different lengths. For the special case of one or both input vectors having zero length, this method behaves like lerp().
 
-Vector3 slide(n: Vector3) const 🔗
+Vector3 slide(n: Vector3) const 
 
 Returns a new vector resulting from sliding this vector along a plane with normal n. The resulting new vector is perpendicular to n, and is equivalent to this vector minus its projection on n. See also project().
 
 Note: The vector n must be normalized. See also normalized().
 
-Vector3 snapped(step: Vector3) const 🔗
+Vector3 snapped(step: Vector3) const 
 
 Returns a new vector with each component snapped to the nearest multiple of the corresponding component in step. This can also be used to round the components to an arbitrary number of decimals.
 
-Vector3 snappedf(step: float) const 🔗
+Vector3 snappedf(step: float) const 
 
 Returns a new vector with each component snapped to the nearest multiple of step. This can also be used to round the components to an arbitrary number of decimals.
 
-bool operator !=(right: Vector3) 🔗
+bool operator !=(right: Vector3) 
 
 Returns true if the vectors are not equal.
 
@@ -4410,7 +4410,7 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-Vector3 operator *(right: Basis) 🔗
+Vector3 operator *(right: Basis) 
 
 Inversely transforms (multiplies) the Vector3 by the given Basis matrix, under the assumption that the basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -4418,13 +4418,13 @@ vector * basis is equivalent to basis.transposed() * vector. See Basis.transpose
 
 For transforming by inverse of a non-orthonormal basis (e.g. with scaling) basis.inverse() * vector can be used instead. See Basis.inverse().
 
-Vector3 operator *(right: Quaternion) 🔗
+Vector3 operator *(right: Quaternion) 
 
 Inversely transforms (multiplies) the Vector3 by the given Quaternion.
 
 vector * quaternion is equivalent to quaternion.inverse() * vector. See Quaternion.inverse().
 
-Vector3 operator *(right: Transform3D) 🔗
+Vector3 operator *(right: Transform3D) 
 
 Inversely transforms (multiplies) the Vector3 by the given Transform3D transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
@@ -4432,51 +4432,51 @@ vector * transform is equivalent to transform.inverse() * vector. See Transform3
 
 For transforming by inverse of an affine transformation (e.g. with scaling) transform.affine_inverse() * vector can be used instead. See Transform3D.affine_inverse().
 
-Vector3 operator *(right: Vector3) 🔗
+Vector3 operator *(right: Vector3) 
 
 Multiplies each component of the Vector3 by the components of the given Vector3.
 
-Vector3 operator *(right: float) 🔗
+Vector3 operator *(right: float) 
 
 Multiplies each component of the Vector3 by the given float.
 
-Vector3 operator *(right: int) 🔗
+Vector3 operator *(right: int) 
 
 Multiplies each component of the Vector3 by the given int.
 
-Vector3 operator +(right: Vector3) 🔗
+Vector3 operator +(right: Vector3) 
 
 Adds each component of the Vector3 by the components of the given Vector3.
 
-Vector3 operator -(right: Vector3) 🔗
+Vector3 operator -(right: Vector3) 
 
 Subtracts each component of the Vector3 by the components of the given Vector3.
 
-Vector3 operator /(right: Vector3) 🔗
+Vector3 operator /(right: Vector3) 
 
 Divides each component of the Vector3 by the components of the given Vector3.
 
-Vector3 operator /(right: float) 🔗
+Vector3 operator /(right: float) 
 
 Divides each component of the Vector3 by the given float.
 
-Vector3 operator /(right: int) 🔗
+Vector3 operator /(right: int) 
 
 Divides each component of the Vector3 by the given int.
 
-bool operator <(right: Vector3) 🔗
+bool operator <(right: Vector3) 
 
 Compares two Vector3 vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator <=(right: Vector3) 🔗
+bool operator <=(right: Vector3) 
 
 Compares two Vector3 vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator ==(right: Vector3) 🔗
+bool operator ==(right: Vector3) 
 
 Returns true if the vectors are exactly equal.
 
@@ -4484,27 +4484,27 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >(right: Vector3) 🔗
+bool operator >(right: Vector3) 
 
 Compares two Vector3 vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >=(right: Vector3) 🔗
+bool operator >=(right: Vector3) 
 
 Compares two Vector3 vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, v[1] is equivalent to v.y, and v[2] is equivalent to v.z.
 
-Vector3 operator unary+() 🔗
+Vector3 operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector3 operator unary-() 🔗
+Vector3 operator unary-() 
 
 Returns the negative value of the Vector3. This is the same as writing Vector3(-v.x, -v.y, -v.z). This operation flips the direction of the vector while keeping the same magnitude. With floats, the number zero can be either positive or negative.
 
@@ -4632,19 +4632,19 @@ Enumerated value for the Z axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the W axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector4i(0, 0, 0, 0) 🔗
+ZERO = Vector4i(0, 0, 0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector4i(1, 1, 1, 1) 🔗
+ONE = Vector4i(1, 1, 1, 1) 
 
 One vector, a vector with all components set to 1.
 
-MIN = Vector4i(-2147483648, -2147483648, -2147483648, -2147483648) 🔗
+MIN = Vector4i(-2147483648, -2147483648, -2147483648, -2147483648) 
 
 Min vector, a vector with all components equal to INT32_MIN. Can be used as a negative integer equivalent of Vector4.INF.
 
-MAX = Vector4i(2147483647, 2147483647, 2147483647, 2147483647) 🔗
+MAX = Vector4i(2147483647, 2147483647, 2147483647, 2147483647) 
 
 Max vector, a vector with all components equal to INT32_MAX. Can be used as an integer equivalent of Vector4.INF.
 
@@ -4656,7 +4656,7 @@ The vector's Y component. Also accessible by using the index position [1].
 
 The vector's Z component. Also accessible by using the index position [2].
 
-Vector4i Vector4i() 🔗
+Vector4i Vector4i() 
 
 Constructs a default-initialized Vector4i with all components set to 0.
 
@@ -4672,151 +4672,151 @@ Vector4i Vector4i(x: int, y: int, z: int, w: int)
 
 Returns a Vector4i with the given components.
 
-Vector4i abs() const 🔗
+Vector4i abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-Vector4i clamp(min: Vector4i, max: Vector4i) const 🔗
+Vector4i clamp(min: Vector4i, max: Vector4i) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector4i clampi(min: int, max: int) const 🔗
+Vector4i clampi(min: int, max: int) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-int distance_squared_to(to: Vector4i) const 🔗
+int distance_squared_to(to: Vector4i) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector4i) const 🔗
+float distance_to(to: Vector4i) const 
 
 Returns the distance between this vector and to.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-int length_squared() const 🔗
+int length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector4i max(with: Vector4i) const 🔗
+Vector4i max(with: Vector4i) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector4i(maxi(x, with.x), maxi(y, with.y), maxi(z, with.z), maxi(w, with.w)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector4i maxi(with: int) const 🔗
+Vector4i maxi(with: int) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector4i(maxi(x, with), maxi(y, with), maxi(z, with), maxi(w, with)).
 
-Vector4i min(with: Vector4i) const 🔗
+Vector4i min(with: Vector4i) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector4i(mini(x, with.x), mini(y, with.y), mini(z, with.z), mini(w, with.w)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_W.
 
-Vector4i mini(with: int) const 🔗
+Vector4i mini(with: int) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector4i(mini(x, with), mini(y, with), mini(z, with), mini(w, with)).
 
-Vector4i sign() const 🔗
+Vector4i sign() const 
 
 Returns a new vector with each component set to 1 if it's positive, -1 if it's negative, and 0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-Vector4i snapped(step: Vector4i) const 🔗
+Vector4i snapped(step: Vector4i) const 
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in step.
 
-Vector4i snappedi(step: int) const 🔗
+Vector4i snappedi(step: int) const 
 
 Returns a new vector with each component snapped to the closest multiple of step.
 
-bool operator !=(right: Vector4i) 🔗
+bool operator !=(right: Vector4i) 
 
 Returns true if the vectors are not equal.
 
-Vector4i operator %(right: Vector4i) 🔗
+Vector4i operator %(right: Vector4i) 
 
 Gets the remainder of each component of the Vector4i with the components of the given Vector4i. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector4i operator %(right: int) 🔗
+Vector4i operator %(right: int) 
 
 Gets the remainder of each component of the Vector4i with the given int. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using @GlobalScope.posmod() instead if you want to handle negative numbers.
 
-Vector4i operator *(right: Vector4i) 🔗
+Vector4i operator *(right: Vector4i) 
 
 Multiplies each component of the Vector4i by the components of the given Vector4i.
 
-Vector4 operator *(right: float) 🔗
+Vector4 operator *(right: float) 
 
 Multiplies each component of the Vector4i by the given float.
 
 Returns a Vector4 value due to floating-point operations.
 
-Vector4i operator *(right: int) 🔗
+Vector4i operator *(right: int) 
 
 Multiplies each component of the Vector4i by the given int.
 
-Vector4i operator +(right: Vector4i) 🔗
+Vector4i operator +(right: Vector4i) 
 
 Adds each component of the Vector4i by the components of the given Vector4i.
 
-Vector4i operator -(right: Vector4i) 🔗
+Vector4i operator -(right: Vector4i) 
 
 Subtracts each component of the Vector4i by the components of the given Vector4i.
 
-Vector4i operator /(right: Vector4i) 🔗
+Vector4i operator /(right: Vector4i) 
 
 Divides each component of the Vector4i by the components of the given Vector4i.
 
-Vector4 operator /(right: float) 🔗
+Vector4 operator /(right: float) 
 
 Divides each component of the Vector4i by the given float.
 
 Returns a Vector4 value due to floating-point operations.
 
-Vector4i operator /(right: int) 🔗
+Vector4i operator /(right: int) 
 
 Divides each component of the Vector4i by the given int.
 
-bool operator <(right: Vector4i) 🔗
+bool operator <(right: Vector4i) 
 
 Compares two Vector4i vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
-bool operator <=(right: Vector4i) 🔗
+bool operator <=(right: Vector4i) 
 
 Compares two Vector4i vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
-bool operator ==(right: Vector4i) 🔗
+bool operator ==(right: Vector4i) 
 
 Returns true if the vectors are exactly equal.
 
-bool operator >(right: Vector4i) 🔗
+bool operator >(right: Vector4i) 
 
 Compares two Vector4i vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
-bool operator >=(right: Vector4i) 🔗
+bool operator >=(right: Vector4i) 
 
 Compares two Vector4i vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
-int operator [](index: int) 🔗
+int operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, v[1] is equivalent to v.y, v[2] is equivalent to v.z, and v[3] is equivalent to v.w.
 
-Vector4i operator unary+() 🔗
+Vector4i operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector4i operator unary-() 🔗
+Vector4i operator unary-() 
 
 Returns the negative value of the Vector4i. This is the same as writing Vector4i(-v.x, -v.y, -v.z, -v.w). This operation flips the direction of the vector while keeping the same magnitude.
 
@@ -4964,15 +4964,15 @@ Enumerated value for the Z axis. Returned by max_axis_index() and min_axis_index
 
 Enumerated value for the W axis. Returned by max_axis_index() and min_axis_index().
 
-ZERO = Vector4(0, 0, 0, 0) 🔗
+ZERO = Vector4(0, 0, 0, 0) 
 
 Zero vector, a vector with all components set to 0.
 
-ONE = Vector4(1, 1, 1, 1) 🔗
+ONE = Vector4(1, 1, 1, 1) 
 
 One vector, a vector with all components set to 1.
 
-INF = Vector4(inf, inf, inf, inf) 🔗
+INF = Vector4(inf, inf, inf, inf) 
 
 Infinity vector, a vector with all components set to @GDScript.INF.
 
@@ -4998,145 +4998,145 @@ Vector4 Vector4(x: float, y: float, z: float, w: float)
 
 Returns a Vector4 with the given components.
 
-Vector4 abs() const 🔗
+Vector4 abs() const 
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-Vector4 ceil() const 🔗
+Vector4 ceil() const 
 
 Returns a new vector with all components rounded up (towards positive infinity).
 
-Vector4 clamp(min: Vector4, max: Vector4) const 🔗
+Vector4 clamp(min: Vector4, max: Vector4) const 
 
 Returns a new vector with all components clamped between the components of min and max, by running @GlobalScope.clamp() on each component.
 
-Vector4 clampf(min: float, max: float) const 🔗
+Vector4 clampf(min: float, max: float) const 
 
 Returns a new vector with all components clamped between min and max, by running @GlobalScope.clamp() on each component.
 
-Vector4 cubic_interpolate(b: Vector4, pre_a: Vector4, post_b: Vector4, weight: float) const 🔗
+Vector4 cubic_interpolate(b: Vector4, pre_a: Vector4, post_b: Vector4, weight: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector4 cubic_interpolate_in_time(b: Vector4, pre_a: Vector4, post_b: Vector4, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 🔗
+Vector4 cubic_interpolate_in_time(b: Vector4, pre_a: Vector4, post_b: Vector4, weight: float, b_t: float, pre_a_t: float, post_b_t: float) const 
 
 Performs a cubic interpolation between this vector and b using pre_a and post_b as handles, and returns the result at position weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 It can perform smoother interpolation than cubic_interpolate() by the time values.
 
-Vector4 direction_to(to: Vector4) const 🔗
+Vector4 direction_to(to: Vector4) const 
 
 Returns the normalized vector pointing from this vector to to. This is equivalent to using (b - a).normalized().
 
-float distance_squared_to(to: Vector4) const 🔗
+float distance_squared_to(to: Vector4) const 
 
 Returns the squared distance between this vector and to.
 
 This method runs faster than distance_to(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-float distance_to(to: Vector4) const 🔗
+float distance_to(to: Vector4) const 
 
 Returns the distance between this vector and to.
 
-float dot(with: Vector4) const 🔗
+float dot(with: Vector4) const 
 
 Returns the dot product of this vector and with.
 
-Vector4 floor() const 🔗
+Vector4 floor() const 
 
 Returns a new vector with all components rounded down (towards negative infinity).
 
-Vector4 inverse() const 🔗
+Vector4 inverse() const 
 
 Returns the inverse of the vector. This is the same as Vector4(1.0 / v.x, 1.0 / v.y, 1.0 / v.z, 1.0 / v.w).
 
-bool is_equal_approx(to: Vector4) const 🔗
+bool is_equal_approx(to: Vector4) const 
 
 Returns true if this vector and to are approximately equal, by running @GlobalScope.is_equal_approx() on each component.
 
-bool is_finite() const 🔗
+bool is_finite() const 
 
 Returns true if this vector is finite, by calling @GlobalScope.is_finite() on each component.
 
-bool is_normalized() const 🔗
+bool is_normalized() const 
 
 Returns true if the vector is normalized, i.e. its length is approximately equal to 1.
 
-bool is_zero_approx() const 🔗
+bool is_zero_approx() const 
 
 Returns true if this vector's values are approximately zero, by running @GlobalScope.is_zero_approx() on each component.
 
 This method is faster than using is_equal_approx() with one value as a zero vector.
 
-float length() const 🔗
+float length() const 
 
 Returns the length (magnitude) of this vector.
 
-float length_squared() const 🔗
+float length_squared() const 
 
 Returns the squared length (squared magnitude) of this vector.
 
 This method runs faster than length(), so prefer it if you need to compare vectors or need the squared distance for some formula.
 
-Vector4 lerp(to: Vector4, weight: float) const 🔗
+Vector4 lerp(to: Vector4, weight: float) const 
 
 Returns the result of the linear interpolation between this vector and to by amount weight. weight is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-Vector4 max(with: Vector4) const 🔗
+Vector4 max(with: Vector4) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector4(maxf(x, with.x), maxf(y, with.y), maxf(z, with.z), maxf(w, with.w)).
 
-int max_axis_index() const 🔗
+int max_axis_index() const 
 
 Returns the axis of the vector's highest value. See AXIS_* constants. If all components are equal, this method returns AXIS_X.
 
-Vector4 maxf(with: float) const 🔗
+Vector4 maxf(with: float) const 
 
 Returns the component-wise maximum of this and with, equivalent to Vector4(maxf(x, with), maxf(y, with), maxf(z, with), maxf(w, with)).
 
-Vector4 min(with: Vector4) const 🔗
+Vector4 min(with: Vector4) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector4(minf(x, with.x), minf(y, with.y), minf(z, with.z), minf(w, with.w)).
 
-int min_axis_index() const 🔗
+int min_axis_index() const 
 
 Returns the axis of the vector's lowest value. See AXIS_* constants. If all components are equal, this method returns AXIS_W.
 
-Vector4 minf(with: float) const 🔗
+Vector4 minf(with: float) const 
 
 Returns the component-wise minimum of this and with, equivalent to Vector4(minf(x, with), minf(y, with), minf(z, with), minf(w, with)).
 
-Vector4 normalized() const 🔗
+Vector4 normalized() const 
 
 Returns the result of scaling the vector to unit length. Equivalent to v / v.length(). Returns (0, 0, 0, 0) if v.length() == 0. See also is_normalized().
 
 Note: This function may return incorrect values if the input vector length is near zero.
 
-Vector4 posmod(mod: float) const 🔗
+Vector4 posmod(mod: float) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and mod.
 
-Vector4 posmodv(modv: Vector4) const 🔗
+Vector4 posmodv(modv: Vector4) const 
 
 Returns a vector composed of the @GlobalScope.fposmod() of this vector's components and modv's components.
 
-Vector4 round() const 🔗
+Vector4 round() const 
 
 Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
-Vector4 sign() const 🔗
+Vector4 sign() const 
 
 Returns a new vector with each component set to 1.0 if it's positive, -1.0 if it's negative, and 0.0 if it's zero. The result is identical to calling @GlobalScope.sign() on each component.
 
-Vector4 snapped(step: Vector4) const 🔗
+Vector4 snapped(step: Vector4) const 
 
 Returns a new vector with each component snapped to the nearest multiple of the corresponding component in step. This can also be used to round the components to an arbitrary number of decimals.
 
-Vector4 snappedf(step: float) const 🔗
+Vector4 snappedf(step: float) const 
 
 Returns a new vector with each component snapped to the nearest multiple of step. This can also be used to round the components to an arbitrary number of decimals.
 
-bool operator !=(right: Vector4) 🔗
+bool operator !=(right: Vector4) 
 
 Returns true if the vectors are not equal.
 
@@ -5144,57 +5144,57 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-Vector4 operator *(right: Projection) 🔗
+Vector4 operator *(right: Projection) 
 
 Transforms (multiplies) the Vector4 by the transpose of the given Projection matrix.
 
 For transforming by inverse of a projection projection.inverse() * vector can be used instead. See Projection.inverse().
 
-Vector4 operator *(right: Vector4) 🔗
+Vector4 operator *(right: Vector4) 
 
 Multiplies each component of the Vector4 by the components of the given Vector4.
 
-Vector4 operator *(right: float) 🔗
+Vector4 operator *(right: float) 
 
 Multiplies each component of the Vector4 by the given float.
 
-Vector4 operator *(right: int) 🔗
+Vector4 operator *(right: int) 
 
 Multiplies each component of the Vector4 by the given int.
 
-Vector4 operator +(right: Vector4) 🔗
+Vector4 operator +(right: Vector4) 
 
 Adds each component of the Vector4 by the components of the given Vector4.
 
-Vector4 operator -(right: Vector4) 🔗
+Vector4 operator -(right: Vector4) 
 
 Subtracts each component of the Vector4 by the components of the given Vector4.
 
-Vector4 operator /(right: Vector4) 🔗
+Vector4 operator /(right: Vector4) 
 
 Divides each component of the Vector4 by the components of the given Vector4.
 
-Vector4 operator /(right: float) 🔗
+Vector4 operator /(right: float) 
 
 Divides each component of the Vector4 by the given float.
 
-Vector4 operator /(right: int) 🔗
+Vector4 operator /(right: int) 
 
 Divides each component of the Vector4 by the given int.
 
-bool operator <(right: Vector4) 🔗
+bool operator <(right: Vector4) 
 
 Compares two Vector4 vectors by first checking if the X value of the left vector is less than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator <=(right: Vector4) 🔗
+bool operator <=(right: Vector4) 
 
 Compares two Vector4 vectors by first checking if the X value of the left vector is less than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator ==(right: Vector4) 🔗
+bool operator ==(right: Vector4) 
 
 Returns true if the vectors are exactly equal.
 
@@ -5202,27 +5202,27 @@ Note: Due to floating-point precision errors, consider using is_equal_approx() i
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >(right: Vector4) 🔗
+bool operator >(right: Vector4) 
 
 Compares two Vector4 vectors by first checking if the X value of the left vector is greater than the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-bool operator >=(right: Vector4) 🔗
+bool operator >=(right: Vector4) 
 
 Compares two Vector4 vectors by first checking if the X value of the left vector is greater than or equal to the X value of the right vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 Note: Vectors with @GDScript.NAN elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
-float operator [](index: int) 🔗
+float operator [](index: int) 
 
 Access vector components using their index. v[0] is equivalent to v.x, v[1] is equivalent to v.y, v[2] is equivalent to v.z, and v[3] is equivalent to v.w.
 
-Vector4 operator unary+() 🔗
+Vector4 operator unary+() 
 
 Returns the same value as if the + was not there. Unary + does nothing, but sometimes it can make your code more readable.
 
-Vector4 operator unary-() 🔗
+Vector4 operator unary-() 
 
 Returns the negative value of the Vector4. This is the same as writing Vector4(-v.x, -v.y, -v.z, -v.w). This operation flips the direction of the vector while keeping the same magnitude. With floats, the number zero can be either positive or negative.
 
